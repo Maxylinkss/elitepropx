@@ -27,25 +27,36 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>The5ers evaluates forex and CFD accounts on a several programmes from bootcamp-style to high-stakes evaluation.</li>
-  <li>The loss floor is static on most programmes; the daily stop is yes, programme-specific.</li>
-  <li>Billing is one-off per programme and payouts follow profit split released on a fixed schedule.</li>
-  <li>Best fit: forex traders who want a cheap first evaluation with a static loss floor.</li>
-  <li>Main caution: programme rules differ enough that comparisons need the programme name.</li>
+  <li>The5ers sells a ladder of programmes, so the programme name is the unit of comparison, not the brand.</li>
+  <li>Most programmes use a static loss floor, which keeps the failure point fixed for the whole attempt.</li>
+  <li>Billing is one-off per programme, so a slow pass does not accumulate charges.</li>
+  <li>The cheapest programmes carry small balances, where fixed costs are a larger share of the target.</li>
+  <li>Payouts follow a fixed schedule rather than an on-demand request, which matters for cash planning.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
   <li><a href="#verdict">The short verdict on The5ers</a></li>
-  <li><a href="#rulebook">How the The5ers rulebook is built</a></li>
+  <li><a href="#programmes">What the programme ladder actually sells</a></li>
+  <li><a href="#floor">How a static floor changes position sizing</a></li>
+  <li><a href="#bootcamp">The economics of the low-balance programmes</a></li>
+  <li><a href="#highstakes">The higher-stakes programmes</a></li>
+  <li><a href="#cost">Cost of an attempt, worked</a></li>
+  <li><a href="#payouts">Payout rhythm and the profit split</a></li>
+  <li><a href="#failure">What a failed attempt actually costs</a></li>
+  <li><a href="#terms">Programme-level terms that change the maths</a></li>
+  <li><a href="#platform">Platform and execution</a></li>
   <li><a href="#strengths">What The5ers does well</a></li>
   <li><a href="#cautions">Where The5ers is weaker</a></li>
-  <li><a href="#bottom-line">Bottom line</a></li>
+  <li><a href="#fit">Who the programme fits</a></li>
+  <li><a href="#checklist">What to confirm before buying</a></li>
+  <li><a href="#faq">Common questions</a></li>
 </ol>
 </div>
+
 <h2 id="verdict">The short verdict on The5ers</h2>
-<p>The5ers is a forex and CFD evaluator built on a several programmes from bootcamp-style to high-stakes evaluation, with a static loss floor, a daily stop (programme-specific) and one-off per programme billing. The product is a reasonable fit for forex traders who want a cheap first evaluation with a static loss floor. It is a poor fit for a trader whose strategy needs the opposite drawdown mechanic, or whose budget cannot absorb the billing rhythm across several attempts.</p>
+<p>The5ers is a forex and CFD evaluator built around a menu of programmes rather than a single challenge. The low-balance programmes are designed as a first step, the higher programmes behave more like a conventional evaluation, and most of the menu uses a static loss floor with one-off billing per programme. The product fits a trader who wants a cheap first attempt with a fixed failure point and is willing to read the rules for the exact programme rather than the brand.</p>
 <div class="table-scroll">
   <table>
     <thead>
@@ -53,78 +64,136 @@ generator: content-system
     </thead>
     <tbody>
       <tr><td>Who is it for?</td><td>forex traders who want a cheap first evaluation with a static loss floor</td></tr>
-      <tr><td>What is the strongest feature?</td><td>Low-cost entry programmes lower the price of a first attempt</td></tr>
+      <tr><td>What is the strongest feature?</td><td>Low-cost entry programmes that lower the price of a first attempt</td></tr>
       <tr><td>What is the biggest caution?</td><td>Programme rules differ enough that comparisons need the programme name</td></tr>
       <tr><td>How is it billed?</td><td>one-off per programme</td></tr>
       <tr><td>How does it pay?</td><td>profit split released on a fixed schedule</td></tr>
+      <tr><td>Platform</td><td>MT5</td></tr>
     </tbody>
   </table>
 </div>
+<p>Two things are often conflated in reviews of this firm. The first is the price of entry, which is genuinely low on the smallest programmes. The second is the cost per dollar of funded capital, which is not low at all on those same programmes once fixed costs are counted. Both statements are true, and which one matters depends on whether the trader is buying a lesson or an income.</p>
 
-<h2 id="rulebook">How the The5ers rulebook is built</h2>
-<p>The <strong>The5ers</strong> evaluation is best understood as a set of constraints that interact, not as a headline profit target with some footnotes. The target decides how much you have to make. The loss floor decides how much room you have to make it. The daily stop, if there is one, decides how quickly a bad session ends. The minimum-day rule decides how long the attempt takes even when the target is reached early. Change any one of those and the same trading strategy produces a different outcome.</p>
-<p>For The5ers, the published structure is a several programmes from bootcamp-style to high-stakes evaluation. The loss floor is static on most programmes, the daily stop is yes, programme-specific, and the consistency condition is varies by programme. Billing is one-off per programme, payouts follow profit split released on a fixed schedule, and the supported platforms are MT5. Those are the rows that matter. Marketing pages tend to foreground the profit target and the profit split because both are easy to compare; neither tells you whether a given trade is survivable.</p>
+<h2 id="programmes">What the programme ladder actually sells</h2>
+<p>The ladder is the product. At the bottom sit low-cost programmes with small balances, short targets and a static floor. In the middle sit programmes with larger balances and a more conventional two-phase structure. At the top sit higher-stakes evaluations with larger accounts and tighter operational expectations. The mechanics are related but not identical: the target, the loss limit, the consistency condition and the payout cycle can all change with the programme name.</p>
+<p>That structure has a practical consequence. A trader who compares "The5ers" with another firm has not compared anything yet, because the brand spans several products at different price points and risk levels. The comparison has to be between a named programme at The5ers and a named plan elsewhere, with the same account size and the same floor type.</p>
+<p>The ladder also implies a progression. A trader who passes the smallest programme is not automatically moved to a larger one; the next programme is a separate purchase with its own fee and rules. Reviews that describe the firm as a single challenge with a single fee therefore mislead in both directions: they overstate the cost of entry and understate the cost of scaling.</p>
+<p>For a first attempt, the smallest programme is the cheapest way to find out whether the firm's platform, execution and support suit the trader. For an income plan, the larger programmes are the relevant comparison, and the small-programme fee is a sunk cost of learning the workflow rather than a step on a guaranteed ladder.</p>
+
+<h2 id="floor">How a static floor changes position sizing</h2>
+<p>A static loss floor is measured from the starting balance and does not move as profit accrues. On a $10,000 programme with a 6% floor, the account fails at $9,400 whether the trader is at break-even or up $500. That fixed distance is what makes the risk plan simple: one risk unit, one number of losses, one budget for the attempt.</p>
+<p>The alternative is a trailing floor, which follows the equity high and raises the failure point as profit grows. On the same account, a $500 gain would raise the failure point to $9,900, leaving only $600 of room from the new high. A trader who gives back part of the gain can fail while still in profit overall. For methods that hold through retracements, that mechanic is the dominant cost.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Parameter</th><th>The5ers — published shape</th></tr>
+      <tr><th>Scenario on a $10,000 account</th><th>Static 6% floor</th><th>6% trailing floor</th></tr>
     </thead>
     <tbody>
-      <tr><td>Market</td><td>forex and CFD</td></tr>
-      <tr><td>Evaluation model</td><td>several programmes from bootcamp-style to high-stakes evaluation</td></tr>
-      <tr><td>Loss floor</td><td>static on most programmes</td></tr>
-      <tr><td>Daily stop</td><td>yes, programme-specific</td></tr>
-      <tr><td>Consistency test</td><td>varies by programme</td></tr>
-      <tr><td>Minimum trading days</td><td>undefined</td></tr>
-      <tr><td>Billing rhythm</td><td>one-off per programme</td></tr>
-      <tr><td>Payout rhythm</td><td>profit split released on a fixed schedule</td></tr>
-      <tr><td>Platforms</td><td>MT5</td></tr>
-      <tr><td>Session</td><td>weekday forex hours</td></tr>
+      <tr><td>Floor at the start</td><td>$9,400</td><td>$9,400</td></tr>
+      <tr><td>Floor after a $500 gain</td><td>$9,400</td><td>$9,900</td></tr>
+      <tr><td>Room left at the high</td><td>$1,100</td><td>$600</td></tr>
+      <tr><td>Failure after giving back $450</td><td>No</td><td>Yes, at $9,900</td></tr>
     </tbody>
   </table>
 </div>
+<p>The table is why the floor type, not the fee, is the first line of a review. The same trade sequence produces a pass on one plan and a breach on the other, and no amount of discount compensates for buying the wrong mechanic. It also explains why traders report such different experiences with the same firm: the programme name changes the floor, and the floor changes everything downstream.</p>
+<p>On The5ers, most programmes use the static version, which is the advantage the firm is known for. The exception is worth checking: a small number of programme variants can carry different drawdown definitions, and the terms page for the exact programme is the only reliable source. A trader who buys on the strength of the brand's reputation for static floors and lands on a variant with a different definition has bought a different product.</p>
+
+<h2 id="bootcamp">The economics of the low-balance programmes</h2>
+<p>Small programmes are cheap in absolute terms and expensive relative to the capital they fund. Take a $10,000 programme with a 10% target and a one-off fee at the low end of the market. The target is $1,000 of profit. A data feed, a VPS and a platform subscription might cost $40 a month; over a two-month attempt that is $80, or 8% of the target. The same $40 on a $100,000 programme is 0.8% of a $10,000 target.</p>
+<p>That is the arithmetic behind the common complaint that small accounts are harder than they look. They are not harder in percentage terms; they are harder in fixed-cost terms. A trader who runs the same method on a $10,000 and a $100,000 account with the same dollar costs has a lower net return on the small account, and the gap widens the longer the attempt takes.</p>
+<p>The low entry price does buy something real: a cheaper way to test a method against a new rulebook. If the purpose is to learn whether the platform, the daily stop and the consistency condition suit the strategy, a small programme is the right purchase. If the purpose is income, the small programme's fixed-cost burden argues for moving to a larger balance once the method is proven.</p>
+<p>There is also a psychological cost. A small balance with a proportional target requires the same percentage gain as a large one but produces a smaller dollar result, which tempts traders to oversize. The floor does not scale with that temptation. A trader who doubles the risk unit on a $10,000 account to make the attempt "worth it" has halved the number of losses the floor allows, and the expected number of attempts rises accordingly.</p>
+
+<h2 id="highstakes">The higher-stakes programmes</h2>
+<p>The larger programmes on the ladder behave more like a conventional evaluation: a bigger balance, a larger dollar target, and a payout schedule that matters in absolute terms. The static floor remains the feature to check, because a larger account makes the difference between static and trailing more expensive in dollars, not less.</p>
+<p>On a $100,000 account, a 6% static floor is $6,000 of room. A 6% trailing floor starts at the same distance but rises with equity, so a $3,000 gain leaves $3,000 of room from the new high. At a $500 risk unit, that is six losses instead of twelve. The trader has not changed the method; the mechanic has halved the budget.</p>
+<p>The higher programmes also tend to carry stricter operational expectations: identity verification, payout documentation, perhaps a minimum number of trading days before the first withdrawal. Those requirements are normal at this level, but they should be read before the fee is paid rather than after the target is reached. The cost of a delayed payout is real for a trader whose plan depends on the first withdrawal arriving in a particular month.</p>
+<p>For a trader comparing the top of The5ers with a dedicated high-balance firm, the question is not which brand is better but which programme's floor, target and payout cycle match the method. A larger balance with a trailing floor can be a worse product than a smaller balance with a static one, even at the same fee.</p>
+
+<h2 id="cost">Cost of an attempt, worked</h2>
+<p>Put the pieces together for a representative attempt on a mid-size programme. Assume a $50,000 balance, a 10% target, a static floor of 6%, a one-off fee at the lower end of the market, and a trader who expects a 50% chance of passing on a given attempt. The probability of needing more than one attempt is 50%, and the expected number of attempts is two. Expected fee cost is therefore twice the entry price, before any running costs.</p>
+<p>Now add running costs. A trader taking five trades a day for forty days takes two hundred trades. At a 1.2-pip round-turn spread on a 0.5-lot position, the cost is about $12 a trade, or $2,400 across the attempt. That is larger than a mid-market fee, and it does not appear on the pricing page. The fee is paid once per attempt; the spread is paid on every trade.</p>
+<p>Then add the calendar. If the programme has a minimum-day requirement, the attempt cannot be compressed, and the fixed monthly costs accrue for the full period. If the payout cycle adds another month before the first withdrawal, the trader's capital is committed for that much longer. The relevant comparison is not the fee against another fee but the total cost against the total time.</p>
+<p>The comparison that survives contact with a real budget is cost per expected funded dollar. Divide the expected total cost of the attempt by the probability of passing, and compare that with the same figure for another programme. A cheap entry fee attached to a low pass probability produces a high cost per funded account, which is the number that matters.</p>
+
+<h2 id="payouts">Payout rhythm and the profit split</h2>
+<p>The5ers pays a profit split on a fixed schedule rather than on demand. The split percentage is the headline, but the schedule is the operative number. A 90% split paid after a fixed cycle is worth less to a trader who needs cash in three weeks than an 80% split paid sooner, and the difference is large enough to change the choice of programme.</p>
+<p>The first payout usually carries additional conditions: a minimum number of trading days, a minimum withdrawal amount, or a seasoning period after the funded account is issued. Those conditions belong in the cost calculation because they determine when the first dollar arrives. A trader who expects the account to pay in month one and receives the first payout in month three has paid three months of opportunity cost that no fee comparison captures.</p>
+<p>The split applies to profit after costs, so commission and spread reduce the base before the percentage is applied. On a high-frequency method, that is another reason to check the cost schedule: a 90% split of a small net profit is a smaller number than an 80% split of a larger one.</p>
+<p>The payout clause also defines what happens to a consistency test. If the programme assesses the share of profit from a single day at payout, a strong session can reduce or delay a withdrawal even after a legitimate pass. Read the clause for the exact programme and keep a dated copy of the terms that applied on the purchase date.</p>
+
+<h2 id="failure">What a failed attempt actually costs</h2>
+<p>Most comparisons price the pass and ignore the failure. That is a mistake, because the expected cost of an attempt is the fee divided by the probability of passing, and the probability of passing is the number the rulebook controls. A programme with a 50% pass rate for a given method costs twice its fee per funded account; a programme with a 25% pass rate costs four times.</p>
+<p>The cost of failure is not only the fee. A failed attempt consumes the calendar time it took to fail, the running costs of the trades taken, and the opportunity cost of the capital committed. On a two-month attempt with $40 a month of data and platform costs, the failure carries $80 of running cost plus the fee plus two months of the trader's attention. Across three attempts, the running cost alone can exceed the entry price.</p>
+<p>There is also a learning cost that is easy to miss. A trader who fails because of a rule, rather than because of the method, has paid for a lesson about the rulebook rather than about trading. That lesson is worth having once, but it should be bought deliberately on the smallest programme rather than accidentally on a large one.</p>
+<p>The practical implication is to treat the first attempt as a diagnostic. Record the reason for every loss, the distance to the floor at the worst point, and the number of rule checks that were close calls. If the attempt fails, the record shows whether the method or the rulebook is the constraint, and the next purchase can be chosen accordingly.</p>
+
+<h2 id="terms">Programme-level terms that change the maths</h2>
+<p>Four terms vary between programmes and each one changes the expected cost. The first is the daily stop. A programme with a 5% daily stop and a 6% overall floor gives the trader roughly one bad day of room; a programme with no daily stop gives the trader the full floor. The first is safer for the firm, the second is more forgiving for a method with clustered losses.</p>
+<p>The second is the consistency condition. Where it applies during the evaluation, it constrains the size of the best day; where it applies at payout, it constrains the value of the pass. A programme that applies it at payout can leave a profitable evaluation paying less than expected, which is a cost that does not appear in any fee comparison.</p>
+<p>The third is the minimum-day rule. A programme with a minimum number of trading days cannot be compressed, even by a method that reaches the target in a week. That converts a fast pass into a fixed period of exposure and fixed costs, and it should be priced as such.</p>
+<p>The fourth is the treatment of open positions over the weekend and around restricted events. A programme that requires positions to be closed before the weekend forces a decision the method may not otherwise make; a programme that permits weekend holding exposes the account to gap risk. Neither is wrong, but the rule should be known before the first trade rather than discovered on a Friday afternoon.</p>
+
+<h2 id="platform">Platform and execution</h2>
+<p>The5ers runs on MT5, which most forex traders already know. Familiarity reduces operational mistakes, which are a real cause of failed attempts: a misplaced stop, a wrong lot size, an order left open over a restricted window. A platform the trader can operate without thinking is worth more than a marginally better spread.</p>
+<p>Execution is the part that cannot be judged from a specification sheet. The spread quoted on a landing page is an average; the method lives in the moments when the average is wrong. A trader should test the platform during the session the method actually trades, ideally on a demo account configured like the evaluation, and record the realised spread on twenty or thirty entries.</p>
+<p>MT5 also supports expert advisors, which raises the automation question. Some programmes permit EAs, some restrict them, and some require disclosure. A trader who intends to automate should confirm the rule for the exact programme before buying, because a prohibited EA is a breach regardless of its performance.</p>
+<p>The platform choice also affects the instrument list. A method that trades crosses or metals needs those instruments available on the evaluation, and the spread on them can be wider than on the majors. Confirm the instrument list and the contract specifications for the programme, not just the platform brand.</p>
 
 <h2 id="strengths">What The5ers does well</h2>
-<p>The strengths are structural rather than promotional. Low-cost entry programmes lower the price of a first attempt. Static loss floors on most programmes. Straightforward MT5 setup. Those are the features that show up in the trading experience, not just on the comparison table.</p>
+<p>The strongest feature is the low-cost entry point. A trader who wants to test a method against a static floor can do so for a small absolute fee, which lowers the cost of learning. That is a genuine advantage over firms whose smallest programme is priced like a mid-size account.</p>
+<p>The static floor on most programmes is the second. It makes the risk plan legible and keeps the failure point fixed, which is what most retail methods need. A trader can set a risk unit, count the losses the floor allows, and trade the plan without modelling a moving threshold.</p>
+<p>The programme ladder is the third. A trader who starts small and scales has a path inside one brand, with a consistent platform and support relationship. That continuity has value, even though each step is a separate purchase.</p>
 <ul>
-  <li><strong>Low-cost entry programmes lower the price of a first attempt.</strong></li>
-  <li><strong>Static loss floors on most programmes.</strong></li>
-  <li><strong>Straightforward MT5 setup.</strong></li>
+  <li><strong>Low-cost entry programmes</strong> that lower the price of a first attempt.</li>
+  <li><strong>Static loss floors</strong> on most of the menu.</li>
+  <li><strong>A staged ladder</strong> that lets a trader scale inside one brand.</li>
+  <li><strong>MT5 only</strong>, which keeps the operational surface small.</li>
 </ul>
+<p>None of those features is unique. The combination is what makes the firm a reasonable first stop for a trader who wants a static floor at a low entry price and does not need a one-step path or a large platform list.</p>
 
 <h2 id="cautions">Where The5ers is weaker</h2>
-<p>The cautions are equally structural. Programme rules differ enough that comparisons need the programme name. Lower balances mean fixed costs eat a larger share of the target. Payout schedule is not on-demand. None of them is a reason to avoid the firm automatically, but each has to be priced into the plan before the fee is paid.</p>
+<p>The programme-level differences are the main caution. The brand is consistent; the rules are not identical across the menu. A trader who compares the cheapest programme with a mid-market competitor is comparing a small balance and a tight limit with a different product, and the comparison will mislead in both directions.</p>
+<p>The payout schedule is the second. Fixed cycles are normal, but they are not on demand, and a trader who needs fast withdrawals should compare the cycle rather than the split. The first payout may also carry a minimum-day or seasoning condition that delays the cash further.</p>
+<p>The fixed-cost burden on small programmes is the third. A $10,000 account with the same data, VPS and platform costs as a $100,000 account carries ten times the relative cost. That does not make the small programme bad; it makes it a learning purchase rather than an income plan.</p>
 <ul>
-  <li><strong>Programme rules differ enough that comparisons need the programme name.</strong></li>
-  <li><strong>Lower balances mean fixed costs eat a larger share of the target.</strong></li>
-  <li><strong>Payout schedule is not on-demand.</strong></li>
+  <li><strong>Programme rules differ</strong> enough that comparisons need the programme name.</li>
+  <li><strong>Payouts are scheduled</strong>, not on demand.</li>
+  <li><strong>Small balances</strong> make fixed costs a larger share of the target.</li>
+  <li><strong>One platform</strong>, which is a limitation for traders who need cTrader or MT4.</li>
 </ul>
+<p>Each caution is structural rather than promotional. None of them is a reason to avoid the firm automatically, but each has to be priced into the plan before the fee is paid. The caution that matters most is the one that interacts with the trader's method: a scheduled payout is harmless for a patient trader and decisive for one who needs monthly cash.</p>
+
+<h2 id="fit">Who the programme fits</h2>
+<p>The5ers fits a forex trader who wants a static floor, a low-cost first evaluation and a straightforward MT5 setup. It suits a trader who is testing a method against a published rulebook for the first time, and a trader who intends to scale through the ladder if the first programme works.</p>
+<p>It is less suited to a trader who needs a large headline balance immediately, a one-step path, or an on-demand payout. Those traders should compare the higher programmes with dedicated competitors rather than buying the cheapest entry and hoping it behaves like the product they wanted.</p>
+<p>It is also a poor fit for a method that depends on a trailing stop or scale-out. A static floor does not charge for giving back open profit, but the programme's daily stop and consistency condition still apply, and a method that needs a trailing mechanic to work may find the combination uncomfortable even on a static floor.</p>
+<p>The practical test is simple. Write down the programme name, the balance, the floor, the target, the daily stop, the consistency condition and the payout cycle. If any of those is unknown, the comparison is not ready. If all seven are known and the method fits, the fee is the least important number on the list.</p>
+
+<h2 id="checklist">What to confirm before buying</h2>
+<p>Confirm the exact programme's loss-floor definition. Static, intraday trailing and end-of-day trailing are different products, and the brand-level reputation for static floors does not guarantee the programme being bought uses one.</p>
+<p>Confirm the target and the minimum trading days. A target reached early still waits for the minimum days, and a programme with no minimum can be passed in a session if the method allows.</p>
+<p>Confirm the daily stop and its basis. An equity-based stop counts open positions; a balance-based stop does not. The difference decides how a bad session ends.</p>
+<p>Confirm the consistency condition and where it applies. A clause assessed at payout changes the value of a pass; a clause assessed during the evaluation changes the strategy.</p>
+<p>Confirm the payout cycle, the split, the minimum withdrawal and the first-payout conditions. Those four numbers determine when the funded account produces cash, which is the other half of the cost equation.</p>
+<p>Finally, save the terms page as a dated file. Programme rules change between cohorts, and the version that applied on the purchase date is the only one that can settle a dispute later.</p>
+
+<h2 id="faq">Common questions</h2>
+<details class="faq"><summary>Does The5ers use a static loss floor?</summary><div class="faq-a"><p>Most programmes do, but the menu is broad and the programme name changes the terms. Read the floor definition on the page for the exact programme you would buy rather than relying on the brand's reputation.</p></div></details>
+
+<details class="faq"><summary>Which The5ers programme is cheapest?</summary><div class="faq-a"><p>The low-balance programmes are the cheapest in absolute terms. They also carry a tighter dollar target and a smaller base for fixed costs, so the cost per dollar of funded capital is higher than on a larger programme.</p></div></details>
+
+<details class="faq"><summary>Are payouts on demand at The5ers?</summary><div class="faq-a"><p>No. Payouts follow a fixed schedule on most programmes, and the first withdrawal may carry a minimum-day or seasoning condition. Compare the cycle rather than the headline split.</p></div></details>
+
+<details class="faq"><summary>Is The5ers good for beginners?</summary><div class="faq-a"><p>The low-balance programmes are designed as a first step, so the entry cost is small and the rulebook is readable. The caution is that a small balance makes fixed costs proportionally larger, so the first programme is better treated as a lesson than as an income plan.</p></div></details>
+
+<details class="faq"><summary>Can I use an expert advisor on a The5ers evaluation?</summary><div class="faq-a"><p>It depends on the programme. Some permit EAs, some restrict them and some require disclosure. Confirm the automation rule for the exact programme before buying, because a prohibited EA is a breach regardless of its results.</p></div></details>
 
 <h2 id="bottom-line">Bottom line</h2>
-<p>The5ers is worth considering if the rulebook matches your strategy and the billing rhythm matches your expected timeline. It is not worth considering as a generic "best firm" purchase, because the firm's mechanic is the product. A trader who buys a static loss floor and then trades it like a static account has bought the wrong product, whatever the fee.</p>
-<p>The score that matters is not a star rating. It is the number of attempts you expect, multiplied by the cost per attempt, compared with the cost of a flat-fee service and the time you have. The5ers is a good deal when you pass early and a poor one when the rulebook fights your method. Judge it on that arithmetic rather than on the marketing.</p>
+<p>The5ers is worth considering if the rulebook of the exact programme matches your strategy and the billing rhythm matches your expected timeline. It is not worth considering as a generic "best firm" purchase, because the programme is the product and the brand is only a label on it.</p>
+<p>The number that matters is not a star rating. It is the expected number of attempts multiplied by the cost per attempt, compared with the cost of a flat-fee service and the time available. The5ers is a good deal when the programme fits and a poor one when the trader buys the wrong rung of the ladder.</p>
 
-<h2 id="the-programme-menu-is-the-review">The programme menu is the review</h2>
-<p>The5ers does not sell one challenge; it sells a ladder of programmes that range from low-cost bootcamp-style entries to higher-stakes evaluations. A review that names only the brand is therefore incomplete. The cheapest programme usually has a smaller balance and a tighter loss limit, while the higher programmes behave more like a conventional evaluation. The programme name decides the floor, the target and the consistency condition.</p>
-<p>The static floor on most programmes is the feature that makes the product easy to size against. A fixed dollar distance to failure means a 0.5% risk unit stays valid for the whole attempt. A trader coming from a trailing futures product will find the arithmetic simpler, though the lower balance of the entry programme makes fixed costs a larger share of the target.</p>
-
-<h2 id="cost-and-calendar-on-a-small-programme">Cost and calendar on a small programme</h2>
-<p>On a $10,000 programme with a 10% target, the account needs $1,000 of profit. A $50 risk unit with a 2:1 plan contributes $100 per winner, so ten net winners are needed. A $20 monthly data or VPS cost is 0.2% of the account, which is six times the relative cost on a $60,000 account. Small programmes are cheap in absolute terms but expensive per dollar of funded capital if the cost stack is not trimmed.</p>
-<p>The payout schedule is fixed rather than on demand, so the first withdrawal arrives after the programme's cycle. A trader who needs cash quickly should compare the cycle, not the headline split. The split is applied to profit that only exists after the cycle, and a high split paid slowly can be worth less than a lower split paid sooner.</p>
-
-<h2 id="who-the-programme-fits">Who the programme fits</h2>
-<p>The5ers fits a forex trader who wants a static floor, a low-cost first evaluation and a straightforward MT5 setup. It is less suited to a trader who needs a large headline balance or a one-step path; the programme menu is built around staged progress, not speed. A trader who already has a tested method and a larger account should compare the higher programmes rather than the cheapest entry.</p>
-<p>Before buying, confirm the exact programme's loss definition, consistency condition and payout cycle. The brand-level marketing is consistent; the programme-level rules are not identical.</p>
-
-<section class="section tight">
-  <div class="wrap narrow">
-    <h2 id="questions">Common questions</h2>
-
-<details class="faq"><summary>Does The5ers use a static loss floor?</summary><div class="faq-a"><p>The majority of The5ers programmes are static, but the ladder is broad enough that the programme name changes the terms. Read the floor definition on the page for the exact programme you would buy.</p></div></details>
-
-<details class="faq"><summary>Which The5ers programme is cheapest?</summary><div class="faq-a"><p>The low-balance bootcamp-style programmes are usually the cheapest entry. They also carry a tighter loss limit and a smaller dollar target, so the fixed costs are a larger share of the account.</p></div></details>
-
-<details class="faq"><summary>Are payouts on demand at The5ers?</summary><div class="faq-a"><p>Payouts follow a fixed schedule rather than an on-demand request on most programmes. Check the cycle for the programme you are considering.</p></div></details>
   </div>
 </section>
 
@@ -132,7 +201,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Want the The5ers evaluation traded for you?</h2>
-      <p>Flat <strong>$220</strong>, any account size, retries covered, no profit split. We check The5ers's terms before accepting the job.</p>
+      <p>Flat <strong>$220</strong>, any account size, retries covered, no profit split. We check the programme's terms before accepting the job.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -145,12 +214,11 @@ generator: content-system
       <li><a href="/blog/the-5ers-challenge-passing.html">The5ers challenge passing</a></li>
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
+      <li><a href="/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html">Trailing versus static drawdown</a></li>
       <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
       <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
+      <li><a href="/blog/prop-firm-challenge-cost-2026.html">What a challenge really costs in 2026</a></li>
     </ul>
     <p class="disclaimer">The5ers is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>

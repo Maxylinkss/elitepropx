@@ -1,6 +1,6 @@
 ---
 title: Prop Firms without Consistency Rule | 2026
-desc: Prop Firms without Consistency Rule: A consistency rule caps the share of total profit that may come from one trading day. Worked examples plus the terms to…
+desc: Prop firms without a consistency rule, compared on how they treat the best day, the payout test and the evaluation. Worked arithmetic and ten plans reviewed.
 path: /blog/prop-firms-without-consistency-rule.html
 type: article
 h1: Prop Firms without Consistency Rule
@@ -18,7 +18,7 @@ generator: content-system
   <div class="wrap narrow">
     <p class="kicker">Prop Firms without Consistency Rule · reviewed October 2026</p>
     <h1>Prop Firms without Consistency Rule</h1>
-    <p class="lede">A consistency rule caps the share of total profit that may come from one trading day. It can leave a profitable evaluation unpaid, so it belongs in the sizing plan from the first trade rather than in the payout checklist. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+    <p class="lede">A consistency rule caps the share of total profit that may come from one trading day. It can leave a profitable evaluation unpaid, so it belongs in the sizing plan from the first trade rather than in the payout checklist. This guide explains the arithmetic, separates firms that apply the rule at payout from firms that apply it during the evaluation, and lists the plans worth comparing if you want to trade without it.</p>
   </div>
 </section>
 
@@ -30,42 +30,84 @@ generator: content-system
   <li>Common thresholds are 30–50% of total profit from any single day.</li>
   <li>The rule is usually assessed at payout, not at the moment of the trade.</li>
   <li>A distribution of ordinary days passes more reliably than one oversized winner.</li>
-  <li>The list decision should be checked against the exact plan, not the brand: terms change between cohorts and between plan names.</li>
+  <li>“No consistency rule” at brand level does not guarantee it is absent from the plan you buy.</li>
+  <li>A trader with a lumpy method should model the best-day share before choosing a firm.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#criteria">How this list was ranked</a></li>
+  <li><a href="#what">What the rule actually measures</a></li>
+  <li><a href="#arithmetic">The arithmetic of a best-day cap</a></li>
+  <li><a href="#where">Where the rule bites: evaluation or payout</a></li>
+  <li><a href="#why">Why firms use the rule</a></li>
+  <li><a href="#test">How to test your own distribution</a></li>
   <li><a href="#table">The shortlist at a glance</a></li>
-  <li><a href="#firm-e8">E8 Markets: Static drawdown options suit position-holding strategies</a></li>
-  
-  
-  <li><a href="#firm-topstep">Topstep: Daily stop caps the damage of a single bad session</a></li>
-  <li><a href="#firm-ftuk">FTUK: One-off billing removes calendar pressure</a></li>
-  <li><a href="#firm-lucid">Lucid Trading: Simple account ladder</a></li>
-  <li><a href="#firm-fxify">FXIFY: One-step and two-phase options</a></li>
-  <li><a href="#firm-alphafutures">Alpha Futures: Modern platform access</a></li>
+  <li><a href="#firm-e8">E8 Markets</a></li>
+  <li><a href="#firm-ftmo">FTMO</a></li>
+  <li><a href="#firm-fundingpips">Funding Pips</a></li>
+  <li><a href="#firm-topstep">Topstep</a></li>
+  <li><a href="#firm-ftuk">FTUK</a></li>
+  <li><a href="#firm-lucid">Lucid Trading</a></li>
+  <li><a href="#firm-fxify">FXIFY</a></li>
+  <li><a href="#firm-alphafutures">Alpha Futures</a></li>
+  <li><a href="#firm-leveledup">Leveled Up Society</a></li>
+  <li><a href="#firm-tradingpit">The Trading Pit</a></li>
   <li><a href="#choose">How to choose between them</a></li>
+  <li><a href="#checklist">What to confirm before buying</a></li>
+  <li><a href="#faq">Common questions</a></li>
 </ol>
 </div>
-<h2 id="criteria">How this list was ranked</h2>
-<p>A consistency rule caps the share of total profit that may come from one trading day. It can leave a profitable evaluation unpaid, so it belongs in the sizing plan from the first trade rather than in the payout checklist. The ranking below is built from the rulebook first and the price second, because a cheap evaluation attached to a rulebook that fights your method is not cheap at all.</p>
-<p>The ranking is built from the rulebook first and the price second. A firm with a generous target and a floor that fights every strategy is not a good firm; it is a cheap way to lose a fee. The criteria below are the ones that change an outcome, in the order they bind.</p>
-<ul>
-  <li><strong>Loss-floor mechanic.</strong> Static or trailing, and what it is measured against. This decides sizing more than any other row.</li>
-  <li><strong>Daily stop.</strong> The presence of one changes how a bad session ends and how much room a single trade can consume.</li>
-  <li><strong>Consistency condition.</strong> A payout test that can reduce a profitable pass to an unpaid one.</li>
-  <li><strong>Billing rhythm.</strong> One-off versus subscription, which decides whether patience is free or expensive.</li>
-  <li><strong>Payout rhythm.</strong> The interval to the first payout matters more than the headline split.</li>
-  <li><strong>Operational quality.</strong> Terms clarity, support and dashboard detail, judged from published documentation.</li>
-</ul>
-<figure>
-  <img src="/assets/img/firm-landscape.svg" alt="Diagram grouping prop firms by market, evaluation model and billing rhythm" width="1000" height="560" loading="lazy">
-  <figcaption>Grouping by rulebook shape is more useful than ranking by brand recognition.</figcaption>
-</figure>
-<p>The list deliberately mixes markets. A futures evaluation and a forex evaluation are not substitutes, so a single ranking across both is only meaningful if the reader filters by the market they can actually trade. Use the market column as a hard filter before reading the rank.</p>
+
+<h2 id="what">What the rule actually measures</h2>
+<p>A consistency rule divides the profit from the trader’s best day by the total profit of the evaluation or the payout period. If the ratio exceeds a threshold, the profit is considered too concentrated and the payout may be reduced, delayed or refused. The threshold is usually between 30% and 50%, but the definition of “day” is where most of the confusion lives.</p>
+<p>Some firms measure a calendar day in the platform’s server time; others measure a trading session that crosses midnight. Some count realised profit only; others include open profit at the moment of measurement. A trader who closes a position at 23:55 on a server whose day rolls at midnight has a different best-day share from one whose position is closed at 00:05, even though the trade is the same.</p>
+<p>The denominator matters as much as the numerator. If the rule is applied at payout, the denominator is the total profit accumulated to that point, which grows over time and makes the rule easier to satisfy with each additional week. If the rule is applied during the evaluation, the denominator is the profit to date, which is small early and makes an early large day disproportionately costly.</p>
+<p>There are also consistency rules that are not called consistency rules: a cap on the share of profit from one instrument, a requirement that no single trade exceed a percentage of the target, or a rule that the largest winning day must be below a multiple of the average. Each behaves like a consistency test, and each belongs in the same review.</p>
+<p>The first practical step is therefore linguistic. Ask the firm, in writing, which of those definitions applies, whether the test is at evaluation or payout, and what the consequence of a breach is: a refused payout, a reduced payout, a requirement to keep trading, or a reset. A “no consistency rule” claim that turns out to be a cap on one instrument is not a contradiction; it is a different clause with a similar effect.</p>
+
+<h2 id="arithmetic">The arithmetic of a best-day cap</h2>
+<p>Suppose a trader makes $10,000 over an evaluation, and $4,500 of it arrives on a single Tuesday. The best-day share is 45%. Under a 50% cap the evaluation is consistent; under a 40% cap it is not. The same profit, from the same trades, produces a different outcome depending on a number the trader may not have read.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Best day</th><th>Total profit</th><th>Best-day share</th><th>Passes 40% cap?</th><th>Passes 50% cap?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$1,500</td><td>$10,000</td><td>15%</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>$3,000</td><td>$10,000</td><td>30%</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>$4,000</td><td>$10,000</td><td>40%</td><td>Borderline</td><td>Yes</td></tr>
+      <tr><td>$4,500</td><td>$10,000</td><td>45%</td><td>No</td><td>Yes</td></tr>
+      <tr><td>$5,500</td><td>$10,000</td><td>55%</td><td>No</td><td>No</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The table explains why the rule punishes exactly the traders it is designed to catch: the ones who take a single oversized position and let it run. A method that produces a smooth series of small gains rarely approaches the cap. A method built around one high-conviction trade a week can breach it while being perfectly profitable.</p>
+<p>The cost of a breach is not always a refusal. Some firms allow the trader to continue until the best-day share falls below the threshold, which converts the rule into a requirement to keep trading. That is a hidden cost: more trades, more spread, more rule exposure, and more time before the payout. The effective fee for a lumpy method is therefore higher than the sticker price.</p>
+<p>A trader can also satisfy the rule by reducing the size of the best day. If the Tuesday trade would have produced $4,500 at full size, taking half the position produces $2,250 and a 22.5% share at the same total profit, assuming the rest of the month is unchanged. That is a real cost in expected profit, and it should be compared with the cost of choosing a firm without the rule.</p>
+<p>The comparison is usually favourable to the no-rule firm for lumpy methods and neutral for smooth ones. A smooth method pays nothing for the rule because it never approaches the threshold. A lumpy method pays either in reduced size or in a longer path to payout, and both are more expensive than a slightly higher fee at a firm that does not apply the test.</p>
+
+<h2 id="where">Where the rule bites: evaluation or payout</h2>
+<p>At the evaluation stage, the rule constrains the strategy. A trader who would normally take a large position after a run of losses has to decide whether the resulting day would breach the cap. That changes the risk plan, not just the payout. The rule becomes part of position sizing.</p>
+<p>At the payout stage, the rule constrains the value of the pass. A trader can complete the evaluation legitimately, receive the funded account, and then discover that the first withdrawal is capped because one day produced too much of the profit. The account is real; the cash is smaller or later than expected.</p>
+<p>Some firms apply the test only to the first payout, some to every payout, and some only when the payout exceeds a threshold. The distinction changes the arithmetic of a long-term funded account: a rule that applies once is a one-off cost, while a rule that applies every month is a permanent constraint on the method.</p>
+<p>The practical response is to ask for the clause in writing and to read it as a formula rather than as a sentence. Which days are counted, from which account, over which period, and what happens to profit above the cap. A firm that cannot answer those four questions has not explained its own rule.</p>
+<p>There is a second-order effect worth noting. A trader who knows the rule exists may trade more conservatively during the evaluation and then increase size on the funded account, where the rule no longer applies. That is rational, but it means the evaluation does not test the method that will actually be used, which reduces the information value of the pass.</p>
+
+<h2 id="why">Why firms use the rule</h2>
+<p>The rule exists because a funded account is a liability to the firm, and a trader who makes a year’s profit in one day is a different risk from one who makes it over a year. A single oversized win can indicate a position that was never sized for the account, and the firm does not want to fund the next version of that trade.</p>
+<p>There is also a commercial motive that is rarely stated. A consistency rule gives the firm a reason to slow a payout without accusing the trader of breaching a loss limit. The trader has not lost money; the profit is simply too concentrated. That makes the rule a softer instrument than a hard breach, which is why it appears more often at the payout stage than during the evaluation.</p>
+<p>For the trader, the practical consequence is that the rule is a term of the contract, not a moral judgement. A method that produces lumpy results is not wrong; it is simply a poor match for a plan with a best-day cap. The correct response is to choose a plan without the cap, or to accept the cost of trading smaller, rather than to argue about the rule after the fact.</p>
+<p>It is also worth separating the rule from the firm’s other payout conditions. A minimum number of trading days, a minimum withdrawal and a verification step can each delay a payout independently of consistency. A trader who has satisfied the consistency test can still wait, and the total wait is what determines the return on the attempt.</p>
+
+<h2 id="test">How to test your own distribution</h2>
+<p>Before choosing a firm, calculate the best-day share of your last three months of trading. Use the same definition the firm uses: server-day profit divided by total profit over the period. If the share is consistently below 25%, the rule is unlikely to bind and you can choose on other criteria. If it is above 35%, the rule is a live constraint and the firm list should be filtered accordingly.</p>
+<p>Run the test on a losing month as well. The rule is usually applied to profit, so a month with a small total profit and one large day produces a high share even if the dollar amount is modest. A trader who has a $2,000 month with a $900 day is at 45%, which fails a 40% cap despite the month being unremarkable.</p>
+<p>The test should also be run on the trade log rather than on memory. Traders remember the big day and forget the distribution, and the big day is exactly what the rule measures. A spreadsheet with the daily profit column and a running total is enough; the ratio is the maximum daily profit divided by the total.</p>
+<p>Finally, test the method under a size constraint. If the rule would force the best day to be halved, does the method still reach the target in the same time? If not, the rule is not a footnote; it is a different strategy, and the firm that applies it is the wrong choice regardless of the fee.</p>
+
 <h2 id="table">The shortlist at a glance</h2>
+<p>The table lists ten firms whose plans are worth comparing when the consistency question is central. The consistency column is not shown because the rule is plan-specific at most firms; the sections below describe how each firm’s plans treat it and what to ask before buying.</p>
 <div class="table-scroll">
   <table>
     <thead>
@@ -85,47 +127,85 @@ generator: content-system
     </tbody>
   </table>
 </div>
-<p>A table cannot show the interaction between rows. A firm with a static floor and a monthly subscription is cheap for a fast trader and expensive for a slow one; a firm with a trailing floor and a one-off fee is the reverse. Read the table as a set of questions to ask about your own timeline, not as a final ordering.</p>
-<h2 id="firm-e8">E8 Markets: Static drawdown options suit position-holding strategies</h2>
-<p>E8 Markets is a forex and CFD evaluator with a one-step and two-phase evaluations and a static loss floor. Its strongest feature is static drawdown options suit position-holding strategies, and its main caution is plan-level differences are easy to miss. It suits forex traders who want a static loss floor and a choice of evaluation length.</p>
-<p>On this list it ranks where it does because of rulebook fit for the stated style. A trader who values one-step plans shorten the path to a funded account will weight it higher; a trader who cannot tolerate one-step plans typically carry a tighter loss limit will weight it lower. Both are legitimate readings of the same facts.</p>
+<p>The table cannot show the interaction between rows. A firm with a static floor and a monthly subscription is cheap for a fast trader and expensive for a slow one; a firm with a trailing floor and a one-off fee is the reverse. Read the table as a set of questions to ask about your own timeline, not as a final ordering.</p>
+<p>The list deliberately mixes markets. A futures evaluation and a forex evaluation are not substitutes, so a single ranking across both is only meaningful if the reader filters by the market they can actually trade. Use the market column as a hard filter before reading the rank.</p>
 
-<p>FTMO is a forex and CFD evaluator with a two-phase evaluation followed by a verification phase and a static loss floor. Its strongest feature is static maximum loss means progress never moves the failure point closer, and its main caution is daily loss is measured on equity, so open positions count against it. It suits traders who want the most conventional percentage-based evaluation available.</p>
-<p>On this list it ranks where it does because of rulebook fit for the stated style. A trader who values deep platform coverage and a familiar percentage rulebook will weight it higher; a trader who cannot tolerate the verification phase resets the clock even after a clean first phase will weight it lower. Both are legitimate readings of the same facts.</p>
+<h2 id="firm-e8">E8 Markets</h2>
+<p>E8 Markets is a forex and CFD evaluator with one-step and two-phase plans and a static loss floor. The static floor is the feature that makes it easy to size against, and the choice of evaluation length lets a trader pick between speed and a wider allowance.</p>
+<p>On the consistency question, the relevant point is plan-level. The firm sells more than one structure, and the payout conditions can differ between them. A trader who wants to avoid a best-day cap should ask which plans apply one, at which stage, and with what threshold, rather than relying on a brand-level statement.</p>
+<p>The caution is that plan-level differences are easy to miss. The one-step plans typically carry a tighter loss limit, which raises the probability of a retry, and the retry cost belongs in the comparison alongside the consistency question.</p>
 
-<p>Funding Pips is a forex and CFD evaluator with a two-phase evaluation with a static loss floor and a static loss floor. Its strongest feature is static loss floor keeps the failure point fixed, and its main caution is less model choice than multi-plan competitors. It suits forex traders who want the simplest static two-phase rulebook.</p>
-<p>On this list it ranks where it does because of rulebook fit for the stated style. A trader who values low entry price for a first attempt will weight it higher; a trader who cannot tolerate static floor still requires a hard stop per trade will weight it lower. Both are legitimate readings of the same facts.</p>
+<h2 id="firm-ftmo">FTMO</h2>
+<p>FTMO runs a two-phase evaluation followed by a verification stage, with a static maximum loss and an equity-based daily loss limit. It is the most widely documented rulebook in the retail market, which is an advantage for a trader who wants to know exactly what the terms mean before buying.</p>
+<p>The static floor means progress does not move the failure point closer, so a trader can hold a position through a retracement without the account failing at a higher level. The daily loss measured on equity is the counterweight: open positions count against the daily limit, which ends a session earlier than many traders expect.</p>
+<p>On consistency, the firm publishes its payout conditions and applies them at the payout stage on the plans reviewed here. A trader with a lumpy method should read the clause for the exact account type and confirm whether the first payout carries a different test from later ones.</p>
 
-<p>Topstep is a futures evaluator with a Combine evaluation followed by a funded Trading Combine account and a trailing loss floor. Its strongest feature is daily stop caps the damage of a single bad session, and its main caution is minimum session count slows a fast pass. It suits futures traders who want a session-based rulebook with a hard daily stop.</p>
-<p>On this list it ranks where it does because of rulebook fit for the stated style. A trader who values clear educational path and a proprietary platform will weight it higher; a trader who cannot tolerate best-day expectation can reduce a payout after one outsized day will weight it lower. Both are legitimate readings of the same facts.</p>
-<h2 id="firm-ftuk">FTUK: One-off billing removes calendar pressure</h2>
-<p>FTUK is a futures evaluator with a evaluation with a trailing threshold and a trailing loss floor. Its strongest feature is one-off billing removes calendar pressure, and its main caution is trailing threshold still punishes a give-back. It suits futures traders who prefer paying once instead of monthly.</p>
-<p>On this list it ranks where it does because of rulebook fit for the stated style. A trader who values futures account ladder with several sizes will weight it higher; a trader who cannot tolerate one-off fee is lost on a failed attempt will weight it lower. Both are legitimate readings of the same facts.</p>
-<h2 id="firm-lucid">Lucid Trading: Simple account ladder</h2>
-<p>Lucid Trading is a futures evaluator with a evaluation with a trailing threshold and a trailing loss floor. Its strongest feature is simple account ladder, and its main caution is trailing drawdown limits give-back tolerance. It suits futures traders choosing between trailing-threshold subscriptions.</p>
-<p>On this list it ranks where it does because of rulebook fit for the stated style. A trader who values tradingview execution available will weight it higher; a trader who cannot tolerate subscription cost accumulates will weight it lower. Both are legitimate readings of the same facts.</p>
-<h2 id="firm-fxify">FXIFY: One-step and two-phase options</h2>
-<p>FXIFY is a forex and CFD evaluator with a one-step and two-phase evaluations and a trailing loss floor. Its strongest feature is one-step and two-phase options, and its main caution is one-step plans compress the loss allowance. It suits forex traders who want a fast one-step path with a known trade-off.</p>
-<p>On this list it ranks where it does because of rulebook fit for the stated style. A trader who values several account sizes will weight it higher; a trader who cannot tolerate plan-level rule differences will weight it lower. Both are legitimate readings of the same facts.</p>
-<h2 id="firm-alphafutures">Alpha Futures: Modern platform access</h2>
-<p>Alpha Futures is a futures evaluator with a evaluation with a trailing threshold and a trailing loss floor. Its strongest feature is modern platform access, and its main caution is trailing threshold. It suits futures traders comparing trailing-threshold subscriptions.</p>
-<p>On this list it ranks where it does because of rulebook fit for the stated style. A trader who values simple account ladder will weight it higher; a trader who cannot tolerate subscription cost will weight it lower. Both are legitimate readings of the same facts.</p>
+<h2 id="firm-fundingpips">Funding Pips</h2>
+<p>Funding Pips sells a two-phase evaluation with a static loss floor, priced toward the lower end of the market. The structure is simple: a target, a static floor, a one-off fee, and a payout schedule. For a trader whose main concern is the consistency rule, the simplicity is useful because there are fewer clauses to reconcile.</p>
+<p>The static floor keeps the failure point fixed, which makes the risk plan legible. The caution is model choice: the firm offers fewer structures than multi-plan competitors, so a trader who wants a one-step path or a very large account may need to look elsewhere.</p>
+<p>Ask specifically whether the payout carries a best-day test on the plan being bought. The answer can differ between plan generations, and the cheapest visible plan is sometimes the older one with different payout terms.</p>
+
+<h2 id="firm-topstep">Topstep</h2>
+<p>Topstep is a futures evaluator built around the Trading Combine, with a trailing loss floor and a monthly subscription. The daily stop is the defining rule: it caps the damage of a single bad session, which suits a futures method with tight risk control and punishes one that needs room to recover intraday.</p>
+<p>The trailing floor is the mechanic to understand before buying. It rises with the equity high, so open profit can raise the failure point even before it is banked. A trader who gives back gains is charged for the give-back, and the risk unit should shrink as the account grows.</p>
+<p>On consistency, futures firms often apply a best-day expectation at payout rather than during the evaluation. Topstep publishes its payout conditions, and the plan page should be read for the exact account size. A trader with one outsized day a month should model the share before choosing the Combine size.</p>
+
+<h2 id="firm-ftuk">FTUK</h2>
+<p>FTUK is a futures evaluator with a trailing threshold and one-off billing. The one-off fee removes the calendar pressure of a subscription: a slow attempt does not accumulate charges, which suits a trader who expects to take longer than a month.</p>
+<p>The trailing threshold still punishes a give-back, so the method has to be compatible with a moving failure point. A trader who takes profit at a fixed target is barely affected; one who trails a stop behind price is affected on every winner.</p>
+<p>The consistency question should be asked at the payout stage. A futures payout condition can be phrased as a best-day expectation rather than a consistency rule, and the effect is the same. Confirm the threshold and the consequence of a breach before buying.</p>
+
+<h2 id="firm-lucid">Lucid Trading</h2>
+<p>Lucid Trading offers a simple ladder of futures accounts with a trailing threshold and a monthly subscription. The ladder makes it easy to start small and scale, and the subscription means the cost of a slow pass rises with the calendar rather than with the number of attempts.</p>
+<p>The trailing drawdown limits give-back tolerance, which is the main constraint for a futures method that holds through retracements. The rule should be read as a limit on open profit as well as on losses, because the failure point follows the high.</p>
+<p>On consistency, the payout terms for the exact account size decide whether a best-day test applies. Ask for the clause and the threshold rather than assuming that a subscription model implies a particular payout condition.</p>
+
+<h2 id="firm-fxify">FXIFY</h2>
+<p>FXIFY sells one-step and two-phase forex evaluations with a trailing loss floor and one-off billing. The one-step plan is the fast path, and the trailing floor is the trade-off: speed in exchange for a failure point that follows the equity high.</p>
+<p>One-step plans compress the loss allowance, so the same risk unit produces a higher probability of breach. That makes the expected number of purchases higher, and the fee comparison has to include the retries rather than the sticker price alone.</p>
+<p>On consistency, the plan-level rules decide. A trader who wants to avoid a best-day cap should confirm it for the exact plan, because the one-step and two-phase products can carry different payout conditions.</p>
+
+<h2 id="firm-alphafutures">Alpha Futures</h2>
+<p>Alpha Futures is a futures evaluator with a trailing threshold and a monthly subscription, aimed at traders who want modern platform access. The subscription suits a trader who expects to pass quickly and penalises one who does not.</p>
+<p>The trailing threshold is the defining mechanic. A trader who builds a cushion early has more room later, while a trader who starts slowly has less. That favours methods with a strong opening week over methods that grind out gains.</p>
+<p>On consistency, the payout conditions should be read for the exact account size and platform. A futures payout test can be expressed as a best-day share, and a trader with a lumpy method should model the ratio before buying.</p>
+
+<h2 id="firm-leveledup">Leveled Up Society</h2>
+<p>Leveled Up Society offers a conventional static-floor evaluation with tiered accounts and a community attached. The static floor is the main attraction for a trader who wants a fixed failure point, and the tiers let a trader start at a smaller size.</p>
+<p>The community is not a risk-management system. It can shorten the learning curve on the platform, but it can also encourage larger positions and shorter holds, which is the opposite of what a marginal method needs.</p>
+<p>On consistency, the plan-level payout conditions decide. Ask which plans apply a best-day test, at which stage, and what the threshold is. The answer should be in writing before the fee is paid.</p>
+
+<h2 id="firm-tradingpit">The Trading Pit</h2>
+<p>The Trading Pit is a multi-asset firm that sells allocation-style programmes as well as conventional challenges. The structure is different from a checkout challenge: the relationship can involve a longer onboarding and a different payout rhythm.</p>
+<p>Because the programmes vary, the consistency rule has to be checked per programme rather than per brand. A plan that applies a best-day test at payout behaves differently from one that applies it during the evaluation, even when the threshold is the same.</p>
+<p>The caution is complexity. A multi-programme firm offers more choices, and each choice carries its own terms. A trader who wants a simple answer to the consistency question should compare the specific programme documents rather than the summary page.</p>
+
 <h2 id="choose">How to choose between them</h2>
 <p>Start with the market you can trade in the hours you are available. That single filter usually removes half the list. Then choose the loss-floor mechanic that matches your holding period: static for strategies that endure retracements, trailing for strategies that take profit quickly and re-enter. Then compare billing against your expected timeline.</p>
-<p>Only after those three filters should price enter the decision. A $50 difference in entry fee is noise compared with the difference between passing on the second attempt and the fifth. The total cost across attempts is the number to compare, and it depends on the rulebook fit more than on the checkout price.</p>
+<p>Only after those three filters should price enter the decision. A $50 difference in entry fee is noise compared with the difference between passing on the second attempt and the fifth. The total cost across attempts is the number to compare, and it depends on rulebook fit more than on the checkout price.</p>
+<p>The consistency question cuts across all three filters. A firm that fits on market, floor and billing but applies a 30% best-day cap to a lumpy method is not a fit, however cheap it is. A firm that fits on the first three and has no cap at payout is worth a premium.</p>
 <p>Finally, verify the terms for the exact plan you are buying. Every firm on this list publishes its schedule, and every schedule can change between cohorts. A dated screenshot of the terms page is the only record that will resolve a dispute about what applied on the day of purchase.</p>
 
+<h2 id="checklist">What to confirm before buying</h2>
+<p>Confirm whether the consistency rule applies during the evaluation, at payout, or both. The stage determines whether the rule changes the strategy or the value of the pass.</p>
+<p>Confirm the threshold and the definition of a day. A 30% cap measured on server-day realised profit is a different rule from a 40% cap measured on a rolling 24-hour window.</p>
+<p>Confirm the consequence of a breach: a refused payout, a reduced payout, a requirement to keep trading, or a reset. The consequence is the cost, and it is rarely on the pricing page.</p>
+<p>Confirm whether the rule applies to the first payout only or to every payout. A one-off test is a cost of entry; a recurring test is a permanent constraint on the funded account.</p>
+<p>Confirm the loss floor, the daily stop and the billing rhythm for the same plan. A consistency rule is one constraint among several, and the cheapest plan is not the cheapest attempt if the floor or the billing works against the method.</p>
+<p>Save the terms page as a dated file and keep the provider’s written answers with it. Rules change, and the version that applied on the purchase date is the one that matters.</p>
 
+<h2 id="faq">Common questions</h2>
+<details class="faq"><summary>Which prop firms have no consistency rule?</summary><div class="faq-a"><p>It varies by plan rather than by firm. Several firms on this list publish plans without a best-day cap, but the same brand can apply one to a different plan or at payout. Confirm the clause for the exact plan and stage before buying.</p></div></details>
 
+<details class="faq"><summary>Is a consistency rule assessed during the evaluation or at payout?</summary><div class="faq-a"><p>Both patterns exist. A rule applied during the evaluation constrains position sizing; a rule applied at payout constrains the value of the withdrawal. The clause should say which one applies.</p></div></details>
 
+<details class="faq"><summary>What is a typical consistency threshold?</summary><div class="faq-a"><p>Most rules cap the best day at 30% to 50% of total profit. The exact number matters less than the definition of a day and the consequence of a breach.</p></div></details>
 
+<details class="faq"><summary>Can I avoid the rule by trading smaller?</summary><div class="faq-a"><p>Sometimes. Reducing the size of the best day lowers its share, but it also lowers expected profit and may lengthen the path to the target. Compare that cost with the fee at a firm without the rule.</p></div></details>
 
+<details class="faq"><summary>Does the rule apply to futures and forex the same way?</summary><div class="faq-a"><p>No. Futures firms often express the test as a best-day expectation at payout, while forex firms may apply a percentage cap during the evaluation. Read the plan’s own wording rather than a generic explanation.</p></div></details>
 
-
-
-
-
-
+<p>If the terms check is the part you would rather not run, the <a href="/contact.html">evaluation service</a> trades a single attempt for a flat fee with retries covered, and the <a href="/passed-challenges.html">passed challenges</a> page shows the certificates that came out of it. For a wider comparison by rulebook rather than price, start with the <a href="/reviews/best-prop-firm-passing-service-2026.html">2026 review of passing services</a>.</p>
 
   </div>
 </section>
@@ -134,7 +214,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Any firm on this list, traded for you</h2>
-      
+      <p>One flat <strong>$220</strong> for any account size, retries covered, no profit split. We read the consistency clause for the exact plan before accepting the job.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -146,13 +226,12 @@ generator: content-system
     <ul class="link-list">
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
-      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/prop-firm-payout-rejected.html">Why a payout gets rejected</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html">Trailing versus static drawdown</a></li>
+      <li><a href="/blog/prop-firm-minimum-trading-days.html">Minimum trading days</a></li>
+      <li><a href="/blog/cheapest-prop-firm-challenges.html">Cheapest challenges by account size and phase</a></li>
     </ul>
     <p class="disclaimer">E8 Markets and FTMO and Funding Pips are named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>

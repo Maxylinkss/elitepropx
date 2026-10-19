@@ -27,25 +27,36 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>AquaFunded evaluates forex and CFD accounts on a one-step and two-phase evaluations.</li>
-  <li>The loss floor is static and trailing variants by plan; the daily stop is yes.</li>
-  <li>Billing is one-off per attempt and payouts follow profit split on a fixed schedule.</li>
-  <li>Best fit: forex traders comparing one-step and two-phase pricing under one brand.</li>
-  <li>Main caution: drawdown style changes between plans.</li>
+  <li>The plan menu matters more than the brand: one-step and two-phase plans carry different floors and allowances.</li>
+  <li>Where the floor trails, open profit raises the failure point and a give-back is charged against the account.</li>
+  <li>One-off billing per attempt makes a slow pass cheaper than a subscription would.</li>
+  <li>One-step plans are faster but usually leave less room for a normal losing streak.</li>
+  <li>Payout terms vary by plan, so the split and the cycle have to be read together.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
   <li><a href="#verdict">The short verdict on AquaFunded</a></li>
-  <li><a href="#rulebook">How the AquaFunded rulebook is built</a></li>
+  <li><a href="#menu">The plan menu is the product</a></li>
+  <li><a href="#trailing">What a trailing floor does to sizing</a></li>
+  <li><a href="#onestep">The real cost of a one-step plan</a></li>
+  <li><a href="#daily">Daily stop and consistency</a></li>
+  <li><a href="#payouts">Payout terms by plan</a></li>
+  <li><a href="#platform">Platforms and execution</a></li>
   <li><a href="#strengths">What AquaFunded does well</a></li>
   <li><a href="#cautions">Where AquaFunded is weaker</a></li>
-  <li><a href="#bottom-line">Bottom line</a></li>
+  <li><a href="#fit">Who should consider it</a></li>
+  <li><a href="#worked">A worked attempt on the two-phase plan</a></li>
+  <li><a href="#resets">The reset economy</a></li>
+  <li><a href="#extras">Costs the fee does not include</a></li>
+  <li><a href="#checklist">What to confirm before buying</a></li>
+  <li><a href="#faq">Common questions</a></li>
 </ol>
 </div>
+
 <h2 id="verdict">The short verdict on AquaFunded</h2>
-<p>AquaFunded is a forex and CFD evaluator built on a one-step and two-phase evaluations, with a trailing loss floor, a daily stop and one-off per attempt billing. The product is a reasonable fit for forex traders comparing one-step and two-phase pricing under one brand. It is a poor fit for a trader whose strategy needs the opposite drawdown mechanic, or whose budget cannot absorb the billing rhythm across several attempts.</p>
+<p>AquaFunded is a forex and CFD evaluator that sells both one-step and two-phase evaluations under one brand. The loss floor changes between plans, with static and trailing variants, and billing is one-off per attempt. The product fits a trader who wants a choice of evaluation length and is willing to read the plan-level rules rather than the brand summary.</p>
 <div class="table-scroll">
   <table>
     <thead>
@@ -57,77 +68,135 @@ generator: content-system
       <tr><td>What is the biggest caution?</td><td>Drawdown style changes between plans</td></tr>
       <tr><td>How is it billed?</td><td>one-off per attempt</td></tr>
       <tr><td>How does it pay?</td><td>profit split on a fixed schedule</td></tr>
+      <tr><td>Platforms</td><td>MT4, MT5, cTrader</td></tr>
     </tbody>
   </table>
 </div>
-<p>The review below separates the three things traders usually blend together: the rulebook, the commercial terms and the operational experience. A firm can be strong on one and weak on another, and the weighting depends on what you are buying. A trader who intends to pass once and withdraw immediately cares most about the payout clause; a trader who intends to run several accounts cares about the dashboard, support and reset policy.</p>
-<h2 id="rulebook">How the AquaFunded rulebook is built</h2>
-<p>The <strong>AquaFunded</strong> evaluation is best understood as a set of constraints that interact, not as a headline profit target with some footnotes. The target decides how much you have to make. The loss floor decides how much room you have to make it. The daily stop, if there is one, decides how quickly a bad session ends. The minimum-day rule decides how long the attempt takes even when the target is reached early. Change any one of those and the same trading strategy produces a different outcome.</p>
-<p>For AquaFunded, the published structure is a one-step and two-phase evaluations. The loss floor is static and trailing variants by plan, the daily stop is yes, and the consistency condition is plan-specific. Billing is one-off per attempt, payouts follow profit split on a fixed schedule, and the supported platforms are MT4, MT5, cTrader. Those are the rows that matter. Marketing pages tend to foreground the profit target and the profit split because both are easy to compare; neither tells you whether a given trade is survivable.</p>
+<p>The review below separates the three things traders usually blend together: the rulebook, the commercial terms and the operational experience. A firm can be strong on one and weak on another, and the weighting depends on what the buyer is actually purchasing. A trader who intends to pass once and withdraw immediately cares most about the payout clause; a trader who intends to run several accounts cares about the dashboard, support and reset policy.</p>
+
+<h2 id="menu">The plan menu is the product</h2>
+<p>AquaFunded does not sell a single evaluation. It sells a menu of one-step and two-phase plans, and the floor style changes between them. Some plans use a static floor; others use a trailing variant. That makes the plan name the most important line in this review, because two plans from the same firm can produce different outcomes from the same trade sequence.</p>
+<p>A one-step plan compresses the path to a funded account into a single phase. It removes the second target and the second set of minimum days, which is attractive to a trader who wants the account quickly. The compression is usually paid for with a tighter loss allowance, because the firm has less time to observe the trader and takes more risk on a fast pass.</p>
+<p>A two-phase plan spreads the target across two stages. The first phase is often the harder one; the second is a shorter confirmation. The structure gives a trader room to recover from a slow start and usually carries a wider allowance. The cost is calendar time and, on some plans, an additional consistency condition.</p>
+<p>The practical consequence is that comparing the cheapest AquaFunded plan with a competitor's standard plan is not a like-for-like comparison. The buyer has to fix the structure first, then compare. A trader who wants a static floor should filter the menu to the static plans before looking at price; a trader who wants speed should accept the tighter allowance and price the retries it produces.</p>
+
+<h2 id="trailing">What a trailing floor does to sizing</h2>
+<p>A trailing floor follows the equity high and raises the failure point as profit accrues. On a $100,000 account with a 6% trailing floor, the account fails at $94,000 at the start. After a $4,000 gain, the failure point moves to $98,000, leaving $2,000 of room from the new high rather than $6,000. A trader who gives back $2,500 of the gain fails while still $1,500 up on the starting balance.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Parameter</th><th>AquaFunded — published shape</th></tr>
+      <tr><th>Point in the attempt</th><th>Equity</th><th>Static 6% floor</th><th>Trailing 6% floor</th><th>Room left (trailing)</th></tr>
     </thead>
     <tbody>
-      <tr><td>Market</td><td>forex and CFD</td></tr>
-      <tr><td>Evaluation model</td><td>one-step and two-phase evaluations</td></tr>
-      <tr><td>Loss floor</td><td>static and trailing variants by plan</td></tr>
-      <tr><td>Daily stop</td><td>yes</td></tr>
-      <tr><td>Consistency test</td><td>plan-specific</td></tr>
-      <tr><td>Minimum trading days</td><td>undefined</td></tr>
-      <tr><td>Billing rhythm</td><td>one-off per attempt</td></tr>
-      <tr><td>Payout rhythm</td><td>profit split on a fixed schedule</td></tr>
-      <tr><td>Platforms</td><td>MT4, MT5, cTrader</td></tr>
-      <tr><td>Session</td><td>weekday forex hours</td></tr>
+      <tr><td>Start</td><td>$100,000</td><td>$94,000</td><td>$94,000</td><td>$6,000</td></tr>
+      <tr><td>After a $2,000 gain</td><td>$102,000</td><td>$94,000</td><td>$96,000</td><td>$6,000</td></tr>
+      <tr><td>After a $4,000 gain</td><td>$104,000</td><td>$94,000</td><td>$98,000</td><td>$6,000</td></tr>
+      <tr><td>After a $2,500 give-back</td><td>$101,500</td><td>$94,000</td><td>$98,000</td><td>Breached</td></tr>
     </tbody>
   </table>
 </div>
+<p>The table shows why the mechanic, not the fee, decides fit. A method that closes at a fixed target and does not let positions run gives back little, so the trailing floor rarely binds. A method that scales out over a range, or trails a stop behind price, gives back part of every winner, and the floor charges for that behaviour on each trade.</p>
+<p>Position sizing follows from the same logic. On a static floor, the risk unit can stay constant because the distance to failure does not shrink. On a trailing floor, the risk unit has to shrink as equity rises, or the number of losses the account can absorb falls with every gain. A trader who keeps the same unit after a 4% gain has halved the effective buffer.</p>
+<p>There is a second-order effect that is easy to miss. A trailing floor makes the early part of an attempt more valuable than the late part, because room is widest at the start. A method that needs a strong opening week to build a cushion fits the mechanic better than one that grinds out small gains over months. That is a strategy observation, not a criticism of the product, but it changes which trader should buy it.</p>
+
+<h2 id="onestep">The real cost of a one-step plan</h2>
+<p>A one-step plan removes a phase but usually compresses the loss allowance. On a $100,000 account, a 6% floor leaves $6,000 of room; a 10% two-phase floor leaves $10,000. At a $500 risk unit, the difference is eight losses: twelve on the one-step plan against twenty on the two-phase plan. If the one-step plan also trails, a gain reduces the room further.</p>
+<p>The fee is one-off per attempt, so the faster plan is not automatically cheaper across a year. A tighter floor can cause more retries, and each retry is a full fee. A trader who expects two attempts on the one-step plan and one on the two-phase plan should compare two fees against one, not the sticker prices.</p>
+<p>Work the expectation. Suppose the one-step plan has a 40% pass probability for a given method and the two-phase plan has 55%. The expected number of attempts is 2.5 and 1.82 respectively. At the same fee, the two-phase plan costs 27% less per funded account. At a 20% lower fee, the one-step plan is roughly at parity. The discount has to be large to compensate for a fifteen-point difference in pass probability.</p>
+<p>That is the arithmetic a buyer should run before choosing speed. A faster plan is worth a premium when the calendar has value, for example when the trader needs the funded account before a known date. It is not worth a premium when the only objective is a funded account eventually, because the slower plan produces it with fewer purchases.</p>
+<p>The other cost of speed is the risk unit. To reach a single target in the same time as a two-phase target, the one-step trader either takes more trades or larger positions. Both raise the probability of breaching the floor. The fee may be lower, but the expected number of purchases is not, and the compounding of those two effects is what makes one-step plans expensive for marginal methods.</p>
+
+<h2 id="daily">Daily stop and consistency</h2>
+<p>The daily stop is present on the plans reviewed here, and its basis matters. An equity-based stop counts open positions, so an intraday drawdown on a position that later recovers can still end the session. A balance-based stop does not. For a trader holding several positions at once, the difference between the two definitions is larger than the difference between two fee levels.</p>
+<p>A daily stop also changes the shape of a losing streak. Without one, a bad day can be absorbed across the week as long as the overall floor is intact. With one, a cluster of losses ends the session and the attempt continues the next day, which is usually the better outcome for a method with positive expectancy and clustered losses. The stop is protective when it is set at a level the method rarely reaches, and destructive when it is set inside the method's normal variance.</p>
+<p>The consistency condition is plan-specific. Where it applies during the evaluation, it constrains the size of the best day; where it applies at payout, it constrains the value of the pass. A plan that applies it at payout can leave a profitable evaluation paying less than expected, which is a cost that does not appear in any fee comparison.</p>
+<p>Before buying, establish three things: whether the daily stop is measured on equity or balance, whether the consistency condition applies during the evaluation or at payout, and whether either rule changes between the one-step and two-phase plans. The answers decide the strategy more than the target does.</p>
+
+<h2 id="payouts">Payout terms by plan</h2>
+<p>Payouts follow a profit split on a fixed schedule. The split percentage is the headline, but the schedule and the conditions are the operative numbers. A high split paid after a long cycle is worth less to a trader who needs cash in a month than a slightly lower split paid sooner.</p>
+<p>Before the first withdrawal, most plans impose a further condition: a minimum number of active days, a floor on the withdrawal amount, or a waiting period after the funded account is issued. Each one shifts the cash later without changing the fee, and a three-month delay is a cost that a fee comparison will never show. The clause should be read as a date, not as a percentage.</p>
+<p>The terms vary by plan, which is the caution. A one-step plan may carry a different payout cycle from a two-phase plan, and the split may be applied before or after commissions. The plan page is the definition, and the version that applied on the purchase date is the one that matters.</p>
+<p>Read the payout clause with two questions in mind. First, what has to be true for a withdrawal to be approved: a minimum number of trading days, a consistency test, a verification step, a minimum amount. Second, how long the approval and payment take once those conditions are met. The answers determine the real return on the attempt, and they are not always on the same page as the price.</p>
+
+<h2 id="platform">Platforms and execution</h2>
+<p>AquaFunded lists MT4, MT5 and cTrader, which covers most retail workflows. The choice matters for execution: cTrader and MT5 handle different order types and different charting, and a method built around one platform may not translate cleanly to another. A trader who depends on a specific order type should confirm it is available on the evaluation account, not just on the platform's marketing page.</p>
+<p>Execution quality is the part that cannot be judged from a specification sheet. The spread quoted on a landing page is an average; a method lives in the moments when the average is wrong. Test the platform during the session the method actually trades, ideally on a demo configured like the evaluation, and record the realised spread on twenty or thirty entries.</p>
+<p>The platform list also affects automation. MT4 and MT5 support expert advisors, cTrader supports cBots, and the firm's rules on automation may differ by plan. A trader who intends to automate should confirm the rule for the exact plan before buying, because a prohibited bot is a breach regardless of its performance.</p>
+<p>Finally, confirm the instrument list. A method that trades crosses, metals or indices needs those instruments available on the evaluation, and the spread on them can be wider than on the majors. Contract specifications belong in the pre-purchase check alongside the floor and the fee.</p>
 
 <h2 id="strengths">What AquaFunded does well</h2>
-<p>The strengths are structural rather than promotional. Choice between one-step and two-phase structures. Multiple platform options. Plan-level transparency. Those are the features that show up in the trading experience, not just on the comparison table.</p>
+<p>The strongest feature is the choice of structure. A trader who wants a fast path and a trader who wants a conventional two-phase evaluation can both find a plan under one brand, with a consistent platform and support relationship. That reduces the operational cost of switching firms as the trader's needs change.</p>
+<p>The second is the platform list. MT4, MT5 and cTrader cover the main retail workflows, so a trader is less likely to have to change platforms to take the evaluation. Familiarity reduces operational mistakes, which are a real cause of failed attempts.</p>
+<p>The third is plan-level transparency. The floor style, the target and the consistency condition are published per plan rather than blended into a brand claim. That makes the comparison work, provided the buyer reads the plan page rather than the summary.</p>
 <ul>
-  <li><strong>Choice between one-step and two-phase structures.</strong></li>
-  <li><strong>Multiple platform options.</strong></li>
-  <li><strong>Plan-level transparency.</strong></li>
+  <li><strong>One-step and two-phase structures</strong> under one brand.</li>
+  <li><strong>MT4, MT5 and cTrader</strong> access.</li>
+  <li><strong>Plan-level terms</strong> that can be compared directly.</li>
+  <li><strong>One-off per attempt billing</strong>, which does not penalise a slow pass.</li>
 </ul>
-<p>The strongest feature is usually the one that matches your own constraint. If your strategy holds positions through retracements, a static floor is worth more than a lower fee. If you need a fast pass, a one-step structure is worth more than a slightly larger profit split. If you trade a session that overlaps the firm's instrument hours, the platform list matters less than the execution quality during that session.</p>
-<p>It is worth separating a feature from a marketing claim. "No minimum days" is a feature because it changes the calendar. "Best payout in the industry" is a claim unless the payout clause defines the interval, the minimum and the consistency condition. The review weights features by whether they change a decision you will actually make during the attempt.</p>
+<p>None of those features is unique. The combination is what makes the firm a reasonable stop for a trader who is still deciding between a fast path and a conventional one and wants to compare the two within one rulebook family.</p>
+
 <h2 id="cautions">Where AquaFunded is weaker</h2>
-<p>The cautions are equally structural. Drawdown style changes between plans. One-step products carry a tighter margin for error. Payout terms vary by plan. None of them is a reason to avoid the firm automatically, but each has to be priced into the plan before the fee is paid.</p>
+<p>The main caution is the variation between plans. A trader who buys on the strength of a static floor seen on one plan can end up on a different plan with a trailing variant, and the two behave differently under the same method. The plan name, not the brand, is the unit of purchase.</p>
+<p>The one-step products carry a tighter margin for error. That is not a defect; it is the trade-off that makes the fast path possible. But it means the expected number of attempts is higher, and the fee comparison has to include the retries.</p>
+<p>Payout terms vary by plan, so the split and the cycle have to be read together. A high split with a long cycle is not necessarily better than a lower split with a shorter one, and the first-payout conditions can delay the cash further.</p>
 <ul>
-  <li><strong>Drawdown style changes between plans.</strong></li>
-  <li><strong>One-step products carry a tighter margin for error.</strong></li>
-  <li><strong>Payout terms vary by plan.</strong></li>
+  <li><strong>Drawdown style changes</strong> between plans.</li>
+  <li><strong>One-step plans</strong> carry a tighter allowance.</li>
+  <li><strong>Payout terms</strong> are plan-specific.</li>
+  <li><strong>Documentation depth</strong> is thinner than at the largest firms, so the terms page carries more weight.</li>
 </ul>
-<p>The caution that matters most is the one that interacts with your strategy. A trailing threshold is harmless for a trader who takes one trade a day and closes it before the session ends; it is decisive for a trader who holds through a retracement. A monthly subscription is harmless for a trader who expects to pass in ten days; it is expensive for one who expects to take two months.</p>
-<p>Operational cautions are harder to verify and more important over time. How quickly does support answer a mechanics question? Does the dashboard show the distance to the loss floor? Is the payout statement itemised? These are the things that decide whether a funded account is pleasant to run, and they are not visible on a sales page.</p>
+<p>The caution that matters most is the one that interacts with the trader's method. A trailing threshold is harmless for a trader who takes one trade a day and closes it before the session ends; it is decisive for a trader who holds through a retracement. A fixed payout cycle is harmless for a patient trader and costly for one who needs monthly cash.</p>
+
+<h2 id="fit">Who should consider it</h2>
+<p>AquaFunded fits a forex trader who wants a choice between one-step and two-phase structures and is willing to read the plan-level rules. It suits a trader who has a tested method and wants to compare the cost of speed against the cost of a wider allowance, because the menu makes that comparison possible within one brand.</p>
+<p>It is less suited to a trader who wants one documented rulebook across the brand, because the floor style changes between plans. A trader who needs a static floor should confirm the plan before buying; a trader who wants the fastest path may accept the tighter one-step allowance.</p>
+<p>It is also a poor fit for a method that depends on holding through retracements, unless the chosen plan is one of the static variants. A trailing floor charges for the give-back on every winner, and a method with a wide stop and a long hold will find the mechanic expensive regardless of the fee.</p>
+<p>The practical test is to write down the plan name, the balance, the floor type, the target, the daily stop, the consistency condition and the payout cycle. If those seven are known and the method fits, the fee is the least important number on the list. If any of them is unknown, the comparison is not ready.</p>
+
+<h2 id="worked">A worked attempt on the two-phase plan</h2>
+<p>Take a $50,000 two-phase plan with an 8% first-phase target, a 5% second-phase target and a 6% static floor. The first target is $4,000 and the second is $2,500. At a $250 risk unit with a 2:1 payoff, a winner contributes $500 and a loser costs $250. The first phase needs eight net winners, which at a 50% win rate is sixteen trades of expectation and a much wider range in practice.</p>
+<p>The floor allows twenty losses of $250 before the account fails, ignoring the daily stop. That sounds generous until the distribution is considered: a method with a 50% win rate will produce runs of five or six losses several times across two hundred trades, and a run of eight is not unusual. The floor is therefore adequate for the target but not enormous, and the risk unit should be set with the losing-run distribution in mind rather than with the target alone.</p>
+<p>Now add the daily stop. If it is 5% of the account, a $2,500 daily loss ends the session. At $250 per loss, that is ten losses in a day. A method taking six trades a day rarely reaches it; a method taking thirty can reach it on an ordinary bad day. The stop is protective for the first method and binding for the second, which is why the trade count belongs in the sizing decision.</p>
+<p>Then price the attempt. The fee is paid once, and the running costs are paid on every trade. At an average round-turn cost of $15 on a half-lot position and two hundred trades, the running cost is $3,000, which is larger than the target on the second phase. A trader who ignores this line is comparing the fee against a cost structure that is mostly invisible.</p>
+<p>Finally, compare the expected cost across attempts. If the first phase has a 60% pass probability and the second a 75% probability conditional on the first, the joint pass probability is 45%. The expected number of full attempts is 2.2, so the expected fee is 2.2 times the entry price, before running costs. That is the number to compare with a flat-fee service, not the sticker price on the plan page.</p>
+
+<h2 id="resets">The reset economy</h2>
+<p>A reset is a second attempt at a discount, and the discount is the whole point. A firm that sells a reset at half price changes the expected cost of failure by half, which is worth more than a small discount on the entry fee. A firm that charges full price for every attempt has no reset economy at all, and its plan should be priced as though every failure is a new purchase.</p>
+<p>The arithmetic is simple. If the pass probability is 40%, the expected number of attempts is 2.5. At full price, the expected fee is 2.5 times the entry. With a 50% reset discount on every attempt after the first, the expected fee is the first attempt plus 1.5 discounted attempts, which is 1 plus 0.75, or 1.75 times the entry. The difference is 30%, which is larger than most promotional discounts.</p>
+<p>The catch is that the reset price is not always published on the pricing page, and the terms may exclude promotional purchases from the reset discount. A trader should ask three questions before buying: does the plan offer a reset, what does it cost, and does the discount apply to purchases made during a promotion. The answers belong in the expected-cost calculation.</p>
+<p>A reset also has a time cost. A reset restarts the attempt, which restarts the minimum days and the calendar. A trader who resets twice has effectively bought a longer subscription to the same target, even on a one-off plan. That is not a reason to avoid resets, but it is a reason to price them as time rather than as money alone.</p>
+
+<h2 id="extras">Costs the fee does not include</h2>
+<p>The evaluation fee is the visible cost, and it is rarely the largest one. Commission is the first addition: a forex account may fold it into the spread, while a futures or CFD account may charge per lot or per contract. A trader taking two hundred trades at $4 per round turn pays $800, which can exceed the fee on a small plan.</p>
+<p>Spread is the second. It is charged on entry and exit whether or not the trade works, and it widens around the London open, the New York open and scheduled releases. A method with a six-pip target and a two-pip spread pays a third of its gross edge to the venue, which is why the cost schedule belongs in the comparison before the fee does.</p>
+<p>Resets are the third. Some plans sell a discounted reset, others charge a new attempt at full price. A trader who resets twice has effectively bought a subscription whether or not the plan advertises one, and the expected-cost calculation should include that line.</p>
+<p>Currency conversion is the fourth. Fees are usually quoted in dollars, and a card issued in another currency pays a conversion margin plus a possible foreign transaction fee. On a $500 purchase that can add three to five percent, which erases a small promotional discount entirely.</p>
+<p>The fifth is the cost of a missed payout condition: a consistency clause, a minimum-day requirement or a verification delay can reduce or postpone the cash without changing the fee. That cost does not appear on the pricing page, and it is the one that most often surprises a first-time buyer.</p>
+
+<h2 id="checklist">What to confirm before buying</h2>
+<p>Confirm the floor type on the exact plan. Static, intraday trailing and end-of-day trailing are different products, and the difference is larger than any discount on the page.</p>
+<p>Confirm how the daily stop is calculated. If open positions count toward the limit, an intraday dip can end the session before the trade resolves; if only closed trades count, the same dip is survivable. Read the definition, not the percentage.</p>
+<p>Confirm whether a best-day test exists and at which stage it is applied. A test applied while trading constrains size; a test applied at withdrawal constrains the cash. The two require different plans.</p>
+<p>Confirm the payout cycle, the split, the minimum withdrawal and the first-payout conditions. Those four numbers determine when the funded account produces cash.</p>
+<p>Confirm the platform and instrument list for the exact plan, and test the spread during the session the method trades. A platform the trader does not use is a cost in adaptation; a wide spread is a cost in every trade.</p>
+<p>Save the terms page as a dated file. Plans change between cohorts, and the version that applied on the purchase date is the only one that can settle a dispute later.</p>
+
+<h2 id="faq">Common questions</h2>
+<details class="faq"><summary>Does AquaFunded use static or trailing drawdown?</summary><div class="faq-a"><p>It depends on the plan. Some plans are static and others use a trailing variant. The plan page is the definition, so confirm it before comparing prices or sizing a position.</p></div></details>
+
+<details class="faq"><summary>Is the one-step plan easier than the two-phase plan?</summary><div class="faq-a"><p>It is faster but usually has a tighter loss allowance. A smaller floor leaves less room for a normal losing streak, so the faster path can produce more retries and a higher expected cost.</p></div></details>
+
+<details class="faq"><summary>Which platforms does AquaFunded support?</summary><div class="faq-a"><p>MT4, MT5 and cTrader are listed. Confirm the platform list for the exact plan, because account types can differ and automation rules may vary.</p></div></details>
+
+<details class="faq"><summary>Are payouts on demand at AquaFunded?</summary><div class="faq-a"><p>No. Payouts follow a fixed schedule on the plans reviewed here, and the first withdrawal may carry a minimum-day or seasoning condition. Compare the cycle rather than the headline split.</p></div></details>
+
+<details class="faq"><summary>Can I hold trades overnight on an AquaFunded evaluation?</summary><div class="faq-a"><p>It depends on the plan's weekend and overnight rules. Some plans restrict holding through the weekend; others permit it with the usual gap risk. Confirm the rule for the exact plan before the first Friday.</p></div></details>
+
 <h2 id="bottom-line">Bottom line</h2>
-<p>AquaFunded is worth considering if the rulebook matches your strategy and the billing rhythm matches your expected timeline. It is not worth considering as a generic "best firm" purchase, because the firm's mechanic is the product. A trader who buys a trailing loss floor and then trades it like a static account has bought the wrong product, whatever the fee.</p>
-<p>The score that matters is not a star rating. It is the number of attempts you expect, multiplied by the cost per attempt, compared with the cost of a flat-fee service and the time you have. AquaFunded is a good deal when you pass early and a poor one when the rulebook fights your method. Judge it on that arithmetic rather than on the marketing.</p>
+<p>AquaFunded is worth considering if the rulebook of the exact plan matches your strategy and the billing rhythm matches your expected timeline. It is not worth considering as a generic "best firm" purchase, because the plan is the product and the brand is only a label on the menu.</p>
+<p>The score that matters is not a star rating. It is the expected number of attempts multiplied by the cost per attempt, compared with the cost of a flat-fee service and the time available. AquaFunded is a good deal when the plan fits and a poor one when the trader buys the wrong structure.</p>
 
-<h2 id="a-plan-menu-with-two-different-floors">A plan menu with two different floors</h2>
-<p>AquaFunded sells one-step and two-phase forex evaluations, and the floor style changes between plans. Some plans use a static floor; others use a trailing variant. That makes the plan name the most important line in the review. A trader who compares the cheapest one-step price with a two-phase plan is comparing a tighter, possibly trailing product with a conventional static one.</p>
-<p>The platform list includes MT4, MT5 and cTrader, which covers most retail workflows. The daily stop is present on the plans reviewed here, and the consistency condition is plan-specific. Before buying, confirm whether the consistency rule applies to the evaluation or only to the payout, because a pass built on one large day can be affected after the target is met.</p>
-
-<h2 id="the-cost-of-a-one-step-plan">The cost of a one-step plan</h2>
-<p>A one-step plan removes a phase but usually compresses the loss allowance. On a $100,000 account, a 6% static floor leaves $6,000 of room; a 10% two-phase floor leaves $10,000. At a $500 risk unit, the difference is eight losses: twelve on the one-step plan against twenty on the two-phase plan. If the one-step plan also trails, a gain reduces the room further.</p>
-<p>The fee is one-off per attempt, so the faster plan is not automatically cheaper across a year. A tighter floor can cause more retries, and each retry is a full fee. A trader who expects two attempts on the one-step plan and one on the two-phase plan should compare two fees against one, not the sticker prices.</p>
-<p>Payouts follow a fixed schedule after the first withdrawal. The split is applied to the profit, and the processor fee is proportionally larger on a small first payout.</p>
-
-<h2 id="who-should-consider-aquafunded">Who should consider AquaFunded</h2>
-<p>AquaFunded fits a forex trader who wants a choice between one-step and two-phase structures and is willing to read the plan-level rules. It is less suited to a trader who wants one documented rulebook across the brand, because the floor style changes between plans. A trader who needs a static floor should confirm the plan before buying; a trader who wants the fastest path may accept the tighter one-step allowance.</p>
-<p>Compare the plan you would actually buy with the equivalent plan at another firm, not the cheapest plan on the page. The floor definition and the payout condition decide the value.</p>
-
-<section class="section tight">
-  <div class="wrap narrow">
-    <h2 id="questions">Common questions</h2>
-
-<details class="faq"><summary>Does AquaFunded use static or trailing drawdown?</summary><div class="faq-a"><p>It depends on the plan. Some plans are static and others use a trailing variant. The plan page is the definition, so confirm it before comparing prices.</p></div></details>
-
-<details class="faq"><summary>Is the one-step plan easier than the two-phase plan?</summary><div class="faq-a"><p>It is faster but usually has a tighter loss allowance. A smaller floor leaves less room for a normal losing streak, so the faster path can produce more retries.</p></div></details>
-
-<details class="faq"><summary>Which platforms does AquaFunded support?</summary><div class="faq-a"><p>MT4, MT5 and cTrader are listed. Confirm the platform list for the exact plan, because account types can differ.</p></div></details>
   </div>
 </section>
 
@@ -135,7 +204,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Want the AquaFunded evaluation traded for you?</h2>
-      <p>Flat <strong>$220</strong>, any account size, retries covered, no profit split. We check AquaFunded's terms before accepting the job.</p>
+      <p>Flat <strong>$220</strong>, any account size, retries covered, no profit split. We check AquaFunded's plan-level terms before accepting the job.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -147,13 +216,12 @@ generator: content-system
     <ul class="link-list">
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
+      <li><a href="/blog/aquafunded-review-2026.html">AquaFunded review 2026</a></li>
+      <li><a href="/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html">Trailing versus static drawdown</a></li>
       <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
       <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/cheapest-prop-firm-challenges.html">Cheapest challenges by account size and phase</a></li>
     </ul>
     <p class="disclaimer">AquaFunded is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>
