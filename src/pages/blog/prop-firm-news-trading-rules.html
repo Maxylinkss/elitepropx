@@ -1,6 +1,6 @@
 ---
-title: Prop Firm News Trading Rules | 2026
-desc: Prop Firm News Trading Rules: News rules restrict opening or holding positions around scheduled releases. Worked examples plus the terms to confirm before…
+title: Prop Firm News Trading Rules: Windows, Gaps and Exemptions
+desc: Prop firm news trading rules decoded: how the affected window is defined, why gap risk is priced, which events are usually covered and how to trade an exemption.
 path: /blog/prop-firm-news-trading-rules.html
 type: article
 h1: Prop Firm News Trading Rules
@@ -14,11 +14,12 @@ priority: 0.7
 schemaService: true
 generator: content-system
 ---
+
 <section class="page-head">
   <div class="wrap narrow">
     <p class="kicker">Prop Firm News Trading Rules · reviewed October 2026</p>
     <h1>Prop Firm News Trading Rules</h1>
-    <p class="lede">News rules restrict opening or holding positions around scheduled releases. The restriction exists because a release can gap past a stop, which turns a planned loss into an unplanned one and can breach a daily limit in a single tick. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+    <p class="lede">News rules exist for one reason: a scheduled release can move price through a stop with no trading in between, turning a planned 1R loss into something several times larger and breaching a daily limit in a single tick. The firm cannot hedge that exposure, so it restricts it. The practical questions are narrower than the debate suggests — which events, which window, whether holding is allowed, and what happens to a trade that was already open. This guide answers them and shows how to build the calendar into your plan.</p>
   </div>
 </section>
 
@@ -27,66 +28,209 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>Being flat before the window is safer than relying on a stop.</li>
-  <li>The affected window is defined by the firm, often around major releases only.</li>
-  <li>Where news trading is allowed, size the event like an event rather than like an ordinary setup.</li>
-  
+  <li>The rule is a window, not a ban. Most plans restrict entries or holdings for a defined period around defined events.</li>
+  <li>Three separate permissions hide under one heading: opening a position, adding to one, and holding one through the release.</li>
+  <li>A stop is not protection against a gap. Being flat before the window is the only reliable control.</li>
+  <li>The covered-event list is usually short and specific — often a handful of tier-one releases rather than the whole calendar.</li>
+  <li>Where news trading is permitted, size the event as an event: a wider stop and a smaller position, or no position at all.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#definition">What Prop Firm News Trading Rules means in a prop evaluation</a></li>
-  <li><a href="#math">The arithmetic, on an illustrative account</a></li>
+  <li><a href="#why">Why the rule exists: the gap the firm cannot hedge</a></li>
+  <li><a href="#three">Three permissions, one heading</a></li>
+  <li><a href="#window">How the window is written</a></li>
+  <li><a href="#events">Which events are usually covered</a></li>
+  <li><a href="#gaps">The arithmetic of a gap through a stop</a></li>
+  <li><a href="#holding">Holding through the release</a></li>
+  <li><a href="#exemptions">Firms that allow news trading</a></li>
+  <li><a href="#calendar">Building the calendar into the week</a></li>
+  <li><a href="#enforcement">How the rule is detected</a></li>
+  <li><a href="#mistakes">Five ways traders breach it without meaning to</a></li>
+  <li><a href="#instruments">How coverage differs by instrument</a></li>
+  <li><a href="#week">A worked compliant week</a></li>
+  <li><a href="#mid-position">If the calendar changes while you are in a position</a></li>
+  <li><a href="#questions">Common questions</a></li>
 </ol>
 </div>
 
-<p>News rules restrict opening or holding positions around scheduled releases. The restriction exists because a release can gap past a stop, which turns a planned loss into an unplanned one and can breach a daily limit in a single tick. The consequence is always numerical. A rule changes the dollar value of a stop, the number of trades a day can absorb, or the amount that reaches a payout. Reading it as a number rather than a slogan is what makes it usable.</p>
+<p>News rules attract more argument than almost any other clause, and almost all of it misses the point. The trader reads the rule as an insult to their skill — "they think I am gambling on the news" — when the firm has written it as an exposure limit. Once the rule is understood as a limit on gap risk rather than a judgement about strategy, the compliance question becomes easy: am I inside the window, and do I have a position open.</p>
 
-<h2 id="math">The arithmetic, on an illustrative account</h2>
+<h2 id="why">Why the rule exists: the gap the firm cannot hedge</h2>
+<p>An ordinary stop order is an instruction to trade at the next available price once a level is crossed. In a liquid market with continuous quoting, that is close to the level. Around a scheduled release, quoting can thin or vanish for a moment, and the first trade after the release may be well beyond the stop. The stop did what it was told: it got out at the market. The market was somewhere else.</p>
+<p>A firm's loss limits are account-level. A daily limit of, say, 5% on a $100,000 account is $5,000, and a trader with five positions at 1% risk is carrying $5,000 of planned exposure. If all five gap to three times their stops on a single release, the loss is $15,000 and the account is closed. From the firm's side, that is not a trading loss; it is a risk-control failure caused by a known, scheduled, avoidable event.</p>
+<p>This is also why the rule is usually written around a calendar rather than around volatility. Volatility is arguable after the fact; a timestamped release is not. The firm can prove you traded at 14:31:04 when the window opened at 14:30. That evidentiary simplicity is a large part of why the rule exists in its specific form.</p>
 
+<h2 id="three">Three permissions, one heading</h2>
+<p>"News trading prohibited" can mean three very different products. Before planning around a rule, separate them.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Measure</th><th>Amount</th><th>What it constrains</th></tr>
+      <tr><th>Permission</th><th>What the wording usually looks like</th><th>What it allows</th></tr>
     </thead>
     <tbody>
-      <tr><td>Starting balance</td><td>$100,000</td><td>The reference point for a static floor</td></tr>
-      <tr><td>Total loss allowance</td><td>$10,000</td><td>The distance to account closure</td></tr>
-      <tr><td>Daily stop</td><td>$5,000</td><td>The maximum loss in one session</td></tr>
-      <tr><td>Profit target</td><td>$8,000</td><td>The distance to a pass</td></tr>
-      <tr><td>Risk per trade at 0.5%</td><td>$500</td><td>Twenty consecutive losses to the total floor</td></tr>
-      <tr><td>Risk per trade at 1%</td><td>$1,000</td><td>Ten consecutive losses to the total floor</td></tr>
+      <tr><td>Opening</td><td>"No new positions may be opened during the restricted window"</td><td>Existing positions may run; you may trade the release direction after the window closes</td></tr>
+      <tr><td>Adding</td><td>"No new orders, including pending orders, within the window"</td><td>You may hold, but not scale in or place stops and limits inside the window</td></tr>
+      <tr><td>Holding</td><td>"Positions must be closed before the release"</td><td>Nothing may be open; the account has to be flat entering and leaving the event</td></tr>
     </tbody>
   </table>
 </div>
+<p>The third version is by far the most restrictive and the least commonly understood. A swing trader who holds positions for days cannot use a firm with a flat-before-release requirement for any instrument covered by the calendar, because the plan forces a close before every covered event. That is not a detail; it changes which firms are usable at all for that style.</p>
+<p>There is a fourth, rarer variant: a limit on profit from news trading rather than on the trade itself. Some plans allow the position but exclude news-derived profit from the target or from the payout calculation. That is a much softer rule and is worth identifying early, because a profitable news trade that does not count toward the target changes the arithmetic of the whole evaluation.</p>
 
-<figure>
-  <img src="/assets/img/challenge-math.svg" alt="Diagram showing the relationship between account size, loss allowance, daily stop and profit target" width="940" height="500" loading="lazy">
-  
-</figure>
+<h2 id="window">How the window is written</h2>
+<p>A window has four variables, and a rule is only usable once all four are known.</p>
+<ol>
+  <li><strong>Event list.</strong> Which releases are covered, and on which instruments. A firm may restrict only the major releases on major pairs.</li>
+  <li><strong>Lead time.</strong> How long before the release the restriction begins. Two minutes and thirty minutes describe very different trading days.</li>
+  <li><strong>Trail time.</strong> How long after the release it ends. Five minutes and an hour are different products.</li>
+  <li><strong>Reset basis.</strong> Whether the window is measured in server time or your local time, and whether it moves with daylight saving.</li>
+</ol>
+<p>Lead and trail times are where most accidental breaches happen. A trader who checks the calendar, sees a 14:30 release and treats 14:25 as safe may be inside a thirty-minute lead window that opened at 14:00. The lead time is usually the longer of the two numbers and the one written in the smaller print.</p>
+<p>The time-zone issue is real rather than pedantic. A window defined in server time on a platform whose server clock differs from the release feed's time zone can shift by an hour twice a year. Traders who keep a fixed local-time reminder and never check the platform clock discover the shift exactly once, usually on the day the account closes.</p>
 
-<h2 id="the-window-is-the-rule">The window is the rule</h2>
-<p>News trading restrictions are usually time-based: a window before and after a scheduled release during which new positions are prohibited or existing positions must be closed. The window can be five minutes, fifteen minutes or longer, and it can apply to all instruments or only to the one affected by the release. The first step is to find the exact window and the list of covered events in the plan terms.</p>
-<p>A restriction on opening a position is not the same as a restriction on holding one. Some firms allow a position to remain open through the release but prohibit opening or increasing it inside the window. Others require the position to be flat before the event. The difference decides whether a swing trader can hold overnight or has to close before every major release.</p>
+<h2 id="events">Which events are usually covered</h2>
+<p>Covered lists are shorter than the economic calendar, and that is deliberate. Firms cannot police every release, so they name the ones with the largest historical gap risk. The pattern is consistent across the industry even where the exact list differs.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Examples</th><th>Why it is covered</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Central-bank rate decisions</td><td>Scheduled policy announcements and statements</td><td>The most reliable gap generator; statements can reverse the initial move</td></tr>
+      <tr><td>Inflation and employment data</td><td>Headline CPI and payrolls</td><td>Large surprise distributions with thin pre-release liquidity</td></tr>
+      <tr><td>Central-bank minutes and speeches</td><td>Published meeting records, scheduled remarks</td><td>Lower probability, occasionally very large; often covered only when pre-announced</td></tr>
+      <tr><td>Unscheduled interventions</td><td>Emergency actions, surprise announcements</td><td>Usually handled by a separate clause, since no window can anticipate them</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Note what is usually absent: ordinary data such as retail sales or sentiment surveys, and earnings for index constituents. A rule that covers everything is unenforceable and is usually written as something else, such as a general prohibition on abnormal order behaviour. Read the list literally. If an event is not named, the general conduct clause is what applies, and that clause is about manipulation rather than about timing.</p>
+<p>Instrument coverage matters as much as event coverage. A release may be covered on the currency pair it directly concerns but not on a cross, or covered on an index but not on the single-stock CFD. The list usually pairs an event with an instrument, and trading the uncovered instrument during a covered event is not a breach of the timing rule — though it may be a breach of a broader conduct rule.</p>
 
-<h2 id="the-gap-risk-the-rule-is-trying-to-price">The gap risk the rule is trying to price</h2>
-<p>A news release can move price through a stop with no trading in between. The firm's loss limit is based on the account, not on the order, so a gap that jumps past the stop can produce a loss larger than the planned risk. That is why the rule exists: it limits the firm's exposure to an event it cannot hedge. A trader who ignores the rule is not just breaking a term; they are taking a risk the plan did not price.</p>
-<p>The practical response is to reduce size before a scheduled event and to avoid holding a position that depends on a stop being filled at a specific price. If the strategy needs news exposure, use a smaller size and a wider stop, and confirm that the plan allows the position to be held at all.</p>
+<h2 id="gaps">The arithmetic of a gap through a stop</h2>
+<p>The size of the problem is easy to underestimate. A model, using a 1% risk unit on a $100,000 account, or $1,000.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Scenario</th><th>Planned loss</th><th>Realised loss</th><th>Share of a 5% daily limit</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Stop fills at level</td><td>$1,000</td><td>$1,000</td><td>20%</td></tr>
+      <tr><td>Gap to 2× stop distance</td><td>$1,000</td><td>$2,000</td><td>40%</td></tr>
+      <tr><td>Gap to 4× stop distance</td><td>$1,000</td><td>$4,000</td><td>80%</td></tr>
+      <tr><td>Two positions, both gap 3×</td><td>$2,000</td><td>$6,000</td><td>120% — breach</td></tr>
+      <tr><td>Five correlated positions, all 2×</td><td>$5,000</td><td>$10,000</td><td>200% — account closed</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The last two rows are why rules are written at the account level rather than the trade level. A trader who defines risk per trade correctly can still breach a daily limit through correlation and a single event. The firm's exposure is the sum, not the average.</p>
+<p>The same arithmetic explains why "I use a stop, so news is fine" is not a defence. The stop defines the intended loss. The gap defines the realised one. Only the position size and the flat-before-window rule control the realised number.</p>
 
-<h2 id="building-a-news-calendar-into-the-plan">Building a news calendar into the plan</h2>
-<p>Mark the red-folder events for the instruments you trade at the start of each week. For each event, decide whether the plan requires flat, allows holding, or prohibits new entries. Then set the session plan around that decision: no new entries in the window, a smaller size before the event, or a full stop for the day. Write the decision down before the event, because the moment the release prints is not the moment to interpret a rule.</p>
-<p>If the rule is ambiguous, ask support before the trade, not after. A written answer is the only thing that will help in a dispute, and it is easier to get before the account is at risk.</p>
+<h2 id="holding">Holding through the release</h2>
+<p>Where holding is allowed, it is allowed in a specific sense: the position may remain open, and the gap risk becomes yours to carry. Two adjustments make that survivable.</p>
+<p>First, reduce the position before the event. A half-size position with the same stop turns a 2× gap into a 1R loss rather than a 2R loss, and a 4× gap into a 2R rather than a 4R. The reduction is cheap compared with the tail it removes, and it is reversible immediately after the window closes.</p>
+<p>Second, widen the stop and reduce size proportionally, so the dollar risk stays constant while the distance to the stop absorbs the expected gap. This is the standard response to any known volatility event, and it works for the same reason it works elsewhere: the dollar risk is what the account feels, not the number of pips.</p>
+<p>What does not work is tightening the stop. A tighter stop does not reduce gap risk; it increases the chance of being taken out by the immediate spike and then watching the trade go the original way. The stop is a liquidity instruction, and around a release, liquidity is the scarce good.</p>
+
+<h2 id="exemptions">Firms that allow news trading</h2>
+<p>Some firms permit news trading outright, usually with a conduct condition attached rather than a timing ban. If you are choosing between a firm that bans it and one that permits it, the decision is not about freedom; it is about whether your method needs event exposure at all.</p>
+<p>A method that needs event exposure has a specific shape: it enters before or during a release, holds through the gap and depends on the post-release move continuing. That method's edge is real but its loss distribution has a fat left tail, and the tail interacts with every account-level rule. If you trade it on an evaluation, the size has to be set for the tail rather than for the average, which usually means a fraction of the size you would use on an ordinary setup.</p>
+<p>A method that does not need event exposure is better served by the ban. Being flat through unscheduled volatility is a free improvement in the shape of your equity curve, and most traders who believe they need news exposure are describing a preference rather than an edge.</p>
+<p>The middle case is the most common: a method that is indifferent to the news but happens to be in a position when the calendar turns. For that trader the rule is a scheduling problem, and the calendar solution below handles it without touching the strategy.</p>
+
+<h2 id="calendar">Building the calendar into the week</h2>
+<p>News compliance is a planning task that takes about fifteen minutes a week. Do it at the start of the week, not the morning of the event.</p>
+<ol>
+  <li><strong>List the covered events.</strong> Take the firm's published list, not the general calendar, and mark only those.</li>
+  <li><strong>Convert the windows to your local time.</strong> Write the lead and trail times explicitly, and note the server clock offset once.</li>
+  <li><strong>Mark the status of each planned position.</strong> For every open or planned trade in a covered instrument, decide: close before the window, hold at reduced size, or do not open at all.</li>
+  <li><strong>Write the decision down before the event.</strong> The moment the release prints is not the moment to interpret a rule, and it is certainly not the moment to read the terms page.</li>
+  <li><strong>Block the window on the platform.</strong> If the platform supports it, disable one-click entry during the window so that a reflex cannot create a breach.</li>
+</ol>
+<p>The fourth point is the one that separates traders who never breach this rule from traders who breach it once and lose an account. The decision is made in advance, in writing, when the cost of being flat is abstract. It is not made in the two minutes before a release when a position is open and in profit.</p>
+<p>A simple format works: one row per covered event, with the window start, window end, instrument, position status and the action. Five rows per week is typical. The document also becomes the evidence if a trade is ever questioned, because it shows the decision preceded the event.</p>
+
+<h2 id="enforcement">How the rule is detected</h2>
+<p>Enforcement is mostly automated and mostly retrospective. The firm's risk system has the trade timestamps and the event timestamps; matching them is a query, not an investigation. That has two consequences.</p>
+<p>The first is that the detection is reliable. There is no discretion about whether a position was opened at 14:31; the record says so. Arguments about intent are not part of the check.</p>
+<p>The second is that enforcement can arrive late. A breach may be flagged at the payout review rather than at the moment of the trade, which means a trader can complete a challenge, be funded and only learn about the violation when the first payout is requested. The rule's cost is therefore not only the account but the time spent on it.</p>
+<p>Manual review usually appears for edge cases: a position closed seconds before the window, an event whose timing was announced late, or a trade in an instrument the firm considers covered but the trader read as outside the list. Those cases are decided on the written terms plus whatever support told you in advance. A written answer obtained before the trade is the only thing that reliably moves an edge case in your favour.</p>
+
+<h2 id="mistakes">Five ways traders breach it without meaning to</h2>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Mistake</th><th>What actually happened</th><th>Prevention</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Using a general economic calendar</td><td>Traded an event the firm covers but that was not marked red on the trader's feed</td><td>Use the firm's own covered list as the authority</td></tr>
+      <tr><td>Closing but not cancelling</td><td>A pending order triggered inside the window after the position was closed</td><td>Cancel all pending orders, not just open positions</td></tr>
+      <tr><td>Scaling out during the window</td><td>A partial close counted as an order inside the restricted period</td><td>Manage the exit before the lead time begins</td></tr>
+      <tr><td>Assuming a time-zone offset</td><td>The window began an hour earlier than the trader's local reminder</td><td>Verify against the platform clock each time daylight saving changes</td></tr>
+      <tr><td>Holding a hedge through the event</td><td>A hedged pair was treated as flat by the trader and as two positions by the plan</td><td>Check whether hedging counts as holding; assume it does</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The second and third are the most common and the least intuitive. The rule usually governs orders rather than positions, and a closing order, a partial close or a pending stop can all count. A trader who closes the main position but leaves the take-profit order live has not finished the job.</p>
+<p>The hedging case is worth checking explicitly. Some plans treat a fully hedged position as two open positions and therefore as not flat. A trader who believes they are market-neutral is still, in the rule's terms, holding through the release.</p>
+
+<h2 id="instruments">How coverage differs by instrument</h2>
+<p>A covered-event list is always a list of event-instrument pairs. Two traders reading the same page can reach opposite conclusions about whether a gold position is affected, because the answer depends on whether gold appears next to the event.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Instrument</th><th>Gap behaviour</th><th>Usual coverage</th><th>Practical note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Major FX pairs</td><td>Moderate gaps, deep liquidity away from the release</td><td>Most rate and inflation releases</td><td>The most commonly covered category</td></tr>
+      <tr><td>Minor and exotic pairs</td><td>Wide spreads and thin quoting</td><td>Often covered more broadly</td><td>Spreads can widen before the window starts</td></tr>
+      <tr><td>Gold</td><td>Large absolute moves on rate and inflation data</td><td>Usually covered on the major releases</td><td>Stop distance in dollars is the risk, not in pips</td></tr>
+      <tr><td>Index CFDs and futures</td><td>Gaps on inflation and employment data</td><td>Commonly covered at the open and on data</td><td>Coverage may name the cash session rather than the event</td></tr>
+      <tr><td>Crypto</td><td>Continuous trading, weekend gaps</td><td>Rarely covered on a data calendar</td><td>The weekend rule usually matters more than the news rule</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Gold deserves a separate note because its absolute volatility makes the arithmetic less forgiving. A 1% risk unit on a $100,000 account is $1,000 regardless of instrument, but the distance to the stop on gold is often a fraction of the distance on a currency pair. A gap of the same percentage therefore represents a much larger multiple of the stop, and the realised loss after a release is correspondingly larger. Traders who size gold by lot rather than by dollar risk discover this at the worst moment.</p>
+<p>Index products carry a different ambiguity. Coverage sometimes refers to the cash session rather than to a release, which means the restriction applies at the open regardless of the calendar. A trader who checks the economic calendar and not the session rule will be compliant on the data and in breach at 09:30. Read the instrument's own clause as well as the event list.</p>
+
+<h2 id="week">A worked compliant week</h2>
+<p>Fifteen minutes on a Sunday produces a plan that survives the week without a decision being made under pressure. A model week, with times in local terms and a thirty-minute lead and fifteen-minute trail.</p>
+<ol>
+  <li><strong>Monday, list the covered events.</strong> Three entries this week: a rate decision on Wednesday, an inflation release on Thursday and an employment report on Friday.</li>
+  <li><strong>Monday, mark the instruments.</strong> The rate decision covers the two major pairs and gold. The inflation release covers the same three. The employment report covers the major pairs only.</li>
+  <li><strong>Tuesday, decide the position policy.</strong> Open swing positions in the covered instruments will be reduced to half size on the morning of each event and left open. No new entries in the window. Pending orders cancelled thirty minutes before.</li>
+  <li><strong>Wednesday to Friday, execute the policy.</strong> The decision was made on Tuesday and is not revisited while a position is in profit.</li>
+  <li><strong>Friday, review.</strong> Note any event where the policy was ambiguous, and send one written question to support before the next week rather than after the next trade.</li>
+</ol>
+<p>The plan is deliberately boring. Its value is that it converts three separate decisions — each made in the fifteen minutes before a release, with a position open and a P&L in view — into one decision made on a quiet afternoon. Most breaches of this rule are not strategic. They are a reflex at 14:29.</p>
+
+<h2 id="mid-position">If the calendar changes while you are in a position</h2>
+<p>Three situations account for almost every case where a trader is surprised by the rule while holding risk. Each has a different correct response.</p>
+<p><strong>An event is announced late.</strong> A central bank or statistical agency sometimes schedules or reschedules a release with little notice. If the event appears on the firm's covered list and the window has already begun, the position is now in a restricted period through no fault of the trader. Close it at the next available price and document the timing. A support message sent immediately, before any loss is realised, is the strongest evidence that the position predated the announcement.</p>
+<p><strong>A position was opened before the calendar was checked.</strong> This is the ordinary case and the answer is the same: close it, then decide whether to re-enter after the window. Holding through and hoping the release goes your way converts a scheduling error into a rule breach, and the rule breach is the part that is not recoverable. A closed trade costs the spread; an enforced closure costs the account.</p>
+<p><strong>A swing position cannot be closed without abandoning the thesis.</strong> Then the thesis belongs at a firm that permits holding. That is a product-fit decision, and it is worth making before the evaluation rather than in the middle of one. A trader whose method requires multi-day exposure in covered instruments is choosing between a plan that permits holding and a method that does not need it.</p>
+<p>The common thread is that the rule is about the state of the account at a timestamp, not about intent. Once the window opens, the only question the firm will ask is whether a position existed. The trader's options are to be flat or to have permission, and permission is much easier to obtain before the event than after it.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Does the news rule apply to all instruments?</summary><div class="faq-a"><p>It depends on the firm. Some restrict only the instrument affected by the release, while others apply the window to all positions. Check the plan terms for the covered events and instruments.</p></div></details>
+<details class="faq"><summary>Can I trade at all during a news window?</summary><div class="faq-a"><p>Usually no new orders in the covered instrument, and some plans require existing positions to be closed. Trades in instruments outside the covered list are generally permitted, but the general conduct clause still applies to abnormal order behaviour.</p></div></details>
 
-<details class="faq"><summary>Can I hold a position through a news event?</summary><div class="faq-a"><p>Only if the plan permits it. Some firms require the account to be flat before the event, while others prohibit new entries but allow an existing position to remain.</p></div></details>
+<details class="faq"><summary>Is a stop-loss enough protection against a news gap?</summary><div class="faq-a"><p>No. A stop fills at the next available price, which after a release may be well past the level. The realised loss is set by the gap and the position size, not by where the stop was placed.</p></div></details>
 
-<details class="faq"><summary>What happens if a gap jumps past my stop during news?</summary><div class="faq-a"><p>The fill can be worse than the stop price, and the loss can exceed the planned risk. That is why the rule exists and why size should be reduced before a scheduled event.</p></div></details>
+<details class="faq"><summary>How long before a release does the restriction start?</summary><div class="faq-a"><p>It varies by plan, from a couple of minutes to half an hour. The lead time is usually longer than the trail time and is written in the plan terms rather than the marketing page. Convert it to your local time and check it against the platform clock.</p></div></details>
+
+<details class="faq"><summary>What happens if I breach the news rule?</summary><div class="faq-a"><p>Consequences range from a warning to account closure, and the usual outcome is closure with the evaluation fee forfeited. Enforcement is often retrospective, so a breach may only surface at the payout review.</p></div></details>
+
+<details class="faq"><summary>Do pending orders count as positions?</summary><div class="faq-a"><p>At many firms they do, and an order that triggers inside the window is treated as a trade made in the window. Cancel pending orders as well as closing positions when the window approaches.</p></div></details>
+
+<details class="faq"><summary>Can I hold a hedged position through the release?</summary><div class="faq-a"><p>Only if the plan explicitly treats a hedge as flat. Many plans count both legs as open positions, which means the account is not flat even though the market exposure is neutral.</p></div></details>
+
+<details class="faq"><summary>Are earnings announcements covered?</summary><div class="faq-a"><p>They can be, on plans that offer single-stock CFDs. The covered list normally names the events, so treat the published list as the authority rather than assuming a category is excluded.</p></div></details>
+
+<details class="faq"><summary>Is news trading allowed on funded accounts if it was banned on the evaluation?</summary><div class="faq-a"><p>Read both documents. Some firms relax conduct rules after funding; others, and this is common, apply the same or stricter rules because the payout is the point of maximum risk. The funded-account terms are the ones that govern a withdrawal.</p></div></details>
   </div>
 </section>
 
@@ -106,14 +250,12 @@ generator: content-system
     <ul class="link-list">
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
-      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
-      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
+      <li><a href="/blog/prop-firm-challenge-rules-explained.html">Every clause in the challenge rulebook</a></li>
       <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/prop-firm-ea-automated-trading.html">Automated trading and EA rules</a></li>
+      <li><a href="/blog/prop-firm-risk-management-challenge.html">Risk management on an evaluation</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
     </ul>
-    <p class="disclaimer">prop firm is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. News rules, covered-event lists and window lengths vary by firm and change without notice; verify them against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>
 </section>

@@ -1,6 +1,6 @@
 ---
-title: Prop Firm EA Automated Trading | 2026
-desc: Prop Firm EA Automated Trading: Expert advisors are permitted at many firms but restricted at others, and the restrictions usually concern high-frequency…
+title: Prop Firm EA and Automated Trading Rules Explained
+desc: Prop firm EA rules decoded: the three permission tiers, why high-frequency and latency strategies are banned, how VPS and copy trading interact and what to disclose.
 path: /blog/prop-firm-ea-automated-trading.html
 type: article
 h1: Prop Firm EA Automated Trading
@@ -14,11 +14,12 @@ priority: 0.7
 schemaService: true
 generator: content-system
 ---
+
 <section class="page-head">
   <div class="wrap narrow">
     <p class="kicker">Prop Firm EA Automated Trading · reviewed October 2026</p>
     <h1>Prop Firm EA Automated Trading</h1>
-    <p class="lede">Expert advisors are permitted at many firms but restricted at others, and the restrictions usually concern high-frequency strategies, latency arbitrage and identical trade patterns across accounts rather than automation itself. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+    <p class="lede">Most firms permit automated trading. What they restrict is a narrower set of behaviours that automation makes easy: high-frequency order flow, latency exploitation, arbitrage across feeds, and copy trading that turns one idea into many accounts. Those restrictions are usually written as conduct clauses rather than as an "EA ban", which is why traders who read only the headline assume they are compliant. This guide maps the three permission tiers, explains why each restriction exists, and covers the disclosure that decides a payout dispute.</p>
   </div>
 </section>
 
@@ -27,66 +28,238 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>Check whether the plan permits EAs on the evaluation and the funded account separately.</li>
-  <li>Latency or price-error exploitation is usually prohibited regardless of the tool used.</li>
-  <li>Identical trades across multiple accounts can be treated as copy trading.</li>
-  
+  <li>"EAs allowed" usually means discretionary automation is allowed and high-frequency or latency-based automation is not.</li>
+  <li>The dividing line is behaviour, not technology: order frequency, execution speed and arbitrage are what the clauses target.</li>
+  <li>Latency arbitrage and tick scalping are the two categories most likely to end an account after a clean pass.</li>
+  <li>Copy trading is a separate permission from automation. One account sending trades to several is often treated as account sharing.</li>
+  <li>If you automate, disclose it before the payout request and keep the strategy description and settings in writing.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#definition">What Prop Firm EA Automated Trading means in a prop evaluation</a></li>
-  <li><a href="#math">The arithmetic, on an illustrative account</a></li>
+  <li><a href="#tiers">The three permission tiers</a></li>
+  <li><a href="#why">Why certain strategies are restricted</a></li>
+  <li><a href="#hft">High frequency and tick scalping</a></li>
+  <li><a href="#latency">Latency arbitrage and price-feed differences</a></li>
+  <li><a href="#grid">Grids, martingales and hidden risk</a></li>
+  <li><a href="#vps">VPS, connectivity and uptime</a></li>
+  <li><a href="#copy">Copy trading and signal services</a></li>
+  <li><a href="#disclose">What to disclose and when</a></li>
+  <li><a href="#compare">Futures versus forex platforms</a></li>
+  <li><a href="#checklist">A pre-deployment checklist</a></li>
+  <li><a href="#backtest">Backtest versus live execution</a></li>
+  <li><a href="#choose">Choosing an automation-friendly firm</a></li>
+  <li><a href="#failures">Five production failure modes</a></li>
+  <li><a href="#monitor">What to monitor each week</a></li>
+  <li><a href="#questions">Common questions</a></li>
 </ol>
 </div>
 
-<p>Expert advisors are permitted at many firms but restricted at others, and the restrictions usually concern high-frequency strategies, latency arbitrage and identical trade patterns across accounts rather than automation itself. The consequence is always numerical. A rule changes the dollar value of a stop, the number of trades a day can absorb, or the amount that reaches a payout. Reading it as a number rather than a slogan is what makes it usable.</p>
+<p>Automated trading on an evaluation is a permission question with three layers. The first layer is whether the firm allows an expert advisor to execute trades. The second is whether the specific strategy is permitted, which is a conduct question. The third is whether the trader can prove which strategy was running if it is ever questioned, which is an evidence question. Firms answer the first publicly, the second in the terms, and the third only when a payout is on the line.</p>
 
-<h2 id="math">The arithmetic, on an illustrative account</h2>
-
+<h2 id="tiers">The three permission tiers</h2>
+<p>In practice, prop firms fall into three groups. The wording of the tier matters more than the marketing label.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Measure</th><th>Amount</th><th>What it constrains</th></tr>
+      <tr><th>Tier</th><th>Typical wording</th><th>What it permits</th><th>Practical effect</th></tr>
     </thead>
     <tbody>
-      <tr><td>Starting balance</td><td>$100,000</td><td>The reference point for a static floor</td></tr>
-      <tr><td>Total loss allowance</td><td>$10,000</td><td>The distance to account closure</td></tr>
-      <tr><td>Daily stop</td><td>$5,000</td><td>The maximum loss in one session</td></tr>
-      <tr><td>Profit target</td><td>$8,000</td><td>The distance to a pass</td></tr>
-      <tr><td>Risk per trade at 0.5%</td><td>$500</td><td>Twenty consecutive losses to the total floor</td></tr>
-      <tr><td>Risk per trade at 1%</td><td>$1,000</td><td>Ten consecutive losses to the total floor</td></tr>
+      <tr><td>Discretionary automation allowed</td><td>"EAs are permitted" with a conduct clause</td><td>Rule-based systems, trade management assistants, semi-automated entries</td><td>Most retail automation works; behaviour limits still apply</td></tr>
+      <tr><td>Restricted automation</td><td>"EAs permitted except high-frequency, latency or arbitrage strategies"</td><td>Slower systems only</td><td>Scalping EAs and tick-based systems are excluded in substance</td></tr>
+      <tr><td>Manual trading only</td><td>"All trades must be placed manually"</td><td>Nothing automated</td><td>Trade management scripts and auto-close tools may also be excluded</td></tr>
     </tbody>
   </table>
 </div>
+<p>The middle tier is the most common and the most misread. A firm in that tier is not being coy; it is describing a distinction that cannot be reduced to a yes or no. The distinction is behavioural: an EA that trades a few setups a day on a higher timeframe is inside the permission, and an EA that fires hundreds of orders a minute to capture a spread is outside it, even though both are expert advisors.</p>
+<p>The third tier is rarer and stricter than most traders expect. "Manual only" can exclude not just entry automation but also trailing-stop managers, partial-close scripts and any tool that sends orders without a click. A trader who uses a trade-management utility on an account with a manual-only rule may be in breach without having automated a single entry.</p>
 
-<figure>
-  <img src="/assets/img/challenge-math.svg" alt="Diagram showing the relationship between account size, loss allowance, daily stop and profit target" width="940" height="500" loading="lazy">
-  
-</figure>
+<h2 id="why">Why certain strategies are restricted</h2>
+<p>The firm's exposure explains each restriction, and the explanations are consistent across the industry even when the wording is not.</p>
+<ul>
+  <li><strong>Order-flow cost.</strong> Every order has a cost to the broker and the liquidity provider. A strategy that generates thousands of orders for a small profit per trade can be net negative for the firm even when the trader is profitable.</li>
+  <li><strong>Execution-quality disputes.</strong> Fast strategies turn execution into the outcome. A few milliseconds of slippage changes the result, which makes every losing day a potential argument about fills rather than about trading.</li>
+  <li><strong>Feed asymmetries.</strong> Where a firm's price feed differs from a public or retail feed, a system can trade on information the firm's own market does not yet reflect. That is a structural edge in the trader's favour that the firm did not price into the product.</li>
+  <li><strong>Unbounded risk.</strong> Grid and martingale systems can look profitable for months and then lose multiples of the account in one session. The evaluation window is not long enough to expose the tail, so the firm restricts the pattern rather than waiting for it.</li>
+</ul>
+<p>None of these restrictions is about the trader's skill. They are about products the firm cannot price or hedge reliably. Reading them that way makes compliance a matter of product fit rather than of argument.</p>
 
-<h2 id="the-rule-is-firm-specific-not-universal">The rule is firm-specific, not universal</h2>
-<p>Some prop firms allow expert advisors, some prohibit them, and some allow them only on certain account types. The rule is usually in the prohibited-conduct section of the terms, not on the sales page. Before attaching an EA to an evaluation, search the terms for the words automated, algorithmic, expert advisor and latency. If the clause is ambiguous, ask support for a written answer that names your EA type.</p>
-<p>Even where an EA is allowed, the strategy still has to respect the loss rules. An EA that opens positions without a hard stop can breach a daily loss limit faster than a manual trader because it does not hesitate. The evaluation is not a test of whether automation is permitted; it is a test of whether the automated method survives the rulebook.</p>
+<h2 id="hft">High frequency and tick scalping</h2>
+<p>High-frequency trading in a retail prop context usually means strategies that open and close dozens or hundreds of positions per session to capture a few points each. Tick scalping is the same idea compressed: entries timed to individual ticks, with profit targets of a few points and stops of similar size.</p>
+<p>Two properties make these strategies fragile on an evaluation, independent of the rules.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Property</th><th>Effect on the account</th><th>Interaction with rules</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>High trade count</td><td>Small edge per trade, large total exposure to spreads and commissions</td><td>Commission drag is invisible in a chart and decisive in the result</td></tr>
+      <tr><td>Short holds</td><td>Frequent entries and exits increase the chance of a bad fill at the worst time</td><td>May conflict with a minimum-duration definition of a trading day</td></tr>
+      <tr><td>Speed dependence</td><td>A small latency change flips the edge to negative</td><td>Triggers the latency and feed clauses even if the strategy was not designed as arbitrage</td></tr>
+      <tr><td>Flat exposure</td><td>Rarely holds through news or weekends</td><td>News and weekend rules are usually irrelevant, which is the one advantage</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The arithmetic of the first row is worth a number. A strategy that targets two points with a one-point cost has a 33% cost ratio. On a $100,000 account at a risk level that produces a $50 profit per trade, the cost is roughly $25 per round turn. Two hundred trades a day is $5,000 in cost — half the profit target in a single day, before any losing trades. Most retail high-frequency systems do not survive that drag, and the ones that appear to are usually not doing what the trader thinks.</p>
 
-<h2 id="execution-risks-that-only-appear-on-a-prop-account">Execution risks that only appear on a prop account</h2>
-<p>A prop account adds constraints that a personal account does not have: a maximum loss that ends the account, a daily stop that can halt trading, and a server that may be shared with other users. An EA that performs well on a demo can fail on a prop account because of slippage during news, a wider spread at the session open, or a latency spike that delays the stop. The strategy needs to be tested on the same platform and data feed the firm provides.</p>
-<p>Run the EA on a demo with the firm's server settings, including the same leverage and contract specifications. Compare the realized slippage with the backtest assumption. If the difference is large, the live evaluation will be worse than the backtest regardless of the win rate.</p>
+<h2 id="latency">Latency arbitrage and price-feed differences</h2>
+<p>Latency arbitrage exploits a timing difference between two price sources. The trader's system sees a move on one feed and trades on another feed that has not yet updated. On a retail platform this can appear as an innocuous "fast EA", and in the firm's terms it is named explicitly.</p>
+<p>The reason is asymmetry of information, not unfairness to other traders. The firm fills the trade at a price it believes is current; if the trader knows the market has already moved, the firm is systematically on the losing side of the fill. That is a cost the firm did not price into an evaluation fee, and it is usually detected afterwards by statistical screening rather than by real-time monitoring.</p>
+<p>The practical test for a trader is simple. Does the strategy's profitability depend on how fast it can send an order relative to a specific feed or server? If yes, it is in the restricted category regardless of how it is described. If profitability depends on the setups, the holding period and the risk plan, the latency is incidental and the strategy is usually inside the permission.</p>
+<p>Geographic latency matters here too, and it is often accidental. A trader running a system from a distant region may experience delays the strategy was not calibrated for, which turns a legitimate system into a degraded one. That is not a rule problem, but it is a result problem, and it is the reason firms offer or recommend a VPS close to their servers.</p>
 
-<h2 id="documentation-before-deployment">Documentation before deployment</h2>
-<p>Write down what the EA does, which instruments it trades, the maximum risk per trade, the conditions under which it stops, and how it handles a news event. Keep the version of the code that produced the record. If the firm asks how a trade was generated, the documentation is the answer. An EA without a written specification is a black box that is hard to defend in a dispute.</p>
-<p>If the firm prohibits automation, do not try to disguise it. The consequence is usually a breached account and a lost fee, not a warning. The rule exists because the firm is pricing a human trader's risk, and an automated strategy can change that risk in ways the terms do not allow.</p>
+<h2 id="grid">Grids, martingales and hidden risk</h2>
+<p>Grid strategies add positions at intervals against the trade, and martingale variants increase size after losses. Both are structurally popular with EAs because they produce a smooth equity curve and a high win rate for long stretches. Both are usually restricted, and the reason is the shape of the loss distribution.</p>
+<p>A grid on a $100,000 account might run ten levels at a 0.2% risk each. Nine of ten sessions, price oscillates and the grid closes in profit. The tenth session trends, all ten levels are open at once, and the total risk is 2% — survivable — or, if the martingale doubles size at each level, 20% or more, which is an instant breach of any maximum loss rule. The average result is fine and the tail is fatal.</p>
+<p>The evaluation window is short compared with the tail. A grid can pass a thirty-day challenge without ever meeting the trend that would have destroyed it, which is exactly the outcome the restriction is designed to prevent. A trader who uses a grid on a firm that prohibits it is not just risking a rule breach; they are risking an account on a distribution they have not sampled.</p>
+<p>A related pattern is the hidden-average-down strategy that is not formally a grid. It buys more of a losing position at better prices and calls it position management. The risk is the same, and the rule's wording sometimes covers it explicitly and sometimes does not. If the terms do not address it, ask before deploying rather than after.</p>
+
+<h2 id="vps">VPS, connectivity and uptime</h2>
+<p>Most firms either provide a virtual private server or allow one. The VPS is not a permission issue; it is a reliability issue, and reliability becomes a rule issue when a disconnected terminal cannot act on a stop.</p>
+<p>A server-side stop is held on the broker's side and survives a lost connection. A local stop managed by the terminal does not. If the connection drops while a position is open with a local stop, the stop does not exist, and the position runs until the connection returns. That sequence is the single most common cause of a drawdown breach on an automated account, and it is entirely avoidable.</p>
+<p>Three habits remove most of the risk.</p>
+<ol>
+  <li>Place the stop with the order so that it is held server-side, rather than attaching it after entry.</li>
+  <li>Run the terminal on a VPS with a stable connection and a redundant path, not on a home machine that sleeps.</li>
+  <li>Set a maximum risk per day inside the EA, so that a repeated failure cannot compound into the daily limit.</li>
+</ol>
+<p>The third habit is the one that matters most for automated accounts. An EA that retries a failed order can send the same trade several times, and each attempt consumes risk budget. A hard daily cap inside the code stops the cascade before the account does.</p>
+
+<h2 id="copy">Copy trading and signal services</h2>
+<p>Copy trading is a separate permission from automation, and the two are often conflated. The common clause prohibits using a third-party signal service, copying trades from another trader, or running the same strategy across multiple accounts in a way that creates a single concentrated position.</p>
+<p>The reason is correlation risk. If ten funded accounts hold the same position, the firm's exposure is ten times the position, not one-tenth. A move that costs one account 1% costs the firm the equivalent of 10% across the cohort, and the evaluation fees do not price that. Firms therefore restrict copying between accounts and between traders, and they detect it by comparing trade timestamps across accounts.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Arrangement</th><th>Usually permitted?</th><th>Condition</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Same person, several independent accounts, different ideas</td><td>Often yes</td><td>Position size limits and a per-person cap in the terms</td></tr>
+      <tr><td>Same idea mirrored across own accounts</td><td>Often restricted</td><td>Treated as one concentrated position; check the cap</td></tr>
+      <tr><td>Copying a signal provider</td><td>Usually no</td><td>Third-party trading in substance even if you click the trades</td></tr>
+      <tr><td>Copying another trader's account</td><td>Usually no</td><td>Account sharing and third-party conduct clauses</td></tr>
+      <tr><td>An EA running on one account for one person</td><td>Depends on tier</td><td>Automation permission plus conduct limits</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The fifth row is the one most automated traders actually inhabit, and it is the least controversial: a single system on a single account, traded by the account holder. That is what "EA allowed" is meant to permit, and it is the arrangement to keep if the plan is otherwise silent.</p>
+
+<h2 id="disclose">What to disclose and when</h2>
+<p>Disclosure is not always required, but it is always useful. If the plan requires an EA to be declared, declare it before deploying. If it does not, a written description of the strategy sent to support before the evaluation creates a record that answers the question later.</p>
+<p>The description should contain four things: what the system does, how often it trades, whether it depends on execution speed, and whether it uses grid or size escalation. Those four answers map onto the four restriction categories, and a support reply confirming that the description is inside the terms is the strongest evidence a trader can hold.</p>
+<p>Ask before the payout, not after a hold. A hold that cites an automation clause is resolved by evidence that the strategy was permitted; a hold without evidence is resolved by argument, and argument is the weaker position. The sequence that works is: describe, confirm in writing, deploy, keep the settings, and reference the confirmation if the account is questioned.</p>
+
+<h2 id="compare">Futures versus forex platforms</h2>
+<p>Automation restrictions differ by market, and the difference is structural rather than arbitrary.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Forex and CFD challenge</th><th>Futures evaluation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Automation permission</td><td>Commonly allowed with conduct limits</td><td>Commonly allowed; platform-level tools are simpler</td></tr>
+      <tr><td>Typical platform</td><td>MT4, MT5, cTrader</td><td>Dedicated futures platforms and TradingView-linked execution</td></tr>
+      <tr><td>Order flow cost</td><td>Spread-based; fewer explicit commissions</td><td>Commission per contract per side, visible in the statement</td></tr>
+      <tr><td>Where automation fails</td><td>Latency and feed differences</td><td>Data-feed entitlements and simulator fills</td></tr>
+      <tr><td>Copy trading</td><td>Often restricted between accounts</td><td>Restricted; per-person account caps are common</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>On futures, the automation question is usually less about the EA and more about whether the evaluation is simulated. A simulated fill can differ from a live fill, and a strategy that depends on precise fills may perform differently in the evaluation than in the funded account. That is a legitimate performance question rather than a rule breach, but it makes the evaluation a less reliable test of the strategy.</p>
+
+<h2 id="checklist">A pre-deployment checklist</h2>
+<ol>
+  <li><strong>Read the automation clause and the conduct clause.</strong> The permission is in one and the limits are in the other.</li>
+  <li><strong>Classify the strategy honestly.</strong> Does it depend on speed, on feed asymmetry, on size escalation, or on copying?</li>
+  <li><strong>Confirm in writing.</strong> Send the four-part description to support and keep the reply.</li>
+  <li><strong>Place server-side stops.</strong> Every position should be protected by the broker, not by the terminal.</li>
+  <li><strong>Set a hard daily cap in the code.</strong> Independent of the platform, and lower than the firm's limit.</li>
+  <li><strong>Test on a demo with the same server settings.</strong> Latency, spread and fill behaviour on a local machine are not representative.</li>
+  <li><strong>Log every trade with the settings used.</strong> The log is what makes a retrospective review answerable.</li>
+  <li><strong>Re-read the terms after any update.</strong> Firms revise conduct clauses, and the version you read at purchase is not always the version in force.</li>
+</ol>
+<p>The checklist takes about an hour. The alternative is discovering a restriction after a funded account has been closed, at which point the hour is not the cost that matters.</p>
+
+<h2 id="backtest">Backtest versus live execution</h2>
+<p>An automated strategy's backtest is a model of execution, not a measurement of it. The gap between the two is where most automated evaluations fail, and it is worth pricing before deployment rather than after.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Assumption in the backtest</th><th>What happens live</th><th>Effect on the result</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Fills at the exact stop or limit</td><td>Fills at the next available price, sometimes worse</td><td>Losses are larger and wins smaller than modelled</td></tr>
+      <tr><td>Fixed spread</td><td>Spreads widen at the open and around releases</td><td>Cost rises exactly when the strategy trades most</td></tr>
+      <tr><td>No slippage on market orders</td><td>Fast markets fill several points away</td><td>Small edges disappear; the strategy looks broken</td></tr>
+      <tr><td>Every signal is taken</td><td>Disconnects and requotes skip signals</td><td>The sample diverges from the test</td></tr>
+      <tr><td>Unlimited position size</td><td>Evaluation position caps apply</td><td>The tested size may be ineligible</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The first three rows are cumulative, not independent. A strategy with a small average win and a high trade count is exposed to all of them at once, and the combination can turn a positive backtest into a negative live result without anything being wrong with the logic. That is why a demo run on the firm's own server, with the firm's own spreads, is worth more than a longer backtest on historical data.</p>
+<p>A useful discipline is to require the live result to remain positive under a deliberately pessimistic assumption: one extra tick of cost per round turn and one missed fill in twenty. If the strategy only works under ideal execution, it is not a strategy for an evaluation, whatever the backtest says.</p>
+
+<h2 id="choose">Choosing an automation-friendly firm</h2>
+<p>Automation fit is a short list of questions, and most firms answer them in writing if asked directly.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Question</th><th>Why it matters</th><th>Red flag</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Are EAs permitted, and under which limits?</td><td>Sets the tier before any deployment</td><td>Marketing says yes; terms prohibit fast strategies without defining them</td></tr>
+      <tr><td>Is there a minimum trade duration?</td><td>Excludes tick scalping and some fast systems</td><td>A duration rule disclosed only after purchase</td></tr>
+      <tr><td>Are server-side stops mandatory?</td><td>Determines whether a disconnect is survivable</td><td>No position-level stop requirement at all</td></tr>
+      <tr><td>Is a VPS provided or allowed?</td><td>Reliability of execution</td><td>Silence on remote hosting</td></tr>
+      <tr><td>Is the evaluation simulated or live?</td><td>Whether fills are representative</td><td>Simulated fills described as live</td></tr>
+      <tr><td>Is copy trading permitted between own accounts?</td><td>Common scaling approach</td><td>No written position on mirrored trades</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The first row is the one to press on. A firm that permits automation and defines the prohibited strategies precisely is easier to comply with than one that permits everything and reserves the right to decide afterwards. Precision in the terms is a feature, not a restriction: it tells you in advance which of your systems is eligible.</p>
+
+<h2 id="failures">Five production failure modes</h2>
+<p>These account for most automated account closures, and none of them requires the strategy to be wrong.</p>
+<ol>
+  <li><strong>Stop managed locally.</strong> The terminal holds the stop; the connection drops; the position runs unprotected. Fix: place the stop with the order so the broker holds it.</li>
+  <li><strong>Retry cascade.</strong> A failed order is resent several times and each attempt consumes risk. Fix: a hard per-day cap inside the code, independent of the platform.</li>
+  <li><strong>Spread blind spot.</strong> The system enters on a signal without checking the spread, and fills at the widest point of the session. Fix: a maximum-spread filter on entry.</li>
+  <li><strong>Session drift.</strong> A system calibrated to a London session keeps trading into a thin Asian session after a daylight-saving change. Fix: an explicit session filter in server time, reviewed twice a year.</li>
+  <li><strong>Rule drift.</strong> The firm updates the terms, the system keeps trading the old rulebook, and a previously compliant pattern becomes a breach. Fix: re-read the terms at every renewal and keep a dated copy.</li>
+</ol>
+<p>The fifth is the least technical and the most expensive. Conduct clauses change more often than core numbers, and an automated system does not read them. Someone has to, and that someone is the account holder.</p>
+
+<h2 id="monitor">What to monitor each week</h2>
+<p>An automated account needs a short weekly review, because the failure modes above are invisible until they cost money. Five checks take about twenty minutes.</p>
+<ul>
+  <li><strong>Trade count and average duration.</strong> A sudden change suggests a session filter has broken or the spread filter is rejecting entries.</li>
+  <li><strong>Slippage against the model.</strong> Compare the average fill against the expected fill for the week. A drift is the earliest sign that execution has changed.</li>
+  <li><strong>Daily loss consumption.</strong> The highest single-day loss as a share of the daily limit. Above 50% on a regular basis, the size is too large for the rulebook.</li>
+  <li><strong>Uptime and disconnects.</strong> Count them. One disconnect is noise; three in a week is a hosting problem.</li>
+  <li><strong>Terms check.</strong> Confirm the version of the rules in force has not changed, and keep the dated copy with the account record.</li>
+</ul>
+<p>The review is not about strategy performance. A profitable week with a broken session filter is a warning, not a success, because the filter will eventually cost more than the week earned.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Are EAs allowed on prop firm accounts?</summary><div class="faq-a"><p>It depends on the firm and the account type. Some allow them, some prohibit them, and some restrict certain strategies. Check the prohibited-conduct section and get a written answer before deploying.</p></div></details>
+<details class="faq"><summary>Are EAs allowed on prop firm challenges?</summary><div class="faq-a"><p>At many firms, yes, with conduct limits. The common restriction is on high-frequency, latency-based and arbitrage strategies rather than on automation itself. A minority of firms require manual trading only, which can also exclude trade-management tools.</p></div></details>
 
-<details class="faq"><summary>Can I run an EA on a VPS?</summary><div class="faq-a"><p>Only if the firm permits it and the VPS meets the platform requirements. A VPS does not change the trading rules, but it can change latency and execution quality.</p></div></details>
+<details class="faq"><summary>Is a scalping EA allowed if the firm permits EAs?</summary><div class="faq-a"><p>It depends on the behaviour, not the label. A scalping system that trades a handful of setups a day is usually inside the permission. One that fires hundreds of orders a minute, or depends on execution speed, falls under the high-frequency and latency clauses even when the firm advertises EA support.</p></div></details>
 
-<details class="faq"><summary>What happens if an EA breaches a rule?</summary><div class="faq-a"><p>The account is usually closed or the payout is refused, even if the breach was unintentional. The firm applies the terms to the account, not to the intent behind the order.</p></div></details>
+<details class="faq"><summary>Can I use a grid or martingale strategy?</summary><div class="faq-a"><p>Usually not. Both concentrate risk as the trade moves against the position, and a single trend can produce a loss larger than the maximum drawdown. Even where the wording is silent, the pattern is likely to fall under a general risk or conduct clause.</p></div></details>
+
+<details class="faq"><summary>Do I have to tell the firm I am using an EA?</summary><div class="faq-a"><p>Only if the terms require disclosure. It is worth doing anyway: a written description of the strategy, confirmed as compliant before deployment, is the evidence that resolves an automation hold at payout.</p></div></details>
+
+<details class="faq"><summary>Is copy trading the same as using an EA?</summary><div class="faq-a"><p>No. Automation is about how a trade is generated; copying is about where the idea comes from and how many accounts hold it. Many firms permit a single EA on a single account while prohibiting copied trades and mirrored positions across accounts.</p></div></details>
+
+<details class="faq"><summary>Does a VPS count as automated trading?</summary><div class="faq-a"><p>No. A VPS is just a place for the terminal to run. It becomes relevant to the rules only through reliability: a local stop on a disconnected terminal does not exist, and the resulting loss can breach a drawdown rule.</p></div></details>
+
+<details class="faq"><summary>What happens if an EA breaches a rule?</summary><div class="faq-a"><p>The account is usually closed and the evaluation fee forfeited, and the payout can be withheld even after a clean pass. Enforcement is typically retrospective, so the breach may only be identified during the payout review.</p></div></details>
+
+<details class="faq"><summary>Can an EA trade news events?</summary><div class="faq-a"><p>Only within the news rule. Automation does not exempt a system from the restricted window, and an EA that trades releases is the most common way an otherwise compliant automated account breaches the news clause.</p></div></details>
   </div>
 </section>
 
@@ -106,14 +279,12 @@ generator: content-system
     <ul class="link-list">
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
-      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
-      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/account-sharing-prop-firm-rules.html">Account sharing and third-party rules</a></li>
+      <li><a href="/blog/prop-firm-news-trading-rules.html">News trading windows</a></li>
+      <li><a href="/blog/prop-firm-challenge-rules-explained.html">Every clause in the challenge rulebook</a></li>
+      <li><a href="/blog/prop-firm-minimum-trading-days.html">Minimum trading days</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
     </ul>
-    <p class="disclaimer">prop firm is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Automation policies, conduct clauses and platform rules vary by firm and change without notice; verify them against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>
 </section>

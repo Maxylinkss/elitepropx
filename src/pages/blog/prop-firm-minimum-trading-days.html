@@ -1,6 +1,6 @@
 ---
-title: Prop Firm Minimum Trading Days | 2026
-desc: Prop Firm Minimum Trading Days: A minimum trading day rule sets the smallest number of sessions a pass can take, independent of the target. With the math,…
+title: Prop Firm Minimum Trading Days: Counting and Planning
+desc: Prop firm minimum trading days explained: what counts as a day, how the count resets, why a fast pass waits and how to plan the count without padding risk.
 path: /blog/prop-firm-minimum-trading-days.html
 type: article
 h1: Prop Firm Minimum Trading Days
@@ -14,11 +14,12 @@ priority: 0.7
 schemaService: true
 generator: content-system
 ---
+
 <section class="page-head">
   <div class="wrap narrow">
     <p class="kicker">Prop Firm Minimum Trading Days · reviewed October 2026</p>
     <h1>Prop Firm Minimum Trading Days</h1>
-    <p class="lede">A minimum trading day rule sets the smallest number of sessions a pass can take, independent of the target. It exists to stop a single outsized day from producing a funded account, and it changes the correct pace of the plan. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+    <p class="lede">A minimum trading day requirement is the only rule that punishes good trading. Everything else in a challenge limits how much you can lose; this one limits how fast you can win. It exists to stop a single lucky session from becoming a funded account, and it catches disciplined traders more often than reckless ones. This guide covers what counts as a day, how the count resets between phases, and how to plan the count without adding risk you did not want.</p>
   </div>
 </section>
 
@@ -27,66 +28,232 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>A qualifying day usually requires at least one closed trade, sometimes a minimum profit or loss.</li>
-  <li>Scratch days may or may not count; confirm the definition.</li>
-  <li>The rule sets a floor on time, not a target for activity.</li>
-  
+  <li>A trading day is a day on which you trade, not a day on which the market is open. Days with no executed trade do not count.</li>
+  <li>The count usually resets between evaluation phases, and often again before the first payout.</li>
+  <li>Hitting the target early does not shorten the count. The account waits, and waiting is a risk decision, not a neutral pause.</li>
+  <li>The cheapest way to complete a count is the smallest position that satisfies the definition — usually a single micro lot taken to the stop or left open briefly.</li>
+  <li>Plan the count from the first week. Retrofitting it after the target is met is where traders give back profit.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#definition">What Prop Firm Minimum Trading Days means in a prop evaluation</a></li>
-  <li><a href="#math">The arithmetic, on an illustrative account</a></li>
+  <li><a href="#what">What counts as a trading day</a></li>
+  <li><a href="#reset">Where the count resets</a></li>
+  <li><a href="#arith">The arithmetic of finishing early</a></li>
+  <li><a href="#cheapest">The cheapest way to complete a count</a></li>
+  <li><a href="#risk">Why waiting is not free</a></li>
+  <li><a href="#plan">Planning the count across a 30-day cycle</a></li>
+  <li><a href="#scenarios">Three worked schedules</a></li>
+  <li><a href="#payout">The count before the first payout</a></li>
+  <li><a href="#verify">How the count is verified</a></li>
+  <li><a href="#market">Counting on futures versus forex</a></li>
+  <li><a href="#combined">The count and the consistency rule together</a></li>
+  <li><a href="#disputes">Three disputes and how they resolve</a></li>
+  <li><a href="#compare">Two plans, two counts</a></li>
+  <li><a href="#questions">Common questions</a></li>
 </ol>
 </div>
 
-<p>A minimum trading day rule sets the smallest number of sessions a pass can take, independent of the target. It exists to stop a single outsized day from producing a funded account, and it changes the correct pace of the plan. The consequence is always numerical. A rule changes the dollar value of a stop, the number of trades a day can absorb, or the amount that reaches a payout. Reading it as a number rather than a slogan is what makes it usable.</p>
+<p>Most evaluation rules are constraints on the left tail. The drawdown, the daily stop and the consistency threshold all say the same thing in different ways: do not lose too much, too fast. A minimum trading day requirement is the only common rule that constrains the right tail. It says: do not win too fast either. That is why it feels unfair, and why it is worth understanding rather than arguing with.</p>
+<p>The rationale is straightforward from the firm's side. A challenge completed in two sessions is indistinguishable from a well-timed streak. A challenge completed over ten sessions is a sample. The firm is buying evidence that the result came from a repeatable process, and it uses the calendar as a cheap proxy for the sample size it wants. The proxy is crude, but it is written down, and it is priced into the product you bought.</p>
 
-<h2 id="math">The arithmetic, on an illustrative account</h2>
-
+<h2 id="what">What counts as a trading day</h2>
+<p>The definition varies, and the differences are large enough to change a schedule. There are four common versions.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Measure</th><th>Amount</th><th>What it constrains</th></tr>
+      <tr><th>Definition</th><th>What it requires</th><th>Practical effect</th></tr>
     </thead>
     <tbody>
-      <tr><td>Starting balance</td><td>$100,000</td><td>The reference point for a static floor</td></tr>
-      <tr><td>Total loss allowance</td><td>$10,000</td><td>The distance to account closure</td></tr>
-      <tr><td>Daily stop</td><td>$5,000</td><td>The maximum loss in one session</td></tr>
-      <tr><td>Profit target</td><td>$8,000</td><td>The distance to a pass</td></tr>
-      <tr><td>Risk per trade at 0.5%</td><td>$500</td><td>Twenty consecutive losses to the total floor</td></tr>
-      <tr><td>Risk per trade at 1%</td><td>$1,000</td><td>Ten consecutive losses to the total floor</td></tr>
+      <tr><td>Any executed trade</td><td>At least one fill, however small, opened and closed</td><td>The easiest to satisfy; one micro lot is enough</td></tr>
+      <tr><td>Minimum trades per day</td><td>A stated number of fills, sometimes with a minimum duration</td><td>More expensive; requires deliberate activity</td></tr>
+      <tr><td>Position held for a period</td><td>A trade open for a minimum time, or held to the close</td><td>Penalises scalpers; a day of quick trades may not count</td></tr>
+      <tr><td>Realised profit or loss</td><td>A day that produces a settled result</td><td>Rare, but excludes flat scratch days</td></tr>
     </tbody>
   </table>
 </div>
+<p>The first version — any executed trade — is the most common and the easiest to plan around. The second and third are where traders get caught, because they assume the first version applies. A scalper who takes thirty trades a day can fail a minimum-duration definition, and a trader who opens one position on Monday and closes it Thursday may have recorded one day rather than four.</p>
+<p>Two edge cases are worth checking in the terms rather than assuming. First, whether a day counts if the position is opened but not closed. Most definitions require the trade to be completed, which pushes the count to the closing day. Second, whether a day counts if the only activity is cancelling an order. Almost never, but a few plans define a trading day as any day with platform activity, and the difference matters if you are planning a quick finish.</p>
 
-<figure>
-  <img src="/assets/img/challenge-math.svg" alt="Diagram showing the relationship between account size, loss allowance, daily stop and profit target" width="940" height="500" loading="lazy">
-  
-</figure>
+<h2 id="reset">Where the count resets</h2>
+<p>The count is usually per phase, and this is the most common planning error. A two-phase challenge with a five-day minimum in each phase requires ten counted days, not five. Add a payout requirement and the number can reach fifteen before the first withdrawal.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Stage</th><th>Count applies</th><th>Reset behaviour</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Phase one</td><td>Usually yes</td><td>Starts at the first trade after purchase</td></tr>
+      <tr><td>Phase two</td><td>Usually yes, sometimes lower</td><td>Restarts at zero when phase two begins</td></tr>
+      <tr><td>Funded account, first payout</td><td>Sometimes</td><td>Restarts at funding, or at the last payout</td></tr>
+      <tr><td>Later payouts</td><td>Rarely</td><td>Check whether the requirement is per cycle or once</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>A plan that resets the count at every payout turns the minimum into a recurring cost. If the payout interval is short and the count is ten days, the requirement can consume almost the whole cycle, and a trader who wants to withdraw monthly has to trade on a schedule rather than on setups. That is a material product difference between two firms that both advertise "no time limit".</p>
+<p>Phase two resets are the ones that surprise people. A trader who finishes phase one in twelve days and phase two in three arrives at the funding review with a phase-two count of three, not fifteen, and waits another two days. The wait is small; the surprise is the problem, because it usually arrives at the moment the trader has already mentally moved on to payout planning.</p>
 
-<h2 id="what-counts-as-a-trading-day">What counts as a trading day</h2>
-<p>A minimum trading day is not simply a day on which you opened the platform. The plan usually requires at least one closed trade, a minimum profit or loss, or a minimum holding time. Some firms count a day only if the account has a position at the close. The definition is in the plan terms, and it is the first thing to confirm before planning a calendar.</p>
-<p>If the requirement is five days, a trader who finishes the target in two days still has to produce three more qualifying days. The temptation is to force trades to fill the calendar. That is the wrong response: a minimum day can be satisfied with the smallest permitted position and a trade that meets the definition, while the risk budget stays untouched.</p>
+<h2 id="arith">The arithmetic of finishing early</h2>
+<p>The cost of the rule is proportional to how fast you trade and how large your wins are. A model on a $100,000 account with an 8% target and a five-day minimum shows when the count binds and when it does not.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Style</th><th>Average win</th><th>Days to hit target</th><th>Count required</th><th>Days idle</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Position trader</td><td>0.8%</td><td>~14</td><td>5</td><td>0 — count already met</td></tr>
+      <tr><td>Swing trader</td><td>1.2%</td><td>~9</td><td>5</td><td>0 — count already met</td></tr>
+      <tr><td>Intraday trader</td><td>0.6%</td><td>~6</td><td>5</td><td>0 — just met</td></tr>
+      <tr><td>High-conviction scalper</td><td>2.0%</td><td>~4</td><td>10</td><td>6 days of extra activity</td></tr>
+      <tr><td>Single large session</td><td>8.0%</td><td>1</td><td>10</td><td>9 days, and a consistency problem</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The table makes the real issue visible. For a trader whose normal win is under 1% of the account, a five-day minimum is almost never binding, and a ten-day minimum is a minor scheduling issue. The rule bites hardest on traders with large average wins, which is exactly the group most likely to treat the requirement as an insult.</p>
+<p>The last row is the more serious case. A single session that produces the whole target usually breaches a consistency rule as well, so the minimum trading day requirement is not the only obstacle. Adding days to satisfy the count does not repair a lopsided distribution; it only adds trades to a distribution that is already skewed. Fixing that requires adding winning days, which is the subject of the next section.</p>
 
-<h2 id="filling-days-without-adding-risk">Filling days without adding risk</h2>
-<p>Use the smallest size the plan allows and a setup with a tight stop. The goal is a qualifying closed trade, not a profit. If the plan permits a break-even trade, a position opened and closed at the same price may satisfy the activity requirement; if it does not, take a small risk with a predefined stop and accept the outcome. The cost of filling a day should be a few dollars plus commission, not a meaningful share of the loss budget.</p>
-<p>Do not save the required days for the end of the attempt. If a day is missed because of a platform outage or a public holiday, the calendar extends. Build the days into the first half of the plan, when the account has the most room and the pressure is lowest.</p>
+<h2 id="cheapest">The cheapest way to complete a count</h2>
+<p>Once the target is met, the account has a new job: record days without endangering the result. The cheapest way to do that is a trade whose expected cost is close to zero and whose downside is a fraction of the remaining buffer.</p>
+<p>The standard approach is a single minimum-size position, taken with a stop, held briefly and closed. It satisfies an "any executed trade" definition at the smallest possible risk. In practice, on a $100,000 forex account, one micro lot with a twenty-pip stop is roughly $2 of risk. Ten such days cost about $20 in expected loss across a count, which is a rounding error against the $8,000 target.</p>
+<p>Three cautions apply. First, the trade still has to obey the daily loss rule, and even a small position can gap. Take it in a liquid instrument at a quiet hour rather than before a release. Second, some plans define a trading day by profit or by duration, and a scratch trade in a quiet hour satisfies neither. Read the definition before designing the filler. Third, the filler must not breach a conduct rule — an automated strategy, a pattern that looks like volume padding, or a trade in an instrument the plan restricts will cost more than the count is worth.</p>
+<p>Where the definition requires a minimum duration, the cheap version is a small position held to the session close. That satisfies holding-based definitions without intraday activity, and it has the useful side effect of being a real position with a real stop rather than a token trade. The cost is a night's exposure, which the weekend rule may also constrain.</p>
 
-<h2 id="the-interaction-with-the-target-and-the-floor">The interaction with the target and the floor</h2>
-<p>Minimum days change the pacing, not the risk. A plan with a 10% target and a five-day minimum is not a five-day sprint; it is a target that has to be reached without breaching the floor over at least five days. If the target is reached early, the remaining days should be traded at minimum size or not traded at all, depending on the activity definition. The account should not be put at risk to satisfy a calendar rule.</p>
-<p>Confirm whether the minimum applies to the evaluation only or also to the funded account. Some firms require a minimum number of days before a payout, which is a separate condition from the evaluation minimum.</p>
+<h2 id="risk">Why waiting is not free</h2>
+<p>The intuitive response to a count requirement is to stop trading once the target is met and wait for the days to pass. That is the right instinct and it is only partly right. Waiting has three costs.</p>
+<p>The first is opportunity: the account is funded capital sitting idle, and the evaluation clock may still be running if the plan also has a maximum duration. A trader who finishes on day six of a thirty-day window can afford to wait; one who finishes on day twenty-eight cannot.</p>
+<p>The second is the temptation to re-enter. An account that has hit the target and is waiting for days to count is in the most dangerous state in the whole process: it has nothing to gain from trading and everything to lose, and the trader is bored. Most post-target breaches happen on days that did not need a trade.</p>
+<p>The third is the payout clock, which often starts at the last counted day rather than the day the target was met. A count that extends the evaluation also delays funding, and funding delays the seasoning period before the first payout. Each stage compounds the last, and the cost of a ten-day count can be three weeks of cash flow.</p>
+<p>The practical conclusion is to treat the count as part of the plan from day one. If the target is likely to be met before the count, schedule the filler days into the strategy rather than bolting them on afterwards. That converts a rule that punishes speed into a schedule that a disciplined trader can execute.</p>
+
+<h2 id="plan">Planning the count across a 30-day cycle</h2>
+<p>A workable schedule for a challenge with a thirty-day window, a ten-day minimum and an 8% target, assuming a trader whose average win is 0.7% of the account.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Week</th><th>Trading days used</th><th>Cumulative profit</th><th>Count status</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>4</td><td>~2.4%</td><td>4 of 10</td><td>Normal setups only</td></tr>
+      <tr><td>2</td><td>4</td><td>~4.8%</td><td>8 of 10</td><td>Count is close; no change needed</td></tr>
+      <tr><td>3</td><td>3</td><td>~6.9%</td><td>10 of 10 — met</td><td>Count satisfied before target</td></tr>
+      <tr><td>4</td><td>2</td><td>~8.0%</td><td>Met</td><td>Target reached with room to spare</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>This is the easy case: the trader's natural pace satisfies the count without any adjustment. The count only becomes a planning problem when the target arrives faster than the days, which is a function of average win size and win rate, not of skill.</p>
+<p>A trader with a 2% average win reaches the target in about four winning days and needs six more. The schedule below front-loads the count so the filler days happen while the buffer is large, rather than after the target when every trade is pure risk.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Week</th><th>Trading days used</th><th>Cumulative profit</th><th>Count status</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>5</td><td>~2.0%</td><td>5 of 10</td><td>Two main trades, three min-size days</td></tr>
+      <tr><td>2</td><td>5</td><td>~5.0%</td><td>10 of 10 — met</td><td>Two more main trades; count completed early</td></tr>
+      <tr><td>3</td><td>2</td><td>~8.0%</td><td>Met</td><td>Free to finish at full size, count irrelevant</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>This ordering is the important insight. Completing the count before the target means the final push is unconstrained. Completing it after the target means the final push is filler. Same number of days, very different risk profile.</p>
+
+<h2 id="scenarios">Three worked schedules</h2>
+<p>Three traders, three definitions, three different plans. The point is that the definition, not the number of days, determines the schedule.</p>
+<p><strong>Any executed trade, five days, phase-specific.</strong> This trader needs ten counted days across two phases. The plan is simple: never zero-trade a weekday. One small position a day satisfies the count, and the evaluation can be finished at whatever pace the setups allow. Risk of missing the count is near zero as long as the trader does not take a week off.</p>
+<p><strong>Minimum two trades per day, five days.</strong> The count now costs ten trades rather than five. Those trades consume risk budget, so they should be real setups rather than filler, or the count becomes a source of losses. The plan is to hold the target at a level that leaves room for two extra trades a day, which is a size reduction rather than a calendar change.</p>
+<p><strong>Position held to the close, ten days.</strong> The count cannot be satisfied intraday, and a scalper's whole method fails the definition. This is a product mismatch, not a planning problem. Either the trader adopts a swing variant for the evaluation, which changes the strategy, or chooses a firm whose definition matches their style. That decision belongs before purchase, not after.</p>
+
+<h2 id="payout">The count before the first payout</h2>
+<p>Where the requirement extends to the funded account, it interacts with seasoning and payout dates. Three clocks then run at once: the trading-day count, the seasoning period, and the payout cycle. The first payout lands at the latest of the three, and the difference between them can be a month.</p>
+<p>Check whether the funded count is satisfied by the evaluation's days or starts fresh. A fresh count means the trader has to produce activity immediately after funding, before the first payout is even relevant, which is a different rhythm from the evaluation and often a lower-quality set of trades. The best structure is a count that carries over, and a few plans do allow this. It is worth a line in the comparison table.</p>
+<p>Check also whether the count applies to every payout cycle or once. A recurring count is a permanent constraint on withdrawal frequency, and on a plan with a two-week cycle and a ten-day count, it means the account must trade nearly continuously to withdraw on schedule. For a swing trader, that is the difference between a usable product and an unusable one, and it is invisible on the marketing page.</p>
+
+<h2 id="verify">How the count is verified</h2>
+<p>The count is one of the easier rules to verify because it is derived from the trade history rather than from a judgement. The firm does not need to interpret anything; it needs to count days on which at least one qualifying trade was recorded, within the phase window.</p>
+<p>That has three practical consequences. First, the count is usually visible before review on platforms that surface a progress panel, so there is no reason to be surprised. Second, the evidence is the trade history export, which means a trader who believes the count is wrong can produce the same data the firm is using. Third, the definition matters more than the count: if the plan requires two trades a day and the trader took one, the day is correctly recorded as zero and no amount of explanation changes it.</p>
+<p>Where the count is disputed, the argument is almost always about the definition rather than the arithmetic. The useful request is not "please recount" but "please confirm which days in the attached history qualify under the definition, and which do not". That question produces a specific answer, and a specific answer can be acted on.</p>
+
+<h2 id="market">Counting on futures versus forex</h2>
+<p>The same rule behaves differently in each market because a "trade" is a different unit and because the calendar is different.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Forex and CFD</th><th>Futures</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Counting unit</td><td>An executed position, often one ticket</td><td>An executed contract, often several per idea</td></tr>
+      <tr><td>Weekend handling</td><td>Market closed; weekends never count</td><td>Sunday session can open the week; usually excluded</td></tr>
+      <tr><td>Minimum-duration definitions</td><td>Common, because scalping is common</td><td>Less common; a held contract is normal</td></tr>
+      <tr><td>Session structure</td><td>Nearly continuous from Sunday to Friday</td><td>Defined session hours with a daily settlement</td></tr>
+      <tr><td>Typical count</td><td>Five to ten days</td><td>Five to fifteen days</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The second row catches futures traders who use a Sunday session to get ahead of the week. If the plan counts only Monday to Friday, a Sunday evening trade does not register, and a trader who planned a five-day count around two Sunday sessions will be two days short at review. Check the session definition before using the weekend to accelerate a count.</p>
+<p>The third row is the reverse case. A forex plan with a minimum-duration definition effectively excludes scalping from the count, which can make the requirement impossible for a scalper's normal method. On futures, a position that is held for any meaningful period satisfies the definition naturally, so the requirement is usually a simple calendar constraint.</p>
+
+<h2 id="combined">The count and the consistency rule together</h2>
+<p>The two rules are usually described separately and interact badly. The minimum-day rule forces activity; the consistency rule caps how much of the profit can come from any one day. Together they define a corridor: enough days to satisfy the count, with profits spread widely enough to satisfy the share limit.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Total profit</th><th>Best-day cap at 30%</th><th>Minimum profitable days needed</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$8,000</td><td>$2,400</td><td>4 days of $2,000</td></tr>
+      <tr><td>$8,000</td><td>$2,400</td><td>8 days of $1,000</td></tr>
+      <tr><td>$8,000</td><td>$2,400</td><td>16 days of $500</td></tr>
+      <tr><td>$8,000</td><td>$4,000 at 50%</td><td>2 days of $4,000</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The third row is where the two rules collide with a five-day minimum. Spreading profit over sixteen days is not compatible with finishing in a week, so a trader with small average wins has to either extend the schedule or raise the size. Raising the size to compress the distribution is the wrong response: it increases the chance that the best day breaches the cap and that a losing streak breaches the floor.</p>
+<p>The workable answer is usually the middle of the corridor. Four to eight profitable days of similar size satisfies a 30% cap, and eight days comfortably exceeds most minimum counts. Building the target around that shape — rather than around a single large session — satisfies both rules at once and is the reason the two should be planned together.</p>
+
+<h2 id="disputes">Three disputes and how they resolve</h2>
+<p><strong>A day with a single trade is counted as zero.</strong> This is usually a definition mismatch. If the plan requires a minimum number of trades and the trader assumed any trade would do, the firm is correct and the fix is to read the definition before the next phase. If the plan is silent on the number, the argument is about an ambiguity, and the dated terms plus the trade history are the case.</p>
+<p><strong>A position was held across several days but counted once.</strong> Most definitions count the day of execution, not each day the position was open. A trader who held from Monday to Thursday and expected four counted days has one. Where the plan defines a trading day as a day with an open position, the opposite applies, and the terms are the only authority.</p>
+<p><strong>The count appears satisfied on the dashboard but not at review.</strong> Dashboards sometimes count platform activity rather than executed trades, or count a phase that has since reset. Compare the dashboard with the trade history export and raise the difference in writing, with dates, before requesting a payout. A discrepancy found by the trader is a query; the same discrepancy found at payout is a hold.</p>
+
+<h2 id="compare">Two plans, two counts</h2>
+<p>Two otherwise similar plans can differ by a count, and the difference is worth more than the fee. Compare a plan with a five-day minimum and a static floor against one with a ten-day minimum and a trailing floor, both on a $100,000 account with an 8% target.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Factor</th><th>Plan A: five days, static</th><th>Plan B: ten days, trailing</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Days of risk after the target</td><td>None for most styles</td><td>Five to six for a fast style</td></tr>
+      <tr><td>Extra trades needed</td><td>Rarely</td><td>Often, at reduced size</td></tr>
+      <tr><td>Chance of a post-target breach</td><td>Low</td><td>Higher, because the account keeps trading</td></tr>
+      <tr><td>Time to funding</td><td>Target date</td><td>Target date plus the count</td></tr>
+      <tr><td>First payout date</td><td>Sooner</td><td>Later by the same gap</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The count difference shows up twice in the cash-flow calendar: once at funding and once at the first payout, because the payout clock usually starts after funding. A five-day gap at funding can become a three-week gap at payout when a fixed cycle sits in between.</p>
+<p>The trailing floor compounds the problem. A trader who keeps trading to satisfy the count is trading against a floor that follows peak equity, and every new high raises the floor. The combination of a ten-day count and an intraday trailing floor is the most demanding structure in common use, and it is worth checking whether the count applies after the target or is satisfied by the same days that produced it. Where the count is satisfied by the trading that hit the target, the trailing floor costs nothing extra. Where it requires additional days, the two rules multiply.</p>
+<p>The comparison is not an argument for the cheaper plan. It is an argument for reading the count alongside the floor before pricing the fee, because the fee is the smallest of the three variables.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Does logging in count as a trading day?</summary><div class="faq-a"><p>Usually not. The plan typically requires a closed trade or a position held at the close. Check the exact definition in the plan terms.</p></div></details>
+<details class="faq"><summary>Does a day with no trade count toward the minimum?</summary><div class="faq-a"><p>No. A trading day is a day on which you trade. A day when the market is open but you take no position is not counted, which is why an account that has hit its target can still be waiting.</p></div></details>
 
-<details class="faq"><summary>Can I fill a minimum day with a tiny trade?</summary><div class="faq-a"><p>If the plan allows it, yes. The goal is to meet the activity definition without risking a meaningful part of the loss budget. Use the smallest permitted size and a predefined stop.</p></div></details>
+<details class="faq"><summary>Can I use a tiny position to satisfy the count?</summary><div class="faq-a"><p>Under the common "any executed trade" definition, yes — one minimum-size position is enough. Confirm the definition first, because plans that require a minimum number of trades, a minimum duration or a realised result are not satisfied by a token trade.</p></div></details>
 
-<details class="faq"><summary>Does the minimum apply after the pass?</summary><div class="faq-a"><p>Some firms require a minimum number of trading days before a payout, separate from the evaluation minimum. Confirm both conditions before planning the calendar.</p></div></details>
+<details class="faq"><summary>Does the count reset in phase two?</summary><div class="faq-a"><p>Usually yes. Most two-phase challenges apply the requirement to each phase separately, so a five-day minimum means ten counted days in total. Check whether the funded account has a third requirement.</p></div></details>
+
+<details class="faq"><summary>What happens if I hit the target before the count is met?</summary><div class="faq-a"><p>The account is not eligible for review until the counted days are recorded. You keep trading at reduced size, or take minimum-size trades to complete the count, while the profit target is already satisfied and no longer needs risk.</p></div></details>
+
+<details class="faq"><summary>Does a weekend or holiday count?</summary><div class="faq-a"><p>Not as a trading day, because no trade can be executed. Weekend holding rules are a separate constraint. Calendar-day seasoning periods, by contrast, do include weekends, so the two clocks are not interchangeable.</p></div></details>
+
+<details class="faq"><summary>Is a minimum trading day rule the same as a time limit?</summary><div class="faq-a"><p>They are opposites. A minimum requires at least a set number of days; a time limit requires finishing within a maximum. Plans can impose both, which creates a narrow window in which the pass is both fast enough and slow enough.</p></div></details>
+
+<details class="faq"><summary>Can a minimum trading day requirement be waived?</summary><div class="faq-a"><p>Rarely, and usually not in an evaluation. It is a compliance condition rather than a discretionary one. Ask support in writing if a personal circumstance makes the schedule impossible, but plan on the written rule rather than an exception.</p></div></details>
+
+<details class="faq"><summary>Why do firms impose a minimum at all?</summary><div class="faq-a"><p>To require a sample rather than a streak. A very fast pass is hard to distinguish from luck, and the calendar is a cheap, verifiable proxy for the number of independent decisions the account represents.</p></div></details>
   </div>
 </section>
 
@@ -106,14 +273,12 @@ generator: content-system
     <ul class="link-list">
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
-      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-payout-times.html">How long each payout stage takes</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/prop-firm-challenge-rules-explained.html">Every clause in the challenge rulebook</a></li>
+      <li><a href="/blog/how-to-pass-prop-firm-challenge-2026.html">How to pass a challenge in 2026</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
     </ul>
-    <p class="disclaimer">prop firm is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Minimum-day definitions and counts vary by firm and change without notice; verify them against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>
 </section>
