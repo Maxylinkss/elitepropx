@@ -46,27 +46,31 @@ For every page the builder emits: canonical URL, meta description, Open Graph an
 
 ## Deploy to GitHub Pages
 
-**1. Create the repository and push**
+**Live setup (already done)**
+
+| Item | Value |
+| --- | --- |
+| Repository | https://github.com/Maxylinkss/elitepropx (public, branch `main`) |
+| Pages source | *Deploy from a branch* → `main` → `/docs` |
+| Custom domain | `elitepropx.com` (from `docs/CNAME`), *Enforce HTTPS* on |
+| DNS | Namecheap Advanced DNS, apex A records → GitHub, `www` CNAME → `maxylinkss.github.io` |
+
+**Publish an update**
 
 ```bash
-git init
-git add .
-git commit -m "Rebuild elitepropx.com"
-git branch -M main
-git remote add origin https://github.com/<your-user>/elitepropx.git
-git push -u origin main
+npm run deploy:build     # images → build → check
+npm run seo              # SEO audit (0 errors)
+git add -A && git commit -m "Update site"
+git push origin main     # GitHub rebuilds Pages in about a minute
 ```
 
-**2. Enable Pages**
+If `git push` asks for credentials, use a personal access token (GitHub → Settings → Developer settings → Tokens, classic, scope `repo`) as the password when prompted for `Maxylinkss`.
 
-Repository → Settings → Pages → *Source: Deploy from a branch* → *Branch: `main`* → *Folder: `/docs`* → Save.
-`docs/CNAME` already contains `elitepropx.com`, so the custom domain is picked up automatically.
+**Rebuilding this setup from scratch**
 
-**3. Point Namecheap DNS at GitHub Pages**
-
-In Namecheap: Domain List → elitepropx.com → Manage → Advanced DNS.
-
-Delete the existing `A` record that points at `51.20.251.145` (the dead host), then add:
+1. `git init`, commit, `git branch -M main`, then `git remote add origin https://github.com/<user>/elitepropx.git` and push.
+2. Repository → Settings → Pages → *Deploy from a branch* → *Branch: `main`* → *Folder: `/docs`* → Save. `docs/CNAME` already contains `elitepropx.com`, so the custom domain is picked up automatically.
+3. In Namecheap: Domain List → elitepropx.com → Manage → Advanced DNS. Delete any old `A` record for the apex, then add:
 
 | Type | Host | Value | TTL |
 | --- | --- | --- | --- |
@@ -74,7 +78,7 @@ Delete the existing `A` record that points at `51.20.251.145` (the dead host), t
 | A | @ | 185.199.109.153 | Automatic |
 | A | @ | 185.199.110.153 | Automatic |
 | A | @ | 185.199.111.153 | Automatic |
-| CNAME | www | `<your-user>.github.io` | Automatic |
+| CNAME | www | `maxylinkss.github.io` | Automatic |
 
 Optional IPv6:
 
@@ -87,11 +91,9 @@ Optional IPv6:
 
 Leave any existing MX/TXT records alone. Do not add a `CNAME` record for `@`.
 
-**4. Enforce HTTPS**
+4. Once DNS resolves, Settings → Pages → tick *Enforce HTTPS*. The certificate is issued automatically.
 
-After DNS propagates (minutes to a few hours), Settings → Pages → tick *Enforce HTTPS*. The certificate is issued automatically.
-
-**5. Tell Google**
+**Tell Google**
 
 In Search Console: submit `https://elitepropx.com/sitemap.xml`, then use *URL Inspection → Request indexing* for the rebuilt URLs. Keep the old URLs identical to the originals so existing rankings transfer instead of resetting.
 
@@ -100,3 +102,4 @@ In Search Console: submit `https://elitepropx.com/sitemap.xml`, then use *URL In
 - `support@elitepropx.com` appears in the layout, contact page, privacy and terms pages. Change it in `src/lib/site.js` and rebuild if that address is wrong.
 - Business facts (price, pass counters, supported firms) live in `src/lib/site.js` and in page copy. Keep them consistent — structured data is generated from the same figures.
 - `tools/check.js` must exit 0 before deploying. It is the guard against thin pages, broken internal links and missing images.
+- `.backup/`, scratch `tools/tmp-*` files, root screenshots and `.ghtoken` are git-ignored.
