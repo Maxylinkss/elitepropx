@@ -1,6 +1,26 @@
 'use strict';
 
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
 const site = require('./site');
+
+/**
+ * Cache-bust static assets with a content hash. GitHub Pages serves assets
+ * with a short max-age, so a changed stylesheet can otherwise keep rendering
+ * the previous design for returning visitors.
+ */
+function assetVersion(relPath) {
+  try {
+    const file = path.join(__dirname, '..', '..', 'docs', relPath.replace(/^\//, ''));
+    return '?v=' + crypto.createHash('md5').update(fs.readFileSync(file)).digest('hex').slice(0, 8);
+  } catch {
+    return '';
+  }
+}
+
+const CSS_V = assetVersion('/assets/css/style.css');
+const JS_V = assetVersion('/assets/js/main.js');
 
 const NAV = [
   { label: 'Passed Challenges', href: '/passed-challenges.html' },
@@ -85,9 +105,9 @@ ${page.type === 'article' ? `<meta property="article:published_time" content="${
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/logo-mark.svg">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" href="/assets/css/style.css" as="style">
-<link rel="stylesheet" href="/assets/css/style.css">
-<script defer src="/assets/js/main.js"></script>
+<link rel="preload" href="/assets/css/style.css${CSS_V}" as="style">
+<link rel="stylesheet" href="/assets/css/style.css${CSS_V}">
+<script defer src="/assets/js/main.js${JS_V}"></script>
 <script type="application/ld+json">${JSON.stringify(organizationSchema())}</script>
 <script type="application/ld+json">${JSON.stringify(websiteSchema())}</script>
 ${page.type === 'article' ? `<script type="application/ld+json">${JSON.stringify(articleSchema(page))}</script>\n` : ''}${page.schemaService ? `<script type="application/ld+json">${JSON.stringify(serviceSchema())}</script>\n` : ''}${breadcrumbSchema(page) ? `<script type="application/ld+json">${JSON.stringify(breadcrumbSchema(page))}</script>\n` : ''}${faqSchema(page) ? `<script type="application/ld+json">${JSON.stringify(faqSchema(page))}</script>\n` : ''}</head>`;
