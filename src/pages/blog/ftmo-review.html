@@ -1,6 +1,6 @@
 ---
 title: FTMO Review 2026: Rules, Costs, Fit
-desc: FTMO review for 2026: the static loss floor, one-off per attempt billing, payout rhythm, strengths, cautions and the traders the rulebook actually fits.
+desc: FTMO review for 2026: static floor arithmetic, equity-based daily stops, the verification stage, one-off billing, payout rhythm and the traders it fits.
 path: /blog/ftmo-review.html
 type: article
 h1: FTMO review 2026: the rulebook, the cost and the verdict
@@ -18,7 +18,7 @@ generator: content-system
   <div class="wrap narrow">
     <p class="kicker">FTMO review · October 2026</p>
     <h1>FTMO review 2026: the rulebook, the cost and the verdict</h1>
-    <p class="lede">A review of FTMO that starts with the rulebook rather than the profit split: what a static loss floor does to position sizing, how one-off per attempt billing changes the cost of a slow pass, and which traders the product genuinely fits. Every figure describes the published shape of the plan; confirm the current schedule before buying.</p>
+    <p class="lede">A review that starts with the rulebook rather than the profit split. FTMO evaluates forex and CFD accounts on a static floor, a two-phase path and a verification stage, charges once per attempt and pays after a seasoning period. What matters is what those mechanics do to position size, to the calendar and to the cost of a retry. Every figure below describes the published shape of the plan; confirm the current schedule before buying.</p>
   </div>
 </section>
 
@@ -27,43 +27,45 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>FTMO evaluates forex and CFD accounts on a two-phase evaluation followed by a verification phase.</li>
-  <li>The loss floor is static, measured from the starting balance; the daily stop is yes, equity-based.</li>
-  <li>Billing is one-off per attempt and payouts follow first payout after a fixed seasoning period, then on demand.</li>
-  <li>Best fit: traders who want the most conventional percentage-based evaluation available.</li>
-  <li>Main caution: daily loss is measured on equity, so open positions count against it.</li>
+  <li>Static floor measured from the starting balance: profit adds room rather than moving the failure point.</li>
+  <li>Daily stop is equity-based, so an open loss consumes the allowance before the position is closed.</li>
+  <li>The path is two evaluation phases plus a verification stage, each with its own target against the same floor.</li>
+  <li>One-off billing per attempt makes a slow pass affordable and puts the cost of failure on retries.</li>
+  <li>No consistency rule applies to the evaluation, but the payout review still reads the record.</li>
+  <li>Best fit: a forex trader with a defined stop who wants a conventional percentage-based evaluation.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#verdict">The short verdict on FTMO</a></li>
-  <li><a href="#rulebook">How the FTMO rulebook is built</a></li>
+  <li><a href="#verdict">The short verdict</a></li>
+  <li><a href="#rulebook">How the rulebook is built</a></li>
+  <li><a href="#floor">What a static floor actually does</a></li>
+  <li><a href="#daily">The equity-based daily stop</a></li>
+  <li><a href="#path">Two phases and a verification stage</a></li>
+  <li><a href="#sizing">Lot sizing on a $100,000 account</a></li>
+  <li><a href="#consistency">Consistency and the payout review</a></li>
+  <li><a href="#platforms">MT4, MT5, cTrader and DXtrade</a></li>
+  <li><a href="#costs">What an attempt actually costs</a></li>
+  <li><a href="#payout">Seasoning and withdrawal</a></li>
   <li><a href="#strengths">What FTMO does well</a></li>
-  <li><a href="#cautions">Where FTMO is weaker</a></li>
+  <li><a href="#cautions">Where it is weaker</a></li>
+  <li><a href="#fit">Who the product fits</a></li>
+  <li><a href="#alternatives">When to look elsewhere</a></li>
   <li><a href="#bottom-line">Bottom line</a></li>
 </ol>
 </div>
-<h2 id="verdict">The short verdict on FTMO</h2>
-<p>FTMO is a forex and CFD evaluator built on a two-phase evaluation followed by a verification phase, with a static loss floor, a daily stop (equity-based) and one-off per attempt billing. The product is a reasonable fit for traders who want the most conventional percentage-based evaluation available. It is a poor fit for a trader whose strategy needs the opposite drawdown mechanic, or whose budget cannot absorb the billing rhythm across several attempts.</p>
-<div class="table-scroll">
-  <table>
-    <thead>
-      <tr><th>Question</th><th>Answer</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Who is it for?</td><td>traders who want the most conventional percentage-based evaluation available</td></tr>
-      <tr><td>What is the strongest feature?</td><td>Static maximum loss means progress never moves the failure point closer</td></tr>
-      <tr><td>What is the biggest caution?</td><td>Daily loss is measured on equity, so open positions count against it</td></tr>
-      <tr><td>How is it billed?</td><td>one-off per attempt</td></tr>
-      <tr><td>How does it pay?</td><td>first payout after a fixed seasoning period, then on demand</td></tr>
-    </tbody>
-  </table>
-</div>
 
-<h2 id="rulebook">How the FTMO rulebook is built</h2>
-<p>The <strong>FTMO</strong> evaluation is best understood as a set of constraints that interact, not as a headline profit target with some footnotes. The target decides how much you have to make. The loss floor decides how much room you have to make it. The daily stop, if there is one, decides how quickly a bad session ends. The minimum-day rule decides how long the attempt takes even when the target is reached early. Change any one of those and the same trading strategy produces a different outcome.</p>
-<p>For FTMO, the published structure is a two-phase evaluation followed by a verification phase. The loss floor is static, measured from the starting balance, the daily stop is yes, equity-based, and the consistency condition is none on the evaluation. Billing is one-off per attempt, payouts follow first payout after a fixed seasoning period, then on demand, and the supported platforms are MT4, MT5, cTrader, DXtrade. Those are the rows that matter. Marketing pages tend to foreground the profit target and the profit split because both are easy to compare; neither tells you whether a given trade is survivable.</p>
+<h2 id="verdict">The short verdict</h2>
+<p>FTMO is the reference implementation of the percentage-based forex evaluation. A static floor, a daily equity stop, two phases and a verification stage: those four mechanics have been copied widely and remain the standard against which other products are described. The product is coherent, the rules are stated in the same language as the industry, and the mechanics are conservative in a way that rewards process rather than luck.</p>
+<p>The cost of that conservatism is that it suits a particular kind of trader. A method with a defined stop, a modest target per trade and a steady distribution fits comfortably. A method that depends on a handful of large days, or needs to hold a position through a deep retracement without a moving floor, fits less well and often fails at the verification stage rather than the first.</p>
+<p>The commercial structure is straightforward: one fee per attempt, no monthly charge, and a first payout after a seasoning period. That combination makes a slow attempt affordable and makes the retry the dominant cost. The arithmetic of retries is therefore the number worth understanding before buying, not the headline fee or the advertised split.</p>
+<p>My summary is that FTMO is a good default and a poor universal. A trader who has measured their own losing streak and can size a position to survive it will find the rulebook fair. A trader who has not done that measurement is paying for an education.</p>
+
+<h2 id="rulebook">How the rulebook is built</h2>
+<p>The published shape is a two-phase evaluation followed by a verification phase, on a static loss floor measured from the starting balance, with an equity-based daily stop, no consistency condition on the evaluation, one-off billing per attempt, a first payout after a fixed seasoning period, and MT4, MT5, cTrader and DXtrade on weekday forex and CFD hours.</p>
+<p>Each row is a constraint rather than a feature. The floor decides how much room exists. The daily stop decides how quickly a bad session ends. The path length decides how many times the process has to repeat. The billing decides what time costs. The platform list decides how much of an existing workflow survives.</p>
+<p>Read in that order, the rulebook is easy to plan against. A trader who starts from the target and works backwards usually mis-sizes, because the target says how much has to be earned and the floor says how much can be lost getting there. The floor is the constraint; the target is the objective.</p>
 <div class="table-scroll">
   <table>
     <thead>
@@ -74,57 +76,107 @@ generator: content-system
       <tr><td>Evaluation model</td><td>two-phase evaluation followed by a verification phase</td></tr>
       <tr><td>Loss floor</td><td>static, measured from the starting balance</td></tr>
       <tr><td>Daily stop</td><td>yes, equity-based</td></tr>
-      <tr><td>Consistency test</td><td>none on the evaluation</td></tr>
-      <tr><td>Minimum trading days</td><td>undefined</td></tr>
-      <tr><td>Billing rhythm</td><td>one-off per attempt</td></tr>
-      <tr><td>Payout rhythm</td><td>first payout after a fixed seasoning period, then on demand</td></tr>
+      <tr><td>Consistency</td><td>none on the evaluation</td></tr>
+      <tr><td>Minimum days</td><td>undefined</td></tr>
+      <tr><td>Billing</td><td>one-off per attempt</td></tr>
+      <tr><td>Payout</td><td>first payout after a fixed seasoning period, then on demand</td></tr>
       <tr><td>Platforms</td><td>MT4, MT5, cTrader, DXtrade</td></tr>
       <tr><td>Session</td><td>weekday forex and CFD hours</td></tr>
     </tbody>
   </table>
 </div>
+<p>One caution about tables like this: they describe a plan family. Firms revise percentages, targets and payout cycles between cohorts, and a promotional plan can carry different terms from the standard page. Save a dated copy of the terms at checkout; it is the only document that settles a dispute later.</p>
+
+<h2 id="floor">What a static floor actually does</h2>
+<p>On a $100,000 account with a 10% floor, the failure point is $90,000 and it stays there. A $5,000 gain leaves $15,000 of room below the original start and does not move the failure point at all. That is the defining property of a static structure, and it is why a constant risk unit remains valid from the first trade to the last.</p>
+<p>The arithmetic of survival is a division. Room divided by the losses you are willing to absorb equals the unit. With $10,000 of room and twenty losses, the unit is $500. With a buffer for slippage, $450. That is a conservative size for most forex methods and it is the reason the floor is not usually the constraint on a complete attempt.</p>
+<p>The constraint moves to behaviour. Because the floor never moves, the rulebook will not stop a slow bleed: an account can fall from $112,000 to $95,000 without breaking a rule, and the trader is now $5,000 from failure with the target unmet. Only a self-imposed limit prevents that, and the natural limit is a third of the floor from the equity high.</p>
+<p>The second behavioural point is that a static floor permits holding a position through a retracement. That is a genuine advantage for a method with a wide target and a lower hit rate, and it is the opposite of what a trailing product allows. A trader who has only used trailing evaluations often under-uses this freedom and closes winners early out of habit.</p>
+
+<h2 id="daily">The equity-based daily stop</h2>
+<p>The daily stop is measured on equity, which means floating losses count as they occur. A position that is $2,000 underwater has consumed 40% of a 5% allowance before it is closed. That is stricter than a realised basis and it produces better behaviour, because the limit responds to the risk that is actually open rather than to the risk that has been booked.</p>
+<p>The practical consequence is that position size has to be considered against the daily limit as well as the floor. With a $5,000 daily allowance and a $500 unit, the day absorbs ten losses, which is more than any session should use. A personal cap of three losses, $1,500, is what actually shapes the session, and the published limit becomes a backstop.</p>
+<p>The second consequence is that correlated positions behave like one larger trade. Three long-dollar positions can be individually compliant and collectively consume the allowance in a single move, which is why a portfolio rule is worth having: total open risk across positions should be capped at three units, and correlated pairs should be counted as one exposure.</p>
+<p>The reset time completes the definition. Forex sessions roll at a fixed hour tied to New York, so a position carried across the roll may be attributed to either day. If the rule is unclear for a swing method, flatten before the roll rather than discovering the attribution during a review.</p>
+
+<h2 id="path">Two phases and a verification stage</h2>
+<p>The path is three measured stages, each with its own target against the same static floor. Phase one proves the method can produce a result. Phase two proves it can repeat one. The verification stage confirms the repeat was a process rather than a favourable month, and it is where passes built on a single oversized trade tend to fail.</p>
+<p>The stages are not equally difficult. The first is the easiest, because the account starts with full room and no prior drawdown. The second is harder, because the first phase's profit sits above the floor and the trader is working from a higher balance with the same failure point. The third is hardest for a trader who passed by pressing, because pressing again from a higher base is how a completed target becomes a breach.</p>
+<p>The planning consequence is a pause between stages. A trader who rolls straight from phase one into phase two at full size has skipped the only calibration the second stage gets. Two weeks at half size between phases confirms the method still behaves and produces a comparison that is useful evidence.</p>
+<p>The second consequence is that each stage needs its own risk budget stated in dollars. If phase one consumes $2,000 of a $10,000 floor, phase two starts with $8,000 of room and a fresh target, which is a materially tighter product than the one that was purchased. Writing that budget before phase one ends keeps it a choice rather than a consequence.</p>
+
+<h2 id="sizing">Lot sizing on a $100,000 account</h2>
+<p>Forex sizing is pips × pip value × lots. On a standard lot of a USD-quoted major, one pip is about $10, so a 25-pip stop risks $250 and a $450 unit buys one and a half lots. A 50-pip stop buys 0.9 lots. The stop distance comes from the method; the position count is a consequence.</p>
+<p>That $10 figure only holds for a dollar-quoted major. Yen pairs move the value with the exchange rate, crosses convert twice, and metals and indices are quoted in ticks rather than pips. Using one number across the board is the fastest way to be wrong on the instruments that move most, and the error is largest when volatility is highest.</p>
+<p>As a check, multiply the stop in pips by the pip value and confirm the result equals the intended dollar risk. If it does not, the lot count is wrong, and the mistake is cheaper to correct on a calculator than on a statement.</p>
+<p>Add a buffer of ten to twenty percent for spread and slippage. Spreads widen around the London open and around releases, and the fill is what the floor sees. A planned $450 unit that fills $30 worse is a 7% overrun, which across forty trades is a visible fraction of the buffer.</p>
+
+<h2 id="consistency">Consistency and the payout review</h2>
+<p>FTMO does not apply a consistency rule to the evaluation, so the profit can arrive in any shape. That is a genuine freedom and it is worth using deliberately: a method that produces occasional large days is not penalised during the attempt.</p>
+<p>The payout review is a different matter. It examines the record — size relative to the rules, distribution of profit, number of sessions and any pattern resembling prohibited practice. A pass built on one oversized day is not automatically refused, but it invites questions, and a journal answers them in an afternoon where a statement invites interpretation.</p>
+<p>The practical approach is to keep the distribution reasonable even when no rule requires it. A daily profit cap of three units costs little in expectation, flattens the record and makes the funded phase easier to navigate if a condition applies there. It is insurance against a clause that has not been read yet.</p>
+<p>The second practical point is the audit trail. A trader who can show the setup, the risk, the stop and the remaining room for every trade has a record that speaks for itself. That is not paperwork for its own sake; it is the difference between a review that takes a day and one that takes a month.</p>
+
+<h2 id="platforms">MT4, MT5, cTrader and DXtrade</h2>
+<p>Four platforms is a broader list than most competitors offer, and the choice matters more than the fee. MT4 is the familiar hedging platform with the largest library of expert advisors. MT5 adds a modern backtester and more instruments but defaults to netting, which changes how multiple entries on one symbol are managed.</p>
+<p>cTrader is the level-based option, with depth of market and precise order handling. It suits a trader who manages positions at levels rather than at tickets, and its interface is cleaner for that style than MT4's. DXtrade is the browser terminal: fully featured enough for discretionary trading, no installation, and no expert advisor support.</p>
+<p>The migration cost is measured in mistakes rather than fees. A trader with years of MT4 templates and a tested advisor faces a real cost in moving, and that cost usually exceeds any difference in spreads. A discretionary trader can choose on interface preference, which is a legitimate criterion.</p>
+<p>Automation raises a rulebook question separate from the platform. Some plans restrict high-frequency activity or certain order types, and an advisor can breach those clauses without intent. Read the activity clauses, test on a demo under the same rules, and keep the logs.</p>
+
+<h2 id="costs">What an attempt actually costs</h2>
+<p>A one-off fee removes the calendar from the cost equation. At an illustrative $450 per attempt, one pass costs $450 and three cost $1,350, regardless of whether the path takes six weeks or six months. That makes patience affordable and shifts the cost of failure onto the retry count.</p>
+<p>The expected cost is the fee divided by the pass probability. On a three-stage path the probability is the product of the stage probabilities: three stages at 45% give roughly 9%, which turns $450 into about $5,000 per funded account. That number is the one to compare with a realistic monthly profit, not the headline fee.</p>
+<p>The lever that improves the figure is a smaller unit. A unit a third lower usually converts a normal losing run from a breach into a drawdown, and because the fee is fixed, the expected cost falls by more than the profit per trade. That is the most reliable improvement available to a trader who has already chosen the product.</p>
+<p>The invisible costs complete the picture: data if it is billed separately, the platform, the time and the capital tied up in an account that pays nothing until the funded stage. A four-line annual budget takes ten minutes and answers whether the exercise is a business or a hobby.</p>
+
+<h2 id="payout">Seasoning and withdrawal</h2>
+<p>The first payout waits for a seasoning period that begins when the funded account starts, not when the evaluation is purchased. The clock therefore runs after a process that may already have taken two months, and the total elapsed time from first payment to cleared funds is the number that matters.</p>
+<p>Later withdrawals move to a shorter schedule, so the first payout is the expensive one in calendar terms. A trader who needs cash flow should plan around that first delay rather than assume the later rhythm applies from the start.</p>
+<p>The review covers conduct and documentation. Identity, address and the original funding instrument have to match, and a since-replaced card means a manual check. Complete verification before the target is reached, and keep the receipt for the fee.</p>
+<p>Ask what the split is measured on — gross or net profit — and whether the funded stage inherits the evaluation's rulebook. Those two answers decide the real value of a pass and are rarely on the pricing page.</p>
 
 <h2 id="strengths">What FTMO does well</h2>
-<p>The strengths are structural rather than promotional. Static maximum loss means progress never moves the failure point closer. Deep platform coverage and a familiar percentage rulebook. A large public documentation trail for nearly every rule. Those are the features that show up in the trading experience, not just on the comparison table.</p>
-<ul>
-  <li><strong>Static maximum loss means progress never moves the failure point closer.</strong></li>
-  <li><strong>Deep platform coverage and a familiar percentage rulebook.</strong></li>
-  <li><strong>A large public documentation trail for nearly every rule.</strong></li>
-</ul>
+<p>The first strength is clarity. The mechanics are stated in the same vocabulary the industry uses, which makes the product easy to compare and hard to misread. A trader who understands one percentage-based evaluation understands this one.</p>
+<p>The second is the floor design. A static floor from the starting balance is the most forgiving of the common mechanics for a method with deep retracements, and it removes a daily calculation that trailing products require.</p>
+<p>The third is the platform list. Four options, including a browser terminal, cover most workflows, and the overlap with MT4 and cTrader means most forex traders can keep their existing setup.</p>
+<p>The fourth is the billing. One-off per attempt removes the pressure a subscription creates, which is healthier for a trader who needs a measured pace and cheaper for one who needs a long calendar.</p>
 
-<h2 id="cautions">Where FTMO is weaker</h2>
-<p>The cautions are equally structural. Daily loss is measured on equity, so open positions count against it. The verification phase resets the clock even after a clean first phase. Payout seasoning means the first withdrawal is not immediate. None of them is a reason to avoid the firm automatically, but each has to be priced into the plan before the fee is paid.</p>
-<ul>
-  <li><strong>Daily loss is measured on equity, so open positions count against it.</strong></li>
-  <li><strong>The verification phase resets the clock even after a clean first phase.</strong></li>
-  <li><strong>Payout seasoning means the first withdrawal is not immediate.</strong></li>
-</ul>
+<h2 id="cautions">Where it is weaker</h2>
+<p>The first caution is the equity-based daily stop. It is the right rule and it requires attention to open risk, which many traders do not monitor. A position that is $3,000 underwater on a $100,000 account has consumed a substantial share of a daily allowance before it is closed.</p>
+<p>The second is the three-stage path. Each stage is a chance to fail, and the product of three probabilities is much lower than any one of them. A trader who passes phase one two times in three may still reach a funded account only once in five attempts, which is expensive in fees and time.</p>
+<p>The third is the seasoning period. It is a real delay and it is not visible in the headline split. A trader who needs the first payout quickly should price the wait into the decision rather than discover it after the pass.</p>
+<p>The fourth is the absence of a consistency rule on the evaluation. That sounds like an advantage and it is also a trap: a lumpy pass can reach the funded stage and then meet a review that asks questions a smooth record would not.</p>
+
+<h2 id="fit">Who the product fits</h2>
+<p>It fits a forex trader with a defined stop, a modest target per trade and the ability to trade the London or New York session. The static floor suits a method with recoverable drawdowns, and the multi-stage path suits a trader whose process is repeatable rather than spectacular.</p>
+<p>It fits less well a trader whose edge depends on a small number of large days, one who needs a fast payout, or one who cannot trade the liquid session. Those are mismatches rather than flaws: the same rulebook is a good fit for a different method.</p>
+<p>The test is a simulation of the exact stages on your own record. Apply the floor, the daily equity stop and the three targets to the last hundred trades and record the maximum drawdown and the number of stages survived. If the simulation breaches, the real attempt will too.</p>
+<p>If it survives, the process is unglamorous: size from the floor, cap the session, build each phase in small blocks, and treat the stage boundaries as checkpoints. That is what a three-stage percentage product rewards.</p>
+
+<h2 id="alternatives">When to look elsewhere</h2>
+<p>A trader who needs a trailing floor for discipline should look at a futures product, because a static floor will not stop a slow bleed. A trader who needs a one-step path should look at a direct evaluation, because three stages multiply the failure probability. A trader who needs a fast payout should look at a product with a shorter cycle.</p>
+<p>A trader who cannot trade the US session is better served by forex products than futures ones, which is a point in FTMO's favour. A trader who wants automation should confirm the platform and the activity clauses before choosing, because the advisor ecosystem is platform-specific.</p>
+<p>None of those are arguments against FTMO. They are arguments for choosing on the mechanic that matches the method rather than on the brand that appears most often in comparison tables.</p>
 
 <h2 id="bottom-line">Bottom line</h2>
-<p>FTMO is worth considering if the rulebook matches your strategy and the billing rhythm matches your expected timeline. It is not worth considering as a generic "best firm" purchase, because the firm's mechanic is the product. A trader who buys a static loss floor and then trades it like a static account has bought the wrong product, whatever the fee.</p>
-<p>The score that matters is not a star rating. It is the number of attempts you expect, multiplied by the cost per attempt, compared with the cost of a flat-fee service and the time you have. FTMO is a good deal when you pass early and a poor one when the rulebook fights your method. Judge it on that arithmetic rather than on the marketing.</p>
-
-<h2 id="the-rulebook-that-became-the-reference">The rulebook that became the reference</h2>
-<p>FTMO is the firm most traders learn percentage evaluations on: a static maximum loss measured from the starting balance, an equity-based daily stop and a two-phase path followed by a verification phase. The static floor is the feature that makes the product easy to size against. The daily stop is the feature that ends a bad session before it becomes a bad month. The verification phase is the feature that adds calendar time after a clean pass.</p>
-<p>The evaluation itself has no consistency rule, which is unusual among firms that have added one. The payout stage still has conditions, including the seasoning period and the withdrawal rules. A trader who reads only the evaluation page has read the easier half of the contract.</p>
-
-<h2 id="what-the-platform-list-is-worth">What the platform list is worth</h2>
-<p>MT4, MT5, cTrader and DXtrade cover most retail workflows, including expert advisors on MT4 and MT5 and a modern order interface on cTrader. The breadth is a real advantage: a trader who already has a tested workflow does not have to rebuild it for the evaluation. The platform is not a reason to choose FTMO on its own, but it removes a common source of friction.</p>
-<p>The costs are one-off per attempt, so a slow pass does not add a monthly subscription. A trader who expects to take two months should still add the platform or VPS cost, but the evaluation fee itself does not grow with the calendar. That makes FTMO easier to budget than a subscription product.</p>
-
-<h2 id="the-verdict">The verdict</h2>
-<p>FTMO fits a trader who wants the most conventional percentage rulebook, a static floor and a wide platform choice. It is less suited to a trader who needs a one-step path, a trailing futures product or an on-demand first payout. The verification phase and the payout seasoning are the two calendar costs to accept before buying.</p>
-<p>If the rulebook fits, the operational experience is mature: the dashboard, the documentation and the support process are well established. The main risk is not the firm's operation but the trader's sizing. A static floor invites a fixed risk unit, and a fixed risk unit that is too large is the most common way to fail a conventional evaluation.</p>
+<p>FTMO is a well-built product with clear mechanics and a coherent risk model. The static floor is forgiving, the daily equity stop is strict in the right way, and the one-off fee makes a measured attempt affordable. The three-stage path is the main cost, and it is a cost paid in time and retries rather than in fees.</p>
+<p>The verdict depends on one measurement. A trader who knows their longest losing run and sizes so that it consumes less than half the floor will find the product fair. A trader who has not measured it is buying an expensive way to find out.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Is FTMO good for beginners?</summary><div class="faq-a"><p>It is a reasonable first evaluation because the rulebook is widely documented and the platform choice is broad. The static floor and daily stop are easier to learn than a trailing futures product.</p></div></details>
+<details class="faq"><summary>Is FTMO's loss floor static or trailing?</summary><div class="faq-a"><p>It is static, measured from the starting balance. Profit adds room above the floor rather than moving the failure point, so a constant risk unit stays valid across the whole path.</p></div></details>
 
-<details class="faq"><summary>Does FTMO have a consistency rule?</summary><div class="faq-a"><p>The evaluation does not apply a consistency rule. The funded account and payout terms should still be read separately, because conditions can change after the pass.</p></div></details>
+<details class="faq"><summary>How is the daily stop measured?</summary><div class="faq-a"><p>On equity, so floating losses count as they occur. A position that is $2,000 underwater has consumed part of the allowance before it is closed.</p></div></details>
 
-<details class="faq"><summary>Is FTMO expensive?</summary><div class="faq-a"><p>It charges once per attempt, so a slow pass does not add monthly fees. Compare the fee across expected attempts and add platform or VPS costs before deciding.</p></div></details>
+<details class="faq"><summary>Why does the path have three stages?</summary><div class="faq-a"><p>Two evaluation phases prove the method can produce a result and repeat it, and the verification stage confirms the repeat was a process. Each stage is a separate chance to fail, which lowers the overall pass probability.</p></div></details>
+
+<details class="faq"><summary>When is the first payout available?</summary><div class="faq-a"><p>After a fixed seasoning period that begins with the funded account, not with the evaluation purchase. Later withdrawals follow a shorter schedule.</p></div></details>
+
+<details class="faq"><summary>Does FTMO apply a consistency rule?</summary><div class="faq-a"><p>Not to the evaluation. The payout review still examines the record, so a smooth distribution makes the review easier even when no rule requires it.</p></div></details>
+
+<details class="faq"><summary>Which platform should I use?</summary><div class="faq-a"><p>Keep the one you already trade well. MT4 suits ticket-based workflows, MT5 adds a modern backtester but nets positions, cTrader suits level-based execution, and DXtrade is the browser option.</p></div></details>
   </div>
 </section>
 
@@ -132,7 +184,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Want the FTMO evaluation traded for you?</h2>
-      <p>Flat <strong>$220</strong>, any account size, retries covered, no profit split. We check FTMO's terms before accepting the job.</p>
+      <p>One flat <strong>$220</strong> for any account size. Retries covered, no profit split, funded login in your name. If FTMO's terms forbid third-party trading we tell you before you pay.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -143,14 +195,13 @@ generator: content-system
     <h2>Related reading</h2>
     <ul class="link-list">
       <li><a href="/blog/ftmo-challenge-passing.html">FTMO challenge passing</a></li>
+      <li><a href="/blog/ftmo-phase1-phase2-strategy.html">FTMO phase one and phase two strategy</a></li>
+      <li><a href="/blog/ftmo-vs-funded-trader-tft-comparison.html">FTMO vs Funded Trader TFT</a></li>
+      <li><a href="/blog/ftmo-vs-audacity-capital-comparison.html">FTMO vs Audacity Capital</a></li>
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
       <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
     </ul>
     <p class="disclaimer">FTMO is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>
