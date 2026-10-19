@@ -25,7 +25,7 @@ const abs = (p) => site.url + (p.startsWith('/') ? p : '/' + p);
 
 const TELEGRAM_ICON = `<svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg>`;
 
-const telegramButton = (cls = 'btn btn-telegram', label = 'Chat on Telegram') =>
+const telegramButton = (cls = 'btn btn-telegram', label = 'Pass your evaluation') =>
   `<a class="${cls}" href="${site.telegram}" target="_blank" rel="noopener">${TELEGRAM_ICON}<span>${label}</span></a>`;
 
 /**
@@ -253,12 +253,12 @@ function header(activePath) {
       </ul>
     </nav>
     <div class="header-actions">
-      <span class="header-pitch">We pass prop firm challenges</span>
-      <a class="header-telegram" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Chat with ${site.name} on Telegram" title="Chat on Telegram">${TELEGRAM_ICON}</a>
+      <span class="header-pitch">Prop firm challenge passing service</span>
+      <a class="header-telegram" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Pass your evaluation on Telegram" title="Pass your evaluation on Telegram">${TELEGRAM_ICON}</a>
       <a class="btn btn-primary header-cta" href="/#get-started">Start for ${site.price}</a>
     </div>
   </div>
-  <a class="header-note" href="/#get-started">We pass prop firm challenges <span>· ${site.price} flat</span></a>
+  <a class="header-note" href="/#get-started">Prop firm challenge passing service <span>· ${site.price} flat</span></a>
 </header>`;
 }
 
@@ -346,9 +346,9 @@ ${breadcrumbs(page)}
 ${withTelegramBand(body)}
 </main>
 ${footer()}
-<a class="telegram-float" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Chat with ${site.name} on Telegram">
+<a class="telegram-float" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Pass your evaluation on Telegram">
   <span class="telegram-float-icon">${TELEGRAM_ICON}</span>
-  <span class="telegram-float-text"><strong>Chat on Telegram</strong><small>${site.telegramHandle}</small></span>
+  <span class="telegram-float-text"><strong>Pass your evaluation</strong><small>${site.telegramHandle}</small></span>
 </a>
 </body>
 </html>

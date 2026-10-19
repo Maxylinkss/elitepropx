@@ -392,7 +392,7 @@ html { scroll-padding-top: 84px; }
 
 /* ------------------------------- responsive ------------------------------ */
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .header-pitch { display: none; }
 }
 
@@ -438,6 +438,9 @@ html { scroll-padding-top: 84px; }
   }
   .header-note span { font-weight: 600; color: var(--ink-2); }
   .header-note:hover { background: #e2f8ee; color: var(--brand-dark); }
+  @media (max-width: 360px) {
+    .header-note { font-size: 0.7rem; padding: 0.4rem 0.9rem; }
+  }
   html { scroll-padding-top: 118px; }
   .section { padding: 2.4rem 0; }
   h1 { font-size: clamp(1.85rem, 7vw, 2.4rem); }
