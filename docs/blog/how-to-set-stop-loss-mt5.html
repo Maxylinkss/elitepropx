@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Set a Stop Loss in MT5 (Server-Side) | 2026</title>
-<meta name="description" content="How to Set Stop Loss MT5: A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only…">
+<title>How to Set a Stop Loss in MT5 (Server-Side)</title>
+<meta name="description" content="Set a stop loss in MT5 so the broker holds it: order-ticket stops, modifying after entry, checking it survived a disconnect, and the errors that block placement.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="canonical" href="https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html">
 <meta name="theme-color" content="#0b1220">
 <meta name="author" content="ElitePropX">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ElitePropX">
-<meta property="og:title" content="How to Set a Stop Loss in MT5 (Server-Side) | 2026">
-<meta property="og:description" content="How to Set Stop Loss MT5: A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only…">
+<meta property="og:title" content="How to Set a Stop Loss in MT5 (Server-Side)">
+<meta property="og:description" content="Set a stop loss in MT5 so the broker holds it: order-ticket stops, modifying after entry, checking it survived a disconnect, and the errors that block placement.">
 <meta property="og:url" content="https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html">
 <meta property="og:image" content="https://elitepropx.com/assets/img/og/blog-how-to-set-stop-loss-mt5.svg">
 <meta property="og:image:width" content="1200">
@@ -21,8 +21,8 @@
 <meta property="article:published_time" content="2026-10-19T08:00:00+00:00">
 <meta property="article:modified_time" content="2026-10-19T08:00:00+00:00">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Set a Stop Loss in MT5 (Server-Side) | 2026">
-<meta name="twitter:description" content="How to Set Stop Loss MT5: A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only…">
+<meta name="twitter:title" content="How to Set a Stop Loss in MT5 (Server-Side)">
+<meta name="twitter:description" content="Set a stop loss in MT5 so the broker holds it: order-ticket stops, modifying after entry, checking it survived a disconnect, and the errors that block placement.">
 <meta name="twitter:image" content="https://elitepropx.com/assets/img/og/blog-how-to-set-stop-loss-mt5.svg">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/logo-mark.svg">
@@ -32,9 +32,10 @@
 <script defer src="/assets/js/main.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://elitepropx.com/#organization","name":"ElitePropX","legalName":"ElitePropX","url":"https://elitepropx.com/","logo":{"@type":"ImageObject","url":"https://elitepropx.com/assets/img/logo.svg","width":512,"height":128},"description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","email":"support@elitepropx.com","foundingDate":"2024","areaServed":"Worldwide","knowsAbout":["prop firm challenge passing","FTMO challenge","futures prop firm evaluations","Apex Trader Funding","Topstep Combine","FundedNext"],"sameAs":["https://www.youtube.com/hashtag/propfirmpassing","https://t.me/voraspas"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"support@elitepropx.com","url":"https://t.me/voraspas","availableLanguage":["English"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://elitepropx.com/#website","url":"https://elitepropx.com/","name":"ElitePropX","description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","inLanguage":"en","publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html#article","headline":"How to Set a Stop Loss in MT5 (Server-Side)","description":"How to Set Stop Loss MT5: A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only…","image":"https://elitepropx.com/assets/img/og/blog-how-to-set-stop-loss-mt5.svg","datePublished":"2026-10-19T08:00:00+00:00","dateModified":"2026-10-19T08:00:00+00:00","wordCount":895,"articleSection":"Platforms","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html"},"author":{"@id":"https://elitepropx.com/#organization"},"publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html#article","headline":"How to Set a Stop Loss in MT5 (Server-Side)","description":"Set a stop loss in MT5 so the broker holds it: order-ticket stops, modifying after entry, checking it survived a disconnect, and the errors that block placement.","image":"https://elitepropx.com/assets/img/og/blog-how-to-set-stop-loss-mt5.svg","datePublished":"2026-10-19T08:00:00+00:00","dateModified":"2026-10-19T08:00:00+00:00","wordCount":3789,"articleSection":"Platforms","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html"},"author":{"@id":"https://elitepropx.com/#organization"},"publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Prop Firm Challenge Passing","serviceType":"Prop firm challenge passing service","provider":{"@id":"https://elitepropx.com/#organization"},"areaServed":"Worldwide","description":"ElitePropX trades prop firm evaluations on your behalf for a flat $220 fee, covering retries, with no profit split on the funded account.","offers":{"@type":"Offer","price":"220","priceCurrency":"USD","description":"Flat fee per evaluation, any account size, retries covered.","availability":"https://schema.org/InStock","url":"https://elitepropx.com/"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elitepropx.com/"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://elitepropx.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Set a Stop Loss in MT5 (Server-Side)","item":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elitepropx.com/"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://elitepropx.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Set Stop Loss MT5","item":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I set a stop loss in MT5 before entering?","acceptedAnswer":{"@type":"Answer","text":"Open the order ticket with F9, enter the instrument, volume and direction, then type the stop price in the Stop Loss field. The ticket shows the resulting loss in account currency. Sending the order with that field filled places the stop on the broker's server at the same moment as the entry."}},{"@type":"Question","name":"Is an MT5 stop loss server-side or client-side?","acceptedAnswer":{"@type":"Answer","text":"A stop placed on the order, or added by modifying the position, is a server-side order. A price level drawn on the chart is not an order at all. An EA that closes a position at a price is client-side logic and stops working if the terminal closes."}},{"@type":"Question","name":"Why does MT5 say invalid stops?","acceptedAnswer":{"@type":"Answer","text":"Usually because the stop is inside the broker's minimum stop distance, or because the price precision is wrong. Check the symbol specification for the stop level and the freeze level, and set the level with the chart handle rather than typing a rounded price."}},{"@type":"Question","name":"Does the built-in trailing stop keep working when the platform closes?","acceptedAnswer":{"@type":"Answer","text":"No. The built-in trail runs in the terminal, so it stops adjusting when the terminal closes. The last stop it set remains on the server, which means the position stays protected at that level rather than unprotected."}},{"@type":"Question","name":"How can I check that my stop is really on the server?","acceptedAnswer":{"@type":"Answer","text":"Place a demo position with a stop, close the terminal completely, and reopen it. If the stop is still shown on the position without the platform re-attaching it, it is held by the server. The history tab should also record it as part of the position."}},{"@type":"Question","name":"Can I remove a stop loss after placing it?","acceptedAnswer":{"@type":"Answer","text":"Yes, by setting the stop field to zero, but check the plan terms first. Some prop firms treat removing a stop to avoid a loss as a conduct issue, and the trade history will show the removal."}},{"@type":"Question","name":"What is the freeze level?","acceptedAnswer":{"@type":"Answer","text":"The distance from the current price within which positions cannot be modified or closed. It is a broker setting, not a platform one, and it often widens around major releases. If the price is inside the freeze level, a stop modification is refused until it moves out."}},{"@type":"Question","name":"Does a stop loss guarantee the price I set?","acceptedAnswer":{"@type":"Answer","text":"No. A stop becomes a market order when triggered, so the fill can be worse than the level, sometimes substantially after a gap. Only a guaranteed stop, where offered, fixes the price, and those are rarely available on evaluation accounts."}}]}</script>
 </head>
 <body class="page-article">
 <a class="skip" href="#main">Skip to content</a>
@@ -65,12 +66,13 @@
   </div>
 </header>
 <main id="main">
-<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Platforms</a></li><li aria-current="page">How to Set a Stop Loss in MT5 (Server-Side)</li></ol></nav>
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Platforms</a></li><li aria-current="page">How to Set Stop Loss MT5</li></ol></nav>
+
 <section class="page-head">
   <div class="wrap narrow">
-    <p class="kicker">How to Set Stop Loss MT5 · reviewed October 2026</p>
+    <p class="kicker">Platforms · reviewed October 2026</p>
     <h1>How to Set a Stop Loss in MT5 (Server-Side)</h1>
-    <p class="lede">A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only while the terminal is running, and a server-side order that survives a disconnect. On an evaluation account the second is the only defensible choice. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+    <p class="lede">A stop loss in MetaTrader 5 is an instruction attached to an order, and where that instruction lives decides whether it works. Placed with the entry, it is held by the broker and survives a closed terminal. Added by a script or managed by an expert advisor, it may exist only while the software is running. This guide covers both paths, how to confirm which one you are using, and the six errors that stop a stop from being accepted.</p>
   </div>
 </section>
 
@@ -79,55 +81,274 @@
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>Server-side stops survive terminal crashes, connection drops and platform restarts.</li>
-  <li>The order ticket shows the stop in price terms; the risk in account currency has to be calculated separately.</li>
-  <li>A stop moved after entry changes the risk of the trade and must be recorded in the journal as a breach if it moves away from the entry.</li>
-  <li>The platform decision should be checked against the exact plan, not the brand: terms change between cohorts and between plan names.</li>
+  <li>Enter the stop in the order ticket before sending the order. That is what makes it server-side.</li>
+  <li>Adding a stop after entry also creates a server-side order, provided the platform sends it — check the trade tab, not just the chart.</li>
+  <li>An expert advisor that closes a position at a price is not a stop. It is a program that must be running.</li>
+  <li>Invalid stops are usually a stop level, freeze level or price-precision problem, not a platform fault.</li>
+  <li>Verify by closing the terminal: a server-side stop remains visible on the server and in the position record.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#steps">The exact steps</a></li>
-  <li><a href="#evaluation">Why this matters more on an evaluation</a></li>
+  <li><a href="#two-kinds">Two kinds of stop, one word</a></li>
+  <li><a href="#order-ticket">Placing a stop with the order</a></li>
+  <li><a href="#after">Adding a stop after entry</a></li>
+  <li><a href="#modify">Modifying and trailing a stop</a></li>
+  <li><a href="#verify">Confirming it is server-side</a></li>
+  <li><a href="#errors">Six reasons a stop is rejected</a></li>
+  <li><a href="#ea">Stops inside an expert advisor</a></li>
+  <li><a href="#prop">What prop rules require</a></li>
+  <li><a href="#checklist">A five-step routine</a></li>
+  <li><a href="#hedged">Stops on hedged and netting accounts</a></li>
+  <li><a href="#partial">Stops with partial closes and multiple positions</a></li>
+  <li><a href="#news">Stops around news and gaps</a></li>
+  <li><a href="#troubleshoot">Troubleshooting a stop that did not trigger</a></li>
+  <li><a href="#questions">Common questions</a></li>
 </ol>
 </div>
-<h2 id="steps">The exact steps</h2>
-<p>A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only while the terminal is running, and a server-side order that survives a disconnect. On an evaluation account the second is the only defensible choice. The consequence is mechanical: an order that exists only on the chart is not a stop, and a setting that resets after an update is not a plan.</p>
-<h3>Step 1: Open a new order and expand the stop fields</h3>
-<p>In MetaTrader 5, open the New Order window, choose the symbol and volume, then expand the section that contains the stop loss and take profit fields. On the desktop terminal the fields are visible by default; on some builds they are collapsed. Enter the stop as a price, not as a distance, and check that the field is not greyed out because the distance is inside the broker’s minimum stop level.</p>
-<h3>Step 2: Choose the server-side option, not a chart line</h3>
-<p>A stop entered in the order ticket is sent to the server with the order and survives a disconnect. A horizontal line dragged onto the chart is a client-side object and does not. If the stop is added after entry, use the position’s Modify or Stop Loss command rather than a chart tool, and confirm the change in the order list.</p>
-<h3>Step 3: Verify the stop in the Trade tab</h3>
-<p>After the order is filled, open the Trade tab and look at the position row. The stop loss column should show the price you entered. If it is empty, the position is unprotected; right-click the position, choose Modify, and attach the stop. Do this before the trade has time to move against you.</p>
-<h3>Step 4: Check the risk in account currency</h3>
-<p>The ticket shows the estimated loss at the stop, but it does not know your risk budget. Compare the number with the dollar risk the plan allows, and if the position is too large, reduce the volume rather than moving the stop closer. Moving the stop closer to fit the size is how a normal trade becomes a breach.</p>
-<p>The steps are mechanical on purpose. The failure mode in an evaluation is rarely a missing feature; it is a stop that was never placed, a setting that reset after a platform update, or an order type that behaved differently from the label. Walking the same sequence every time is what makes the behaviour predictable under pressure.</p>
-<h2 id="evaluation">Why this matters more on an evaluation</h2>
-<p>On a personal account, a missing stop is a risk. On an evaluation, it is a rule breach waiting to happen. A loss that runs past the intended stop can consume the daily allowance before the trader has made a decision, and on a trailing threshold it can end the account even if the balance later recovers. The evaluation does not distinguish between a deliberate risk and an accidental one.</p>
-<p>The correct default is that every position has a server-side stop before it has a size. That order — stop first, size second — is the reverse of how most traders click, which is why the mistake is common. The platform will accept a market order without a stop; the rulebook will not forgive one.</p>
-<p>A second evaluation-specific issue is the daily reset. A stop that is valid today may be irrelevant tomorrow because the daily allowance resets and the plan's risk budget changes. Recalculate the maximum loss at the start of each session and write it next to the platform, rather than carrying yesterday's number in your head.</p>
 
+<p>The word "stop loss" covers two different mechanisms that behave differently in exactly the situation where the difference matters. One is an order held by the broker's server. The other is a rule inside a program that is watching the price. Both are called a stop loss in the interface, and only one of them exists after a disconnect.</p>
+<p>For a prop account the distinction is not academic. An unprotected position after a connection drop is the most common cause of a drawdown breach that the trader cannot explain, because from their side they had a stop and the account still lost more than planned.</p>
 
+<h2 id="two-kinds">Two kinds of stop, one word</h2>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Mechanism</th><th>Where it lives</th><th>Survives terminal closed</th><th>Survives disconnect</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Stop loss set on the order</td><td>Broker server</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Stop loss added later via the platform</td><td>Broker server</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>EA closing the position at a price</td><td>Terminal process</td><td>No</td><td>No</td></tr>
+      <tr><td>EA trailing logic</td><td>Terminal process</td><td>No</td><td>No</td></tr>
+      <tr><td>Manual close when the level is hit</td><td>The trader</td><td>No</td><td>No</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The first two rows are real stops. The last three are risk management behaviour that depends on something running, and a prop rule that requires a stop is satisfied only by the first two. A trader who "always uses a stop" but implements it as an EA exit has no stop in the rule's sense.</p>
+<p>The test is simple and worth doing once: open a demo position with a stop, close the terminal, and reopen it. If the stop is still on the position, it is on the server. If the position is open with no stop, or the platform tries to re-attach one, the implementation was local.</p>
 
+<h2 id="order-ticket">Placing a stop with the order</h2>
+<p>This is the only method that guarantees protection from the instant the position exists. In the order ticket, the stop loss field is sent with the entry instruction, so the broker receives both together.</p>
+<ol>
+  <li>Open the order ticket with <strong>New Order</strong> (F9), and choose the instrument, volume and direction.</li>
+  <li>In the <strong>Stop Loss</strong> field, enter the price, not the distance. Some builds accept a distance in points if you type a number and the field shows a unit selector — check which one you are using.</li>
+  <li>Confirm the risk against the position size: the platform shows the loss in account currency at the bottom of the ticket. If it does not match the intended risk, stop and recalculate.</li>
+  <li>Send the order. The position appears in the <strong>Trade</strong> tab with the stop already listed.</li>
+</ol>
+<p>Two details cause most of the trouble here. The first is entering a price in the wrong direction: a sell position needs a stop above the entry, and a buy needs one below. MT5 will reject an inverted stop rather than accept it, which is helpful, but the rejection message is not always clear.</p>
+<p>The second is the price precision. If the instrument has five digits and the stop is entered with four, the value can be interpreted as a different price entirely. Use the chart's drag handle or the +/- buttons to set the level rather than typing a rounded number.</p>
 
+<h2 id="after">Adding a stop after entry</h2>
+<p>Adding a stop to an open position is a server-side modification, not a new local rule. In the Trade tab, right-click the position, choose <strong>Modify or Delete</strong>, and set the stop loss field. The platform sends a modification request to the broker.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Action</th><th>What is sent</th><th>What can go wrong</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Right-click → Modify or Delete</td><td>A server modification request</td><td>Rejected if the price is too close to the market</td></tr>
+      <tr><td>Drag the stop line on the chart</td><td>The same request, triggered by the drag</td><td>Drag may not register if the chart is not in one-click mode</td></tr>
+      <tr><td>Set via the position's context menu</td><td>The same request</td><td>Silent failure if the platform is disconnected</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The third row is the dangerous one. If the terminal is disconnected, the modification does not reach the server and the position stays unprotected, while the interface may still show a line on the chart. The confirmation is a change in the position record — the stop column in the Trade tab should update. If only the chart changed, nothing was set.</p>
+<p>A practical habit is to add the stop before the position is in profit, and to confirm it in the Trade tab rather than on the chart. That single check removes most of the ambiguity.</p>
 
+<h2 id="modify">Modifying and trailing a stop</h2>
+<p>Moving a stop is the same request as adding one. Two constraints apply: the new level must be beyond the minimum stop distance, and on a buy the stop cannot be moved above the current market price.</p>
+<p>The built-in <strong>Trailing Stop</strong> function is a client-side tool in the standard MetaTrader implementation. It adjusts the stop when the price moves in your favour, and it runs in the terminal. That means it stops trailing when the terminal closes, although the last stop it set remains on the server. This is an important distinction: trailing stops placed by the built-in tool do not disappear, they simply stop following.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Tool</th><th>Runs where</th><th>Effect when the terminal closes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Built-in trailing stop</td><td>Terminal</td><td>Last stop remains; no further trailing</td></tr>
+      <tr><td>EA trailing logic</td><td>Terminal, inside the EA</td><td>No further trailing; stop stays where it was last set</td></tr>
+      <tr><td>Manual modification</td><td>Server</td><td>Unchanged</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Because the built-in trail leaves the last stop in place, it is safer than an EA exit that closes on a condition. The failure mode is a stop that is too far away, not a position with no stop at all. For a prop account that is the difference between a wider loss and an unprotected one.</p>
 
+<h2 id="verify">Confirming it is server-side</h2>
+<p>Verification takes a minute and should be done once per platform and broker combination, because the behaviour can differ between them.</p>
+<ol>
+  <li>Open a demo position with a stop loss.</li>
+  <li>Close the terminal completely, not just the window.</li>
+  <li>Reopen it and log in. The position should show the stop without the platform re-attaching one.</li>
+  <li>Check the <strong>History</strong> tab after the position closes: the order record should show the stop as part of the position.</li>
+  <li>Optionally, disconnect the internet while a position is open and move the price through the stop on a demo with an active feed — the broker should close it.</li>
+</ol>
+<p>The fourth step is the one that matters for a review. If a firm later asks whether a position had a stop, the history is the evidence, and a stop that was set on the server appears there as an order-level field rather than as a separate close.</p>
+<p>A quick structural check is also possible: on a server-side stop, the position's stop column in the Trade tab shows a price, and modifying it produces a confirmation dialog. If the interface shows a dotted line that cannot be modified, it is a drawing rather than an order.</p>
 
+<h2 id="errors">Six reasons a stop is rejected</h2>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Message or symptom</th><th>Cause</th><th>Fix</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Invalid stops</td><td>Stop is inside the broker's minimum distance</td><td>Move the stop beyond the stop level shown in the symbol specification</td></tr>
+      <tr><td>Invalid price</td><td>Precision or direction error</td><td>Use the chart handle; check the stop is on the correct side</td></tr>
+      <tr><td>Off quotes</td><td>Price moved between request and execution</td><td>Retry, or use a stop-limit order if the platform supports it</td></tr>
+      <tr><td>No changes</td><td>The requested stop equals the current one</td><td>Nothing to fix; the stop is already set</td></tr>
+      <tr><td>Market closed</td><td>Attempt during a session break</td><td>Set the stop when the market is open</td></tr>
+      <tr><td>Trade disabled</td><td>The firm has disabled modification at that moment</td><td>Contact support; do not trade unprotected</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The first row is by far the most common, and it has a strategic implication. During a news release, brokers often widen the minimum stop distance and the freeze level, which means a stop that was valid ten minutes ago may be rejected now. That is one more reason to be flat before the window rather than trying to adjust protection inside it.</p>
+<p>The freeze level is related but distinct: it is the distance within which a position cannot be modified or closed at all. If the price is inside the freeze level, the platform refuses the request regardless of the stop distance. Traders usually meet this for the first time at the worst possible moment, which is why the symbol specification is worth reading before a volatile week.</p>
 
+<h2 id="ea">Stops inside an expert advisor</h2>
+<p>An EA can place a real server-side stop, and it can also simulate one. The difference is whether it sends a stop as part of the order or monitors the price and closes the position.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Implementation</th><th>Code pattern</th><th>Protection when offline</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Stop sent with the order</td><td>Order send with a stop price parameter</td><td>Yes</td></tr>
+      <tr><td>Stop added after entry</td><td>A modification request in the same tick</td><td>Yes, once the request succeeds</td></tr>
+      <tr><td>Stop simulated by the EA</td><td>Compare price to level, then close</td><td>No</td></tr>
+      <tr><td>Trailing handled by the EA</td><td>Modification requests on each tick</td><td>Last stop remains, trailing stops</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The third row is the one to eliminate. Any EA that closes a position on a price condition should also send a real stop at entry, so that the simulated logic is an optimisation on top of a guaranteed floor. A simple rule for reviewing any purchased EA: if the code never sends a stop price and never sends a modification request, it has no server-side protection at all.</p>
+<p>The fourth row is acceptable. A trailing implementation that sends modification requests leaves the last stop on the server, so a disconnect freezes protection at the last level rather than removing it. The position may give back more than intended, but it does not run unhedged to the account floor.</p>
 
+<h2 id="prop">What prop rules require</h2>
+<p>Most challenge rulebooks do not require a stop loss for every position, but the ones that do check it from the trade history. A position with no stop in the record is a breach even if the trader intended one.</p>
+<p>The practical requirements are consistent across firms.</p>
+<ul>
+  <li>A stop must exist at entry, not added after the position is in difficulty.</li>
+  <li>The stop must be held by the broker, not by an EA that may not be running.</li>
+  <li>The stop must be visible in the trade history if the account is reviewed.</li>
+  <li>The stop must not be removed to avoid a loss, which some plans treat as a separate conduct issue.</li>
+</ul>
+<p>None of these is difficult to satisfy, and all of them are satisfied by the order-ticket method. The reason traders fail them is not complexity; it is the habit of entering first and adding the stop afterwards, which is exactly the window where a fast move can take the account past its limit.</p>
 
+<h2 id="checklist">A five-step routine</h2>
+<ol>
+  <li>Calculate the lot size from the stop distance before opening the ticket.</li>
+  <li>Enter the stop in the ticket, not after the fill.</li>
+  <li>Check the displayed loss matches the intended risk.</li>
+  <li>After the fill, confirm the stop appears in the Trade tab's stop column.</li>
+  <li>If the platform is disconnected at any point, re-check the position before doing anything else.</li>
+</ol>
+<p>Five steps, about fifteen seconds. The routine is worth building into the habit precisely because it is unglamorous: the failures it prevents are not visible until the day they cost an account, and by then the account is gone.</p>
 
+<h2 id="hedged">Stops on hedged and netting accounts</h2>
+<p>How a stop behaves depends on whether the account holds positions separately or nets them into one. The same instruction produces different results on the two models.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Action</th><th>Hedging account</th><th>Netting account</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Buy while short</td><td>Two positions, two stops</td><td>Short reduced or closed</td></tr>
+      <tr><td>One stop triggered</td><td>That leg closes; the other stays</td><td>The net position closes</td></tr>
+      <tr><td>Modify a stop</td><td>Applies to the selected ticket</td><td>Applies to the single position</td></tr>
+      <tr><td>Partial close</td><td>Possible on either leg</td><td>Reduces the net volume</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The first row is where expectations break. A trader who buys to hedge a short on a netting account does not create a protected pair; they reduce the position, possibly to zero. If the intent was to hold both legs with separate stops, the account cannot express it, and the risk plan has to be rebuilt around one position with one stop.</p>
+<p>The second row matters for the same reason. On a hedging account, a stop on one leg does not close the other, so a trader who expected the whole idea to exit may find half the position still open. On a netting account the stop covers the net exposure, which is simpler but leaves no way to protect the legs separately.</p>
+<p>Several prop plans prohibit hedging outright, which resolves the ambiguity in one direction. Where hedging is permitted, check both the account model and the plan wording: a plan that permits hedging on a netting account is offering something the platform will not let you do.</p>
 
+<h2 id="partial">Stops with partial closes and multiple positions</h2>
+<p>Partial closes change the relationship between the stop and the risk. A position of two lots with a stop $500 away risks $1,000; closing one lot halves the risk, but the stop remains a single instruction for the remaining volume.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Action</th><th>Risk after the action</th><th>Stop behaviour</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Open 2 lots, stop $500 away</td><td>$1,000</td><td>One stop on both lots</td></tr>
+      <tr><td>Close 1 lot</td><td>$500</td><td>Stop still applies to the remaining lot</td></tr>
+      <tr><td>Move the stop to break-even</td><td>~$0 plus costs</td><td>Modification applies to the whole remaining position</td></tr>
+      <tr><td>Open a second position in the same instrument</td><td>Sum of both stops</td><td>Two independent stops on a hedging account</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The fourth row is where the daily loss budget is usually miscalculated. Two positions in the same instrument are two risks, and their sum is what the daily limit sees. A trader who thinks in terms of one trade with one stop will underestimate the day's exposure by the size of the second position.</p>
+<p>Partials also interact with a rule that requires a stop at entry. Closing half the position does not remove the stop; it reduces the volume the stop protects. If the plan requires every position to carry a stop, the remaining volume must still have one, and the modification record should show it.</p>
+<p>A simple discipline keeps this manageable: before adding to a position, write the total risk including the existing stop, and confirm it still fits the daily budget. Adding is a new decision, not a continuation of the first one.</p>
 
+<h2 id="news">Stops around news and gaps</h2>
+<p>A stop is a market order once triggered, which means the fill can be worse than the level. Around scheduled releases, that difference can be several times the intended risk, and no platform setting changes it.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Condition</th><th>Stop behaviour</th><th>Effect on risk</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Normal liquidity</td><td>Fills close to the level</td><td>Risk as planned</td></tr>
+      <tr><td>Widened spread</td><td>Fills at the bid or ask, which may be far from the mid</td><td>Risk larger than planned</td></tr>
+      <tr><td>Gap through the level</td><td>Fills at the first available price beyond the stop</td><td>Risk multiples of planned</td></tr>
+      <tr><td>Inside the freeze level</td><td>Modification and closure refused</td><td>Cannot act at all</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The third row is why news rules exist. The firm cannot price a gap, so it restricts the periods in which a gap can catch an open position. The trader's equivalent is to reduce size before a release, or to be flat.</p>
+<p>The fourth row is the one traders discover accidentally: a stop that is technically set can be un-modifiable while the price sits inside the freeze level, which means the protection is fixed at exactly the moment it might need widening. Checking the freeze level before a volatile week is worth more than adjusting the stop during it.</p>
+<p>Neither row is a reason to trade without a stop. A stop that fills badly is still better than a position with no exit condition, because the bad fill has a boundary and the unprotected position does not.</p>
+
+<h2 id="troubleshoot">Troubleshooting a stop that did not trigger</h2>
+<p>A stop that exists but does not execute is rare, and almost always explainable from the platform record. Work through these in order.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Symptom</th><th>Likely cause</th><th>Where to check</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>The level was touched but nothing happened</td><td>The stop was a chart line, not an order</td><td>Trade tab: is a stop price listed?</td></tr>
+      <tr><td>The stop filled far past the level</td><td>A gap or thin liquidity</td><td>History: requested versus filled price</td></tr>
+      <tr><td>The stop moved without you moving it</td><td>Trailing stop or an EA modification</td><td>Journal: the modification entry and its time</td></tr>
+      <tr><td>The position closed early</td><td>A margin call, not the stop</td><td>History: the close reason and the margin level</td></tr>
+      <tr><td>No stop at all after a restart</td><td>It was managed locally by an EA</td><td>Journal: was a stop ever sent to the server?</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The fourth row is the one traders misattribute. A position closed by the broker because margin was exhausted is not a stop execution; it is a forced liquidation, and it usually happens at a worse price than the stop would have produced. If the account was carrying several positions, the liquidation may also have closed positions that were not in difficulty.</p>
+<p>The fifth row is the definitive test for local management. If a restart leaves the position open with no stop, nothing was ever on the server, whatever the chart showed. That is the case to fix before trading again, because the next disconnect will produce the same outcome with a larger position.</p>
+<p>The platform journal records modification requests and executions with timestamps. Reading it once after a surprising close tells you which of these five cases applies, and each case has a different fix.</p>
+<p>Two of the five are worth fixing permanently rather than case by case. If the stop was a chart line, the fix is to always use the order ticket. If the stop was managed by an EA, the fix is to require a server-side stop at entry and treat the EA logic as secondary. The other three are market or broker conditions that cannot be fixed, only planned around — by smaller size, wider stops or staying flat.</p>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2 id="questions">Common questions</h2>
+
+<details class="faq"><summary>How do I set a stop loss in MT5 before entering?</summary><div class="faq-a"><p>Open the order ticket with F9, enter the instrument, volume and direction, then type the stop price in the Stop Loss field. The ticket shows the resulting loss in account currency. Sending the order with that field filled places the stop on the broker's server at the same moment as the entry.</p></div></details>
+
+<details class="faq"><summary>Is an MT5 stop loss server-side or client-side?</summary><div class="faq-a"><p>A stop placed on the order, or added by modifying the position, is a server-side order. A price level drawn on the chart is not an order at all. An EA that closes a position at a price is client-side logic and stops working if the terminal closes.</p></div></details>
+
+<details class="faq"><summary>Why does MT5 say invalid stops?</summary><div class="faq-a"><p>Usually because the stop is inside the broker's minimum stop distance, or because the price precision is wrong. Check the symbol specification for the stop level and the freeze level, and set the level with the chart handle rather than typing a rounded price.</p></div></details>
+
+<details class="faq"><summary>Does the built-in trailing stop keep working when the platform closes?</summary><div class="faq-a"><p>No. The built-in trail runs in the terminal, so it stops adjusting when the terminal closes. The last stop it set remains on the server, which means the position stays protected at that level rather than unprotected.</p></div></details>
+
+<details class="faq"><summary>How can I check that my stop is really on the server?</summary><div class="faq-a"><p>Place a demo position with a stop, close the terminal completely, and reopen it. If the stop is still shown on the position without the platform re-attaching it, it is held by the server. The history tab should also record it as part of the position.</p></div></details>
+
+<details class="faq"><summary>Can I remove a stop loss after placing it?</summary><div class="faq-a"><p>Yes, by setting the stop field to zero, but check the plan terms first. Some prop firms treat removing a stop to avoid a loss as a conduct issue, and the trade history will show the removal.</p></div></details>
+
+<details class="faq"><summary>What is the freeze level?</summary><div class="faq-a"><p>The distance from the current price within which positions cannot be modified or closed. It is a broker setting, not a platform one, and it often widens around major releases. If the price is inside the freeze level, a stop modification is refused until it moves out.</p></div></details>
+
+<details class="faq"><summary>Does a stop loss guarantee the price I set?</summary><div class="faq-a"><p>No. A stop becomes a market order when triggered, so the fill can be worse than the level, sometimes substantially after a gap. Only a guaranteed stop, where offered, fixes the price, and those are rarely available on evaluation accounts.</p></div></details>
   </div>
 </section>
 
 <section class="cta-band">
   <div class="wrap cta-band-inner">
     <div>
-      <h2>Want the evaluation traded for you?</h2>
-      <p>Flat <strong>$220</strong>, any firm, any account size, retries covered. Every position enters with a server-side stop.</p>
+      <h2>Want the rulebook traded for you?</h2>
+      <p>Flat <strong>$220</strong>, any firm, any account size, retries covered. We read the terms before accepting the job.</p>
     </div>
     <div class="cta-actions">
       <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
@@ -142,15 +363,13 @@
     <ul class="link-list">
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
-      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
-      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/prop-firm-mt4-mt5-ctrader-platforms.html">MT4, MT5 and cTrader compared</a></li>
+      <li><a href="/blog/prop-firm-ea-automated-trading.html">Automation and EA rules</a></li>
+      <li><a href="/blog/lot-size-for-100k-prop-firm-account.html">Lot size on a $100,000 account</a></li>
+      <li><a href="/blog/prop-firm-news-trading-rules.html">News trading windows</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
     </ul>
-    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">MetaTrader 5 is a product of MetaQuotes and is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Platform behaviour and broker settings vary; verify stop levels and freeze levels with your broker. Trading involves substantial risk of loss.</p>
   </div>
 </section>
 
