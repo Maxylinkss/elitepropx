@@ -1,6 +1,6 @@
 ---
 title: FTMO Phase 1 Phase 2 Strategy | 2026
-desc: FTMO Phase 1 Phase 2 Strategy: FTMO Phase 1 Phase 2 Strategy is one of the decisions that sits between a trading method and a funded account. With the math,…
+desc: A phase-by-phase FTMO strategy: separate risk budgets, targets that repeat, a verification plan and the sizing that keeps all three stages alive.
 path: /blog/ftmo-phase1-phase2-strategy.html
 type: article
 h1: FTMO Phase 1 Phase 2 Strategy
@@ -16,9 +16,9 @@ generator: content-system
 ---
 <section class="page-head">
   <div class="wrap narrow">
-    <p class="kicker">FTMO Phase 1 Phase 2 Strategy · reviewed October 2026</p>
+    <p class="kicker">Strategy guide · reviewed October 2026</p>
     <h1>FTMO Phase 1 Phase 2 Strategy</h1>
-    <p class="lede">FTMO Phase 1 Phase 2 Strategy is one of the decisions that sits between a trading method and a funded account. It changes how much you can risk, how quickly you can pass, or what a pass is worth after the fact, and it is usually decided by a clause rather than by the market. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+    <p class="lede">Phase one and phase two are not the same task repeated. The first proves a method can produce a result from a clean balance. The second asks for the same result from a higher balance and the same floor, which means the room above failure is different and the risk budget has to be recalculated. The verification stage then asks whether the result was a process. This guide sets out a separate plan for each stage, with illustrative numbers on a $100,000 account. Confirm the current plan terms before applying any of it.</p>
   </div>
 </section>
 
@@ -27,44 +27,132 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  
-  
-  
-  <li>The strategy decision should be checked against the exact plan, not the brand: terms change between cohorts and between plan names.</li>
+  <li>Phase one should be traded to prove a sample, not to reach the target in the shortest time.</li>
+  <li>Phase two starts with the first phase's profit banked and the same floor, so the room is larger but the target resets.</li>
+  <li>The verification stage is a third measurement and needs its own budget rather than a repeat of phase two.</li>
+  <li>A static floor keeps a constant risk unit valid, so the plan can be written once and reviewed weekly.</li>
+  <li>The daily stop is equity-based, which means open positions consume the session allowance.</li>
+  <li>Two weeks at half size between stages is the cheapest calibration available.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
   <li><a href="#frame">What this guide is really solving</a></li>
+  <li><a href="#stages">Why the three stages are different tasks</a></li>
+  <li><a href="#phase1">Phase one: proof of a sample</a></li>
+  <li><a href="#between">The gap between phases</a></li>
+  <li><a href="#phase2">Phase two: repeatability</a></li>
+  <li><a href="#verification">The verification stage</a></li>
+  <li><a href="#budget">A phase-by-phase risk budget</a></li>
+  <li><a href="#sizing">Sizing in lots across all three stages</a></li>
+  <li><a href="#daily">The daily stop inside each plan</a></li>
+  <li><a href="#calendar">A twelve-week calendar</a></li>
+  <li><a href="#failure">How each stage usually fails</a></li>
+  <li><a href="#journal">What to record, and why</a></li>
+  <li><a href="#payout">After the pass</a></li>
+  <li><a href="#questions-faq">Common questions</a></li>
 </ol>
 </div>
+
 <h2 id="frame">What this guide is really solving</h2>
-<p>FTMO Phase 1 Phase 2 Strategy is one of the decisions that sits between a trading method and a funded account. It changes how much you can risk, how quickly you can pass, or what a pass is worth after the fact, and it is usually decided by a clause rather than by the market. On an evaluation, the consequence is specific: the same decision either keeps the loss floor at a distance or brings the end of the account closer. The sections below turn that into a plan rather than a principle.</p>
-<p>The frame matters because most prop-firm advice is written as if the only problem were finding a profitable strategy. It is not. An evaluation adds three constraints that a personal account does not have: a loss floor that ends the account, a calendar that may impose minimum days, and a payout condition that can reduce a profit after the pass. A method that ignores those constraints can be profitable in a demo and still fail the evaluation.</p>
-<p>The rest of this guide works through those constraints in the order they bind: the loss floor first, because it decides position size; the target second, because it decides how many trades the plan needs; the calendar third, because it decides whether the plan is feasible; and the payout conditions last, because they decide whether a pass is worth anything. Each section ends with a rule that can be written down and checked.</p>
+<p>Most FTMO strategy advice treats the evaluation as one long task with two targets. That framing fails because the stages start from different balances, and the room above the floor changes between them. A plan that works from $100,000 does not automatically work from $108,000, even though the rules are identical.</p>
+<p>The floor is static, so it does not move when the account earns. On a $100,000 account with a 10% floor the failure point is $90,000 forever. After phase one at $108,000, the room from the balance to failure is $18,000, and the phase-two target is measured from the new balance. The room grew, the target reset, and the daily stop is now calculated on a larger balance.</p>
+<p>That combination is what this guide is for: a plan for each stage, written in dollars, with a budget that survives the transition. The strategy itself — the setups, the edge — is the trader's. The plan is the wrapper that keeps the account alive long enough for the edge to express itself.</p>
+<p>One caution before the arithmetic. Every figure here is illustrative and describes the shape of a percentage-based product. Confirm the exact percentages, targets and daily limits for your plan before committing capital, because firms revise them and plan families differ.</p>
 
-<h2 id="phase-one-is-for-proof-phase-two-is-for-repeatability">Phase one is for proof, phase two is for repeatability</h2>
-<p>FTMO's first phase asks for the target with a static floor and a daily stop. The second phase asks for the same target again. The mistake is to treat phase two as a victory lap and increase size because the first phase worked. The rulebook has not changed, but the trader's confidence has, and confidence is the most common cause of a phase-two breach.</p>
-<p>The correct transition is to keep the same risk unit and the same setup filter, and to change only the pacing. Phase one may have taken three weeks; phase two should be planned over a similar window, not compressed into a week because the account is "already proven". The proof is the process, not the speed.</p>
+<h2 id="stages">Why the three stages are different tasks</h2>
+<p>Phase one starts from a clean balance with full room and no prior drawdown. The only enemy is a losing run long enough to breach the floor before the target is reached. On a 10% floor with an 8% target, the target is smaller than the room, so a method with a reasonable edge has space to work.</p>
+<p>Phase two starts from the phase-one balance with the floor unchanged. The room is larger in dollars and the target is measured from the higher balance, so the ratio of target to room is similar. The difference is psychological and behavioural: the trader has already succeeded once, and the temptation is to press for a faster finish or to increase size because the cushion looks bigger.</p>
+<p>The verification stage repeats the measurement a third time. Its purpose is to confirm the result was a process, and it removes traders who passed on one oversized position. The stage is usually the shortest in target terms and the longest in behavioural terms, because by then the trader has been trading the same rules for weeks.</p>
+<p>Read together, the three stages ask three questions: can you produce, can you repeat, and is the repeat real. A plan that answers all three is a plan with a fixed unit, a fixed session cap and a written calendar. A plan that answers only the first is a plan that depends on luck arriving twice more.</p>
+<p>The arithmetic of three stages is easy to underestimate. If each stage is passed 55% of the time, the path probability is about 17%, which means roughly one funded account per six attempts. At 70% per stage it is 34%, or one in three. The difference between those two outcomes is usually size, not skill, because size is what converts a normal losing run into a breach.</p>
 
-<h2 id="a-phase-by-phase-risk-budget">A phase-by-phase risk budget</h2>
-<p>On a $100,000 account with a 10% maximum loss and a 5% daily stop, the total budget is $10,000 and the daily budget is $5,000. A 0.5% risk unit is $500, so the day can absorb ten losses and the full attempt twenty. In phase one, use the first half of the calendar to build a cushion of 3% to 4%; in phase two, use the same unit and the same daily stop. The target is the same, so the arithmetic is the same.</p>
-<p>The phase transition is a good moment to review the journal, not to change the method. Count the setups taken, the win rate, the average winner and the average loser. If the expectancy is positive and the risk was within the budget, the process is working. If the result came from one oversized winner, the process is not proven; phase two is the place to test it again with the same size.</p>
+<h2 id="phase1">Phase one: proof of a sample</h2>
+<p>The purpose of phase one is to produce a sample that can be repeated. With an 8% target on $100,000 and a $450 unit at a 2:1 payoff, a winner returns $900, so the target needs nine net winners. Across four weeks and forty trades, that is a 22% net edge, which a method with a genuine advantage produces and one without does not.</p>
+<p>The temptation is to compress the sample. A trader who reaches $8,000 in six trades with three oversized positions has produced a result that cannot be repeated, and phase two will expose it. A trader who reaches the target in twenty-five sessions at a constant unit has produced a process, and the process is what the second stage tests.</p>
+<p>The risk budget for phase one should be a third of the floor, not all of it. Arriving at phase two with two thirds of the room intact makes the repeat comfortable; arriving with a quarter makes it a stretch. A trader who treats the entire floor as available has planned for the best case.</p>
+<p>The calendar matters as much as the size. A four-week phase one at two trades a day is roughly forty trades, which is enough to see a normal losing run and enough to know whether the unit survives it. A one-week phase one is a lottery ticket with extra steps.</p>
 
-<h2 id="the-verification-phase-and-the-payout">The verification phase and the payout</h2>
-<p>After the two evaluation phases, FTMO runs a verification phase. The target and the floor still apply, and the calendar extends. A trader who planned for two phases should add the verification period to the schedule before buying. The payout stage has its own season and conditions, so the first withdrawal is not immediate even after the verification.</p>
-<p>If the strategy needs a fast payout, FTMO's sequence is the wrong product. If the strategy can wait and the rulebook fits, the sequence is a clear, documented path. The decision should be made before the first trade, not after the target is reached.</p>
+<h2 id="between">The gap between phases</h2>
+<p>The two weeks between stages are the most under-used part of the product. Most traders roll straight from phase one into phase two at full size, which means the only calibration the second stage gets is the first stage's result.</p>
+<p>The purpose of the gap is to confirm that the method still behaves under the new balance. Trade half the unit for ten sessions and compare the realised results with phase one: the hit rate, the average win, the average loss and the number of valid setups per session. If any of those has moved materially, the size for phase two is wrong even though the rules are the same.</p>
+<p>The second purpose is administrative. The phase boundary is the natural moment to update the journal, recalculate the risk budget and write the phase-two plan in dollars. Doing that work in advance is what keeps the second stage from being a reaction to the first.</p>
+<p>The third purpose is psychological. A trader who has just passed a target is at their most confident and least careful. Ten sessions at half size is a deliberate brake, and it costs almost nothing in expected profit because the target for phase two has not started yet.</p>
+
+<h2 id="phase2">Phase two: repeatability</h2>
+<p>Phase two repeats the measurement from a higher balance with the same floor. The target resets, the room is larger, and the risk budget has to be recalculated rather than copied. On the illustrative account, phase one ended at $108,000 with $18,000 of room; the phase-two target is $8,000 measured from $108,000, and the daily stop is now a percentage of a larger balance.</p>
+<p>The correct unit is still derived from the floor, not from the balance. Room divided by the losses you will tolerate gives the unit, and the answer is the same as phase one because neither the floor nor the tolerance changed. That is the advantage of a static structure: the arithmetic is stable, and only the behaviour has to be managed.</p>
+<p>The failure mode in phase two is a size increase justified by the cushion. A trader who moves from $450 to $700 because the account is $8,000 ahead has changed the product: the same losing run now consumes half again as much room, and the phase-two target is reached with a much thinner buffer. Keep the unit and keep the comparison valid.</p>
+<p>The second failure mode is finishing too fast. A phase-two target reached in a week with two oversized trades passes the stage and fails the verification stage that follows. The stages are designed to be passed in sequence at a consistent size, and the sequence is the point.</p>
+
+<h2 id="verification">The verification stage</h2>
+<p>The verification stage is a third measured period with its own target against the same floor. It exists to confirm that the first two results were a process, and it is the stage where traders who passed by pressing are removed.</p>
+<p>Its planning requirement is a fresh budget. After two stages the account is higher and the room is larger, but the trader has also been trading for weeks and is more likely to be tired or overconfident. The verification stage should therefore run at the same unit as phase two, with the same session cap, and with a shorter calendar than either phase.</p>
+<p>The most common verification failure is a give-back. A trader who starts the stage with a gain and then returns to the level they started from has consumed room without progress, and the natural response is to increase size to recover. That response is the failure, not the give-back.</p>
+<p>The correct response is to treat the stage as a short campaign: a defined target, a defined unit, a defined number of sessions and a stop rule if the drawdown reaches a third of the room. A campaign with an end date is easier to trade carefully than an open-ended repeat.</p>
+
+<h2 id="budget">A phase-by-phase risk budget</h2>
+<p>Write the budget in dollars, not percentages, because the trader spends dollars. On a $100,000 account with a 10% floor, the total room is $10,000. Allocate it across the three stages: $3,000 for phase one, $3,000 for phase two and $2,000 for verification, keeping $2,000 as an unallocated reserve.</p>
+<p>The allocation is not a target to spend. It is a stopping condition: if phase one consumes its $3,000, the stage ends and the plan is reviewed even if the floor still has room. That converts a vague "trade carefully" into a number that can be checked every evening.</p>
+<p>The reserve exists because stage transitions are where traders underestimate risk. A trader who arrives at phase two with no room left has no capacity for a normal losing run, and the stage becomes a single-session gamble. The reserve is what makes the second stage a plan rather than a hope.</p>
+<p>The budget should be written before phase one and reviewed at each boundary. If a review concludes that the remaining room is insufficient, the correct decision is to stop and restart rather than to trade a smaller version of the same plan, because a unit too small to express the method produces trades the method would not take.</p>
+<p>Two numbers make the allocation usable. The first is the stage budget as a percentage of the room, so it can be checked at a glance. The second is the distance from the current balance to failure, in dollars, updated each evening. A trader who can recite both is managing the account; a trader who cannot is reacting to it.</p>
+
+<h2 id="sizing">Sizing in lots across all three stages</h2>
+<p>Forex sizing is pips × pip value × lots. On a standard lot of a USD-quoted major, one pip is about $10, so a 25-pip stop risks $250 and a $450 unit buys one and a half lots. A 40-pip stop buys one lot. The stop comes from the method; the size is the consequence.</p>
+<p>That $10 figure holds only for a dollar-quoted major. Yen pairs move the value with the exchange rate, crosses convert twice, and metals and indices are quoted in ticks. Using one number across the board mis-sizes exactly the instruments that move most, and the error grows when volatility rises.</p>
+<p>The unit should be identical across the three stages. A trader who uses $450 in phase one and $700 in phase two is not running the same plan, and the comparison between stages becomes meaningless. Keeping the unit fixed is what makes the three results evidence rather than three separate attempts.</p>
+<p>Add a buffer of ten to twenty percent for spread and slippage. The fill is what the floor sees, and a slipped stop on a thin pair can consume one and a half units rather than one. On a static floor that overrun is absorbed; on a tight budget it can end a stage.</p>
+<p>Recheck the lot count whenever the pair or the session changes. A 30-pip stop on a major and a 30-pip stop on a cross are the same distance and a different risk, because the pip value and the spread differ. Sizing from a remembered lot count is the most common way a correct plan turns into an incorrect position.</p>
+
+<h2 id="daily">The daily stop inside each plan</h2>
+<p>The daily stop is equity-based, so open positions count against it as they move. A position that is $2,000 underwater has consumed 40% of a 5% allowance before it is closed. That means the session plan has to include the open risk, not just the realised loss.</p>
+<p>A personal cap of three units is the practical rule. With a $450 unit that is $1,350, which is 1.35% of a $100,000 account and well inside any published daily limit. Three losses end the session, and a second session is allowed only if the weekly budget still has room.</p>
+<p>The cap should be the same in all three stages. Changing it at a boundary is the same error as changing the unit: it makes the stages incomparable and it usually increases risk at exactly the point where the trader is most confident.</p>
+<p>Add a weekly cap at a third of the stage budget. Four sessions at the daily cap can consume the stage allocation before any single rule has been broken, and the weekly cap is the only rule in the system that nobody else enforces.</p>
+
+<h2 id="calendar">A twelve-week calendar</h2>
+<p>Weeks one and two are measurement: half the unit, a full record of setups, and a note of the spread and slippage on each entry. The output is a table of how the method behaves, not a profit figure. This block is the same at the start of every stage and it is the reason the later blocks work.</p>
+<p>Weeks three to six are phase one: full unit, a fixed setup list, a daily cap of three losses and a weekly cap at a third of the stage budget. The target should be within reach by the end of week six. If it is not, reduce the unit rather than increase activity.</p>
+<p>Weeks seven and eight are the gap: half the unit, ten sessions, and a written phase-two plan in dollars. This is the block most traders skip and the one that most improves the odds of the second stage.</p>
+<p>Weeks nine to eleven are phase two at the same unit and the same caps. Week twelve is verification: the same unit, a shorter target and a stop rule if the drawdown reaches a third of the room. Twelve weeks is a realistic calendar for three stages at a consistent size.</p>
+<p>Count sessions rather than days. At two trades a session and five sessions a week, ten weeks is a hundred trades, which is enough to see the method's normal distribution. At one trade a day the same calendar produces fifty, which is thinner evidence for the same elapsed time and should extend the plan rather than compress the target.</p>
+
+<h2 id="failure">How each stage usually fails</h2>
+<p>Phase one fails on size. A unit that is too large for the floor turns a normal losing run into a breach, and the target is never reached. The fix is arithmetic, not strategy: divide the room by a tolerance you can defend and use the smaller number.</p>
+<p>Phase two fails on confidence. The account is ahead, the cushion looks bigger and the unit creeps up. The stage then ends either on a give-back or on a target reached with a buffer too thin to survive verification.</p>
+<p>Verification fails on fatigue. After weeks of trading the same rules, a trader takes a setup outside the list or skips the journal, and the record no longer supports the result. The fix is a short, dated campaign rather than an open-ended repeat.</p>
+<p>All three failures share a cause: the plan was a set of intentions rather than a set of numbers. One page with the unit, the daily cap, the weekly cap and the stage budgets is enough to prevent most of them.</p>
+
+<h2 id="journal">What to record, and why</h2>
+<p>Record five things per trade: the setup, the risk in dollars, the stop, the result and the remaining room. Five fields, entered before the next trade, produce a record that answers any review question and shows whether the unit is still appropriate.</p>
+<p>The remaining-room field is the one that changes behaviour. A trader who writes down the buffer every morning notices compression before it becomes a breach, and a trader who does not discovers it at the moment of failure.</p>
+<p>The journal also makes the stages comparable. If phase one shows a 45% hit rate and phase two shows 38%, that is information about the method under a different balance, and it should change the verification plan rather than be explained away.</p>
+<p>Keep the journal from the first day, not from the first payout request. A review that can be answered in an afternoon is a review that does not delay money.</p>
+<p>Review the journal at every stage boundary and ask three questions: did the unit stay fixed, did the daily cap hold, and did the number of sessions match the plan. Two yes answers and one no is information about the process; three no answers mean the plan was never being followed.</p>
+
+<h2 id="payout">After the pass</h2>
+<p>The funded account starts a different clock. The first payout waits for a seasoning period, and later withdrawals move to a shorter schedule. Plan the first withdrawal around that delay rather than assuming the later rhythm applies from the start.</p>
+<p>The funded phase should be traded at the same unit as the evaluation. A trader who increases size after passing has changed the product at the moment when the buffer matters most, and the first drawdown will be larger than any the evaluation produced.</p>
+<p>Complete identity and payment verification before the first payout request. Names, addresses and the original funding instrument have to match, and a since-replaced card means a manual check and a delay measured in weeks.</p>
+<p>Finally, decide in advance what fraction of the profit to withdraw. Taking everything returns the account to its base and rebuilds the buffer from scratch; taking a fraction keeps the buffer and makes the next cycle easier.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
-    <h2 id="questions">Common questions</h2>
+    <h2 id="questions-faq">Common questions</h2>
 
-<details class="faq"><summary>Should I increase size in phase two?</summary><div class="faq-a"><p>Usually not. The rulebook is the same and the target is the same. Keeping the risk unit stable preserves the process that passed phase one; increasing size turns phase two into a different test.</p></div></details>
+<details class="faq"><summary>Should phase one and phase two use the same position size?</summary><div class="faq-a"><p>Yes. The floor does not change between stages, so the unit derived from it does not either. Keeping it fixed is what makes the two results comparable.</p></div></details>
 
-<details class="faq"><summary>How long should each FTMO phase take?</summary><div class="faq-a"><p>There is no required speed, but a plan that spreads the target over several weeks is more robust than a compressed sprint. The verification phase and payout seasoning should be added to the calendar.</p></div></details>
+<details class="faq"><summary>How long should phase one take?</summary><div class="faq-a"><p>Four to six weeks at a constant unit is realistic for an 8% target. A one-week phase one usually means the size was too large or the result came from one oversized trade.</p></div></details>
 
-<details class="faq"><summary>What if phase one was profitable because of one big trade?</summary><div class="faq-a"><p>Treat the result as unproven and repeat the process in phase two with the same size. A single oversized winner is not evidence of a repeatable edge.</p></div></details>
+<details class="faq"><summary>What is the verification stage for?</summary><div class="faq-a"><p>It confirms that the earlier results were a process rather than a favourable month. It is a third measurement against the same floor, and it removes passes built on a single oversized position.</p></div></details>
+
+<details class="faq"><summary>How much of the floor should each stage use?</summary><div class="faq-a"><p>A third for phase one, a third for phase two and a fifth for verification, with the remainder held as a reserve. Treat the allocation as a stopping condition rather than a spending target.</p></div></details>
+
+<details class="faq"><summary>Can I change strategy between phases?</summary><div class="faq-a"><p>You can, but the stages stop being evidence. A changed method at a boundary means the second result says nothing about the first, and the verification stage becomes a third independent attempt.</p></div></details>
+
+<details class="faq"><summary>How should the daily stop be set?</summary><div class="faq-a"><p>At three units, which is well inside any published percentage limit. The published stop is a backstop; the personal cap is what shapes the session and keeps the stage budget intact.</p></div></details>
   </div>
 </section>
 
@@ -72,7 +160,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Want the evaluation traded for you?</h2>
-      <p>One flat <strong>$220</strong> for any prop firm, any stage, any account size. Retries covered, no profit split, funded login in your name.</p>
+      <p>One flat <strong>$220</strong> for any account size. Retries covered, no profit split, funded login in your name. If the firm's terms forbid third-party trading we tell you before you pay.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -83,14 +171,12 @@ generator: content-system
     <h2>Related reading</h2>
     <ul class="link-list">
       <li><a href="/blog/ftmo-challenge-passing.html">FTMO challenge passing</a></li>
+      <li><a href="/blog/ftmo-review.html">FTMO review 2026</a></li>
+      <li><a href="/blog/ftmo-vs-funded-trader-tft-comparison.html">FTMO vs Funded Trader TFT</a></li>
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
       <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
-      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
+      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
     </ul>
     <p class="disclaimer">FTMO is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>
