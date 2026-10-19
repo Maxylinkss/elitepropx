@@ -1,6 +1,6 @@
 ---
 title: Prop Firm Passing Service | 2026
-desc: Prop Firm Passing Service: A passing service trades an evaluation on your behalf for a flat fee and returns a funded account in your name. Worked examples…
+desc: How a prop firm passing service works end to end: the rule audit, the risk plan, who holds the login, the retry policy and the handover when the account is funded.
 path: /blog/prop-firm-passing-service.html
 type: article
 h1: Prop Firm Passing Service
@@ -12,94 +12,296 @@ date: 2026-10-19
 updated: 2026-10-19
 priority: 0.7
 schemaService: true
-generator: content-system
 ---
 <section class="page-head">
   <div class="wrap narrow">
     <p class="kicker">Prop Firm Passing Service · reviewed October 2026</p>
     <h1>Prop Firm Passing Service</h1>
-    
+    <p class="lede">A passing service trades an evaluation on your behalf for a flat fee and hands back a funded account in your name. That one sentence hides the parts that decide whether the arrangement is a good idea for you: who holds the login, what the rule audit actually checks, how position size is derived from the loss floor, what happens if the attempt fails, and what the handover looks like when the target is reached. This page covers all five, in order.</p>
   </div>
 </section>
 
 <section class="section tight">
   <div class="wrap narrow">
-
+<div class="keypoints">
+  <h2>Key takeaways</h2>
+<ul>
+  <li>The service trades the evaluation only. The funded account is yours, with no profit split to the provider.</li>
+  <li>It is a process, not a promise: rule audit, risk plan, execution, reporting, retry policy, handover.</li>
+  <li>The first question is whether your firm permits third-party trading. Get the answer in writing, naming the clause.</li>
+  <li>Set a written retry policy before paying. "Retries covered" must mean a further full attempt at no extra service fee.</li>
+  <li>The provider needs trading access during the evaluation only. It should never hold the funded login.</li>
+  <li>Red flags: guarantees, a refusal to name accepted firms, a profit split, or pressure to pay off-platform.</li>
+  <li>The service removes the learning opportunity. That is a real cost if you plan to trade the funded account yourself.</li>
+</ul>
+</div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#how">What the service actually does</a></li>
-  
-  <li><a href="#firms">Firms, plans and the third-party trading clause</a></li>
-  <li><a href="#compare">Service versus trading it yourself</a></li>
+  <li><a href="#product">The product in one paragraph</a></li>
+  <li><a href="#workflow">The workflow, stage by stage</a></li>
+  <li><a href="#audit">What the rule audit checks</a></li>
+  <li><a href="#risk-plan">How position size is derived</a></li>
+  <li><a href="#access">Who holds what, and when</a></li>
+  <li><a href="#firms">The third-party trading clause</a></li>
+  <li><a href="#vetting">How to vet a provider</a></li>
+  <li><a href="#retries">Retry policy mechanics</a></li>
+  <li><a href="#handover">The handover at the pass</a></li>
+  <li><a href="#alternatives">Alternatives, and how they differ</a></li>
+  <li><a href="#archetypes">Three firm archetypes, and how the plan changes</a></li>
+  <li><a href="#failure-modes">How assisted attempts fail anyway</a></li>
+  <li><a href="#not-for">When a passing service is the wrong choice</a></li>
+  <li><a href="#fee-includes">What the fee should and should not include</a></li>
+  <li><a href="#reporting">Reporting, and why the cadence matters</a></li>
+  <li><a href="#questions">Common questions</a></li>
 </ol>
 </div>
-<h2 id="how">What the service actually does</h2>
 
-<ol>
-  
-  
-  
-  
-  
-</ol>
-
-<div class="table-scroll">
-  <table>
-    <thead>
-      <tr><th>Question</th><th>Good answer</th><th>Warning sign</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Which firms do you accept?</td><td>A named list with terms checked</td><td>"Any firm, guaranteed"</td></tr>
-      <tr><td>Who holds the login?</td><td>The service during the evaluation only</td><td>The service holds the funded account</td></tr>
-      <tr><td>What if the account breaches?</td><td>Retry covered under the same fee</td><td>A new fee or no policy</td></tr>
-      <tr><td>Do you take a profit split?</td><td>No, the funded account is yours</td><td>A percentage of funded profit</td></tr>
-      <tr><td>Can I see the terms check?</td><td>A written confirmation per firm</td><td>Refusal or a generic claim</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<h2 id="firms">Firms, plans and the third-party trading clause</h2>
-
-<h2 id="compare">Service versus trading it yourself</h2>
-
-<div class="table-scroll">
-  <table>
-    <thead>
-      <tr><th>Factor</th><th>Self-traded</th><th>Flat-fee service</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Cash cost</td><td>Entry fee per attempt</td><td>$220 per evaluation</td></tr>
-      <tr><td>Time</td><td>Your sessions for the duration</td><td>Typically around two weeks</td></tr>
-      <tr><td>Skill built</td><td>Yes, directly</td><td>No</td></tr>
-      <tr><td>Execution risk</td><td>Yours</td><td>Transferred to the provider</td></tr>
-      <tr><td>Rules risk</td><td>Yours</td><td>Checked before payment</td></tr>
-      <tr><td>Funded account</td><td>Yours</td><td>Yours, no profit split</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<h2 id="the-product-in-one-paragraph">The product in one paragraph</h2>
+<h2 id="product">The product in one paragraph</h2>
 <p>A prop firm passing service trades an evaluation on the client's behalf for a flat fee and returns a funded account in the client's name. It is not a signal service, a managed fund or a guarantee. The service reads the rulebook, builds a risk plan, executes the evaluation and reports progress. The client keeps ownership of the account and the profit.</p>
-<p>The arrangement is only legitimate where the firm permits third-party trading. That is the first question to ask, and the answer should be in writing. A service that treats the terms check as a formality is a service that has not understood the risk.</p>
+<p>The arrangement is only legitimate where the firm permits third-party trading. That is the first question to ask, and the answer should be in writing. A service that treats the terms check as a formality is a service that has not understood the risk it is taking on your behalf — and the risk lands on your account, not theirs.</p>
+<p>It helps to be blunt about what is and is not being sold. The fee buys work: reading, planning, executing and reporting. It does not buy a pass, because no provider can guarantee the behaviour of a market. A provider that sells an outcome has mispriced its own risk, and the correction usually arrives as an unpaid retry policy.</p>
 
-<h2 id="what-the-fee-should-include">What the fee should include</h2>
-<p>A flat fee should cover the work, the risk plan and the retry policy stated in the quote. It should not include a share of the funded profit, and it should not require the client to hand over a personal account with their own capital. The evaluation fee may or may not be included; the quote should say which.</p>
-<p>Retries are the part of the fee that matters most. A service that charges a full fee for every attempt is effectively a per-attempt product; a service that includes retries is pricing the risk of failure into the initial fee. Neither is automatically better, but the policy should be written down and the expected number of attempts should be part of the comparison.</p>
+<h2 id="workflow">The workflow, stage by stage</h2>
+<p>The sequence below is what a professional arrangement looks like. Timings are typical rather than fixed, and they assume a firm that permits the arrangement and an evaluation with a standard profit target.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Stage</th><th>Typical timing</th><th>What happens</th><th>What you should receive</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1. Terms check</td><td>Before payment</td><td>The provider reads the firm's terms and confirms the arrangement is allowed</td><td>A written confirmation naming the clause relied on</td></tr>
+      <tr><td>2. Scope and quote</td><td>Before payment</td><td>Fee, inclusions, exclusions, retry policy and timeline are agreed</td><td>A written quote with the retry policy stated</td></tr>
+      <tr><td>3. Account issue</td><td>Day 0</td><td>You buy the evaluation in your own name and provide access</td><td>The firm's own confirmation email, which stays yours</td></tr>
+      <tr><td>4. Rule audit</td><td>Day 0–1</td><td>Target, floors, consistency, news, weekend and minimum-day rules are extracted</td><td>A summary of the numbers that will govern the attempt</td></tr>
+      <tr><td>5. Risk plan</td><td>Day 1</td><td>Risk unit, maximum positions and stop condition are set as percentages of the floor</td><td>The plan, so you can see how the attempt will be run</td></tr>
+      <tr><td>6. Execution</td><td>Day 1 onwards</td><td>Positions are taken within the plan until the target is met</td><td>Progress against target and floor</td></tr>
+      <tr><td>7. Pass</td><td>Typically around two weeks</td><td>The target is reached with the floor intact and minimum days satisfied</td><td>Confirmation from you and the firm</td></tr>
+      <tr><td>8. Handover</td><td>At the pass</td><td>Access is returned, credentials are changed, the funded account passes to you</td><td>Confirmation that no residual access remains</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Two stages in that table carry most of the risk. Stage one decides whether the arrangement is legal under the firm's terms, and stage seven decides what you actually own at the end. A provider that handles both explicitly is behaving like a professional. A provider that treats the terms check as a formality and the handover as an afterthought has inverted the priorities.</p>
 
-<h2 id="who-the-service-fits">Who the service fits</h2>
-<p>It fits a trader who values time, has a firm that permits the arrangement and does not want to manage the evaluation personally. It does not fit a trader who wants to learn the rulebook, or one whose firm prohibits third-party trading, or one who expects the service to trade the funded account afterward. The service ends at the pass; the funded account is the client's responsibility.</p>
-<p>Before paying, confirm the terms, the fee, the retry policy and the timeline. If any answer is vague, the service is not ready.</p>
+<h2 id="audit">What the rule audit checks</h2>
+<p>Prop firm rulebooks are short documents with long consequences. The audit exists so the attempt is planned against the actual numbers rather than the marketing summary, and it should cover every item below.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Rule</th><th>Why it changes the plan</th><th>Question to ask</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Profit target</td><td>Sets the distance to completion and therefore the number of trading days required</td><td>Is the target a percentage of the initial balance or of a moving figure?</td></tr>
+      <tr><td>Maximum loss</td><td>Defines the risk budget for the whole attempt</td><td>Is it static, or does it trail?</td></tr>
+      <tr><td>Daily loss limit</td><td>Caps how much can be lost in one session, independent of the total floor</td><td>Is it calculated on balance or on equity, and does it reset at midnight server time?</td></tr>
+      <tr><td>Trailing behaviour</td><td>A trailing floor follows unrealised profit and shortens the effective life of the account</td><td>Does it trail on closed profit only, or on open positions too?</td></tr>
+      <tr><td>Consistency rule</td><td>Caps the best day as a share of total profit, often enforced at payout</td><td>Is it applied during the evaluation, at funding, or at the first withdrawal?</td></tr>
+      <tr><td>Minimum trading days</td><td>Forces the attempt to spread across sessions even when the target is reached early</td><td>Does the funded phase carry its own minimum?</td></tr>
+      <tr><td>News restrictions</td><td>Removes tradable windows and can invalidate trades held through an event</td><td>Which events, and how long before and after?</td></tr>
+      <tr><td>Weekend and holding rules</td><td>Determines whether positions can be carried through a close</td><td>Is the restriction on the evaluation, the funded account, or both?</td></tr>
+      <tr><td>Instrument and lot limits</td><td>Excludes markets or sizes that a plan may depend on</td><td>Are there maximum lots or maximum open positions?</td></tr>
+      <tr><td>Prohibited practices</td><td>Defines what can void the account after the fact, including third-party trading</td><td>Which clause governs third-party trading, and what is the stated consequence?</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The last row is the one that decides whether the service route exists. The others decide how it is executed. Together they turn a challenge from a general ambition into a specific set of limits, which is the only form in which a risk plan can be written.</p>
+<div class="callout">
+  <p><strong>Save a dated copy of the terms.</strong> Rulebooks change between plan generations, and the version that governed your attempt is the version that matters. A dated copy, plus the checkout confirmation, plus the written terms check, is the complete evidence set if a payout is ever disputed.</p>
+</div>
+
+<h2 id="risk-plan">How position size is derived</h2>
+<p>The single most common planning error on an evaluation is expressing risk in dollars instead of as a share of the loss floor. A $50,000 account with a 5% floor has a $2,500 budget; the same account at $100,000 has $5,000. Same percentage, different dollars, and the plan should be expressed as percentages so it transfers between sizes.</p>
+<p>Worked example one — 1% risk per trade on a $50,000 account with a 5% floor. Each trade risks $500, which is 1% of the initial balance and 20% of the entire loss budget. Ten consecutive losses exhausts the floor. The plan therefore needs either a lower risk per trade or a stop condition that halts trading well before the floor is touched.</p>
+<p>Worked example two — 0.5% risk per trade on the same account. Each trade risks $250, which is 10% of the budget and allows twenty consecutive losses before the floor is threatened. The trade-off is speed: at smaller size, reaching an 8% target takes longer, which raises the number of sessions and the exposure to news and weekend rules.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Risk per trade</th><th>Dollar risk on $50,000</th><th>Share of a 5% floor</th><th>Consecutive losses to breach</th><th>Realistic pace to an 8% target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1.0%</td><td>$500</td><td>20%</td><td>10</td><td>Fast, but fragile</td></tr>
+      <tr><td>0.75%</td><td>$375</td><td>15%</td><td>13</td><td>Balanced</td></tr>
+      <tr><td>0.5%</td><td>$250</td><td>10%</td><td>20</td><td>Slower, safer</td></tr>
+      <tr><td>0.25%</td><td>$125</td><td>5%</td><td>40</td><td>Too slow for a typical window</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The plan also needs a stop condition — the point at which the attempt is abandoned rather than continued. A common rule is to stop when the account has lost 60% of the floor, because an account that is 3% down on a 5% floor cannot recover without taking risk that would breach. Ending an attempt deliberately at that point preserves the option to reset on your own terms rather than the firm's.</p>
+
+<h2 id="access">Who holds what, and when</h2>
+<p>Access is where most of the practical risk sits, and it is worth writing down explicitly before anything is handed over.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Evaluation phase</th><th>Funded phase</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Trading login</td><td>Provider, for execution</td><td>You only</td></tr>
+      <tr><td>Account owner of record</td><td>You</td><td>You</td></tr>
+      <tr><td>Email on the account</td><td>Yours, so firm notices reach you</td><td>Yours</td></tr>
+      <tr><td>Payout destination</td><td>Not set up yet</td><td>Yours, configured by you</td></tr>
+      <tr><td>Password changes</td><td>Changed when access is returned</td><td>Changed at handover</td></tr>
+      <tr><td>Provider access after the pass</td><td>Ends</td><td>None</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Three details in that table are non-negotiable. The account must be in your name, the email on the account must be yours so that firm notifications reach you directly, and the provider must lose access when the evaluation ends. A provider that keeps the funded login has retained control of your money, whatever the contract says.</p>
+<p>On the security side, prefer temporary or limited credentials over a shared personal password, and change everything at handover. If the firm supports read-only or investor access for monitoring, use it rather than handing over your own account credentials. If it does not, at minimum use a password that exists for that account alone.</p>
+
+<h2 id="firms">The third-party trading clause</h2>
+<p>This is the threshold question and the one most often glossed over in marketing. Firms differ enormously: some explicitly prohibit third-party or assisted trading, some prohibit account sharing while remaining silent on assistance, and some permit it outright. Enforcement is inconsistent between firms and sometimes between cohorts at the same firm, but the consequence when it is enforced tends to be the same: the account is closed and the payout is refused.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Terms position</th><th>What it means for the service route</th><th>Risk if ignored</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Explicitly prohibited</td><td>Do not proceed. The route is unavailable at any price.</td><td>Account closure and refused payout</td></tr>
+      <tr><td>Account sharing prohibited, assistance silent</td><td>A legal reading may allow it, but the ambiguity belongs to you</td><td>Closure at the firm's discretion</td></tr>
+      <tr><td>Explicitly permitted</td><td>The route is available; the remaining questions are cost and scope</td><td>Low, subject to the other rules</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The honest position is that this risk belongs to the account holder. No service can transfer it, remove it, or indemnify you against it. Any provider that claims otherwise is describing a guarantee it cannot make. That is why the terms check has to come before payment, and why it should be written down: a dated note naming the clause you relied on is the only protection you have if the firm later changes its position.</p>
+
+<h2 id="vetting">How to vet a provider</h2>
+<p>You are buying several weeks of access to an account that holds your evaluation fee and, later, your payouts. That justifies a few questions, and the answers should be written.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Question</th><th>A good answer</th><th>A warning sign</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Which firms do you accept?</td><td>A named list with terms already checked</td><td>"Any firm, guaranteed"</td></tr>
+      <tr><td>Who holds the login?</td><td>The service during the evaluation only</td><td>The service keeps the funded account</td></tr>
+      <tr><td>What if the account breaches?</td><td>Retry covered under the same fee</td><td>A new fee, or no stated policy</td></tr>
+      <tr><td>Do you take a profit split?</td><td>No — the funded account is yours</td><td>A percentage of funded profit</td></tr>
+      <tr><td>Can I see the terms check?</td><td>A written confirmation per firm</td><td>Refusal, or a generic claim</td></tr>
+      <tr><td>How is progress reported?</td><td>Regular updates against target and floor</td><td>Silence until the pass, or nothing at all</td></tr>
+      <tr><td>What is the timeline?</td><td>A range, with the retry terms if it runs long</td><td>A fixed date treated as a promise</td></tr>
+      <tr><td>How do I pay?</td><td>A documented method that leaves a record</td><td>Untraceable payment, or pressure to pay now</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Read the warning column as a set rather than a list. A single weak answer is a question to press on; three weak answers is a provider to walk away from. The pattern that should end the conversation immediately is a combination of a guaranteed outcome and a demand for a method of payment that leaves no record, because that pairing has no innocent explanation.</p>
+
+<h2 id="retries">Retry policy mechanics</h2>
+<p>Retries are the most frequently tested term in the entire arrangement, because attempts fail for ordinary reasons. A policy worth accepting will answer four questions in writing.</p>
+<ol>
+  <li><strong>How many further attempts are covered?</strong> One, two, or unlimited within a stated period. "Unlimited" is only meaningful with a time limit and a definition of what counts as an attempt.</li>
+  <li><strong>Is the firm's reset fee included?</strong> Where the firm charges to restart, either the provider absorbs it or you do. The quote should say which.</li>
+  <li><strong>Within what window?</strong> A retry covered for thirty days is a different product from one covered indefinitely.</li>
+  <li><strong>What would void it?</strong> Attempts ended by a rule breach you caused, a credential you changed, or a plan you altered may fall outside the policy. That boundary should be stated before payment, not discovered afterward.</li>
+</ol>
+<p>A provider whose retry policy cannot be written in four lines does not have a retry policy; it has an intention. Intentions are worth nothing at the moment you need them.</p>
+
+<h2 id="handover">The handover at the pass</h2>
+<p>The pass is not the end of the arrangement, it is the transfer point. A clean handover has five parts, and all five should happen at the same time.</p>
+<ul>
+  <li><strong>Access ends.</strong> Any credentials held by the provider are rotated, and the provider confirms it no longer has access.</li>
+  <li><strong>The funded login reaches you.</strong> You should be able to log in, see the balance and the rules, and place or hold a position without the provider's involvement.</li>
+  <li><strong>Payout details are set up by you.</strong> Your payout method, your identity documents, your bank or wallet. The provider should never be a party to your withdrawals.</li>
+  <li><strong>The funded terms are re-read.</strong> Funded rules are not evaluation rules. Consistency requirements, minimum payout cycles and data fees usually appear only at this stage.</li>
+  <li><strong>The evidence set is filed.</strong> Firm confirmation, the written scope, the terms check, and the pass result, kept together.</li>
+</ul>
+<p>The fourth item is where many traders lose the account within a month. An evaluation can be passed under one rulebook and the funded account governed by another, with a consistency rule that only applies at payout. Reading the funded terms on the day of the handover, rather than the day of the first withdrawal, is the difference between a plan that works and a surprise.</p>
+
+<h2 id="alternatives">Alternatives, and how they differ</h2>
+<p>A passing service is one of several ways to reach funded capital, and the honest comparison includes the options that are not the same product at all.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Route</th><th>What it is</th><th>Cost shape</th><th>Main risk</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Self-trading an evaluation</td><td>You take the challenge personally</td><td>Evaluation fee per attempt</td><td>Your pass probability, and your time</td></tr>
+      <tr><td>Flat-fee passing service</td><td>A provider trades the evaluation</td><td>Flat fee, retries covered</td><td>Terms position, and no skill acquired</td></tr>
+      <tr><td>Signal service</td><td>You receive trade ideas and execute them</td><td>Subscription</td><td>You still carry the drawdown and the rules</td></tr>
+      <tr><td>Copy trading</td><td>Your account mirrors someone else's trades</td><td>Subscription or profit share</td><td>Slippage, and rules that the strategy ignores</td></tr>
+      <tr><td>Managed account</td><td>Someone trades your capital for a share of profit</td><td>Profit split</td><td>Regulatory status, and control of your money</td></tr>
+      <tr><td>Buying a funded account</td><td>Paying for access to an already-funded account</td><td>Large upfront fee</td><td>Most such offers breach the firm's terms outright</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The distinctions matter because the risks are not equivalent. A signal service leaves the rule compliance with you, so it does not solve the problem that usually causes failure. Copy trading can breach a consistency rule without warning, because the strategy being copied has never read your firm's rulebook. Managed accounts and account sales raise questions the passing-service model does not, including who is legally responsible for the trading and whether the firm's terms permit the transfer at all.</p>
+
+<h2 id="archetypes">Three firm archetypes, and how the plan changes</h2>
+<p>Rulebooks read as though they were written to a template, but the planning implications diverge sharply. Grouping firms into archetypes is useful because the risk plan that works for one is close to a different product for another.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Archetype</th><th>Defining rules</th><th>What it does to the plan</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Static-floor futures evaluation</td><td>Fixed maximum loss, single phase, target around 6%</td><td>The floor is a fixed budget, so risk per trade can be set and held. The binding constraint is pace, not survival.</td></tr>
+      <tr><td>Trailing-floor futures evaluation</td><td>Maximum loss trails unrealised profit</td><td>The effective budget shrinks as the account gains. Positions must be closed before giving back gains, which changes hold times and often removes the option of letting a winner run.</td></tr>
+      <tr><td>Forex evaluation with payout-stage consistency</td><td>Target around 8–10%, daily loss limit, consistency applied at payout</td><td>Passing is not the finish line. The distribution of daily profits has to be planned from the first trade, because a single oversized day can block the first withdrawal months later.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The trailing archetype is the one that most often catches out a plan borrowed from elsewhere. A strategy that risks 1% per trade and holds winners through a retrace looks reasonable on a static floor and is genuinely dangerous on a trailing one, because the floor follows the unrealised peak. The same trades that produce the profit are the trades that raise the floor, so an open winner is simultaneously the best and the riskiest position in the account.</p>
+<p>The consistency archetype is the one most often misunderstood. Traders treat it as a payout formality until the first withdrawal is refused because one day produced 40% of the total profit. Under a typical rule that caps the best day at a share of total profit, the remedy is not fewer good days — it is more ordinary ones, which means lengthening the evaluation deliberately rather than passing it as fast as possible. That is a counterintuitive instruction, and it is exactly the kind of thing a rule audit is supposed to surface before the first trade rather than after the pass.</p>
+<div class="callout">
+  <p><strong>Ask which archetype your firm is.</strong> The answer determines risk per trade, hold time, session choice and pace. A provider that prices one plan for every firm is implicitly assuming the rulebooks are interchangeable. They are not.</p>
+</div>
+
+<h2 id="failure-modes">How assisted attempts fail anyway</h2>
+<p>Because the process removes the emotional failure modes, the remaining causes of failure are structural. Knowing them in advance is most of the defence.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Failure mode</th><th>How it happens</th><th>How the plan prevents it</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Floor breach on a trailing rulebook</td><td>Open profit raises the floor; the position is closed lower than the new floor</td><td>Tighter take-profit levels and a rule to close before the peak is given back</td></tr>
+      <tr><td>Daily loss limit hit on one session</td><td>Two losses in the same day exceed the daily cap even though the total floor is intact</td><td>A daily stop counted in units of risk, not in dollars, enforced before the limit is reached</td></tr>
+      <tr><td>Consistency failure at payout</td><td>The single best day exceeds the permitted share of total profit</td><td>Profit distribution planned across days from the first position</td></tr>
+      <tr><td>Minimum-day shortfall</td><td>The target is reached in fewer days than the firm requires</td><td>Pace deliberately stretched across the required number of sessions</td></tr>
+      <tr><td>Rule change mid-attempt</td><td>The firm updates its plan or terms while the evaluation is running</td><td>A dated copy of the terms at the start, and a re-read at every payout-relevant step</td></tr>
+      <tr><td>Access problem at handover</td><td>Credentials, two-factor prompts or email ownership block the transfer</td><td>Email on the account belongs to the client; access rotated at the pass</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Notice that none of these are trading-skill failures. They are planning and administrative failures, which is the category a service is genuinely good at removing, and the reason the fee buys something real even though it cannot buy a result. A skilled trader loses evaluations to a trailing floor and a payout consistency rule as readily as an unskilled one does; the difference is that the skilled trader had the option of reading the rules first.</p>
+
+<h2 id="not-for">When a passing service is the wrong choice</h2>
+<p>There are four clear cases, and it is worth stating them plainly rather than leaving them implied.</p>
+<p><strong>Your firm prohibits the arrangement.</strong> Nothing else on this page applies. The consequence is a closed account and a refused payout, and the fee does not begin to cover that.</p>
+<p><strong>You want to learn the rulebook.</strong> The rule knowledge is the asset that survives the funded account. Buying a pass skips the part of the process that makes the funded account survivable, which is why some traders pass and then lose the account inside a month.</p>
+<p><strong>You already have a tested method and a high pass probability.</strong> Above roughly a 70% chance of passing first time, self-trading is cheaper on expected cost. The arithmetic is set out in the <a href="/blog/prop-firm-passing-service-cost.html">cost breakdown</a>.</p>
+<p><strong>Your bottleneck is money, not time.</strong> If the fee is capital you need elsewhere, the correct decision is to trade a smaller account or a demo until it is not. No version of the expected-value calculation makes an unaffordable fee affordable.</p>
+<p>Inside the remaining case — a trader with limited hours, a firm that permits assistance, and no interest in managing the evaluation personally — the arrangement is a straightforward trade of money for time, and it usually works out cheaper than the expected cost of repeated attempts. That is a narrow but genuine set of circumstances, and being precise about which side of the line you are on is the whole decision.</p>
+</section>
 
 <section class="section tight">
   <div class="wrap narrow">
-    <h2 id="questions">Common questions</h2>
+    <h2 id="fee-includes">What the fee should and should not include</h2>
+<p>The scope of a flat fee is worth reading closely, because two quotes with the same headline number can cover very different amounts of work.</p>
+<p>It should cover the rule audit, the risk plan, the execution, progress reporting and the retry policy stated in the quote. It should not include a share of funded profit, and it should not require you to hand over a personal account holding your own capital. The evaluation fee paid to the firm may or may not be included, and the quote should say which rather than leaving it to be inferred.</p>
+<p>Retries are the part of the scope that matters most in practice. A provider charging a full fee per attempt is selling a per-attempt product with a flat-fee label; a provider covering retries has priced the probability of failure into the initial fee. Neither is automatically better, but the policy should be written down and the expected number of attempts should form part of the comparison rather than being assumed away.</p>
+<p>Finally, ask what happens if the attempt runs long. A timeline that is a range, with a stated position on what happens when the range is exceeded, is a professional answer. A fixed date presented as a commitment is not, because the provider does not control the market, the news calendar or the minimum-day rule.</p>
 
-<details class="faq"><summary>What is a prop firm passing service?</summary><div class="faq-a"><p>A service that trades an evaluation on the client’s behalf for a flat fee and returns a funded account in the client’s name. It does not manage the funded account or take a profit share.</p></div></details>
+<h2 id="reporting">Reporting, and why the cadence matters</h2>
+<p>During the evaluation you are not trading, but you are still exposed: the account carries your name, and any rule breach lands on you rather than on the provider. That makes reporting part of the risk management rather than a courtesy.</p>
+<p>Useful reporting has three features. It shows progress against the profit target and the distance to the loss floor, so you can see both sides of the attempt at once. It identifies which rules are binding, since a trailing floor or a daily limit changes the picture long before the target is reached. And it arrives on a predictable schedule, so silence is never ambiguous. A weekly update on a three-week evaluation is the minimum; anything less and you learn about a problem after the account has already ended.</p>
 
-<details class="faq"><summary>Is it legal?</summary><div class="faq-a"><p>It depends on the firm terms. The arrangement is legitimate only where the firm permits third-party trading. A prohibited arrangement can lead to a closed account and a refused payout.</p></div></details>
+<h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>What should I verify before paying?</summary><div class="faq-a"><p>The terms clause, the fee, the retry policy, the timeline and who owns the funded account. Get the answers in writing.</p></div></details>
+<details class="faq"><summary>What exactly is a prop firm passing service?</summary><div class="faq-a"><p>A service that trades a prop firm evaluation on the client's behalf for a flat fee and returns a funded account in the client's name. It does not manage the funded account, does not take a profit share, and stops at the handover.</p></div></details>
+
+<details class="faq"><summary>Is using one legal?</summary><div class="faq-a"><p>It depends on the firm's terms rather than on any general rule. The arrangement is legitimate only where the firm permits third-party trading, and the specific clause should be identified in writing before payment. A prohibited arrangement can lead to a closed account and a refused payout.</p></div></details>
+
+<details class="faq"><summary>Does the provider own the funded account?</summary><div class="faq-a"><p>No. The evaluation and the funded account are opened in your name, on your email, and the payouts are configured by you. The provider's access should end at the handover. If a provider expects to keep the funded login, that is a different product with a different risk profile.</p></div></details>
+
+<details class="faq"><summary>What should I verify before paying?</summary><div class="faq-a"><p>Seven things: the specific terms clause, the named list of accepted firms, the fee and what it includes, the retry policy in writing, the timeline, who holds the login during and after the evaluation, and whether any share of funded profit is taken. Get the answers in writing.</p></div></details>
+
+<details class="faq"><summary>How long does it take?</summary><div class="faq-a"><p>Typically around two weeks, but the number is governed by the target and the minimum trading day rule rather than by the provider's speed. A firm requiring eight profitable days cannot be completed in five, however well the account is traded. Treat any fixed promise of a specific date as marketing.</p></div></details>
+
+<details class="faq"><summary>What happens if the evaluation fails?</summary><div class="faq-a"><p>It depends on the written retry policy. A policy worth accepting covers a further full attempt at no additional service fee, states whether the firm's reset fee is included, gives a window, and defines what would void the cover. Ask for those four points before paying rather than after a failure.</p></div></details>
+
+<details class="faq"><summary>Will the funded account survive after the handover?</summary><div class="faq-a"><p>That is your responsibility, and it is the stage most traders underestimate. Funded rules differ from evaluation rules: consistency requirements often apply only at payout, minimum cycles delay the first withdrawal, and data fees may resume. Read the funded terms at the handover rather than at the first payout request.</p></div></details>
+
+<details class="faq"><summary>How is this different from a signal or copy-trading service?</summary><div class="faq-a"><p>A signal or copy service leaves rule compliance with you — you still carry the drawdown and the responsibility for consistency, news and minimum-day rules. A passing service takes on the execution and the rule audit. That is why the costs and the risks are not comparable.</p></div></details>
   </div>
 </section>
 
@@ -107,7 +309,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Start an evaluation</h2>
-      <p>Flat <strong>$220</strong> per evaluation, any firm, any account size. Retries covered, no profit split, funded login in your name. Terms checked before payment.</p>
+      <p>Flat <strong>$220</strong> per evaluation, any firm, any account size. Retries covered, no profit split, funded login in your name. Terms checked and confirmed in writing before payment.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -117,16 +319,16 @@ generator: content-system
   <div class="wrap narrow">
     <h2>Related reading</h2>
     <ul class="link-list">
+      <li><a href="/blog/prop-firm-passing-service-cost.html">What a passing service costs, and what it competes against</a></li>
+      <li><a href="/blog/cheapest-prop-firm-passing-service.html">The cheapest passing service, and when cheap turns expensive</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/prop-firm-scams-to-avoid.html">Prop firm scams to avoid</a></li>
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
+      <li><a href="/blog/funded-account-payout-process.html">The funded account payout process</a></li>
+      <li><a href="/blog/prop-firm-challenge-failure-recovery.html">How to recover from a failed challenge</a></li>
       <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
-      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
-      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
     </ul>
-    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss. Nothing here is financial advice.</p>
   </div>
 </section>
