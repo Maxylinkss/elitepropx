@@ -253,10 +253,12 @@ function header(activePath) {
       </ul>
     </nav>
     <div class="header-actions">
+      <span class="header-pitch">We pass prop firm challenges</span>
       <a class="header-telegram" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Chat with ${site.name} on Telegram" title="Chat on Telegram">${TELEGRAM_ICON}</a>
       <a class="btn btn-primary header-cta" href="/#get-started">Start for ${site.price}</a>
     </div>
   </div>
+  <a class="header-note" href="/#get-started">We pass prop firm challenges <span>· ${site.price} flat</span></a>
 </header>`;
 }
 
