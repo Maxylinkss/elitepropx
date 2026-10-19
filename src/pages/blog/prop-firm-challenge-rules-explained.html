@@ -1,6 +1,6 @@
 ---
-title: Prop Firm Challenge Rules Explained | 2026
-desc: Prop Firm Challenge Rules Explained: Prop firm rules are a small vocabulary with large consequences. With the math, the rulebook checks and what to verify…
+title: Prop Firm Challenge Rules Explained: Every Clause in 2026
+desc: A clause-by-clause guide to prop firm challenge rules: targets, drawdowns, daily loss, consistency, time limits and the wording traps that decide a pass.
 path: /blog/prop-firm-challenge-rules-explained.html
 type: article
 h1: Prop Firm Challenge Rules Explained
@@ -14,11 +14,12 @@ priority: 0.7
 schemaService: true
 generator: content-system
 ---
+
 <section class="page-head">
   <div class="wrap narrow">
     <p class="kicker">Prop Firm Challenge Rules Explained · reviewed October 2026</p>
     <h1>Prop Firm Challenge Rules Explained</h1>
-    
+    <p class="lede">Most failed evaluations are not lost to a bad market call. They are lost to a rule that was read quickly, assumed to work like the last firm's version, and discovered to mean something else at the worst possible moment. This guide treats the rulebook as a contract: it maps every clause family, shows how identical-sounding language produces different challenges, and gives you a reading method you can apply to any firm in about fifteen minutes.</p>
   </div>
 </section>
 
@@ -27,65 +28,202 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>Drawdown, daily loss and consistency each have firm-specific definitions.</li>
-  
-  <li>Save dated copies of the terms you relied on.</li>
-  
+  <li>Rules are contracts, not summaries. The same phrase — maximum loss, daily loss, consistency — can describe three materially different constraints at three firms.</li>
+  <li>Six rule families decide almost every outcome: target, maximum loss, daily loss, calendar, consistency and conduct.</li>
+  <li>The binding rule is usually not the one in the headline. It is whichever limit is closest to your current equity.</li>
+  <li>Write the numbers in dollars before you buy, and keep a dated copy of the terms you relied on. Firms revise terms, and a screenshot from last year is not the contract you signed.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#definition">What Prop Firm Challenge Rules Explained means in a prop evaluation</a></li>
-  <li><a href="#math">The arithmetic, on an illustrative account</a></li>
+  <li><a href="#contract">A rulebook is a contract, not a syllabus</a></li>
+  <li><a href="#families">The six rule families</a></li>
+  <li><a href="#same-words">Why the same rule can mean three different things</a></li>
+  <li><a href="#worked">A worked read of an illustrative rulebook</a></li>
+  <li><a href="#interaction">How the rules interact</a></li>
+  <li><a href="#archetypes">Three rulebook archetypes</a></li>
+  <li><a href="#traps">Eight wording traps that cost accounts</a></li>
+  <li><a href="#enforcement">How firms actually enforce the rules</a></li>
+  <li><a href="#after-funding">What changes after you pass</a></li>
+  <li><a href="#checklist">The pre-purchase rulebook checklist</a></li>
+  <li><a href="#service">Asking these questions of a passing service</a></li>
 </ol>
 </div>
 
-<h2 id="math">The arithmetic, on an illustrative account</h2>
+<h2 id="contract">A rulebook is a contract, not a syllabus</h2>
+<p>A prop firm challenge is sold like a course and enforced like a derivatives contract. The marketing page describes an opportunity; the terms page describes the conditions under which that opportunity can be withdrawn without a refund. Those conditions are the product. A trader who reads only the headline — "10% target, 10% drawdown, keep 90%" — has read the poster, not the contract.</p>
+<p>The practical difference shows up in disputes. When a firm voids an account, it does not usually cite a market outcome. It cites a clause: a maximum loss measured from a different point than the trader assumed, a consistency requirement applied at payout, a prohibited practice that the trader did not recognise as prohibited. The trader's defence is almost always "that is not what I thought it meant", which is not a defence at all if the terms were published before purchase.</p>
+<p>So the first reading habit is to stop treating the rulebook as educational material and start treating it as a list of conditions you must satisfy to keep the account. Every sentence needs to answer one of four questions: what is measured, from what reference point, over what period, and what happens if it is crossed. A clause that does not answer those questions in writing is a clause to ask about before paying, not after.</p>
 
+<h2 id="families">The six rule families</h2>
+<p>Almost every challenge rule belongs to one of six families. Once you can sort a clause into a family, you know which decision it changes and which number belongs on your index card.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Measure</th><th>Amount</th><th>What it constrains</th></tr>
+      <tr><th>Family</th><th>What it controls</th><th>Usual expression</th><th>What to verify</th></tr>
     </thead>
     <tbody>
-      <tr><td>Starting balance</td><td>$100,000</td><td>The reference point for a static floor</td></tr>
-      <tr><td>Total loss allowance</td><td>$10,000</td><td>The distance to account closure</td></tr>
-      <tr><td>Daily stop</td><td>$5,000</td><td>The maximum loss in one session</td></tr>
-      <tr><td>Profit target</td><td>$8,000</td><td>The distance to a pass</td></tr>
-      <tr><td>Risk per trade at 0.5%</td><td>$500</td><td>Twenty consecutive losses to the total floor</td></tr>
-      <tr><td>Risk per trade at 1%</td><td>$1,000</td><td>Ten consecutive losses to the total floor</td></tr>
+      <tr><td>Profit target</td><td>How far you must travel</td><td>8–10% of account, or a dollar figure on futures</td><td>Whether target is on profit or balance, and whether it resets between phases</td></tr>
+      <tr><td>Maximum loss</td><td>Where the account dies</td><td>6–12%, static or trailing</td><td>The reference point and whether the floor moves</td></tr>
+      <tr><td>Daily loss</td><td>How much a single day can cost</td><td>3–5%, or a dollar figure</td><td>Equity or closed balance, and the reset time</td></tr>
+      <tr><td>Calendar</td><td>How long you have, or how fast you may finish</td><td>30-day limit, minimum trading days, or no limit</td><td>What counts as a trading day and whether weekends count</td></tr>
+      <tr><td>Consistency</td><td>How evenly profit must be distributed</td><td>Best day under 30–50% of total profit</td><td>Whether it applies during the evaluation or only at payout</td></tr>
+      <tr><td>Conduct</td><td>Which behaviours are prohibited</td><td>News, hedging, EAs, account sharing, third-party trading</td><td>Whether enforcement is automated, manual, or post-payout</td></tr>
     </tbody>
   </table>
 </div>
 
+<h3>Profit target</h3>
+<p>The target is the most visible rule and the least ambiguous in isolation. The complications are in what counts toward it. Some firms count closed profit only; others include floating profit at the moment of verification; some exclude profits from specific instruments or during restricted periods. A target described as a percentage may be measured from the starting balance or from the current balance after a drawdown, which changes the dollar figure required to finish. On futures accounts the target is usually stated in dollars, which removes the percentage ambiguity but adds a contract-value question: the target is fixed, while the dollar value of a point varies by instrument.</p>
+<p>The target also interacts with every other rule. A target that is 2R away at your normal risk is a different product from one that is 8R away, even if both are described as "10%". The number of R is the practical measure, because it tells you how many normal wins the challenge requires and therefore how much time and how many chances you need.</p>
+
+<h3>Maximum loss</h3>
+<p>The maximum loss is the rule that ends the account, and its meaning depends entirely on its reference point. A static maximum loss is measured from the starting balance and never moves. An end-of-day trailing maximum loss follows closed profit at the daily close. An intraday trailing maximum loss follows peak equity continuously, including unrealised gains. Those are three different products with the same name, and the intraday version is materially the hardest because a position that goes into profit and returns to break-even permanently raises the failure floor.</p>
+<p>The second question is whether the maximum loss includes the daily loss or sits alongside it. At some firms the daily limit is a soft session stop and the maximum loss is the hard account boundary; at others a daily breach is itself a failure. The distinction decides whether a bad day is survivable and therefore how much of the account can be risked in one session.</p>
+
+<h3>Daily loss</h3>
+<p>The daily limit is a session constraint. Its two hidden variables are the measurement point — equity including floating positions, or closed balance only — and the reset convention. Midnight server time is common, the broker's daily close is common on forex, and a rolling twenty-four-hour window appears occasionally. A trader who assumes the wrong reset can commit tomorrow's budget to today's frustration without ever seeing a warning.</p>
+
+<h3>Calendar</h3>
+<p>Calendar rules come in two opposite forms. A maximum duration — thirty days, sixty days, or a phase-specific window — punishes slow progress. A minimum trading day requirement punishes fast progress, because a pass completed in three sessions may not be eligible for verification until five or ten days have been recorded. Firms sometimes impose both, which creates a narrow corridor: fast enough to finish inside the deadline, slow enough to satisfy the minimum.</p>
+<p>The definition of a trading day is where most calendar disputes begin. Does a day count if you open and close one position, or does it require a minimum number of trades? Does a Sunday session count? Does a day with no trades but an open position count? The answers are usually in a footnote, and they decide whether a carefully planned finish is eligible at all.</p>
+
+<h3>Consistency</h3>
+<p>A consistency rule caps how much of the total profit may come from a single day, or how much one day may exceed the average. The common form is "no single day may account for more than 30–50% of total profit". During an evaluation, that rule forces a trader to keep trading after a large winning day, which increases exposure at the moment the target is closest. At payout, it can delay a withdrawal even after a clean pass.</p>
+<p>The critical question is when the rule applies. A consistency requirement that lives only in the payout terms is a funding constraint; one that lives in the evaluation terms is a trading constraint. The first can be managed by adding winning days before requesting a withdrawal. The second has to be managed from the first trade, because a lopsided distribution may be impossible to repair without giving back profit.</p>
+
+<h3>Conduct</h3>
+<p>Conduct rules are the ones traders read least and firms enforce most aggressively after funding. They cover news trading, holding over weekends, hedging across accounts, copy trading, account sharing, automated strategies, latency arbitrage, and third-party trading. Some are banned outright; others are permitted with conditions. The enforcement mechanism matters as much as the prohibition: a rule checked automatically during the evaluation is a different risk from one reviewed manually at payout, when the firm has the most leverage and the trader has the most to lose.</p>
+<p>Conduct clauses are also where a passing service becomes a compliance question rather than a convenience question. If the terms require the account holder to place every trade personally, an evaluation traded by someone else is a breach regardless of the result. That is a legal and contractual risk, not a rulebook technicality, and it belongs in the purchase decision before any fee is paid.</p>
+
+<h2 id="same-words">Why the same rule can mean three different things</h2>
+<p>The most expensive misreading in prop trading is assuming that a familiar word carries a familiar definition. Five phrases account for most of the confusion.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Phrase</th><th>Possible meanings</th><th>What changes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>"Maximum drawdown"</td><td>Static from starting balance; end-of-day trailing; intraday trailing from peak equity</td><td>Whether a profitable open trade permanently tightens the floor</td></tr>
+      <tr><td>"Daily loss"</td><td>Equity including floating; closed balance only; measured from day's opening equity</td><td>Whether an open losing position has already breached the day</td></tr>
+      <tr><td>"Trading day"</td><td>Any day with a closed trade; any day with an open position; a day meeting a minimum trade count</td><td>Whether a fast pass is eligible for funding</td></tr>
+      <tr><td>"Consistency"</td><td>Best day share of total profit; best day versus average day; profit concentration over a window</td><td>Whether one large win disqualifies an otherwise clean pass</td></tr>
+      <tr><td>"News trading"</td><td>No opening trades in a window; no holding through a release; no trading specific instruments at all</td><td>Whether a strategy is viable on that firm</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Take the first row. A trader who has only used static-drawdown firms will size as though the floor is fixed. Moving to an intraday trailing account, the same size is dangerous in a way the account balance does not show, because the floor rises with unrealised profit. The trader has not changed strategy; the rule has changed meaning. This is why a sizing plan cannot be carried between firms without re-reading the loss section.</p>
+<p>The daily loss row is similar. On a closed-balance rule, a position that is $3,000 down intraday and recovers to flat has cost nothing. On an equity rule, the same position has consumed $3,000 of the day's budget while it was open, and a second position opened at the low point may breach before the recovery. The trader's experience of the day and the firm's measurement of the day are different objects.</p>
+
+<h2 id="worked">A worked read of an illustrative rulebook</h2>
+<p>Here is a rulebook of the kind a trader might meet, deliberately written with the ambiguities intact. The account is $100,000; the figures are illustrative and not a claim about any firm's current schedule.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Clause</th><th>Stated rule</th><th>Dollar equivalent</th><th>Question to ask</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Profit target</td><td>10%</td><td>$10,000</td><td>Measured on closed profit or equity at verification?</td></tr>
+      <tr><td>Maximum loss</td><td>6% trailing</td><td>$6,000 from peak equity</td><td>Intraday or end-of-day trailing?</td></tr>
+      <tr><td>Daily loss</td><td>3%</td><td>$3,000</td><td>Equity or closed balance, and what reset time?</td></tr>
+      <tr><td>Minimum days</td><td>5</td><td>—</td><td>Does a day require a closed trade?</td></tr>
+      <tr><td>Consistency</td><td>40% at payout</td><td>—</td><td>Best day share of total profit, or versus average?</td></tr>
+      <tr><td>Time limit</td><td>None</td><td>—</td><td>Any phase-specific deadline hidden in the terms?</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The first pass through the table produces three numbers a trader can use. The target is $10,000. The daily budget is $3,000. The distance to the failure floor is $6,000 at the start, but it will shrink as equity rises if the trailing is intraday. The minimum-days rule means the fastest possible finish is five sessions, so the target has to be reached in a way that still leaves five eligible days.</p>
+<p>The second pass produces the binding constraint. At 1% risk per trade — $1,000 — the target is 10R and the daily budget is three losses. At 0.5% risk, the target is 20R and the daily budget is six losses. The first plan finishes faster and is more fragile; the second is slower and survives normal losing streaks. Neither is wrong in the abstract; the choice depends on how much time the trader has and how reliable the edge is.</p>
+<p>The third pass produces the consistency problem. If the target is reached with a single $5,000 day and five $1,000 days, the best day is 50% of profit, above the 40% cap. The pass may be complete but the payout may not be available until more profit is earned on ordinary days. A trader who notices this before starting can plan the distribution; one who notices after finishing has to keep trading a funded account they cannot yet withdraw from.</p>
 <figure>
-  <img src="/assets/img/challenge-math.svg" alt="Diagram showing the relationship between account size, loss allowance, daily stop and profit target" width="940" height="500" loading="lazy">
-  
+  <img src="/assets/img/rulebook-models.svg" alt="Diagram comparing static, end-of-day trailing and intraday trailing rulebook models" width="1000" height="540" loading="lazy">
+  <figcaption>The same headline drawdown percentage produces three different challenges depending on when the floor moves.</figcaption>
 </figure>
 
-<h2 id="evaluation-rules-are-not-funded-rules">Evaluation rules are not funded rules</h2>
-<p>The rules that apply during an evaluation are not always the rules that apply after the pass. A firm can allow a strategy on the evaluation and restrict it on the funded account, or apply a consistency condition only at payout. The challenge rules explain the path to the funded account; the funded terms explain what the account is worth. A trader who reads only the challenge page has read half the contract.</p>
-<p>The difference shows up in three places: the consistency condition, the news policy and the payout schedule. Each can change after the pass. Before buying, read both pages and write down the clauses that differ. If the difference is material to the strategy, the product is not a fit even if the challenge itself is easy.</p>
+<h2 id="interaction">How the rules interact</h2>
+<p>Rules are not independent. Four interactions decide more outcomes than any single clause.</p>
+<h3>Target versus drawdown</h3>
+<p>The ratio of target to drawdown is the challenge's difficulty in one number. A 10% target against a 10% drawdown is a 1:1 challenge: you must make as much as you are allowed to lose. A 10% target against a 6% drawdown is 1.67:1, which is materially harder. A 6% target against a 10% drawdown is 0.6:1, which is a different product altogether. Before comparing fees, compare that ratio. It tells you how many normal losses the challenge can absorb relative to the distance you must travel.</p>
+<h3>Daily loss versus maximum loss</h3>
+<p>If the daily limit is 3% and the maximum loss is 6%, two full daily losses end the account. If the daily limit is a survivable session stop rather than a failure, the account gets a fresh budget each day but the cumulative loss still counts toward the maximum. The practical question is whether a bad day is a pause or a death, and the terms state it. Where a daily breach is fatal, the effective risk per day is the maximum loss divided by the number of days you can afford to lose — often two.</p>
+<h3>Time limit versus minimum days</h3>
+<p>A thirty-day limit with a five-day minimum creates a corridor. A no-limit challenge with a five-day minimum is more forgiving, because a flat week costs time rather than the account. A thirty-day limit with no minimum rewards speed, which encourages larger size and therefore increases the chance of a drawdown breach. The calendar rules tell you which direction the firm is pushing you, and that direction is usually the opposite of what good risk management would choose.</p>
+<h3>Consistency versus target</h3>
+<p>The faster you reach the target, the more concentrated the profit is likely to be, and the more likely a consistency rule becomes binding. This is a genuine tension rather than a design flaw: a firm wants proof of a repeatable process, and a single explosive day is not that proof. The trader's response is to plan a distribution — a target reached over more sessions, with no single day dominating — which usually means smaller size and more patience, not a different strategy.</p>
 
-<h2 id="the-four-numbers-in-every-challenge">The four numbers in every challenge</h2>
-<p>Every challenge can be reduced to four numbers: the profit target, the maximum loss, the daily loss and the minimum days. The first two define the distance, the third defines the worst day, and the fourth defines the calendar. A rulebook that does not state all four clearly is a rulebook to avoid until support answers in writing.</p>
-<p>Convert each number into dollars on the account size you are considering. A 10% target on a $50,000 account is $5,000; a 5% daily stop is $2,500. Then divide by the risk unit to see how many losses the day can absorb. If the answer is fewer than three, the size is too large for the rulebook, regardless of how good the setup looks.</p>
+<h2 id="archetypes">Three rulebook archetypes</h2>
+<p>Most challenges fall into one of three shapes. Recognising the shape is faster than comparing clause tables firm by firm.</p>
+<h3>The static, single-target challenge</h3>
+<p>A fixed maximum loss, a single profit target, no time limit and no consistency rule. This is the most forgiving architecture, because the failure floor never moves and the only way to fail is to lose the stated amount. The trade-off is usually a higher fee or a lower profit split. For a trader with a tested method and a modest risk unit, this is the easiest shape to pass, because the challenge rewards patience rather than speed.</p>
+<h3>The trailing, multi-phase challenge</h3>
+<p>A trailing maximum loss, two phases, a minimum trading day requirement and a consistency rule at payout. This is the common futures architecture. It is harder for three reasons: the floor moves with profit, the calendar imposes a minimum pace, and the payout rule can delay access after a clean pass. The trader who succeeds here is not the one who makes the most per day; it is the one who keeps the distance between equity and the floor roughly constant while grinding toward the target.</p>
+<h3>The consistency-heavy challenge</h3>
+<p>A moderate target, a static or end-of-day floor, and a strict consistency requirement applied during the evaluation. The challenge is not the target; it is the distribution. A trader who makes 40% of the target in one session has to keep trading to dilute that day's share, which increases exposure after the best result. The correct response is smaller size and a planned number of sessions, not a larger position to finish before the rule binds.</p>
 
-<h2 id="how-to-verify-a-rule-before-trading">How to verify a rule before trading</h2>
-<p>Find the clause in the terms, copy it into your notes, and ask support to confirm your interpretation in one sentence. For example: "On the $100,000 plan, is the daily loss measured on equity and does it reset at 00:00 server time?" A specific question gets a specific answer. A general question gets a marketing reply.</p>
-<p>Do this for the loss limits, the consistency rule and the payout schedule. Those three cover most of the money at risk. The rest of the rulebook can be read once and checked before the session.</p>
+<h2 id="traps">Eight wording traps that cost accounts</h2>
+<p>These are the clauses that most often produce a dispute, in rough order of frequency.</p>
+<ol>
+  <li><strong>"Maximum loss" without a reference point.</strong> If the terms do not say whether the figure is static or trailing, assume nothing and ask. The difference can halve the usable room on a profitable account.</li>
+  <li><strong>"Daily loss" without a measurement convention.</strong> Equity and closed balance are different rules. An open position that recovers can still breach an equity-measured day.</li>
+  <li><strong>"Trading day" with no definition.</strong> A day with one closed trade may count; a day with an open position may not. The footnote decides whether a fast pass is eligible.</li>
+  <li><strong>"Consistency" applied at payout but advertised nowhere on the challenge page.</strong> The challenge page sells the pass; the payout page governs the money. Read both.</li>
+  <li><strong>"No time limit" contradicted by a phase deadline.</strong> A headline can say no limit while a phase-specific clause imposes one. The narrower clause wins.</li>
+  <li><strong>"News trading permitted" with a holding restriction.</strong> The permission may apply to opening a trade but not to carrying one through the release. The distinction changes the strategy.</li>
+  <li><strong>"Third-party trading prohibited" buried in the conduct section.</strong> This is the clause that decides whether a passing service is appropriate at all. It is rarely on the sales page.</li>
+  <li><strong>"Rules may change" with no notice period.</strong> A firm that can amend terms mid-evaluation can change the challenge after you have paid. Keep dated copies of what you agreed to.</li>
+</ol>
+<p>Each trap has the same fix: convert the sentence into a number and a reference point, and ask the firm to confirm the conversion in writing. A question such as "On the $100,000 plan, is the 6% maximum loss measured from the starting balance or from peak equity, and does the floor move intraday or at the daily close?" is specific enough to produce a usable answer. A question such as "how does the drawdown work?" invites a marketing reply.</p>
+<p>The written answer is worth keeping for a second reason. If a firm later applies a rule differently from its published terms, the reply is evidence. Most disputes are resolved by pointing at the firm's own words, and the trader who has those words in an email is in a stronger position than one reconstructing a conversation from memory.</p>
 
-<section class="section tight">
-  <div class="wrap narrow">
-    <h2 id="questions">Common questions</h2>
+<h2 id="enforcement">How firms actually enforce the rules</h2>
+<p>Enforcement is not uniform, and the mechanism changes the risk profile of a rule.</p>
+<h3>Automated enforcement</h3>
+<p>Loss limits, targets and minimum days are usually calculated by the platform or the firm's dashboard. These rules are objective, immediate and difficult to dispute. If the dashboard says the floor was reached, it was reached, even if the trader's own calculation differs by a few dollars. The practical implication is to keep a buffer between your plan and the limit rather than trading to the last dollar.</p>
+<h3>Manual review</h3>
+<p>Conduct rules, consistency and suspicious trading patterns are often reviewed by a human. This introduces two risks: inconsistency between reviewers, and delay. A payout can be held while a reviewer examines trade history, which is why the payout section of the terms matters as much as the evaluation section. The trader's protection is a clean, documented process: a journal, a consistent strategy, and no behaviour that looks like an exploit.</p>
 
-<details class="faq"><summary>Are funded account rules the same as challenge rules?</summary><div class="faq-a"><p>Not always. Consistency, news and payout conditions can change after the pass. Read both the challenge page and the funded terms before buying.</p></div></details>
+<h2 id="after-funding">What changes after you pass</h2>
+<p>The challenge rules govern the path; the funded terms govern the money. They are separate documents and they do not always agree.</p>
+<p>Three areas change most often. First, the consistency requirement may appear only at payout, even if the evaluation had none. Second, the news and weekend rules may tighten, because the firm is now exposed to real profit rather than a simulated target. Third, the payout schedule — minimum days, profit threshold, processing time, method — is a new set of conditions that did not exist during the evaluation. A trader who passes cleanly and then discovers a 30% best-day rule on a 45% best day has not been funded in any useful sense; they have been given an account they must keep trading before they can be paid.</p>
 
-<details class="faq"><summary>What are the four key challenge numbers?</summary><div class="faq-a"><p>The profit target, the maximum loss, the daily loss and the minimum trading days. Convert each into dollars and dates on the account size you are considering.</p></div></details>
+<h2 id="checklist">The pre-purchase rulebook checklist</h2>
+<p>Run this list before paying. It takes about fifteen minutes and covers the clauses that decide most outcomes.</p>
+<ol>
+  <li>Write the profit target in dollars, from the correct reference point.</li>
+  <li>Write the maximum loss in dollars and state whether it is static, end-of-day trailing or intraday trailing.</li>
+  <li>Write the daily loss in dollars, state equity or closed balance, and note the reset time.</li>
+  <li>Check whether a daily breach ends the day or the account.</li>
+  <li>Check the time limit, the minimum trading days, and the definition of a trading day.</li>
+  <li>Check whether a consistency rule applies during the evaluation, at payout, or both.</li>
+  <li>Read the conduct section for news, weekends, hedging, EAs, copy trading and third-party trading.</li>
+  <li>Check the payout terms: minimum days, profit threshold, processing time and method.</li>
+  <li>Ask for written confirmation of any ambiguous clause, and keep the reply.</li>
+  <li>Save a dated copy of the terms you relied on.</li>
+  <li>Compare the target-to-drawdown ratio with the fee, not just the fee alone.</li>
+  <li>Decide in advance what you will do if a rule changes mid-evaluation.</li>
+</ol>
 
-<details class="faq"><summary>How do I confirm an ambiguous rule?</summary><div class="faq-a"><p>Ask support a specific question that names the measurement, the reset time and the consequence. Keep the written answer with your account records.</p></div></details>
-  </div>
+<h2 id="service">Asking these questions of a passing service</h2>
+<p>If someone else is trading the evaluation, the rulebook questions become due-diligence questions about the provider. A service that cannot answer them in figures is describing an intention rather than a process.</p>
+<p>ElitePropX charges one flat <strong>$220</strong> for any firm and any account size, with retries on rule breaches at the same firm and size covered, no profit split, and the funded account issued in your name. The flat fee matters for this page because it removes the incentive to rush a target at the expense of the rulebook. A provider paid a share of payouts earns more by finishing quickly, which usually means larger size relative to the daily budget and less margin around a trailing floor. A fixed fee makes the slower, rule-first process the economically sensible one.</p>
+<p>The compliance question is not a formality. Some firms prohibit third-party trading outright, and enforcement often arrives after funding rather than during the evaluation. A provider that will not tell you what it knows about your firm's policy, or that treats the clause as irrelevant, is transferring a risk to you that you cannot see. The right answer is specific: the firm's position, the source, and a willingness to decline the job if the terms make the arrangement a breach.</p>
+<figure>
+  <img src="/assets/img/challenge-math.svg" alt="Diagram showing how account size, loss allowance, daily stop and profit target relate" width="940" height="500" loading="lazy">
+  <figcaption>Four numbers, one card: target, maximum loss, daily loss and minimum days.</figcaption>
+</figure>
+
+<h2 id="faq">Frequently asked questions</h2>
+<details class="faq"><summary>What are the most important prop firm challenge rules?</summary><div class="faq-a"><p>The profit target, maximum loss, daily loss and minimum trading days. Those four decide the distance, the failure point, the worst day and the calendar. Consistency and conduct rules decide whether a completed pass can actually be paid.</p></div></details>
+<details class="faq"><summary>Is a trailing drawdown always harder than a static one?</summary><div class="faq-a"><p>Yes, for the same headline percentage. A trailing floor rises with profit and does not fall back, so a profitable open trade can permanently reduce the room available. An intraday trailing floor is harder than an end-of-day one because unrealised gains move it.</p></div></details>
+<details class="faq"><summary>Does the daily loss limit count floating losses?</summary><div class="faq-a"><p>At most firms it is measured on equity, so an open losing position counts before it is closed. Some firms use closed balance only. The measurement convention is in the loss section of the terms and changes position sizing materially.</p></div></details>
+<details class="faq"><summary>What is a consistency rule and when does it apply?</summary><div class="faq-a"><p>It caps how much of total profit may come from one day, often 30–50%. It can apply during the evaluation, only at payout, or both. A payout-only rule can be managed by adding winning days; an evaluation rule has to be planned from the first trade.</p></div></details>
+<details class="faq"><summary>What does a passing service need to know about the rulebook?</summary><div class="faq-a"><p>All six families, with the numbers converted to dollars and the measurement conventions confirmed. It should also know the conduct section, because a firm that prohibits third-party trading makes the arrangement a breach regardless of the result.</p></div></details>
+<details class="faq"><summary>How much does ElitePropX charge, and is the firm's fee included?</summary><div class="faq-a"><p>One flat $220 per evaluation, any firm and any account size, with retries on rule breaches covered and no profit split. The firm's own challenge fee is separate and paid directly to the firm.</p></div></details>
+
+<h2 id="summary">The rulebook in five sentences</h2>
+<p>Six rule families decide almost every challenge: target, maximum loss, daily loss, calendar, consistency and conduct. The meanings of those families vary by firm, so the number and its reference point matter more than the name of the rule. The binding constraint is usually the limit closest to current equity, which is why a sizing plan has to be recomputed as the account moves. Consistency and conduct rules decide whether a completed pass can be paid, so they belong in the pre-purchase read. And when someone else is trading the evaluation, their answers to these questions are the product you are actually buying.</p>
+</div>
 </section>
 
 <section class="cta-band">
@@ -102,16 +240,15 @@ generator: content-system
   <div class="wrap narrow">
     <h2>Related reading</h2>
     <ul class="link-list">
-      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
-      <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
       <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
-      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html">Trailing versus static drawdown</a></li>
+      <li><a href="/blog/prop-firm-challenge-terms-glossary.html">Challenge terms glossary</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
+      <li><a href="/passed-challenges.html">Recently passed evaluations</a></li>
+      <li><a href="/contact.html">Start an evaluation for a flat $220</a></li>
     </ul>
-    <p class="disclaimer">prop firm is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">This guide is general information, not legal or financial advice. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm.</p>
   </div>
 </section>
