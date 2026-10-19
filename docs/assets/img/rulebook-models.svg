@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-label="FundedNext and Topstep rulebook models compared side by side across mandate, target, drawdown, daily limit, consistency and billing" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <defs><pattern id="rbm" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eef7" stroke-width="1"/></pattern></defs>
+  <rect width="1000" height="540" fill="#f4f7fc"/>
+  <rect width="1000" height="540" fill="url(#rbm)"/>
+  <text x="50" y="56" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">TWO RULEBOOK MODELS</text>
+  <text x="50" y="94" font-size="29" font-weight="800" fill="#0b1220">Same evaluation, different unit of measurement</text>
+  <g>
+    <rect x="50" y="130" width="430" height="352" rx="16" fill="#fff" stroke="#dbe3ef"/>
+    <rect x="50" y="130" width="430" height="6" rx="3" fill="#0e9f6e"/>
+    <text x="76" y="178" font-size="22" font-weight="800" fill="#0b1220">FundedNext</text>
+    <text x="76" y="202" font-size="13" fill="#6b7a92">Percentage model · Forex and CFDs</text>
+    <line x1="76" y1="220" x2="454" y2="220" stroke="#dbe3ef"/>
+    <text x="76" y="250" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">MANDATE</text>
+    <text x="454" y="250" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">FX, metals, indices</text>
+    <text x="76" y="288" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">TARGET</text>
+    <text x="454" y="288" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">% of starting balance</text>
+    <text x="76" y="326" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">MAX LOSS</text>
+    <text x="454" y="326" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Static or trailing</text>
+    <text x="76" y="364" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">DAILY LIMIT</text>
+    <text x="454" y="364" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Equity or balance</text>
+    <text x="76" y="402" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">CONSISTENCY</text>
+    <text x="454" y="402" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Plan dependent</text>
+    <text x="76" y="440" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">BILLING</text>
+    <text x="454" y="440" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">One-off per attempt</text>
+  </g>
+  <g>
+    <rect x="520" y="130" width="430" height="352" rx="16" fill="#fff" stroke="#dbe3ef"/>
+    <rect x="520" y="130" width="430" height="6" rx="3" fill="#243b5c"/>
+    <text x="546" y="178" font-size="22" font-weight="800" fill="#0b1220">Topstep</text>
+    <text x="546" y="202" font-size="13" fill="#6b7a92">Dollar model · CME futures</text>
+    <line x1="546" y1="220" x2="924" y2="220" stroke="#dbe3ef"/>
+    <text x="546" y="250" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">MANDATE</text>
+    <text x="924" y="250" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Micro and full futures</text>
+    <text x="546" y="288" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">TARGET</text>
+    <text x="924" y="288" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Fixed dollar amount</text>
+    <text x="546" y="326" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">MAX LOSS</text>
+    <text x="924" y="326" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Trailing threshold</text>
+    <text x="546" y="364" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">DAILY LIMIT</text>
+    <text x="924" y="364" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Explicit, per session</text>
+    <text x="546" y="402" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">CONSISTENCY</text>
+    <text x="924" y="402" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Best-day expectation</text>
+    <text x="546" y="440" font-size="12" font-weight="700" letter-spacing="1" fill="#243b5c">BILLING</text>
+    <text x="924" y="440" font-size="14" font-weight="600" fill="#0b1220" text-anchor="end">Monthly subscription</text>
+  </g>
+  <text x="50" y="516" font-size="13.5" fill="#3d4a61">The unit matters: a percentage target and a trailing dollar threshold fail at different moments on the same equity curve.</text>
+</svg>

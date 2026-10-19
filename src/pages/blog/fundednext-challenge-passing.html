@@ -1,0 +1,268 @@
+---
+title: "FundedNext Challenge Passing Guide 2026: Targets and Drawdown"
+desc: "How to pass a FundedNext evaluation: the two model shapes, daily versus maximum drawdown, target pacing, the consistency gate and the sizing that survives."
+path: /blog/fundednext-challenge-passing.html
+type: article
+h1: Passing a FundedNext challenge: two models, two ways to fail
+kicker: Firm guide
+crumb: FundedNext challenge
+section: Firm guides
+sectionUrl: /blog/
+date: 2026-10-19
+updated: 2026-10-19
+priority: 0.8
+schemaService: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Firm guide · reviewed October 2026</p>
+    <h1>Passing a FundedNext challenge: two models, two ways to fail</h1>
+    <p class="lede">FundedNext sells evaluations in two shapes — a staged two-phase model and a faster one-phase model — and the failure mechanics differ between them in ways that change how a plan should be sized. This guide works through the two drawdown figures, the target arithmetic that decides pace, the consistency gate at payout, and the specific behaviours that end attempts. Everything is written as mechanism rather than as quoted numbers, because the numbers change and the mechanics do not.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Two drawdown figures apply at once: a daily limit that resets each session and a maximum limit that does not. The binding one is whichever is closer to current equity that morning.</li>
+        <li>The one-phase model asks for one larger target instead of two smaller ones, which concentrates risk into a single arc rather than splitting it. For most traders that is harder, not easier.</li>
+        <li>Pace is a decision, not a discovery. Working backwards from a target date produces a required daily profit, which can be checked against the daily limit before the first trade.</li>
+        <li>A consistency rule applied at payout means the largest day must stay well under the permitted share of total profit — so a fast pass built on one dominant session can produce an unpayable account.</li>
+        <li>Most breaches are conduct breaches: news windows, sizing caps and weekend holding, not drawdown.</li>
+        <li>Terms change. Confirm the current figures on the firm's own pages; this guide describes the structure, not a contract.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#which">Which model you are actually buying</a></li>
+        <li><a href="#drawdown">Daily and maximum drawdown</a></li>
+        <li><a href="#targets">Target arithmetic and pace</a></li>
+        <li><a href="#consistency">The consistency gate</a></li>
+        <li><a href="#sizing">Sizing a plan that survives both limits</a></li>
+        <li><a href="#conduct">Conduct rules that end attempts</a></li>
+        <li><a href="#failures">The six ways attempts fail</a></li>
+        <li><a href="#funded">From pass to payout</a></li>
+        <li><a href="#compare">FundedNext against the field</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="which">Which model you are actually buying</h2>
+    <p>The first decision is not the account size. It is the model, because the model determines how many separate targets must be cleared and how long the account is exposed to the rules.</p>
+    <p>A two-phase evaluation splits the work. The first phase asks for a profit target while holding inside the drawdown limits; clearing it moves the account to a second phase with its own target and its own minimum day count. The advantage is that each phase is smaller and the trader gets a genuine checkpoint at the halfway mark. The disadvantage is duration: twice the calendar means twice the exposure to the daily limit, and the number of sessions in which something can go wrong roughly doubles.</p>
+    <p>A one-phase evaluation asks for the whole target in a single arc. There is one checkpoint — the end — and the calendar is shorter. This is usually marketed as easier, and in one narrow sense it is: there is no second phase to fail. In every other sense it is harder, because the target is larger relative to the starting balance, the daily limit has to survive the entire distance without a reset in the middle, and a single bad session costs proportionally more of the evaluation.</p>
+    <figure>
+      <img src="/assets/img/model-fit-flow.svg" alt="Flow diagram showing how a two-phase and a one-phase evaluation differ in checkpoints and calendar" width="980" height="470" loading="lazy">
+      <figcaption>Two checkpoints versus one: the one-phase model is shorter and less forgiving of a single bad session.</figcaption>
+    </figure>
+    <p>Which is better depends on a single trader characteristic: how much a losing week costs you psychologically. A trader who can absorb a bad week and continue at planned size is better served by the two-phase model, because the smaller per-phase target means the plan's risk per trade can be lower and the account has more room for ordinary variance. A trader who abandons a plan after two bad days is better served by the shorter model, not because it is easier but because the exposure is shorter. That is a statement about behaviour, not about the rulebook.</p>
+    <div class="callout">
+      <p><strong>The test:</strong> look at your last twenty sessions. If the maximum losing streak was three and you kept size constant, the two-phase model is the better purchase. If a three-loss streak made you double the next position, fix that before buying either.</p>
+    </div>
+    <p>There is a second structural difference that matters more than it appears. On a two-phase account, the second phase begins after a passing moment, and the natural instinct is to trade the second phase as a continuation of the first — same instruments, same size, same expectations. But the drawdown has reset to the new balance, which means the account starts the second phase with a full buffer and an empty record. Traders who carry the first phase's aggression into the second are carrying the wrong lesson: the first phase proved that the plan works at that size, not that the size should now increase.</p>
+    <h2 id="drawdown">Daily and maximum drawdown</h2>
+    <p>Two loss limits apply, and they measure different things. Confusing them is the most expensive mistake available on this kind of account.</p>
+    <p>The <strong>daily drawdown</strong> governs the session. It resets each trading day, so a loss that reaches it ends the day and leaves the account intact. Its purpose is to prevent a single session from destroying a multi-week evaluation, and it is the limit that most failures actually hit.</p>
+    <p>The <strong>maximum drawdown</strong> governs the account. It does not reset, and reaching it closes the evaluation. Its purpose is to cap the total damage a plan can do, and it is the limit that traders plan for and then breach while thinking about the other one.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th></th><th>Daily drawdown</th><th>Maximum drawdown</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Scope</td><td>The session</td><td>The whole evaluation</td></tr>
+          <tr><td>Resets</td><td>Each trading day</td><td>Never</td></tr>
+          <tr><td>Breach consequence</td><td>Day ends, account continues</td><td>Evaluation is closed</td></tr>
+          <tr><td>Typical planning use</td><td>Sets risk per trade</td><td>Sets the size ladder and the stop-loss count</td></tr>
+          <tr><td>Common misreading</td><td>Treated as a target</td><td>Treated as a safety net</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Both figures may be expressed either as a percentage of the starting balance or as a percentage of current equity, and the choice changes the account's behaviour as it moves. A limit measured from the starting balance is static in dollars: it does not move when you profit, so a winning account's cushion grows in absolute terms. A limit measured from current equity moves with the balance, so a profitable account has proportionally more room but a losing account has absolutely less — the floor rises toward the price.</p>
+    <p>The distinction matters because most traders assume the more forgiving structure. Check which basis applies before doing any arithmetic, and if the terms state a percentage without saying which balance it is a percentage of, treat that as an unresolved question rather than as a detail. The difference is large enough to change whether a given risk per trade is survivable.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="Chart showing a daily drawdown limit resetting each session against a maximum drawdown that never resets" width="1000" height="540" loading="lazy">
+      <figcaption>One limit resets every morning; the other is spent once. Size from the smaller, and count losses against the larger.</figcaption>
+    </figure>
+    <h3>Computing the binding limit</h3>
+    <p>The working method is a two-line calculation each morning. Line one: current equity minus the maximum drawdown floor equals the total room left on the account. Line two: current equity minus the daily limit equals the room available today. The smaller of the two is the number the plan must respect, and neither is a suggestion.</p>
+    <p>Early in an evaluation the maximum floor is usually distant and the daily limit binds. Late in an evaluation, after a drawdown has been spent, the maximum floor can be closer than the daily limit permits, and then the daily limit is a fiction — you cannot lose the daily maximum without closing the account. A trader who computes only the daily number will be surprised by exactly one session, and it will be the last one.</p>
+    <h2 id="targets">Target arithmetic and pace</h2>
+    <p>A profit target is only meaningful as a percentage of the account, and pace is only meaningful as a rate relative to the daily limit. Both conversions are simple and both are routinely skipped.</p>
+    <p>Convert first. A dollar target on a $200,000 account is a different evaluation from the same dollar target on a $50,000 account, even though the marketing page shows the dollar figure in both places. Divide the target by the balance to get the percentage, then compare that percentage across firms and across account sizes. This is the only figure that transfers.</p>
+    <p>Then pace. Choose a target date — not the firm's deadline, your own — and divide the target by the number of sessions you intend to work. On a target of 8% over twenty sessions, the required average is 0.4% per session. Compare that with the daily limit: if the daily limit is 5%, the required pace uses under a tenth of the daily budget, which tells you that a disciplined plan has enormous room for ordinary losing days. If the required pace is a third of the daily limit, the plan has almost no tolerance for variance, and the target date is the thing that should change.</p>
+    <figure>
+      <img src="/assets/img/challenge-math.svg" alt="Diagram converting a dollar profit target into a percentage and then into a required daily pace against the daily loss limit" width="940" height="500" loading="lazy">
+      <figcaption>Target as a percentage, then pace as a fraction of the daily budget. Two divisions that decide whether a plan is achievable.</figcaption>
+    </figure>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Target as % of account</th><th>Sessions</th><th>Required average per session</th><th>Fraction of a 5% daily limit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>8%</td><td>10</td><td>0.80%</td><td>16%</td></tr>
+          <tr><td>8%</td><td>20</td><td>0.40%</td><td>8%</td></tr>
+          <tr><td>8%</td><td>30</td><td>0.27%</td><td>5%</td></tr>
+          <tr><td>10%</td><td>10</td><td>1.00%</td><td>20%</td></tr>
+          <tr><td>10%</td><td>20</td><td>0.50%</td><td>10%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Read the last column as a measure of fragility. A plan whose required pace consumes 5% of the daily budget per session can absorb twenty losing sessions of a fifth of the daily limit and still be alive; a plan at 20% can absorb five. Both may pass, but the second depends on the market cooperating within a narrow window, and the first depends on the plan being executed. Only one of those is under the trader's control.</p>
+    <p>The practical recommendation is a pace that consumes under a tenth of the daily budget per session on average. That sounds slow, and it is — twenty sessions at 0.4% is eight percent, which is a realistic evaluation. The reason traders resist it is that the fee is paid up front and the calendar feels like a cost. It is; it is just a smaller cost than a second fee.</p>
+    <h2 id="consistency">The consistency gate</h2>
+    <p>Consistency rules vary in where they apply and how they are measured, and the difference decides whether a fast pass is an achievement or a liability.</p>
+    <p>Where a rule applies at payout, the arithmetic is a single division. Total profit must reach the largest day divided by the permitted share. A $2,500 best day under a 30% rule needs $8,334 of total profit. A $5,000 best day under the same rule needs $16,667. The larger the best day, the more total profit is required, which means the fastest route to a large profit is also the slowest route to a withdrawal.</p>
+    <p>Where a rule applies during the evaluation itself, it constrains the pass rather than the payout, and the effect is more direct: a trader who reaches the target on one dominant session may not have completed the evaluation at all. Either way, the correct planning response is the same, and it is a daily profit cap set at roughly a third of the target. On an 8% target, that is about 2.7% per session — comfortably inside a 30% best-day share by construction, because the largest day is a third of the total and the total is the target.</p>
+    <figure>
+      <img src="/assets/img/consistency-rule.svg" alt="Chart showing a dominant trading day exceeding the permitted share of total profit before a payout clears" width="940" height="540" loading="lazy">
+      <figcaption>At target, not at payout. The consistency ratio is computed from realised profit, so one large session can block a withdrawal indefinitely.</figcaption>
+    </figure>
+    <p>There is a subtlety about measurement that trips traders even when they know the rule exists. Some firms measure the best day against total profit, others against the payout amount, and some measure the share of total profit at the moment of the request rather than at the target. If the rule is measured at the request, then a trader at exactly the threshold with a best day at exactly the permitted share is in a knife-edge position: one ordinary session improves the ratio, one unusually good session makes it worse. In that situation, the right move is to keep trading at reduced size until the ratio has clear headroom, not to submit and hope.</p>
+    <div class="callout">
+      <p><strong>Set the cap before the first trade.</strong> A daily profit cap converts a payout rule into a habit. A trader who caps the day at a third of the target never has to compute the consistency ratio at all — the arithmetic is satisfied in advance, every time.</p>
+    </div>
+    <h2 id="sizing">Sizing a plan that survives both limits</h2>
+    <p>Five numbers define a workable plan, and each follows from one of the rules above. Write them down; a plan held in memory is a plan that changes under pressure.</p>
+    <ol>
+      <li><strong>Risk per trade:</strong> a third of the daily limit at most. This makes three consecutive losses survivable within the session, which is the property that decides whether a plan can be executed at all.</li>
+      <li><strong>Daily stop:</strong> stop opening positions once 80% of the daily budget is realised. The last fifth exists to absorb slippage on the closing trade, not to be spent on a recovery attempt.</li>
+      <li><strong>Daily profit cap:</strong> about a third of the target, which satisfies a 30% consistency rule by construction and protects the ratio without further arithmetic.</li>
+      <li><strong>Loss count against the maximum:</strong> divide the total room by the risk per trade to get the number of losing trades the account can absorb. If that number is under six, the account size is too small for the risk, or the risk is too large for the account.</li>
+      <li><strong>Weekly loss pause:</strong> a hard stop at two losing sessions in a week. The pause costs nothing on a static drawdown structure and prevents the sequence that ends most accounts — three losses, a size increase, and a fourth.</li>
+    </ol>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="Diagram dividing a drawdown budget into per-trade risk, session risk and an untouched reserve" width="940" height="520" loading="lazy">
+      <figcaption>One budget, three consumers. Per-trade risk, the daily stop and an untouched reserve that the plan never reaches.</figcaption>
+    </figure>
+    <p>The fifth number is the one traders argue with, and it is the one that produces the largest change in outcomes. A trader who stops for the week after two losing sessions turns a bad week into a two-session event. A trader who continues turns it into a series, because the losses compound in both directions: the balance falls and the emotional pressure to recover rises, which is precisely when size grows.</p>
+    <p>There is an honest objection to the pause: on a one-phase model with a self-imposed deadline, stopping costs calendar. That is true, and it is still correct. The calendar cost of two days off is a few sessions; the calendar cost of a failed evaluation is the whole thing, plus a new fee, plus the time to re-earn the confidence. The pause is cheap by comparison.</p>
+    <h2 id="conduct">Conduct rules that end attempts</h2>
+    <p>Drawdown limits are the rules everyone reads. Conduct rules are the ones that actually end a large share of attempts, because they are easy to breach by accident and almost impossible to argue about afterwards.</p>
+    <p><strong>News windows.</strong> Trading around scheduled economic releases is usually restricted, with the window defined in minutes either side of the release. The detail that matters is whether a position must be closed before the window or merely not opened inside it. If the rule requires closure and you hold through, the breach is not the profit or loss; it is the position itself.</p>
+    <p><strong>Sizing caps.</strong> Maximum lots or contracts per position are frequently stated in the terms rather than on the evaluation page. Trading a permitted instrument at twice the permitted size is a breach even if the risk in dollars is identical, because the cap is about position size rather than exposure.</p>
+    <p><strong>Prohibited strategies.</strong> Latency arbitrage, exploiting demo or price-feed errors, group hedging and copy-trading between accounts are prohibited nearly everywhere. The last one catches traders who run a personal account and an evaluation account with mirrored positions, which can be read as hedging against the firm.</p>
+    <p><strong>Weekend and overnight holding.</strong> Forex positions held over a weekend carry gap risk that a fixed drawdown may not survive. Where holding is permitted, the position needs to be sized for the gap rather than for the stop, because a gap can open beyond the stop and the loss is then the gap, not the stop.</p>
+    <p><strong>Account sharing.</strong> Logins are personal and location checks are routine. A service that trades an evaluation must do so under the terms the firm permits; where third-party trading is banned, a flat-fee pass is not available and a provider that accepts the job anyway is putting the client's funded account at risk of being voided at payout.</p>
+    <h2 id="failures">The six ways attempts fail</h2>
+    <p>Failure is patterned. These six account for the great majority of lost evaluations on a two-limit Forex account.</p>
+    <ul>
+      <li><strong>Hitting the daily limit on the first trade.</strong> Almost always a sizing problem rather than an analysis problem: the position was too large for the budget, so a normal adverse move consumed the session.</li>
+      <li><strong>Recovering after the daily limit.</strong> The limit ends the day, not the evaluation. Traders who reopen a position after the limit has been hit convert a recoverable day into a breach.</li>
+      <li><strong>Spending the maximum drawdown in one week.</strong> Three bad sessions at full risk, followed by a doubled position to recover, is the classic sequence. The weekly pause exists to break it.</li>
+      <li><strong>One dominant day.</strong> Efficient to reach the target, expensive at the payout gate, and usually the product of a position that should have been closed earlier.</li>
+      <li><strong>Trading the news window.</strong> A rule breach that has nothing to do with profit and everything to do with conduct, and it is checked automatically.</li>
+      <li><strong>Continuing after the target.</strong> Reaching the target is not the same as satisfying the minimum day count, and a trader filling days with size is adding risk to a finished evaluation.</li>
+    </ul>
+    <p>The unifying cause is not a lack of market skill. It is a plan that was never written down, executed under pressure by a trader who was improvising. Every one of the six is prevented by a number on a page: risk per trade, daily stop, daily cap, weekly pause, a news calendar and a minimum day count. That is the entire countermeasure, and it costs a page.</p>
+    <h2 id="funded">From pass to payout</h2>
+    <p>Passing produces a funded account, and the funded account is a different product with different conditions. Three gates apply, and they are usually stricter than the evaluation.</p>
+    <p><strong>Minimum day count.</strong> A payout typically requires a number of qualifying trading days, and a qualifying day is often one with a closed profit rather than merely a closed position. That changes pacing: a trader who reaches the profit threshold in a week may need another two weeks of small positive sessions, and the efficient plan lands both conditions on the same date.</p>
+    <p><strong>The consistency check.</strong> Applied at the payout request in most cases. As above, the required total is the best day divided by the permitted share, and the correct response when the ratio is tight is smaller size and ordinary profit rather than another strong session.</p>
+    <p><strong>Verification and timing.</strong> Identity checks should be complete before the first request, and the first withdrawal is usually the slowest. Requesting the first payout at the earliest permitted date rather than at the largest available amount is the correct strategy, because the purpose of the first payment is to prove the pipe works.</p>
+    <figure>
+      <img src="/assets/img/payout-timeline.svg" alt="Timeline showing evaluation pass, funded account, minimum day count, consistency check and first withdrawal" width="1000" height="420" loading="lazy">
+      <figcaption>The funded stage is a calendar with two mathematical gates attached, not a continuation of the evaluation.</figcaption>
+    </figure>
+    <p>The funded phase also usually introduces a scaling path: a record of completed payouts unlocks larger balances or additional accounts. That changes the calculus of the first few months. A trader choosing between maximising the first payout and building a clean record is choosing between a small amount of money now and a larger balance later, and the second is nearly always worth more. The <a href="/blog/funded-account-payout-process.html">payout process guide</a> covers the sequence in detail.</p>
+    <h2 id="compare">FundedNext against the field</h2>
+    <p>Four comparisons cover most of the decision, and all four are structural.</p>
+    <p><strong>Against FTMO:</strong> both are staged Forex evaluations with a daily and a maximum limit, and the useful question is which balance each limit is measured from and how the consistency rule is applied. FTMO's rulebook is the most widely documented in the industry, which makes it easier to verify and harder to misread. The <a href="/blog/ftmo-challenge-passing.html">FTMO guide</a> sets out the structure, and the <a href="/blog/how-to-pass-ftmo-challenge.html">passing walkthrough</a> covers execution.</p>
+    <p><strong>Against Topstep:</strong> a futures firm with an explicit daily limit, a trailing threshold and a best-day expectation applied to the evaluation. The instruments differ, the mechanics rhyme. If you trade both asset classes, compare the percentage targets and the drawdown bases rather than the dollar figures. The <a href="/blog/fundednext-vs-topstep-comparison.html">FundedNext versus Topstep comparison</a> does that directly.</p>
+    <p><strong>Against E8 Markets:</strong> a comparison usually framed as which is easier, which is really a question about drawdown basis and target percentage. The <a href="/blog/e8-markets-vs-fundednext-which-is-easier-comparison.html">E8 versus FundedNext comparison</a> works the arithmetic rather than quoting a verdict.</p>
+    <p><strong>Against a flat-fee pass:</strong> the option that removes evaluation risk entirely for a fixed fee. The trade-off is explicit — the service absorbs the reset cost, the firm's rules still govern the funded account, and the arrangement is only available where third-party trading is permitted. The <a href="/reviews/best-prop-firm-passing-service-2026.html">2026 service review</a> sets out what to verify before paying anyone.</p>
+    <figure>
+      <img src="/assets/img/firm-landscape.svg" alt="Chart positioning prop firms by drawdown basis and target difficulty rather than by headline fee" width="1000" height="560" loading="lazy">
+      <figcaption>Compare firms on how the failure floor is measured, then on target percentage, then on fee — in that order.</figcaption>
+    </figure>
+    <p>The general rule for all four comparisons: a lower fee on a stricter structure is not cheaper, because it is bought more than once. Multiply the fee by the number of attempts a trader of your discipline typically needs, and the ranking usually reverses.</p>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap narrow">
+    <h2 id="worked">A worked pass, session by session</h2>
+    <p>An 8% target on a $100,000 account, a 5% daily limit, a 10% maximum drawdown, risk of 1.5% per trade and a daily profit cap of 2.7%. The plan runs four sessions a week for five weeks.</p>
+    <p><strong>Week one — +2.1%.</strong> Three sessions, one small loss. Nothing remarkable, which is the point: the first week exists to prove the plan executes, not to make progress.</p>
+    <p><strong>Week two — +3.4%.</strong> Two strong sessions, one capped at 2.7% and closed early, one ordinary, one flat. Cumulative 5.5%, which is 69% of the target with three weeks of calendar left.</p>
+    <p><strong>Week three — −1.8%.</strong> Two losing sessions and a pause. The pause is the important line in this record: the plan stopped at two losses rather than continuing to a third, and the week closed 1.8% down with the daily limit and the maximum both intact.</p>
+    <p><strong>Week four — +2.9%.</strong> Four ordinary sessions. Cumulative 6.6%, target 83% complete. The daily cap is now doing the work: every session that reaches it is closed rather than extended.</p>
+    <p><strong>Week five — +1.5%.</strong> Two sessions at reduced size complete the target, and the minimum day count is satisfied on the same day because the pace was planned backwards from the requirement.</p>
+    <p>The record contains one losing week, one capped strong session and no dominant day. The largest day is 2.7% against a total of 8.1%, a share of 33% — which satisfies a 30% rule only marginally, and this is exactly where a plan should be tightened rather than celebrated. A cap at a quarter of the target would have produced a largest day of 2.0% and a share of 25%, with more headroom at the payout gate.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Week</th><th>Result</th><th>Cumulative</th><th>Largest day</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>One</td><td>+2.1%</td><td>2.1%</td><td>1.0%</td></tr>
+          <tr><td>Two</td><td>+3.4%</td><td>5.5%</td><td>2.7%</td></tr>
+          <tr><td>Three</td><td>−1.8%</td><td>3.7%</td><td>0.9%</td></tr>
+          <tr><td>Four</td><td>+2.9%</td><td>6.6%</td><td>2.4%</td></tr>
+          <tr><td>Five</td><td>+1.5%</td><td>8.1%</td><td>1.2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The lesson from the table is not the total. It is that the plan never used more than 54% of the daily limit on any day, never spent more than 1.8% of a 10% maximum in a week, and finished with the best-day share inside tolerance. A trader could run this plan four times in a year and only need one to pass; a trader running a 20% per session pace would need the market to cooperate in a specific fortnight.</p>
+    <h2 id="month-one">The first month on the funded account</h2>
+    <p>The funded account has three jobs, in order: satisfy verification, complete the minimum day count, and produce a first withdrawal small enough to be unremarkable. Everything else is a distraction.</p>
+    <p>Verification first, because it is the one task with a fixed external dependency and the longest tail. Complete it in week one, including any address or source-of-funds documentation, and keep the confirmation. A payout request blocked on an unverified document can delay the first payment by weeks, and the delay is entirely self-inflicted.</p>
+    <p>Then the day count, which is a calendar problem rather than a trading problem. A qualifying day usually needs a closed profit, so the plan should produce small positive days deliberately rather than waiting for a good session to count. A single closed trade that keeps the day green satisfies the count without adding meaningful risk, and it is a perfectly legitimate way to finish the requirement.</p>
+    <p>Then the withdrawal, requested at the earliest permitted date and at a modest size. The first payout's purpose is to prove the pipe: that the request is accepted, the review clears, the payment arrives and the account continues afterwards. A trader who maximises the first withdrawal is optimising a number before testing the process that delivers it.</p>
+    <p>What not to do in month one is equally specific. Do not increase size because the evaluation is over. Do not take a position through a news window because the rule felt like an evaluation formality. Do not hold a weekend gap on a position sized for a stop. And do not treat a funded account with a static floor as an invitation to trade bigger — the floor is static, but the consistency gate is not, and the payout is the thing being protected.</p>
+    <p>For readers weighing the do-it-yourself route against a flat-fee pass, the arithmetic is in the <a href="/tools/prop-firm-profit-calculator.html">profit calculator</a> and the honest trade-offs are in the <a href="/blog/best-prop-firm-passing-services.html">service comparison</a>. The short version: a flat <strong>$220</strong> pass removes evaluation risk and reset cost, the firm's rules still apply to the funded account, and the arrangement is only legitimate where the firm permits third-party trading. Where it does not, the service should decline before payment rather than after.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <h2 id="faq">Frequently asked about FundedNext</h2>
+    <details class="faq"><summary>Is the two-phase or one-phase evaluation easier?</summary><div class="faq-a"><p>The two-phase model is easier for most traders, because each phase has a smaller target and the account gets a genuine checkpoint. The one-phase model is shorter, so it is better for a trader whose discipline breaks down over a long calendar — but the single larger target makes it less tolerant of one bad session.</p></div></details>
+    <details class="faq"><summary>Which drawdown figure matters most?</summary><div class="faq-a"><p>Whichever is closer to current equity on the morning you are trading. Early in an evaluation the daily limit usually binds; after a drawdown has been spent, the maximum limit can sit closer than the daily limit permits. Compute both and use the smaller.</p></div></details>
+    <details class="faq"><summary>Is the drawdown measured from the starting balance or current equity?</summary><div class="faq-a"><p>It varies by model and can change between the evaluation and the funded account, so check the current terms rather than assuming. A limit measured from the starting balance is static in dollars; one measured from current equity moves with the balance and gives a profitable account proportionally more room.</p></div></details>
+    <details class="faq"><summary>How long does a FundedNext challenge take to pass?</summary><div class="faq-a"><p>Fifteen to twenty-five trading days at a pace that consumes under a tenth of the daily budget per session. Faster passes are possible but tend to create a consistency problem at the payout gate that takes longer to resolve than the pass saved.</p></div></details>
+    <details class="faq"><summary>What risk per trade should I use?</summary><div class="faq-a"><p>A third of the daily limit at most, with the session closed once 80% of the budget is realised. On a 5% daily limit that is roughly 1.7% per trade, which survives three consecutive losses and leaves the account alive.</p></div></details>
+    <details class="faq"><summary>What is the consistency rule and when does it apply?</summary><div class="faq-a"><p>A cap on how much of total profit any single day may represent, applied at the payout request in most cases and during the evaluation in some. Required total profit equals the best day divided by the permitted share, so a $2,500 best day under a 30% rule needs about $8,334 of total profit.</p></div></details>
+    <details class="faq"><summary>Can I trade the news?</summary><div class="faq-a"><p>Usually only outside defined windows around scheduled releases, and the rule may require positions to be closed before the window rather than merely not opened inside it. Treat the window as closed regardless of what the market is doing.</p></div></details>
+    <details class="faq"><summary>Can I hold positions over the weekend?</summary><div class="faq-a"><p>Policies differ by model. Where holding is allowed, size for the gap rather than for the stop, because a weekend gap can open beyond the stop and the loss becomes the gap. Where it is not allowed, be flat before the close rather than leaving it to chance.</p></div></details>
+    <details class="faq"><summary>What happens if I hit the daily drawdown?</summary><div class="faq-a"><p>The session ends and the account continues with a fresh daily budget against the same maximum floor. Reopening a position after the limit is a breach in itself, and it is the most common way a recoverable day becomes a failed evaluation.</p></div></details>
+    <details class="faq"><summary>Does passing guarantee a payout?</summary><div class="faq-a"><p>No. The funded account has its own minimum day count, consistency check, verification requirements and sometimes a first-payout waiting period. A pass is the audition; the payout conditions are the contract.</p></div></details>
+    <details class="faq"><summary>Should I run two evaluations at once?</summary><div class="faq-a"><p>No. Correlated positions across accounts can be read as hedging, and split attention produces worse execution on both. Sequential funding — pass one, trade it, then add a second — is slower to start and faster to reach a first payout.</p></div></details>
+    <details class="faq"><summary>Can a passing service trade a FundedNext evaluation?</summary><div class="faq-a"><p>Only if the firm's terms permit third-party trading. Many firms prohibit it, and a funded account passed in breach of the terms can be voided at payout. The flat <strong>$220</strong> arrangement is offered where it is permitted, and declined where it is not — the <a href="/reviews/prop-firm-passing-service-reviews.html">service reviews</a> explain how to check.</p></div></details>
+    <details class="faq"><summary>What is the most common cause of failure?</summary><div class="faq-a"><p>Position size relative to the daily budget, followed by continuing after the daily limit has been reached. Both are arithmetic problems that a written plan prevents and no amount of market analysis fixes.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the challenge traded for you?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/ftmo-challenge-passing.html">How the FTMO evaluation is structured</a></li>
+      <li><a href="/blog/fundednext-vs-topstep-comparison.html">FundedNext vs Topstep</a></li>
+      <li><a href="/blog/e8-markets-vs-fundednext-which-is-easier-comparison.html">E8 Markets vs FundedNext: which is easier</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule, worked out</a></li>
+      <li><a href="/blog/funded-account-payout-process.html">From funded account to first payout</a></li>
+      <li><a href="/tools/prop-firm-calculator-embed.html">Challenge calculator: target, risk and pace</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
+      <li><a href="/services/fundednext-passing-service.html">Have the FundedNext challenge traded for a flat $220</a></li>
+      <li><a href="/services/passing-prop-firm-services.html">How the flat-fee passing model works</a></li>
+    </ul>
+    <p class="disclaimer">FundedNext and other firms are named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Targets, drawdown rules and payout conditions change; verify them against the firm's current terms. Trading involves substantial risk of loss.</p>
+  </div>
+</section>

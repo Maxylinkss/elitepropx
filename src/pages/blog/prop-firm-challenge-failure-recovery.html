@@ -1,0 +1,199 @@
+---
+title: Failed a Prop Firm Challenge? The Recovery Plan
+desc: A failed evaluation is diagnostic data. How to identify which limit broke, audit your own records, decide whether to reset, and what must change before the next fee.
+path: /blog/prop-firm-challenge-failure-recovery.html
+type: article
+h1: Failed a prop firm challenge: how to recover without buying the same lesson twice
+kicker: Recovery guide
+crumb: Failure recovery
+section: Rules guides
+sectionUrl: /blog/
+date: 2026-10-18
+updated: 2026-10-18
+priority: 0.8
+schemaService: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Recovery guide · reviewed October 2026</p>
+    <h1>Failed a prop firm challenge: how to recover without buying the same lesson twice</h1>
+    <p class="lede">A failed evaluation is the most informative thing most traders ever buy. Which limit broke tells you which part of the plan was wrong; your own records tell you whether the strategy had an edge at all. This guide is the sequence to work through before paying another fee — diagnosis, records audit, the reset decision, and the specific changes that make a second attempt a different attempt.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Diagnose first. A maximum-loss breach, a daily-limit breach and a rule breach have three different causes and three different fixes.</li>
+        <li>A reset that changes nothing is the same attempt at a higher price; change one measurable number or do not pay.</li>
+        <li>Records decide whether the strategy had an edge. Without them, a second fee buys another sample of the same distribution.</li>
+        <li>Recovery sizing — increasing risk after a drawdown — is the single most reliable way to convert a recoverable account into a closed one.</li>
+        <li>Sometimes the correct answer is a different account size, or no evaluation at all until the plan is measured.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#first">The first hour after a breach</a></li>
+        <li><a href="#which">Which limit broke, and what it means</a></li>
+        <li><a href="#rules">Rule breaches, the third category</a></li>
+        <li><a href="#records">The records audit</a></li>
+        <li><a href="#expectation">Was there an edge at all?</a></li>
+        <li><a href="#reset">The reset decision</a></li>
+        <li><a href="#changes">What must change before the next fee</a></li>
+        <li><a href="#size">Sizing the second attempt</a></li>
+        <li><a href="#timing">When to start again</a></li>
+        <li><a href="#firm">When the firm, not the plan, was the problem</a></li>
+        <li><a href="#help">Getting help, and costing it honestly</a></li>
+        <li><a href="#stop">When to stop attempting</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="first">The first hour after a breach</h2>
+    <p>The hour after an account closes is the worst time to make a decision about the next one, and the best time to collect evidence. Two rules make that possible.</p>
+    <p>The first rule is no new account, no reset, no deposit for at least twenty-four hours. Every platform makes the next purchase easy and the decision feels urgent, which is precisely why it should be delayed. A reset bought in the first hour is usually bought with the same plan that just failed and with the same size, which is a purchase of the same outcome.</p>
+    <p>The second rule is to capture the record immediately. Export the trade history, screenshot the equity curve, note the dates, and write down in one paragraph what happened in the trader's own words while it is still fresh. That paragraph is worth more than a reconstructed account of the failure written a week later, because it captures the reasoning rather than the summary. It is also the only part of the record that will show whether the breach was a plan failure or a plan that was abandoned.</p>
+    <p>Then stop. Not trade a different account, not move to a demonstration account to recover confidence — stop, for a day. The decision about a second attempt is materially better with twenty-four hours of distance and a written record than it is in the moment.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="A daily loss limit measured from the day's opening balance and consumed by successive losing trades" width="1000" height="540" loading="lazy">
+      <figcaption>Most breaches are visible in the session that preceded them, which is why the record matters.</figcaption>
+    </figure>
+    <h2 id="which">Which limit broke, and what it means</h2>
+    <p>Three limits can close an account, and each failure carries a different diagnosis. Getting this wrong is expensive, because each has a different fix and only one of them was caused by the market.</p>
+    <p><strong>A maximum-loss breach.</strong> The account reached its failure floor. This is a sizing failure: the risk per trade permitted a losing sequence the account could not absorb. Diagnostic questions: how many consecutive losses occurred before the breach, and would the design case have survived them? If the streak was shorter than the design case, the risk per trade was too high. If the streak was longer than the design case, the survival assumption was wrong for the instrument or the timeframe.</p>
+    <p><strong>A daily-limit breach.</strong> The account closed on a single day's loss. This is a session-design failure: either the risk per trade was too large relative to the daily limit, or the trade count was, or both. Diagnostic questions: how many losing trades did the session take, and what did the plan say the cap was? In most cases the answer is that the cap existed on paper and the session drifted past it.</p>
+    <p><strong>A drawdown breach on a trailing account, from a winning position.</strong> This presents as a maximum-loss breach but has a different cause: the floor rose behind a profitable position and a retracement closed the account. Diagnostic question: what was the plan's exit rule for winners? If the answer is "none", the mechanism was not accounted for, and the fix is an exit rule rather than a smaller size.</p>
+    <p>A fourth, less common variant: the target was reached and the account was then breached before the firm processed the pass. This is not a trading failure at all; it is a failure to stop. The fix is procedural — once the target is met, the account is closed to new trades.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Breach</th><th>Root cause</th><th>What must change</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Maximum loss reached</td><td>Risk per trade too high for the streak tolerance</td><td>Halve risk per trade; re-derive from the floor</td></tr>
+          <tr><td>Daily limit reached</td><td>Session budget or trade cap wrong</td><td>Reduce trade cap first, then size</td></tr>
+          <tr><td>Trailing floor from a winner</td><td>No exit rule for profitable positions</td><td>Write a profit-banking rule before entry</td></tr>
+          <tr><td>Rule clause (news, holding, cap)</td><td>Terms not converted into plan conditions</td><td>Add the clauses as explicit no-go rules</td></tr>
+          <tr><td>Breached after target</td><td>Continued trading after the objective was met</td><td>Hard stop on new positions once target is hit</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Naming the breach correctly is most of the recovery, because it eliminates the two most common wrong conclusions: that the strategy does not work, and that the trader lacks discipline. Neither is established by a breach alone.</p>
+    <h2 id="rules">Rule breaches, the third category</h2>
+    <p>A rule breach is different in kind from a limit breach, because it is a reading failure rather than a trading failure — and it is the category that can void a payout rather than merely close an account.</p>
+    <p>The usual candidates are news restrictions, holding positions through a restricted window, exceeding a lot or contract cap, trading an instrument outside the permitted list, or an arrangement the firm classifies as third-party trading. Each of these can be present in a plan that is working perfectly, which is what makes them dangerous: the account is healthy, the target is close, and the breach is administrative.</p>
+    <p>The recovery for this category is not a change in size or strategy. It is a rewrite of the plan's constraints as explicit no-go conditions: no position opened within a stated window around listed releases; no position held across a stated period; no size above the derived maximum, checked before entry rather than after; and, where anyone else trades the account, written confirmation from the firm that the arrangement is permitted on both the evaluation and the funded account.</p>
+    <p>Where the clause was unclear rather than ignored, the correct response is a support ticket with the exact question and a saved reply. Firms interpret their own terms, and an interpretation received in writing before an attempt is worth more than any number of forum posts about what the terms mean. The <a href="/blog/prop-firm-scams-to-avoid.html">scam guide</a> covers the cases where a firm's terms are vague by design rather than by accident.</p>
+    <h2 id="records">The records audit</h2>
+    <p>The records decide everything that follows, and most failed attempts have enough of them to be conclusive. The audit takes an hour and answers four questions.</p>
+    <p><strong>How many trades were taken?</strong> Compare the number against the plan. A trader who planned two trades a session and took six has a discipline problem, and the size was not the cause of the breach — the trade count was. A trader who planned two and took two has a plan problem.</p>
+    <p><strong>What was the average win and the average loss in money?</strong> If the average loss is larger than the plan's stop distance implies, the plan was not being executed as written — stops were widened, or slippage was underestimated. If the average win is smaller than planned, profits were being taken early, which changes the reward-to-risk ratio and therefore the expectation.</p>
+    <p><strong>What was the realised cost per trade?</strong> Spread, commission and slippage, measured rather than assumed. On a plan with a small expectation per trade, a cost that is a fifth of the planned risk can turn a positive expectation into a flat one, and on a leveraged account the cost is paid on every round turn.</p>
+    <p><strong>What was the largest loss and the longest streak?</strong> The largest loss should equal the plan's risk per trade. If it does not, the plan's central assumption was violated. The longest streak is the number the drawdown should have been sized against, and comparing it to the design case tells you whether the sizing was wrong or the estimate was.</p>
+    <figure>
+      <img src="/assets/img/challenge-math.svg" alt="Chart showing how a profit target and a maximum loss define the risk budget on an evaluation account" width="940" height="500" loading="lazy">
+      <figcaption>The audit replaces the question "was I unlucky?" with numbers that can be checked.</figcaption>
+    </figure>
+    <h2 id="expectation">Was there an edge at all?</h2>
+    <p>The audit answers a second, harder question: whether the strategy had a positive expectation over the attempt. This is the question traders avoid, because the answer determines whether another fee is a purchase or a donation.</p>
+    <p>The calculation is simple. Multiply the win rate by the average win, subtract the loss rate multiplied by the average loss, and compare the result to the cost per trade. If the result before costs is positive and the costs are smaller, the strategy had an edge and the breach was a sizing or execution failure. If the result before costs is negative, the strategy did not have an edge over that sample and no amount of discipline would have saved the account.</p>
+    <p>Sample size matters, and it cuts in a specific direction. A few dozen trades cannot establish an edge, so a positive result over that sample is not proof either. What the sample can do is set a limit: if a plan with a claimed 50% win rate and 1:2 ratio lost money over forty trades, the realised distribution is different from the claimed one, and the difference is the finding.</p>
+    <p>Between the two conclusions lies the most common outcome: an edge too small to survive the realised execution cost. That is not a strategy to abandon, it is a strategy to trade more selectively and with a tighter relative cost — fewer, better trades rather than more. The <a href="/blog/prop-firm-profit-target-strategies.html">profit target guide</a> covers the levers that change expectation per trade without changing risk per trade.</p>
+    <h2 id="reset">The reset decision</h2>
+    <p>The reset decision is not "should I try again". It is "what, specifically, will be different, and is that difference measurable".</p>
+    <p>Three conditions justify paying again. There is a named cause of failure: a limit, a rule, or a measured expectation gap, rather than a feeling. There is a specific change that addresses it, expressed as a number: risk per trade, trade cap, session count, instrument, or selectivity criterion. And the change is testable at small size before the fee is paid, ideally on a demonstration account with the same feed and order types.</p>
+    <p>If all three are present, a reset is a second experiment with a controlled change, and it is worth paying for. If any is missing, the reset is a repeat, and the expected outcome is the same with a different story about why.</p>
+    <p>Two further considerations belong in the decision. The first is the retry structure itself: a one-off fee with paid resets makes each attempt a deliberate purchase, while a subscription with unlimited retries lowers the marginal cost of a failed attempt and, in doing so, lowers the cost of not fixing the plan. The second is the calendar. Time spent on a failed attempt is time not spent trading a funded account, and at some point the sequence of attempts becomes more expensive than a longer, slower attempt that is actually passable.</p>
+    <p>There is also a version of the decision that is not a reset at all: moving to a smaller account. A smaller account with the same percentage rules has the same percentage arithmetic and a lower fee, which makes it the correct place to establish a working plan. Many traders fail twice on an account that is too large for the stop distances their strategy needs, when the same strategy on a smaller account would have passed.</p>
+    <h2 id="changes">What must change before the next fee</h2>
+    <p>Five changes address almost every diagnosis from the audit, and each is expressed as a number rather than an intention.</p>
+    <p><strong>Risk per trade, re-derived from both limits.</strong> Divide the maximum loss by the streak tolerance and the daily limit by the losses a session should absorb. Use the smaller result, then halve it for the second attempt. The halving is not superstition: the first attempt produced evidence that the survival assumption was optimistic.</p>
+    <p><strong>A hard trade cap per session.</strong> Written down, counted during the session, and treated as binding when the session is going badly rather than when it is going well.</p>
+    <p><strong>A daily profit cap.</strong> This protects the payout-stage consistency condition and prevents a good session from being given back. Set it at two to three times the average winning day.</p>
+    <p><strong>An exit rule for winners.</strong> On a trailing-drawdown account, a profitable position that is held too long closes accounts. The rule should state the point at which profit is banked or the stop is advanced, and it should be written before the position is opened.</p>
+    <p><strong>The rulebook as no-go conditions.</strong> News windows, holding restrictions, size ceilings and third-party clauses rewritten as conditions in the plan rather than as facts in a document the trader read once.</p>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="Diagram dividing a drawdown budget into per-trade risk, session risk and an untouched reserve for losing streaks" width="940" height="520" loading="lazy">
+      <figcaption>Five numbers, written down, replace the resolution to be more careful.</figcaption>
+    </figure>
+    <h2 id="size">Sizing the second attempt</h2>
+    <p>The second attempt should be sized more conservatively than the first, and the conservatism should come from the derivation rather than from an arbitrary haircut.</p>
+    <p>Start with the streak the account must now survive. The first attempt produced evidence: if it breached on a seven-loss run, the design case of eight was too thin and should become twelve. Higher streak tolerance means lower risk per trade, which is the correct direction of travel after a failure.</p>
+    <p>Then increase the reserve. In the first attempt a quarter of the drawdown was held back; in the second, hold back a third. On a trailing structure the reserve is arithmetic rather than psychological, because the floor moves and the reserve is what allows the plan to continue after a sequence the design case did not anticipate.</p>
+    <p>Then extend the calendar deliberately and price it. A slower plan costs more in platform and data subscriptions, so the calendar has a dollar figure. Comparing that figure against the fee of another failed attempt makes the choice concrete: a longer, slower, survivable attempt is usually cheaper than two fast attempts, even before the funded-account time that the fast attempts consumed.</p>
+    <p>Finally, test the new size at demonstration scale before the fee. The purpose is not to prove the strategy — that takes hundreds of trades — but to confirm that the new risk per trade permits the stop distances the instruments require and that the trade cap is achievable in a normal session. Those two checks take a week and eliminate the most common cause of a second breach.</p>
+    <h2 id="timing">When to start again</h2>
+    <p>Timing is a real variable, not a matter of morale. Two signals say start now; two say wait.</p>
+    <p><strong>Start now</strong> when the diagnosis is complete, the change is measurable, and the new numbers have been tested at demonstration size. Under those conditions a delay adds nothing; the plan is different and the evidence is in hand.</p>
+    <p><strong>Start now</strong> also when the failure was procedural — a rule clause or a day-boundary error — because those are fixed by reading, not by trading. There is no reason to wait for a discipline that was never the problem.</p>
+    <p><strong>Wait</strong> when the failure was emotional rather than mechanical: a stop widened, a size doubled, a trade taken to recover. That behaviour has a half-life, and starting again immediately increases the chance of repeating it under the same conditions. A fortnight of trading the plan at small size on a demonstration account is the cheapest way to re-establish the habit.</p>
+    <p><strong>Wait</strong> when the audit showed a negative expectation. Paying again before the strategy is fixed buys another sample of the same distribution. The correct sequence is to fix the plan, measure it over a proper sample, and only then buy an evaluation — which is the same argument that applies to a first attempt, applied with the benefit of evidence.</p>
+    <h2 id="firm">When the firm, not the plan, was the problem</h2>
+    <p>Not every failure is the trader's. Four situations point at the firm, and each has a recognisable signature.</p>
+    <p><strong>Terms changed mid-attempt.</strong> A drawdown mechanism, a daily limit or a target altered while an account was live, with no notice. If the change was applied to the existing account, the attempt was conducted under terms the trader did not agree to — and a firm that does this once will do it again.</p>
+    <p><strong>The day boundary was reported differently than it behaves.</strong> A trader who planned around a stated server boundary and was breached against a different one has a legitimate complaint, and the evidence is the support reply and the trade timestamps.</p>
+    <p><strong>A payout clause was undocumented.</strong> Conditions applied at withdrawal that do not appear in the terms — a consistency rule in a separate FAQ page, or a minimum-day requirement disclosed only at the request — indicate a firm whose revenue comes from payouts not being made.</p>
+    <p><strong>Execution was materially different from the stated feed.</strong> Persistent slippage far beyond what the instrument and session justify, or a platform whose protective orders do not sit on the server. This is a platform-and-routing problem, and no sizing discipline compensates for it.</p>
+    <p>The action in all four cases is a written complaint with evidence and, where the terms were misrepresented, a chargeback where the payment method permits it. The more useful action is not to fund the same firm again. The <a href="/blog/prop-firm-scams-to-avoid.html">scam guide</a> covers the patterns, and a firm's support responsiveness before a purchase — measured by asking one specific clause question in writing — is a better predictor than any review, including this one.</p>
+    <h2 id="help">Getting help, and costing it honestly</h2>
+    <p>For a trader whose audit shows a sizing problem rather than a strategy problem, a passing service is a legitimate option: it converts an uncertain attempt into a fixed cost. The economics are straightforward, and they should be compared against expected cost rather than against the fee alone.</p>
+    <p>Expected cost of attempting alone is the fee divided by the probability of passing, plus the calendar cost. A trader with a one-in-three pass rate on a comparable plan faces an expected cost three times the sticker price, before the platform and data subscriptions consumed by the failed attempts. Against that, a fixed price per evaluation is a cheap conversion — provided the service is legitimate and the firm's terms permit the arrangement.</p>
+    <p>Four checks before paying anyone. The price should be flat and independent of account size and stage, so it can be compared. Retries should be covered, because a fixed price with retry fees is a per-attempt price with extra steps. The funded account should be in the trader's name with credentials under their control, and the service should take no share of payouts — a service that shares in payouts has an incentive to keep trading after the pass. And the firm's terms must permit third-party trading on both the evaluation and the funded account, confirmed in writing before payment.</p>
+    <p>ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid the arrangement. The <a href="/blog/best-prop-firm-passing-services.html">passing services guide</a> sets out the full checklist, including the questions to ask before paying anyone else.</p>
+    <h2 id="stop">When to stop attempting</h2>
+    <p>There is a point at which the correct decision is to stop buying evaluations, and it is worth defining in advance because it is never obvious in the moment.</p>
+    <p>The first trigger is arithmetic: if the cumulative fees and subscriptions spent on attempts exceed the value of the funded allocation's expected first-year payout, the sequence is not an investment. This calculation requires an honest view of the pass probability, which the records now provide.</p>
+    <p>The second is diagnostic: if two consecutive attempts failed for the same named reason after a specific change was made to address it, the change did not work. A third attempt with the same plan buys the same result. The alternative is a different account size, a different rulebook, or a different route to funded capital.</p>
+    <p>The third is behavioural: if the pattern includes any instance of increasing size after a loss, the plan is not being executed and the problem is not the account. Funded capital amplifies behaviour rather than correcting it, so the funded account would be lost the same way, with more at stake.</p>
+    <p>What a trader does after stopping is a separate decision, and there are legitimate options that do not involve a fee: a demonstration account with real measurement, a small personal account with the same rules imposed voluntarily, or an <a href="/blog/prop-firm-instant-funding.html">instant funding route</a> that removes the evaluation stage if the trader's edge is real and only the calendar is the problem. Stopping attempts is not stopping trading.</p>
+    <h2 id="rebuild">The four-week rebuild</h2>
+    <p>Between the diagnosis and the next fee there is a reconstruction period, and four weeks is enough to complete it properly. The purpose is not to prove the strategy over a meaningful sample — that takes hundreds of trades — but to confirm that the five changed numbers are executable.</p>
+    <p><strong>Week one: rewrite the plan.</strong> Produce a one-page document containing the risk per trade, the trade cap, the session count, the daily profit cap, the exit rule for winners, and the rulebook's no-go conditions. Every entry is a number or a condition, not an intention. A plan that still contains the phrase "be more careful" has not been rewritten.</p>
+    <p><strong>Week two: run it at demonstration size.</strong> Trade the plan on a demonstration account with the same feed and order types as the firm's platform. The two things being measured are whether the derived risk per trade permits the stop distances the instruments require, and whether the trade cap is achievable in an ordinary session. Both are structural questions, and both are answered in a week.</p>
+    <p><strong>Week three: run it at real size, small.</strong> A small live account imposes the same psychological conditions as an evaluation at a fraction of the cost, and it reveals the behaviours that a demonstration account hides — hesitation on entries, premature profit-taking, and the temptation to hold a loser because the day is not yet over.</p>
+    <p><strong>Week four: review and decide.</strong> Compare the records against the plan. If the realised cost per trade and the win rate are consistent with the audit's estimates and the rules were followed, the plan is ready and the fee is a purchase rather than a lottery ticket. If behaviour drifted, the correction is another fortnight at small size — cheaper than discovering the same drift on a fresh evaluation.</p>
+    <h2 id="faq">Frequently asked questions</h2>
+    <details class="faq"><summary>I just failed a challenge. What should I do first?</summary><div class="faq-a"><p>Nothing impulsive for twenty-four hours. Export the trade history, screenshot the equity curve, and write one paragraph on what happened while it is fresh. Then diagnose which limit broke — maximum loss, daily limit, or a rule clause — because each has a different fix.</p></div></details>
+    <details class="faq"><summary>How do I know whether the strategy or the sizing was the problem?</summary><div class="faq-a"><p>From the records. Calculate the win rate, average win and average loss, then compare expectation per trade against the realised cost. A positive expectation with an orderly execution record points to sizing; a negative expectation points to the plan, and no amount of discipline would have saved the account.</p></div></details>
+    <details class="faq"><summary>Should I reset immediately?</summary><div class="faq-a"><p>Only if there is a named cause, a specific measurable change that addresses it, and evidence that the change works at small size. Otherwise a reset is the same attempt at a higher price, and the expected outcome is the same with a different explanation.</p></div></details>
+    <details class="faq"><summary>How many times should I retry?</summary><div class="faq-a"><p>Until the diagnosis stops changing. A second attempt with a controlled change is a legitimate experiment; a third attempt that failed for the same reason as the second is a purchase of the same result. Compare cumulative fees against the expected value of the funded allocation before deciding.</p></div></details>
+    <details class="faq"><summary>What risk per trade should I use on the next attempt?</summary><div class="faq-a"><p>Lower than the first, derived rather than guessed. Increase the streak tolerance the account must survive based on what actually happened, keep a third of the drawdown as a reserve rather than a quarter, and halve the previous risk per trade if the breach was a maximum-loss event.</p></div></details>
+    <details class="faq"><summary>Was I just unlucky?</summary><div class="faq-a"><p>Possible but rarely decisive. A losing streak longer than the design case is bad luck; a breach caused by it means the design case was too optimistic, which is a planning error. The distinction matters because only one of them is fixed by trying again unchanged.</p></div></details>
+    <details class="faq"><summary>Should I use a smaller account next time?</summary><div class="faq-a"><p>Often yes. Percentage rules are scale-free, so the same plan has the same arithmetic on a smaller account with a lower fee, and it leaves room to establish working numbers. Many traders fail twice on an account that is too large for the stop distances their strategy needs.</p></div></details>
+    <details class="faq"><summary>What if the firm changed the terms mid-attempt?</summary><div class="faq-a"><p>That is a legitimate complaint, and the evidence is the terms version you agreed to plus the trade timestamps. Raise it in writing, and consider a chargeback where the payment method permits it. The more useful decision is not to fund the same firm again.</p></div></details>
+    <details class="faq"><summary>How long should I wait before trying again?</summary><div class="faq-a"><p>No wait is needed for a procedural failure — a rule clause or a day-boundary error is fixed by reading. For an emotional failure such as a widened stop or recovery sizing, wait a fortnight and trade the plan at small size first, because that behaviour has a half-life.</p></div></details>
+    <details class="faq"><summary>Does a passing service make sense after a failure?</summary><div class="faq-a"><p>It can, if the failure was sizing rather than strategy. Compare the flat fee against the expected cost of attempting alone — fee divided by pass probability, plus subscription costs over the calendar. ElitePropX charges <strong>$220</strong> flat per evaluation, covers retries, takes no profit split, and declines firms whose terms forbid third-party trading.</p></div></details>
+    <details class="faq"><summary>When should I stop attempting evaluations?</summary><div class="faq-a"><p>When cumulative fees and subscriptions exceed the expected value of the funded allocation, when two consecutive attempts failed for the same reason after a targeted change, or when the pattern includes recovery sizing. Stopping attempts is not stopping trading — demonstration measurement and instant funding are both legitimate next steps.</p></div></details>
+    <details class="faq"><summary>Can I still pass after a breach on the same account?</summary><div class="faq-a"><p>No. A breached evaluation is closed, and the account cannot be recovered by trading on it. The only decision available is whether to buy another attempt, for this firm or a different one, with a plan that has changed in a measurable way.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-scams-to-avoid.html">Prop firm scams to avoid</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Choosing a passing service</a></li>
+      <li><a href="/blog/prop-firm-instant-funding.html">Instant funding: skipping the evaluation</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule guide</a></li>
+      <li><a href="/blog/apex-trailing-drawdown-math.html">Trailing drawdown maths</a></li>
+      <li><a href="/blog/">All prop firm guides</a></li>
+    </ul>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Reset policies, retry terms and payout conditions change; verify them against your firm's current documentation. Trading involves substantial risk of loss.</p>
+  </div>
+</section>

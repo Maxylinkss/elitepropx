@@ -1,0 +1,13 @@
+# Local backups from content rebuilds
+.backup/
+
+# Local debug / scratch artifacts
+.cache/
+*.log
+tools/tmp-*.js
+tools/tmp-*.json
+/*.png
+
+# Secrets
+.ghtoken
+.env

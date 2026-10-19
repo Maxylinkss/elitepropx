@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-label="Three drawdown models compared: static, intraday trailing and end-of-day trailing" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="1000" height="560" fill="#fff"/>
+  <text x="50" y="52" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">DRAWDOWN MODELS</text>
+  <text x="50" y="88" font-size="28" font-weight="800" fill="#0b1220">The same account, three different safety floors</text>
+  <g>
+    <rect x="50" y="130" width="290" height="340" rx="14" fill="#f4f7fc" stroke="#dbe3ef"/>
+    <text x="68" y="160" font-size="15" font-weight="800" fill="#0b1220">Static</text>
+    <text x="68" y="180" font-size="12" fill="#6b7a92">Floor never moves</text>
+    <line x1="64" y1="372" x2="334" y2="372" stroke="#c9d4e5" stroke-width="1" stroke-dasharray="4 4"/>
+    <polyline points="64,372 334,372" fill="none" stroke="#d9534f" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <polyline points="64,372 94,360 124,346 154,334 184,318 214,306 244,292 274,280 304,264 334,254" fill="none" stroke="#0e9f6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="334" cy="254" r="4.5" fill="#0e9f6e"/>
+    <text x="68" y="452" font-size="11.5" fill="#6b7a92">Green: equity · Red: failure floor</text>
+  </g>
+  <g>
+    <rect x="360" y="130" width="290" height="340" rx="14" fill="#f4f7fc" stroke="#dbe3ef"/>
+    <text x="378" y="160" font-size="15" font-weight="800" fill="#0b1220">Intraday trailing</text>
+    <text x="378" y="180" font-size="12" fill="#6b7a92">Floor follows every tick up</text>
+    <line x1="374" y1="372" x2="644" y2="372" stroke="#c9d4e5" stroke-width="1" stroke-dasharray="4 4"/>
+    <polyline points="374,372 404,372 434,372 464,372 494,358 524,346 554,332 584,320 614,304 644,294" fill="none" stroke="#d9534f" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <polyline points="374,372 404,360 434,346 464,334 494,318 524,306 554,292 584,280 614,264 644,254" fill="none" stroke="#0e9f6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="644" cy="254" r="4.5" fill="#0e9f6e"/>
+    <text x="378" y="452" font-size="11.5" fill="#6b7a92">Green: equity · Red: failure floor</text>
+  </g>
+  <g>
+    <rect x="670" y="130" width="290" height="340" rx="14" fill="#f4f7fc" stroke="#dbe3ef"/>
+    <text x="688" y="160" font-size="15" font-weight="800" fill="#0b1220">End-of-day trailing</text>
+    <text x="688" y="180" font-size="12" fill="#6b7a92">Floor follows closed profit</text>
+    <line x1="684" y1="372" x2="954" y2="372" stroke="#c9d4e5" stroke-width="1" stroke-dasharray="4 4"/>
+    <polyline points="684,372 714,372 744,372 774,372 804,372 834,358 864,346 894,332 924,320 954,304" fill="none" stroke="#d9534f" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <polyline points="684,372 714,360 744,346 774,334 804,318 834,306 864,292 894,280 924,264 954,254" fill="none" stroke="#0e9f6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="954" cy="254" r="4.5" fill="#0e9f6e"/>
+    <text x="688" y="452" font-size="11.5" fill="#6b7a92">Green: equity · Red: failure floor</text>
+  </g>
+  <text x="50" y="516" font-size="13.5" fill="#3d4a61">A trailing floor turns every winner into a smaller cushion. That single mechanic ends more evaluations than any other rule.</text>
+</svg>

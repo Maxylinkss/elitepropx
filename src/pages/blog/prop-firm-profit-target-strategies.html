@@ -1,0 +1,183 @@
+---
+title: Prop Firm Profit Target Strategies That Survive the Rules
+desc: How to reach a prop firm profit target without breaching the limits: pace arithmetic, sizing from two constraints, de-risking near the target and the final stretch.
+path: /blog/prop-firm-profit-target-strategies.html
+type: article
+h1: Prop firm profit target strategies that survive the rulebook
+kicker: Strategy guide
+crumb: Profit target strategies
+section: Rules guides
+sectionUrl: /blog/
+date: 2026-10-18
+updated: 2026-10-18
+priority: 0.8
+schemaService: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Strategy guide · reviewed October 2026</p>
+    <h1>Prop firm profit target strategies that survive the rulebook</h1>
+    <p class="lede">A profit target is a scheduling problem with a risk constraint attached, and most attempts fail because the two are solved separately. This guide treats them together: how to size a plan so that the target is reachable and the drawdown is survivable, how to de-risk as the target approaches rather than accelerate, and what the final ten percent of a target actually requires.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>The target decides the calendar; the daily limit decides the risk per trade; the smaller constraint governs.</li>
+        <li>There are only three ways to finish faster — better ratio, higher selectivity, more sessions — and size is not one of them.</li>
+        <li>Risk should go <em>down</em> as the target approaches, because the cost of a breach rises while the remaining target shrinks.</li>
+        <li>A daily profit cap is the tool that protects both the target and the consistency condition at the payout stage.</li>
+        <li>Most targets are lost in the final ten percent, to a size increase rather than to a bad strategy.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#schedule">A target is a schedule, not a number</a></li>
+        <li><a href="#two">The two variables you actually control</a></li>
+        <li><a href="#sizing">Sizing against two constraints at once</a></li>
+        <li><a href="#pace">The pace equation, and what it forbids</a></li>
+        <li><a href="#derisk">De-risking as the target approaches</a></li>
+        <li><a href="#sessions">Session selection and selectivity</a></li>
+        <li><a href="#cap">The daily profit cap</a></li>
+        <li><a href="#streak">Losing streaks inside a target</a></li>
+        <li><a href="#adding">Adding to a winner: when it is permitted</a></li>
+        <li><a href="#last">The final ten percent</a></li>
+        <li><a href="#stages">Multi-stage targets</a></li>
+        <li><a href="#worked">A worked target, session by session</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="schedule">A target is a schedule, not a number</h2>
+    <p>Traders read a profit target as an amount to be earned and plan for it the way they plan for a trade. It is more usefully read as a deadline with a distance: a certain percentage must be produced within a certain number of sessions, using a risk per trade that the firm's limits permit.</p>
+    <p>Stated that way, the target becomes a scheduling problem with one hard constraint. The constraint is not the target; it is the drawdown and the daily limit, because those decide how much can be risked per session and therefore how many sessions the target needs. A plan that satisfies the target arithmetic and ignores the constraint arithmetic is a plan that finishes on paper and breaches in practice.</p>
+    <p>The two are solved together by working backwards. The drawdown fixes the maximum risk per trade that survives a losing streak. The daily limit fixes the maximum risk per session. The smaller of those two numbers is the plan's risk per trade. Only then does the target come into play, because only then is the pace known: target divided by expected value per trade gives the number of trades, and trades divided by sessions per week gives the calendar.</p>
+    <p>Everything else in this guide follows from that order. When a trader complains that a target is unreachable, the answer is almost never that more size is needed — it is that the plan's expectation per trade, its selectivity, or its session count is not sufficient for the calendar. Those are the three levers, and they are the subject of the next section.</p>
+    <figure>
+      <img src="/assets/img/challenge-math.svg" alt="Chart showing how a profit target and a maximum loss define the risk budget on an evaluation account" width="940" height="500" loading="lazy">
+      <figcaption>Target and drawdown are one equation, not two goals.</figcaption>
+    </figure>
+    <h2 id="two">The two variables you actually control</h2>
+    <p>Once risk per trade is fixed by the rules, there are exactly two things a trader can change about the pace: how often the plan trades, and how good each trade is. Everything else — size, leverage, instrument — either changes the risk or changes the edge, and the second of those is not available on demand.</p>
+    <p><strong>Trade count.</strong> More sessions, or more trades per session within the daily limit, shortens the calendar proportionally. This is the cleanest lever because it does not change the risk per trade or the strategy. It does have a cost: more trades means more exposure to costs, more decisions, and a higher chance of a trade that does not match the plan. The practical limit is the point at which the marginal trade has a lower expected value than the earlier ones — usually when selectivity starts to slip.</p>
+    <p><strong>Expectation per trade.</strong> Raising it means either a better reward-to-risk ratio or a higher win rate, and both come from selectivity rather than from effort. A plan that takes the best two setups per week instead of the best ten often has a higher expectation per trade, which offsets the lower count. This is why the two levers are not additive: increasing trade count without maintaining selectivity can reduce the total pace rather than increase it.</p>
+    <p>What is not a lever: position size. Increasing size multiplies the outcome of the plan's existing distribution, which means it multiplies the drawdown in exactly the same proportion as the profit. On an account with a fixed failure floor, that is a change in survival probability rather than a change in speed. The trade-off is real and sometimes worth taking — but it should be taken deliberately, with the new breach probability written down, rather than as a response to being behind schedule.</p>
+    <p>A useful test for any proposed change: does it improve the plan, or does it only improve the timeline? A tighter stop, a better entry filter, or an extra session improves the plan. A larger position at the same stop does not.</p>
+    <h2 id="sizing">Sizing against two constraints at once</h2>
+    <p>The sizing calculation takes two passes, and the second one is the one traders skip.</p>
+    <p><strong>Pass one, from the drawdown.</strong> Divide the distance to the failure floor by the number of consecutive losses the plan should survive. Eight to ten is a reasonable design case for a discretionary plan with a win rate in the forties, because runs of that length recur within a few hundred trades. The result is the maximum acceptable loss per trade.</p>
+    <p><strong>Pass two, from the daily limit.</strong> Divide the daily limit by the number of losses a session should absorb — four to six is a workable range. The result is usually smaller than the first, which is why the daily limit and not the drawdown is the binding constraint in practice.</p>
+    <p>The plan's risk per trade is the smaller figure. Then, and only then, convert it into position size: for a forex account, lots from the pip value and the stop distance; for a futures account, contracts from the tick value and the stop in ticks. Round down in both cases.</p>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="Diagram dividing a drawdown budget into per-trade risk, session risk and an untouched reserve for losing streaks" width="940" height="520" loading="lazy">
+      <figcaption>Two derivations, one answer, and a reserve that is never spent.</figcaption>
+    </figure>
+    <p>Two refinements make the result durable over a month. First, keep a quarter of the drawdown untouched as a reserve: on a trailing structure the floor moves, and a streak longer than the design case is precisely what the mechanism punishes. Second, recompute both passes every week from the floor as it then stands, because on a trailing account the distance to the floor changes with profit — and the size that fitted in week one may not fit in week four.</p>
+    <p>The <a href="/blog/prop-firm-daily-drawdown-explained.html">daily drawdown guide</a> covers the reference-point arithmetic, including the difference between a limit measured on balance and one measured on equity, which changes the second pass materially for a trader who holds positions through drawdowns.</p>
+    <h2 id="pace">The pace equation, and what it forbids</h2>
+    <p>Expected value per trade is the win rate multiplied by the average win, minus the loss rate multiplied by the average loss. With risk per trade fixed, that expression is a number, and the pace follows from it directly.</p>
+    <p>Divide the target by expected value per trade to get the trade count. Divide by trades per week to get the calendar. If the calendar is longer than the trader is willing to fund — remembering recurring platform and data costs — the answer is a better ratio, a more selective entry, or more sessions. It is never a larger size, because size does not appear in the expectation at all once risk per trade is fixed; it only sets the scale of the drawdown.</p>
+    <p>The equation also forbids a specific and common behaviour: raising the target's implied pace by trading instruments with larger tick or pip values at the same nominal position size. That changes risk per trade, not expectation, and it moves both the failure floor and the target by the same factor — leaving survival probability worse, not better, because the drawdown is now hit by a shorter losing streak.</p>
+    <p>Finally, the equation is only as good as its inputs, and traders routinely use remembered numbers rather than measured ones. A month of records converts an assumed 45% win rate and 1:2 ratio into a measured figure, including the cost of spread, commission and slippage. That measurement is usually less flattering and considerably more useful, and it takes one month of trading at small size to obtain — a fraction of the cost of a failed attempt.</p>
+    <h2 id="derisk">De-risking as the target approaches</h2>
+    <p>The counter-intuitive rule that saves the most accounts: risk per trade should fall as the target is approached, not rise.</p>
+    <p>The logic is asymmetric. Early in an evaluation, distance to the target is large and the cost of a breach is a fee. Late in an evaluation, distance to the target is small and the cost of a breach is every prior week of work plus the fee plus the calendar. The value of surviving the final week is therefore much higher than the value of surviving the first, even though the remaining target is smaller.</p>
+    <p>A workable schedule reduces risk per trade by a third at 75% of target and by half at 90%. The calendar stretches by a few sessions, and the probability of finishing rises out of proportion to the cost. The <a href="/blog/the-5ers-challenge-passing.html">staged-evaluation guide</a> makes the same point for multi-phase structures, where the final phase deserves the smallest size of the sequence.</p>
+    <p>Two supporting rules complete the idea. Set a daily profit cap and stop for the day when it is reached, rather than trading on because the session has gone well. And once the target is reached, stop entirely: an evaluation that has met its target and continues trading is exposed to a breach with nothing left to gain.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="A daily loss limit measured from the day's opening balance and consumed by successive losing trades" width="1000" height="540" loading="lazy">
+      <figcaption>Late in an evaluation the same dollar loss costs far more than it did in week one.</figcaption>
+    </figure>
+    <h2 id="sessions">Session selection and selectivity</h2>
+    <p>Since pace is ultimately about trades and expectation, the choice of when to trade does more work than most position-sizing debates.</p>
+    <p>Liquidity concentrates at session opens and closes, which is where spreads are tightest and fills most reliable. For a plan that needs a predictable cost per trade, trading one or two defined windows is better than trading a continuous session, because the cost measurement becomes meaningful rather than an average of very different conditions.</p>
+    <p>Selectivity is the second half. A plan that requires a specific setup to appear will sometimes produce no trades in a session, and that is a completed session rather than a missed one. The alternative — trading because the platform is open — generates a second population of trades with a lower expectation that drags down the measured edge and consumes the daily limit.</p>
+    <p>Instrument choice should follow stop distance rather than excitement. An instrument whose typical stop distance in ticks or pips is small relative to its spread has a structurally poor ratio for a small account, however readable its chart may be. This is the practical argument for trading the micro version of a contract: the ratio of stop to cost is identical, but the dollar risk fits the account's budget, which allows a more conservative size without abandoning the strategy.</p>
+    <p>One more selection rule that improves both levers at once: exclude the highest-variance windows a plan has not explicitly been built for. News releases, thin overnight periods and the first minutes after a cash open are where the plan's assumptions about fills and costs are least reliable, and the cost of avoiding them is a smaller trade count rather than a worse distribution.</p>
+    <h2 id="cap">The daily profit cap</h2>
+    <p>A daily loss limit is provided by the firm. A daily profit cap is provided by the trader, and it serves two purposes that a loss limit cannot.</p>
+    <p>The first is consistency. Payout conditions commonly cap a single day's share of total profit, so a trader whose best day dominates has created a problem that must be solved before a withdrawal. A daily profit cap set well below the eventual threshold means the ratio is satisfied automatically by the time the threshold is reached, rather than being discovered at the request.</p>
+    <p>The second is preservation of the target itself. Late in an evaluation, a strong session followed by an attempt to compound it is the classic route to losing both. Closing the platform at the cap converts a good day into a banked day, which is the only kind the target recognises.</p>
+    <p>The obvious objection is that capping profit caps the pace. In practice the effect is small: setting the cap at two to three times the average winning day keeps almost all of the plan's distribution while removing the tail that causes payout problems. A trader who would have produced 4% in a single session and closes at 1.5% has lost 2.5% of pace and removed a consistency breach, a drawdown risk and a decision they were likely to make badly.</p>
+    <p>There is an interaction worth noting with trailing drawdown. A large single day raises the failure floor on a trailing structure, which means the day's profit has made the account more fragile as well as more profitable. The daily cap limits that effect simultaneously with the consistency effect, which is a second reason it belongs in every plan that trades a trailing account.</p>
+    <h2 id="streak">Losing streaks inside a target</h2>
+    <p>Losing streaks are not deviations from the plan; they are the plan's normal distribution arriving. A win rate in the forties produces five-loss runs several times within a few hundred trades, and an evaluation contains a few hundred trades at most.</p>
+    <p>The correct response is procedural, and it should be written before the streak happens. Three losses in a session: reduce size by a quarter for the remainder of the session and keep the trade cap. Three losing sessions in a row: keep the size but reduce the session count for the week, and review the records rather than the market. A drawdown of half the permitted amount: reduce size by half and extend the calendar, because at that point the account can still be finished but not by the original plan.</p>
+    <p>What is never correct is size beyond the derivation. Recovery sizing is the most reliably fatal behaviour on a fixed-floor account, because it converts a normal variance sequence into a breach. The trader experiences it as determination; the account experiences it as a shorter distance to the floor.</p>
+    <p>Two structural protections help more than resolve. The trade cap limits the number of decisions available to make badly in a single session. The weekly recalculation forces a pause where the size is derived from the current floor rather than inherited from the mood of the week. Both are mechanical, which is the point.</p>
+    <h2 id="adding">Adding to a winner: when it is permitted</h2>
+    <p>Scaling into a profitable position is one of the few techniques that genuinely raises expectation per trade, and it is also the fastest way to breach a daily limit or a contract cap. Three conditions make it legitimate rather than impulsive.</p>
+    <p>The first is that the addition has its own protective order at a distance the plan specifies. Adding without a stop on the new exposure is not scaling; it is an unbounded position with a bounded one behind it. On a futures account, the addition also has to respect the contract cap, which is checked at the moment of the trade and which a scaled position can breach even when the entry did not.</p>
+    <p>The second is that the total risk must remain inside the session budget. This is where the daily limit is most often lost: two entries, each sized within the per-trade risk, together exceed the number of losses the session was designed to absorb. The rule is that the added exposure counts against the daily budget at full value, not at the incremental value.</p>
+    <p>The third is that the addition should reduce the number of remaining opportunities, not increase it. A trader who scales in and then opens a new position has changed the strategy's risk profile mid-session. The position, not the idea, is the unit of risk.</p>
+    <p>Where those three conditions cannot be satisfied within the rules — which is often on a small account with a tight daily limit — the honest conclusion is that scaling is not available to this plan, and the trade should be managed as a single entry. That is a limitation of the account, not of the trader.</p>
+    <h2 id="last">The final ten percent</h2>
+    <p>The last stretch of a target is where most attempts are lost, and the mechanism is nearly always the same: a size increase to finish quickly.</p>
+    <p>The arithmetic explains why it is tempting. At 90% of target, the remaining distance is small in dollars, so a trade at double the usual size appears to finish the job in a day. What the trader is doing, though, is buying a coin flip on the whole evaluation — and the loss side of that coin is no longer a fraction of a drawdown but the entire attempt plus the calendar invested in it.</p>
+    <p>The correct treatment of the final ten percent has three parts. Halve the size. Cap daily profit so that no single session creates a consistency problem at the payout stage, which is the second cost of a fast finish. And accept the extra sessions, because the calendar spent finishing slowly is much smaller than the calendar lost to a restart.</p>
+    <p>There is also a specific trap on trailing-drawdown accounts at this stage. By 90% of target the floor has risen substantially behind the trader, so the remaining room is much smaller than it was at the start, even though the account looks comfortable. A size computed in week one is oversized now. Recomputing from the current floor is not optional in the final stretch; it is the whole of risk management at that point.</p>
+    <h2 id="stages">Multi-stage targets</h2>
+    <p>A staged evaluation multiplies the arithmetic by the number of stages, and the multiplication is not neutral.</p>
+    <p>Each stage has its own target and its own drawdown, and the funded account on completion has a third set of conditions. The cost of a breach in the final stage is the whole sequence plus the fee, which means the last stage should be traded at the lowest risk of the three. A common and expensive error is to treat the phases as repetitions of the same task at the same size.</p>
+    <p>There is a structural advantage worth using. Percentage-based stages are scale-free, so the risk line written for stage one transfers to stage two unchanged in relative terms. Only two numbers change: the size, because the account may be different, and the reserve, which should grow in the final stage because there is no reset behind it.</p>
+    <p>The records from stage one are the most valuable input to stage two, and they are usually ignored. Measured expectation per trade, realised cost per trade and true win rate tell the trader whether stage two should be run faster or slower — and those numbers cannot be estimated from a chart. If the stage-one records show a thinner expectation than assumed, stage two should be slower and smaller, not braver.</p>
+    <p>One planning note on minimum trading days in staged structures: they are usually satisfied well before each target, so they rarely bind. Where they are long relative to the plan, slow the plan from the stage's first session so the target and the count finish together, rather than reaching the target early and then trading to fill a count.</p>
+    <h2 id="worked">A worked target, session by session</h2>
+    <p>An example makes the arithmetic concrete. The figures below are generic because a plan has to be built on the trader's own numbers; what matters is the order of the operations.</p>
+    <p><strong>Inputs.</strong> A maximum loss of 10% of the balance, a daily limit of 5%, a profit target of 8%, and a funded consistency condition of roughly a third on the best day. Assume a plan with a measured win rate of 45% at a 1:2 reward-to-risk ratio.</p>
+    <p><strong>Sizing.</strong> From the drawdown: 10% divided by ten consecutive losses is 1% per trade. From the daily limit: 5% divided by five losses per session is also 1%. The plan's risk per trade is therefore 1%, which is on the ceiling — so the reserve rule cuts it to 0.75%, leaving room for a streak longer than the design case.</p>
+    <p><strong>Pace.</strong> At 0.75% risk and a 1:2 ratio, the average win is 1.5%, the average loss 0.75%, and the expectation per trade is 0.45 × 1.5 − 0.55 × 0.75 = 0.26% per trade. An 8% target therefore needs about thirty trades at expectation. At two trades per session, that is fifteen sessions; at one, thirty. The calendar is fifteen to thirty sessions, and that is the honest number.</p>
+    <p><strong>Gates.</strong> At 25% of target, check realised versus planned cost per trade. At 50%, check the calendar against the trade count. At 75%, cut risk by a third and check that the daily limit has not been touched more than once. At 90%, halve risk, apply a daily profit cap of about 1.5% and accept the extra sessions.</p>
+    <p><strong>Consistency.</strong> With the cap at 1.5% per day and a best day no larger than that, a total profit of around 4.5% satisfies a one-third best-day share. The 8% target therefore clears the consistency condition comfortably, which is the point of setting the cap early rather than at the payout request.</p>
+    <figure>
+      <img src="/assets/img/consistency-rule.svg" alt="Chart showing how a best-day share of total profit constrains the size of a payout" width="940" height="540" loading="lazy">
+      <figcaption>The daily cap is set once and satisfies two conditions at the same time.</figcaption>
+    </figure>
+    <p>If the resulting calendar is unacceptable, the levers are the three from earlier: a better ratio, more selectivity, or more sessions. Any of them improves the plan. Raising risk per trade does not, and the arithmetic above shows exactly why — it would move the loss limit closer without moving the expectation.</p>
+    <p>Where the evaluation is being traded on the trader's behalf, the same arithmetic is what a service is paid to execute. ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid third-party trading. The <a href="/blog/best-prop-firm-passing-services.html">passing services guide</a> explains what to check before paying anyone, and the <a href="/blog/prop-firm-challenge-failure-recovery.html">failure recovery guide</a> covers what to do when an attempt does not work.</p>
+    <h2 id="faq">Frequently asked questions</h2>
+    <details class="faq"><summary>What is the fastest way to hit a profit target?</summary><div class="faq-a"><p>Increase trades or sessions within the daily limit, or improve expectation per trade through selectivity and a better reward-to-risk ratio. Increasing position size raises the drawdown in the same proportion as the profit, so it changes survival probability rather than speed.</p></div></details>
+    <details class="faq"><summary>How much should I risk per trade to reach the target?</summary><div class="faq-a"><p>Derive it from the rules rather than the target. Divide the maximum loss by the number of consecutive losses the plan must survive, divide the daily limit by the losses a session should absorb, and use the smaller result. Then keep a quarter of the drawdown in reserve.</p></div></details>
+    <details class="faq"><summary>Should I increase size as I get closer to the target?</summary><div class="faq-a"><p>No — the opposite. Reduce risk by a third at 75% of target and by half at 90%, because the cost of a breach rises as the target approaches while the remaining target shrinks. The extra sessions are far cheaper than a restart.</p></div></details>
+    <details class="faq"><summary>What is a daily profit cap and why do I need one?</summary><div class="faq-a"><p>A self-imposed limit on how much profit to take in one session. It protects the payout-stage consistency condition by preventing a dominant day, and it prevents a good session from being given back. Setting it at two to three times the average winning day costs little pace and removes a tail risk.</p></div></details>
+    <details class="faq"><summary>How many trades a day should I take?</summary><div class="faq-a"><p>Enough that the worst session the plan permits cannot breach the daily limit. If risk per trade is a fifth of the daily limit, five losses would exhaust it, so cap the session at three or four. A trade cap also limits how many decisions can be made badly in one session.</p></div></details>
+    <details class="faq"><summary>How do I recover from a losing streak during an evaluation?</summary><div class="faq-a"><p>Procedurally, not emotionally. Three losses in a session: cut size by a quarter and keep the cap. Three losing sessions: reduce the session count and review the records. Half the drawdown consumed: halve the size and extend the calendar. Never increase size to recover.</p></div></details>
+    <details class="faq"><summary>Is it worth trading more sessions to finish faster?</summary><div class="faq-a"><p>Often yes, provided selectivity holds. More sessions shorten the calendar without changing risk per trade. The limit is the point where the marginal trade no longer matches the plan, which shows up as a falling measured expectation — the reason records matter more than intentions.</p></div></details>
+    <details class="faq"><summary>Can I add to a winning position?</summary><div class="faq-a"><p>Only if the addition has its own protective order, counts against the session budget at full value, and respects any contract or lot cap. On small accounts with tight daily limits, the honest answer is usually that scaling is not available and the trade should be managed as a single entry.</p></div></details>
+    <details class="faq"><summary>How do multi-stage targets change the plan?</summary><div class="faq-a"><p>The final stage carries the cost of the whole sequence, so it should be traded at the lowest risk of the stages. Percentage stages are scale-free, so the relative risk line transfers; only the size and the reserve change. Use stage-one records to decide whether stage two should be slower.</p></div></details>
+    <details class="faq"><summary>Why do most attempts fail in the final stretch?</summary><div class="faq-a"><p>A size increase to finish quickly, usually on a trailing-drawdown account where the floor has risen behind the profit and the remaining room is much smaller than it was at the start. Recompute the size from the current floor and halve it for the last ten percent.</p></div></details>
+    <details class="faq"><summary>How do I set a target-aware consistency plan?</summary><div class="faq-a"><p>Work backwards from the payout ratio. If the best day may be no more than a third of total profit, cap daily profit at roughly a third of the eventual threshold — then total profit will satisfy the ratio automatically when the threshold is reached, rather than at the withdrawal request.</p></div></details>
+    <details class="faq"><summary>Does a passing service use the same arithmetic?</summary><div class="faq-a"><p>The arithmetic is identical whenever an account has a target and a fixed floor; a service is paid to execute it consistently. ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid third-party trading.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/prop-firm-challenge-failure-recovery.html">Failing a challenge: the recovery plan</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule guide</a></li>
+      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage explained</a></li>
+      <li><a href="/blog/how-to-pass-ftmo-challenge.html">How to pass an FTMO challenge, step by step</a></li>
+      <li><a href="/blog/mff-challenge-passing.html">Passing an MFF challenge</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/">All prop firm guides</a></li>
+    </ul>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Targets, drawdown limits and payout conditions change; verify them against your firm's current terms. Trading involves substantial risk of loss.</p>
+  </div>
+</section>

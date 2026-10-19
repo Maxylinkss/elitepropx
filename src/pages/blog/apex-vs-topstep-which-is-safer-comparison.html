@@ -1,0 +1,220 @@
+---
+title: Apex vs Topstep: Which Rulebook Is Safer in 2026?
+desc: Safety on a futures evaluation means one thing: the probability of breaching before the target. How two rulebooks compare on floor mechanism, loss rules and payouts.
+path: /blog/apex-vs-topstep-which-is-safer-comparison.html
+type: article
+h1: Apex vs Topstep: which rulebook is actually safer
+kicker: Comparison
+crumb: Apex vs Topstep
+section: Firm guides
+sectionUrl: /blog/
+date: 2026-10-18
+updated: 2026-10-18
+priority: 0.8
+schemaService: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Comparison · reviewed October 2026</p>
+    <h1>Apex vs Topstep: which rulebook is actually safer</h1>
+    <p class="lede">"Safer" is not a marketing word on an evaluation — it has a definition. An account is safer when the probability of breaching a limit before reaching the target is lower, given a fixed strategy and a fixed risk per trade. This comparison works through the mechanics that determine that probability: how the failure floor behaves, how many loss limits apply at once, how profit targets and minimum days interact, and what the funded stage does to all three.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Safety is measurable: for a fixed strategy, the account with the higher survivable streak and looser daily constraint is safer.</li>
+        <li>A trailing floor and a static floor are different products, even when the headline drawdown percentage is identical.</li>
+        <li>Two loss rules at once (a daily limit plus a maximum loss) reduce the survivable streak, because the shorter one binds first.</li>
+        <li>Payout conditions decide whether a pass becomes income, and they are set independently of evaluation rules.</li>
+        <li>Read the current terms for both firms; targets and drawdown mechanics are revised more often than any comparison can track.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#safety">What "safer" has to mean</a></li>
+        <li><a href="#models">The two rulebook models</a></li>
+        <li><a href="#floor">Floor behaviour, compared</a></li>
+        <li><a href="#losses">One loss rule versus two</a></li>
+        <li><a href="#targets">Targets, calendars and minimum days</a></li>
+        <li><a href="#sizing">Sizing the same strategy for each</a></li>
+        <li><a href="#consistency">Consistency and the payout path</a></li>
+        <li><a href="#costs">Total cost to funding</a></li>
+        <li><a href="#safer-for-whom">Safer for whom</a></li>
+        <li><a href="#verify">What to verify before choosing</a></li>
+        <li><a href="#worked">The same strategy on both accounts</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="safety">What "safer" has to mean</h2>
+    <p>Traders ask which of two firms is safer and usually mean which one they are less likely to fail. That is a reasonable question with an arithmetic answer: given a fixed strategy, a fixed win rate and a fixed reward-to-risk ratio, the safer account is the one where a given losing streak is less likely to close the account before the target is reached.</p>
+    <p>Two mechanisms decide that. The first is how much room the account has, which is a function of the drawdown percentage <em>and</em> the way the floor behaves — a trailing floor gives less effective room than a static one at the same headline number. The second is how many limits apply simultaneously, because each additional limit shortens the streak the account can survive.</p>
+    <p>Against those stand the factors that make an account more passable but not safer: a smaller target, a longer calendar, fewer minimum days. Those affect how likely a trader is to finish, not how likely a trader is to blow up on the way. A comparison that ranks firms on the target size alone has answered the wrong question.</p>
+    <p>The rest of this page separates the two. It compares the mechanics that determine breach probability, then the conditions that determine whether a pass produces money, and only then the calendar and the fee. Every specific number — drawdown percentage, target, minimum days, payout split — has to be read from the firms' current terms, because all of them are revised regularly and a comparison that quotes them is accurate only until the next revision.</p>
+    <figure>
+      <img src="/assets/img/rulebook-models.svg" alt="Diagram comparing two futures rulebook models across target, loss limit and position sizing" width="1000" height="540" loading="lazy">
+      <figcaption>Comparisons are only meaningful once the two rulebooks are laid out structurally.</figcaption>
+    </figure>
+    <h2 id="models">The two rulebook models</h2>
+    <p>Both firms sit in the contract-based futures category: targets and losses are quoted in dollars, positions are whole contracts, and the evaluator trades index or commodity futures rather than currency pairs. That shared architecture means the differences between them are almost entirely in the details rather than in the category.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Dimension</th><th>What to compare</th><th>Why it changes breach probability</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Floor mechanism</td><td>Static, end-of-day trailing or intraday trailing</td><td>Trailing floors reduce room as profit accrues; static floors do not</td></tr>
+          <tr><td>Floor basis</td><td>Balance or equity</td><td>Equity-based limits count open positions continuously</td></tr>
+          <tr><td>Loss rules</td><td>One limit or two</td><td>Two limits shorten the survivable streak to the tighter one</td></tr>
+          <tr><td>Target</td><td>Dollars, and per stage</td><td>Sets the calendar, therefore exposure to variance</td></tr>
+          <tr><td>Minimum days</td><td>Per stage or cumulative</td><td>A count longer than the plan forces extra sessions</td></tr>
+          <tr><td>Lock-in clause</td><td>Whether the floor stops trailing</td><td>Changes the second half of an attempt from trailing to static</td></tr>
+          <tr><td>Consistency</td><td>At evaluation, at payout, or both</td><td>A payout-stage ratio constrains daily profit, therefore size</td></tr>
+          <tr><td>Payout terms</td><td>Threshold, cadence, split</td><td>Determines whether a pass produces income at all</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Read as a specification rather than a scoreboard, the table produces a short list of questions for each firm. The answers are in the terms, and where a term is ambiguous the fastest resolution is a written question to support — the reply is both the answer and a record of the version in force when the account was bought.</p>
+    <p>One generalisation holds across the category and is worth stating: futures evaluations tend to carry two loss rules rather than one, because the daily limit is standard in contract-based accounts. That single structural feature is the most common cause of failure in the category, and it interacts with everything else in this comparison.</p>
+    <h2 id="floor">Floor behaviour, compared</h2>
+    <p>The failure floor is the single most consequential clause in either rulebook, and it is the one most often reduced to a single number in a comparison table.</p>
+    <p>A static floor is fixed at the starting balance. Profit cannot reduce room, so the available cushion is the same in week four as it was in week one. An end-of-day trailing floor resets at settlement: gains banked in a completed session are locked in and the floor rises with them, but intraday spikes that reverse are forgiven. An intraday trailing floor follows peak unrealised equity continuously, so a winning position raises the failure point immediately and an ordinary retracement can close an account that has never been below its starting balance.</p>
+    <p>The practical difference between the trailing variants and a static floor is not a percentage; it is a change in which trades are survivable. A strategy that holds winners through pullbacks is viable on a static structure and structurally fragile on an intraday trailing one. A strategy that banks profit quickly and rarely gives back a session's gains is affected far less by the difference.</p>
+    <figure>
+      <img src="/assets/img/drawdown-types.svg" alt="Three equity curves comparing static, end-of-day trailing and intraday trailing failure floors on one profit path" width="1000" height="560" loading="lazy">
+      <figcaption>The same profit path touches three different floors. The mechanism, not the percentage, decides survival.</figcaption>
+    </figure>
+    <p>Two secondary clauses complete the comparison and are frequently missed. The measurement basis decides whether open positions consume room continuously (equity) or only when realised (balance). And the lock-in clause, where it exists, converts the account from trailing to static once a defined profit threshold is reached — which changes not just the room but the optimal behaviour at a specific point in the attempt.</p>
+    <p>The <a href="/blog/apex-trailing-drawdown-math.html">trailing drawdown guide</a> sets out the full arithmetic, including the room formula and the exit rules that make a trailing structure survivable. Any comparison of trailing firms should be read alongside it, because the differences between them are differences in those clauses rather than in the headline drawdown.</p>
+    <h2 id="losses">One loss rule versus two</h2>
+    <p>The number of simultaneous loss limits is the most underrated factor in breach probability, and it is where the practical difference between rulebooks shows up fastest.</p>
+    <p>A single maximum-loss rule defines one failure condition: the account's distance to its floor. A second rule — a daily loss limit — defines a shorter, independent failure condition that resets each day. Both must be satisfied simultaneously, and the account fails when either is breached.</p>
+    <p>The effect on the survivable streak is geometric rather than linear. If risk per trade is a fifth of the daily limit, the session can absorb five losses; if it is half, two. A plan sized from the maximum loss alone can therefore be perfectly safe against the account floor and simultaneously one bad morning away from a daily breach. The correct size derivation uses the smaller of two answers: maximum loss divided by streak tolerance, and daily limit divided by losses per session.</p>
+    <p>There is a second-order effect worth naming. A daily limit makes the calendar longer, because sessions end early after a bad start — a plan that expected five sessions a week may average four. On an evaluation with a fixed deadline, that hidden reduction in trade count matters as much as the risk cap.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="A daily loss limit measured from the opening balance and consumed by successive losing trades" width="1000" height="540" loading="lazy">
+      <figcaption>The daily limit is a session budget, and on a futures rulebook it is usually the constraint that fires first.</figcaption>
+    </figure>
+    <p>Where one firm applies a daily limit and the other does not, the comparison is not close in safety terms: the account without the daily rule has the larger survivable streak at the same headline drawdown. That is a real advantage for a trader with a slow, low-frequency plan, and close to irrelevant for a trader whose plan takes two or three positions per session and would rarely approach a daily limit anyway.</p>
+    <h2 id="targets">Targets, calendars and minimum days</h2>
+    <p>Targets and minimum trading days affect how long an attempt takes rather than how likely it is to breach, but they interact with the loss rules in a way that changes both.</p>
+    <p>A smaller target shortens the calendar, which reduces the number of sessions exposed to variance and lowers the probability of a losing streak long enough to breach. A larger target does the reverse. Since both firms quote a dollar target on a fixed account size, the comparison is direct once the current numbers are read — but the target ratio to the maximum loss matters more than the target itself. A target that is a large fraction of the loss limit compresses the number of trades available to reach it at survivable size.</p>
+    <p>The <a href="/blog/prop-firm-profit-target-strategies.html">profit target guide</a> covers the ratio arithmetic and the three levers — ratio, selectivity, sessions — that shorten a calendar without raising risk. Applying those levers is the way to make a large target survivable; raising size is not.</p>
+    <p>Minimum trading days are usually satisfied long before the target at a conservative pace, so they rarely bind. The exception runs in the same direction as the daily-limit issue: a trader who reaches the target early and then has to trade for several more sessions to satisfy a count is trading with nothing to gain, and those sessions can give back a meaningful share of the profit. Where one firm requires a longer minimum count, that is a genuine, if second-order, safety difference.</p>
+    <p>One structural question worth asking each firm: whether the target must be reached without breaching any daily rule at any point, or whether a breach on day two is simply a closed account. In practice it is the latter, but the phrasing sometimes clarifies whether a breach closes the account or only that day's trading — a distinction with obvious consequences for the daily limit calculation.</p>
+    <h2 id="sizing">Sizing the same strategy for each</h2>
+    <p>The useful comparison is not which firm is safer in the abstract but which is safer for one specific strategy. The method is to size the same plan against each rulebook and compare the resulting survivable streaks.</p>
+    <p>Take a strategy with a fixed stop distance measured in ticks and a fixed risk tolerance. Size derivation runs twice for each firm: once from that firm's maximum loss and streak tolerance, and once from that firm's daily limit and session capacity. The smaller result is the size the plan can carry there. Then convert each size back into a streak tolerance: how many consecutive losses can that account absorb at its own derived size?</p>
+    <p>The firm with the higher number is safer <em>for that strategy</em>. The comparison is not transferable, because a strategy with a wider stop or a higher trade frequency will size differently against the same two rulebooks.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Step</th><th>Calculation</th><th>What to record</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Maximum loss ÷ streak tolerance</td><td>Money risked per trade, from the floor</td></tr>
+          <tr><td>2</td><td>Daily limit ÷ session capacity</td><td>Money risked per trade, from the day</td></tr>
+          <tr><td>3</td><td>Smaller of the two, less costs</td><td>The plan's actual risk per trade</td></tr>
+          <tr><td>4</td><td>Risk per trade ÷ stop cost</td><td>Lots or contracts, rounded down</td></tr>
+          <tr><td>5</td><td>Room ÷ risk per trade</td><td>Survivable streak — the safety number</td></tr>
+          <tr><td>6</td><td>Target ÷ expectation per trade</td><td>Trade count and calendar</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Run for both firms, the output is two numbers rather than a preference: a survivable streak and a calendar. Those two decide which rulebook suits the strategy, and they are the only comparison that accounts for the trader's own plan rather than the marketing on the site.</p>
+    <p>Where both accounts come out with a survivable streak below eight, the honest conclusion is that neither rulebook fits the strategy at that account size, and the correct change is a smaller account, a smaller contract, or a different plan — not a different firm.</p>
+    <h2 id="consistency">Consistency and the payout path</h2>
+    <p>The evaluation rules decide whether an account is passed; the payout conditions decide whether the pass is worth anything. They are set separately, and on both firms they usually live in a different document from the evaluation terms.</p>
+    <p>The common payout structure has four gates: a minimum number of profitable trading days, a profit threshold before the first withdrawal, a consistency condition on the profit being withdrawn, and identity verification. Each is independent, and each has a failure mode unrelated to trading skill.</p>
+    <p>The consistency condition is the one that catches traders who passed with a strong final push. Expressed as a best-day share of total profit, a one-third rule means total profit must reach roughly three times the largest day before a full withdrawal. A trader whose largest day is a fifth of the threshold needs five times that day in total profit — usually more than the evaluation required.</p>
+    <figure>
+      <img src="/assets/img/consistency-rule.svg" alt="Chart showing how a best-day share of total profit constrains the size of a first withdrawal" width="940" height="540" loading="lazy">
+      <figcaption>A dominant day is a payout constraint, not an achievement.</figcaption>
+    </figure>
+    <p>Comparing the two firms on this dimension means asking four specific questions of each. Is the consistency rule applied once at the first payout or at every withdrawal? Is it measured on the evaluation record or only on the funded account? Is profit above the threshold withdrawable in full, or is a portion retained as buffer? And what is the interval between request and payment? A generous split paid in ninety days is worth less than a smaller split paid in five.</p>
+    <p>The <a href="/blog/funded-account-payout-process.html">payout process guide</a> covers the sequence step by step, and the <a href="/blog/prop-firm-consistency-rule-guide.html">consistency guide</a> covers the ratio arithmetic for the common variants. Both are worth reading before the fee rather than after the funded login.</p>
+    <h2 id="costs">Total cost to funding</h2>
+    <p>Cost is not a safety dimension, but it is the one that decides how many attempts a trader can afford — which changes the practical outcome of a comparison considerably.</p>
+    <p>The total cost of reaching a funded account is the fee, plus platform and market-data subscriptions for as long as the attempt lasts, plus any reset or retry charges, plus any activation fee on funding. A monthly data subscription is a cost per month, not per attempt, so a plan with a long calendar pays more for the same fee.</p>
+    <p>That produces a specific arithmetic: the firm with the longer calendar needs a larger price advantage to be the cheaper option overall. Running the calendar calculation from the sizing section for each firm gives the number of weeks, and the subscriptions multiply out from there. The <a href="/tools/prop-firm-calculator-embed.html">calculator page</a> sets out the formulas, including the calendar conversion.</p>
+    <p>Reset structure belongs here too. A one-off fee with a paid reset makes each attempt a deliberate purchase; a subscription with unlimited retries lowers the marginal cost of a failed attempt and, by doing so, the cost of not fixing the plan first. For a trader whose breach rate is high, the subscription is cheaper; for a trader whose plan is sound, the one-off is.</p>
+    <h2 id="safer-for-whom">Safer for whom</h2>
+    <p>The comparison resolves differently for different plans, and the honest version of the answer is a set of profiles rather than a ranking.</p>
+    <p><strong>A trader who holds winners.</strong> A static or end-of-day structure is materially safer than an intraday trailing one, because the retracement that closes a trailing account costs a static account only the profit. This is the largest single difference available in the category, and it is decided by the floor clause rather than by the target or the fee.</p>
+    <p><strong>A trader with a low-frequency, wide-stop plan.</strong> The daily limit is the constraint, because each trade risks more of the session budget. The safer rulebook here is the one with the most generous daily limit relative to the maximum loss, and the one whose day boundary aligns with the hours actually traded.</p>
+    <p><strong>A trader who trades a defined session.</strong> The day boundary matters less, and the target-to-loss ratio matters more: a smaller target relative to the loss limit means fewer trades at survivable size, therefore fewer days exposed to variance.</p>
+    <p><strong>A trader who expects a long calendar.</strong> Recurring costs dominate, so the cheaper firm on a per-month basis is safer in the sense that matters — it leaves money for a second attempt if the first fails. A slower plan also benefits from any lock-in clause, because it spends more time past the threshold where the floor stops moving.</p>
+    <p><strong>A trader using a passing service.</strong> The comparison shifts to the compliance clauses. Whether third-party trading is permitted, on the evaluation and on the funded account, is the only question that matters; a firm whose terms forbid the arrangement is unavailable regardless of how good its drawdown mechanism is. ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid it — the <a href="/blog/best-prop-firm-passing-services.html">passing services guide</a> sets out what to check with any provider.</p>
+    <h2 id="verify">What to verify before choosing</h2>
+    <p>Eight checks, applied to each firm, convert every comparison — including this one — into a decision that is specific to the trader's own plan.</p>
+    <p><strong>One: floor mechanism and sampling.</strong> Static, end-of-day trailing or intraday trailing; balance or equity; continuous or sampled. Then convert to the current distance to the floor in dollars.</p>
+    <p><strong>Two: lock-in clause.</strong> Whether the floor stops trailing at a threshold, and where that threshold sits.</p>
+    <p><strong>Three: daily limit and day boundary.</strong> The dollar amount, the reference point, and the exact hour the trading day starts and ends in server time.</p>
+    <p><strong>Four: target and minimum days.</strong> Per stage or cumulative, and whether the two finish together on a conservative pace.</p>
+    <p><strong>Five: contract cap.</strong> Per position and per account, and whether scaling into a position can breach it.</p>
+    <p><strong>Six: funded-stage conditions.</strong> Funded drawdown, payout threshold, consistency rule and whether it applies at every payout, verification requirements and payment interval.</p>
+    <p><strong>Seven: conduct clauses.</strong> News windows, overnight and weekend holding, permitted instruments, and any prohibition on automated or third-party trading.</p>
+    <p><strong>Eight: total cost to funding.</strong> Fee, platform, data, activation and reset, divided by the calendar the plan actually needs.</p>
+    <p>Keep the answers for both firms side by side. Where a firm's answer is unresolvable from the published terms, treat that as a finding in itself: a clause that cannot be checked before purchase is a clause that cannot be relied on afterwards.</p>
+    <h2 id="worked">The same strategy on both accounts</h2>
+    <p>A worked comparison makes the method concrete. The figures below are illustrative placeholders; the sequence is the transferable part.</p>
+    <p><strong>The strategy.</strong> One index future, a 30-tick stop worth $300 at one contract, a 45% win rate, a 1:2 reward-to-risk ratio, two setups per session, five sessions a week.</p>
+    <p><strong>Firm A, trailing structure.</strong> Maximum loss $2,000 with an intraday trailing floor. Streak tolerance of ten gives $200 per trade; the stop costs $300 per contract, so the derived size is zero contracts. The strategy does not fit that account at all — a finding that would have been invisible in any comparison table.</p>
+    <p><strong>Firm B, larger drawdown, static floor.</strong> Maximum loss $3,000, static. Streak tolerance of ten gives $300 per trade, which is exactly one contract before costs. Adjusting for commission and slippage, the plan fits at one contract with a thin margin, and the survivable streak is ten losses.</p>
+    <p><strong>The daily limit check.</strong> If Firm B's daily limit is a fifth of its maximum loss, the session absorbs three losses at $300 — a workable cap of two trades per session. If the daily limit is a tenth, only one loss fits, and the session cap must fall to one trade, which doubles the calendar.</p>
+    <p><strong>The calendar.</strong> At $300 risk and a 1:2 ratio, average win $600, expectation per trade 0.45 × 600 − 0.55 × 300 = $105. A $3,000 target needs 29 trades at expectation; at two trades a session that is fifteen sessions, three weeks.</p>
+    <p><strong>The conclusion.</strong> Firm B is the safer rulebook for this strategy, and the reason is not the target or the fee. It is that the trailing floor on Firm A made the effective room too small to place the strategy's stop at a survivable size. That is the kind of answer the comparison should produce, and it is available in ten minutes with the firms' current terms in hand.</p>
+    <p>Where an attempt is being run on the trader's behalf, the same arithmetic forms the brief: the contract count, the stop in ticks, the session cap and the calendar are the specification, and they should be derived from the chosen firm's actual clauses rather than from a review. The <a href="/blog/best-futures-prop-firms-2026.html">futures firm guide</a> covers the seven criteria that survive marketing, and the <a href="/blog/topstep-challenge-passing.html">Topstep guide</a> works through the two-loss-rule structure in detail.</p>
+    <h2 id="converge">Where the two rulebooks converge</h2>
+    <p>After the mechanisms have been compared, it is worth noting how much of the two rulebooks is identical — because most of the difficulty difference comes from a small number of clauses rather than from the overall design.</p>
+    <p>Both accounts quote a dollar target and a dollar maximum loss on a fixed account size. Both restrict the trader to contracts rather than fractional positions, which means the sizing calculation is the same arithmetic in both cases. Both require a minimum number of trading days that a conservative plan satisfies long before the target. And both place the payout conditions in a separate document from the evaluation rules, which means reading the funded terms is mandatory rather than optional with either.</p>
+    <p>That shared structure is why the comparison reduces to four clauses: the floor mechanism, the presence or absence of a daily loss rule, the lock-in threshold if one exists, and the consistency condition at payout. Everything else — the platform, the data feed, the contract list, the minimum days — is either identical or second-order.</p>
+    <p>There is a practical benefit to that reduction. A trader evaluating three or four futures firms does not need to study four rulebooks; they need to extract those four clauses from each and run the sizing calculation against them. The <a href="/prop-firm-rules-matrix.html">rules matrix</a> collects exactly those fields, and the <a href="/blog/best-futures-prop-firms-2026.html">futures firm guide</a> sets out the criteria in the order that matters.</p>
+    <p>One final convergence worth stating: on both accounts, the traders who pass are rarely the ones with the best strategy. They are the ones whose risk per trade was derived from the rules rather than chosen from preference, and who recomputed it when the room changed. That behaviour is transferable between rulebooks; a strategy tuned to one is not.</p>
+    <h2 id="faq">Frequently asked questions</h2>
+    <details class="faq"><summary>Is Apex or Topstep safer?</summary><div class="faq-a"><p>There is no general answer, because safety depends on the strategy being sized. Size the same plan against both rulebooks — maximum loss and daily limit for each — and compare the resulting survivable streak. The rulebook that produces the higher streak for that strategy is the safer one.</p></div></details>
+    <details class="faq"><summary>What makes a rulebook safe?</summary><div class="faq-a"><p>Two things: how much room the account has once the floor mechanism is accounted for, and how many loss limits apply at once. A static floor gives more effective room than a trailing one at the same percentage, and a second loss rule shortens the survivable streak to the tighter constraint.</p></div></details>
+    <details class="faq"><summary>Is a trailing drawdown worse than a static one?</summary><div class="faq-a"><p>For a strategy that holds winners, yes — a retracement from a peak closes a trailing account and only costs a static one the profit. For a strategy that banks profit promptly, the difference is much smaller.</p></div></details>
+    <details class="faq"><summary>Why do two loss rules make an account riskier?</summary><div class="faq-a"><p>Because both must be satisfied simultaneously. A plan sized from the maximum loss can be one ordinary bad morning away from a daily breach. Size from the smaller of the two derivations — drawdown divided by streak tolerance, and daily limit divided by session capacity.</p></div></details>
+    <details class="faq"><summary>How does a lock-in clause change the comparison?</summary><div class="faq-a"><p>Once the floor stops trailing, the account behaves like a static one, so holding winners becomes cheap again. If one firm has a lock-in and the other does not, the second half of an attempt is materially different between them.</p></div></details>
+    <details class="faq"><summary>Which firm has the smaller target?</summary><div class="faq-a"><p>Read it from the current terms for both, because targets are revised regularly. What matters more than the size is the ratio of the target to the maximum loss: a target that is a large fraction of the loss limit needs more trades at survivable size and therefore a longer calendar.</p></div></details>
+    <details class="faq"><summary>Does the cheaper fee make a firm safer?</summary><div class="faq-a"><p>Indirectly. A cheaper account leaves more capital for a second attempt, and a plan with a long calendar pays more in recurring subscriptions. Compare total cost to funding — fee plus platform, data, activation and reset — rather than the signup price.</p></div></details>
+    <details class="faq"><summary>How do payout conditions affect the comparison?</summary><div class="faq-a"><p>They determine whether a pass becomes income. Ask each firm four questions: whether the consistency rule applies at every payout or only the first, whether it is measured on the evaluation record, whether profit above the threshold is fully withdrawable, and how long payment takes.</p></div></details>
+    <details class="faq"><summary>Should I trade micros on either account?</summary><div class="faq-a"><p>Usually yes on a small account. A micro preserves the strategy's stop distance while reducing the dollar risk by an order of magnitude, which is often the difference between a plan that fits the derived size and one that does not.</p></div></details>
+    <details class="faq"><summary>What is the fastest way to compare two futures rulebooks?</summary><div class="faq-a"><p>Six inputs from each set of terms: floor mechanism, daily limit, maximum loss, target, minimum days and funded-stage conditions. Then run the same sizing calculation against both. Ten minutes of arithmetic answers more than any comparison table.</p></div></details>
+    <details class="faq"><summary>Does a passing service change which firm is safer?</summary><div class="faq-a"><p>It changes which firm is available. Whether third-party trading is permitted — separately on the evaluation and the funded account — decides whether the arrangement can be used at all. ElitePropX charges a flat <strong>$220</strong> per evaluation, covers retries, takes no profit split, and declines firms whose terms forbid it.</p></div></details>
+    <details class="faq"><summary>What if my strategy does not fit either account?</summary><div class="faq-a"><p>That is a legitimate result of the calculation. The options are a smaller contract size, a larger account, a wider-drawdown rulebook, or a different plan. Changing firms does not fix a plan whose stop distance does not fit the room available.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/topstep-challenge-passing.html">Passing a Topstep combine</a></li>
+      <li><a href="/blog/apex-trailing-drawdown-math.html">Trailing drawdown maths</a></li>
+      <li><a href="/blog/best-futures-prop-firms-2026.html">Best futures prop firms 2026</a></li>
+      <li><a href="/blog/mff-challenge-passing.html">Passing an MFF challenge</a></li>
+      <li><a href="/tools/prop-firm-calculator-embed.html">Risk and target calculator</a></li>
+      <li><a href="/blog/fundednext-vs-topstep-comparison.html">The two rulebook models compared</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/">All prop firm guides</a></li>
+    </ul>
+    <p class="disclaimer">Apex Trader Funding and Topstep are named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Drawdown mechanisms, targets and payout terms change; verify them against the firms' current terms. Trading futures involves substantial risk of loss.</p>
+  </div>
+</section>

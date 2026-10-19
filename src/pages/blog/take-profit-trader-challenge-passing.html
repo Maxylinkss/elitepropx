@@ -1,0 +1,257 @@
+---
+title: Take Profit Trader Challenge Passing 2026
+desc: How to pass a Take Profit Trader evaluation: trailing threshold mechanics, target sizing, the payout path and the risk plan that keeps a futures account alive.
+path: /blog/take-profit-trader-challenge-passing.html
+type: article
+h1: Take Profit Trader challenge passing
+kicker: Firm guide
+crumb: Take Profit Trader
+section: Firm guides
+sectionUrl: /blog/
+date: 2026-09-26
+updated: 2026-10-18
+priority: 0.8
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Firm guide · reviewed October 2026</p>
+    <h1>Take Profit Trader challenge passing</h1>
+    <p class="lede">Take Profit Trader runs dollar-based futures evaluations with a trailing threshold and a strong emphasis on payout-window mechanics. If the trailing floor keeps catching you, the problem is almost always sizing in the final third of the evaluation — and this guide is about fixing that.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>The failure threshold trails peak equity, so the account gets more fragile as the target gets closer.</li>
+        <li>Smaller entry tiers make this a reasonable first futures evaluation, but the fixed cost per contract is a larger drag on a small target.</li>
+        <li>Payout conditions are the part worth reading twice: minimum days, profit threshold and processing windows all apply.</li>
+        <li>Typical pass time with proper pacing is eleven to sixteen trading days.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#rules">The rules and how the numbers scale</a></li>
+        <li><a href="#trailing">The trailing threshold in practice</a></li>
+        <li><a href="#plan">The risk plan</a></li>
+        <li><a href="#pacing">Pacing an evaluation</a></li>
+        <li><a href="#mistakes">Where attempts fail</a></li>
+        <li><a href="#payout">Payout mechanics and what to expect</a></li>
+        <li><a href="#service">Passing it yourself or with a service</a></li>
+      </ol>
+    </div>
+    <h2 id="rules">The rules and how the numbers scale</h2>
+    <p>Evaluations here are futures-based, with targets and failure thresholds expressed in dollars rather than percentages. That has one direct consequence for planning: every rule must be converted into a percentage of account size before it can be compared with a forex evaluation or with a different tier at the same firm.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>How it behaves</th><th>Planning implication</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Profit target</td><td>Fixed dollar amount, scaling with account size</td><td>Divide by account size to compare with percentage-based firms</td></tr>
+          <tr><td>Trailing threshold</td><td>Follows peak equity upward</td><td>Risk per trade must fall as completion rises</td></tr>
+          <tr><td>Daily loss limit</td><td>Either explicit or implied by the trailing distance</td><td>The tighter of the two governs each session</td></tr>
+          <tr><td>Minimum trading days</td><td>Applies before verification</td><td>Pace the target to arrive on or after the count</td></tr>
+          <tr><td>Payout conditions</td><td>Minimum days, profit threshold, processing window</td><td>Plan the funded phase before the account is funded</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The account range makes this a sensible first futures evaluation for traders who do not want to start at a large tier. Two arithmetic points follow.</p>
+    <p><strong>Small targets amplify fixed costs.</strong> Commission and slippage are dollars per contract regardless of account size. On a smaller tier the target is smaller but the cost per round turn is identical, so the effective edge required is slightly higher. This does not make small accounts a bad choice — it makes the expectation of an identical pass rate unrealistic.</p>
+    <p><strong>Small targets also reduce the damage of a mistake.</strong> A single oversized position on a large tier costs proportionally the same and absolutely much more. For a trader new to trailing thresholds, learning the mechanic on a smaller account is the cheaper education.</p>
+    <h2 id="trailing">The trailing threshold in practice</h2>
+    <p>A trailing threshold is a failure level that rises with your peak equity and never comes back down. On an intraday trailing structure it responds to unrealised profit, which is the detail that produces failures traders cannot explain by looking at their own P&amp;L.</p>
+    <p>Work through a concrete sequence. An account opens with the failure level $4,000 below the starting balance. In the second session, an open position reaches $3,200 of unrealised profit; the threshold has now risen by $3,200. The position is then closed at $900 after a retracement. The trader has banked $900 and the floor has risen by $3,200, so the cushion has fallen by $2,300 — on a session that finished green.</p>
+    <p>Nothing in that sequence was a mistake by any reasonable trading standard. The plan was followed, a profit was taken, and the account is worse positioned than it was at the start of the day. The only defence is structural: reduce risk as progress accumulates, and bank profit deliberately rather than holding for a larger number.</p>
+    <figure>
+      <img src="/assets/img/drawdown-types.svg" alt="Diagrams comparing static, intraday trailing and end-of-day trailing failure floors on the same equity curve" width="1000" height="560" loading="lazy">
+      <figcaption>An intraday trailing floor follows unrealised equity, so a retracement reduces the cushion even after a winning session.</figcaption>
+    </figure>
+    <p>Two questions decide how much room you actually have, and both should be answered from the terms rather than assumed. First, does the threshold follow unrealised equity or only closed profit? End-of-day trailing is a different and considerably easier structure. Second, does it stop moving at any point — some firms stop the trail once the floor reaches the starting balance, which changes the arithmetic of the final third of an evaluation. Where either answer is unclear, ask before buying; the difference between the two structures is larger than the difference between most firms' headline targets.</p>
+    <h2 id="plan">The risk plan</h2>
+    <p>Four numbers define a workable plan, and a fifth is a daily check rather than a parameter.</p>
+    <ol>
+      <li><strong>Maximum risk per trade:</strong> a third of whatever the day's binding constraint is. On a trailing account that means a third of the smaller of the daily limit and the remaining buffer to the threshold.</li>
+      <li><strong>Daily stop:</strong> stop opening positions once 80% of the day's budget is spent, whether realised or floating.</li>
+      <li><strong>Daily profit cap:</strong> about a third of the total target, which keeps any payout-stage consistency rule satisfied by construction.</li>
+      <li><strong>Size ladder:</strong> full size to 40% of target, three quarters from 40% to 70%, half beyond 70%. This is the trailing account's equivalent of a stop loss, applied to the evaluation rather than to a trade.</li>
+      <li><strong>Daily floor check:</strong> before the first trade of each session, calculate current equity minus the threshold. If that number is smaller than the planned per-trade risk, reduce size or skip the session.</li>
+    </ol>
+    <p>The fifth item is the one that separates plans that survive from plans that do not. It takes twenty seconds and it is the only mechanism that prevents trading into a buffer too thin to absorb a normal loss. Traders who track it informally — rather than writing it into the plan as a rule — abandon it precisely in the session after a large winner, which is when it matters most.</p>
+    <div class="callout">
+      <p><strong>The counter-intuitive part:</strong> on a trailing account, a losing day is cheap and a winning day is expensive. Losing consumes the daily budget without moving the floor; winning raises the floor permanently. The correct response to a strong session is to reduce, not to press.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap narrow">
+    <h2 id="pacing">Pacing an evaluation</h2>
+    <p>A realistic pace is eleven to sixteen trading days. The structure below assumes a mid-tier account, a dollar target, a trailing threshold and a payout-stage consistency requirement.</p>
+    <p><strong>Sessions 1–3 — establish the routine.</strong> Half of planned size while the plan meets real conditions. One or two setups per session, each closed at a defined target rather than held, and a hard stop at the daily cap. Expected outcome: 15–25% of target. The purpose of this phase is not progress; it is confirmation that the plan survives contact with an actual order book.</p>
+    <p><strong>Sessions 4–8 — the working middle.</strong> Full planned size. Daily profit is capped at roughly a third of the total target, which means no session can become a payout problem later. Completion should reach 55–70% by the end of this phase, and the threshold should have risen by a similar amount in dollar terms — which is exactly why the size ladder begins here.</p>
+    <p><strong>Sessions 9–13 — reduce and finish.</strong> Size falls to three quarters and then half as completion passes 70%. Sessions shorten. The remaining ground is covered in small increments and any session that reaches the cap is closed rather than extended. This is the phase where trailing accounts are lost, because the buffer is thinnest and the temptation to press is greatest.</p>
+    <p><strong>Completion.</strong> Trading stops when the target and the minimum day count are both satisfied. Where the day count is the later of the two, the plan closes one small position per remaining day rather than maintaining normal exposure on an account that cannot improve its standing.</p>
+    <p>A pacing detail that catches traders out: the daily cap and the daily stop are not symmetrical in their consequences. Breaching the cap costs a consistency ratio problem later; breaching the stop ends the account immediately. When a session is going well and the cap is near, the correct action is to close and stop — not to add one more position because the day is already green.</p>
+    <h2>A worked evaluation, session by session</h2>
+    <p><strong>Session 1 — +$420.</strong> Half size. The threshold rises modestly with the peak. Nothing notable; the routine is established.</p>
+    <p><strong>Session 2 — +$1,230.</strong> Full size. A position reaches $1,850 unrealised before being closed at $1,230. On an intraday trailing structure the floor has moved by $1,850 and the buffer is $620 thinner than the banked profit implies — a concrete example of why closing early is the correct instinct on this structure.</p>
+    <p><strong>Session 3 — −$460.</strong> One loss at planned size, then closed. A losing session does not move the threshold, so the cost is confined to the daily budget.</p>
+    <p><strong>Sessions 4–7 — +$2,610 combined.</strong> Completion reaches 71%, so size drops to three quarters and then half. No session exceeds the daily cap of roughly $2,000. The best day remains session 2 at $1,230 — about 18% of the eventual total, comfortably inside a 30% payout rule.</p>
+    <p><strong>Sessions 8–11 — +$1,480 combined.</strong> The final increment at half size, in four short sessions. The floor is recalculated each morning; on one morning the remaining buffer was below the planned per-trade risk, so the session was skipped entirely rather than traded at reduced size. That decision cost a day and preserved the evaluation.</p>
+    <p><strong>Completion.</strong> The target is reached on session 11 with the minimum day count satisfied. Trading stops. The consistency ratio stands at roughly 18%, so the first payout request can be made as soon as the funded-phase conditions allow.</p>
+    <div class="callout">
+      <p><strong>What the example shows:</strong> one session gave back $620 of unrealised profit, one session was skipped on a floor check, and the evaluation finished comfortably inside both the loss rules and the payout rule. None of that required a better market read than the plan already assumed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+<figure>
+  <img src="/assets/img/daily-drawdown.svg" alt="Diagram of a daily loss limit consumed by successive losing trades in one session" width="1000" height="540" loading="lazy">
+  <figcaption>Most failures on a trailing model begin as an ordinary session that drifted past its budget.</figcaption>
+</figure>
+    <h2 id="mistakes">Where attempts fail</h2>
+    <p>Six failure modes account for almost every reset on this type of structure.</p>
+    <h3>1. Holding a runner into a retracement</h3>
+    <p>The floor has already moved with the peak, so the retracement is measured from the peak rather than from the entry. This is the defining failure on any intraday trailing account, and it produces the specific experience of a green day that leaves the account more fragile than it started.</p>
+    <h3>2. Increasing size as completion approaches</h3>
+    <p>The instinct that fails trailing evaluations. Progress shrinks the buffer, so the correct response is the opposite: reduce size as the target gets closer. A plan that holds constant size until the final session is taking its largest effective risk at the point of least room.</p>
+    <h3>3. One dominant session</h3>
+    <p>Efficient at reaching a target and expensive twice over: it raises the threshold by the full unrealised peak and it concentrates profit so that a payout-stage consistency rule cannot be satisfied at the target. A $5,000 day on a $6,000 target is a passed evaluation waiting weeks for a withdrawal.</p>
+    <h3>4. Trading every session to "stay active"</h3>
+    <p>Activity is not a requirement; the minimum day count is. On a trailing account every session either moves the floor or consumes budget, so a session with no specific plan costs something and gains nothing. Four or five planned sessions a week produces a slower pass and a materially lower breach rate.</p>
+    <h3>5. Ignoring position caps and news windows</h3>
+    <p>Maximum contract counts and restricted trading windows are usually in the terms rather than on the evaluation page, and they are enforced by pattern detection rather than manual review. Trading a permitted instrument at twice the permitted size is a breach, and it is one of the most common accidental ones.</p>
+    <h3>6. Assuming the floor did not move</h3>
+    <p>Traders who calculated their room once at the start of an evaluation and never recalculated it are consistently surprised in the final third. The check takes twenty seconds per session and it is the cheapest habit available on a trailing account.</p>
+<figure>
+  <img src="/assets/img/payout-timeline.svg" alt="Timeline of the conditions between a funded account and a completed first withdrawal" width="1000" height="420" loading="lazy">
+  <figcaption>The payout conditions govern the account long before the withdrawal request is made.</figcaption>
+</figure>
+    <h2 id="payout">Payout mechanics and what to expect</h2>
+    <p>Passing produces a funded account with its own conditions, and on futures accounts those conditions are usually the strictest part of the whole process.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Condition</th><th>During the evaluation</th><th>On the funded account</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Profit target</td><td>One-time, to pass</td><td>Recurring threshold before each payout</td></tr>
+          <tr><td>Trailing threshold</td><td>Follows peak equity</td><td>Typically static at the starting balance</td></tr>
+          <tr><td>Consistency</td><td>May be applied</td><td>Applied firmly at payout</td></tr>
+          <tr><td>Minimum days</td><td>To complete the evaluation</td><td>Before each withdrawal</td></tr>
+          <tr><td>KYC</td><td>At registration</td><td>Again before the first payout</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The reassuring part is that trailing behaviour usually disappears at funding, replaced by a static level. The demanding part is that the payout conditions apply in sequence and independently: minimum days, profit threshold, consistency ratio, KYC, then processing. Meeting four of the five produces nothing, which is why the funded-phase plan should list all five with a target date for each.</p>
+    <p>Two habits make the difference in practice. Complete KYC in the first week of the funded phase rather than when the threshold is reached, and plan the threshold and the minimum day count to complete on the same day so there is no idle period at target. Traders who ignore both find the first withdrawal taking three to six weeks; traders who plan both find it taking days. The <a href="/blog/funded-account-payout-process.html">payout process guide</a> covers the sequence, the three withdrawal methods and the delays that block first payouts.</p>
+    <h2>How this firm compares with other futures evaluations</h2>
+    <p>Futures firms differ far less on targets and splits than on how their failure thresholds behave, which is the axis that should drive the choice.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Firm</th><th>Threshold behaviour</th><th>Daily limit</th><th>Consistency</th><th>Notable feature</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Take Profit Trader</strong></td><td>Trailing</td><td>Explicit</td><td>At payout</td><td>Smaller entry tiers for a first futures evaluation</td></tr>
+          <tr><td>Apex Trader Funding</td><td>Intraday trailing</td><td>Via trailing floor</td><td>30% best day at payout</td><td>Account sizes up to $300,000</td></tr>
+          <tr><td>Topstep</td><td>Intraday trailing</td><td>Explicit</td><td>Best-day expectation</td><td>Two loss rules stated separately</td></tr>
+          <tr><td>MyFundedFutures</td><td>End-of-day trailing on some plans</td><td>Plan dependent</td><td>At payout</td><td>Choice between trailing models</td></tr>
+          <tr><td>TradeDay</td><td>End-of-day trailing</td><td>Explicit</td><td>Yes</td><td>Simplest structure to plan around</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The single most valuable feature in that table is end-of-day trailing, because it removes the mechanic that punishes giving back an unrealised gain. Where a firm offers both structures, the end-of-day version is generally the better assignment unless the intraday plan is dramatically cheaper — and the price gap is rarely large enough to justify the difference in difficulty.</p>
+    <p>A second comparison point that is often overlooked: consistency at payout is close to universal in futures, unlike in forex, where several major firms apply no consistency requirement at all. Traders whose profit naturally concentrates — a small number of larger positions rather than many small ones — should weigh that carefully. For that style, a forex or CFD evaluation with a static drawdown and no consistency rule is frequently the easier route to a funded account, even though the instrument set is different.</p>
+    <h3>Account tiers and first evaluations</h3>
+    <p>Smaller tiers are the sensible starting point for a trader new to trailing thresholds, for two reasons. First, the mechanic takes a few sessions to internalise, and learning it on a smaller account costs less in absolute terms when the lesson goes wrong. Second, the fixed cost per contract is a larger drag on a small target, which discourages the very behaviour that fails trailing accounts — over-trading to reach a target quickly.</p>
+    <p>What smaller tiers do not do is change the rules. The plan, the ladder and the floor check are identical at every size; only the dollar figures move. A trader who size-mismanages a small account will size-mismanage a large one, which is why sequencing — pass one, trade it into a payout, then add a second — produces a funded portfolio faster than running several evaluations simultaneously and splitting attention across all of them.</p>
+    <h2 id="service">Passing it yourself or with a service</h2>
+    <p>Everything in this guide can be executed by a disciplined trader working alone. The parts that a service adds are narrow and specific: the rulebook translation that identifies which of the two loss constraints binds today, the daily floor recalculation, and the discipline to cap a winning session and reduce size near the end — sustained for two to three weeks without the drift that comes from trading against a deadline.</p>
+    <p>ElitePropX trades Take Profit Trader evaluations for a flat $220, with retries covered on rule breaches and no profit split on the funded account. Before buying anything from any service, confirm your firm's current position on third-party trading: some firms prohibit it, and enforcement can arrive after funding rather than during the evaluation. If your firm takes that position clearly and enforces it, the right advice is to pass the evaluation yourself or move to a firm with clearer terms — and any service that tells you otherwise is selling rather than advising.</p>
+    <h3>Three failure patterns worth recognising early</h3>
+    <p><strong>Pattern one: the strong Monday.</strong> A trader opens the week with a large win, the floor jumps, and the remaining four sessions are spent defending a buffer too thin for their usual size. The account survives the week but ends it with less room than it started, and the following week begins with the trader already at their maximum size relative to available risk. The fix is a hard rule that a session worth more than 3% of target closes the day out.</p>
+    <p><strong>Pattern two: the recomputed floor.</strong> Traders who plan against the starting threshold rather than the current one take on size that was appropriate on day one and is dangerous by day ten. The floor must be written down each morning before the first entry, not recalled from memory — the number changes precisely on the days a trader feels most confident, which is when recall is least reliable.</p>
+    <p><strong>Pattern three: the deadline drift.</strong> Targets only bite when a trader has set a date for reaching them. As that date approaches, size creeps up and selectivity drops, and the account fails on a setup that would have been skipped a fortnight earlier. A calendar is the useful tool here, not as pressure but as evidence: if the plan needed more days than were available, the plan was wrong, not the market.</p>
+    <h2>Frequently asked about Take Profit Trader</h2>
+    <details class="faq"><summary>How does the trailing threshold work?</summary><div class="faq-a"><p>It follows your peak equity upward and never moves back down. The absolute distance from the peak to the threshold stays roughly constant, so any retracement from the peak is measured against a raised floor — which is why a profitable session can leave the account more fragile than it started.</p></div></details>
+    <details class="faq"><summary>How long does it take to pass?</summary><div class="faq-a"><p>Eleven to sixteen trading days with disciplined pacing. Faster passes are possible on a favourable rulebook but usually create a consistency problem that delays the first payout instead of arriving sooner.</p></div></details>
+    <details class="faq"><summary>What risk per trade should I use?</summary><div class="faq-a"><p>A third of whichever constraint binds, with trading stopped once 80% of the daily budget is spent. On a trailing account the binding constraint is sometimes the daily limit and sometimes the remaining buffer to the threshold — calculate both each morning.</p></div></details>
+    <details class="faq"><summary>Should I reduce size as I approach the target?</summary><div class="faq-a"><p>Yes. Full size to 40% of target, three quarters from 40% to 70%, half beyond 70%. This is mandatory on a trailing account rather than a preference, because progress reduces the room available for a normal losing sequence.</p></div></details>
+    <details class="faq"><summary>Is a losing day or a winning day more expensive?</summary><div class="faq-a"><p>A winning day, on a trailing structure. A loss consumes part of the daily budget and does not move the floor. A win raises the floor permanently — and if part of that win was unrealised before a retracement, the floor rose by more than the amount banked.</p></div></details>
+    <details class="faq"><summary>What happens if the evaluation fails?</summary><div class="faq-a"><p>The firm's reset and purchase options apply. Where a passing service trades the evaluation, a reset on the same firm and size carries no additional service fee under the flat $220 arrangement, while the firm's own reset charge is separate.</p></div></details>
+    <details class="faq"><summary>Do payouts have a waiting period?</summary><div class="faq-a"><p>Yes. Funded accounts usually require a minimum number of trading days plus a profit threshold before the first withdrawal, and firms process payout requests on a schedule rather than on demand. Planning the threshold and the day count to land on the same date is the single biggest time saver.</p></div></details>
+    <details class="faq"><summary>Which account tier should I start with?</summary><div class="faq-a"><p>The smallest tier you can trade without changing your approach, for two reasons: the trailing mechanic takes a few sessions to internalise, and a smaller target makes the fixed cost per contract a larger share of the goal, which discourages over-trading. The rules are identical at every size, so a smaller account teaches the same lesson more cheaply.</p></div></details>
+    <details class="faq"><summary>Can I hold positions overnight?</summary><div class="faq-a"><p>Policies differ by firm and by plan, and holding into a gap adds a risk that a trailing threshold cannot absorb — the loss counts immediately while the floor has already moved. Where the plan permits overnight positions, gap risk is budgeted explicitly; where it does not, the book is flat before the close.</p></div></details>
+    <details class="faq"><summary>What is the most common mistake?</summary><div class="faq-a"><p>Continuing to trade after a strong session. The floor has moved, the consistency ratio has tightened, and the account has the least room and the least to gain. Closing the session at the daily cap is the behaviour that separates passes from resets.</p></div></details>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <h2 id="first-month">The first month on a funded Take Profit Trader account</h2>
+    <p>Passing is the second-hardest part of a futures evaluation. The hardest is the first month on the funded account, where the trailing floor applies from day one, the payout conditions are live, and there is no target to aim at. Traders who fail here usually fail by doing what worked during the evaluation at the wrong moment.</p>
+    <h3>Week one: do almost nothing</h3>
+    <p>The first week after funding is not the time to press. The account has no buffer beyond its starting balance, the floor is at its closest, and the payout conditions probably require a minimum number of trading days anyway. A week of two or three small trades establishes the new routine and, more usefully, establishes a small profit cushion that widens the distance to the floor.</p>
+    <p>The counter-argument — that the account cost money and should be worked hard — is the reason many funded accounts never pay out. A funded account is not a race; it is a licence that remains valid as long as the rules are respected.</p>
+    <h3>Week two: build toward the profit threshold</h3>
+    <p>Most funded programs require a profit threshold before the first withdrawal, so the objective in weeks two and three is to reach it without concentrating the result. That means a session cap: no day worth more than roughly a fifth of the required profit. The cap protects the consistency ratio later and prevents a single session from setting a best day that the rest of the account has to catch up with.</p>
+    <h3>Week three: check the ratio before requesting</h3>
+    <p>Before any withdrawal request, compute the best day as a share of total profit. If the number is above the firm's threshold, the request will be refused, and the correct response is to add ordinary profit rather than to add size. The arithmetic is mechanical: required total profit equals best day divided by the consistency percentage.</p>
+    <h3>Week four: request, then repeat</h3>
+    <p>Once the threshold, the day count and the ratio are all satisfied, request the payout and keep trading at the same reduced size afterwards. The second cycle is easier than the first because the cushion is larger, and the third is easier again — which is why the first month is the one that decides whether a funded account becomes an income stream or a story about a firm that never pays.</p>
+    <h2 id="vs-other">How the trailing model compares with the alternatives</h2>
+    <p>Take Profit Trader's trailing threshold is one of three structures a futures trader will encounter, and the differences are not academic — they change which strategies are viable.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Structure</th><th>Floor behaviour</th><th>Strategy implication</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Trailing (TPT-style)</td><td>Follows peak equity or balance; never moves back</td><td>Exits must bank profit; give-back is charged twice</td></tr>
+          <tr><td>Static</td><td>Fixed at start; never moves</td><td>Can tolerate giving back unrealised gains</td></tr>
+          <tr><td>End-of-day trailing</td><td>Updates once at the close</td><td>Intraday give-back is free; overnight gaps are not</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The trailing structure is the strictest of the three and the one most sensitive to exit discipline. A strategy that relies on letting a winner run through a pullback is viable on a static account and expensive on a trailing one, not because the strategy is worse but because the structure charges for the pullback in a way the market does not.</p>
+    <p>The practical implication is to size down as the account progresses rather than to hold size constant. On a static account, constant size is fine; on a trailing account, the room available for a normal losing sequence shrinks with every new equity high, so constant size is an increasing risk over time even though nothing about the plan has changed.</p>
+    <h3>What to do if the floor has already caught up</h3>
+    <p>If a funded account is at a new high and the distance to the floor has narrowed to the point where two normal losses would end it, the answer is to stop, not to continue at a smaller size — because the position that recovers the account is the one taken with the least room. Close the cycle, request the payout if eligible, and let the floor's relationship to balance reset with a banked profit rather than with hope.</p>
+    <p>That last point is worth restating because it inverts the instinct: on a trailing account, the moment a trader feels most capable is the moment the account is most fragile. The floor has followed the success, the buffer has shrunk, and the next ordinary losing sequence costs more room than the last one did. Recognising that inversion is most of the skill the structure rewards.</p>
+    <p>A practical way to make the inversion visible is to write two figures at the top of each session: equity and distance to the floor. When the second number shrinks while the first grows, size comes down. Traders who track both find the decision obvious; traders who track only equity find it surprising, usually on the day the account ends.</p>
+    <p>The same two figures answer a question traders ask constantly: when should I stop for the day? Stop when the distance to the floor is less than three times the planned per-trade risk. At that point a normal losing sequence would end the account, and continuing is no longer trading a plan — it is trading the remainder of a plan.</p>
+    <p>Written down, that rule turns a judgement call into arithmetic, which is the only form of discipline that survives a bad afternoon.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Struggling with the trailing floor?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
+      <li><a href="/reviews/best-prop-firm-passing-service-2026.html">What buyers report: the 2026 service review</a></li>
+      <li><a href="/passed-challenges.html">Recently passed evaluations</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">The complete guide to passing a challenge</a></li>
+      <li><a href="/contact.html">Start an evaluation for a flat $220</a></li>
+    </ul>
+  </div>
+</section>

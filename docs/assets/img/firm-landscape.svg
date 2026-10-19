@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-label="Prop firm landscape: forex versus futures firms and evaluation versus instant funding" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="1000" height="560" fill="#fff"/>
+  <text x="52" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">FIRM LANDSCAPE</text>
+  <text x="52" y="86" font-size="27" font-weight="800" fill="#0b1220">Where the major firms sit</text>
+  <rect x="150" y="130" width="760" height="360" rx="14" fill="#f4f7fc" stroke="#dbe3ef"/>
+  <line x1="150" y1="310" x2="910" y2="310" stroke="#c9d4e5" stroke-width="1.5"/>
+  <line x1="530" y1="130" x2="530" y2="490" stroke="#c9d4e5" stroke-width="1.5"/>
+  <text x="530" y="518" font-size="12.5" fill="#6b7a92" text-anchor="middle">Forex / CFD</text>
+  <text x="530" y="120" font-size="12.5" fill="#6b7a92" text-anchor="middle">Futures</text>
+  <text x="140" y="315" font-size="12.5" fill="#6b7a92" text-anchor="end">Evaluation</text>
+  <text x="920" y="315" font-size="12.5" fill="#6b7a92">Instant funding</text>
+  <g>
+    <circle cx="300" cy="210" r="9" fill="#0e9f6e"/>
+    <text x="314" y="214" font-size="12.5" fill="#0b1220">FTMO</text>
+  </g>
+  <g>
+    <circle cx="360" cy="255" r="6.5" fill="#243b5c"/>
+    <text x="374" y="259" font-size="12.5" fill="#0b1220">FundedNext</text>
+  </g>
+  <g>
+    <circle cx="400" cy="372" r="6.5" fill="#243b5c"/>
+    <text x="414" y="376" font-size="12.5" fill="#0b1220">The5ers</text>
+  </g>
+  <g>
+    <circle cx="455" cy="268" r="6.5" fill="#243b5c"/>
+    <text x="469" y="272" font-size="12.5" fill="#0b1220">FXIFY</text>
+  </g>
+  <g>
+    <circle cx="285" cy="330" r="6.5" fill="#243b5c"/>
+    <text x="299" y="334" font-size="12.5" fill="#0b1220">FundingPips</text>
+  </g>
+  <g>
+    <circle cx="700" cy="205" r="9" fill="#0e9f6e"/>
+    <text x="714" y="209" font-size="12.5" fill="#0b1220">Apex</text>
+  </g>
+  <g>
+    <circle cx="760" cy="250" r="9" fill="#0e9f6e"/>
+    <text x="774" y="254" font-size="12.5" fill="#0b1220">Topstep</text>
+  </g>
+  <g>
+    <circle cx="660" cy="300" r="6.5" fill="#243b5c"/>
+    <text x="674" y="304" font-size="12.5" fill="#0b1220">MFF</text>
+  </g>
+  <g>
+    <circle cx="745" cy="330" r="6.5" fill="#243b5c"/>
+    <text x="759" y="334" font-size="12.5" fill="#0b1220">MyFundedFutures</text>
+  </g>
+  <g>
+    <circle cx="690" cy="372" r="6.5" fill="#243b5c"/>
+    <text x="704" y="376" font-size="12.5" fill="#0b1220">Take Profit Trader</text>
+  </g>
+</svg>

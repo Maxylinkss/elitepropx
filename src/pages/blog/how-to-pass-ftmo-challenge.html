@@ -1,0 +1,209 @@
+---
+title: How to Pass an FTMO Challenge: Step-by-Step Playbook
+desc: A procedural walkthrough of an FTMO evaluation: the pre-purchase audit, the risk line, a twenty-day calendar and the decision gates that keep an account alive.
+path: /blog/how-to-pass-ftmo-challenge.html
+type: article
+h1: How to pass an FTMO challenge, step by step
+kicker: Playbook
+crumb: How to pass FTMO
+section: Firm guides
+sectionUrl: /blog/
+date: 2026-10-18
+updated: 2026-10-18
+priority: 0.8
+schemaService: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Playbook · reviewed October 2026</p>
+    <h1>How to pass an FTMO challenge, step by step</h1>
+    <p class="lede">Most FTMO guides explain the rules. This one is a sequence: the four things to audit before paying, the arithmetic that fixes account size and risk, a twenty-day calendar with decision gates at each milestone, and the exact steps between the moment the target is hit and the moment a funded account pays. It is written as a procedure to follow in order, because the order is where attempts are won and lost.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>The sequence matters more than the strategy: size comes from the drawdown, risk comes from the daily limit, and the calendar comes from both.</li>
+        <li>A twenty-day pass is a pacing decision, not a talent decision — it is the fastest calendar that the risk rules can survive.</li>
+        <li>Four decision gates (25%, 50%, 75% and 90% of target) turn a long evaluation into four short ones.</li>
+        <li>The pass is not the finish line; verification, the funded account's tighter rules and the first payout cycle sit between the target and any money.</li>
+        <li>Every step here assumes the firm's terms permit the way you trade. Confirm that in writing before the first fee, especially if anyone else is trading the account.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#sequence">Why the sequence decides the outcome</a></li>
+        <li><a href="#audit">Before you pay: the four-part audit</a></li>
+        <li><a href="#size">Step one: account size from the drawdown</a></li>
+        <li><a href="#risk">Step two: the risk line</a></li>
+        <li><a href="#calendar">Step three: the twenty-day calendar</a></li>
+        <li><a href="#daily">Step four: the daily operating checklist</a></li>
+        <li><a href="#gates">The four decision gates</a></li>
+        <li><a href="#target">The day the target is hit</a></li>
+        <li><a href="#phase2">Phase two, run differently</a></li>
+        <li><a href="#funded">From funded account to first payout</a></li>
+        <li><a href="#breach">If you breach: the reset decision</a></li>
+        <li><a href="#service">Using a passing service, and what to ask</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="sequence">Why the sequence decides the outcome</h2>
+    <p>Two traders can run the same strategy on the same evaluation and produce opposite results, purely because they made their decisions in a different order. The first picks an account size they can afford, then works out risk from the target, then discovers the daily limit is too small for the schedule. The second works backwards from the rules: the drawdown fixes the size, the daily limit fixes the risk, and the target fixes the calendar.</p>
+    <p>The second order is the only one that produces a plan which cannot breach by construction. It is also slower to set up and considerably faster to complete, because time spent on arithmetic before the fee is time not spent recovering from an avoidable breach.</p>
+    <p>There is a second reason to think in sequence. An evaluation is a chain of conditions, and a chain is only as strong as its weakest link. The trading rules are one link. Verification is another. The funded account's tighter drawdown is a third. The payout conditions are a fourth. Traders who fail rarely fail at the link they were watching, which is why the procedure below continues past the pass instead of stopping there.</p>
+    <p>Finally, a note on expectations. FTMO's structure is well documented and widely copied, which means the mechanics are not the hard part — the hard part is executing a boring plan for four weeks without inventing a reason to deviate. This guide is therefore as much a schedule as a strategy. The strategy is the trader's; the schedule is what makes it survive a rulebook.</p>
+    <h2 id="audit">Before you pay: the four-part audit</h2>
+    <p>Four questions, answered in writing, before any fee is paid. Each one has ended someone's attempt before it began.</p>
+    <p><strong>One: which account stage and size?</strong> The smallest account whose rules can be satisfied is usually a better purchase than the largest that can be financed. A large account with a risk plan that is too conservative to finish inside a reasonable calendar is a slow loss; a small account with a plan that fits is a fast pass and a funded login.</p>
+    <p><strong>Two: does the firm's terms permit the way you trade?</strong> The relevant clauses are the news-trading restriction, the weekend and overnight policy, any prohibition on high-frequency or latency-dependent strategies, and — separately — whether third-party trading or account management is allowed on the evaluation and on the funded account. Those are two different answers and the funded one is the one with money attached.</p>
+    <p><strong>Three: what is the total cost to funding?</strong> Fee, platform, data, and any activation charge on the funded account. A one-off fee makes a slow pass cheap; a monthly fee makes it expensive. The <a href="/blog/ftmo-challenge-passing.html">FTMO mechanics guide</a> covers the structure and the <a href="/blog/ftmo-passing-tips.html">FTMO tips guide</a> covers the practical filters; this page assumes both are read and moves straight to the procedure.</p>
+    <p><strong>Four: what is the server's day boundary?</strong> The daily loss limit is measured from a defined start of day, and that start is set by the firm's server, not the trader's clock. Establish it before the first trade, because a session that straddles the boundary can put two positions' risk against two different days, and the second day begins with a deficit the trader did not plan.</p>
+    <p>Write the four answers on one page. If any of them is unclear, the correct next action is a support ticket rather than a payment, and the reply should be kept. A written answer from the firm is the only version of the terms that survives a dispute.</p>
+    <h2 id="size">Step one: account size from the drawdown</h2>
+    <p>The maximum loss, not the fee, should choose the account size. The reason is that the maximum loss defines the per-trade risk, and the per-trade risk defines whether the strategy can be traded at all.</p>
+    <p>Take the firm's stated maximum loss as a percentage of the starting balance. Decide how many consecutive losses the plan should survive — for a discretionary plan with a win rate in the forties, eight to ten is a sensible design case, because runs of that length occur within a few hundred trades and are not anomalies. Divide the maximum loss by that number to get the maximum loss per trade as a percentage.</p>
+    <p>Now convert it into money. On a smaller account, that percentage produces a dollar figure that may be too small to place the stop the strategy needs on the instrument being traded. That is not a reason to widen the risk; it is a reason either to trade a smaller contract size or to choose a larger account.</p>
+    <p>The same calculation run on several account sizes produces an obvious answer surprisingly often: the middle size fits the strategy, the smallest does not permit the stop distance, and the largest is unnecessary because the plan's return is percentage-based and scale-free. Buying the largest affordable account is a common error with a specific cost — the daily limit scales with the account, so the trader ends up with more room than the plan can use, and a larger fee for the privilege.</p>
+    <p>One adjustment is worth making at this stage. If the plan's stop distance produces a per-trade risk that is more than about a tenth of the daily limit, the plan will spend the session on two or three ordinary losses. Either the stop is too wide for the timeframe or the size is too large; both are fixable before the fee rather than after it.</p>
+    <figure>
+      <img src="/assets/img/challenge-math.svg" alt="Chart showing how a profit target and a maximum loss define the risk budget on a 100,000 dollar evaluation account" width="940" height="500" loading="lazy">
+      <figcaption>Target and drawdown are one equation. Sizing for the loss limit is what keeps the account alive long enough to reach the target.</figcaption>
+    </figure>
+    <p>Scale is the reason this step is worth doing properly. A percentage target is identical on every account size, so the plan that passes a small account passes a large one with no changes at all — the only difference is the dollars per trade. That makes the small account a legitimate training ground rather than a consolation prize, and it makes the first pass the cheapest information a trader can buy.</p>
+    <h2 id="risk">Step two: the risk line</h2>
+    <p>The risk line is a single written sentence with four numbers in it, and it governs every trade of the evaluation. Write it before the first session and read it at the start of every one.</p>
+    <p><strong>Risk per trade as a percentage.</strong> Derived in step one from the maximum loss and the streak the plan must survive. It does not change because the account is up, and it does not change because the account is down.</p>
+    <p><strong>Maximum trades per session.</strong> A hard cap, chosen so that the worst session the plan permits cannot breach the daily limit. If risk per trade is a tenth of the daily limit, ten losses would exactly exhaust it — so the cap should be five or six, leaving room for the trade that goes wrong differently from the plan.</p>
+    <p><strong>Maximum daily loss in money.</strong> The firm's limit, restated as an amount the trader can see on the platform without doing arithmetic in the moment. The moment is the worst time to calculate.</p>
+    <p><strong>The stop rule.</strong> Every position has a protective order placed at entry, on the server rather than locally, at a distance the plan specifies. No position is held without one, for any reason, including a high-conviction view.</p>
+    <p>The line only works if it is checked against both limits. A risk per trade that survives the maximum loss but consumes half the daily limit is a line that fails on a normal Tuesday. The correct number is the smaller of the two constraints, and it is usually the daily constraint that binds.</p>
+    <p>Two habits make the line stick. The first is to compute the position size before the session, not during it, and to write the size on the same page. The second is to stop trading when the trade cap or the daily loss is reached, whichever comes first, and to close the platform rather than watch it. Watching is how a stopped session becomes an unstopped one.</p>
+    <p>There is a version of the risk line for traders who are already funded, and it has one extra clause: the funded account's drawdown is frequently tighter than the evaluation's, so the percentage in the line goes down, not up, on the day the funded login arrives. Traders who carry the evaluation's number into the funded account lose it in the first fortnight more often than at any other time.</p>
+    <h2 id="calendar">Step three: the twenty-day calendar</h2>
+    <p>Once the risk line is fixed, the calendar follows from arithmetic rather than optimism. This is the part most plans skip, and it is the part that determines whether the trader spends one fee or three.</p>
+    <p>Expected value per trade is a function of the win rate, the reward-to-risk ratio and the risk per trade. With a risk of a fraction of a percent and a ratio of two, a plan with a win rate in the forties produces a small positive expectation per trade. Dividing the profit target by that expectation gives the number of trades required at expectation, and dividing by the trades per week the schedule allows gives the calendar.</p>
+    <p>Running that calculation usually produces a number between fifteen and thirty trading days for a conservative plan. That is the honest pace. A twenty-day target is achievable because it is roughly what the arithmetic produces, not because it is a round number that sounds good in marketing.</p>
+    <p>The important consequence is what to do when the plan is behind. If the calendar was derived rather than assumed, being behind on day twelve is information: either the expectation is lower than designed or the trade count is lower than planned. Neither is fixed by increasing size. The correct responses are to increase the trade count within the cap, to accept a longer calendar, or to conclude that the plan's ratio is not good enough and stop — in that order.</p>
+    <p>Two calendar rules make the plan robust. First, trade a fixed number of sessions per week, not every available session; a schedule with rest days produces a lower breach rate over a month than one without. Second, put the calendar in the diary with a review every Friday, so the decision to extend is made deliberately rather than discovered in week six.</p>
+    <p>A word on minimum trading days, where the firm imposes them. They are satisfied by activity, not profit, and they are almost never the binding constraint on a twenty-day plan. The trap is the reverse: a trader reaches the target in five sessions, then has to trade for ten more days to satisfy a count, and gives back a fifth of the target in the process. If the count is longer than the plan, slow the plan down from the start so the target and the count finish together.</p>
+    <h2 id="daily">Step four: the daily operating checklist</h2>
+    <p>The checklist exists because the rules are simple and the moment is not. It runs in the same order every session.</p>
+    <p><strong>Before the session.</strong> Confirm the account's distance to the maximum loss and the daily limit as they stand this morning, not as they stood at the start of the evaluation. On a static drawdown those numbers are fixed; on anything that trails, they have moved, and the position size computed three weeks ago may no longer fit.</p>
+    <p><strong>Before the first trade.</strong> Name the setup being waited for. If the plan's setup has not appeared, the session has no trades in it, and that is a completed session rather than a missed opportunity. The trade taken without a named setup is the one that consumes the daily limit.</p>
+    <p><strong>At entry.</strong> Place the protective order at the same time as the position, at the planned distance, on the server. Size comes from the risk line, not from the chart. If the chart suggests a size larger than the line permits, the chart is not in charge of the size.</p>
+    <p><strong>During the trade.</strong> No stop widening, no adding to a loser, no partial close that leaves the remainder without a protective order. Each of those three is a rule breach in a different costume, and each is more likely on the trade the trader feels most strongly about.</p>
+    <p><strong>At the close.</strong> Record the trade: setup, size, planned risk, realised risk, result. Realised risk is the number that matters, because slippage and spread are part of the strategy's cost and are usually underestimated. A month of records turns a guess about the plan's expectation into a measurement.</p>
+    <p><strong>At the session end.</strong> Compare the day's loss to the daily limit and the day's trade count to the cap. If either is at the limit, the session is over regardless of how the market looks. Then close the platform.</p>
+    <p>The checklist is deliberately dull. Its value is that it removes the two decisions that cost the most: whether to take a trade that does not match the plan, and whether to stop after a loss. Both are decided in advance, when the trader is calm and the arithmetic is checkable.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="Diagram of a daily loss limit measured from the day's starting balance, showing how a session budget is consumed by successive losing trades" width="1000" height="540" loading="lazy">
+      
+    </figure>
+    <p>One addition for traders who work full time: compress the checklist rather than skip it. A single session per day with a two-trade cap and a pre-written size satisfies every item on this list in under ten minutes. What cannot be compressed is the pre-session check of the remaining room, because that is the number every other decision depends on.</p>
+    <h2 id="gates">The four decision gates</h2>
+    <p>A one-month evaluation is too long to hold in working memory, so it is worth splitting into four short ones at fixed points of progress. Each gate has one question and one action.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Gate</th><th>Question</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>25% of target</td><td>Is realised risk matching planned risk?</td><td>If slippage is eating the edge, cut the size and shorten the stop distance rather than the targets</td></tr>
+          <tr><td>50% of target</td><td>Is the calendar still realistic at this trade count?</td><td>Extend the date or raise the trade count within the cap; never the size</td></tr>
+          <tr><td>75% of target</td><td>Has the daily limit been touched more than once?</td><td>If yes, the risk line is too heavy for the schedule — cut size by a quarter for the remainder</td></tr>
+          <tr><td>90% of target</td><td>Can the last stretch be finished without a dominant day?</td><td>Halve the size, cap daily profit, and take the extra sessions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The first gate is the most informative and the most often skipped. Traders plan risk in percentage terms and measure results in money, and the difference between the two is the cost of executing the plan — spread, commission, slippage on entry and exit. On a plan with a small expectation per trade, a cost that is a fifth of the planned risk can turn a positive expectation into a flat one. Gate one exists to catch that before it compounds over a month.</p>
+    <p>The second gate is where patience is either granted or refused. Being at half the target with half the calendar gone is on pace and requires no change. Being at a quarter of the target with half the calendar gone is behind, and the arithmetic from step three says what to do: raise the trade count, extend the date, or stop. The one forbidden response is to raise the size, because that changes the plan's survival probability rather than its speed.</p>
+    <p>The third gate is a diagnostic. A daily limit touched once in a month is variance. Touched three times, it is a risk line that is too heavy for the session count, and the account is one ordinary bad day from ending. Cutting size at three-quarters of the target feels like giving up progress; it is in fact the cheapest insurance available at that point.</p>
+    <p>The fourth gate is about the shape of the profit, not the amount. Nearly there, the temptation is a large position to finish the job. That single trade creates two risks at once: a breach of the daily limit if it goes wrong, and a consistency problem at the payout stage if it goes right. Halving the size and adding sessions costs a few days and preserves both.</p>
+    <h2 id="target">The day the target is hit</h2>
+    <p>The moment the target is reached, the objective changes from making money to keeping a record clean. Four steps, in this order.</p>
+    <p><strong>Stop trading the account.</strong> Not reduce, stop. A target reached on Tuesday and a position opened on Wednesday is a target that can be lost before the firm processes it. The evaluation is complete; there is nothing left to gain and a fee to lose.</p>
+    <p><strong>Check the day count.</strong> If the firm requires a minimum number of trading days and the target arrived early, the remaining days must be traded. Do it at a fraction of the risk line, with a daily profit cap, and accept flat sessions. The purpose is activity, not profit.</p>
+    <p><strong>Check the consistency position.</strong> Establish the share of total profit contributed by the best day. If one session dominates, a funded payout may later be constrained by that ratio, and the constraint cannot be fixed retroactively. Where the firm applies consistency at the evaluation stage, this is the moment to verify the number rather than assume it.</p>
+    <p><strong>Read the funded terms properly.</strong> The evaluation page is marketing; the funded terms are the contract. Look specifically at the funded drawdown, the minimum profitable days before a withdrawal, the profit threshold, the consistency rule and whether it applies at every payout or only the first, and the third-party clause. Each of those changes how the funded account should be traded from the first session.</p>
+    <figure>
+      <img src="/assets/img/payout-timeline.svg" alt="Timeline from passing an evaluation through funded account issue, verification, minimum days and consistency check to the first withdrawal" width="1000" height="420" loading="lazy">
+      <figcaption>A pass starts a second sequence. Verification and the funded rules sit between the target and any income.</figcaption>
+    </figure>
+    <p>One practical detail that costs people a week: begin identity and address verification on the day the funded account is issued, not the day the first withdrawal is requested. Verification is administrative, has nothing to do with the trading record, and is routinely the step that delays a first payment. Completing it early removes the only part of the chain the trader cannot influence afterwards.</p>
+    <p>Then, before the first funded trade, rewrite the risk line for the funded account. The drawdown is usually tighter as a percentage, the payout conditions constrain how much profit should be taken per day, and the objective is no longer to hit a target but to complete a payout cycle. Those are three different numbers from the evaluation's, and carrying the old line across is the single most common way a fresh funding is lost.</p>
+    <h2 id="phase2">Phase two, run differently</h2>
+    <p>A two-phase evaluation is not the same task repeated. The second phase has a different cost of failure, a different psychological position and, usually, a slightly different target.</p>
+    <p>The cost of failure is higher because a breach in phase two wastes the phase-one work as well as the fee, and any retry usually restarts the sequence. The psychological position is worse for the same reason: the trader is close, and closeness is the condition under which discipline erodes. The target is often smaller, which is a trap — a smaller target invites a larger size to finish quickly, at exactly the point where the account is most expensive to lose.</p>
+    <p>The correct response is to run phase two at a lower risk per trade than phase one, not the same. A reduction of a quarter to a third is enough to change the survival probability meaningfully while adding only a few days to the calendar, and the few days are cheap relative to a restart. The trade cap stays, the checklist stays, and the four gates move to the new target's fractions.</p>
+    <p>There is one structural advantage worth using. Phase one produced a month of records. Those records are the best available estimate of the plan's expectation, its realised cost per trade and its true win rate. Running phase two without reading them is choosing to repeat the first phase's mistakes with less room for error. If the records show the expectation is thin, phase two should be slower and smaller, not faster and larger.</p>
+    <p>If the firm offers a single-phase route at a higher fee, it is worth costing honestly rather than reflexively choosing the cheaper two-phase path. Two phases at a lower fee is cheaper only if both are completed; a breach in phase two usually costs the whole sequence. The comparison is expected cost, not sticker price, and the expected cost depends on the trader's own breach rate — which the first month's records will now estimate.</p>
+    <h2 id="funded">From funded account to first payout</h2>
+    <p>The funded account has conditions of its own, and the first payout cycle is a sequence rather than a single request.</p>
+    <p><strong>Halve the risk for the first fortnight.</strong> The funded drawdown is frequently tighter than the evaluation's, and the account is now the thing that produces income. Half the evaluation's risk per trade for the first ten sessions is enough to establish that the funded rules behave as expected without putting the allocation at risk of a normal losing sequence.</p>
+    <p><strong>Satisfy the day count deliberately.</strong> Minimum profitable days are usually the most commonly missed condition, because they are satisfied by activity rather than by profit. Plan for them: a smaller size, a fixed session count, and a daily profit cap that keeps the consistency ratio intact while the count is accumulated.</p>
+    <p><strong>Keep the consistency ratio intact from day one.</strong> Under a best-day share of around a third, total profit must reach roughly three times the largest day before a full withdrawal. A trader whose best day is a fifth of the threshold needs five times that day in total profit. Setting a daily profit cap well below the ratio from the first session makes the condition automatically satisfied by the time the threshold is reached.</p>
+    <p><strong>Withdraw on the earliest permitted schedule.</strong> Profit left in the account is profit the market can take back, and on a trailing structure it also raises the floor behind the trader. The first withdrawal is worth taking at the smallest permitted size rather than waiting for a larger one, because a completed cycle establishes the payment route, the timing and the tax treatment — three things that are otherwise guesses.</p>
+    <p><strong>Do not scale before the first payout completes.</strong> Scaling plans are judged on completed withdrawals, not on a good month. A trader who increases size after a strong fortnight and then breaches has produced nothing the firm can scale, and has usually broken a consistency ratio on the way.</p>
+    <p>The <a href="/blog/funded-account-payout-process.html">payout process guide</a> walks through the sequence in detail, and the <a href="/blog/prop-firm-consistency-rule-guide.html">consistency guide</a> covers the arithmetic for the common thresholds. Both are worth reading before the funded account is traded rather than after the first withdrawal request.</p>
+    <h2 id="breach">If you breach: the reset decision</h2>
+    <p>A breach is a decision point, not an ending, and the decision should be made with the records rather than with the feeling.</p>
+    <p>The first question is which limit was breached. A maximum-loss breach means the plan's survival arithmetic was wrong: the risk line permitted a sequence the account could not absorb. A daily-limit breach usually means the session cap was too generous or the trade count too high. A rule breach — news trading, holding over a restricted period, exceeding a lot cap — means the plan did not account for the terms, which is a reading failure rather than a trading one. Each has a different fix, and none of them is "try harder".</p>
+    <p>The second question is whether the plan's expectation was positive over the attempt. The records answer it: trades, average result, realised cost per trade. A plan with a positive expectation and a breached limit needs a smaller size, not a different strategy. A plan with a negative expectation needs to stop being traded for money until it is fixed, because a reset buys another sample of the same distribution.</p>
+    <p>The third question is whether the retry is a new attempt or the same one at a higher price. A reset that keeps the size, the stop distance and the session cap is the same attempt. A reset that changes one of the three numbers is a genuine second data point. Budget the retry deliberately, and change something measurable.</p>
+    <p>There is also a version of the reset decision that involves help. Where the firm's terms permit third-party trading, a passing service converts an uncertain attempt into a fixed cost, which is a legitimate trade for a trader whose own breach rate is high. ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid it. That last point is not a formality: a pass produced in breach of a third-party clause is a pass that can be voided at the payout request. The <a href="/blog/best-prop-firm-passing-services.html">passing services guide</a> sets out the checks, and the <a href="/blog/prop-firm-scams-to-avoid.html">scam guide</a> covers the failure modes.</p>
+    <h2 id="service">Using a passing service, and what to ask</h2>
+    <p>If the account is going to be traded by someone else, the questions change from trading questions to contract questions. Six of them, in order.</p>
+    <p><strong>Is third-party trading permitted on the evaluation?</strong> And, separately, on the funded account? A firm can permit one and prohibit the other, and the funded answer is the one that decides whether a pass produces money.</p>
+    <p><strong>What exactly is the flat fee, and what does it cover?</strong> A per-evaluation price that is independent of account size and stage is a price that can be compared. A percentage of the target is a price that scales with the thing the service is being paid to achieve, which aligns incentives in the wrong direction.</p>
+    <p><strong>What happens if the attempt fails?</strong> Retries covered at no additional cost is the only answer that makes a fixed fee meaningful. A retry fee converts the fixed cost back into a per-attempt gamble.</p>
+    <p><strong>Who holds the login?</strong> The funded account should be issued in the trader's name, with credentials in the trader's control, and the service should have access only for the duration of the work. Any arrangement where the service owns the account is a different product.</p>
+    <p><strong>What is the profit split?</strong> A passing service should take none: the payment is for the pass, and the funded account's profit belongs to the account holder. A service that takes a share of payouts has an incentive to keep trading the account after the pass.</p>
+    <p><strong>What is the refund or decline policy?</strong> A service that refunds when the firm's terms turn out to forbid the work is a service that has read the terms. One that does not is transferring that risk to the buyer.</p>
+    <p>The wider point is that a flat fee changes the arithmetic of an evaluation from a repeated cost to a single one. For a trader whose own breach rate is high, that conversion is worth more than the difference between the fee and a reset, because it removes the variance as well as the cost.</p>
+    <h2 id="faq">Frequently asked questions</h2>
+    <details class="faq"><summary>How long does it take to pass an FTMO challenge?</summary><div class="faq-a"><p>Fifteen to thirty trading days at a conservative size, derived from the plan's expectation per trade rather than chosen in advance. Faster is possible with larger size and a correspondingly lower survival probability. A twenty-day calendar is a reasonable target because it is roughly what the arithmetic produces at survivable risk.</p></div></details>
+    <details class="faq"><summary>What is the first thing to do before paying the fee?</summary><div class="faq-a"><p>Audit four things: the account size whose rules the plan can satisfy, whether the terms permit the way you trade, the total cost to funding including platform and data, and the firm's server day boundary. Any unclear answer should become a support ticket with the reply kept.</p></div></details>
+    <details class="faq"><summary>How do I choose the account size?</summary><div class="faq-a"><p>From the maximum loss, not the fee. Divide the maximum loss by the number of consecutive losses the plan should survive to get risk per trade, then check that the resulting dollar risk permits the stop distance the strategy needs. The smallest account that fits is usually the better purchase.</p></div></details>
+    <details class="faq"><summary>Why does the daily limit end more attempts than the target?</summary><div class="faq-a"><p>Because it fires on normal variance rather than on a bad plan. If risk per trade is a large fraction of the daily limit, two or three ordinary losses close the session. Setting risk from the daily limit as well as the maximum loss, and capping trades per session, removes most of that failure mode.</p></div></details>
+    <details class="faq"><summary>What should I do the moment I hit the target?</summary><div class="faq-a"><p>Stop trading the account. Then check the minimum day count, the consistency position, and the funded terms — particularly the funded drawdown, the payout conditions and the third-party clause. Start identity verification on the day the funded login is issued.</p></div></details>
+    <details class="faq"><summary>Should phase two be traded at the same size as phase one?</summary><div class="faq-a"><p>Lower, not the same. A breach in phase two wastes both phases, and the temptation to accelerate is strongest when the target is closest. A quarter to a third less risk per trade adds a few days to the calendar and removes most of the restart risk.</p></div></details>
+    <details class="faq"><summary>How much should I risk on the funded account?</summary><div class="faq-a"><p>Half the evaluation's risk per trade for the first ten sessions, then reassess. Funded drawdowns are frequently tighter as a percentage, and the funded account is where the income comes from — the cost of being slow is small, the cost of a breach is the allocation.</p></div></details>
+    <details class="faq"><summary>Can I hold positions over the weekend?</summary><div class="faq-a"><p>Check the firm's policy for the instrument and account type, since swing accounts and standard accounts usually differ. Where holding is permitted, price the gap as a multiple of the stop and cut the size accordingly — the <a href="/blog/prop-firm-weekend-holding-rules.html">weekend holding guide</a> covers the arithmetic.</p></div></details>
+    <details class="faq"><summary>What is the most common rule breach?</summary><div class="faq-a"><p>Not the headline limits but the secondary clauses: news trading inside a restricted window, holding through a restricted period, exceeding a lot cap, or breaching the daily limit because the server's day boundary differed from the trader's. All four are reading failures, and all four are avoidable before the fee.</p></div></details>
+    <details class="faq"><summary>Does a passing service work on FTMO?</summary><div class="faq-a"><p>Only if the firm's terms permit third-party trading, which must be confirmed for the evaluation and the funded account separately. ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid it.</p></div></details>
+    <details class="faq"><summary>What should I do after a breach?</summary><div class="faq-a"><p>Identify which limit was breached — maximum loss, daily limit, or a rule clause — because each has a different fix. Then check whether the plan's expectation was actually positive over the attempt. A positive expectation with a breached limit needs smaller size; a negative expectation needs a fixed plan before another fee.</p></div></details>
+    <details class="faq"><summary>Is a two-phase evaluation harder than a single-phase one?</summary><div class="faq-a"><p>Different rather than harder. Two phases mean two targets and two chances to breach, but each target is smaller. The honest comparison is expected cost, which depends on your own breach rate — and the first month's records will estimate that better than any guide.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/ftmo-challenge-passing.html">FTMO challenge passing: the rules laid out</a></li>
+      <li><a href="/blog/ftmo-passing-tips.html">FTMO passing tips that survive the rulebook</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule guide</a></li>
+      <li><a href="/blog/best-futures-prop-firms-2026.html">Best futures prop firms 2026</a></li>
+      <li><a href="/blog/the-5ers-challenge-passing.html">Passing a The5ers challenge</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/">All prop firm guides</a></li>
+    </ul>
+    <p class="disclaimer">FTMO is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Challenge structures, targets and payout terms change; verify them against the firm's current terms. Trading involves substantial risk of loss.</p>
+  </div>
+</section>

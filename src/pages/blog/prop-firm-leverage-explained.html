@@ -1,0 +1,251 @@
+---
+title: Prop Firm Leverage Explained: What It Does to Your Risk
+desc: How leverage works on a prop firm evaluation: why 1:100 does not mean more risk, how margin and stop distance set risk, and what high leverage changes in practice.
+path: /blog/prop-firm-leverage-explained.html
+type: article
+h1: Prop firm leverage explained
+kicker: Rule mechanics
+crumb: Leverage explained
+section: Strategy
+sectionUrl: /blog/
+date: 2026-09-15
+updated: 2026-10-18
+priority: 0.8
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Rule mechanics · reviewed October 2026</p>
+    <h1>Prop firm leverage explained</h1>
+    <p class="lede">Leverage is the most advertised number in retail trading and the least relevant to whether an evaluation is passed. What actually decides outcomes is position size and stop distance — and the two are set by you, not by the margin ratio on the account.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Leverage changes the margin locked up, not the risk per trade. Risk is position size multiplied by stop distance.</li>
+        <li>A 1:100 account with a 1% risk rule is safer than a 1:10 account with a 10% risk rule. The ratio is a constraint, not a hazard.</li>
+        <li>High leverage matters because it permits larger positions — which makes discipline harder, not outcomes predetermined.</li>
+        <li>On a prop firm evaluation, the daily loss limit is the real ceiling on position size, and it binds long before leverage does.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#misread">The number everyone misreads</a></li>
+        <li><a href="#math">The arithmetic: risk, margin and stop distance</a></li>
+        <li><a href="#limits">Which constraint actually binds</a></li>
+        <li><a href="#temptation">What high leverage really changes</a></li>
+        <li><a href="#sizing">Sizing on a leveraged account, step by step</a></li>
+        <li><a href="#firms">How firms set leverage, and why it varies</a></li>
+      </ol>
+    </div>
+    <h2 id="misread">The number everyone misreads</h2>
+    <p>An account with 1:100 leverage sounds dangerous and an account with 1:10 sounds conservative. On a prop firm evaluation that impression is almost exactly backwards, because neither number sets how much money is at risk on a trade. Leverage sets how much margin a position requires; it does not set the size of the loss if the trade goes wrong.</p>
+    <p>Consider two traders with a $100,000 account and a 1% risk rule — $1,000 per trade. One has 1:100 leverage and the other 1:10. Both risk $1,000. The first needs $1,000 of margin for a position that would otherwise require $100,000 of capital; the second needs $10,000. Their expected losses, their daily budgets and their distance to a failure level are identical. Only the amount of equity sitting in margin differs.</p>
+    <p>What the ratio does change is how large a position can be opened before the platform refuses. That is a permission, not an instruction, and treating permission as instruction is the actual hazard in this topic.</p>
+    <h3>Where the confusion comes from</h3>
+    <p>Retail marketing uses leverage as a proxy for opportunity — "trade 100 times your capital" — which implies that the account's risk scales with the multiple. It does not. A trader who risks 1% per trade at 1:500 leverage risks 1% per trade. A trader who risks 20% per trade at 1:5 leverage risks 20%.</p>
+    <p>The one place the confusion has teeth is margin calls. On a live account, a position too large for the available margin is closed by the broker at the worst possible price. On a prop firm evaluation the same mechanic exists in a different form: the failure level is reached and the account ends, whether the trader intended the size or not.</p>
+    <h2 id="math">The arithmetic: risk, margin and stop distance</h2>
+    <p>The three figures below are the whole topic. Anything else is commentary.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Figure</th><th>What sets it</th><th>Example on EURUSD, $100,000 account</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Risk per trade</td><td>Your plan: percentage of equity</td><td>1% = $1,000</td></tr>
+          <tr><td>Stop distance</td><td>Your analysis: pips or ticks</td><td>50 pips</td></tr>
+          <tr><td>Position size</td><td>Risk divided by stop distance</td><td>$1,000 ÷ 50 pips = $20/pip = 2 lots</td></tr>
+          <tr><td>Margin required</td><td>Position value divided by leverage</td><td>$220,000 ÷ 100 = $2,200 at 1:100</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Read the table in that order and the logic is unavoidable. Risk is chosen first. Stop distance is chosen second, from the chart. Position size is derived third. Margin is the last and least important figure — a consequence of the position, not an input to it.</p>
+    <p>A trader who starts from leverage — "I can open 20 lots, so I will" — has inverted the order. The size no longer follows from the stop, so the loss when the stop is hit is whatever the stop distance happens to imply, which is usually far more than the plan allowed.</p>
+    <figure>
+      <img src="/assets/img/leverage-vs-risk.svg" alt="Three prop firm accounts with different leverage ratios showing the same one thousand dollar risk but different margin requirements" width="1000" height="520" loading="lazy">
+      <figcaption>The same trade, three leverage ratios: identical risk, different margin. Leverage permits size; it does not create risk.</figcaption>
+    </figure>
+    <h3>Why lot size is not risk</h3>
+    <p>Two traders opening 2 lots of EURUSD are not taking the same risk. One has a 20-pip stop, the other a 100-pip stop. The first risks $400, the second $2,000. Position size without stop distance is an incomplete statement, and this is the sentence that explains most failed evaluations: the size looked normal and the stop was wide.</p>
+    <h3>The prop firm version of the calculation</h3>
+    <p>On an evaluation there is a third constraint the live trader does not have: the daily loss limit. Sizing should therefore be derived from the smaller of two numbers — the per-trade risk the plan allows, and the share of the daily budget that a single trade may consume. A daily limit of 5% divided into three trade slots means each trade risks no more than 1.67% even if the plan would allow 2%.</p>
+    <p>On a 1:100 account that ceiling is reached long before margin is. The 2 lots in the example above require $2,200 of margin on a $100,000 account — 2.2% of equity, nowhere near a constraint. The binding number is the $1,000 of risk, not the $2,200 of margin, and it will keep being the binding number at every leverage ratio a firm offers.</p>
+    <h2 id="limits">Which constraint actually binds</h2>
+    <p>Every account has four limits, and only one of them is usually close to being hit. Knowing which one is live on a given account is the difference between sizing from a plan and sizing from a feeling.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Constraint</th><th>Typical figure on a $100,000 account</th><th>Reached at what size?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Per-trade risk (self-imposed)</td><td>$1,000 (1%)</td><td>2 lots with a 50-pip stop</td></tr>
+          <tr><td>Daily loss limit</td><td>$5,000 (5%)</td><td>Five full-risk losses</td></tr>
+          <tr><td>Maximum loss</td><td>$10,000 (10%)</td><td>Ten full-risk losses, or two daily breaches</td></tr>
+          <tr><td>Margin requirement at 1:100</td><td>$2,200 for 2 lots</td><td>Not reached — the account would breach a loss limit first</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Margin is the slackest constraint on a typical prop account. On a $100,000 account with 1:100 leverage, the maximum position size permitted by margin is roughly 45 lots of EURUSD — which, with a 50-pip stop, would risk $22,500 per trade and end the account on the first loss. The leverage allows a position the rules do not, and the rules always win.</p>
+    <p>This is why experienced prop traders ignore the leverage ratio entirely after checking it once. It tells them what the platform will let them do, not what the plan permits, and the two numbers differ by a factor of twenty.</p>
+    <h3>The one situation where leverage matters on an evaluation</h3>
+    <p>There is a genuine case where a low ratio becomes binding: heavily correlated or overnight positions with wide stops, on an account where the daily budget is large relative to equity. A trader holding four positions of 1% risk each with wide stops can find the margin requirement consuming 20% or more of equity, which reduces the room available for further positions and can trigger platform-level forced reduction.</p>
+    <p>The remedy is not more leverage; it is fewer simultaneous positions. A prop firm evaluation is not a portfolio exercise, and the traders who pass are not the ones holding six correlated positions at once.</p>
+    <h2 id="temptation">What high leverage really changes</h2>
+    <p>Since leverage does not create risk, why do accounts with generous leverage fail more often? The answer is behavioural rather than mathematical, and it is worth being precise about because it is the honest version of the warning.</p>
+    <h3>It removes the last defence against size</h3>
+    <p>On a low-leverage account, an oversized position may simply be impossible: the platform rejects it or requires more margin than exists. That is a mechanical brake on a decision the trader was about to make badly. Remove the brake and the decision stands on the trader's discipline alone.</p>
+    <p>Most people are less disciplined than they believe under pressure, which is why the brake had value. On a 1:500 account there is no brake at all — only the daily limit, which arrives after the position is open rather than before.</p>
+    <h3>It changes the meaning of a normal stop</h3>
+    <p>High leverage makes very small stop distances look attractive, because a tight stop on a large position produces a small risk figure. A 5-pip stop on 20 lots risks $1,000 — the same as a 50-pip stop on 2 lots. The risk is identical; the probability of being stopped out by noise is not. Tight stops on large size convert a normal losing sequence into a long series of small losses that eventually breach the daily limit without a single trade being "wrong".</p>
+    <h3>It encourages correlation blindness</h3>
+    <p>The permission to open large positions across several pairs invites what looks like diversification and behaves like one position. Long EURUSD, long GBPUSD and long AUDUSD are three expressions of one view on the dollar. On a leveraged account the three can be opened at full size before the trader notices that the daily budget is already committed.</p>
+    <h3>What the firms know</h3>
+    <p>Firms set leverage where they do for commercial rather than educational reasons — generous ratios are a marketing feature — and they rely on the daily and maximum loss limits to contain the risk. Those limits are generous in percentage terms and unforgiving in practice, which is exactly why the discipline has to come from the plan rather than from the platform.</p>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="A daily loss limit divided into three trade slots with the session closed once eighty percent of the budget is spent" width="940" height="520" loading="lazy">
+      <figcaption>On a leveraged account the daily budget, not the margin requirement, is the number that stops a session.</figcaption>
+    </figure>
+<figure>
+  <img src="/assets/img/challenge-math.svg" alt="Chart showing how a profit target and a maximum loss define the risk budget on an evaluation account" width="940" height="500" loading="lazy">
+  <figcaption>Leverage changes the margin required, not the risk the account can carry.</figcaption>
+</figure>
+    <h2 id="sizing">Sizing on a leveraged account, step by step</h2>
+    <p>The procedure below works on any instrument and any leverage ratio, and it takes about thirty seconds once it is familiar.</p>
+    <h3>Step one: write the risk figure in dollars</h3>
+    <p>Take the smaller of the plan's per-trade risk and the daily limit divided by three. On a $100,000 account with a 5% daily limit and a 1.5% plan, both come to $1,500. Write it down. Every later step reads from this number.</p>
+    <h3>Step two: measure the stop in the instrument's units</h3>
+    <p>Pips for forex, points or ticks for indices and futures, dollars for a fixed-range instrument. The measurement has to be taken from the chart before the position is opened, not adjusted afterwards. Placing an order and then moving the stop to fit the loss is the most common way a 1.5% trade becomes a 3% trade.</p>
+    <h3>Step three: divide to get size</h3>
+    <p>Risk divided by stop distance gives the value per unit. On EURUSD, $1,500 divided by a 30-pip stop gives $50 per pip, which is 5 standard lots. On the ES futures contract, $1,500 divided by a 6-point stop and $50 per point gives 5 contracts. On a gold CFD, $1,500 divided by a $6.00 stop gives $250 per dollar of movement, which is 2.5 lots at $100 per lot per dollar.</p>
+    <h3>Step four: check the result against the daily budget</h3>
+    <p>Three positions of that size must fit inside the daily limit. If they do not, the per-trade risk comes down rather than the number of trades going up. This is the step where prop firm sizing differs from live-account sizing, and it is the step most often skipped.</p>
+    <h3>Step five: check the margin, last</h3>
+    <p>Multiply the position value by the margin requirement and confirm the platform accepts it. On a leveraged prop account this check almost always passes, which is the point: it is a formality rather than a constraint.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Instrument</th><th>Stop</th><th>Risk</th><th>Size</th><th>Margin at 1:100</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>EURUSD</td><td>30 pips</td><td>$1,500</td><td>5.0 lots</td><td>$5,500</td></tr>
+          <tr><td>GBPUSD</td><td>40 pips</td><td>$1,500</td><td>3.75 lots</td><td>$4,800</td></tr>
+          <tr><td>US500 CFD</td><td>12 points</td><td>$1,500</td><td>1.25 lots</td><td>$6,250</td></tr>
+          <tr><td>Gold</td><td>$6.00</td><td>$1,500</td><td>2.5 lots</td><td>$7,875</td></tr>
+          <tr><td>ES futures (1 contract = $50/pt)</td><td>6 points</td><td>$1,500</td><td>5 contracts</td><td>Broker-set intraday</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Two observations from that table. First, the sizes look large, which is what leverage does — a 5-lot EURUSD position on a $100,000 account is unremarkable at 1:100 and impossible at 1:5. Second, the risk is identical in every row, which is the whole point of doing the arithmetic in this order.</p>
+    <h2 id="firms">How firms set leverage, and why it varies</h2>
+    <p>Prop firms do not usually publish leverage as a headline feature, because it is not the constraint their rules use. Where it is published, it varies for three reasons.</p>
+    <h3>Platform and instrument</h3>
+    <p>Forex and CFD firms typically offer 1:30 to 1:200, with the lowest ratios on indices and commodities. Futures firms do not use a leverage ratio at all: intraday margin is set per contract by the clearing broker, and the effective ratio depends on the contract's notional value. A trader comparing a futures account's "leverage" with a forex account's is comparing two different systems.</p>
+    <h3>Account type and jurisdiction</h3>
+    <p>Where a firm operates under a regulatory umbrella, the maximum retail leverage may be capped. Where it does not, the ratio is a commercial decision. Neither implies anything about the difficulty of the evaluation, because the loss limits do the containing.</p>
+    <h3>Time of day</h3>
+    <p>Some firms reduce leverage around major news releases or over weekends, which can force a position reduction on an account that was compliant an hour earlier. This is worth checking before holding a large position through a release: the rule change can be as consequential as the price move.</p>
+    <h3>What to check before you trade</h3>
+    <p>Three things, all quick: the margin requirement per instrument, whether it changes over weekends or news, and whether the platform supports partial position closures. The last one matters most in practice, because reducing size on a winning position is how a trader cuts risk near a failure level without closing the trade entirely.</p>
+    <h2 id="worked">Three worked examples</h2>
+    <p>The same procedure applied to three markets, with the leverage ratio varied to show that it does not enter the calculation.</p>
+    <h3>Example one: EURUSD at 1:30 and 1:200</h3>
+    <p>A $100,000 evaluation, 1% per-trade risk, a 40-pip stop. Risk is $1,000, so the size is $25 per pip — 2.5 standard lots. At 1:30 the margin required is roughly $16,600; at 1:200 it is about $2,500. The trade, the risk and the outcome are identical. The difference is that at 1:30 the trader can only hold four or five such positions before margin becomes a factor, while at 1:200 they can hold twenty — and holding twenty correlated positions is a failure mode, not a feature.</p>
+    <p>That is the honest case against generous leverage: not that it increases the risk of any single trade, but that it removes the arithmetic that would otherwise have stopped a trader from taking too many.</p>
+    <h3>Example two: gold with a wide stop</h3>
+    <p>Gold moves $1.50 in a quiet minute and $4.00 around a release. A stop of $6.00 is reasonable; a stop of $1.50 is noise. With $1,000 of risk, the $6.00 stop permits 1.67 lots at $100 per lot per dollar. The $1.50 stop permits 6.67 lots for the same $1,000.</p>
+    <p>The second position is four times larger and carries a far higher probability of being stopped out by a routine fluctuation. Both respect the 1% rule on paper. Only one of them respects it in the sense that matters, which is that the stop should be placed where the analysis is wrong rather than where the loss is acceptable.</p>
+    <h3>Example three: micro contracts on a futures evaluation</h3>
+    <p>On a $50,000 futures evaluation with a $1,000 per-trade risk limit, the micro ES contract at $5 per point and a 10-point stop risks $50 per contract. That allows 20 micros, which is equivalent to 2 full-size contracts. With a 5-point stop the risk is $25 per contract and the allowance is 40 micros — the same 2 full-size contracts, expressed in smaller units.</p>
+    <p>Micros are the useful instrument for a first futures account precisely because they break the coarse granularity of contracts into fifty-dollar steps. They do not change the arithmetic; they make it possible to follow it.</p>
+    <h2 id="myths">Six leverage myths, corrected</h2>
+    <ol>
+      <li><strong>"High leverage is high risk."</strong> Risk is size times stop distance. Leverage only sets margin.</li>
+      <li><strong>"Low leverage is safer."</strong> It constrains how much you can open, which helps some traders and is irrelevant to others. Both can lose the account on one bad decision.</li>
+      <li><strong>"Use maximum leverage to pass faster."</strong> The target is a percentage, not a function of position size. Larger size shortens the path only by increasing the chance of a failure that costs the fee.</li>
+      <li><strong>"1% risk at 1:500 is 500% risk."</strong> It is 1%. The multiplication is done by people selling courses.</li>
+      <li><strong>"Margin is the same as risk."</strong> Margin is capital locked; risk is capital lost if the stop fills. A trade can require $10,000 of margin and risk $500.</li>
+      <li><strong>"Leverage does not matter at all."</strong> It matters as a behavioural factor — it removes the last mechanical brake on size — and not at all as an arithmetic one.</li>
+    </ol>
+    <h3>The version of the argument that holds up</h3>
+    <p>The defensible claim is narrow: a firm offering 1:500 while requiring 1% risk discipline is creating an environment in which the constraint comes entirely from the trader. That is fine for someone with a written plan and a daily budget, and it is a trap for anyone who treats the available margin as a target.</p>
+    <p>If that distinction is understood, the leverage ratio can be ignored after the initial check. It never appears again in the sizing arithmetic, the daily budget or the distance to a failure level — the three numbers that decide whether an evaluation is passed.</p>
+    <h2 id="service">Leverage in a managed evaluation</h2>
+    <p>When the evaluation is traded on someone else's behalf, leverage becomes an execution detail rather than a client decision — and it is one of the better ways to judge whether the process is disciplined.</p>
+    <h3>The question worth asking</h3>
+    <p>"What risk per trade do you use on a 10% target, and does the size change near the end?" A process answer names a percentage, a pacing estimate and a reduction near the target. A marketing answer mentions the firm's leverage, the instrument with the highest ratio, or how fast the evaluation usually passes.</p>
+    <p>The second kind of answer is a warning. On a leveraged account, the fastest way to pass is also the fastest way to fail, and a provider whose pitch emphasises speed is describing a risk profile rather than a method.</p>
+    <h3>What a rules-first process looks like</h3>
+    <p>Position size derived from the daily budget rather than the margin ratio; risk constant within ten percent across the evaluation; size halved above seventy percent of target; sessions closed at eighty percent of the daily limit. None of those depend on leverage, and all of them are visible in the plan a provider sends before trading starts.</p>
+    <h3>Why the flat fee matters here</h3>
+    <p>ElitePropX charges one flat <strong>$220</strong> for any prop firm and any account size. A percentage-of-payouts arrangement would give a provider an interest in larger positions and larger accounts, because the fee scales with the outcome — the same incentive that makes generous leverage attractive to a retail broker. A flat fee removes that incentive, which is why it is worth stating in an article about position sizing.</p>
+    <h2 id="plan">Setting your own leverage policy</h2>
+    <p>A written policy takes ten minutes and removes the topic from the decisions made under pressure.</p>
+    <ol>
+      <li>Fix the per-trade risk figure at one third of the daily budget, in dollars.</li>
+      <li>Require a stop distance before any order: if the chart does not define where the analysis is wrong, there is no trade.</li>
+      <li>Derive size from risk divided by stop distance, never from the margin available.</li>
+      <li>Cap simultaneous positions at two, and treat correlated pairs as one position.</li>
+      <li>Never widen a stop to avoid a loss; reduce size instead.</li>
+      <li>Reduce size by half once the evaluation is seventy percent complete.</li>
+      <li>Re-check the margin requirement before holding through a weekend or a major release.</li>
+    </ol>
+    <p>Seven lines, one page, and every one of them is a defence against a specific failure that leverage makes easier. Traders who write this down and keep to it treat the leverage ratio as what it is — a platform setting — rather than as a strategy input.</p>
+    <h2 id="quick">The thirty-second version</h2>
+    <p>If nothing else on this page is read, this is the substance of it. Write the dollar risk first. Measure the stop second. Divide to get size. Confirm three positions fit inside the daily limit. Check margin last, and only to confirm the platform accepts the order.</p>
+    <p>Every sizing failure in prop trading is a violation of that order. The trader who starts from the lot size, or from the margin available, or from the leverage ratio, has skipped the two decisions that determine the outcome and made the third one a consequence of nothing.</p>
+    <p>On a leveraged account, that order is the entire discipline. The platform will never stop you; the calculation has to.</p>
+    <h2 id="reduce">Reducing size without closing the trade</h2>
+    <p>On a leveraged account, partial closes are the most underused tool available. Most platforms allow a position to be reduced in steps, which converts "do I keep this trade?" into "how much of this trade do I keep?" — a much easier question to answer well.</p>
+    <h3>Three points where partial reduction is the right move</h3>
+    <p>First, when a trade has moved in your favour by more than the original risk and the stop is being moved to break-even: closing a third converts an uncertain outcome into a banked result. Second, when the evaluation is above seventy percent of target and the remaining room for a normal losing sequence is thin. Third, when a correlated second position is opened, because the exposure has doubled without the analysis changing.</p>
+    <h3>What partial closes do not fix</h3>
+    <p>They do not repair an oversized entry. If the position was opened at twice the plan's risk, reducing it to plan size still leaves the loss already incurred on the excess. The lesson belongs in the entry, and the daily limit does not distinguish between an intentional and an accidental oversize.</p>
+    <h3>The margin call you cannot see</h3>
+    <p>On a prop account, the platform-level margin call is rare and the evaluation-level failure is common, which inverts the retail experience. A trader used to a broker closing positions will look for a margin warning that never comes, while the number that actually ends accounts — distance to the failure level — goes unmonitored. The two numbers worth checking each morning are the daily budget and the distance to the failure level, not the margin available.</p>
+    <p>That single substitution is the practical difference between retail intuition and prop discipline: the account is not at risk from a broker's margin policy, it is at risk from a percentage that a rulebook defines and a trader has to track.</p>
+    <h3>What to write on the card</h3>
+    <p>Two figures, updated each morning: the daily budget in dollars, and the distance from current equity to the failure level. Add the maximum position size for the day, derived from the smaller of the two constraints. Nothing about margin, and nothing about leverage, because neither changes between today and yesterday unless the firm amends its terms — and if it does, it will say so on the objectives page rather than in a margin notification.</p>
+    <p>That card is the whole interface between a trader and a leveraged account. It takes ninety seconds to write and it removes the two failure modes that leverage makes possible: an oversized position taken because margin permitted it, and a losing sequence continued because the distance to failure was misjudged.</p>
+    <p>One last observation from the arithmetic rather than from theory: across every leverage ratio a firm might offer, the four numbers that decide an evaluation are identical — daily budget, per-trade risk, distance to failure, and target in R. Leverage does not appear in that list, and a trader whose plan is written entirely from those four figures has made the ratio irrelevant to their outcome, which is exactly where it belongs. That is the whole of the leverage question, and it is answerable before the first trade with a calculator and a rulebook — no platform access required, and no leverage ratio involved in the answer. Write the four numbers down, date the page, and the ratio becomes a setting you check once and forget.</p>
+    <p>If you take one habit from this page into the next evaluation, make it the order of operations rather than the formula: risk first, stop second, size third, margin last. Traders who keep that order pass leveraged accounts at the same rate as unleveraged ones, because the account's settings never enter the arithmetic that decides the outcome. Present it that way to yourself each morning and the rest of the plan follows from four numbers rather than from a feeling about how much the account will allow.</p>
+    <h2>Frequently asked about prop firm leverage</h2>
+    <details class="faq"><summary>Does higher leverage mean more risk?</summary><div class="faq-a"><p>No. Risk is position size multiplied by stop distance. Leverage sets how much margin a position requires, so a 1:100 account and a 1:10 account can carry identical risk on the same trade.</p></div></details>
+    <details class="faq"><summary>What leverage do prop firms offer?</summary><div class="faq-a"><p>Forex and CFD firms typically offer 1:30 to 1:200, with lower ratios on indices and commodities. Futures firms do not use a ratio at all — intraday margin is set per contract by the clearing broker.</p></div></details>
+    <details class="faq"><summary>How do I calculate position size?</summary><div class="faq-a"><p>Divide the dollar risk by the stop distance. On EURUSD, $1,000 of risk with a 40-pip stop is $25 per pip, or 2.5 standard lots. Margin is checked afterwards and is rarely the binding constraint on a prop account.</p></div></details>
+    <details class="faq"><summary>Which limit is hit first on an evaluation?</summary><div class="faq-a"><p>The daily loss limit, in almost every case. On a $100,000 account with 1:100 leverage, margin would permit a position that risks more than 20% per trade — the rules end the account long before the platform would.</p></div></details>
+    <details class="faq"><summary>Is a tight stop and a large position the same as a wide stop and a small one?</summary><div class="faq-a"><p>The dollar risk is identical and the probability of being stopped out by noise is not. Tight stops on large size typically produce a long sequence of small losses that breaches the daily limit without any single trade being wrong.</p></div></details>
+    <details class="faq"><summary>Should I use maximum leverage to pass faster?</summary><div class="faq-a"><p>No. The target is a percentage of the account, so larger size shortens the path only by raising the probability of a failure that costs the fee and several weeks.</p></div></details>
+    <details class="faq"><summary>What risk per trade should a managed evaluation use?</summary><div class="faq-a"><p>At ElitePropX, one third of the daily budget, with size reduced near the target. The flat fee is $220 for any firm and any account size, with retries on rule breaches covered and no profit split.</p></div></details>
+    <details class="faq"><summary>Do micro contracts help with sizing?</summary><div class="faq-a"><p>Yes. A micro ES contract at $5 per point breaks the coarse granularity of futures contracts into $50 steps, which makes it possible to follow a risk plan precisely rather than approximately.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Any firm, any size, one flat $220</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
+      <li><a href="/reviews/best-prop-firm-passing-service-2026.html">What buyers report: the 2026 service review</a></li>
+      <li><a href="/passed-challenges.html">Recently passed evaluations</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">The complete guide to passing a challenge</a></li>
+      <li><a href="/contact.html">Start an evaluation for a flat $220</a></li>
+    </ul>
+  </div>
+</section>

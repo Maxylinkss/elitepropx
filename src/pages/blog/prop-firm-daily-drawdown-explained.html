@@ -1,0 +1,253 @@
+---
+title: Prop Firm Daily Drawdown Explained: Equity vs Balance
+desc: How a prop firm daily loss limit works: equity versus closed-balance measurement, when it resets, how floating losses count, and how to size so it is never hit.
+path: /blog/prop-firm-daily-drawdown-explained.html
+type: article
+h1: Prop firm daily drawdown explained
+kicker: Rule mechanics
+crumb: Daily drawdown
+section: Strategy
+sectionUrl: /blog/
+date: 2026-09-15
+updated: 2026-10-18
+priority: 0.8
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Rule mechanics · reviewed October 2026</p>
+    <h1>Prop firm daily drawdown explained</h1>
+    <p class="lede">The daily loss limit ends more evaluations than any other rule, and it is the one traders most often monitor incorrectly. This page covers how it is measured, when it resets, how a floating loss counts against it, and the sizing that keeps it out of reach.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Most firms measure the daily limit on equity, including floating positions, so an open losing trade counts before it is closed.</li>
+        <li>The reset is usually at midnight server time, not at the session close — the gap matters for anyone trading late.</li>
+        <li>The daily limit is a session rule, not an account rule: breaching it ends the day, not the account, unless the terms say otherwise.</li>
+        <li>Sizing at one third of the daily budget and stopping at eighty percent of it makes a breach practically unreachable.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#measured">How the limit is measured</a></li>
+        <li><a href="#reset">When it resets</a></li>
+        <li><a href="#floating">Floating losses and the equity trap</a></li>
+        <li><a href="#breach">What happens on a breach</a></li>
+        <li><a href="#sizing">Sizing so it is never reachable</a></li>
+        <li><a href="#tracking">Tracking it in practice</a></li>
+      </ol>
+    </div>
+    <h2 id="measured">How the limit is measured</h2>
+    <p>A daily loss limit is a percentage of the account that may be lost in a single trading day. On a $100,000 account with a 5% limit, the number is $5,000. That much is agreed by everyone. What differs between firms — and what decides how the rule behaves in practice — is the point at which the figure is measured.</p>
+    <p>Three measurement points are in common use. On closed balance, only realised losses count, so a position that is down $3,000 intraday and recovers to break-even never touches the limit. On equity including floating, the worst moment of the day counts, so the same position is $3,000 into the budget while it is open. On the day's starting equity, some firms measure from the balance at the open rather than the current balance, which means a profitable morning raises the day's floor rather than creating a cushion.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Measurement</th><th>What counts</th><th>Practical effect</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Closed balance</td><td>Realised losses only</td><td>Wide intraday swings are survivable</td></tr>
+          <tr><td>Equity including floating</td><td>The worst unrealised point</td><td>Stops must be tight and size smaller</td></tr>
+          <tr><td>From day's opening balance</td><td>Profit does not create a cushion</td><td>Rules effectively tighten after a good start</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The second row is the most common and the one that catches traders. A position that is $2,000 in the red at 10:15 has already consumed $2,000 of the day's budget, whatever it does afterwards. If it recovers and closes at a profit, the budget is restored — but the trader who added a second position at the moment of maximum drawdown may have breached the limit before the recovery.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="The same losing price path measured on floating equity and on closed balance, showing the equity rule triggering first" width="1000" height="540" loading="lazy">
+      <figcaption>The same day, two rules: measured on equity, the limit is reached at the low point rather than at the close.</figcaption>
+    </figure>
+    <h3>Why firms measure on equity</h3>
+    <p>Because a floating loss is economically real. A trader who is $4,500 down with a position open has $4,500 less equity than at the open, and the firm's exposure to a further adverse move is the same as if the loss had been banked. Measuring on closed balance would allow a trader to run an unlimited floating loss and hope, which is precisely the behaviour a daily limit exists to prevent.</p>
+    <h3>How to find out which version applies to you</h3>
+    <p>It is stated in the terms, usually in the drawdown or loss section, in one sentence. Where the wording is ambiguous — "maximum daily loss of 5%" with no measurement point — ask the firm in writing and keep the reply. This is a question worth a support ticket, because the answer changes position sizing rather than merely the odds.</p>
+    <h2 id="reset">When it resets</h2>
+    <p>The reset point decides whether a late-session trade belongs to today's budget or tomorrow's, and it is stated fewer times than you would expect. Four conventions exist.</p>
+    <h3>Midnight server time</h3>
+    <p>The most common. The budget refreshes at 00:00 in the firm's server timezone, which is often GMT or GMT+3. A trader in New York finishing a session at 17:00 local has several hours of the same daily budget left; a trader in Sydney starting at 08:00 local may be in a new budget before the London open.</p>
+    <h3>The broker's daily close</h3>
+    <p>Usually 17:00 New York, aligning with the forex rollover. Under this convention the budget refreshes in the middle of the New York afternoon, which means an Asian-session trader and a US-session trader are drawing on the same budget at different times of their own days.</p>
+    <h3>Per-instrument or per-session resets</h3>
+    <p>Rare, and usually found on futures accounts where the trading day is defined by the exchange session. A trader holding a position across the session boundary needs to know whether the loss belongs to the closing day or the opening one.</p>
+    <h3>A rolling twenty-four hours</h3>
+    <p>The least common and the most confusing. The budget is measured over a moving window rather than a session, which means a loss at 09:00 prevents an identical loss at 08:55 the following morning. Traders who assume a midnight reset on such an account eventually breach without understanding why.</p>
+    <h3>Why it matters in practice</h3>
+    <p>The useful habit is to write the reset time next to the daily budget on the index card and to treat the last hour before it as belonging to the next day. A trade opened twenty minutes before a reset with the intent of correcting the day's losses is the single most expensive form of impatience in prop trading, because it commits tomorrow's budget to a decision made today.</p>
+    <h2 id="floating">Floating losses and the equity trap</h2>
+    <p>The equity measurement creates a specific trap that has nothing to do with being wrong about direction.</p>
+    <h3>The trap: profit that becomes room</h3>
+    <p>A position moves into profit by $3,000 and the trader mentally banks it. The position then retraces and closes at break-even. On a closed-balance rule, the day's result is zero. On an equity rule, the run-up was never banked, and the retracement of $3,000 was a $3,000 move against the day's budget even though nothing was lost.</p>
+    <p>This is why the daily limit and a trailing maximum loss feel similar in practice: both charge for movement that was never realised. On an equity-measured daily limit, the relevant figure is the distance from the day's high-water equity, not from the day's opening balance.</p>
+    <h3>The second trap: correlated positions</h3>
+    <p>Three positions each risking 1% of the daily budget can all be in floating loss at once, which consumes 3% of the day's allowance before any of them is closed. If the plan allowed five such trades, the fifth would breach the limit while every individual trade was sized correctly. The number to track is the aggregate open loss, not the per-trade risk.</p>
+    <h3>The third trap: the widening spread</h3>
+    <p>Around a major release, spreads widen and equity moves against every open position simultaneously. A trader with three positions open through a release can see several hundred dollars of paper loss appear in seconds, charged to the day's budget even if the underlying prices never move. This is the strongest argument for being flat through releases on an equity-measured account.</p>
+    <h3>How to manage it</h3>
+    <p>Three rules cover the trap. Keep one position open at a time whenever the aggregate floating loss would otherwise be unmonitored. Reduce size so that three full-risk losses fit inside sixty percent of the daily budget, leaving room for the float. And close positions before releases rather than sizing for them.</p>
+    <h2 id="breach">What happens on a breach</h2>
+    <p>The consequence of a breach is stated in the terms and varies more than traders assume.</p>
+    <h3>Day ends, account continues</h3>
+    <p>The most common arrangement: reaching the daily limit stops trading for that day and the account survives, with a fresh budget at the reset. This is the version that makes the daily rule a session constraint rather than an account constraint, and it is why a single breach does not have to be terminal.</p>
+    <h3>Account ends</h3>
+    <p>Some futures firms treat a daily breach as a failure of the evaluation outright. Where that is the case, the rule is effectively a second maximum-loss rule with a twenty-four-hour window, and the sizing discipline has to be correspondingly tighter.</p>
+    <h3>Warning, then closure</h3>
+    <p>A middle position: a first breach produces a warning, a second ends the account. Useful to know, because a firm that warns gives a trader a chance to correct sizing at a cost of nothing but the warning.</p>
+    <h3>What to do immediately after a breach</h3>
+    <p>Stop for the day regardless of what the terms permit, write down the session, and identify the moment the budget was committed — usually the second or third position rather than the first. Then reduce per-trade risk by a third for the remainder of the evaluation. A breach is a sizing event, not a market event, and the correction belongs in the size.</p>
+<figure>
+  <img src="/assets/img/risk-budget.svg" alt="Diagram dividing a drawdown budget into per-trade risk, session risk and an untouched reserve" width="940" height="520" loading="lazy">
+  <figcaption>Sizing is what makes a daily limit a formality rather than a threat.</figcaption>
+</figure>
+    <h2 id="sizing">Sizing so it is never reachable</h2>
+    <p>The daily limit should be a number a trader has to work hard to reach. Two decisions make that true.</p>
+    <h3>Decision one: one third per trade</h3>
+    <p>Sizing each trade at a third of the daily budget means three consecutive full-risk losses are required to end the day. With a realistic win rate, three consecutive losses occur often enough that a trader will see them, and rarely enough that they will not see them weekly. Sizing at half the budget means two losses end the day; sizing at a quarter means four, which is better still for the limit and slower for the target.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Risk per trade on a 5% daily limit</th><th>Losses to end the day</th><th>Target in R for a 10% goal</th><th>Effect</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2.5%</td><td>2</td><td>4 wins</td><td>Fast, fragile — one bad day ends the attempt</td></tr>
+          <tr><td>1.65%</td><td>3</td><td>6 wins</td><td>The standard compromise</td></tr>
+          <tr><td>1.25%</td><td>4</td><td>8 wins</td><td>Range view, patient, rarely breaches</td></tr>
+          <tr><td>1%</td><td>5</td><td>10 wins</td><td>Very patient; strong for a first attempt</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Decision two: stop at eighty percent</h3>
+    <p>Stop the session once eighty percent of the daily budget is spent. The remaining fifth is not unused capital; it is the float that a widening spread or a fast market can consume on a position that is already open. Traders who stop at one hundred percent eventually breach, because the limit is measured before the last position is closed.</p>
+    <h3>What the combination achieves</h3>
+    <p>At 1.65% per trade with an 80% stop, a trader stops after two losses and part of a third. Reaching the limit requires ignoring the stop rule, which is a discipline failure rather than a sizing failure and is therefore visible in a journal before it is visible in an account.</p>
+    <h2 id="tracking">Tracking it in practice</h2>
+    <p>The daily budget is one of four numbers on the index card, and it is the one that changes least during a session — which is exactly why traders neglect it.</p>
+    <h3>Write three figures before the first trade</h3>
+    <p>The budget in dollars, the maximum risk per position, and the current aggregate floating loss (zero at the open). Then update the third whenever a position is opened, closed or extended. On an equity-measured account, this running figure is the real distance to the day's limit, and it is the number that should be watched rather than the day's profit and loss.</p>
+    <h3>Treat the aggregate as the constraint</h3>
+    <p>Three positions each risking 1.5% are a 4.5% exposure, not three separate decisions. Traders who size each trade correctly while holding four correlated positions at once have followed the rule per trade and breached it in aggregate, which is the most common misreading of the daily limit on multi-position accounts.</p>
+    <h3>Review it weekly</h3>
+    <p>Once a week, count the sessions in which the budget was more than half spent. If that number is above two, the per-trade risk is too high relative to the plan, and the correction is size rather than selectivity. The budget should be a bound that is approached occasionally and crossed never.</p>
+    <h2 id="firms">What different firm types do</h2>
+    <p>Forex firms usually pair a daily limit measured on equity with a static maximum loss, which makes the daily rule the strictly binding constraint. Futures firms often express the daily limit in dollars and pair it with a trailing maximum loss, so the two rules are both live and the smaller distance governs. Firms offering swing accounts keep the same daily limit but permit overnight exposure, which raises the probability of a gap consuming the budget at the open.</p>
+    <p>In every case the plan is the same: find the measurement point, find the reset time, size at a third of the budget, and stop at eighty percent of it. Those four steps are the difference between a rule that is managed and a rule that ends attempts.</p>
+    <h2 id="worked">A breached day, reconstructed</h2>
+    <p>Numbers make the measurement point concrete. A $100,000 account, a 5% daily limit — $5,000 — and a trader using 1.6% per trade, or $1,600 per position.</p>
+    <h3>09:30 to 11:00: two losses, correctly sized</h3>
+    <p>The first position loses $1,600 and the second loses $1,600. Closed balance is down $3,200, leaving $1,800 of the budget. The trader has followed the plan: two losses, both at plan size, and the session is still live.</p>
+    <h3>11:15: a third position, and the equity trap</h3>
+    <p>The third position moves against the trader by $1,900 at its worst point. On an equity-measured account the day's drawdown is now $5,100 — a breach, at 11:15, while the position is still open. The position then recovers and closes at a $200 loss, leaving the day at $3,400 in the red, comfortably inside the limit on closed balance.</p>
+    <p>Two things follow from this. First, the breach occurred at the moment of maximum floating loss, not at the close, and no subsequent recovery undoes it. Second, the rule that was breached was not the per-trade risk — each position was correctly sized — but the aggregate: the third position's floating loss was counted on top of two realised losses.</p>
+    <h3>What the plan should have said</h3>
+    <p>After two realised losses, the remaining budget was $1,800. A third position risking $1,600 has $200 of headroom, which is not enough to absorb normal adverse movement. The correct decision at that point was either no third trade or a reduced one at half size — and the rule that produces that decision is the eighty percent stop, which would have ended the session at $4,000 of drawdown rather than continuing into the marginal zone.</p>
+    <h3>The same day on a closed-balance rule</h3>
+    <p>Had the firm measured closed balance, the day would have finished at $3,400 in the red with no breach. That is the entire practical difference between the two measurement conventions, and it is why a trader moving between firms should not carry a sizing plan from one to the other without re-reading the loss section.</p>
+<figure>
+  <img src="/assets/img/drawdown-types.svg" alt="Three equity curves comparing static, intraday trailing and end-of-day trailing failure floors" width="1000" height="560" loading="lazy">
+  <figcaption>The daily limit resets; the failure floor may not. The two clocks have to be tracked separately.</figcaption>
+</figure>
+    <h2 id="interaction">How the daily limit interacts with the maximum loss</h2>
+    <p>The two loss rules are usually read separately and they interact all the time. The daily limit governs a session; the maximum loss governs the account. Where the maximum loss trails, the daily limit becomes the first line of defence and the trailing floor the second, and the gap between them shrinks as profit accumulates.</p>
+    <h3>The arithmetic of the gap</h3>
+    <p>On a $100,000 account with a 5% daily limit and a 10% maximum loss, the account can absorb two full daily breaches before failing, if the firm treats a daily breach as survivable. Where the maximum loss trails from peak equity, a $4,000 profit reduces the distance to the floor from $10,000 to $6,000, which is barely one daily budget. From that point, a single bad session is a failure, and the sizing that was safe at the start of the evaluation is no longer safe.</p>
+    <h3>Which one to plan against</h3>
+    <p>Plan against whichever is closer, and recompute it each morning. Early in an evaluation on a static-drawdown account, the daily limit binds. Near the target on a trailing account, the floor binds, and the daily budget should be reduced to a fraction of its original figure rather than held constant.</p>
+    <h3>Why traders get this backwards</h3>
+    <p>Because the daily limit is the more vivid rule — it ends the session visibly — while the trailing floor moves invisibly as equity rises. A trader who checks the daily budget each morning but not the distance to the floor is monitoring the rule that will end their day and ignoring the rule that will end their account.</p>
+    <h2 id="mistakes">Eight ways traders breach a daily limit</h2>
+    <p>Breaches are not random. These eight causes cover almost every case, and each has a fix that costs nothing but a written rule.</p>
+    <ol>
+      <li><strong>The recovery trade.</strong> Two losses followed by a doubled position to get back to flat. The fix is a hard stop after two losses, regardless of the budget remaining.</li>
+      <li><strong>The uncounted float.</strong> Three positions sized correctly in isolation, all losing at once. The fix is tracking aggregate floating loss rather than per-trade risk.</li>
+      <li><strong>The news position.</strong> A stop that fills beyond its level during a release, converting a planned loss into an outsized one. The fix is flat through releases or a third of normal size.</li>
+      <li><strong>The late-session entry.</strong> A trade opened twenty minutes before the reset, committing tomorrow's budget to today's frustration. The fix is a hard cut-off time.</li>
+      <li><strong>The widening stop.</strong> Moving a stop to avoid a loss, which converts a sized risk into an unsized one. The fix is reducing size instead.</li>
+      <li><strong>The correlated book.</strong> Three long dollar positions treated as three decisions. The fix is a two-position cap and treating correlated pairs as one.</li>
+      <li><strong>The annualised mistake.</strong> Sizing from the monthly or annual target instead of the day's budget. The fix is writing the daily figure in dollars on the card.</li>
+      <li><strong>The profitable-morning story.</strong> Assumption that a good morning creates a cushion, on a firm that measures from the day's opening balance. The fix is asking which convention applies.</li>
+    </ol>
+    <h3>What the fixes have in common</h3>
+    <p>Every one of them is a decision made before the session rather than during it. That is not a coincidence: the daily limit is breached in the four minutes after a loss, when judgement is worst, so the rules that protect it have to be written when judgement is best.</p>
+    <h2 id="service">When the evaluation is traded for you</h2>
+    <p>The daily limit is also the best single question to ask a passing service, because the answer reveals whether the process is rule-driven or outcome-driven.</p>
+    <h3>The question</h3>
+    <p>"What is your per-trade risk against my firm's daily limit, and do you stop at the limit or before it?" A process answer gives a fraction — a third of the budget, stopped at eighty percent. A marketing answer gives a percentage of the account or a statement about how often evaluations pass.</p>
+    <h3>Why the fraction matters more than the firm</h3>
+    <p>Two providers on the same firm with the same target can produce different outcomes purely on the fraction. One uses half the daily budget per trade, which means two losses end the day and the evaluation lasts as long as the losing streaks allow. The other uses a third and stops at eighty percent, which means a bad week costs a few sessions rather than the account.</p>
+    <h3>The flat-fee connection</h3>
+    <p>ElitePropX charges one flat <strong>$220</strong> for any prop firm and any account size, with retries on rule breaches at the same firm and size covered. The flat fee is relevant here because a provider paid a share of payouts has an incentive to reach the target quickly, and quick means larger size relative to the daily budget. A fixed fee makes the slower, safer fraction the economically sensible choice.</p>
+    <h2 id="checklist">The one-page daily protocol</h2>
+    <p>Six lines, written before the first trade and kept next to the platform. Together they make the daily limit a bound that is approached rarely and crossed almost never.</p>
+    <ol>
+      <li>Budget in dollars, from the firm's stated limit, at the stated measurement point.</li>
+      <li>Maximum risk per position: one third of the budget.</li>
+      <li>Session stop: eighty percent of the budget, or two consecutive losses, whichever comes first.</li>
+      <li>Aggregate exposure cap: two positions, with correlated pairs counted as one.</li>
+      <li>Cut-off time: no new entries in the final hour before the reset.</li>
+      <li>Recompute all five after any change in equity, and after any firm rule amendment.</li>
+    </ol>
+    <p>The protocol works because it removes the decision from the moment. A trader who has to decide whether a third position is acceptable while two are losing will make a worse decision than one who wrote the answer yesterday.</p>
+    <h3>What the numbers look like on different account sizes</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Account</th><th>Daily limit (5%)</th><th>Per trade (third)</th><th>Session stop at 80%</th><th>Losses to stop</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>$25,000</td><td>$1,250</td><td>$415</td><td>$1,000</td><td>2.4</td></tr>
+          <tr><td>$50,000</td><td>$2,500</td><td>$830</td><td>$2,000</td><td>2.4</td></tr>
+          <tr><td>$100,000</td><td>$5,000</td><td>$1,660</td><td>$4,000</td><td>2.4</td></tr>
+          <tr><td>$200,000</td><td>$10,000</td><td>$3,330</td><td>$8,000</td><td>2.4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The last column is identical at every size, which is the point: percentage rules scale exactly, so an account four times larger is not easier, it is the same challenge with larger numbers. The trader who can maintain the protocol on a $25,000 account will maintain it on a $200,000 account, and the trader who cannot will fail at both sizes.</p>
+    <h3>The two habits worth more than any rule</h3>
+    <p>First, stop the session on the loss side at the point the protocol names, not at the point the budget allows. The gap between those two moments is where accounts fail. Second, record the day's result in a journal with the highest floating loss reached, because on an equity-measured account the second figure explains breaches that the first figure does not show.</p>
+    <p>Written down, the daily drawdown stops being a rule to fear and becomes a number that is monitored. That transformation — from threat to figure — is what separates traders who finish evaluations from those who repeat them.</p>
+    <h2 id="summary">The summary in five sentences</h2>
+    <p>The daily limit is measured on equity at most firms, which means an open losing position consumes the budget before it is closed. The reset is usually at midnight server time, so a late trade belongs to tomorrow's budget in effect if not in name. A reachable limit is a badly sized plan, and sizing at a third of the budget with a stop at eighty percent puts it out of reach in ordinary conditions. The maximum loss interacts with the daily rule near the end of an evaluation, when equity has moved and the room for a normal losing sequence has shrunk. And on an account traded by someone else, the fraction of the daily budget used per trade is the single most revealing question to ask before paying.</p>
+    <h3>What to do next</h3>
+    <p>Two actions, both ten minutes. Look up your firm's loss section and write down the measurement convention and the reset time, then recompute your per-trade size from the daily budget rather than from your account balance. If the resulting figure feels small, that is the point — the daily limit is meant to be a bound you rarely approach, not a target you spend.</p>
+    <p>Where the evaluation is being traded for you, send those two numbers to the provider and ask whether they match the plan being used. Providers who cannot answer in figures are describing an intention rather than a process, and this is one of the cheapest ways to tell the difference before money changes hands. At ElitePropX the answer is one third of the daily budget, stopped at eighty percent, for a flat <strong>$220</strong> on any firm and any account size, with retries on rule breaches covered, and the daily budget recalculated every morning against the current distance to the failure level rather than against the opening balance.</p>
+    <p>That last clause is the one most traders skip. On a trailing account, the number that decides position size changes every day the account makes money, and a budget computed once at the start of an evaluation is stale within a week. Recomputing it takes ninety seconds and is the difference between a plan that tracks the account and a plan that describes a version of it that no longer exists. Do it before the first trade, not after the first loss, and the daily limit becomes a number you watch rather than a rule you fear — and the evaluations that finish are the ones where the numbers were the boring part and the trading was the easy part and the arithmetic was finished before the open, written on a card, and checked twice each morning before the first trade and again at the session's end.</p>
+    <h2>Frequently asked about the daily drawdown</h2>
+    <details class="faq"><summary>Is the daily loss measured on balance or equity?</summary><div class="faq-a"><p>Usually equity, including floating positions, which means an open losing trade counts against the limit before it is closed. A minority of firms measure closed balance only — the wording is in the loss section of the terms.</p></div></details>
+    <details class="faq"><summary>When does the daily limit reset?</summary><div class="faq-a"><p>Most often at midnight server time, sometimes at the broker's daily close, and occasionally on a rolling twenty-four-hour window. The reset convention is worth writing next to the budget on your card.</p></div></details>
+    <details class="faq"><summary>Does breaching the daily limit end my account?</summary><div class="faq-a"><p>It depends on the firm. Many end the day only and the account continues with a fresh budget; some futures firms treat it as a failure of the evaluation. The terms state which, and the difference is worth knowing before the first trade.</p></div></details>
+    <details class="faq"><summary>What risk per trade keeps the limit out of reach?</summary><div class="faq-a"><p>One third of the daily budget — about 1.65% on a 5% limit — with the session stopped at eighty percent of the budget. That requires three full-risk losses to end a day, and stops the session before the last fifth is spent.</p></div></details>
+    <details class="faq"><summary>Do floating losses count if the position recovers?</summary><div class="faq-a"><p>On an equity-measured account, the drawdown is charged while it exists. If the position recovers and closes flat, the budget is restored, but a breach occurring at the low point stands — the account cannot un-breach.</p></div></details>
+    <details class="faq"><summary>Should I count correlated positions separately?</summary><div class="faq-a"><p>No. Three positions each risking 1.5% are a 4.5% aggregate exposure. Track the total floating loss rather than the per-trade figure, because the limit applies to the account, not to each trade.</p></div></details>
+    <details class="faq"><summary>What does ElitePropX charge to trade an evaluation?</summary><div class="faq-a"><p>One flat $220 for any prop firm and any account size, with retries on rule breaches at the same firm and size covered, no profit split, and the funded account issued in your name.</p></div></details>
+    <details class="faq"><summary>Can the daily limit be repaired if it is nearly spent?</summary><div class="faq-a"><p>No — the remedy is to stop. The next session starts with a fresh budget, and the account is unaffected unless the firm treats a breach as failure. Trying to recover a nearly-spent budget is the behaviour that turns a bad day into a failed evaluation.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Any firm, any size, one flat $220</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
+      <li><a href="/reviews/best-prop-firm-passing-service-2026.html">What buyers report: the 2026 service review</a></li>
+      <li><a href="/passed-challenges.html">Recently passed evaluations</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">The complete guide to passing a challenge</a></li>
+      <li><a href="/contact.html">Start an evaluation for a flat $220</a></li>
+    </ul>
+  </div>
+</section>

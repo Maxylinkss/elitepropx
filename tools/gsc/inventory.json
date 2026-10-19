@@ -1,0 +1,3412 @@
+{
+  "generatedAt": "2026-10-19",
+  "totals": {
+    "urls": 306,
+    "haveSource": 306,
+    "missing": 0,
+    "skipped": 0
+  },
+  "byBucket": {
+    "indexed": 117,
+    "discovered": 104,
+    "crawled": 45,
+    "notfound": 29,
+    "redirect": 12
+  },
+  "bySection": {
+    "(home)": {
+      "total": 1,
+      "missing": 0
+    },
+    "/(root)": {
+      "total": 15,
+      "missing": 0
+    },
+    "/blog/": {
+      "total": 282,
+      "missing": 0
+    },
+    "/reviews/": {
+      "total": 2,
+      "missing": 0
+    },
+    "/services/": {
+      "total": 4,
+      "missing": 0
+    },
+    "/tools/": {
+      "total": 2,
+      "missing": 0
+    }
+  },
+  "entries": [
+    {
+      "path": "/",
+      "buckets": [
+        "indexed",
+        "redirect"
+      ],
+      "order": {
+        "indexed": 2,
+        "redirect": 4
+      },
+      "exists": true,
+      "words": 4655
+    },
+    {
+      "path": "/about.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 38
+      },
+      "exists": true,
+      "words": 4680
+    },
+    {
+      "path": "/best-prop-firms-comparison-2026.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 0
+      },
+      "exists": true,
+      "words": 36
+    },
+    {
+      "path": "/blog/",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 54
+      },
+      "exists": true,
+      "words": 4254
+    },
+    {
+      "path": "/blog/account-sharing-prop-firm-rules.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 60
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/alpha-capital-group-review-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 13
+      },
+      "exists": true,
+      "words": 5695
+    },
+    {
+      "path": "/blog/alpha-capital-group-vs-ftmo.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 0
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/alpha-futures-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 1
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/apex-account-sizes-explained.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 2
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/apex-challenge-passing-service-cost.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 3
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/apex-drawdown-rules-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 4
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/apex-evaluation-rules-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 5
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/apex-pass-rate-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 6
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/apex-payout-denied.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 7
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/apex-trader-funding-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 40
+      },
+      "exists": true,
+      "words": 4650
+    },
+    {
+      "path": "/blog/apex-trader-funding-complete-guide.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 33
+      },
+      "exists": true,
+      "words": 5218
+    },
+    {
+      "path": "/blog/apex-trader-funding-faq.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 8
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/apex-trader-funding-first-payout-timeline.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 104
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/apex-trader-funding-reset-policy.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 9
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/apex-trader-funding-weekend-holding.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 10
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/apex-trailing-drawdown-math.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 23
+      },
+      "exists": true,
+      "words": 4588
+    },
+    {
+      "path": "/blog/apex-vs-bulenox-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 101
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/apex-vs-e8-markets-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 62
+      },
+      "exists": true,
+      "words": 61
+    },
+    {
+      "path": "/blog/apex-vs-earn2trade-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 72
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/apex-vs-goat-funded-trader-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 10
+      },
+      "exists": true,
+      "words": 952
+    },
+    {
+      "path": "/blog/apex-vs-the5ers-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 105
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/apex-vs-ticktick-trader-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 4
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/apex-vs-topstep-comparison-2026.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 3
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/apex-vs-topstep-which-is-safer-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 24
+      },
+      "exists": true,
+      "words": 4624
+    },
+    {
+      "path": "/blog/apex-vs-trade-the-pool-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 70
+      },
+      "exists": true,
+      "words": 63
+    },
+    {
+      "path": "/blog/aquafunded-review-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 78
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/audacity-capital-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 85
+      },
+      "exists": true,
+      "words": 61
+    },
+    {
+      "path": "/blog/beginner-prop-firm-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 42
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/best-funded-trading-prop-firms-2026.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 9
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/best-futures-prop-firms-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 10
+      },
+      "exists": true,
+      "words": 6358
+    },
+    {
+      "path": "/blog/best-indicators-for-prop-firm-challenge.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 11
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/best-instant-funding-prop-firms-2026.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 10
+      },
+      "exists": true,
+      "words": 1421
+    },
+    {
+      "path": "/blog/best-micro-futures-for-small-accounts.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 12
+      },
+      "exists": true,
+      "words": 904
+    },
+    {
+      "path": "/blog/best-prop-firm-beginners-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 109
+      },
+      "exists": true,
+      "words": 36
+    },
+    {
+      "path": "/blog/best-prop-firm-for-beginners-2026.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 11
+      },
+      "exists": true,
+      "words": 38
+    },
+    {
+      "path": "/blog/best-prop-firm-for-forex-beginners.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 13
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/best-prop-firm-passing-service-2026.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 3
+      },
+      "exists": true,
+      "words": 38
+    },
+    {
+      "path": "/blog/best-prop-firm-passing-services.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 3
+      },
+      "exists": true,
+      "words": 4814
+    },
+    {
+      "path": "/blog/best-prop-firm-swing-traders-2026.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 0
+      },
+      "exists": true,
+      "words": 38
+    },
+    {
+      "path": "/blog/best-prop-firms-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 61
+      },
+      "exists": true,
+      "words": 4614
+    },
+    {
+      "path": "/blog/best-prop-firms-beginners-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 6
+      },
+      "exists": true,
+      "words": 4822
+    },
+    {
+      "path": "/blog/best-prop-firms-for-beginners.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 10
+      },
+      "exists": true,
+      "words": 36
+    },
+    {
+      "path": "/blog/best-prop-firms-for-gold-trading-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 14
+      },
+      "exists": true,
+      "words": 936
+    },
+    {
+      "path": "/blog/best-prop-firms-for-scalping.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 3
+      },
+      "exists": true,
+      "words": 1154
+    },
+    {
+      "path": "/blog/best-prop-firms-for-swing-trading.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 15
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/best-time-to-trade-prop-firm-challenge.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 16
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/best-trading-platform-prop-firms.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 24
+      },
+      "exists": true,
+      "words": 836
+    },
+    {
+      "path": "/blog/blueberry-funded-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 17
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/blusky-trading-challenge-passing.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 18
+      },
+      "exists": true,
+      "words": 990
+    },
+    {
+      "path": "/blog/breakout-prop-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 23
+      },
+      "exists": true,
+      "words": 63
+    },
+    {
+      "path": "/blog/brightfunded-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 8
+      },
+      "exists": true,
+      "words": 60
+    },
+    {
+      "path": "/blog/bulenox-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 38
+      },
+      "exists": true,
+      "words": 61
+    },
+    {
+      "path": "/blog/can-you-pass-apex-funded-trader-in-1-day.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 19
+      },
+      "exists": true,
+      "words": 65
+    },
+    {
+      "path": "/blog/can-you-pass-ftmo-challenge-with-ea.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 20
+      },
+      "exists": true,
+      "words": 61
+    },
+    {
+      "path": "/blog/can-you-use-tradingview-on-ftmo.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 21
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/challenge-fees-vs-passing-service.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 67
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/challenge-passing-service-review.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 91
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/cheap-passing-service.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 32
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/cheapest-prop-firm-challenge-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 22
+      },
+      "exists": true,
+      "words": 1013
+    },
+    {
+      "path": "/blog/cheapest-prop-firm-challenges.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 52
+      },
+      "exists": true,
+      "words": 1381
+    },
+    {
+      "path": "/blog/cheapest-prop-firm-passing-service.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 108
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/choosing-challenge-helper.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 23
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/city-traders-imperium-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 41
+      },
+      "exists": true,
+      "words": 64
+    },
+    {
+      "path": "/blog/client-case-study-funded-2-weeks.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 17
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/cost-of-failed-challenges.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 24
+      },
+      "exists": true,
+      "words": 46
+    },
+    {
+      "path": "/blog/crypto-fund-trader-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 25
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/crypto-fund-trader-vs-ftmo.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 26
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/do-prop-firms-allow-hedging.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 27
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/does-apex-really-pay-out.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 28
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/e8-markets-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 43
+      },
+      "exists": true,
+      "words": 64
+    },
+    {
+      "path": "/blog/e8-markets-review-2026.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 8
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/e8-markets-vs-ftmo-comparison.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 29
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/e8-markets-vs-fundednext-which-is-easier-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 26
+      },
+      "exists": true,
+      "words": 4661
+    },
+    {
+      "path": "/blog/earn2trade-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 13
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/elite-trader-funding-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 18
+      },
+      "exists": true,
+      "words": 64
+    },
+    {
+      "path": "/blog/fintokei-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 30
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/first-payout-after-passing-prop-firm.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 31
+      },
+      "exists": true,
+      "words": 56
+    },
+    {
+      "path": "/blog/free-test-challenge-passing.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 2
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/ftmo-challenge-passing-service-legit.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 32
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/ftmo-challenge-passing-v2.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 39
+      },
+      "exists": true,
+      "words": 63
+    },
+    {
+      "path": "/blog/ftmo-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 35
+      },
+      "exists": true,
+      "words": 4680
+    },
+    {
+      "path": "/blog/ftmo-challenge-rules-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 57
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/ftmo-pass-rate-2026.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 19
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/ftmo-passing-tips.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 55
+      },
+      "exists": true,
+      "words": 4618
+    },
+    {
+      "path": "/blog/ftmo-payout-denied.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 33
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/ftmo-phase1-phase2-strategy.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 53
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/ftmo-profit-split-explained.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 34
+      },
+      "exists": true,
+      "words": 46
+    },
+    {
+      "path": "/blog/ftmo-review.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 102
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/ftmo-verification-phase-guide.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 26
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/ftmo-vs-apex-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 28
+      },
+      "exists": true,
+      "words": 4515
+    },
+    {
+      "path": "/blog/ftmo-vs-audacity-capital-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 63
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/ftmo-vs-blue-sky-trading-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 7
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/ftmo-vs-bulenox-comparison.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 35
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/ftmo-vs-city-traders-imperium-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 14
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/ftmo-vs-earn2trade-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 89
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/ftmo-vs-ftuk-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 84
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/ftmo-vs-funded-trader-tft-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 112
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/ftmo-vs-fundednext-comparison-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 42
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/ftmo-vs-fundednext-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 11
+      },
+      "exists": true,
+      "words": 34
+    },
+    {
+      "path": "/blog/ftmo-vs-fundednext-vs-mff.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 68
+      },
+      "exists": true,
+      "words": 1060
+    },
+    {
+      "path": "/blog/ftmo-vs-funding-pips-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 15
+      },
+      "exists": true,
+      "words": 56
+    },
+    {
+      "path": "/blog/ftmo-vs-lux-trading-firm-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 9
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/ftmo-vs-mff-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 19
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/ftmo-vs-smartprop-trader-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 12
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/ftmo-vs-take-profit-trader-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 88
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/ftmo-vs-the5ers-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 32
+      },
+      "exists": true,
+      "words": 5028
+    },
+    {
+      "path": "/blog/ftmo-vs-topstep-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 1
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/ftmo-vs-trade-the-pool-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 82
+      },
+      "exists": true,
+      "words": 60
+    },
+    {
+      "path": "/blog/ftuk-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 15
+      },
+      "exists": true,
+      "words": 62
+    },
+    {
+      "path": "/blog/funded-account-payout-process.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 39
+      },
+      "exists": true,
+      "words": 4582
+    },
+    {
+      "path": "/blog/funded-engineer-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 71
+      },
+      "exists": true,
+      "words": 63
+    },
+    {
+      "path": "/blog/funded-trader-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 20
+      },
+      "exists": true,
+      "words": 64
+    },
+    {
+      "path": "/blog/funded-trading-plus-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 9
+      },
+      "exists": true,
+      "words": 64
+    },
+    {
+      "path": "/blog/fundednext-1step-vs-2step.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 5
+      },
+      "exists": true,
+      "words": 810
+    },
+    {
+      "path": "/blog/fundednext-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 31
+      },
+      "exists": true,
+      "words": 5210
+    },
+    {
+      "path": "/blog/fundednext-news-trading-rules.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 36
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/fundednext-payout-denied.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 37
+      },
+      "exists": true,
+      "words": 47
+    },
+    {
+      "path": "/blog/fundednext-review.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 6
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/fundednext-vs-apex-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 22
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/fundednext-vs-e8-markets-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 65
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/fundednext-vs-earn2trade-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 113
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/fundednext-vs-ftuk-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 64
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/fundednext-vs-funding-pips-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 37
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/fundednext-vs-mff-comparison.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 0
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/fundednext-vs-smartprop-trader-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 6
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/fundednext-vs-the5ers-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 95
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/fundednext-vs-topstep-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 1
+      },
+      "exists": true,
+      "words": 5484
+    },
+    {
+      "path": "/blog/fundedprime-challenge-passing.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 16
+      },
+      "exists": true,
+      "words": 60
+    },
+    {
+      "path": "/blog/funderpro-review-2026.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 31
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/funderpro-vs-ftmo.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 38
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/funding-pips-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 59
+      },
+      "exists": true,
+      "words": 63
+    },
+    {
+      "path": "/blog/future-of-prop-firm-trading.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 17
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/fxify-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 5
+      },
+      "exists": true,
+      "words": 62
+    },
+    {
+      "path": "/blog/get-funded-without-trading.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 1
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/glow-node-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 39
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/goat-funded-trader-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 18
+      },
+      "exists": true,
+      "words": 4629
+    },
+    {
+      "path": "/blog/hardest-prop-firm-challenges.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 40
+      },
+      "exists": true,
+      "words": 1386
+    },
+    {
+      "path": "/blog/how-challenge-passing-services-work.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 7
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/how-long-to-pass-ftmo-challenge.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 41
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/how-long-to-pass-prop-firm-challenge.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 2
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/how-many-prop-firm-challenges-at-once.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 42
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/how-much-100k-funded-account.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 43
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/how-much-do-prop-firm-traders-make.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 103
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/how-much-does-ftmo-challenge-cost.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 44
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/how-much-is-one-micro-nq-point-worth.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 45
+      },
+      "exists": true,
+      "words": 56
+    },
+    {
+      "path": "/blog/how-much-money-to-trade-micro-futures.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 29
+      },
+      "exists": true,
+      "words": 4572
+    },
+    {
+      "path": "/blog/how-much-prop-firm-traders-make.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 114
+      },
+      "exists": true,
+      "words": 38
+    },
+    {
+      "path": "/blog/how-to-get-multiple-funded-accounts.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 86
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/how-to-keep-funded-account.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 107
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/how-to-pass-ftmo-challenge-fast-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 77
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/how-to-pass-ftmo-challenge.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 12
+      },
+      "exists": true,
+      "words": 5627
+    },
+    {
+      "path": "/blog/how-to-pass-prop-firm-challenge-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 100
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/how-to-pass-prop-firm-challenge-without-revenge-trading.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 46
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/how-to-pass-prop-firm-challenge-without-trading.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 75
+      },
+      "exists": true,
+      "words": 61
+    },
+    {
+      "path": "/blog/how-to-set-stop-loss-mt5-mobile.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 47
+      },
+      "exists": true,
+      "words": 63
+    },
+    {
+      "path": "/blog/how-to-set-stop-loss-mt5.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 48
+      },
+      "exists": true,
+      "words": 983
+    },
+    {
+      "path": "/blog/how-to-set-stop-loss-tradingview.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 49
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/how-to-set-take-profit-mt5.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 50
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/how-to-set-trailing-stop-mt5.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 51
+      },
+      "exists": true,
+      "words": 60
+    },
+    {
+      "path": "/blog/how-to-trade-on-apex.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 52
+      },
+      "exists": true,
+      "words": 64
+    },
+    {
+      "path": "/blog/how-to-withdraw-funded-account.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 53
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/is-apex-a-monthly-fee.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 54
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/is-it-hard-to-pass-prop-firm-challenge.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 55
+      },
+      "exists": true,
+      "words": 63
+    },
+    {
+      "path": "/blog/karma-prop-firm-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 56
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/lark-funding-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 57
+      },
+      "exists": true,
+      "words": 56
+    },
+    {
+      "path": "/blog/legit-prop-firm-passing-service.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 27
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/leveled-up-society-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 58
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/lot-size-for-100k-prop-firm-account.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 44
+      },
+      "exists": true,
+      "words": 61
+    },
+    {
+      "path": "/blog/lucid-trading-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 110
+      },
+      "exists": true,
+      "words": 63
+    },
+    {
+      "path": "/blog/lux-trading-firm-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 14
+      },
+      "exists": true,
+      "words": 66
+    },
+    {
+      "path": "/blog/martingale-prop-firm-rules.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 59
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/medium-article-1.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 106
+      },
+      "exists": true,
+      "words": 32
+    },
+    {
+      "path": "/blog/ment-funding-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 60
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/metatrader-5-complete-guide.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 1
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/mff-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 14
+      },
+      "exists": true,
+      "words": 4916
+    },
+    {
+      "path": "/blog/micro-e-mini-vs-e-mini.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 61
+      },
+      "exists": true,
+      "words": 60
+    },
+    {
+      "path": "/blog/micro-futures-complete-guide.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 62
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/micro-futures-margin-requirements.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 63
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/multiple-accounts-one-prop-firm.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 64
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/my-funded-futures-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 20
+      },
+      "exists": true,
+      "words": 4592
+    },
+    {
+      "path": "/blog/myforexfunds-shutdown-alternatives.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 65
+      },
+      "exists": true,
+      "words": 44
+    },
+    {
+      "path": "/blog/myfxbook-verified-passing.html",
+      "buckets": [
+        "redirect"
+      ],
+      "order": {
+        "redirect": 2
+      },
+      "exists": true,
+      "words": 4610
+    },
+    {
+      "path": "/blog/next-step-funded-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 66
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/no-profit-split-passing-service.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 40
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/nova-funding-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 67
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/ofp-funding-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 68
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/pass-my-ftmo-challenge-for-me.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 79
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/pass-prop-firm-challenge-in-30-days.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 69
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/pass-prop-firm-challenge-without-overtrading.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 70
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/pipfarm-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 71
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/pipfarm-vs-ftmo.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 72
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/prop-firm-account-size-guide.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 73
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/prop-firm-beginner-faq.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 90
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/prop-firm-challenge-cost-2026.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 28
+      },
+      "exists": true,
+      "words": 46
+    },
+    {
+      "path": "/blog/prop-firm-challenge-failure-recovery.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 22
+      },
+      "exists": true,
+      "words": 4711
+    },
+    {
+      "path": "/blog/prop-firm-challenge-mistakes.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 56
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/prop-firm-challenge-passing-service-reviews-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 74
+      },
+      "exists": true,
+      "words": 40
+    },
+    {
+      "path": "/blog/prop-firm-challenge-rules-explained.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 116
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/prop-firm-challenge-rules-that-matter.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 7
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/prop-firm-challenge-scam-signs.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 33
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/prop-firm-challenge-service-vs-trading-yourself.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 75
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/prop-firm-challenge-terms-glossary.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 76
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/prop-firm-challenge-time-limits.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 24
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/prop-firm-challenge-vs-real-trading.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 30
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/prop-firm-consistency-rule-explained.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 25
+      },
+      "exists": true,
+      "words": 36
+    },
+    {
+      "path": "/blog/prop-firm-consistency-rule-guide.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 7
+      },
+      "exists": true,
+      "words": 4590
+    },
+    {
+      "path": "/blog/prop-firm-copy-trading-rules.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 77
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/prop-firm-daily-drawdown-explained.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 11
+      },
+      "exists": true,
+      "words": 4594
+    },
+    {
+      "path": "/blog/prop-firm-discount-codes-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 78
+      },
+      "exists": true,
+      "words": 47
+    },
+    {
+      "path": "/blog/prop-firm-ea-automated-trading.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 73
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/prop-firm-fastest-payouts.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 29
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/prop-firm-instant-funding.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 94
+      },
+      "exists": true,
+      "words": 4586
+    },
+    {
+      "path": "/blog/prop-firm-leverage-explained.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 97
+      },
+      "exists": true,
+      "words": 4584
+    },
+    {
+      "path": "/blog/prop-firm-leverage-margin-rules.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 25
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/prop-firm-minimum-deposit.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 79
+      },
+      "exists": true,
+      "words": 787
+    },
+    {
+      "path": "/blog/prop-firm-minimum-trading-days.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 92
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/prop-firm-mt4-mt5-ctrader-platforms.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 81
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/prop-firm-myths-debunked.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 34
+      },
+      "exists": true,
+      "words": 49
+    },
+    {
+      "path": "/blog/prop-firm-news-trading-rules.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 111
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/prop-firm-pass-rates-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 80
+      },
+      "exists": true,
+      "words": 48
+    },
+    {
+      "path": "/blog/prop-firm-passing-complete-guide-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 81
+      },
+      "exists": true,
+      "words": 4581
+    },
+    {
+      "path": "/blog/prop-firm-passing-service-cost-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 47
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/prop-firm-passing-service-cost.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 48
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/prop-firm-passing-service-reviews-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 96
+      },
+      "exists": true,
+      "words": 4595
+    },
+    {
+      "path": "/blog/prop-firm-passing-service-reviews.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 28
+      },
+      "exists": true,
+      "words": 36
+    },
+    {
+      "path": "/blog/prop-firm-passing-service.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 46
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/prop-firm-payout-calculator.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 8
+      },
+      "exists": true,
+      "words": 47
+    },
+    {
+      "path": "/blog/prop-firm-payout-rejected.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 82
+      },
+      "exists": true,
+      "words": 47
+    },
+    {
+      "path": "/blog/prop-firm-payout-times.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 93
+      },
+      "exists": true,
+      "words": 47
+    },
+    {
+      "path": "/blog/prop-firm-profit-splits-compared.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 35
+      },
+      "exists": true,
+      "words": 48
+    },
+    {
+      "path": "/blog/prop-firm-profit-target-strategies.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 19
+      },
+      "exists": true,
+      "words": 4628
+    },
+    {
+      "path": "/blog/prop-firm-risk-management-challenge.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 66
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/prop-firm-rules-explained.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 98
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/prop-firm-scaling-plan-explained.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 87
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/prop-firm-scams-to-avoid.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 25
+      },
+      "exists": true,
+      "words": 4571
+    },
+    {
+      "path": "/blog/prop-firm-soft-breach-vs-hard-breach-explained.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 22
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/prop-firm-success-rates.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 83
+      },
+      "exists": true,
+      "words": 46
+    },
+    {
+      "path": "/blog/prop-firm-taxes-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 83
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/prop-firm-taxes-explained.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 4
+      },
+      "exists": true,
+      "words": 34
+    },
+    {
+      "path": "/blog/prop-firm-trading-on-mobile.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 84
+      },
+      "exists": true,
+      "words": 48
+    },
+    {
+      "path": "/blog/prop-firm-trading-psychology.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 12
+      },
+      "exists": true,
+      "words": 46
+    },
+    {
+      "path": "/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 85
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/prop-firm-vps-requirements.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 86
+      },
+      "exists": true,
+      "words": 45
+    },
+    {
+      "path": "/blog/prop-firm-weekend-holding-rules-guide.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 27
+      },
+      "exists": true,
+      "words": 38
+    },
+    {
+      "path": "/blog/prop-firm-weekend-holding-rules.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 8
+      },
+      "exists": true,
+      "words": 4823
+    },
+    {
+      "path": "/blog/prop-firms-no-time-limit.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 87
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/blog/prop-firms-that-allow-news-trading.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 88
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/prop-firms-with-best-scaling-plans.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 26
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/prop-firms-without-consistency-rule.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 89
+      },
+      "exists": true,
+      "words": 1943
+    },
+    {
+      "path": "/blog/rebels-funding-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 90
+      },
+      "exists": true,
+      "words": 56
+    },
+    {
+      "path": "/blog/risk-management-100k-funded-account.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 91
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/scalping-vs-swing-challenges.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 92
+      },
+      "exists": true,
+      "words": 48
+    },
+    {
+      "path": "/blog/smartprop-trader-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 44
+      },
+      "exists": true,
+      "words": 65
+    },
+    {
+      "path": "/blog/swing-trading-prop-firm-challenge-strategy.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 93
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/take-profit-trader-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 43
+      },
+      "exists": true,
+      "words": 4584
+    },
+    {
+      "path": "/blog/tft-funded-trader-review.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 30
+      },
+      "exists": true,
+      "words": 6419
+    },
+    {
+      "path": "/blog/the-5ers-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 9
+      },
+      "exists": true,
+      "words": 4538
+    },
+    {
+      "path": "/blog/the-trading-pit-review-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 94
+      },
+      "exists": true,
+      "words": 57
+    },
+    {
+      "path": "/blog/the5ers-prop-firm-review.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 80
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/thinkcapital-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 11
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/ticktick-trader-challenge-passing.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 5
+      },
+      "exists": true,
+      "words": 62
+    },
+    {
+      "path": "/blog/topstep-100k-free-trial.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 95
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/topstep-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 58
+      },
+      "exists": true,
+      "words": 4823
+    },
+    {
+      "path": "/blog/topstep-express-vs-combine.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 96
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/blog/topstep-minimum-trading-days.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 97
+      },
+      "exists": true,
+      "words": 50
+    },
+    {
+      "path": "/blog/topstep-news-trading-rules.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 98
+      },
+      "exists": true,
+      "words": 52
+    },
+    {
+      "path": "/blog/topstep-pass-rate-2026.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 99
+      },
+      "exists": true,
+      "words": 58
+    },
+    {
+      "path": "/blog/topstep-payout-denied.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 100
+      },
+      "exists": true,
+      "words": 48
+    },
+    {
+      "path": "/blog/topstep-vs-apex-prop-firm.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 115
+      },
+      "exists": true,
+      "words": 36
+    },
+    {
+      "path": "/blog/topstep-vs-ftuk-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 13
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/topstep-vs-the5ers-comparison.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 21
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/topstep-vs-tradify-comparison.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 69
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/trade-the-pool-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 21
+      },
+      "exists": true,
+      "words": 64
+    },
+    {
+      "path": "/blog/tradeday-challenge-passing.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 16
+      },
+      "exists": true,
+      "words": 59
+    },
+    {
+      "path": "/blog/tradify-challenge-passing.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 51
+      },
+      "exists": true,
+      "words": 61
+    },
+    {
+      "path": "/blog/ultimate-guide-passing-prop-firm-challenge.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 16
+      },
+      "exists": true,
+      "words": 4567
+    },
+    {
+      "path": "/blog/what-discreet-means-prop-firm-passing.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 101
+      },
+      "exists": true,
+      "words": 56
+    },
+    {
+      "path": "/blog/what-happens-after-passing-challenge.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 15
+      },
+      "exists": true,
+      "words": 4711
+    },
+    {
+      "path": "/blog/why-87-percent-fail-prop-firm-challenges.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 6
+      },
+      "exists": true,
+      "words": 53
+    },
+    {
+      "path": "/blog/why-free-test-offer.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 102
+      },
+      "exists": true,
+      "words": 54
+    },
+    {
+      "path": "/blog/why-traders-fail-prop-firm-challenges.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 23
+      },
+      "exists": true,
+      "words": 51
+    },
+    {
+      "path": "/do-prop-firms-refund-challenge-fee.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 34
+      },
+      "exists": true,
+      "words": 4671
+    },
+    {
+      "path": "/faq.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 4
+      },
+      "exists": true,
+      "words": 4587
+    },
+    {
+      "path": "/how-long-to-pass-prop-firm-challenge.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 37
+      },
+      "exists": true,
+      "words": 40
+    },
+    {
+      "path": "/how-to-calculate-position-size-prop-firm.html",
+      "buckets": [
+        "crawled"
+      ],
+      "order": {
+        "crawled": 36
+      },
+      "exists": true,
+      "words": 62
+    },
+    {
+      "path": "/order.html",
+      "buckets": [
+        "discovered"
+      ],
+      "order": {
+        "discovered": 103
+      },
+      "exists": true,
+      "words": 28
+    },
+    {
+      "path": "/pass-prop-firm-challenge-without-breaking-rules.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 99
+      },
+      "exists": true,
+      "words": 55
+    },
+    {
+      "path": "/passed-challenges.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 0
+      },
+      "exists": true,
+      "words": 4563
+    },
+    {
+      "path": "/privacy.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 45
+      },
+      "exists": true,
+      "words": 3623
+    },
+    {
+      "path": "/prop-firm-comparison-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 49
+      },
+      "exists": true,
+      "words": 4583
+    },
+    {
+      "path": "/prop-firm-rules-matrix.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 17
+      },
+      "exists": true,
+      "words": 4699
+    },
+    {
+      "path": "/reviews/best-prop-firm-passing-service-2026.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 74
+      },
+      "exists": true,
+      "words": 4601
+    },
+    {
+      "path": "/reviews/prop-firm-passing-service-reviews.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 5
+      },
+      "exists": true,
+      "words": 4553
+    },
+    {
+      "path": "/services/ftmo-challenge-passing-service.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 20
+      },
+      "exists": true,
+      "words": 4585
+    },
+    {
+      "path": "/services/fundednext-passing-service.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 41
+      },
+      "exists": true,
+      "words": 4619
+    },
+    {
+      "path": "/services/passing-prop-firm-services.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 36
+      },
+      "exists": true,
+      "words": 4723
+    },
+    {
+      "path": "/services/prop-firm-challenge-passing-service.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 76
+      },
+      "exists": true,
+      "words": 4565
+    },
+    {
+      "path": "/terms.html",
+      "buckets": [
+        "notfound"
+      ],
+      "order": {
+        "notfound": 18
+      },
+      "exists": true,
+      "words": 3594
+    },
+    {
+      "path": "/tools/prop-firm-calculator-embed.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 21
+      },
+      "exists": true,
+      "words": 4545
+    },
+    {
+      "path": "/tools/prop-firm-profit-calculator.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 27
+      },
+      "exists": true,
+      "words": 4632
+    },
+    {
+      "path": "/what-to-do-after-passing-prop-firm-challenge.html",
+      "buckets": [
+        "indexed"
+      ],
+      "order": {
+        "indexed": 50
+      },
+      "exists": true,
+      "words": 62
+    }
+  ]
+}

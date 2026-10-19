@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-label="The same losing price path measured on floating equity and on closed balance, showing that the equity rule triggers first" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="1000" height="540" fill="#fff"/>
+  <text x="50" y="52" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">DAILY LOSS MEASUREMENT</text>
+  <text x="50" y="90" font-size="28" font-weight="800" fill="#0b1220">Why the same day breaches one rule and survives the other</text>
+  <g>
+    <rect x="50" y="104" width="900" height="164" rx="14" fill="#f4f7fc" stroke="#dbe3ef"/>
+    <text x="76" y="134" font-size="17" font-weight="800" fill="#0b1220">Equity, including floating</text>
+    <text x="76" y="158" font-size="13" fill="#6b7a92">Breach at the worst moment</text>
+    <polyline points="111,234.8 184.5,200.24 258,253.51999999999998 331.5,216.07999999999998 405,278 478.5,239.12 552,292.4 625.5,256.4 699,311.12 772.5,270.8 846,324.08 919.5,283.76" fill="none" stroke="#e5484d" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="90" y1="298" x2="930" y2="298" stroke="#e5484d" stroke-dasharray="6 6" stroke-width="2"/>
+    <text x="936" y="302" font-size="12" font-weight="700" fill="#e5484d">limit</text>
+  </g>
+  <g>
+    <rect x="50" y="294" width="900" height="164" rx="14" fill="#f4f7fc" stroke="#dbe3ef"/>
+    <text x="76" y="324" font-size="17" font-weight="800" fill="#0b1220">Closed balance only</text>
+    <text x="76" y="348" font-size="13" fill="#6b7a92">Breach only on a closed loss</text>
+    <polyline points="111,424.8 184.5,390.24 258,443.52 331.5,406.08 405,468 478.5,429.12 552,482.4 625.5,446.4 699,501.12 772.5,460.8 846,514.0799999999999 919.5,473.76" fill="none" stroke="#0e9f6e" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="90" y1="488" x2="930" y2="488" stroke="#0e9f6e" stroke-dasharray="6 6" stroke-width="2"/>
+    <text x="936" y="492" font-size="12" font-weight="700" fill="#0e9f6e">limit</text>
+  </g>
+  <text x="50" y="508" font-size="13" fill="#6b7a92">Most firms measure the daily limit on equity, so an open losing position counts against the budget before it is closed.</text>
+</svg>

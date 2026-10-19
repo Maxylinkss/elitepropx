@@ -1,0 +1,216 @@
+---
+title: Prop Firm Weekend Holding Rules: Gap Risk Explained
+desc: Why a Friday position can fail an account before Monday even opens. How weekend rules, swap costs and gap risk interact with trailing and static drawdown limits.
+path: /blog/prop-firm-weekend-holding-rules.html
+type: article
+h1: Prop firm weekend holding rules, and why Friday is the expensive day
+kicker: Rules guide
+crumb: Weekend holding rules
+section: Rules guides
+sectionUrl: /blog/
+date: 2026-10-18
+updated: 2026-10-18
+priority: 0.8
+schemaService: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Rules guide · reviewed October 2026</p>
+    <h1>Prop firm weekend holding rules, and why Friday is the expensive day</h1>
+    <p class="lede">Most evaluation accounts are not lost mid-trade. They are lost in the fifty hours when the market is closed and the position is still open — a gap that opens beyond the stop, a swap charge that lands three times, or a firm rule that treats a weekend hold as a prohibited exposure. This guide covers the mechanics behind each of those outcomes, the rule variations worth checking in your firm's terms, and the sizing maths that makes a weekend hold survivable when the rules do permit it.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>A stop loss is an instruction, not a guarantee: over a weekend gap it fills at whatever price exists when the market reopens, which can be far beyond the level on the ticket.</li>
+        <li>Firms handle weekend holding in three ways — permitted with gap risk, prohibited on evaluation accounts, and permitted only flat by a stated cut-off. The third is the most commonly breached.</li>
+        <li>Swap and financing charges accrue on held positions, and on Wednesday many instruments book triple swap. That is a direct cost against a fixed drawdown budget.</li>
+        <li>On a trailing-drawdown account a weekend gap is doubly dangerous: it can breach the floor and simultaneously erase the cushion that allowed the position to exist.</li>
+        <li>The sizing rule that makes a hold survivable is to price the gap as if it were the stop — typically a multiple of the planned risk, not the planned risk itself.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#why">Why weekend risk is a different risk</a></li>
+        <li><a href="#breach">How a gap actually breaches an account</a></li>
+        <li><a href="#rules">The three rule positions in the market</a></li>
+        <li><a href="#costs">Swap, financing and the Wednesday charge</a></li>
+        <li><a href="#monday">What Monday open actually does</a></li>
+        <li><a href="#sizing">Sizing a hold for gap risk</a></li>
+        <li><a href="#strategies">Which strategies suit weekend holds</a></li>
+        <li><a href="#already">If you are already holding into Friday</a></li>
+        <li><a href="#adjacent">Rules that interact with weekend exposure</a></li>
+        <li><a href="#worked">A worked example: the same Friday decision</a></li>
+        <li><a href="#overnight">Overnight and weekend risk are not the same</a></li>
+        <li><a href="#checklist">A Friday checklist</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="why">Why weekend risk is a different risk</h2>
+    <p>During the trading week, a stop loss behaves approximately as advertised. Price moves continuously, liquidity is present in normal size, and a level a few pips or ticks away is usually reachable within a fraction of the planned risk. The whole architecture of risk management — position sizing, daily budgets, trailing floors — assumes that the stop is the worst case.</p>
+    <p>The weekend removes that assumption. The market closes on Friday evening, reopens on Sunday or Monday depending on the instrument, and the price at the reopen is whatever the accumulated news of the interval produces. Nobody was there to fill the orders in between. A stop placed at a sensible distance does not fill at that distance; it fills at the first available price, which is a fact rather than a rule of any firm.</p>
+    <p>This is the difference between volatility and gap risk. Volatility is price movement inside a session, and stops work in it. Gap risk is price discontinuity across a closed market, and stops do not work in it. An evaluation account can survive a volatile week at disciplined sizing; it can be ended by a single event over a weekend that never appeared in the trader's risk model.</p>
+    <p>Two properties make it worse on an evaluation than on a personal account. First, the account has a hard failure threshold rather than a margin call, so there is no buffer between a large gap and a closed account. Second, most evaluation plans are calibrated to the daily loss limit, which is measured on intraday movement — a budget that is irrelevant to a fifty-hour price jump.</p>
+    <h2 id="breach">How a gap actually breaches an account</h2>
+    <p>The mechanism is simple and worth walking through in numbers, because the intuition most traders carry is wrong in a specific way. They assume a losing weekend position costs the amount at risk on the ticket. It costs whatever the reopen gives them.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th>Planned risk</th><th>Gap at reopen</th><th>Realised loss</th><th>Account effect</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Normal stop</td><td>1% of balance</td><td>No gap</td><td>1%</td><td>Within plan</td></tr>
+          <tr><td>Mild gap</td><td>1% of balance</td><td>2× stop distance</td><td>2%</td><td>Daily limit stress</td></tr>
+          <tr><td>Weekend event</td><td>1% of balance</td><td>5× stop distance</td><td>5%</td><td>Half the drawdown in one fill</td></tr>
+          <tr><td>Severe gap</td><td>1% of balance</td><td>10× stop distance</td><td>10%</td><td>Evaluation over</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The table is not a worst-case fantasy. Currency pairs have opened tens of pips away from Friday's close after a weekend of central-bank commentary, and index instruments have opened hundreds of points away after a geopolitical event. In each case the stop that looked like 1% was filled at a multiple of it, and the daily loss limit was irrelevant because the loss did not happen inside a session.</p>
+    <p>There is a second-order effect that catches traders who survive the fill. Many firms measure the daily loss limit against the previous day's closing balance or equity, which means the Monday reopen loss is attributed to Monday. A trader who gaps through half the drawdown at the open has a second, independent budget to spend later that day — and a natural instinct, after a loss of that size, to try to recover it.</p>
+    <p>That instinct is the actual killer in most weekend stories. The gap is a finite, calculable event; the recovery attempt afterwards is where the rest of the account goes. Any plan that permits a weekend hold should state in advance that the Monday session after a gap is closed, with no new positions taken until the following day.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="Two price paths showing a daily loss limit measured on equity including floating loss versus closed balance only" width="1000" height="540" loading="lazy">
+      <figcaption>Measurement matters: a floating loss counts against an equity-based limit before the position is ever closed.</figcaption>
+    </figure>
+    <h2 id="rules">The three rule positions in the market</h2>
+    <p>Firms do not share a single policy. There are three positions, and they exist in roughly equal numbers across the industry.</p>
+    <p><strong>Permitted with gap risk borne by the trader.</strong> The firm allows positions to be held across the weekend and states that the account is subject to gap risk, including the possibility that the failure threshold is exceeded at the reopen. This is the most honest position: the risk is disclosed, and the trader is free to accept it. It is also the position that most often produces a failed account, because disclosure is not the same as protection.</p>
+    <p><strong>Prohibited on evaluation accounts.</strong> The firm requires all positions to be flat before the weekly close, usually by a stated cut-off in server time. Holding through that cut-off is a rule breach regardless of whether the position was profitable. This is common among firms that regard overnight and weekend exposure as an unacceptable risk on an account they have not yet funded.</p>
+    <p><strong>Permitted with conditions.</strong> The firm allows holdings but restricts them: a reduced effective leverage over the weekend, a cap on the number of open positions, an exclusion of specific instruments, or a requirement to reduce size below a threshold. This is the position most likely to be breached accidentally, because the conditions live in the terms rather than on the evaluation page.</p>
+    <p>The practical advice is uncomfortable but simple: read the clause for the specific instrument you intend to hold. Firms sometimes permit weekend holding on major currency pairs and prohibit it on indices, or allow it on the funded account while prohibiting it on the evaluation. The unit of the rule is the instrument and the stage, not the account.</p>
+    <p>Where the rule is a cut-off time, convert it before Friday afternoon. Firms state cut-offs in server time, which frequently does not match the trader's local clock or the platform's displayed time. A trader who assumes the cut-off is midnight local and discovers it is 22:00 server time has already breached.</p>
+    <h2 id="costs">Swap, financing and the Wednesday charge</h2>
+    <p>A held position carries a cost independent of price movement, and beginners routinely forget it because it never appears on the trade ticket.</p>
+    <p>On forex and CFD accounts the position is financed: the platform applies a swap charge, which can be positive or negative depending on the interest-rate differential between the two currencies. On most instruments the charge is small per night and material across weeks. On a fixed daily budget, it is a slow leak rather than an event — but on a trailing account it is worse, because it reduces equity and therefore the cushion without producing a visible loss on the chart.</p>
+    <p>The detail that catches people is the triple charge. Most brokers and platforms book three days of financing on the weekday that accounts for the weekend settlement, which for many instruments is Wednesday. A trader who holds one position over a weekend pays the weekend financing, but a trader who positions on Wednesday specifically to hold through Friday pays it up front, and the amount is triple the nightly figure rather than a single night.</p>
+    <p>Futures accounts do not pay swap; they carry contracts with expiry and exchange margin rules instead. The equivalent weekend consideration is the contract's expiry and any roll, plus the fact that holding a futures position into a weekend exposes it to the same gap without any financing cost as an offsetting signal. Traders coming from forex often read the absence of swap as an absence of cost, which is not the same thing.</p>
+    <p>The planning implication is to price the hold as a total: expected gap exposure plus financing over the number of nights, compared against the remaining drawdown budget. On a position held for two weeks, financing alone can consume a meaningful fraction of the daily limit without a single adverse price move.</p>
+    <h2 id="monday">What Monday open actually does</h2>
+    <p>The reopen is a distinct market event rather than a continuation of Friday's session, and it behaves like one.</p>
+    <p>Liquidity at the open is thin relative to the middle of the day. Spreads are wide, and the first prints can be far from the level at which the market eventually trades an hour later. For a trader holding a losing position, that thinness means the fill can be worse than the gap itself suggests — the market opens at one price, the stop fills a moment later at another.</p>
+    <p>Stops placed inside the gap are not magic. A stop ten points below Friday's close on an instrument that opens a hundred points lower fills near the open, not ten points below the close. This is the single fact that traders find hardest to accept, and it is the reason firms with tight drawdowns prohibit weekend holds outright: the risk is not linear in the stop distance.</p>
+    <figure>
+      <img src="/assets/img/drawdown-types.svg" alt="Three equity curves comparing a static failure floor with intraday and end-of-day trailing floors across the same profit path" width="1000" height="560" loading="lazy">
+      <figcaption>A gap does not respect the floor: it moves equity past it, and on a trailing account the cushion was already thinner than it looked.</figcaption>
+    </figure>
+    <p>There is a subtler effect on a trailing account. The failure threshold is computed from peak equity, and peak equity includes unrealised profit. A position held over a weekend can be in profit on Friday, pushing the floor upward, and then gap through the floor on Monday without ever being closed. The trader's mental model — "I was up, so I had room" — is inverted: being up is what removed the room.</p>
+    <p>For a trader who does hold, the useful discipline is to decide the Monday action before Friday's close. If the position is stopped out at a loss, the day is closed with no new risk. If it gaps in favour, the position is reduced rather than held, because the same gap that helped can reverse on the next news item. Neither decision should be made while looking at a Monday screen.</p>
+    <h2 id="sizing">Sizing a hold for gap risk</h2>
+    <p>If the rules permit a weekend hold, the sizing calculation changes. The planned stop is no longer the risk; the plausible gap is.</p>
+    <p>A workable method is to price the gap at a multiple of the stop and require that the total still fits inside the remaining drawdown. If a trader's normal position risks 0.5% with a stop, and the instrument has historically gapped three stop distances over a weekend, the true risk of that position is 1.5% rather than 0.5%. The position should be reduced by the same factor — to roughly a third of normal size — if the account is to keep the same exposure.</p>
+    <p>That arithmetic produces positions that feel too small to matter, which is precisely why traders ignore it. It is also why the accounts that survive weekend events are the ones holding trivial size at the close rather than the ones with a strong view.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Planned risk</th><th>Assumed gap multiple</th><th>True exposure</th><th>Position size adjustment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.5%</td><td>2×</td><td>1.0%</td><td>Half normal size</td></tr>
+          <tr><td>0.5%</td><td>3×</td><td>1.5%</td><td>One third of normal size</td></tr>
+          <tr><td>0.5%</td><td>5×</td><td>2.5%</td><td>One fifth of normal size</td></tr>
+          <tr><td>1.0%</td><td>3×</td><td>3.0%</td><td>Not advisable near a floor</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="A daily loss limit divided into three equal trade slots showing dollars at risk per trade on a 100,000 dollar account" width="940" height="520" loading="lazy">
+      <figcaption>Sizing to thirds is the same logic applied to a hold: the loss you can survive is the one you planned for, not the one you hoped for.</figcaption>
+    </figure>
+    <p>Two further refinements are worth making. First, cluster instruments rather than counting positions: two correlated pairs held over a weekend are one exposure, and a trader holding three of them has not diversified, has tripled a single bet. Second, account for the financing over the expected hold duration before deciding the size, because a position that is fine for one night may not be for five.</p>
+    <p>The final piece is a hard cap. Set a rule that no weekend exposure may exceed a fixed percentage of the remaining drawdown — a third is a reasonable ceiling — and treat it as non-negotiable regardless of conviction. Conviction is exactly the variable that fails to predict gaps.</p>
+    <h2 id="strategies">Which strategies suit weekend holds</h2>
+    <p>Some approaches are structurally compatible with holding, and others are not. The distinction is not about timeframe but about how the edge is produced.</p>
+    <p>Strategies that depend on precise entries and exits — scalping, mean reversion with tight stops, anything where the stop distance is a meaningful part of the thesis — are incompatible with gap risk. The gap destroys the relationship between the risk taken and the loss realised, and the plan's statistics stop describing the plan.</p>
+    <p>Strategies that depend on a broad directional view over weeks, with wide stops and small size relative to the account, are compatible in principle. A position risking a quarter of a per cent with a stop three times wider than the gap history is not meaningfully exposed to a weekend event, and the financing is a rounding error against the expected move.</p>
+    <p>There is a middle category that looks compatible and is not: positions with a wide stop but a large notional value. These are the trades that produce the horror stories, because the stop is far away, the trader feels safe, and the gap is large enough to matter anyway. The test is not the stop distance in price terms but the loss in account percentage if the worst historical gap is applied.</p>
+    <p>For an evaluation account specifically, the asymmetry argues for flat Fridays regardless of compatibility. A hold can produce a modest additional opportunity or a large unplanned loss, and on an account whose purpose is to reach a threshold, the variance is not compensated by the extra hours of exposure. The profitable weekend hold is a real thing; it is a poorly priced thing on an evaluation.</p>
+    <h2 id="already">If you are already holding into Friday</h2>
+    <p>Most traders read a guide like this on a Friday afternoon with a position open. The decisions available are limited, and the order they are worth considering is not the intuitive one.</p>
+    <p><strong>Check the rule first.</strong> Before deciding whether to hold, establish whether the firm permits it for that instrument on your account stage. If it is a breach, the position must be closed regardless of profit or loss. A rule breach voids the evaluation whether or not the trade would have worked, and a trader who holds hoping the position offsets the breach has misunderstood the transaction.</p>
+    <p><strong>Check the cut-off in server time.</strong> If the firm requires flat positions by a stated time, convert it to your clock and to the platform clock, and close with a margin. The last fifteen minutes before a cut-off are the worst possible time to be executing, because spreads widen as liquidity thins.</p>
+    <p><strong>Then decide on the position, not on the P&amp;L.</strong> A losing position is not more worth holding because closing it realises a loss; that is the disposition effect wearing a risk-management costume. The question is whether the position would be opened today at this size given the weekend ahead. If the answer is no, the position should not exist.</p>
+    <p><strong>Reduce rather than close where the thesis is intact.</strong> Cutting to a third of the size keeps a view while bringing the gap exposure inside the drawdown budget. That is the compromise for a trader who genuinely believes the position has weeks to run and whose firm permits the hold.</p>
+    <p><strong>Record the decision and the reason.</strong> The journal entry that matters is written on Friday, not on Monday. A trader who wrote "held 0.2% exposure over the weekend, gap risk priced at three stops, no new positions on Monday" has a defensible process even if the gap goes against them.</p>
+    <h2 id="adjacent">Rules that interact with weekend exposure</h2>
+    <p>Weekend holding rarely operates in isolation. Four other rules commonly interact with it, and each changes the calculation.</p>
+    <p><strong>News windows.</strong> A weekend can contain scheduled events in markets that trade outside the trader's normal hours, and the firm's news rule may still apply at the reopen. Being flat avoids the question entirely.</p>
+    <p><strong>Maximum position caps.</strong> Firms that cap the number of open positions often count a weekend hold as occupying a slot, which reduces the capacity available on Monday. On a small cap that is a real cost, not a technicality.</p>
+    <p><strong>Consistency rules.</strong> A gap in favour produces a large single day, which is exactly the pattern a best-day consistency rule penalises at payout. A weekend win can therefore create a payout problem that a weekend loss would not have created.</p>
+    <p><strong>Drawdown measurement timing.</strong> Where the firm measures the daily limit at a specific server-time reset, a gap loss can be split across two days depending on when the reopen falls relative to the reset. That changes which budget absorbs the loss, and it is worth knowing before rather than after.</p>
+    <p>None of these makes a weekend hold impossible. They do mean that the decision is a compound one, and that "the rules allow it" is a necessary condition rather than a sufficient one.</p>
+    <h2 id="checklist">A Friday checklist</h2>
+    <p>Six questions, answered before the close, cover the decision completely.</p>
+    <ol>
+      <li>Does my firm permit a weekend hold on this instrument, at this account stage, under its current terms?</li>
+      <li>If there is a cut-off, what is it in server time, and am I reliably flat before it?</li>
+      <li>What is the worst historical gap on this instrument, expressed as a percentage of my remaining drawdown?</li>
+      <li>Does the financing over the expected hold fit inside my daily budget, including the triple charge day?</li>
+      <li>Are my open positions correlated, and what is the combined exposure rather than the per-position risk?</li>
+      <li>What is my Monday action if the position gaps against me, written down now rather than decided later?</li>
+    </ol>
+    <p>A trader who can answer all six in under a minute is operating a process. A trader who cannot is holding a position they do not fully understand, which is the condition in which weekend risk does its damage.</p>
+    <h2 id="worked">A worked example: the same Friday decision</h2>
+    <p>Numbers make the trade-off concrete. Take a $100,000 evaluation with a 10% maximum loss, a 5% daily limit, and a trader who is $2,000 in profit on Friday afternoon with one position open. The position risks 0.5% — $500 — and the stop is 40 pips away.</p>
+    <p><strong>Option one: close before the bell.</strong> The trader banks the profit, ends the week with $2,000 of buffer, and starts Monday with a full daily budget and no exposure. Nothing about the weekend can affect the account. The cost is the possibility that the position would have continued in their favour, which is a real cost and a small one relative to the remaining drawdown.</p>
+    <p><strong>Option two: hold at full size.</strong> The nominal risk is $500. But the instrument has gapped up to 120 pips over a weekend twice in the last three years, which is three times the stop distance. The plausible loss is therefore $1,500, and the plausible adverse tail is larger. On a 5% daily limit of $5,000 that is survivable; on the maximum loss it consumes 15% of the entire remaining drawdown in a single fill.</p>
+    <p><strong>Option three: hold at a third of size.</strong> The nominal risk falls to $167 and the gap-adjusted exposure to roughly $500. The trader keeps a view, the account keeps its buffer, and the worst plausible outcome is an amount the plan can absorb without changing the week. This is the only version of the hold that respects both the thesis and the threshold.</p>
+    <p>The example is unremarkable, which is the point. There is no exotic instrument and no extreme assumption — just a normal winning position, a normal weekend, and a gap multiple that has occurred recently enough to be in the data. Almost every weekend disaster looks like this at the moment of decision rather than like an obvious gamble.</p>
+    <p>One detail in that example deserves emphasis. The trader was in profit. On a trailing-drawdown account, that profit had already lifted the failure floor, so the cushion was smaller than the balance implied. Holding a winner over a weekend is therefore riskier than holding a loser, which inverts the instinct that keeps traders in profitable positions.</p>
+    <h2 id="overnight">Overnight and weekend risk are not the same</h2>
+    <p>Traders often lump overnight and weekend exposure together, and firms usually treat them as separate rules. The distinction matters because the mitigations are different.</p>
+    <p>An overnight hold is a gap of a few hours inside a continuous market. For most instruments the reopened price is close to the previous close, the funding cost is one night, and the adverse move is usually a fraction of the daily range. Overnight risk is real but bounded, and it is the reason many plans allow a position to be held from the New York afternoon into the Asian session.</p>
+    <p>A weekend hold is a gap of one to two days in which the market is closed to everyone. The information that accumulates is not filtered by trading, so the first price after the reopen can be a step change rather than a continuation. Funding can be charged at triple rate, scheduled events may occur in unrelated markets, and the firm's cut-off rules — which often apply only to the weekend — come into play.</p>
+    <p>The practical consequence is that a plan can reasonably permit overnight holds and prohibit weekend ones. Many do exactly that, and it is a coherent position rather than an inconsistency. If your firm's rules make that distinction, respect it in the plan rather than treating the weekend as an extended night.</p>
+    <p>There is a second, mechanical difference worth knowing. Overnight gap risk on a trailing account is usually absorbed because the floor moves on unrealised profit and the position is rarely held through a large adverse step. Weekend gap risk arrives when the trader cannot respond: no ability to reduce size, no ability to close early, no ability to adjust the stop as the market approaches it. That asymmetry — the inability to act — is what turns a manageable exposure into a rule breach.</p>
+    <p>Finally, consider the sequencing across a month rather than a single Friday. A trader who holds every weekend takes that risk forty or fifty times a year. At even a modest probability of a large gap per hold, the annual probability of at least one damaging event approaches certainty. The individual decision looks trivial; the habit does not.</p>
+    <h2 id="faq">Frequently asked questions</h2>
+    <details class="faq"><summary>Can I hold positions over the weekend on a prop firm evaluation?</summary><div class="faq-a"><p>Only if the firm's terms permit it for that instrument and account stage. Policies range from permitted with gap risk borne by the trader, to prohibited on evaluation accounts, to permitted with conditions such as reduced leverage or position caps. Read the clause for your specific instrument rather than the general FAQ.</p></div></details>
+    <details class="faq"><summary>Does a stop loss protect me over a weekend gap?</summary><div class="faq-a"><p>No. A stop is an instruction to trade at the market when a level is reached, and over a closed market the level is skipped. The order fills at the first available price after the reopen, which can be well beyond the stop distance.</p></div></details>
+    <details class="faq"><summary>What is the risk of holding over a weekend?</summary><div class="faq-a"><p>The risk is a discontinuity: a price jump that makes the realised loss a multiple of the planned one. On an account with a hard failure threshold, a single gap can consume the remaining drawdown, which is why sizing for a hold should price the gap rather than the stop.</p></div></details>
+    <details class="faq"><summary>Why is Wednesday charged triple swap?</summary><div class="faq-a"><p>Most platforms book three days of financing on the weekday that settles the weekend, which is Wednesday for many instruments. A position held from Wednesday pays the weekend financing up front, on top of the nightly charge.</p></div></details>
+    <details class="faq"><summary>Do futures accounts pay swap over the weekend?</summary><div class="faq-a"><p>No, futures do not pay swap; they carry contracts with expiry and exchange margin rules. The weekend risk is the same gap without a financing charge, which traders sometimes mistake for a lack of cost.</p></div></details>
+    <details class="faq"><summary>Can holding a winner over the weekend cause a consistency problem?</summary><div class="faq-a"><p>Yes. A favourable gap produces a single large day, and a best-day consistency rule penalises exactly that pattern at payout. A weekend win can therefore leave an account at target but unable to withdraw until the ratio normalises.</p></div></details>
+    <details class="faq"><summary>How much size should I hold over a weekend?</summary><div class="faq-a"><p>Size from the plausible gap, not the stop. If the instrument has gapped three stop distances historically, true exposure is three times the planned risk, so the position should be cut to roughly a third. A ceiling of one third of remaining drawdown for total weekend exposure is a reasonable hard cap.</p></div></details>
+    <details class="faq"><summary>What happens if I breach the weekend rule accidentally?</summary><div class="faq-a"><p>On firms that prohibit holding, the account is typically void regardless of the position's outcome. There is no partial credit for a profitable breach. The only defence is to convert the cut-off to your own clock and close with time to spare.</p></div></details>
+    <details class="faq"><summary>Should I trade the Monday reopen?</summary><div class="faq-a"><p>Not with a fresh position in the first minutes. Spreads are wide, prints can be far from the eventual price, and a trader who has just taken a gap loss is the least objective participant in that session. Treat the reopen as a measurement and the rest of the day as closed.</p></div></details>
+    <details class="faq"><summary>Does the daily loss limit apply to a gap?</summary><div class="faq-a"><p>It depends on when the firm resets the day. If the reopen falls after the reset, the gap loss lands in the new day's budget; if before, it lands in the previous one. Either way the maximum loss rule applies, and that is the one that closes accounts.</p></div></details>
+    <details class="faq"><summary>Is holding over the weekend ever a good trade on an evaluation?</summary><div class="faq-a"><p>Rarely. The extra opportunity is modest and the variance is large, and an evaluation's purpose is to reach a threshold rather than to maximise expected value. The traders who hold successfully are usually running very small size against a wide stop, which is not the trade most holders are actually taking.</p></div></details>
+    <details class="faq"><summary>Where should I check my firm's actual rule?</summary><div class="faq-a"><p>The terms of service or the trading rules document, searched for words like "weekend", "overnight", "market close" and "holding". Where the evaluation page and the terms disagree, the terms are enforced. A written answer from support is worth keeping.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Let the evaluation be traded rule-first</h2>
+      <p>ElitePropX trades your challenge for a flat <strong>$220</strong> at any account size, with retries covered and no profit split. Weekend and news rules are read and respected, not discovered at the reopen.</p>
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule guide</a></li>
+      <li><a href="/blog/ftmo-challenge-passing.html">Passing an FTMO challenge</a></li>
+      <li><a href="/blog/fundednext-vs-topstep-comparison.html">FundedNext vs Topstep</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Complete passing guide 2026</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">How to vet a passing service</a></li>
+      <li><a href="/faq.html">Frequently asked questions</a></li>
+    </ul>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Weekend, overnight and gap-risk policies vary by firm and change over time; verify them against the firm's current terms. Trading involves substantial risk of loss.</p>
+  </div>
+</section>
+"
+}

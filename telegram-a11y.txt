@@ -1,0 +1,71 @@
+Found 6 matches for "Telegram":
+
+- generic [active] [ref=f15e1]:
+  - banner [ref=f15e3]:
+    - generic [ref=f15e4]:
+      - navigation "Primary" [ref=f15e7]:
+        - list [ref=f15e8]:
+          ...
+          - listitem [ref=f15e23]:
+            - link "About" [ref=f15e24] [cursor=pointer]:
+              - /url: /about.html
+      - generic [ref=f15e25]:
+        - link "Chat with ElitePropX on Telegram" [ref=f15e26] [cursor=pointer]:
+          - /url: https://t.me/voraspas
+        - link "Start for $220" [ref=f15e29] [cursor=pointer]:
+          - /url: /#get-started
+
+----
+
+- generic [active] [ref=f15e1]:
+  - main [ref=f15e30]:
+    - generic [ref=f15e404]:
+      - generic [ref=f15e409]:
+        - link "Request a free trial" [ref=f15e410] [cursor=pointer]:
+          - /url: mailto:support@elitepropx.com?subject=Free%20trial%20challenge
+        - link "Chat on Telegram" [ref=f15e411] [cursor=pointer]:
+          - /url: https://t.me/voraspas
+  - contentinfo [ref=f15e415]:
+    - generic [ref=f15e416]:
+
+----
+
+- generic [active] [ref=f15e1]:
+  - contentinfo [ref=f15e415]:
+    - generic [ref=f15e416]:
+      - generic [ref=f15e417]:
+        ...
+        - heading "Not sure which firm or plan fits?" [level=2] [ref=f15e419]
+        - paragraph [ref=f15e420]: Send the firm and account size. You will get the flat fee, a timeline and a straight answer on your firm's terms before you pay.
+      - generic [ref=f15e421]:
+        - link "Chat on Telegram" [ref=f15e422] [cursor=pointer]:
+          - /url: https://t.me/voraspas
+        - link "Email support" [ref=f15e426] [cursor=pointer]:
+          - /url: mailto:support@elitepropx.com?subject=Prop%20firm%20challenge%20enquiry
+
+----
+
+- generic [active] [ref=f15e1]:
+  - contentinfo [ref=f15e415]:
+    - generic [ref=f15e427]:
+      - generic [ref=f15e428]:
+        - img "ElitePropX" [ref=f15e429]
+        - paragraph [ref=f15e430]: ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.
+        - paragraph [ref=f15e431]:
+          - link "Telegram @voraspas" [ref=f15e432] [cursor=pointer]:
+            - /url: https://t.me/voraspas
+          - link "support@elitepropx.com" [ref=f15e433] [cursor=pointer]:
+            - /url: mailto:support@elitepropx.com
+
+----
+
+- generic [active] [ref=f15e1]:
+  - contentinfo [ref=f15e415]:
+    - generic [ref=f15e475]:
+      - paragraph [ref=f15e476]: © 2026 ElitePropX. All rights reserved.
+      - paragraph [ref=f15e477]: ElitePropX is an independent service and is not affiliated with, endorsed by, or sponsored by any proprietary trading firm named on this site. Trading involves substantial risk of loss. Past results do not guarantee future outcomes. Check your firm's terms before purchasing any service.
+  - link "Chat with ElitePropX on Telegram" [ref=f15e478] [cursor=pointer]:
+    - /url: https://t.me/voraspas
+    - generic [ref=f15e482]:
+      - strong [ref=f15e483]: Chat on Telegram
+      - generic [ref=f15e484]: "@voraspas"

@@ -1,0 +1,203 @@
+---
+title: Prop Firm Profit Calculator: Target, Payout and Fee
+desc: Work out what a prop firm target is worth after the split, how many trades it takes, and how much profit must be made before the evaluation fee is covered.
+path: /tools/prop-firm-profit-calculator.html
+type: page
+h1: The prop firm profit calculator: target, payout and fee, in one place
+kicker: Tool
+crumb: Profit calculator
+section: Tools
+sectionUrl: /blog/
+priority: 0.9
+updated: 2026-10-18
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Tool · reviewed October 2026</p>
+    <h1>The prop firm profit calculator: target, payout and fee, in one place</h1>
+    <p class="lede">Three numbers decide whether an evaluation is worth passing: how many trades the target needs, what the profit is worth after the firm's split and the consistency rule, and how much has to be earned before the evaluation fee and subscriptions are covered. This page works through all three with the formulas written out, plus worked examples at the account sizes most traders buy. For the risk-side calculations — position size, session budgets and trailing room — use the <a href="/tools/prop-firm-calculator-embed.html">risk and target calculator</a>.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>The target is a schedule, not income: what matters is the profit after the split, after the consistency cap, and after costs.</li>
+        <li>An evaluation fee is a break-even threshold, and it is usually smaller than traders assume once the first payout lands.</li>
+        <li>The consistency rule, not the split, most often reduces a first withdrawal — plan the daily cap before you trade.</li>
+        <li>Staged evaluations multiply the number of target cycles but keep the same arithmetic per stage.</li>
+        <li>Every input here comes from the firm's current terms; if you use a passing service, the fee comparison changes shape entirely.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#answers">What this calculator answers</a></li>
+        <li><a href="#inputs">The six inputs</a></li>
+        <li><a href="#trades">Calculation one: trades to target</a></li>
+        <li><a href="#net">Calculation two: profit after the split</a></li>
+        <li><a href="#cap">Calculation three: the consistency-adjusted withdrawal</a></li>
+        <li><a href="#breakeven">Calculation four: break-even against the fee</a></li>
+        <li><a href="#worked100">Worked example: a two-phase $100,000 evaluation</a></li>
+        <li><a href="#worked25">Worked example: a $25,000 account</a></li>
+        <li><a href="#instant">Worked example: instant funding versus an evaluation</a></li>
+        <li><a href="#misread">Where traders misread the output</a></li>
+        <li><a href="#service">What changes when a service passes it</a></li>
+        <li><a href="#review">The monthly review</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="answers">What this calculator answers</h2>
+    <p>Most evaluation arithmetic is about risk: how much can be lost, how large a position fits, how many sessions a plan can survive. That is the necessary half, and it is covered by the <a href="/tools/prop-firm-calculator-embed.html">risk calculator</a>. This page covers the other half, which decides whether passing is actually worth the effort.</p>
+    <p>Four questions, in the order that matters. How many trades does the target require at the plan's measured expectation, and therefore how long will the attempt take? What is the profit worth after the firm's profit split? How much of it can actually be withdrawn on the first request once the consistency rule is applied? And how much profit must be earned before the evaluation fee, platform subscription and data costs are covered?</p>
+    <p>Those four answers change decisions that traders usually make on feel. They decide whether a $25,000 account is worth the same attention as a $100,000 one (it often is, because the fee is lower and the arithmetic is identical). They decide whether a split of 80% with a one-third consistency rule pays more on the first withdrawal than a split of 90% with a one-fifth rule (it frequently does). And they decide whether a passing service at a flat fee is a bargain or a luxury — a comparison that is impossible to make without the payout arithmetic.</p>
+    <p>One warning belongs at the front rather than the end. Profit splits, consistency ratios, payout thresholds and payment intervals are revised regularly, and a page that quotes them is accurate only until the next revision. The formulas below are the durable part; the inputs have to be read from the firm's own terms on the day the account is bought.</p>
+    <figure>
+      <img src="/assets/img/payout-timeline.svg" alt="Timeline from funded account issue through minimum trading days, profit threshold, consistency check and verification to a first withdrawal" width="1000" height="420" loading="lazy">
+      <figcaption>Everything before the withdrawal is a condition. The payout is the number that matters.</figcaption>
+    </figure>
+    <h2 id="inputs">The six inputs</h2>
+    <p>Six numbers, all published or measurable. Two of them come from the firm and four from the trader's own records, which is why an evaluation bought before the records exist produces surprises.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Input</th><th>Source</th><th>Used for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Profit target</td><td>Evaluation terms, per stage</td><td>Trades to target, calendar</td></tr>
+          <tr><td>Expected value per trade</td><td>Your records, in money</td><td>Trades to target</td></tr>
+          <tr><td>Profit split</td><td>Funded terms</td><td>Net payout per cycle</td></tr>
+          <tr><td>Consistency ratio</td><td>Funded terms</td><td>Maximum first withdrawal</td></tr>
+          <tr><td>Payout threshold</td><td>Funded terms</td><td>When a request becomes possible</td></tr>
+          <tr><td>Total cost to funding</td><td>Fee, platform, data, activation</td><td>Break-even requirement</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Two of these are commonly replaced with guesses, and both replacements are expensive. Expected value per trade is a measurement, not an intention: it should come from at least a month of recorded trades including spread, commission and slippage, not from a backtest or a memory of a good week. Total cost to funding is not the signup fee: it is the fee plus every month of platform and market-data subscription the calendar requires, plus any activation charge on the funded account.</p>
+    <p>Where a value cannot be found in the terms, the fastest route is a written question to support. Firms interpret their own documents, and a reply saved before purchase is worth more than any comparison page — including this one, and including the <a href="/prop-firm-comparison-2026.html">2026 comparison</a> and the <a href="/prop-firm-rules-matrix.html">rules matrix</a>, both of which are structured to make the extraction faster.</p>
+    <h2 id="trades">Calculation one: trades to target</h2>
+    <p><strong>Formula:</strong> trades to target = profit target ÷ expected value per trade.</p>
+    <p>Expected value per trade is the win rate multiplied by the average win, minus the loss rate multiplied by the average loss, with all four figures in money and all of them net of costs. The output is the number of trades required at expectation — not the number that will be taken, because variance decides that, but the pace the plan implies.</p>
+    <p>Divide by the planned trades per week to get the calendar. Two trades a session across five sessions a week is ten trades weekly; 29 trades at expectation is therefore about three weeks. That number is the honest completion time, and it is the input to the break-even calculation later on.</p>
+    <p>Two adjustments make the result realistic rather than optimistic. First, sessions lost to the daily limit reduce the effective trade count: a plan that averages four sessions a week rather than five takes 25% longer. Second, the plan's own selectivity means some sessions produce no qualifying setup at all. Both adjustments push the calendar out, which is the direction of safety.</p>
+    <figure>
+      <img src="/assets/img/challenge-math.svg" alt="Chart showing how a profit target and a maximum loss define the journey from start to target on an evaluation account" width="940" height="500" loading="lazy">
+      <figcaption>Target and loss limit define the same journey. The target sets the number of steps.</figcaption>
+    </figure>
+    <p>Where the calculation produces a trade count that implies a calendar longer than the trader is willing to fund, the levers are the same three as ever: improve the reward-to-risk ratio, raise the win rate by becoming more selective, or add sessions within the daily limit. Raising position size changes none of the four inputs to this formula; it changes the loss side of the plan, which is the subject of the risk calculator.</p>
+    <h2 id="net">Calculation two: profit after the split</h2>
+    <p><strong>Formula:</strong> net payout = profit withdrawn × split percentage.</p>
+    <p>The split applies to what is withdrawn, not to the balance, and the distinction matters because profit left in the account is not income. On a trailing-drawdown account it is worse than that: unwithdrawn profit raises the failure floor behind the trader, making the account more fragile while paying nothing.</p>
+    <p>A worked illustration of why the split is rarely the deciding factor. Two firms: one offers 90% with a one-fifth consistency rule, the other 80% with a one-third rule. A trader whose best day is $1,500 and whose profit at the threshold is $6,000 can withdraw the full $6,000 under the one-third rule — 80% of which is $4,800. Under the one-fifth rule, the same best day limits the withdrawable amount to $7,500 of total profit, so a $6,000 record cannot be withdrawn in full; the trader can take $4,500, keeping a fifth as the permitted day, and 90% of that is $4,050. The nominally better split pays less on the first cycle.</p>
+    <p>That comparison is the single most useful output of this page, and it is invisible in any table that lists splits without the consistency rule attached. The <a href="/blog/prop-firm-consistency-rule-guide.html">consistency guide</a> covers the ratio variants and how each converts into a withdrawal limit.</p>
+    <p>Three further clauses change the net figure and belong in the same calculation. Whether the split rises after a number of payouts or after a threshold of profit. Whether the firm retains a buffer inside the account that must be maintained before withdrawal. And whether the payment method carries a fee — bank transfer, card or crypto routes differ, and on a small first payout the difference is material.</p>
+    <h2 id="cap">Calculation three: the consistency-adjusted withdrawal</h2>
+    <p><strong>Formula:</strong> withdrawable profit = largest day ÷ consistency ratio (and no more than the recorded profit).</p>
+    <p>If the best day may not exceed a stated share of the profit being withdrawn, then the withdrawable amount is limited by the largest day divided by that share. A $1,500 best day under a one-third rule permits $4,500; under a one-fifth rule, $7,500. Recorded profit above the permitted amount simply waits until more trading brings the ratio back into line.</p>
+    <p>This is the calculation that most often determines the size of a first payout, and it is decided long before the withdrawal request — by whether the trader capped daily profit during the funded month. A plan with a daily profit cap set below the ratio satisfies the condition automatically; a plan without one discovers it at the request, when the options are to keep trading or to withdraw less.</p>
+    <figure>
+      <img src="/assets/img/consistency-rule.svg" alt="Chart showing how a best-day share of total profit constrains the size of a first withdrawal from a funded account" width="940" height="540" loading="lazy">
+      <figcaption>The largest day sets the floor on the total that can be withdrawn. Cap it early.</figcaption>
+    </figure>
+    <p>The reverse calculation is the one to run before the funded month begins: given the consistency ratio and the payout threshold, what daily profit cap satisfies the ratio at the point the threshold is reached? The answer is the ratio multiplied by the threshold. A one-third rule against a $6,000 threshold allows $2,000 in a single day, so a cap of $1,500 leaves margin and costs very little pace on a plan whose average winning day is a fraction of that.</p>
+    <h2 id="breakeven">Calculation four: break-even against the fee</h2>
+    <p><strong>Formula:</strong> break-even profit = total cost to funding ÷ split percentage.</p>
+    <p>The break-even figure is the profit that must be withdrawn before the exercise has paid for itself. It is usually smaller than traders expect, and the reason is that the fee is a one-off while the payout recurs.</p>
+    <p>A worked illustration. Fee $500, platform and data $100 a month over a three-month calendar, activation $150 on funding: total cost to funding is $950. At an 80% split, the break-even is $1,188 of withdrawn profit. On a $100,000 account with an $8,000 evaluation target, the first payout clears it several times over — provided the consistency rule permits a full withdrawal, which is precisely why calculation three has to be run first.</p>
+    <p>The same arithmetic run on a small account produces a less comfortable answer. A $25,000 account with a $200 fee, $100 a month in subscriptions, no activation and a three-month calendar has a total cost of $500; at 80% the break-even is $625 of withdrawn profit. On a plan whose funded profit is a fraction of a percent per day, that is a realistic first target rather than a formality.</p>
+    <p>Two costs are frequently omitted and both belong in the total. Subscriptions continue during a failed attempt, so the expected cost of success is the total divided by the probability of passing, not the total for a single attempt — which is where a flat-fee passing service changes the arithmetic entirely. And the calendar itself is a cost: every month spent in an evaluation is a month not producing funded profit, and on a monthly-fee structure it is also a direct charge.</p>
+    <h2 id="worked100">Worked example: a two-phase $100,000 evaluation</h2>
+    <p>All four calculations in sequence, with placeholder inputs. The numbers are illustrative; the order and the formula use is the transferable part.</p>
+    <p><strong>Terms assumed for the example.</strong> Two phases, 8% target each, $100,000 account, 10% maximum loss, 5% daily limit, 80% split on the funded account, one-third consistency rule, $6,000 payout threshold, one-off $500 fee, $100 a month in platform and data, $150 activation on funding.</p>
+    <p><strong>Step one, trades to target.</strong> At $600 risk per trade, a 1:2 ratio gives an average win of $1,200 and an average loss of $600. At a 45% win rate, expectation is 0.45 × 1,200 − 0.55 × 600 = $210 per trade. The $8,000 target needs 39 trades at expectation; at ten trades a week that is four weeks per phase, eight weeks for both.</p>
+    <p><strong>Step two, cost to funding.</strong> $500 fee + $800 of subscriptions over eight weeks + $150 activation = $1,450. At 80%, the break-even is $1,812 of withdrawn profit.</p>
+    <p><strong>Step three, consistency cap.</strong> A one-third rule against the $6,000 threshold permits a $2,000 best day. A daily cap of $1,500 satisfies the ratio with margin. If the funded month produces $6,000 with a $1,500 best day, the ratio is 25% — inside the limit.</p>
+    <p><strong>Step four, net first payout.</strong> $6,000 withdrawn × 80% = $4,800, against a break-even of $1,812. The first cycle covers the cost of the evaluation roughly two and a half times, which is the number that makes the whole exercise worth doing — and it took four calculations to see it.</p>
+    <p>Two sensitivities are worth running on the same inputs. If the calendar stretches to twelve weeks because sessions are lost to daily limits, subscriptions rise by $400 and the break-even moves to $2,062 — still comfortably covered, which is the reassuring direction. If the consistency rule were one-fifth rather than one-third, the permitted best day would fall to $1,200 and the withdrawable amount to $6,000 only once the ratio allowed it; the first payout would be smaller and the break-even further away.</p>
+    <h2 id="worked25">Worked example: a $25,000 account</h2>
+    <p>The same formulas on a smaller account, which is where most first attempts happen and where the arithmetic is least forgiving.</p>
+    <p><strong>Terms assumed.</strong> Single phase, 8% target, $25,000 account, 10% maximum loss, 5% daily limit, 85% split, one-quarter consistency rule, $1,500 threshold, $150 fee, $80 a month in subscriptions, no activation.</p>
+    <p><strong>Trades to target.</strong> A $150 risk per trade at a 1:2 ratio gives an expectation of about $52 per trade at a 45% win rate, so a $2,000 target needs 38 trades — the same count as the large account, because percentage targets are scale-free. The calendar is identical; only the dollars differ.</p>
+    <p><strong>Cost to funding.</strong> $150 + $320 over four weeks + $0 = $470. At 85%, break-even is $553 of withdrawn profit — about a quarter of the account's target, which is a more demanding ratio than the $100,000 example.</p>
+    <p><strong>Consistency.</strong> A one-quarter rule against a $1,500 threshold permits a $375 best day. That is a tighter daily cap than most plans naturally produce, which means the cap is not decorative: it changes position size, because a $375 profit cap on a plan risking $150 per trade implies a limit on how far a winner can run.</p>
+    <p><strong>The conclusion.</strong> The $25,000 account has identical percentage arithmetic and a slightly worse cost-to-payout ratio, which is the honest case for buying the smaller account first: it costs less to fail, and the plan that passes it passes the larger one unchanged. The <a href="/blog/best-prop-firms-beginners-2026.html">beginners guide</a> covers the selection criteria for a first account, and the <a href="/passed-challenges.html">passed challenges page</a> shows what completed attempts look like in practice.</p>
+    <figure>
+      <img src="/assets/img/cost-comparison.svg" alt="Chart comparing the total cost of a flat fee against a profit split across a range of trading outcomes" width="940" height="520" loading="lazy">
+      <figcaption>Cost structure, not headline price, decides the break-even.</figcaption>
+    </figure>
+    <h2 id="instant">Worked example: instant funding versus an evaluation</h2>
+    <p>The comparison between buying a funded account and passing an evaluation is the one place where this arithmetic changes a decision outright.</p>
+    <p>An evaluation route costs the fee plus the subscriptions over the calendar, and it can fail. An instant funding route costs more up front and produces a funded account immediately, with its own drawdown and payout conditions. The comparison is expected cost against time, and both are quantifiable.</p>
+    <p>Take an evaluation with a $500 fee and a four-month calendar at $100 a month, giving $900 at cost, and assume a one-in-two pass rate on a fair attempt. Expected cost to funding is $900 ÷ 0.5 = $1,800, spread over an average of two attempts. Now price an instant account at $2,500 with a similar funded drawdown. The instant route is more expensive on expected cost and cheaper in calendar time: it starts producing payout-eligible profit on day one rather than in month five.</p>
+    <p>Whether that trade is worth making depends on the trader's own pass probability and on how much the calendar is worth to them. A trader who has failed two evaluations for the same reason is paying $1,800 to learn nothing new; a trader with a measured plan that fits the rules is paying $2,500 to skip a sequence they were likely to complete. The <a href="/blog/prop-firm-instant-funding.html">instant funding guide</a> covers the conditions those accounts still carry, which are not identical to an evaluation's funded stage.</p>
+    <h2 id="choose-size">Choosing account size from the payout, not the fee</h2>
+    <p>Most traders choose an account by finding the largest one they can afford to fail. The arithmetic on this page suggests a different rule: choose the smallest account whose break-even is a small fraction of its first payout, because the payout ratio — not the balance — is what makes an evaluation worth repeating.</p>
+    <p>Run the two worked examples side by side and the point is visible. On the $100,000 account the break-even was $1,812 against a first payout of $4,800, a ratio of roughly one to two and a half. On the $25,000 account it was $553 against a first payout of about $1,275, a ratio of one to two and a quarter. The larger account is marginally better on cost recovery and materially worse on cost of failure, because a failed attempt costs the same in calendar time and a larger fee.</p>
+    <p>The same calculation run on a very small account usually inverts. Where the fee is a large fraction of the balance, the break-even stretches across the whole first payout and sometimes beyond it, so the account has to be passed twice to pay for itself once. That is the point at which a trader should stop looking at the account sizes and start looking at the <a href="/blog/best-prop-firms-beginners-2026.html">firm selection criteria</a> again.</p>
+    <p>A practical rule follows. Compute the break-even for each candidate account, then divide it by the expected first payout. If the result is above a third, the account is too expensive for the plan at that stage and a smaller one will recover its cost faster even though it pays less in dollars. Once a first cycle has completed and the payment route is known, size can be increased with the whole chain tested.</p>
+    <p>Two costs belong in that decision and are easy to leave out. Subscriptions continue during a failed attempt, so the break-even figure should be computed for an expected cost of success rather than for a single attempt — the fee divided by the pass rate, essentially. And the calendar is the largest invisible cost: months spent in an evaluation are months not producing funded profit, and on any plan with a recurring monthly charge they are a direct addition to the number.</p>
+    <h2 id="misread">Where traders misread the output</h2>
+    <p>Four misreadings recur, and each one flips a decision.</p>
+    <p><strong>Treating the target as income.</strong> The target is an evaluation condition. What can be withdrawn is the funded-stage profit, after the split and the consistency cap, and the two numbers are unrelated in size.</p>
+    <p><strong>Comparing splits without consistency rules.</strong> A 90% split with a one-fifth rule can pay less on a first withdrawal than an 80% split with a one-third rule, as the earlier example shows. The split is the multiplier; the consistency rule sets the multiplicand.</p>
+    <p><strong>Using the signup fee as the cost.</strong> Subscriptions accrue monthly and activation can be charged on funding. The total cost to funding — divided by the pass probability — is the figure to compare against any alternative, including a flat-fee service.</p>
+    <p><strong>Ignoring the payment interval.</strong> A higher split paid quarterly can pay less in the first year than a smaller split paid monthly. On a first funding, the cadence matters more than the percentage, because the information gained from a completed cycle is worth more than the difference in rate.</p>
+    <h2 id="service">What changes when a service passes it</h2>
+    <p>A passing service converts a variable cost into a fixed one, and the comparison is made with this page's arithmetic rather than with the fee alone.</p>
+    <p>The calculation is straightforward. The expected cost of attempting alone is the total cost to funding divided by the probability of passing, plus the funded profit not earned during the attempts. Against that, a flat fee per evaluation is a known number. A trader with a one-in-three pass rate on a $900 cost base has an expected cost of $2,700 before the platform months consumed by the failures; a flat fee below that is cheaper in expectation, and it removes the variance as well as the average.</p>
+    <p>Four checks make the comparison valid. The price should be flat and independent of account size and stage, so it can be compared directly. Retries should be covered, since a fixed price with retry charges is a per-attempt price with extra steps. The funded account should be in the trader's name with credentials under their control, and the service should take no share of payouts — a provider paid from payouts has an incentive to keep trading after the pass. And the firm's terms must permit third-party trading, separately for the evaluation and the funded account, confirmed in writing before payment.</p>
+    <p>ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid the arrangement. The <a href="/blog/best-prop-firm-passing-services.html">passing services guide</a> sets out the due diligence script, the <a href="/reviews/best-prop-firm-passing-service-2026.html">service review</a> works through how providers are compared, and the <a href="/reviews/prop-firm-passing-service-reviews.html">client feedback page</a> collects what buyers report. All three are written to be read before payment rather than after. To start an attempt, the <a href="/contact.html">contact page</a> is the entry point; the <a href="/faq.html">FAQ</a> answers the questions that come up most often.</p>
+    <h2 id="review">The monthly review</h2>
+    <p>Two of the six inputs change over time — expectation per trade, which accumulates evidence, and the calendar, which either shortens or extends. A monthly review of four numbers keeps the arithmetic honest in about ten minutes.</p>
+    <p>Record trades taken, expectation per trade, worst drawdown so far, and distance to target. Then rerun calculation one to see whether the calendar has moved, and calculation four to see whether the break-even is still within reach. If the expectation has fallen, the plan has drifted and the correct response is to trade less rather than more. If the calendar has extended, the cost to funding has risen and the break-even figure with it.</p>
+    <p>The value of the review is that it makes the decision monthly rather than continuously. A trader reviewing every session reacts to noise; a trader reviewing monthly reacts to the plan. On an evaluation with a fixed deadline, that difference is the whole discipline — and it is the same discipline the <a href="/blog/what-happens-after-passing-challenge.html">post-pass guide</a> applies to the funded month, where the payout threshold replaces the target as the thing being measured.</p>
+    <figure>
+      <img src="/assets/img/how-it-works.svg" alt="Diagram of the workflow from choosing an evaluation through funded account conditions to a completed withdrawal" width="1000" height="470" loading="lazy">
+      <figcaption>Four calculations cover the distance between buying an evaluation and being paid for passing it.</figcaption>
+    </figure>
+    <h2 id="faq">Frequently asked questions</h2>
+    <details class="faq"><summary>How do I calculate what a prop firm payout is worth?</summary><div class="faq-a"><p>Multiply the profit being withdrawn by the profit split. Before that, work out the withdrawable amount: the largest single day determines the maximum under the consistency rule, so permitted profit is the largest day divided by the ratio. Then apply the split.</p></div></details>
+    <details class="faq"><summary>How many trades does it take to hit a profit target?</summary><div class="faq-a"><p>Divide the target by expected value per trade, where expectation is win rate times average win minus loss rate times average loss, net of costs. Divide that trade count by trades per week for the calendar. Most conservative plans need twenty to forty trades.</p></div></details>
+    <details class="faq"><summary>How much profit do I need to cover the evaluation fee?</summary><div class="faq-a"><p>Divide total cost to funding by the profit split. Total cost is the fee plus platform and data subscriptions over the calendar plus any activation charge. On a $100,000 account with a $500 fee and a three-month calendar, break-even is typically around $1,200 of withdrawn profit.</p></div></details>
+    <details class="faq"><summary>Is a 90% profit split better than 80%?</summary><div class="faq-a"><p>Only after applying the consistency rule. A 90% split with a one-fifth rule can pay less on a first withdrawal than an 80% split with a one-third rule, because the rule sets the maximum withdrawable amount and the split only multiplies it.</p></div></details>
+    <details class="faq"><summary>What is a consistency-adjusted withdrawal?</summary><div class="faq-a"><p>The largest amount that can be withdrawn when a best-day share applies: divide the largest trading day by the consistency ratio, and cap it at the recorded profit. A $1,500 best day under a one-third rule permits $4,500.</p></div></details>
+    <details class="faq"><summary>Does a bigger account mean a bigger payout?</summary><div class="faq-a"><p>In dollars, yes, because targets and thresholds scale with the balance. In percentage terms the arithmetic is identical, which is why the plan that passes a $25,000 account passes a $100,000 one unchanged — the only difference is the fee and the dollars per cycle.</p></div></details>
+    <details class="faq"><summary>How long does an evaluation take to pay for itself?</summary><div class="faq-a"><p>Usually the first payout cycle, if a full withdrawal is permitted. Break-even is total cost to funding divided by the split; on most accounts that is a fraction of one threshold, provided the consistency rule does not restrict the first withdrawal.</p></div></details>
+    <details class="faq"><summary>Why does the payment interval matter more than the split?</summary><div class="faq-a"><p>Because it multiplies over a year. A larger split paid quarterly can pay less over twelve months than a smaller split paid monthly. On a first funding, completing a cycle matters more than the rate, because it establishes the route and the timing.</p></div></details>
+    <details class="faq"><summary>Should I buy a bigger account for a bigger payout?</summary><div class="faq-a"><p>Usually not for a first attempt. Percentage rules are scale-free, so a smaller account costs less to fail and teaches the same arithmetic. Buy size after a completed payout cycle, not before the first one.</p></div></details>
+    <details class="faq"><summary>How do I compare an evaluation with instant funding?</summary><div class="faq-a"><p>Divide the evaluation's total cost to funding by the pass probability to get expected cost, then compare with the instant account's price plus the calendar time each route consumes. The instant route is usually more expensive and quicker to produce payout-eligible profit.</p></div></details>
+    <details class="faq"><summary>Does a passing service change the break-even?</summary><div class="faq-a"><p>It replaces expected cost with a fixed one. Compare the flat fee against total cost to funding divided by the pass rate, plus the funded profit not earned during failed attempts. ElitePropX charges <strong>$220</strong> flat per evaluation, covers retries, and takes no profit split.</p></div></details>
+    <details class="faq"><summary>Where do I find the split and consistency rule?</summary><div class="faq-a"><p>In the funded terms, which are usually a separate document from the evaluation rules. If either is missing or ambiguous, ask support in writing before paying the evaluation fee and keep the reply — it is both an input and a record.</p></div></details>
+    <details class="faq"><summary>What if my records are too thin to calculate expectation?</summary><div class="faq-a"><p>Then the plan is not ready to be bought. A month of recorded trades at small size produces the win rate, average win, average loss and realised cost per trade that the formulas need. Buying an evaluation to discover those numbers is the most expensive way to learn them.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/tools/prop-firm-calculator-embed.html">Risk and target calculator</a></li>
+      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule guide</a></li>
+      <li><a href="/blog/funded-account-payout-process.html">The payout process, step by step</a></li>
+      <li><a href="/blog/prop-firm-instant-funding.html">Instant funding versus an evaluation</a></li>
+      <li><a href="/blog/best-prop-firms-beginners-2026.html">Best firms for beginners</a></li>
+      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
+      <li><a href="/faq.html">Frequently asked questions</a></li>
+    </ul>
+    
+  </div>
+</section>

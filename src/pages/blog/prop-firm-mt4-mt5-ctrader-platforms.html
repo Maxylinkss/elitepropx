@@ -1,0 +1,100 @@
+---
+title: Prop Firm MT4 MT5 cTrader Platforms | 2026
+desc: Prop Firm MT4 MT5 cTrader Platforms: The platform is part of the risk system. Worked examples plus the terms to confirm before buying.
+path: /blog/prop-firm-mt4-mt5-ctrader-platforms.html
+type: article
+h1: Prop Firm MT4 MT5 cTrader Platforms
+kicker: Prop Firm MT4 MT5 cTrader Platforms
+crumb: Prop Firm MT4 MT5 cTrader Platforms
+section: Platforms
+sectionUrl: /blog/
+date: 2026-10-19
+updated: 2026-10-19
+priority: 0.7
+schemaService: true
+generator: content-system
+---
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Prop Firm MT4 MT5 cTrader Platforms · reviewed October 2026</p>
+    <h1>Prop Firm MT4 MT5 cTrader Platforms</h1>
+    
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+
+<div class="toc">
+  <p>Contents</p>
+<ol>
+  <li><a href="#steps">The exact steps</a></li>
+  <li><a href="#evaluation">Why this matters more on an evaluation</a></li>
+</ol>
+</div>
+<h2 id="steps">The exact steps</h2>
+<p>The platform is part of the risk system. It decides whether stops are server-side, how orders behave in fast markets and whether the trader can act when the connection is poor. The consequence is mechanical: an order that exists only on the chart is not a stop, and a setting that resets after an update is not a plan.</p>
+<h3>Step 1: Open the order ticket before you have a bias</h3>
+<p>Open the ticket for the instrument and set the fields in the order the platform expects: instrument, size, stop, target. Doing this before deciding direction prevents the common sequence in which the trade is sent and the protection is added afterwards, when the price has already moved. For prop firm mt4 mt5 ctrader platforms, the ticket is also the place to confirm the order type is the one the plan requires.</p>
+<h3>Step 2: Set the protective order in price terms</h3>
+<p>Enter the stop as a price, not as a number of points or pips, unless the platform labels the field explicitly. A price is unambiguous; a distance depends on the platform’s unit and on the direction of the trade. Check the ticket preview, which shows the estimated loss at the stop, and compare it with the risk budget for the session.</p>
+<h3>Step 3: Confirm the order is server-side</h3>
+<p>After the order is accepted, open the order or position list and confirm the stop appears there. A line on the chart can be a client-side object that disappears when the terminal closes. If the list does not show the stop, the protection is not real; edit the position and attach it again.</p>
+<h3>Step 4: Test it on a demo with the same settings</h3>
+<p>Place a small trade on a demo account, close the terminal, reopen it and confirm the stop is still present. This five-minute test catches the settings that reset after an update and the account types where the order is held differently. It is worth repeating after every platform update.</p>
+<h3>Step 5: Record the risk in the journal before the trade</h3>
+<p>Write the planned dollar risk, the stop distance and the remaining room for the day. The journal entry is what makes the next review possible, and it forces the sizing decision to happen before the outcome is known. A trade without a recorded risk is a trade that cannot be evaluated afterwards.</p>
+
+<h2 id="evaluation">Why this matters more on an evaluation</h2>
+
+<h2 id="what-each-platform-is-actually-good-at">What each platform is actually good at</h2>
+<p>MT4 is the oldest of the three and has the widest library of expert advisors and custom indicators, but its order types and backtesting are dated. MT5 keeps the MQL language family but adds more timeframes, a faster tester and a broader instrument list; it is the better choice for a new automated strategy. cTrader has a cleaner order interface, level II depth on supported brokers and a modern API, which makes it the easiest of the three for a discretionary trader who wants precise order control.</p>
+<p>The prop firm's platform list matters more than the platform's feature list. A firm may support MT4 and MT5 but not cTrader, or support cTrader only on certain account types. Confirm the exact platform before building a workflow around it.</p>
+
+<h2 id="order-handling-on-an-evaluation">Order handling on an evaluation</h2>
+<p>Every platform supports market, limit and stop orders, but the details differ. MT4 and MT5 attach stops to the order ticket and hold them server-side once accepted. cTrader shows the stop and target as separate orders linked to the position, which makes the protection visible in the order list. On an evaluation, the server-side visibility is what matters: a chart line that exists only in the terminal is not protection.</p>
+<p>Check how the platform handles a partial close, a trailing stop and a stop modification during a news window. Those are the operations that produce rule breaches. A platform that makes a stop modification easy also makes it easy to widen a stop after entry, which is a conduct issue even if the platform allows it.</p>
+
+<h2 id="automation-and-vps-decisions">Automation and VPS decisions</h2>
+<p>MT4 and MT5 run expert advisors natively; cTrader uses cBots and a different API. If the strategy is automated, choose the platform the code is written for and confirm the firm permits automation. A VPS is useful for keeping the terminal online, but it does not change the rules. A VPS in the same region as the broker's server reduces latency, which matters for a short-term strategy but not for a swing method.</p>
+<p>Before paying for a VPS, test the strategy on the firm's demo server with the same settings. If the execution differs materially from the backtest, the problem is the strategy or the data, not the VPS. Adding infrastructure to a strategy that does not have an edge only makes the losses faster.</p>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2 id="questions">Common questions</h2>
+
+<details class="faq"><summary>Which platform is best for prop firm trading?</summary><div class="faq-a"><p>It depends on the method. MT4 has the widest EA library, MT5 has better testing and more instruments, and cTrader has the cleanest order handling for discretionary trading. Confirm the firm supports the platform first.</p></div></details>
+
+<details class="faq"><summary>Are stops server-side on MT4 and MT5?</summary><div class="faq-a"><p>Stops entered in the order ticket are held server-side once the order is accepted. A line drawn on the chart is a client-side object and is not protection.</p></div></details>
+
+<details class="faq"><summary>Do I need a VPS for an evaluation?</summary><div class="faq-a"><p>Only if the strategy needs the terminal to stay online. A VPS does not change the rules and does not fix a strategy without an edge.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      <p>Flat <strong>$220</strong>, any firm, any account size, retries covered. Every position enters with a server-side stop.</p>
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
+      <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
+      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
+      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
+      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
+      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
+      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+    </ul>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+  </div>
+</section>

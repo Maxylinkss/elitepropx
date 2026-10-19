@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="520" viewBox="0 0 940 520" role="img" aria-label="Cost of retrying a challenge yourself versus using a flat fee passing service" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="940" height="520" fill="#fff"/>
+  <text x="48" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">COST OF RETRIES</text>
+  <text x="48" y="86" font-size="27" font-weight="800" fill="#0b1220">Three failed attempts vs one flat fee</text>
+  <rect x="48" y="128" width="400" height="280" rx="14" fill="#f4f7fc" stroke="#dbe3ef"/>
+  <text x="74" y="170" font-size="17" font-weight="800" fill="#0b1220">Retry it yourself</text>
+  <text x="74" y="212" font-size="14" fill="#3d4a61">✕ Attempt 1 · $540</text>
+  <text x="74" y="246" font-size="14" fill="#3d4a61">✕ Attempt 2 · $540</text>
+  <text x="74" y="280" font-size="14" fill="#3d4a61">✕ Reset fee · $120</text>
+  <text x="74" y="314" font-size="14" fill="#3d4a61">✕ Attempt 3 · $540</text>
+  <text x="74" y="382" font-size="26" font-weight="800" fill="#d9534f">$1,740</text>
+  <rect x="492" y="128" width="400" height="280" rx="14" fill="#e7f7f0" stroke="#bfe9d7"/>
+  <text x="518" y="170" font-size="17" font-weight="800" fill="#0b1220">ElitePropX</text>
+  <text x="518" y="212" font-size="14" fill="#3d4a61">✓ One flat fee · $220</text>
+  <text x="518" y="246" font-size="14" fill="#3d4a61">✓ Any account size</text>
+  <text x="518" y="280" font-size="14" fill="#3d4a61">✓ Retries covered</text>
+  <text x="518" y="314" font-size="14" fill="#3d4a61">✓ No profit split</text>
+  <text x="518" y="382" font-size="26" font-weight="800" fill="#0e9f6e">$220</text>
+  <text x="48" y="458" font-size="13.5" fill="#3d4a61">Illustrative fees based on a mid-size evaluation. Your firm's published prices are the only numbers that matter.</text>
+</svg>

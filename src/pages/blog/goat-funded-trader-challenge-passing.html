@@ -1,0 +1,213 @@
+---
+title: GOAT Funded Trader Challenge: Passing Guide 2026
+desc: How to pass a GOAT Funded Trader evaluation: the futures rulebook, contract sizing from the dollar drawdown, and the failure patterns that end most attempts.
+path: /blog/goat-funded-trader-challenge-passing.html
+type: article
+h1: Passing a GOAT Funded Trader challenge: a futures rulebook, read properly
+kicker: Firm guide
+crumb: GOAT Funded Trader
+section: Firm guides
+sectionUrl: /blog/
+date: 2026-10-18
+updated: 2026-10-18
+priority: 0.8
+schemaService: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Firm guide · reviewed October 2026</p>
+    <h1>Passing a GOAT Funded Trader challenge: a futures rulebook, read properly</h1>
+    <p class="lede">GOAT Funded Trader belongs to the contract-based end of the market, where targets and losses are quoted in dollars and a position is a whole number of contracts. That single fact changes the arithmetic of passing: size is quantised, the stop is measured in ticks, and a drawdown that trails a peak can end an account that was never losing. This guide covers the mechanics, the sizing, the failure patterns, and what to confirm in the current terms before paying.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Futures rules are dollar-based and quantised: contract count is derived from the tick cost of the stop, then rounded down.</li>
+        <li>A trailing floor turns open profit into a rising failure point, so winners need an exit rule as well as losers.</li>
+        <li>The daily limit is the constraint most attempts touch first — derive risk from it, not only from the maximum loss.</li>
+        <li>Micro contracts let a strategy keep its stop distance on a small account; full-size contracts usually wait until after funding.</li>
+        <li>Funded conditions, not evaluation rules, decide whether a pass becomes a payout — read them before the fee.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#why">Why this firm gets shortlisted</a></li>
+        <li><a href="#structure">The structure, by mechanism</a></li>
+        <li><a href="#floor">The drawdown clause to read first</a></li>
+        <li><a href="#daily">Daily limit arithmetic</a></li>
+        <li><a href="#size">Contracts, ticks and dollars</a></li>
+        <li><a href="#target">The target and the calendar</a></li>
+        <li><a href="#consistency">Consistency and the payout gate</a></li>
+        <li><a href="#failures">Five ways attempts end</a></li>
+        <li><a href="#funded">The funded stage, without illusions</a></li>
+        <li><a href="#compare">Comparing it with other futures models</a></li>
+        <li><a href="#verify">What to confirm before paying</a></li>
+        <li><a href="#plan">A four-week plan that fits the rules</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="why">Why this firm gets shortlisted</h2>
+    <p>Futures evaluations are shortlisted for reasons that have little to do with the marketing and a lot to do with the instrument. A trader who already reads an index future does not want a currency-pair rulebook with percentage targets and fractional lots; they want a dollar target, a dollar stop and a contract count. That is the product category this firm sits in.</p>
+    <p>The second reason is speed. Contract-based evaluations typically complete faster than staged forex evaluations, because the target is smaller in absolute terms and the calendar is shorter. That suits a trader with a defined setup and limited patience for administration, and it is a legitimate advantage as long as the size is derived rather than chosen.</p>
+    <p>The third reason is transparency of risk. A dollar loss limit is easier to reason about than a percentage one, because it converts directly into contracts and ticks. A trader can compute the survivable position size in a minute, and can see the remaining room on the platform without translating percentages in their head during a losing session.</p>
+    <p>The cost of those advantages is precision. A percentage-based account forgives imprecise sizing because position size is continuous; a contract-based account does not, because rounding up by one contract can double the dollar risk on a large index future. The rest of this guide is essentially about that precision — where it comes from, how it is maintained across a month, and what breaks it.</p>
+    <h2 id="structure">The structure, by mechanism</h2>
+    <p>The evaluation is a paid assessment with a dollar profit target, a dollar maximum loss, a dollar daily limit, a contract cap and a minimum number of trading days, followed by a funded allocation with a profit split and withdrawal conditions.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Element</th><th>Expressed as</th><th>What it decides</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Profit target</td><td>Dollars</td><td>The calendar, given the plan's expectation per trade</td></tr>
+          <tr><td>Maximum loss</td><td>Dollars from a defined reference</td><td>The contract count, via the tick cost of the stop</td></tr>
+          <tr><td>Daily limit</td><td>Dollars per trading day</td><td>The number of losses a session can absorb</td></tr>
+          <tr><td>Contract cap</td><td>Contracts per position or account</td><td>A ceiling that scaling into a position can breach</td></tr>
+          <tr><td>Minimum days</td><td>Qualifying trading days</td><td>Activity, not profit — usually satisfied early</td></tr>
+          <tr><td>Funded stage</td><td>Split plus withdrawal conditions</td><td>Whether a pass becomes income</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Two ratios inside that table determine whether the evaluation is a reasonable purchase for a given plan. The first is the target divided by the maximum loss: if the target is a large fraction of the loss limit, a survivable risk per trade needs many trades to finish, and the calendar becomes the constraint. The second is the daily limit divided by the maximum loss: a small fraction forces low risk and a long calendar, a large fraction makes one bad session expensive.</p>
+    <p>Both ratios should be computed before the fee, along with the resulting calendar and the monthly cost of platform and data subscriptions over that calendar. An evaluation that is affordable at signup and expensive over four months is a different purchase from the one advertised, and the difference only appears in the arithmetic.</p>
+    <figure>
+      <img src="/assets/img/rulebook-models.svg" alt="Diagram comparing dollar-based futures rulebooks with percentage-based forex rulebooks across target, loss limit and sizing" width="1000" height="540" loading="lazy">
+      <figcaption>Dollar rules and percentage rules produce different plans from the same strategy.</figcaption>
+    </figure>
+    <p>One structural note that applies to every firm in this category: the evaluation document and the funded document are separate. The evaluation terms describe what must be achieved; the funded terms describe what the achievement is worth. A trader who reads only the first is buying a qualification without checking what it qualifies them for, which is the single most common way a pass produces no income.</p>
+    <h2 id="floor">The drawdown clause to read first</h2>
+    <p>The maximum loss is the number everyone compares and the mechanism almost nobody reads, and the mechanism is what decides whether a plan survives.</p>
+    <p>Three variants exist. A static floor is fixed at the starting balance and never moves, so profit cannot reduce the available room. An end-of-day trailing floor resets at settlement, so completed gains are locked in and intraday spikes are forgiven. An intraday trailing floor follows peak unrealised equity continuously, which raises the failure point behind a winning position and can close an account that is above its starting balance.</p>
+    <p>The intraday variant punishes a specific and very common behaviour: holding a winner through an afternoon retracement. The trade was never at a loss, the trader felt safe because it was in profit, and the account closed anyway. That is not a risk-management failure in the ordinary sense; it is a mechanism the plan did not account for, and it is why the phrase "I was up on the day" appears so often in accounts of a breach.</p>
+    <figure>
+      <img src="/assets/img/drawdown-types.svg" alt="Three equity curves comparing static, end-of-day trailing and intraday trailing failure floors on the same profit path" width="1000" height="560" loading="lazy">
+      <figcaption>The same profit path touches three different floors. The mechanism costs more than the number.</figcaption>
+    </figure>
+    <p>Two clauses belong in the same reading. The first is the measurement basis: balance only, or balance including open positions. An equity-based limit counts unrealised losses continuously, which means a position can breach the account before it is closed. The second is the sampling moment: continuous, at the close, or at the firm's server close. A mechanism described as end-of-day that samples the session's highest unrealised equity is intraday trailing with a delay, and the difference will be discovered at the worst possible time.</p>
+    <p>For planning, convert the mechanism into the one number that matters: the current distance from balance to floor, in dollars. On a static structure that number never changes; on a trailing structure it changes daily and must be recomputed. A plan that uses the starting distance for the whole attempt is a plan that becomes oversized as soon as the account is in profit on a trailing account.</p>
+    <h2 id="daily">Daily limit arithmetic</h2>
+    <p>The daily limit is a session budget, and the arithmetic is more useful than the number.</p>
+    <p>Divide the daily limit by the risk per trade to get the number of losing trades a session can absorb. If the answer is two, the session is decided by the first two trades of the day, and a normal losing run closes the platform. If the answer is six, the session can absorb a bad start and still trade the plan. The design target is usually four to six losses per session.</p>
+    <p>Then check the opposite direction. If the per-trade risk is so small relative to the daily limit that the account needs forty sessions to reach the target, the calendar cost — platform, data, attention — starts to dominate the economics. The fix in that case is a tighter stop or a better reward-to-risk ratio, not a larger position at the same stop.</p>
+    <p>There is a time-zone trap on every futures daily limit. The trading day is defined by the firm's server, and futures trade nearly around the clock. A position opened in the trader's evening can belong to the next server day, which means the loss lands against a budget that had not started when the trade was planned. Two evening positions that feel like one day's risk can therefore be counted against two days' limits.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="A daily loss limit measured from the day's opening balance and progressively consumed by losing trades" width="1000" height="540" loading="lazy">
+      <figcaption>A session budget, spent by trades rather than by time.</figcaption>
+    </figure>
+    <p>Two rules complete the arithmetic. Write the daily loss in dollars and keep it visible during the session, because the moment of maximum loss is the worst time to calculate. And cap the number of trades independently of the dollar limit, because the dollar limit is enforced by the firm and the trade cap is enforced by the trader — and only one of those survives a bad mood.</p>
+    <h2 id="size">Contracts, ticks and dollars</h2>
+    <p>This is the calculation that decides the attempt, and it fits in three lines.</p>
+    <p><strong>Maximum dollar loss per trade.</strong> Take the distance to the floor and divide by the number of consecutive losses the plan must survive — eight to ten for a discretionary plan with a win rate in the forties, since runs of that length recur within a few hundred trades.</p>
+    <p><strong>Contract count.</strong> Divide that dollar figure by the tick value multiplied by the stop distance in ticks. Round down. If the result is zero, the strategy's stop does not fit the account at that contract size; the fix is a micro contract or a larger account, never a wider stop.</p>
+    <p><strong>Session check.</strong> Multiply the per-trade loss by the planned number of trades and compare with the daily limit. If the total exceeds the limit, cut the trade count, not the size — the size is already at the survivability floor.</p>
+    <p>Four consequences follow. One contract is not a proxy for small risk, because a wide stop on a single contract can exceed a tight stop on three. Micro contracts are the correct instrument for a small account, since they preserve the stop distance while reducing the dollar risk by an order of magnitude. The contract cap in the rules is a ceiling, not a target, and the derived number is usually far below it. And scaling into a position can breach a cap that the initial entry satisfied, which is a rules breach rather than a sizing error.</p>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="Diagram dividing a dollar drawdown into per-trade risk, session risk and an untouched reserve for losing streaks" width="940" height="520" loading="lazy">
+      <figcaption>Three lines, one budget: per trade, per session, and a reserve that is never spent.</figcaption>
+    </figure>
+    <p>Keep a quarter of the drawdown in reserve, and recompute the contract count every Monday from the floor as it then stands. On a trailing structure the floor moves up with profit, so a size that fitted in week one may not fit in week three. Recomputing is a minute of arithmetic that prevents the most common late-evaluation breach.</p>
+    <h2 id="target">The target and the calendar</h2>
+    <p>Expected value per trade, in dollars, is the product of the win rate and the average win minus the product of the loss rate and the average loss. Divide the target by it to get the number of trades required at expectation, then divide by planned trades per week for the calendar.</p>
+    <p>Run honestly, that calculation usually produces twenty to forty sessions for a conservative plan. The number is the plan's own pace, and it is almost always slower than the marketing implies. The gap between the two is where traders get into trouble: they expect two weeks, discover the arithmetic implies six, and close the gap by increasing size. Size does not change expectation per trade; it changes the distribution around it, which is the same thing as changing the survival probability.</p>
+    <p>There are three legitimate ways to shorten the calendar: improve the reward-to-risk ratio, raise the win rate by becoming more selective, or add sessions within the daily limit. All three improve the plan. Increasing size improves only the speed with which a bad sequence reaches the floor.</p>
+    <p>Minimum trading days are usually satisfied long before the target at this pace, so they are not the binding constraint. The trap runs the other way: reaching the target early and then trading to fill the count can give back a meaningful share of the profit. If the count is longer than the plan, slow the plan from the start so that both finish together.</p>
+    <p>A calendar rule worth adopting: fix the number of sessions per week, and put a review in the diary for the same day every week. The review compares four numbers — trades taken, expectation per trade, worst drawdown, distance to target — and decides whether to continue, extend or stop. Without a scheduled review, the decision gets made by mood on the day of the largest loss.</p>
+    <h2 id="consistency">Consistency and the payout gate</h2>
+    <p>Funded conditions decide whether a pass produces income, and they are usually stricter than the evaluation's in ways that are easy to overlook.</p>
+    <p>The common structure is a minimum number of profitable days, a profit threshold before the first withdrawal, a consistency expectation, and identity verification. Each is a separate gate, and each can fail independently of the trading record.</p>
+    <p>Consistency is the one that catches traders who finished the evaluation with a strong final push. Expressed as a best-day share of total profit, a limit of around a third means total profit must reach roughly three times the largest day before a full withdrawal. A trader whose largest day is a fifth of the threshold needs five times that day in total profit — usually more than the evaluation required.</p>
+    <p>The mitigation is structural: set a daily profit cap well below the consistency threshold from the first day, rather than discovering the ratio at the payout request. A trader who reaches the target in one dominant session has passed the evaluation and created a payout constraint at the same time, and the constraint is the part that costs money.</p>
+    <figure>
+      <img src="/assets/img/consistency-rule.svg" alt="Chart showing how a best-day share of total profit constrains the size of a first withdrawal" width="940" height="540" loading="lazy">
+      
+    </figure>
+    <p>Minimum profitable days are satisfied by activity rather than profit, so the correct approach is a reduced size and an acceptance of flat sessions. A trader who tries to make the count productive usually makes it expensive. The <a href="/blog/prop-firm-consistency-rule-guide.html">consistency guide</a> covers the arithmetic for the common thresholds, and the <a href="/blog/funded-account-payout-process.html">payout process guide</a> covers the full sequence from pass to payment.</p>
+    <p>Confirm two things before the fee: whether the consistency condition applies once at the first payout or at every withdrawal, and whether it is measured on the evaluation or only on the funded account. Applied every time, it becomes a permanent constraint on daily profit and therefore on position size. Applied once, it is a hurdle that can be cleared and then forgotten.</p>
+    <h2 id="failures">Five ways attempts end</h2>
+    <p>Failures in this category cluster into five patterns, and each one has a signature visible before the fee is paid.</p>
+    <p><strong>The daily limit on an ordinary day.</strong> Risk per trade was set from the maximum loss and never checked against the daily limit, so three consecutive losses close the session. Signature: per-trade risk above a fifth of the daily limit.</p>
+    <p><strong>The trailing floor from a winning position.</strong> A profitable position was held through a retracement on an intraday trailing account. Signature: an exit plan for losers and none for winners.</p>
+    <p><strong>Rounding up.</strong> The contract calculation produced a fraction and the trader took the next whole contract, doubling risk on a large tick value. Signature: a size one contract above the survivable maximum.</p>
+    <p><strong>Oversizing after a drawdown.</strong> Behind on the calendar, the trader increases size to catch up. This is the most reliably fatal pattern because it occurs when the account has the least room.</p>
+    <p><strong>Losing the funded allocation in the first fortnight.</strong> The evaluation's size is carried into a tighter funded drawdown, and the first normal losing sequence ends it. Signature: no reduction in size at funding.</p>
+    <p>All five share a cause: a rule understood in principle and never converted into a number. The remedy is a written plan with the contract count, the stop in ticks, the dollar risk, the session cap and the weekly recomputation — checked against the firm's current terms rather than against a comparable firm's.</p>
+    <h2 id="funded">The funded stage, without illusions</h2>
+    <p>The funded allocation is a different product, and three things change at once.</p>
+    <p>The drawdown usually tightens as a percentage, because the firm is now exposed to payouts rather than to a fee. The profit becomes real only when withdrawn, which means an unwithdrawn balance is not a high score — it is a larger target under the same rules, and on a trailing structure it also raises the floor behind the trader. And the payout sequence adds administrative steps that run on their own clock.</p>
+    <figure>
+      <img src="/assets/img/payout-timeline.svg" alt="Timeline from funded account issue through minimum trading days, profit threshold, consistency check and verification to the first withdrawal" width="1000" height="420" loading="lazy">
+      
+    </figure>
+    <p>The first fortnight on the funded account should be run at half the evaluation's risk. Complete verification in week one. Satisfy the minimum-day count with planned, small sessions. Cap daily profit so the consistency ratio is intact by the time the threshold is reached. Then withdraw at the smallest permitted size on the earliest permitted schedule, because a completed cycle establishes the payment route and timing, which are otherwise guesses.</p>
+    <p>Only after that cycle should size return toward the evaluation plan, and only then does a scaling request make sense. Scaling programmes are judged on completed withdrawals rather than on a strong month, so a trader who increases size before the first payout is scaling an unverified process — the most common reason someone who has passed twice still has no payout history.</p>
+    <p>One further check belongs here rather than in the marketing: whether the funded account carries the same conduct clauses as the evaluation, or stricter ones. Overnight holding, news windows and permitted instruments can differ between the two documents, and the funded version is the one that governs the money.</p>
+    <h2 id="compare">Comparing it with other futures models</h2>
+    <p>Three models dominate the futures side of the market, and the choice between them is a choice about which constraint is tolerable.</p>
+    <p>The <strong>single-phase contract evaluation</strong> is the fastest route to a funded allocation and the least forgiving of a slow start, because one target and one loss limit cover the whole attempt. It suits a trader with a measured, repeatable setup and a short calendar.</p>
+    <p>The <strong>staged contract evaluation</strong> splits the target in two, which reduces the size of each step and increases the cost of a late breach. It suits a trader who has failed a single-phase attempt in the final stretch, since the arithmetic per stage is smaller.</p>
+    <p>The <strong>percentage-based forex evaluation</strong> is a different product with a different sizing model: fractional lots, percentage targets, and a plan that is scale-free. A trader with a currency edge is usually better served there, and the <a href="/blog/fundednext-vs-topstep-comparison.html">FundedNext versus Topstep comparison</a> sets the two rulebooks side by side.</p>
+    <p>The <a href="/blog/best-futures-prop-firms-2026.html">futures firm guide</a> covers the seven criteria that separate contract-based firms, the <a href="/blog/mff-challenge-passing.html">MFF guide</a> works through a comparable structure, and the <a href="/blog/topstep-challenge-passing.html">Topstep guide</a> covers a combine with two simultaneous loss rules. The <a href="/prop-firm-rules-matrix.html">rules matrix</a> lists the structures across firms for a side-by-side read.</p>
+    <h2 id="verify">What to confirm before paying</h2>
+    <p>Six checks, each answerable from the firm's documentation in under an hour, replace every review including this one.</p>
+    <p><strong>One: the drawdown mechanism and its sampling.</strong> Static, end-of-day trailing or intraday trailing; balance or equity; continuous or sampled. Convert the answer into the current distance to the floor in dollars.</p>
+    <p><strong>Two: the daily limit and the server day boundary.</strong> The dollar amount, the reference point, and the exact hour the trading day starts and ends in server time — then how that interacts with the hours actually traded.</p>
+    <p><strong>Three: the funded-stage conditions.</strong> Funded drawdown, minimum profitable days, profit threshold, consistency rule and whether it applies at every payout, verification requirements, and the payment interval.</p>
+    <p><strong>Four: the conduct clauses.</strong> News windows, overnight and weekend holding, instrument restrictions, contract caps, and any prohibition on automated or third-party trading. Where a definition is broad, ask for a specific written example.</p>
+    <p><strong>Five: whether assistance is permitted, on both stages.</strong> The evaluation and funded documents answer separately, and the funded answer is the one with money attached.</p>
+    <p><strong>Six: total cost to funding.</strong> Fee, platform, data, any activation charge, and the cost of a reset — divided by the realistic number of weeks the plan needs, remembering that a data subscription is a monthly cost rather than a per-attempt one.</p>
+    <p>Keep the answers, including the version of the terms in force on the day of purchase. Terms change, and a trader holding the version they agreed to is in a materially better position than one relying on memory.</p>
+    <h2 id="plan">A four-week plan that fits the rules</h2>
+    <p>Four weeks is roughly twenty sessions, which is a realistic horizon for a plan at survivable size.</p>
+    <p><strong>Week one: calibrate at half size.</strong> Two trades per session, half the eventual contract count, and three measurements per trade: planned risk, realised risk including slippage and commission, and time in the trade. The purpose is to establish whether the stop distance the plan assumes is the stop distance the market delivers at the hours being traded. Most plans are wrong about this, and week one is the cheapest place to find out.</p>
+    <p><strong>Week two: full size, fixed cap.</strong> If the calibration matched, move to the full contract count and keep the two-trade cap for a week before relaxing it to the planned maximum. If it did not match, shorten the stop distance rather than increasing the size — slippage is a property of the instrument and the session, not of the account.</p>
+    <p><strong>Week three: protect the buffer.</strong> Ahead of pace, reduce the contract count by a quarter and keep the target in view. Behind pace, keep the size and move the calendar. The daily limit is never increased to catch up, and the contract count is never rounded up.</p>
+    <p><strong>Week four: decide deliberately.</strong> Review the four numbers and choose: continue, extend, or stop. A plan with a negative expectation should stop, because another fortnight of the same process produces the same result at a higher cost in data and platform fees.</p>
+    <p>Two habits hold the month together. Recompute the contract count from the current floor every Monday, and never open a position in the final hour of the firm's trading day, where the day-boundary and trailing-floor traps live. If the evaluation is being traded on the trader's behalf, add a third: written confirmation that third-party trading is permitted on both the evaluation and the funded account. ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid it — the <a href="/blog/best-prop-firm-passing-services.html">passing services guide</a> explains what to check.</p>
+    <h2 id="faq">Frequently asked questions</h2>
+    <details class="faq"><summary>Is GOAT Funded Trader a futures prop firm?</summary><div class="faq-a"><p>It operates in the contract-based futures category, where targets and losses are quoted in dollars and positions are whole contracts. Verify the current instrument list and platform support in the firm's documentation, since both are revised regularly.</p></div></details>
+    <details class="faq"><summary>How many contracts should I trade?</summary><div class="faq-a"><p>Divide the distance to the drawdown floor by the number of consecutive losses the plan must survive, then divide by the tick value of the stop distance and round down. Check against the daily limit and the contract cap. If the result is zero, use a micro contract or a larger account.</p></div></details>
+    <details class="faq"><summary>Does the challenge use a trailing drawdown?</summary><div class="faq-a"><p>Read the current terms rather than any guide. Establish whether the floor is static, end-of-day trailing or intraday trailing, whether it is measured on balance or equity, and when it is sampled. Then convert it into the current distance to the floor in dollars, which is the number position size must be built from.</p></div></details>
+    <details class="faq"><summary>Why do most attempts fail on the daily limit?</summary><div class="faq-a"><p>Because it fires on routine variance. If risk per trade is a large fraction of the daily limit, two or three consecutive losses close the session, and runs of that length occur regularly at a win rate in the forties. Derive risk from both limits and use the smaller figure.</p></div></details>
+    <details class="faq"><summary>Should I use micro contracts during the evaluation?</summary><div class="faq-a"><p>Usually yes. A micro carries a fraction of the tick value, which lets the strategy keep its stop distance while risking a fraction of the dollars. Many experienced futures traders run micros during evaluation and full-size contracts only after the first payout cycle completes.</p></div></details>
+    <details class="faq"><summary>How long should the challenge take?</summary><div class="faq-a"><p>Twenty to forty sessions for a conservative plan, derived by dividing the target by expected value per trade and then by planned trades per week. If that calendar is longer than the trader is willing to fund, the fix is a better reward-to-risk ratio or a more selective entry, not a larger position.</p></div></details>
+    <details class="faq"><summary>Can I hold positions overnight or over the weekend?</summary><div class="faq-a"><p>Most futures firms permit it with conditions: reduced size across the settlement window, restrictions around certain releases, and a daily limit that resets on server time. Where holding is allowed, price the gap as a multiple of the stop — the <a href="/blog/prop-firm-weekend-holding-rules.html">weekend holding guide</a> covers the arithmetic.</p></div></details>
+    <details class="faq"><summary>What happens on the funded account after a pass?</summary><div class="faq-a"><p>A new agreement with its own drawdown, payout conditions and conduct clauses. Halve the evaluation's risk for the first ten sessions, submit verification immediately, cap daily profit below the consistency threshold, and withdraw at the smallest permitted size on the earliest schedule to complete the first cycle.</p></div></details>
+    <details class="faq"><summary>Is a passing service allowed?</summary><div class="faq-a"><p>Only where the terms permit third-party trading, which must be confirmed for the evaluation and the funded account separately. ElitePropX charges a flat <strong>$220</strong> per evaluation at any stage and size, covers retries, takes no profit split, and declines firms whose terms forbid it.</p></div></details>
+    <details class="faq"><summary>How do I avoid breaching a trailing floor from a winning position?</summary><div class="faq-a"><p>Give winners an exit rule. On an intraday trailing structure, a position in profit has already raised the floor, so the plan needs a defined point at which profit is banked or the stop moves. Write the rule before the trade, because in the moment the position feels safe precisely because it is up.</p></div></details>
+    <details class="faq"><summary>What is the consistency rule on the funded stage?</summary><div class="faq-a"><p>Usually a cap on the share of total profit from one day, often around a third, meaning total profit must reach roughly three times the largest day before a full withdrawal. Cap daily profit from the first session so the ratio is satisfied automatically when the threshold is reached.</p></div></details>
+    <details class="faq"><summary>Should I run two evaluations at once?</summary><div class="faq-a"><p>Usually not before the first payout cycle completes. Parallel accounts multiply fees, data costs and daily limits but not attention, and combining allocations before a completed withdrawal means scaling a process that has not been tested end to end.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/best-futures-prop-firms-2026.html">Best futures prop firms 2026</a></li>
+      <li><a href="/blog/mff-challenge-passing.html">Passing an MFF challenge</a></li>
+      <li><a href="/blog/topstep-challenge-passing.html">Passing a Topstep combine</a></li>
+      <li><a href="/blog/what-happens-after-passing-challenge.html">What happens after you pass</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule guide</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/">All prop firm guides</a></li>
+    </ul>
+    <p class="disclaimer">GOAT Funded Trader is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Contract specifications, drawdown mechanisms and payout terms change; verify them against the firm's current documentation. Trading futures involves substantial risk of loss.</p>
+  </div>
+</section>

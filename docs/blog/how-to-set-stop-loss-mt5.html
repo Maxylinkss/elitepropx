@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Set a Stop Loss in MT5 (Server-Side) | 2026</title>
+<meta name="description" content="How to Set Stop Loss MT5: A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only…">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html">
+<meta name="theme-color" content="#0b1220">
+<meta name="author" content="ElitePropX">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ElitePropX">
+<meta property="og:title" content="How to Set a Stop Loss in MT5 (Server-Side) | 2026">
+<meta property="og:description" content="How to Set Stop Loss MT5: A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only…">
+<meta property="og:url" content="https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html">
+<meta property="og:image" content="https://elitepropx.com/assets/img/og/blog-how-to-set-stop-loss-mt5.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-19T08:00:00+00:00">
+<meta property="article:modified_time" content="2026-10-19T08:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Set a Stop Loss in MT5 (Server-Side) | 2026">
+<meta name="twitter:description" content="How to Set Stop Loss MT5: A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only…">
+<meta name="twitter:image" content="https://elitepropx.com/assets/img/og/blog-how-to-set-stop-loss-mt5.svg">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/logo-mark.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/css/style.css" as="style">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script defer src="/assets/js/main.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://elitepropx.com/#organization","name":"ElitePropX","legalName":"ElitePropX","url":"https://elitepropx.com/","logo":{"@type":"ImageObject","url":"https://elitepropx.com/assets/img/logo.svg","width":512,"height":128},"description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","email":"support@elitepropx.com","foundingDate":"2024","areaServed":"Worldwide","knowsAbout":["prop firm challenge passing","FTMO challenge","futures prop firm evaluations","Apex Trader Funding","Topstep Combine","FundedNext"],"sameAs":["https://www.youtube.com/hashtag/propfirmpassing","https://t.me/voraspas"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"support@elitepropx.com","url":"https://t.me/voraspas","availableLanguage":["English"]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://elitepropx.com/#website","url":"https://elitepropx.com/","name":"ElitePropX","description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","inLanguage":"en","publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html#article","headline":"How to Set a Stop Loss in MT5 (Server-Side)","description":"How to Set Stop Loss MT5: A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only…","image":"https://elitepropx.com/assets/img/og/blog-how-to-set-stop-loss-mt5.svg","datePublished":"2026-10-19T08:00:00+00:00","dateModified":"2026-10-19T08:00:00+00:00","wordCount":895,"articleSection":"Platforms","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html"},"author":{"@id":"https://elitepropx.com/#organization"},"publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Prop Firm Challenge Passing","serviceType":"Prop firm challenge passing service","provider":{"@id":"https://elitepropx.com/#organization"},"areaServed":"Worldwide","description":"ElitePropX trades prop firm evaluations on your behalf for a flat $220 fee, covering retries, with no profit split on the funded account.","offers":{"@type":"Offer","price":"220","priceCurrency":"USD","description":"Flat fee per evaluation, any account size, retries covered.","availability":"https://schema.org/InStock","url":"https://elitepropx.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elitepropx.com/"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://elitepropx.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Set a Stop Loss in MT5 (Server-Side)","item":"https://elitepropx.com/blog/how-to-set-stop-loss-mt5.html"}]}</script>
+</head>
+<body class="page-article">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="ElitePropX home">
+      <img src="/assets/img/logo.svg" alt="ElitePropX" width="150" height="38" loading="eager">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-bar"></span><span class="sr-only">Menu</span>
+    </button>
+    <nav id="primary-nav" class="site-nav" aria-label="Primary">
+      <ul>
+          <li><a href="/passed-challenges.html" aria-current="page" class="is-active">Passed Challenges</a></li>
+          <li><a href="/prop-firm-comparison-2026.html" aria-current="page" class="is-active">Compare Firms</a></li>
+          <li><a href="/prop-firm-rules-matrix.html" aria-current="page" class="is-active">Rules Matrix</a></li>
+          <li><a href="/services/passing-prop-firm-services.html">Services</a></li>
+          <li><a href="/reviews/prop-firm-passing-service-reviews.html">Reviews</a></li>
+          <li><a href="/blog/" aria-current="page" class="is-active">Blog</a></li>
+          <li><a href="/faq.html" aria-current="page" class="is-active">FAQ</a></li>
+          <li><a href="/about.html" aria-current="page" class="is-active">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="header-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener" aria-label="Chat with ElitePropX on Telegram" title="Chat on Telegram"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg></a>
+      <a class="btn btn-primary header-cta" href="/#get-started">Start for $220</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Platforms</a></li><li aria-current="page">How to Set a Stop Loss in MT5 (Server-Side)</li></ol></nav>
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">How to Set Stop Loss MT5 · reviewed October 2026</p>
+    <h1>How to Set a Stop Loss in MT5 (Server-Side)</h1>
+    <p class="lede">A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only while the terminal is running, and a server-side order that survives a disconnect. On an evaluation account the second is the only defensible choice. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+<div class="keypoints">
+  <h2>Key takeaways</h2>
+<ul>
+  <li>Server-side stops survive terminal crashes, connection drops and platform restarts.</li>
+  <li>The order ticket shows the stop in price terms; the risk in account currency has to be calculated separately.</li>
+  <li>A stop moved after entry changes the risk of the trade and must be recorded in the journal as a breach if it moves away from the entry.</li>
+  <li>The platform decision should be checked against the exact plan, not the brand: terms change between cohorts and between plan names.</li>
+</ul>
+</div>
+<div class="toc">
+  <p>Contents</p>
+<ol>
+  <li><a href="#steps">The exact steps</a></li>
+  <li><a href="#evaluation">Why this matters more on an evaluation</a></li>
+</ol>
+</div>
+<h2 id="steps">The exact steps</h2>
+<p>A stop loss in MetaTrader 5 is an order instruction, and the platform offers two versions: a client-side line that exists only while the terminal is running, and a server-side order that survives a disconnect. On an evaluation account the second is the only defensible choice. The consequence is mechanical: an order that exists only on the chart is not a stop, and a setting that resets after an update is not a plan.</p>
+<h3>Step 1: Open a new order and expand the stop fields</h3>
+<p>In MetaTrader 5, open the New Order window, choose the symbol and volume, then expand the section that contains the stop loss and take profit fields. On the desktop terminal the fields are visible by default; on some builds they are collapsed. Enter the stop as a price, not as a distance, and check that the field is not greyed out because the distance is inside the broker’s minimum stop level.</p>
+<h3>Step 2: Choose the server-side option, not a chart line</h3>
+<p>A stop entered in the order ticket is sent to the server with the order and survives a disconnect. A horizontal line dragged onto the chart is a client-side object and does not. If the stop is added after entry, use the position’s Modify or Stop Loss command rather than a chart tool, and confirm the change in the order list.</p>
+<h3>Step 3: Verify the stop in the Trade tab</h3>
+<p>After the order is filled, open the Trade tab and look at the position row. The stop loss column should show the price you entered. If it is empty, the position is unprotected; right-click the position, choose Modify, and attach the stop. Do this before the trade has time to move against you.</p>
+<h3>Step 4: Check the risk in account currency</h3>
+<p>The ticket shows the estimated loss at the stop, but it does not know your risk budget. Compare the number with the dollar risk the plan allows, and if the position is too large, reduce the volume rather than moving the stop closer. Moving the stop closer to fit the size is how a normal trade becomes a breach.</p>
+<p>The steps are mechanical on purpose. The failure mode in an evaluation is rarely a missing feature; it is a stop that was never placed, a setting that reset after a platform update, or an order type that behaved differently from the label. Walking the same sequence every time is what makes the behaviour predictable under pressure.</p>
+<h2 id="evaluation">Why this matters more on an evaluation</h2>
+<p>On a personal account, a missing stop is a risk. On an evaluation, it is a rule breach waiting to happen. A loss that runs past the intended stop can consume the daily allowance before the trader has made a decision, and on a trailing threshold it can end the account even if the balance later recovers. The evaluation does not distinguish between a deliberate risk and an accidental one.</p>
+<p>The correct default is that every position has a server-side stop before it has a size. That order — stop first, size second — is the reverse of how most traders click, which is why the mistake is common. The platform will accept a market order without a stop; the rulebook will not forgive one.</p>
+<p>A second evaluation-specific issue is the daily reset. A stop that is valid today may be irrelevant tomorrow because the daily allowance resets and the plan's risk budget changes. Recalculate the maximum loss at the start of each session and write it next to the platform, rather than carrying yesterday's number in your head.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      <p>Flat <strong>$220</strong>, any firm, any account size, retries covered. Every position enters with a server-side stop.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+      <a class="btn btn-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg><span>Chat on Telegram</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
+      <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
+      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
+      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
+      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
+      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
+      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+    </ul>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-cta">
+    <div>
+      <p class="footer-cta-kicker">Talk to ElitePropX</p>
+      <h2>Not sure which firm or plan fits?</h2>
+      <p>Send the firm and account size. You will get the flat fee, a timeline and a straight answer on your firm's terms before you pay.</p>
+    </div>
+    <div class="footer-cta-actions">
+      <a class="btn btn-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg><span>Chat on Telegram</span></a>
+      <a class="btn btn-outline-light" href="mailto:support@elitepropx.com?subject=Prop%20firm%20challenge%20enquiry">Email support</a>
+    </div>
+  </div>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="/assets/img/logo-white.svg" alt="ElitePropX" width="150" height="38" loading="lazy">
+      <p>ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.</p>
+      <p class="footer-mail">
+        <a href="https://t.me/voraspas" target="_blank" rel="noopener">Telegram @voraspas</a><br>
+        <a href="mailto:support@elitepropx.com">support@elitepropx.com</a>
+      </p>
+    </div>
+    <div>
+      <h2 class="footer-h">Service</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/passed-challenges.html">Passed challenges</a></li>
+        <li><a href="/prop-firm-comparison-2026.html">Prop firm comparison</a></li>
+        <li><a href="/prop-firm-rules-matrix.html">Rules matrix</a></li>
+        <li><a href="/services/passing-prop-firm-services.html">Passing services</a></li>
+        <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Resources</h2>
+      <ul>
+        <li><a href="/blog/">All articles</a></li>
+        <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">Challenge passing guide</a></li>
+        <li><a href="/blog/ftmo-challenge-passing.html">FTMO passing</a></li>
+        <li><a href="/blog/apex-trader-funding-challenge-passing.html">Apex passing</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Company</h2>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy policy</a></li>
+        <li><a href="/terms.html">Terms of service</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year">2026</span> ElitePropX. All rights reserved.</p>
+    <p class="disclaimer">
+      ElitePropX is an independent service and is not affiliated with, endorsed by, or sponsored by any proprietary trading firm named on this site. Trading involves substantial risk of loss. Past results do not guarantee future outcomes. Check your firm's terms before purchasing any service.
+    </p>
+  </div>
+</footer>
+<a class="telegram-float" href="https://t.me/voraspas" target="_blank" rel="noopener" aria-label="Chat with ElitePropX on Telegram">
+  <span class="telegram-float-icon"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg></span>
+  <span class="telegram-float-text"><strong>Chat on Telegram</strong><small>@voraspas</small></span>
+</a>
+</body>
+</html>

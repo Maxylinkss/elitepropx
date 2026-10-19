@@ -1,0 +1,214 @@
+---
+title: The Ultimate Guide to Passing a Prop Firm Challenge
+desc: A complete, practical guide to passing a prop firm challenge: drawdown types, daily loss limits, consistency rules, position sizing and payout mechanics.
+path: /blog/ultimate-guide-passing-prop-firm-challenge.html
+type: article
+h1: The ultimate guide to passing a prop firm challenge
+kicker: Complete guide
+crumb: Ultimate guide
+section: Prop firm guides
+sectionUrl: /blog/
+date: 2026-09-26
+updated: 2026-10-18
+priority: 0.8
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Complete guide · reviewed October 2026</p>
+    <h1>The ultimate guide to passing a prop firm challenge</h1>
+    <p class="lede">A prop firm evaluation is a rules problem wearing the costume of a trading problem. This guide takes it apart: the four constraints that end most attempts, the sizing arithmetic that keeps an account alive, how to pace a two-phase structure, and what changes at payout.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Almost every failed evaluation breaches the daily loss limit or a trailing floor in a single session.</li>
+        <li>Size against the loss limit, not the profit target — a third of the daily budget per trade is the workable ceiling.</li>
+        <li>Drawdown type matters more than target size: static beats end-of-day trailing, which beats intraday trailing.</li>
+        <li>A pass is not a payout; funded accounts have a second rulebook covering consistency, minimum days and KYC.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#what-it-is">What a prop firm challenge actually tests</a></li>
+        <li><a href="#four-rules">The four constraints that decide outcomes</a></li>
+        <li><a href="#choose">Choosing a firm you can actually pass</a></li>
+        <li><a href="#sizing">The sizing arithmetic</a></li>
+        <li><a href="#pacing">Pacing a two-phase evaluation</a></li>
+        <li><a href="#consistency">The consistency rule</a></li>
+        <li><a href="#mistakes">Nine mistakes that end evaluations</a></li>
+        <li><a href="#payout">From pass to payout</a></li>
+        <li><a href="#service">Doing it yourself or using a service</a></li>
+      </ol>
+    </div>
+    <h2 id="what-it-is">What a prop firm challenge actually tests</h2>
+    <p>The marketing framing is that a prop firm evaluation tests whether you can trade. The operational reality is narrower: it tests whether you can produce a specific return, inside a specific window, without ever breaching a loss threshold. Those are related skills, but they are not the same skill, and the difference explains why experienced traders fail evaluations that beginners occasionally pass.</p>
+    <p>A trader with ten years of discretionary experience typically has a feel for position size built on personal accounts, where the consequence of a bad week is a smaller balance and time to recover. An evaluation removes that recovery option. A $100,000 account with a 5% daily loss limit and a 10% maximum loss is a machine with two independent failure conditions, and a style built on surviving drawdowns by waiting is structurally incompatible with a floor that moves.</p>
+    <p>What the evaluation is genuinely testing is constraint management. Can you calculate the risk that the rulebook permits? Can you take that risk repeatedly without escalating after a loss? Can you stop for the day when the budget is spent, even when an obvious setup appears ten minutes later? Can you resist accelerating as the target approaches? Those questions are mechanical, and they have mechanical answers, which is why a structured process outperforms a good market view inside an evaluation and underperforms it outside one.</p>
+    <p>Two consequences follow, and they are worth internalising before reading the rest of this guide. First, the strategy that passes an evaluation is usually not the strategy a trader wants to run on a funded account — it is more conservative, more patient and less profitable per unit of risk. Second, the constraint set itself is the biggest variable: two firms with identical headline targets produce very different pass rates depending on how their loss limits behave. Choosing the firm is a risk decision, not an administrative one.</p>
+    <h2 id="four-rules">The four constraints that decide outcomes</h2>
+    <p>Across thousands of evaluations, failures cluster around four rules. Everything else — instrument restrictions, time windows, platform quirks — matters, but these four do the damage.</p>
+    <h3>1. The daily loss limit</h3>
+    <p>The maximum loss permitted in a single trading day, resetting each morning. On forex evaluations it is usually 5%, on futures evaluations it is a dollar threshold. The number that matters is not the percentage but the <em>basis</em>: a limit measured on equity including floating positions is breached by an open trade that is temporarily deep in the red, even if it recovers before the close. A limit measured on closed balance only counts realised losses. The first is roughly twice as strict in practice, at the same headline figure.</p>
+    <p>Why it ends so many attempts: a loss is emotionally uncomfortable, and the natural response is to take a slightly larger position to recover it before the day ends. That single decision converts a manageable −1% day into a −5% day. The rule does not fail traders; it catches the response to a small failure.</p>
+    <h3>2. The maximum loss and its behaviour</h3>
+    <p>The total drawdown permitted before the account fails. There are three behaviours and they are not interchangeable.</p>
+    <ul>
+      <li><strong>Static.</strong> The failure level never moves. On a $100,000 account with a 10% limit, it stays at $90,000 whether the balance is $100,000 or $115,000. Every dollar of profit is real progress with no side effect.</li>
+      <li><strong>End-of-day trailing.</strong> The failure level rises with profit closed at the end of each session. Bank $4,000 and the floor becomes $94,000. Intraday noise does not move it.</li>
+      <li><strong>Intraday trailing.</strong> The failure level follows unrealised equity. A position that is $4,000 in profit and then retraces to $1,000 has already moved the floor, leaving the account $3,000 above failure with only $1,000 of realised profit on the books.</li>
+    </ul>
+    <p>The third behaviour produces failures that look inexplicable when a trader reviews their own P&amp;L: no losing trade was taken, and the account still ended. The floor simply outran the balance. Any plan built for an intraday trailing account must reduce size as profit accumulates, which is the opposite of the instinct that develops on a static account.</p>
+    <figure>
+      <img src="/assets/img/drawdown-types.svg" alt="Diagram comparing static, intraday trailing and end-of-day trailing drawdown floors on the same equity curve" width="1000" height="560" loading="lazy">
+      <figcaption>The same equity curve under three drawdown models — only one of them leaves the buffer intact at the top.</figcaption>
+    </figure>
+    <h3>3. Minimum trading days</h3>
+    <p>Typically four to ten days before an evaluation can be verified. This rule rarely ends an account but routinely delays funding, and it has a second-order effect that catches traders out: having reached the target on day three of a ten-day requirement, the account must survive seven more days of trading to qualify. Seven days at target is more exposure than most plans budget for, and a common failure is giving back enough profit to drop below target while waiting.</p>
+    <p>The right approach is to reach the target later than the minimum and finish on the final required day, so there is no waiting period at all. The plan's pace is set by the day count, not by ambition.</p>
+    <h3>4. The consistency rule</h3>
+    <p>A cap on how much of total profit can come from a single day, usually 30%. It is applied at payout by most firms and during the evaluation by a few. The arithmetic is unforgiving: a $6,000 best day under a 30% rule requires $20,000 of total profit, so an account that looks finished can still be unable to withdraw.</p>
+    <p>Consistency is covered in more depth <a href="#consistency">below</a> and in the dedicated <a href="/blog/prop-firm-consistency-rule-guide.html">consistency rule guide</a>, because it is the rule most likely to turn a pass into a disappointment.</p>
+    <h2 id="choose">Choosing a firm you can actually pass</h2>
+    <p>Firm selection is where most of the outcome is decided, and it is usually made on the wrong criteria — account size and split percentage, both of which matter far less than the structure of the loss limits.</p>
+    <p><strong>First, the drawdown type.</strong> A static floor gives a plan room; an intraday trailing floor takes it away as profit accumulates. If two firms offer the same target and the same daily limit, the static one is the easier assignment, and it is not close.</p>
+    <p><strong>Second, the daily limit basis.</strong> Equity-based limits are stricter than balance-based ones. This detail is rarely in a comparison table and almost always in the client agreement.</p>
+    <p><strong>Third, consistency.</strong> A payout-stage rule can be managed by adding ordinary winning days before a withdrawal. An evaluation-stage rule constrains the pace from the first session.</p>
+    <p><strong>Fourth, time limits.</strong> No overall window is better than thirty days, because a flat week costs time rather than the account.</p>
+    <p><strong>Fifth, payout reliability.</strong> A firm that pays slowly is a worse home for a funded account than a firm with a slightly less generous split that pays weekly. No firm publishes a withdrawal-reliability column, which is why community reporting matters here more than marketing.</p>
+    <p>The <a href="/prop-firm-comparison-2026.html">2026 comparison</a> and the <a href="/prop-firm-rules-matrix.html">rules matrix</a> cover these criteria firm by firm. The practical summary is that the easiest structures to pass have a single phase, a static floor, no consistency rule and no time limit — and that the hardest are intraday trailing futures evaluations with a payout-stage consistency rule and a thirty-day window.</p>
+    <h2 id="sizing">The sizing arithmetic</h2>
+    <p>Sizing is where the evaluation is won or lost, and the rule is simpler than most traders expect: risk a third of the daily loss budget per trade at most, and stop for the day once roughly 80% of the budget has been spent.</p>
+    <p>On a $100,000 account with a 5% daily limit, the budget is $5,000. A third is $1,650. Three consecutive losses at that size cost $4,950 — enough to make the day uncomfortable, not enough to end the account. On a $25,000 account the same calculation gives a budget of $1,250 and a per-trade ceiling of about $410, which is small enough that a normal losing streak is survivable and large enough that reaching the target is possible.</p>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="Diagram showing a daily loss limit divided into three equal trade slots, each about one third of the budget" width="940" height="520" loading="lazy">
+      <figcaption>Dividing the daily limit into thirds keeps an ordinary losing streak from becoming a failure.</figcaption>
+    </figure>
+    <p>Two refinements matter. First, the 80% stop exists to absorb slippage on the closing trade of a losing day; it is not headroom for another setup. Second, the profit target should never determine size. A trader who calculates the position needed to reach the target fastest is solving for variance, not for survival, and the daily limit will find them.</p>
+    <figure>
+      <img src="/assets/img/challenge-math.svg" alt="Chart showing a 10 percent profit target and a 10 percent maximum loss around a 100,000 dollar balance, with risk per trade scenarios" width="940" height="500" loading="lazy">
+      <figcaption>Target and drawdown are one equation: the second constrains the first.</figcaption>
+    </figure>
+    <p>A useful sanity check before starting: at the planned risk per trade and an average reward-to-risk of about 1.8:1, how many net winning trades does the target require? On the $100,000 example, each win at $1,650 risk produces roughly $2,970, so a $10,000 target needs about nine more wins than losses. If that number implies more trading days than the firm's window allows, the plan is wrong for that firm — not the trader.</p>
+    <h2 id="pacing">Pacing a two-phase evaluation</h2>
+    <p>Two-phase forex evaluations have a particular rhythm, and following it removes most of the risk that comes from impatience.</p>
+    <p><strong>Week one: build distance from the floor.</strong> The objective is not progress toward the target but a cushion that makes the second week survivable. One or two setups per session, no averaging into losers, no trading in the first thirty minutes if spreads are wide. A realistic outcome is $2,000 to $3,500 of profit on a $100,000 account, or a small loss with the daily budget barely touched. Both are acceptable.</p>
+    <p><strong>Week two: convert the cushion.</strong> With a cushion in place, the same per-trade risk produces a larger share of the target because a losing sequence no longer threatens the maximum loss. Sessions can lengthen slightly. This is the phase where the target is actually reached, in increments rather than in one decision.</p>
+    <p><strong>Phase two: smaller target, tighter discipline.</strong> Verification phases usually have a smaller target and the same limits, which sounds like relief and behaves like a trap. One oversized attempt erases the work of the previous two weeks. Risk per trade is typically reduced by a quarter for phase two and the profit is taken in smaller pieces.</p>
+    <p><strong>The last 20%: reduce, do not accelerate.</strong> The instinct near the finish is to add size and close the gap quickly. The opposite is correct. Size comes down, sessions shorten, and the remaining ground is covered in increments that cannot breach anything. This is especially true on trailing structures, where a late drawdown is fatal in a way it would not have been at the start.</p>
+    <h2 id="consistency">The consistency rule, briefly</h2>
+    <p>If a firm enforces a 30% best-day rule, your largest profitable day must be no more than 30% of total profit at the time of the payout request. That means total profit must be at least 3.33 times your best day.</p>
+    <figure>
+      <img src="/assets/img/consistency-rule.svg" alt="Bar chart showing a dominant day exceeding a thirty percent consistency threshold while total profit is below the required multiple" width="940" height="540" loading="lazy">
+      <figcaption>One dominant day can fail a consistency check even when the profit target is met.</figcaption>
+    </figure>
+    <p>The practical response is to cap individual days during the evaluation at roughly a third of the target, even when the firm only enforces consistency at payout. That habit makes the funded phase mechanical instead of a scramble to add ordinary days after the fact. The full arithmetic, including worked examples with real numbers, is in the <a href="/blog/prop-firm-consistency-rule-guide.html">dedicated guide</a>.</p>
+    <h2 id="mistakes">Nine mistakes that end evaluations</h2>
+    <ol>
+      <li><strong>Oversizing after a losing morning.</strong> The recovery trade is the single most expensive habit in evaluation trading.</li>
+      <li><strong>Not recalculating the trailing floor.</strong> On a trailing account, the failure level after a strong session is not the level from yesterday.</li>
+      <li><strong>Sprinting to the target.</strong> The fastest route to the target is also the fastest route to the daily limit.</li>
+      <li><strong>Waiting on a minimum day requirement at target.</strong> Reaching the target early creates exposure you did not budget.</li>
+      <li><strong>Trading restricted instruments.</strong> A permitted list is a rule, not a suggestion, and a breach voids the pass.</li>
+      <li><strong>Holding through a news window.</strong> Firms define these differently and enforce them strictly.</li>
+      <li><strong>Treating floating profit as banked.</strong> Targets require closed profit on almost every platform.</li>
+      <li><strong>Day-trading the platform, not the plan.</strong> Checking equity every few minutes produces decisions the plan did not authorise.</li>
+      <li><strong>Choosing the firm by split percentage.</strong> A generous split on a structure you cannot pass is worth nothing.</li>
+    </ol>
+    <h2 id="payout">From pass to payout</h2>
+    <p>Funding is the end of the evaluation and the start of a second rulebook. Most firms relax the daily limit on a funded account but add conditions around withdrawals.</p>
+    <figure>
+      <img src="/assets/img/payout-timeline.svg" alt="Timeline of six checkpoints from a passed evaluation to a first payout" width="1000" height="420" loading="lazy">
+      <figcaption>Six checkpoints stand between a passed evaluation and a first withdrawal.</figcaption>
+    </figure>
+    <p>The sequence is consistent across firms: funded credentials, a minimum number of trading days, a profit threshold, a consistency check, KYC, then the withdrawal itself. Each is a separate gate. A trader who meets the profit threshold but has a dominant best day will not be paid until the distribution changes; a trader who meets both but has not completed KYC will wait.</p>
+    <p>The <a href="/blog/funded-account-payout-process.html">payout process guide</a> covers the sequence step by step, including the delays that account for most first-withdrawal frustration.</p>
+    <h2>A worked example, session by session</h2>
+    <p>Numbers in a guide are easier to trust when they are attached to a sequence. Here is how a $100,000 two-phase forex evaluation is paced under a standard 10% target, 5% daily limit (measured on equity), 10% static maximum loss and four-day minimum, with risk capped at $1,600 per trade.</p>
+    <p><strong>Session 1 — +$820.</strong> Two setups, one winner, one scratch. The failure floor is 8.2% away. Nothing notable, which is the objective: the first session exists to establish the routine, not the profit.</p>
+    <p><strong>Session 2 — −$430.</strong> One loss taken at the planned size, then the day is closed early because the second setup did not meet the plan's conditions. The log records a losing day inside the budget, which is a normal and expected outcome.</p>
+    <p><strong>Session 3 — +$1,540.</strong> The best session so far, and deliberately not repeated at larger size the next day. On a 5% daily limit this day used under a third of the budget.</p>
+    <p><strong>Sessions 4–6 — +$2,180 combined.</strong> Three ordinary winning sessions, each capped so no single day becomes an outsized share of total profit. Target completion reaches 45%. The failure floor has not moved because the drawdown is static.</p>
+    <p><strong>Session 7 — flat.</strong> Three trades, two small wins, one small loss. Logged as flat. The temptation at this point is to force a result because progress stalled; the plan does not permit it, and the next session is treated as a fresh budget rather than a correction.</p>
+    <p><strong>Sessions 8–9 — +$3,150 combined.</strong> Two stronger sessions taking the total to $7,260, or 73% of target. Risk per trade is reduced by a quarter from this point.</p>
+    <p><strong>Sessions 10–12 — +$3,020 combined.</strong> The target is cleared on session 12 at $10,280. Because the firm requires four minimum trading days and none of the sessions breached the daily limit, verification completes immediately and phase two begins.</p>
+    <p><strong>Phase two.</strong> Target $5,000 with the same limits. Risk per trade is cut to $1,200 and the pace is intentionally slower: nine sessions rather than five. Total elapsed time across both phases: twenty-one trading days. Total daily-budget utilisation never exceeded 42% of the limit on any single session.</p>
+    <div class="callout">
+      <p><strong>What the sequence demonstrates:</strong> no session was remarkable, one was flat, two were losing, and the evaluation still completed in three weeks with the maximum-loss floor never closer than 6% away. Pace, not performance, is what produced the pass.</p>
+    </div>
+    <h2>A note on what changes between firms</h2>
+    <p>The mechanics in this guide are stable; the numbers attached to them are not. A target of 8% with a 5% daily limit and a static floor behaves almost identically across firms. The same target with an intraday trailing floor, a payout-stage consistency rule and a thirty-day window behaves like a different product entirely, and no amount of pacing adjusts for it. That is why the firm decision precedes the plan.</p>
+    <h2 id="service">Doing it yourself or using a service</h2>
+    <p>There are three honest options, and which is right depends on where your failures actually come from.</p>
+    <p><strong>Do it yourself</strong> if your problem is strategy rather than constraint management, or if you want to build the skill of passing evaluations. The guides here are written to make that possible, and many readers never contact us.</p>
+    <p><strong>Use a signal service or course</strong> only if the gap is market selection. It will not help with a daily limit, and it will not take responsibility for the outcome of the evaluation.</p>
+    <p><strong>Use a passing service</strong> if you can trade but keep breaching one specific rule. The trade is money for execution: a flat <a href="/">$220 fee</a> with retries covered, a funded login in your name, and no profit split. That is what ElitePropX sells, and the <a href="/passed-challenges.html">passed challenges page</a> shows the documentation behind it.</p>
+    <div class="callout">
+      <p><strong>One check before you buy anything:</strong> read your firm's terms on third-party trading. Some prohibit it, some restrict account sharing, and enforcement can arrive after funding. That risk belongs to the account holder, and no service can remove it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap narrow">
+    <h2>Frequently asked</h2>
+    <p>The questions below are the ones that come up most often in relation to this guide. Each answer is written to be useful on its own, without requiring the rest of the article.</p>
+    <details class="faq"><summary>How long does it take to pass a prop firm challenge?</summary><div class="faq-a"><p>On a two-phase forex evaluation with a 10% target and a 5% daily limit, roughly sixteen to twenty trading days is a realistic pace. Futures evaluations with trailing thresholds and minimum day requirements typically run two to four weeks. Anything promising a fixed calendar date is guessing.</p></div></details>
+    <details class="faq"><summary>What is the most common reason traders fail?</summary><div class="faq-a"><p>Breaching the daily loss limit on a single oversized position, usually after an earlier loss. It is a behavioural failure rather than a market failure, and it is why a fixed per-trade risk cap matters more than any trading edge.</p></div></details>
+    <details class="faq"><summary>What is the difference between static and trailing drawdown?</summary><div class="faq-a"><p>A static floor never moves. A trailing floor follows profit upward and shrinks the cushion. End-of-day trailing updates on closed profit; intraday trailing follows unrealised equity, which makes it the strictest of the three.</p></div></details>
+    <details class="faq"><summary>Can I pass an evaluation in five days?</summary><div class="faq-a"><p>Only if the firm's rules support it. A 10% target with a 5% daily limit cannot be reached in five days without gambling, and many firms require a minimum number of trading days regardless. Where a fast pass is claimed, the firm is usually one with generous rules or the result is luck.</p></div></details>
+    <details class="faq"><summary>Should I take a larger account or a safer firm?</summary><div class="faq-a"><p>Safer firm first. A $50,000 evaluation at a firm with a static floor and no consistency rule is more likely to produce a funded account than a $200,000 evaluation with an intraday trailing threshold, and the funded account can be scaled later.</p></div></details>
+    <details class="faq"><summary>Do I need a profitable strategy to pass?</summary><div class="faq-a"><p>You need a positive-expectancy approach and disciplined sizing. A modest edge executed at a third of the daily budget passes comfortably; a large edge executed at the full budget often fails, because the variance that comes with size hits the limit before the edge shows up.</p></div></details>
+    <details class="faq"><summary>What happens if I fail?</summary><div class="faq-a"><p>The firm's reset policy applies, which varies from a free reset to a full new challenge fee. With a passing service, the retry is covered by the flat fee, though the firm's own charge is separate.</p></div></details>
+    <details class="faq"><summary>How much should I risk per trade in an evaluation?</summary><div class="faq-a"><p>No more than a third of the daily loss limit, and stop for the day once about 80% of the budget has been spent. That ceiling keeps three consecutive losses survivable, which is the property that matters most across a multi-week evaluation.</p></div></details>
+    <details class="faq"><summary>Is a passing service allowed?</summary><div class="faq-a"><p>It depends on the firm. Some prohibit third-party trading explicitly, others restrict account sharing, and some are silent. Check your firm's current terms and understand that enforcement can happen after funding.</p></div></details>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <h2 id="week-one">The first week: what to do before you trade</h2>
+    <p>The first week of an evaluation is where the attempt is usually won or lost, and almost none of it involves trading. A trader who spends the first week building the arithmetic and the routine starts the second week with an advantage that compound interest cannot buy: they know exactly how much room they have at every moment.</p>
+    <h3>Day one: read the objectives page twice</h3>
+    <p>Read it once for the numbers and once for the exceptions. The numbers are the target, the daily loss, the maximum loss and the minimum days. The exceptions are what make the challenge hard: what counts as a trading day, whether a position held into the next session counts twice, whether the daily limit resets at midnight server time or at the broker's close, and whether the maximum loss trails. Almost every dispute between a trader and a firm traces back to an exception read only once.</p>
+    <h3>Day two: build the card and the sheet</h3>
+    <p>The card carries the four numbers, dated. The sheet is a simple table with a row per session: date, starting equity, daily budget remaining, number of trades, realised result, and whether any rule was broken. The sheet is not a diary; it is an instrument panel, and it takes ninety seconds a day to maintain. Traders who keep it can answer questions about their own behaviour that traders who do not can only guess at.</p>
+    <h3>Day three: demo the mechanics, not the strategy</h3>
+    <p>Place three or four trades on a demo account on the same platform, purely to confirm that position sizing, stop placement and the platform's equity display behave as expected. This is not strategy testing; it is checking that the instrument panel reads correctly. A trader who discovers on day nine that their platform shows balance rather than equity has been flying on the wrong gauge.</p>
+    <h3>Day four: define what a finished session looks like</h3>
+    <p>Write the closing conditions in advance: a profit threshold at which you stop, a loss threshold at which you stop, and a time at which you stop regardless of either. The third condition is the one traders omit, and it is the one that prevents a session drifting into an unplanned third trade at the wrong hour. A session with a defined end is a session that can be reviewed.</p>
+    <h3>Day five: trade small, and expect nothing</h3>
+    <p>The first live session should be at half the planned risk, with the explicit purpose of confirming that the process works when money is involved rather than of making progress toward the target. Half-size sessions rarely make the difference between passing and failing, and they frequently reveal the small frictions — order entry, spread widening at the open, a stop that sits one tick from a round number — that cost far more later.</p>
+    <h2 id="audit">The weekly audit that keeps an attempt alive</h2>
+    <p>Once a week, twenty minutes, five questions. The audit is not a performance review; it is a check that the challenge is still being solved as a rules problem rather than as a trading problem.</p>
+    <ol>
+      <li><strong>Is risk per trade within 10% of the plan?</strong> A drift here invalidates every other calculation, including the daily budget.</li>
+      <li><strong>How many rule violations, and which rules?</strong> Zero is the target. One is a coaching note. Two of the same is a structural problem.</li>
+      <li><strong>What is the current distance to the failure level?</strong> If it has shrunk for two consecutive weeks, size must come down before the next session.</li>
+      <li><strong>Did any session end without a defined closing condition being met?</strong> That is the signature of drift, and it usually precedes a breach by about a week.</li>
+      <li><strong>Is the pace still deliberate?</strong> If the target is close and the temptation to press is strong, the answer is to halve risk rather than to maintain it.</li>
+    </ol>
+    <p>The value of the audit is that it converts a vague sense of how the attempt is going into five numbers, and numbers can be acted on. A trader who cannot answer question three without opening the platform is already relying on memory for the one figure that decides whether the next trade is affordable.</p>
+    <h3>What to do when the audit reveals a problem</h3>
+    <p>It is also worth writing down what a good week looks like before it happens, in numbers: so many sessions, so many trades, a defined result range and zero violations. A week judged against a written standard is reviewable; a week judged against how it felt is not, and feeling is the variable that rules are meant to replace.</p>
+    <p>The response is always the same, and it is always reduction rather than effort: cut size, shorten sessions, narrow the instrument set, and remove the setups that produced the violations. Nothing in a prop firm evaluation is improved by trying harder. The rules are fixed, the target is fixed, and the only variables the trader controls are exposure and frequency — both of which should move down when the evidence says the process has slipped.</p>
+    <p>Two reductions cover most situations. Halving risk per trade doubles the number of consecutive losses required to reach the daily limit, and cutting the session in half removes the tired trades that produce violations without removing the setups that produce the target. Neither change requires a new strategy, which is exactly why both are usable mid-attempt, when changing strategy is the worst available option.</p>
+    <p>Both changes are reversible. If the audit shows three clean weeks and a stable risk figure, risk can go back to plan and sessions can lengthen again. The asymmetry is deliberate: the cost of a smaller position is a slightly slower pass, and the cost of a larger one is the attempt itself, so the error to make is always in the same direction.</p>
+    <p>Applied consistently, those two levers turn an evaluation from a test of conviction into a test of bookkeeping, which is a far easier thing to pass and a far more useful thing to be good at once the account is funded.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation handled for you?</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>

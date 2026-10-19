@@ -1,0 +1,119 @@
+---
+title: Lot Size for a $100k Prop Firm Account | 2026
+desc: Lot Size for 100k Prop Firm Account: Lot size is the bridge between a percentage risk and a price stop. Worked numbers, the common mistakes and a checklist.
+path: /blog/lot-size-for-100k-prop-firm-account.html
+type: article
+h1: Lot Size for a $100k Prop Firm Account
+kicker: Lot Size for 100k Prop Firm Account
+crumb: Lot Size for a $100k Prop Firm Account
+section: Position sizing
+sectionUrl: /blog/
+date: 2026-10-19
+updated: 2026-10-19
+priority: 0.7
+schemaService: true
+generator: content-system
+---
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Lot Size for 100k Prop Firm Account · reviewed October 2026</p>
+    <h1>Lot Size for a $100k Prop Firm Account</h1>
+    <p class="lede">Lot size is the bridge between a percentage risk and a price stop. The formula is always the same: dollar risk divided by the value of the stop distance per lot. The inputs change with the pair, the account currency and the contract specification, which is why a remembered rule of thumb is unreliable. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+<div class="keypoints">
+  <h2>Key takeaways</h2>
+<ul>
+  <li>Compute the pip or tick value from the platform’s contract specification, not from memory.</li>
+  <li>Size from the stop distance, never from the margin the platform allows.</li>
+  <li>Recompute after a change in account size, instrument or account currency.</li>
+  
+</ul>
+</div>
+<div class="toc">
+  <p>Contents</p>
+<ol>
+  <li><a href="#frame">What this calculation decides</a></li>
+  <li><a href="#numbers">Lot values, and what one lot actually risks</a></li>
+</ol>
+</div>
+<h2 id="frame">What this calculation decides</h2>
+<p>Lot size is the bridge between a percentage risk and a price stop. The formula is always the same: dollar risk divided by the value of the stop distance per lot. The inputs change with the pair, the account currency and the contract specification, which is why a remembered rule of thumb is unreliable. The consequence is a position size. Once the stop distance and the instrument value are known, the calculation is exact, and an exact number is far easier to follow than an intention.</p>
+
+<h2 id="numbers">Lot values, and what one lot actually risks</h2>
+<p>Forex sizing starts with pip value. A standard lot of a USD-quoted pair is $10 per pip; a mini lot is $1; a micro lot is $0.10. The formula is: lots = dollar risk ÷ (stop distance in pips × pip value per lot). On a $100,000 evaluation risking 0.5% ($500) with a 25-pip stop, that is $500 ÷ (25 × $10) = 2.0 standard lots, or 20 mini lots, or 200 micro lots.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Account</th><th>Risk at 0.5%</th><th>20-pip stop</th><th>40-pip stop</th><th>80-pip stop</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$25,000</td><td>$125</td><td>0.62 lots</td><td>0.31 lots</td><td>0.15 lots</td></tr>
+      <tr><td>$50,000</td><td>$250</td><td>1.25 lots</td><td>0.62 lots</td><td>0.31 lots</td></tr>
+      <tr><td>$100,000</td><td>$500</td><td>2.50 lots</td><td>1.25 lots</td><td>0.62 lots</td></tr>
+      <tr><td>$200,000</td><td>$1,000</td><td>5.00 lots</td><td>2.50 lots</td><td>1.25 lots</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The table assumes a USD-quoted pair with a $10 pip value per standard lot. On pairs quoted in another currency, or on crosses, the pip value has to be converted into the account currency first. On gold the contract is usually 100 ounces and the tick value differs from a currency pair entirely, which is why a lot size copied from EURUSD is not a size at all on XAUUSD.</p>
+<p>The other input is the account currency. A euro-denominated account trading a dollar-quoted pair has a pip value in dollars that must be converted at the prevailing rate, and the conversion changes the risk slightly as the rate moves. For most evaluation sizes the difference is small, but it should be computed rather than assumed.</p>
+<figure>
+  <img src="/assets/img/risk-budget.svg" alt="Diagram showing how a fixed dollar risk translates into different lot sizes at different stop distances" width="940" height="520" loading="lazy">
+  <figcaption>The stop distance sets the size; the risk budget stays constant.</figcaption>
+</figure>
+<p>A practical check: after entering the position, look at the platform's own profit-and-loss display for a one-pip move and compare it with the intended risk. If the numbers disagree, the lot size is wrong. This takes ten seconds and catches the most common sizing error before it becomes a loss.</p>
+
+<h2 id="the-formula-with-the-units-made-explicit">The formula, with the units made explicit</h2>
+<p>Lot size is the dollar risk divided by the dollar value of the stop distance for one lot. If the plan allows $500 of risk and the stop is 20 pips, the first step is the value of one pip per standard lot. On EURUSD, one pip is $10 per standard lot, so a 20-pip stop is $200 per lot. Divide $500 by $200 and the size is 2.5 standard lots, or 0.25 lots on a mini account if the platform quotes in tenths.</p>
+<p>The formula is the same for every instrument, but the pip or point value changes. Gold often uses $1 per point per 0.01 lot, depending on the contract specification; indices use a contract multiplier. Confirm the specification on the platform before calculating. A size that is correct for EURUSD can be ten times too large for an index.</p>
+
+<h2 id="a-100-000-account-with-a-1-risk-unit">A $100,000 account with a 1% risk unit</h2>
+<p>At 1% risk, the dollar budget is $1,000. On EURUSD with a 25-pip stop, one standard lot risks $250, so the size is 4 lots. On gold with a $5 stop and a $1 per point value per 0.01 lot, one lot risks $500, so the size is 2 lots. The dollar risk is the same; the lot number is not. This is why copying a lot size from another trader is meaningless without the stop distance and the instrument specification.</p>
+<p>On a static-floor evaluation, the 1% unit stays $1,000 for the whole attempt. On a trailing-floor evaluation, the remaining room shrinks after a gain, so the same $1,000 becomes a larger share of the cushion. The size should be recalculated from the remaining room, not from the starting balance.</p>
+
+<h2 id="the-sanity-check-before-sending-the-order">The sanity check before sending the order</h2>
+<p>Use the platform's estimated loss field to confirm the calculation. If the ticket shows a loss at the stop that is larger than the budget, reduce the size rather than moving the stop closer. Moving the stop changes the setup; reducing the size preserves it. If the ticket shows a much smaller loss, the calculation or the specification is wrong; check the contract size before sending.</p>
+<p>Write the dollar risk, the stop distance and the lot size in the journal before the trade. The record makes the next calculation faster and exposes drift: a trader who gradually increases size without changing the risk budget is usually moving the stop closer, which is the beginning of a breach.</p>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2 id="questions">Common questions</h2>
+
+<details class="faq"><summary>What lot size should I use on a $100,000 account?</summary><div class="faq-a"><p>It depends on the risk budget, the stop distance and the instrument. At 1% risk and a 25-pip EURUSD stop, 4 standard lots risk $1,000. The lot number changes with the stop and the contract specification.</p></div></details>
+
+<details class="faq"><summary>Is 1% risk too high for a prop evaluation?</summary><div class="faq-a"><p>On a static 10% floor, 1% allows ten losses before failure, which is tight for a normal losing streak. Many traders use 0.25% to 0.5% to leave room for the daily stop and the calendar.</p></div></details>
+
+<details class="faq"><summary>Why does my lot size differ from another trader on the same account?</summary><div class="faq-a"><p>Because the stop distance or the instrument specification differs. Lot size is a function of dollar risk and stop distance, not a fixed number for an account size.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      <p>One flat <strong>$220</strong> per evaluation, any account size, retries covered, no profit split.</p>
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
+      <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
+      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
+      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
+      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
+      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
+      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+    </ul>
+    <p class="disclaimer">prop firm is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+  </div>
+</section>

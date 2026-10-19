@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trailing Drawdown Maths: How the Floor Really Moves</title>
+<meta name="description" content="A trailing drawdown can close an account that was never losing. The arithmetic of a floor that follows peak equity, plus exit rules that keep a funded account alive.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://elitepropx.com/blog/apex-trailing-drawdown-math.html">
+<meta name="theme-color" content="#0b1220">
+<meta name="author" content="ElitePropX">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ElitePropX">
+<meta property="og:title" content="Trailing Drawdown Maths: How the Floor Really Moves">
+<meta property="og:description" content="A trailing drawdown can close an account that was never losing. The arithmetic of a floor that follows peak equity, plus exit rules that keep a funded account alive.">
+<meta property="og:url" content="https://elitepropx.com/blog/apex-trailing-drawdown-math.html">
+<meta property="og:image" content="https://elitepropx.com/assets/img/og/blog-apex-trailing-drawdown-math.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-18T08:00:00+00:00">
+<meta property="article:modified_time" content="2026-10-18T08:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trailing Drawdown Maths: How the Floor Really Moves">
+<meta name="twitter:description" content="A trailing drawdown can close an account that was never losing. The arithmetic of a floor that follows peak equity, plus exit rules that keep a funded account alive.">
+<meta name="twitter:image" content="https://elitepropx.com/assets/img/og/blog-apex-trailing-drawdown-math.svg">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/logo-mark.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/css/style.css" as="style">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script defer src="/assets/js/main.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://elitepropx.com/#organization","name":"ElitePropX","legalName":"ElitePropX","url":"https://elitepropx.com/","logo":{"@type":"ImageObject","url":"https://elitepropx.com/assets/img/logo.svg","width":512,"height":128},"description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","email":"support@elitepropx.com","foundingDate":"2024","areaServed":"Worldwide","knowsAbout":["prop firm challenge passing","FTMO challenge","futures prop firm evaluations","Apex Trader Funding","Topstep Combine","FundedNext"],"sameAs":["https://www.youtube.com/hashtag/propfirmpassing","https://t.me/voraspas"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"support@elitepropx.com","url":"https://t.me/voraspas","availableLanguage":["English"]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://elitepropx.com/#website","url":"https://elitepropx.com/","name":"ElitePropX","description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","inLanguage":"en","publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://elitepropx.com/blog/apex-trailing-drawdown-math.html#article","headline":"Trailing drawdown maths: how the floor actually moves","description":"A trailing drawdown can close an account that was never losing. The arithmetic of a floor that follows peak equity, plus exit rules that keep a funded account alive.","image":"https://elitepropx.com/assets/img/og/blog-apex-trailing-drawdown-math.svg","datePublished":"2026-10-18T08:00:00+00:00","dateModified":"2026-10-18T08:00:00+00:00","wordCount":4514,"articleSection":"Rules guides","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://elitepropx.com/blog/apex-trailing-drawdown-math.html"},"author":{"@id":"https://elitepropx.com/#organization"},"publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Prop Firm Challenge Passing","serviceType":"Prop firm challenge passing service","provider":{"@id":"https://elitepropx.com/#organization"},"areaServed":"Worldwide","description":"ElitePropX trades prop firm evaluations on your behalf for a flat $220 fee, covering retries, with no profit split on the funded account.","offers":{"@type":"Offer","price":"220","priceCurrency":"USD","description":"Flat fee per evaluation, any account size, retries covered.","availability":"https://schema.org/InStock","url":"https://elitepropx.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elitepropx.com/"},{"@type":"ListItem","position":2,"name":"Rules guides","item":"https://elitepropx.com/blog/"},{"@type":"ListItem","position":3,"name":"Trailing drawdown maths","item":"https://elitepropx.com/blog/apex-trailing-drawdown-math.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a trailing drawdown in simple terms?","acceptedAnswer":{"@type":"Answer","text":"A maximum loss limit whose floor rises as the account reaches new peaks. The failure point is not fixed at the starting balance; it follows the highest equity reached, so profit reduces the room available to the account rather than adding to it."}},{"@type":"Question","name":"How can I breach an account that is in profit?","acceptedAnswer":{"@type":"Answer","text":"Because the floor moved up behind the peak. If the account reached a peak of 10,500 with a 1,000 drawdown limit, the floor is 9,500 — so a normal retracement from a winning position can breach it while the balance is still above where it started."}},{"@type":"Question","name":"How do I calculate the remaining room?","acceptedAnswer":{"@type":"Answer","text":"Remaining room equals the stated drawdown minus the give-back from the peak. If the floor trails peak equity, find the highest equity reached, subtract the drawdown to get the floor, and take the difference between that and the current equity."}},{"@type":"Question","name":"Should I size from the drawdown or from the remaining room?","acceptedAnswer":{"@type":"Answer","text":"From the remaining room, always. The two are equal only at a new peak. After any retracement the room is smaller than the headline drawdown, and trading the original size means every subsequent loss is a larger fraction of the budget than the plan assumed."}},{"@type":"Question","name":"What is the difference between intraday and end-of-day trailing?","acceptedAnswer":{"@type":"Answer","text":"Intraday trailing follows peak unrealised equity continuously, so open profit raises the floor immediately. End-of-day trailing resets to the closing balance, so intraday spikes are forgiven but completed gains still raise the floor. A mechanism that samples peak equity once a day behaves like intraday trailing in practice."}},{"@type":"Question","name":"Do I need different exit rules on a trailing account?","acceptedAnswer":{"@type":"Answer","text":"Yes. Holding winners is expensive because the floor has already followed them. Move the stop to breakeven at a stated distance, bank a portion at a second distance, and close the remainder by a fixed time or level rather than holding indefinitely."}},{"@type":"Question","name":"What is a lock-in clause?","acceptedAnswer":{"@type":"Answer","text":"A clause that stops the floor moving once a defined profit threshold is reached, after which the account behaves like a static-drawdown account. Find the threshold in the terms, because it changes whether pushing for a large day is a good idea — below the threshold, a steady sequence is strictly better."}},{"@type":"Question","name":"Does a withdrawal reset the trailing peak?","acceptedAnswer":{"@type":"Answer","text":"Check the funded terms, because it varies. If a withdrawal reduces the balance without adjusting the peak, the room shrinks by the withdrawal amount until a new peak is set — which means withdrawing can temporarily make the account more fragile, not less."}},{"@type":"Question","name":"How does the daily limit interact with a trailing floor?","acceptedAnswer":{"@type":"Answer","text":"The daily limit is fixed while the room is variable, so the session budget becomes a larger share of the room as the floor rises. When the daily limit exceeds a quarter of the remaining room, cut the session's trade count — the last stretch of an evaluation is not the time for the normal session."}},{"@type":"Question","name":"Should I trade a trailing account differently from a static one?","acceptedAnswer":{"@type":"Answer","text":"Yes, in three ways: bank profit sooner, size from the remaining room rather than the headline drawdown, and avoid holding winners through retracements. The strategy can be identical; the profit-management rules cannot be."}},{"@type":"Question","name":"Why do most trailing-drawdown breaches happen in the final third?","acceptedAnswer":{"@type":"Answer","text":"Because the floor has risen behind accumulated profit, so the room is much smaller than it was at the start, while the position size is often still the one derived in week one. Recomputing the size from the current room every week removes most of that risk."}},{"@type":"Question","name":"Is a static drawdown always better?","acceptedAnswer":{"@type":"Answer","text":"More forgiving in the sense that profit cannot reduce room, but it usually comes with a smaller starting buffer as a percentage, and the account cannot grow its room at all. For a plan that holds winners, static is easier; for a plan that banks profit quickly, the difference is smaller than the headline suggests."}}]}</script>
+</head>
+<body class="page-article">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="ElitePropX home">
+      <img src="/assets/img/logo.svg" alt="ElitePropX" width="150" height="38" loading="eager">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-bar"></span><span class="sr-only">Menu</span>
+    </button>
+    <nav id="primary-nav" class="site-nav" aria-label="Primary">
+      <ul>
+          <li><a href="/passed-challenges.html" aria-current="page" class="is-active">Passed Challenges</a></li>
+          <li><a href="/prop-firm-comparison-2026.html" aria-current="page" class="is-active">Compare Firms</a></li>
+          <li><a href="/prop-firm-rules-matrix.html" aria-current="page" class="is-active">Rules Matrix</a></li>
+          <li><a href="/services/passing-prop-firm-services.html">Services</a></li>
+          <li><a href="/reviews/prop-firm-passing-service-reviews.html">Reviews</a></li>
+          <li><a href="/blog/" aria-current="page" class="is-active">Blog</a></li>
+          <li><a href="/faq.html" aria-current="page" class="is-active">FAQ</a></li>
+          <li><a href="/about.html" aria-current="page" class="is-active">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="header-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener" aria-label="Chat with ElitePropX on Telegram" title="Chat on Telegram"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg></a>
+      <a class="btn btn-primary header-cta" href="/#get-started">Start for $220</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Rules guides</a></li><li aria-current="page">Trailing drawdown maths</li></ol></nav>
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Rules guide · reviewed October 2026</p>
+    <h1>Trailing drawdown maths: how the floor actually moves</h1>
+    <p class="lede">A trailing drawdown is the only risk rule that can close an account which has never been in loss. The floor follows peak equity upward, so a winning position raises the level at which the account fails — and a normal retracement from a good session is enough to breach it. This guide sets out the arithmetic: how the floor moves, how to recompute position size from the remaining room, and which exit rules make a trailing structure survivable.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>A trailing floor follows peak equity, so unrealised profit tightens the account before it is banked.</li>
+        <li>The same headline drawdown is a different account under intraday trailing, end-of-day trailing and static mechanisms.</li>
+        <li>Position size must be recomputed from the <em>remaining room</em>, not from the starting balance, every week.</li>
+        <li>Winners need an exit rule, because a retracement from a peak is measured against the new floor.</li>
+        <li>If the floor locks at a defined level once a threshold of profit is reached, the account stops getting tighter — check whether that clause exists.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#why">Why this rule catches good traders</a></li>
+        <li><a href="#variants">Three mechanisms, one headline number</a></li>
+        <li><a href="#maths">The arithmetic of a moving floor</a></li>
+        <li><a href="#worked">A worked example, session by session</a></li>
+        <li><a href="#room">Remaining room, not starting balance</a></li>
+        <li><a href="#size">Recomputing position size</a></li>
+        <li><a href="#exits">Exit rules that suit a trailing floor</a></li>
+        <li><a href="#daily">The daily limit on a trailing account</a></li>
+        <li><a href="#lock">Lock-in clauses and thresholds</a></li>
+        <li><a href="#funded">Trailing drawdown on a funded account</a></li>
+        <li><a href="#checklist">A trailing-drawdown checklist</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </div>
+    <h2 id="why">Why this rule catches good traders</h2>
+    <p>Every other risk rule in a prop firm rulebook is about losing money. A trailing drawdown is about making it. The floor rises with equity, so profit is not merely unprotected until it is withdrawn — it actively reduces the room available for the rest of the account's life.</p>
+    <p>That inverts the intuition most traders carry. In an ordinary account, being up on the day is unambiguously good: it creates a cushion. On an intraday trailing account, being up on the day moves the failure point closer to the current price, and a normal retracement from the peak can breach the account while the balance is still above where it started.</p>
+    <p>The traders this punishes most are not the reckless ones. It punishes traders who hold winners, which is the behaviour most trading education recommends. A trader who buys a position, watches it run, and holds through a pullback is doing exactly what a trend-following plan prescribes — and on an intraday trailing structure, the pullback is measured from a floor that the run has already raised behind them.</p>
+    <p>There are only two defences. One is technical: know precisely how the floor moves, and recompute size from the room that remains rather than from the account's nominal size. The other is behavioural: give winners an exit rule that banks profit or advances a protective stop, so that a retracement cannot erase more than a planned amount of the peak. This guide is mostly about the first, because the second only works once the first is understood.</p>
+    <figure>
+      <img src="/assets/img/drawdown-types.svg" alt="Three equity curves comparing static, end-of-day trailing and intraday trailing failure floors on the same profit path" width="1000" height="560" loading="lazy">
+      <figcaption>One profit path, three failure points. The mechanism decides which trades are survivable.</figcaption>
+    </figure>
+    <h2 id="variants">Three mechanisms, one headline number</h2>
+    <p>Firms describe drawdown with a single figure and implement it in one of three ways. The figure is what comparisons quote; the mechanism is what governs the account.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Mechanism</th><th>What sets the floor</th><th>What it means in practice</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Static</td><td>Fixed at the starting balance</td><td>Profit never reduces room; the most forgiving structure</td></tr>
+          <tr><td>End-of-day trailing</td><td>The day's closing balance</td><td>Intraday spikes are forgiven; completed gains raise the floor</td></tr>
+          <tr><td>Intraday trailing</td><td>Peak unrealised equity, continuously</td><td>Open profit raises the floor immediately; reversals breach from profit</td></tr>
+          <tr><td>End-of-day trailing on closing equity</td><td>The day's highest equity</td><td>Intraday trailing with a delay, and frequently mislabelled</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The fourth row is the one that causes the most confusion. A mechanism that samples once daily but samples the highest equity of the session behaves like intraday trailing for anyone who holds a winner, because the peak is recorded even if it is not banked. The distinction between "end of day" and "end of day on closing price" is the difference between a forgiving account and a punishing one.</p>
+    <p>Two further clauses complete the specification. The first is the measurement basis: balance only, or balance including open positions. An equity-based floor counts unrealised losses continuously, so a position can close the account before it is closed by the trader. The second is the direction of the trailing: most structures trail upward only, but a few reset the floor when the account is funded or when a withdrawal is made, which changes the arithmetic entirely.</p>
+    <p>Every one of these details is in the terms, and every one of them is more important than the headline number. A comparison of two firms on the size of the drawdown alone compares two different products and calls it a price.</p>
+    <h2 id="maths">The arithmetic of a moving floor</h2>
+    <p>The arithmetic is simple enough to do on paper and is worth writing out once so that it becomes automatic.</p>
+    <p>Let the starting balance be <em>B</em> and the stated maximum drawdown be <em>D</em>. On a static account the floor is <em>B − D</em> and stays there forever. On a trailing account the floor is <em>P − D</em>, where <em>P</em> is the highest equity the account has reached.</p>
+    <p>Two consequences follow immediately. The room available — the distance from the current equity to the floor — is <em>E − (P − D)</em>, which equals <em>D − (P − E)</em>. That is the whole rule in one expression: <strong>remaining room equals the stated drawdown minus the current drawdown from the peak</strong>.</p>
+    <p>Read that expression in the two directions it applies. When the account is at a new peak, <em>P = E</em> and the room is the full <em>D</em>. When the account has given back part of a peak, the room is <em>D</em> minus that give-back. Profit does not add room on a trailing account; it only restores room that a prior retracement consumed.</p>
+    <p>The practical version of the same equation is a table a trader can keep next to the platform: the peak the account has reached, the floor that peak implies, the current equity, and the resulting room in money. Four columns, updated at the end of each session, which is enough to make every sizing decision correct.</p>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="Diagram dividing a drawdown budget into per-trade risk, session risk and an untouched reserve for losing streaks" width="940" height="520" loading="lazy">
+      <figcaption>On a trailing account the budget is measured from the peak, not from the starting balance.</figcaption>
+    </figure>
+    <p>One further detail matters on instruments with a daily settlement: whether the peak is taken from equity during the session or from the settlement price. A contract that settles at a different level from its intraday high produces a peak the trader can see and a floor the firm calculates from a slightly different number. Where the terms are ambiguous, the conservative assumption — that the peak is the highest equity of the session — is the one to plan against.</p>
+    <h2 id="worked">A worked example, session by session</h2>
+    <p>A representative sequence makes the mechanism concrete. The figures are illustrative; the arithmetic is what transfers.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Peak equity reached</th><th>Floor (peak − D)</th><th>Closing equity</th><th>Room to floor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Start</td><td>10,000</td><td>9,000</td><td>10,000</td><td>1,000</td></tr>
+          <tr><td>Day 1, +300</td><td>10,300</td><td>9,300</td><td>10,300</td><td>1,000</td></tr>
+          <tr><td>Day 2, +200 then −400</td><td>10,500</td><td>9,500</td><td>10,100</td><td>600</td></tr>
+          <tr><td>Day 3, −500</td><td>10,500</td><td>9,500</td><td>9,600</td><td>100</td></tr>
+          <tr><td>Day 4, −200</td><td>10,500</td><td>9,500</td><td>9,400</td><td><strong>breached</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The account is breached having never closed below its starting balance minus 600. Its balance on the final day is 9,400 — above the starting balance by nothing, and above the static floor that a non-trailing account would have had. The trader who believed the room was a fixed 1,000 spent the first half of the sequence with a false picture: after day two the real room was 600, and after day three it was 100.</p>
+    <p>This is why the peak column must be recorded rather than assumed. Most traders track their balance, and on a trailing account the balance is the second most important number on the screen. The distance from the peak to the floor is the one that governs size.</p>
+    <p>There is a second lesson in the sequence. The loss on day two was 400, which was inside the plan's per-trade risk, and day three's 500 was also inside it. Nothing in the plan was violated in dollar terms; the account was closed by the interaction of two ordinary losses with a floor that had risen in between. That interaction is invisible on a balance chart and obvious on a peak-versus-floor table.</p>
+    <figure>
+      <img src="/assets/img/challenge-math.svg" alt="Chart showing the relationship between a profit target, a maximum loss and a moving failure floor" width="940" height="500" loading="lazy">
+      <figcaption>The floor moves; the target does not. Size must follow the floor.</figcaption>
+    </figure>
+    <h2 id="room">Remaining room, not starting balance</h2>
+    <p>The single habit that prevents most trailing-drawdown breaches is to size from the remaining room rather than from the account's stated drawdown.</p>
+    <p>The two numbers diverge as soon as the account has given back any part of a peak, and they diverge most dangerously after a strong session followed by a weak one — which is exactly the sequence a trader is least likely to analyse, because the account is "still up".</p>
+    <p>The recomputation is a morning task, and it takes under a minute. Find the peak equity the account has reached, subtract the drawdown to get the floor, find the current equity, and the difference is the room. Write it down. Then derive the per-trade risk from that number: room divided by the streak the plan must survive, with a quarter held in reserve.</p>
+    <p>A concrete illustration of why this matters. An account with a 10,000 drawdown that has reached a peak 3,000 above its start and given back 1,500 has 8,500 of room, not 10,000 — a 15% reduction in the size the plan can carry. Trade the original size and every subsequent loss is 15% larger than the budget allowed, which shortens the survivable streak by the same proportion.</p>
+    <p>Two refinements. First, apply the recomputation to the session budget as well: the daily limit multiplies out against a smaller room, so the number of losses a session can absorb also falls. Second, treat the reserve as a fraction of the room rather than of the original drawdown, because on a trailing account the reserve is what carries the plan through a streak that the floor has already tightened around.</p>
+    <h2 id="size">Recomputing position size</h2>
+    <p>Position size is a function of three numbers on a trailing account, and only one of them is stable.</p>
+    <p>The first is the room, which changes daily. The second is the tick or pip value of the instrument, which does not. The third is the stop distance, which is a property of the strategy and the timeframe rather than of the account.</p>
+    <p>The calculation therefore repeats every week, and sometimes more often after a strong session: room divided by streak tolerance gives the maximum loss per trade; that figure divided by the tick value of the stop gives the contract count, rounded down. On a forex account the same calculation uses the pip value and the lot size.</p>
+    <p>Three practical consequences for trailing accounts. First, the derived size shrinks after a strong run that retraces, which is counter-intuitive but correct — the account has less room than it had before the run, because the floor has moved and the profit has not been banked. Second, the derived size grows only when the account reaches a new peak, which means the correct time to increase is boring and infrequent. Third, a size computed once and carried for the life of the account will be too large in the final third, which is where most trailing breaches occur.</p>
+    <p>Rounding always goes down. On a contract-based account the difference of one contract can be a large fraction of the budget, and on a leveraged forex account the difference between rounding to 0.4 and 0.5 lots is 25% of the risk the account can carry.</p>
+    <h2 id="exits">Exit rules that suit a trailing floor</h2>
+    <p>A trailing floor changes the optimal management of a winning position, and the change is not the one most traders expect.</p>
+    <p>On a static-drawdown account, holding a winner is cheap: the floor is fixed, so a retracement costs profit but not room. On a trailing account, the same retracement costs both, because the floor has already followed the peak. The correct behaviour is therefore to convert unrealised profit into either banked profit or a raised stop, and to do it at defined points rather than by feel.</p>
+    <p>Three rules cover most situations. Move the protective stop to breakeven once the position has travelled a stated distance — not before, because a stop too close converts winners into scratches. Bank a defined portion of the position when it reaches a second stated distance, which locks in some of the peak and therefore leaves the floor a little further behind. And close the remainder by a fixed time or at a fixed level rather than holding indefinitely, because the longer a winning position stays open on an intraday trailing account, the more of the account's room it has already consumed.</p>
+    <p>There is a specific case worth naming: the position that is up strongly and then reverses into a loss. On a static account this is merely the trade not working. On a trailing account it is worse, because the floor has risen and the reversal is measured from a peak that no longer exists. The trader experiences it as a losing trade; the account experiences it as a loss plus a raised failure point. This is the single most common description of a trailing-drawdown breach, and the exit rules above are the only reliable defence.</p>
+    <figure>
+      <img src="/assets/img/daily-drawdown.svg" alt="A daily loss limit measured from the day's opening balance and consumed by successive losing trades" width="1000" height="540" loading="lazy">
+      <figcaption>The session budget shrinks as the floor rises, even when the daily limit itself has not changed.</figcaption>
+    </figure>
+    <h2 id="daily">The daily limit on a trailing account</h2>
+    <p>The daily limit and the trailing floor interact, and the interaction is what makes the final days of an evaluation fragile.</p>
+    <p>The daily limit is usually a fixed percentage of the balance or of the starting balance, while the floor is not fixed. So the daily limit is a constant and the room is a variable, and the ratio between them changes as the floor moves. A session budget that was a fifth of the room in week one can be a third of the room in week four, which means the same session carries a much higher breach probability than it did earlier.</p>
+    <p>The correct response is to recompute the session budget as a proportion of the room each morning and to reduce the number of trades the session may take when the proportion is high. A simple rule works: if the daily limit is more than a quarter of the remaining room, cut the session cap to a third of its normal value. On a trailing account, the last stretch of an evaluation is not the time for the normal session.</p>
+    <p>The second interaction is with the day boundary. The daily limit resets on the firm's server day, but the trailing floor does not reset at all. So a trader who has a bad day and then trades the overnight session is starting from a floor that includes the previous day's losses, against a daily budget that has just been replenished. The two clocks are different, and the correct planning assumption is that the room is what it is regardless of which day it is.</p>
+    <p>Where the terms permit holding overnight, the gap risk has to be priced as a multiple of the normal stop — the <a href="/blog/prop-firm-weekend-holding-rules.html">weekend holding guide</a> covers that arithmetic. On a trailing account the cost of a gap is higher than on a static one, because the gap consumes room that cannot be replaced by subsequent profit.</p>
+    <h2 id="lock">Lock-in clauses and thresholds</h2>
+    <p>Many trailing structures include a clause that stops the floor moving once a defined level of profit has been reached. Whether that clause exists changes the account's entire risk profile, and it is frequently buried in a footnote.</p>
+    <p>The typical form is a threshold expressed as an amount of profit or a percentage of the target: once the account has gained that much, the floor locks at a defined level — often the starting balance, sometimes the starting balance plus a fixed amount. Above that point the account behaves like a static one, and holding winners becomes cheap again.</p>
+    <p>The practical consequence is a change in strategy at a specific point in the evaluation. Below the lock threshold, the plan should be defensive: small size, tight exit rules, and profit banked promptly, because every new peak raises the floor. Above the threshold, the same plan can hold winners with the ordinary tolerance, because the floor no longer follows.</p>
+    <p>Establishing whether the clause exists, and where the threshold sits, is therefore one of the first things to read in the terms. It also changes the answer to a common question: whether to push for a large day or a steady sequence. Below the lock threshold, the steady sequence is strictly better, because a large day raises the floor and a steady sequence does not.</p>
+    <p>Where the clause does not exist, the account stays trailing for its entire life on the evaluation and, usually, for the first part of the funded stage. That is not a reason to avoid the firm; it is a reason to build a plan whose profit-taking is faster than it would otherwise be.</p>
+    <h2 id="funded">Trailing drawdown on a funded account</h2>
+    <p>The funded stage frequently inherits a trailing mechanism, and the conditions around it change in three ways.</p>
+    <p>The first is that withdrawals interact with the floor. If a withdrawal reduces the balance but the peak is not adjusted, the room shrinks by the amount of the withdrawal until the account reaches a new peak — which means withdrawing can make an account more fragile than the profit did. Some firms reset the peak on withdrawal and some do not; the difference is material, and it belongs in the first reading of the funded terms.</p>
+    <p>The second is that the funded drawdown is often tighter as a percentage while the trailing mechanism remains. A tighter trailing floor is the harshest combination available, because the floor moves quickly and the room is small. The correct first fortnight on such an account is at half the evaluation's risk or less.</p>
+    <p>The third is that unwithdrawn profit is genuinely dangerous rather than merely suboptimal. On a static account, leaving profit in the account is a choice about cash flow. On a trailing account, leaving profit in raises the floor behind the trader, so a large unwithdrawn balance is a larger target with less room underneath it.</p>
+    <figure>
+      <img src="/assets/img/consistency-rule.svg" alt="Chart showing how a best-day share of total profit interacts with a trailing failure floor" width="940" height="540" loading="lazy">
+      <figcaption>On a funded trailing account, a large day raises the floor and constrains the payout at the same time.</figcaption>
+    </figure>
+    <p>The plan that follows is unglamorous: halve the risk, cap daily profit so the consistency condition is satisfied at the threshold, recompute the room every morning, and withdraw on the earliest permitted schedule at a size that leaves the floor comfortably behind. The <a href="/blog/funded-account-payout-process.html">payout process guide</a> covers the withdrawal sequence, and the <a href="/blog/prop-firm-profit-target-strategies.html">profit target guide</a> covers the daily cap arithmetic.</p>
+    <h2 id="checklist">A trailing-drawdown checklist</h2>
+    <p>Seven items, checked once at the start and then daily. Together they cover every trailing-drawdown failure mode.</p>
+    <p><strong>One: identify the mechanism precisely.</strong> Intraday trailing, end-of-day trailing on closing balance, or end-of-day on peak equity of the session. Write the answer down, and where the terms are ambiguous, assume the harshest reading.</p>
+    <p><strong>Two: find the measurement basis.</strong> Balance or balance including open positions. On an equity basis, an open position consumes room continuously, so the plan's protective orders become part of the drawdown budget rather than a separate safety net.</p>
+    <p><strong>Three: locate the lock-in clause, if any.</strong> Threshold level and locked floor. Note the point in the evaluation at which losses stop following the peak, because the plan's aggressiveness should change there.</p>
+    <p><strong>Four: record peak equity daily.</strong> Four columns — peak, floor, current equity, room in money. This table is the only reliable input to position sizing on a trailing account.</p>
+    <p><strong>Five: recompute size weekly and after any strong session.</strong> Room divided by the streak tolerance, divided by the tick or pip value of the stop, rounded down.</p>
+    <p><strong>Six: write the exit rules for winners.</strong> A stop to breakeven at a stated distance, a partial bank at a second distance, and a time or level limit on the remainder.</p>
+    <p><strong>Seven: cut the session cap when the room is small.</strong> If the daily limit exceeds a quarter of the remaining room, reduce the session's trade count rather than trying to trade the normal plan carefully.</p>
+    <p>The list is short because the mechanism is simple. What makes trailing drawdown hard is not complexity but direction: every instinct a trader has about a profitable position tells them it is safe, and on a trailing structure that instinct is precisely wrong. The <a href="/blog/topstep-challenge-passing.html">Topstep guide</a> works through a rulebook with two simultaneous loss rules, and the <a href="/blog/fundednext-vs-topstep-comparison.html">rulebook comparison</a> covers how trailing and static mechanisms differ in practice.</p>
+    <h2 id="surprises">Where the maths surprises people</h2>
+    <p>Three results of the room equation contradict the intuition of traders arriving from static-drawdown accounts, and each is worth stating plainly.</p>
+    <p><strong>Profit does not create room; it only restores room a retracement consumed.</strong> A trader who is up 2,000 from the start has the same room as on day one if the account is at a new peak, and less than on day one if it is not. There is no point at which a trailing account becomes safer because of profit — only points at which it becomes less fragile than it was an hour earlier.</p>
+    <p><strong>The best session of the evaluation can be the most dangerous.</strong> A large winning day sets a new peak and raises the floor immediately, so the following session starts with less room than the one before it. Consistency rules at the payout stage point the same way, which is why a daily profit cap belongs in every trailing-account plan.</p>
+    <p><strong>A loss is larger than it looks after a good week.</strong> A 500 loss that was a fifth of the room in week one can be a third of the room in week three, because the floor followed the profit. The dollar amount is identical and the consequence is not, which is exactly why the room has to be recorded rather than remembered.</p>
+    <p>None of these is a hidden trap — the mechanism is published. They are traps in the sense that every instinct about what makes an account safe is inverted, and instincts govern behaviour while a position is open.</p>
+    <h2 id="faq">Frequently asked questions</h2>
+    <details class="faq"><summary>What is a trailing drawdown in simple terms?</summary><div class="faq-a"><p>A maximum loss limit whose floor rises as the account reaches new peaks. The failure point is not fixed at the starting balance; it follows the highest equity reached, so profit reduces the room available to the account rather than adding to it.</p></div></details>
+    <details class="faq"><summary>How can I breach an account that is in profit?</summary><div class="faq-a"><p>Because the floor moved up behind the peak. If the account reached a peak of 10,500 with a 1,000 drawdown limit, the floor is 9,500 — so a normal retracement from a winning position can breach it while the balance is still above where it started.</p></div></details>
+    <details class="faq"><summary>How do I calculate the remaining room?</summary><div class="faq-a"><p>Remaining room equals the stated drawdown minus the give-back from the peak. If the floor trails peak equity, find the highest equity reached, subtract the drawdown to get the floor, and take the difference between that and the current equity.</p></div></details>
+    <details class="faq"><summary>Should I size from the drawdown or from the remaining room?</summary><div class="faq-a"><p>From the remaining room, always. The two are equal only at a new peak. After any retracement the room is smaller than the headline drawdown, and trading the original size means every subsequent loss is a larger fraction of the budget than the plan assumed.</p></div></details>
+    <details class="faq"><summary>What is the difference between intraday and end-of-day trailing?</summary><div class="faq-a"><p>Intraday trailing follows peak unrealised equity continuously, so open profit raises the floor immediately. End-of-day trailing resets to the closing balance, so intraday spikes are forgiven but completed gains still raise the floor. A mechanism that samples peak equity once a day behaves like intraday trailing in practice.</p></div></details>
+    <details class="faq"><summary>Do I need different exit rules on a trailing account?</summary><div class="faq-a"><p>Yes. Holding winners is expensive because the floor has already followed them. Move the stop to breakeven at a stated distance, bank a portion at a second distance, and close the remainder by a fixed time or level rather than holding indefinitely.</p></div></details>
+    <details class="faq"><summary>What is a lock-in clause?</summary><div class="faq-a"><p>A clause that stops the floor moving once a defined profit threshold is reached, after which the account behaves like a static-drawdown account. Find the threshold in the terms, because it changes whether pushing for a large day is a good idea — below the threshold, a steady sequence is strictly better.</p></div></details>
+    <details class="faq"><summary>Does a withdrawal reset the trailing peak?</summary><div class="faq-a"><p>Check the funded terms, because it varies. If a withdrawal reduces the balance without adjusting the peak, the room shrinks by the withdrawal amount until a new peak is set — which means withdrawing can temporarily make the account more fragile, not less.</p></div></details>
+    <details class="faq"><summary>How does the daily limit interact with a trailing floor?</summary><div class="faq-a"><p>The daily limit is fixed while the room is variable, so the session budget becomes a larger share of the room as the floor rises. When the daily limit exceeds a quarter of the remaining room, cut the session's trade count — the last stretch of an evaluation is not the time for the normal session.</p></div></details>
+    <details class="faq"><summary>Should I trade a trailing account differently from a static one?</summary><div class="faq-a"><p>Yes, in three ways: bank profit sooner, size from the remaining room rather than the headline drawdown, and avoid holding winners through retracements. The strategy can be identical; the profit-management rules cannot be.</p></div></details>
+    <details class="faq"><summary>Why do most trailing-drawdown breaches happen in the final third?</summary><div class="faq-a"><p>Because the floor has risen behind accumulated profit, so the room is much smaller than it was at the start, while the position size is often still the one derived in week one. Recomputing the size from the current room every week removes most of that risk.</p></div></details>
+    <details class="faq"><summary>Is a static drawdown always better?</summary><div class="faq-a"><p>More forgiving in the sense that profit cannot reduce room, but it usually comes with a smaller starting buffer as a percentage, and the account cannot grow its room at all. For a plan that holds winners, static is easier; for a plan that banks profit quickly, the difference is smaller than the headline suggests.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the evaluation traded for you?</h2>
+      
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+      <a class="btn btn-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg><span>Chat on Telegram</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/passed-challenges.html">Recently passed evaluations</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/fundednext-vs-topstep-comparison.html">The two rulebook models compared</a></li>
+      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies</a></li>
+      <li><a href="/blog/prop-firm-challenge-failure-recovery.html">Failing a challenge: the recovery plan</a></li>
+      <li><a href="/blog/best-futures-prop-firms-2026.html">Best futures prop firms 2026</a></li>
+      <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules and gap risk</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/">All prop firm guides</a></li>
+    </ul>
+    <p class="disclaimer">Firm names are used for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Drawdown mechanisms, lock-in thresholds and funded-stage terms change; verify them against the firm's current documentation. Trading involves substantial risk of loss.</p>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-cta">
+    <div>
+      <p class="footer-cta-kicker">Talk to ElitePropX</p>
+      <h2>Not sure which firm or plan fits?</h2>
+      <p>Send the firm and account size. You will get the flat fee, a timeline and a straight answer on your firm's terms before you pay.</p>
+    </div>
+    <div class="footer-cta-actions">
+      <a class="btn btn-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg><span>Chat on Telegram</span></a>
+      <a class="btn btn-outline-light" href="mailto:support@elitepropx.com?subject=Prop%20firm%20challenge%20enquiry">Email support</a>
+    </div>
+  </div>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="/assets/img/logo-white.svg" alt="ElitePropX" width="150" height="38" loading="lazy">
+      <p>ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.</p>
+      <p class="footer-mail">
+        <a href="https://t.me/voraspas" target="_blank" rel="noopener">Telegram @voraspas</a><br>
+        <a href="mailto:support@elitepropx.com">support@elitepropx.com</a>
+      </p>
+    </div>
+    <div>
+      <h2 class="footer-h">Service</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/passed-challenges.html">Passed challenges</a></li>
+        <li><a href="/prop-firm-comparison-2026.html">Prop firm comparison</a></li>
+        <li><a href="/prop-firm-rules-matrix.html">Rules matrix</a></li>
+        <li><a href="/services/passing-prop-firm-services.html">Passing services</a></li>
+        <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Resources</h2>
+      <ul>
+        <li><a href="/blog/">All articles</a></li>
+        <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">Challenge passing guide</a></li>
+        <li><a href="/blog/ftmo-challenge-passing.html">FTMO passing</a></li>
+        <li><a href="/blog/apex-trader-funding-challenge-passing.html">Apex passing</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Company</h2>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy policy</a></li>
+        <li><a href="/terms.html">Terms of service</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year">2026</span> ElitePropX. All rights reserved.</p>
+    <p class="disclaimer">
+      ElitePropX is an independent service and is not affiliated with, endorsed by, or sponsored by any proprietary trading firm named on this site. Trading involves substantial risk of loss. Past results do not guarantee future outcomes. Check your firm's terms before purchasing any service.
+    </p>
+  </div>
+</footer>
+<a class="telegram-float" href="https://t.me/voraspas" target="_blank" rel="noopener" aria-label="Chat with ElitePropX on Telegram">
+  <span class="telegram-float-icon"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg></span>
+  <span class="telegram-float-text"><strong>Chat on Telegram</strong><small>@voraspas</small></span>
+</a>
+</body>
+</html>

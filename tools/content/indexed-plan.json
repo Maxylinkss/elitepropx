@@ -1,0 +1,443 @@
+[
+  {
+    "path": "/blog/ftmo-vs-funded-trader-tft-comparison.html",
+    "kind": "comparison",
+    "trim": 129,
+    "firm": "FTMO",
+    "title": "FTMO vs Funded Trader (TFT): 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/apex-vs-bulenox-comparison.html",
+    "kind": "comparison",
+    "trim": 133,
+    "firm": "Apex Trader Funding",
+    "title": "Apex Trader Funding vs Bulenox: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/ftmo-vs-audacity-capital-comparison.html",
+    "kind": "comparison",
+    "trim": 135,
+    "firm": "FTMO",
+    "title": "FTMO vs Audacity Capital: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/ftmo-vs-take-profit-trader-comparison.html",
+    "kind": "comparison",
+    "trim": 135,
+    "firm": "FTMO",
+    "title": "FTMO vs Take Profit Trader: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/apex-vs-earn2trade-comparison.html",
+    "kind": "comparison",
+    "trim": 136,
+    "firm": "Apex Trader Funding",
+    "title": "Apex Trader Funding vs Earn2Trade: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/apex-vs-the5ers-comparison.html",
+    "kind": "comparison",
+    "trim": 138,
+    "firm": "Apex Trader Funding",
+    "title": "Apex Trader Funding vs The5ers: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/apex-vs-trade-the-pool-comparison.html",
+    "kind": "comparison",
+    "trim": 139,
+    "firm": "Apex Trader Funding",
+    "title": "Apex Trader Funding vs Trade The Pool: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/fundednext-vs-funding-pips-comparison.html",
+    "kind": "comparison",
+    "trim": 140,
+    "firm": "FundedNext",
+    "title": "FundedNext vs Funding Pips: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/fundednext-vs-e8-markets-comparison.html",
+    "kind": "comparison",
+    "trim": 144,
+    "firm": "FundedNext",
+    "title": "FundedNext vs E8 Markets: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/fundednext-vs-ftuk-comparison.html",
+    "kind": "comparison",
+    "trim": 152,
+    "firm": "FundedNext",
+    "title": "FundedNext vs FTUK: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/ftmo-vs-trade-the-pool-comparison.html",
+    "kind": "comparison",
+    "trim": 157,
+    "firm": "FTMO",
+    "title": "FTMO vs Trade The Pool: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/topstep-vs-tradify-comparison.html",
+    "kind": "comparison",
+    "trim": 162,
+    "firm": "Topstep",
+    "title": "Topstep vs Tradify: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/ftmo-vs-earn2trade-comparison.html",
+    "kind": "comparison",
+    "trim": 168,
+    "firm": "FTMO",
+    "title": "FTMO vs Earn2Trade: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/ftmo-vs-ftuk-comparison.html",
+    "kind": "comparison",
+    "trim": 168,
+    "firm": "FTMO",
+    "title": "FTMO vs FTUK: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/apex-vs-e8-markets-comparison.html",
+    "kind": "comparison",
+    "trim": 169,
+    "firm": "Apex Trader Funding",
+    "title": "Apex Trader Funding vs E8 Markets: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/ftmo-vs-fundednext-comparison-2026.html",
+    "kind": "comparison",
+    "trim": 169,
+    "firm": "FTMO",
+    "title": "FTMO vs FundedNext: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/fundednext-vs-earn2trade-comparison.html",
+    "kind": "comparison",
+    "trim": 182,
+    "firm": "FundedNext",
+    "title": "FundedNext vs Earn2Trade: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/fundednext-vs-the5ers-comparison.html",
+    "kind": "comparison",
+    "trim": 185,
+    "firm": "FundedNext",
+    "title": "FundedNext vs The5ers: 2026 Rulebook Comparison"
+  },
+  {
+    "path": "/blog/lucid-trading-challenge-passing.html",
+    "kind": "firmGuide",
+    "trim": 103,
+    "firm": "Lucid Trading",
+    "title": "Lucid Trading Challenge Passing: The 2026 Rulebook"
+  },
+  {
+    "path": "/blog/tradify-challenge-passing.html",
+    "kind": "firmGuide",
+    "trim": 107,
+    "firm": "Tradify",
+    "title": "Tradify Challenge Passing: The 2026 Rulebook"
+  },
+  {
+    "path": "/blog/funded-engineer-challenge-passing.html",
+    "kind": "firmGuide",
+    "trim": 108,
+    "firm": "Funded Engineer",
+    "title": "Funded Engineer Challenge Passing: The 2026 Rulebook"
+  },
+  {
+    "path": "/blog/e8-markets-challenge-passing.html",
+    "kind": "firmGuide",
+    "trim": 117,
+    "firm": "E8 Markets",
+    "title": "E8 Markets Challenge Passing: The 2026 Rulebook"
+  },
+  {
+    "path": "/blog/funding-pips-challenge-passing.html",
+    "kind": "firmGuide",
+    "trim": 121,
+    "firm": "Funding Pips",
+    "title": "Funding Pips Challenge Passing: The 2026 Rulebook"
+  },
+  {
+    "path": "/blog/audacity-capital-challenge-passing.html",
+    "kind": "firmGuide",
+    "trim": 123,
+    "firm": "Audacity Capital",
+    "title": "Audacity Capital Challenge Passing: The 2026 Rulebook"
+  },
+  {
+    "path": "/blog/lot-size-for-100k-prop-firm-account.html",
+    "kind": "mathPage",
+    "trim": 107,
+    "firm": "prop firm",
+    "title": "Lot Size for a $100k Prop Firm Account | 2026"
+  },
+  {
+    "path": "/blog/apex-trader-funding-first-payout-timeline.html",
+    "kind": "mechanic",
+    "trim": 122,
+    "firm": "Apex Trader Funding",
+    "title": "Apex Trader Funding First Payout Timeline | 2026"
+  },
+  {
+    "path": "/blog/how-to-get-multiple-funded-accounts.html",
+    "kind": "mechanic",
+    "trim": 122,
+    "firm": "prop firm",
+    "title": "How to Get Multiple Funded Accounts | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-payout-times.html",
+    "kind": "mechanic",
+    "trim": 128,
+    "firm": "prop firm",
+    "title": "Prop Firm Payout Times | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-ea-automated-trading.html",
+    "kind": "mechanic",
+    "trim": 130,
+    "firm": "prop firm",
+    "title": "Prop Firm EA Automated Trading | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-minimum-trading-days.html",
+    "kind": "mechanic",
+    "trim": 130,
+    "firm": "prop firm",
+    "title": "Prop Firm Minimum Trading Days | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-news-trading-rules.html",
+    "kind": "mechanic",
+    "trim": 130,
+    "firm": "prop firm",
+    "title": "Prop Firm News Trading Rules | 2026"
+  },
+  {
+    "path": "/pass-prop-firm-challenge-without-breaking-rules.html",
+    "kind": "mechanic",
+    "trim": 139,
+    "firm": "prop firm",
+    "title": "Pass Prop Firm Challenge without Breaking Rules | 2026"
+  },
+  {
+    "path": "/blog/ftmo-challenge-rules-2026.html",
+    "kind": "mechanic",
+    "trim": 144,
+    "firm": "FTMO",
+    "title": "FTMO Challenge Rules 2026"
+  },
+  {
+    "path": "/blog/prop-firm-scaling-plan-explained.html",
+    "kind": "mechanic",
+    "trim": 152,
+    "firm": "prop firm",
+    "title": "Prop Firm Scaling Plan Explained | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-rules-explained.html",
+    "kind": "mechanic",
+    "trim": 164,
+    "firm": "prop firm",
+    "title": "Prop Firm Rules Explained | 2026"
+  },
+  {
+    "path": "/blog/account-sharing-prop-firm-rules.html",
+    "kind": "mechanic",
+    "trim": 168,
+    "firm": "prop firm",
+    "title": "Account Sharing Prop Firm Rules | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-challenge-rules-explained.html",
+    "kind": "mechanic",
+    "trim": 168,
+    "firm": "prop firm",
+    "title": "Prop Firm Challenge Rules Explained | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-passing-service-cost-2026.html",
+    "kind": "money",
+    "trim": 123,
+    "firm": "prop firm",
+    "title": "Prop Firm Passing Service Cost 2026"
+  },
+  {
+    "path": "/blog/challenge-fees-vs-passing-service.html",
+    "kind": "money",
+    "trim": 131,
+    "firm": "prop firm",
+    "title": "Challenge Fees vs Passing Service | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-passing-service-cost.html",
+    "kind": "money",
+    "trim": 131,
+    "firm": "prop firm",
+    "title": "Prop Firm Passing Service Cost | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-taxes-2026.html",
+    "kind": "money",
+    "trim": 133,
+    "firm": "prop firm",
+    "title": "Prop Firm Taxes 2026 — Prop Firm Guide"
+  },
+  {
+    "path": "/blog/how-much-do-prop-firm-traders-make.html",
+    "kind": "money",
+    "trim": 138,
+    "firm": "prop firm",
+    "title": "How Much Do Prop Firm Traders Make | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-mt4-mt5-ctrader-platforms.html",
+    "kind": "platformPage",
+    "trim": 64,
+    "firm": "prop firm",
+    "title": "Prop Firm MT4 MT5 cTrader Platforms | 2026"
+  },
+  {
+    "path": "/blog/best-prop-firm-beginners-2026.html",
+    "kind": "redirectPage",
+    "trim": 1,
+    "firm": "",
+    "title": ""
+  },
+  {
+    "path": "/blog/how-much-prop-firm-traders-make.html",
+    "kind": "redirectPage",
+    "trim": 1,
+    "firm": "",
+    "title": ""
+  },
+  {
+    "path": "/blog/medium-article-1.html",
+    "kind": "redirectPage",
+    "trim": 1,
+    "firm": "",
+    "title": ""
+  },
+  {
+    "path": "/blog/topstep-vs-apex-prop-firm.html",
+    "kind": "redirectPage",
+    "trim": 1,
+    "firm": "",
+    "title": ""
+  },
+  {
+    "path": "/blog/the5ers-prop-firm-review.html",
+    "kind": "review",
+    "trim": 223,
+    "firm": "The5ers",
+    "title": "The5ers Review 2026: Rules, Costs, Fit"
+  },
+  {
+    "path": "/blog/aquafunded-review-2026.html",
+    "kind": "review",
+    "trim": 225,
+    "firm": "AquaFunded",
+    "title": "AquaFunded Review 2026: Rules, Costs, Fit"
+  },
+  {
+    "path": "/blog/ftmo-review.html",
+    "kind": "review",
+    "trim": 248,
+    "firm": "FTMO",
+    "title": "FTMO Review 2026: Rules, Costs, Fit"
+  },
+  {
+    "path": "/blog/pass-my-ftmo-challenge-for-me.html",
+    "kind": "servicePage",
+    "trim": 192,
+    "firm": "FTMO",
+    "title": "Pass My FTMO Challenge for Me | 2026"
+  },
+  {
+    "path": "/blog/how-to-pass-prop-firm-challenge-without-trading.html",
+    "kind": "servicePage",
+    "trim": 194,
+    "firm": "prop firm",
+    "title": "How to Pass Prop Firm Challenge without Trading | 2026"
+  },
+  {
+    "path": "/blog/challenge-passing-service-review.html",
+    "kind": "servicePage",
+    "trim": 198,
+    "firm": "prop firm",
+    "title": "Challenge Passing Service Review | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-passing-service.html",
+    "kind": "servicePage",
+    "trim": 198,
+    "firm": "prop firm",
+    "title": "Prop Firm Passing Service | 2026"
+  },
+  {
+    "path": "/blog/cheapest-prop-firm-passing-service.html",
+    "kind": "servicePage",
+    "trim": 200,
+    "firm": "prop firm",
+    "title": "Cheapest Prop Firm Passing Service | 2026"
+  },
+  {
+    "path": "/blog/ftmo-phase1-phase2-strategy.html",
+    "kind": "strategy",
+    "trim": 41,
+    "firm": "FTMO",
+    "title": "FTMO Phase 1 Phase 2 Strategy | 2026"
+  },
+  {
+    "path": "/blog/how-to-pass-prop-firm-challenge-2026.html",
+    "kind": "strategy",
+    "trim": 42,
+    "firm": "prop firm",
+    "title": "How to Pass Prop Firm Challenge 2026"
+  },
+  {
+    "path": "/what-to-do-after-passing-prop-firm-challenge.html",
+    "kind": "strategy",
+    "trim": 43,
+    "firm": "prop firm",
+    "title": "What to Do After Passing Prop Firm Challenge | 2026"
+  },
+  {
+    "path": "/blog/how-to-keep-funded-account.html",
+    "kind": "strategy",
+    "trim": 49,
+    "firm": "prop firm",
+    "title": "How to Keep Funded Account | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-risk-management-challenge.html",
+    "kind": "strategy",
+    "trim": 49,
+    "firm": "prop firm",
+    "title": "Prop Firm Risk Management Challenge | 2026"
+  },
+  {
+    "path": "/blog/how-to-pass-ftmo-challenge-fast-2026.html",
+    "kind": "strategy",
+    "trim": 50,
+    "firm": "FTMO",
+    "title": "How to Pass FTMO Challenge Fast 2026"
+  },
+  {
+    "path": "/blog/prop-firm-beginner-faq.html",
+    "kind": "strategy",
+    "trim": 54,
+    "firm": "prop firm",
+    "title": "Prop Firm Beginner FAQ | 2026"
+  },
+  {
+    "path": "/blog/prop-firm-challenge-mistakes.html",
+    "kind": "strategy",
+    "trim": 55,
+    "firm": "prop firm",
+    "title": "Prop Firm Challenge Mistakes | 2026"
+  }
+]

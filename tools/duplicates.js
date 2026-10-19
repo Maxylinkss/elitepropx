@@ -1,0 +1,196 @@
+'use strict';
+
+/**
+ * Duplicate-content audit over docs/.
+ *
+ * A static site earns its rankings from pages that answer different questions.
+ * Two pages carrying the same paragraph compete with each other, and a page
+ * assembled from blocks already published elsewhere adds nothing for a reader.
+ * This audit fails the build on:
+ *
+ *   1. a paragraph (10+ words) repeated on another indexable page;
+ *   2. two pages whose 5-word shingles overlap too heavily;
+ *   3. duplicate titles, descriptions, canonicals or H1s;
+ *   4. duplicate sitemap URLs, or sitemap URLs pointing at redirects.
+ *
+ * Run: node tools/duplicates.js
+ */
+
+const fs = require('fs');
+const path = require('path');
+const walk = require('../src/lib/walk');
+
+const ROOT = path.join(__dirname, '..');
+const DOCS = path.join(ROOT, 'docs');
+
+// Listing pages reproduce other pages' summaries by design. They are checked
+// for metadata but excluded from the body-overlap rules.
+const LISTING = new Set(['/', '/index.html', '/blog/', '/blog/index.html']);
+// Legal pages are intentionally parallel documents; they are still checked.
+const MIN_PARA_WORDS = 10;
+// Near-duplicate threshold on 5-word shingles. Distinct pages that share a
+// common explanation still sit well below this once the copy is written once.
+const MAX_SIMILARITY = 0.25;
+
+const stripTags = (html) =>
+  html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&#\d+;/g, ' ')
+    .replace(/&[a-z]+;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const wordsOf = (text) => text.split(/\s+/).filter(Boolean);
+const normPara = (html) => stripTags(html).toLowerCase().replace(/[“”‘’]/g, "'").replace(/[–—]/g, '-');
+
+function mainContent(html) {
+  const m = html.match(/<main[\s\S]*?<\/main>/i);
+  if (!m) return '';
+  return m[0]
+    .replace(/<section class="cta-band[\s\S]*?<\/section>/gi, ' ')
+    .replace(/<nav[\s\S]*?<\/nav>/gi, ' ')
+    .replace(/<section class="section tight">\s*<div class="wrap narrow">\s*<h2>Related reading[\s\S]*?<\/section>/gi, ' ');
+}
+
+function paragraphs(html) {
+  const out = [];
+  // Table cells are data fields, not prose: the same firm attribute belongs in
+  // every comparison table that lists that firm. Duplicated table layout is
+  // caught by the page-similarity rule instead.
+  for (const m of html.matchAll(/<(p|li|h2|h3|h4|summary|figcaption)[^>]*>([\s\S]*?)<\/\1>/gi)) {
+    const text = normPara(m[2]);
+    if (wordsOf(text).length >= MIN_PARA_WORDS) out.push(text);
+  }
+  return out;
+}
+
+function shingles(text) {
+  const w = text.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter(Boolean);
+  const set = new Set();
+  for (let i = 0; i + 5 <= w.length; i++) set.add(w.slice(i, i + 5).join(' '));
+  return set;
+}
+
+function jaccard(a, b) {
+  if (!a.size || !b.size) return 0;
+  let inter = 0;
+  for (const x of a) if (b.has(x)) inter++;
+  return inter / (a.size + b.size - inter);
+}
+
+const files = walk(DOCS).filter((f) => f.endsWith('.html'));
+const pages = [];
+for (const file of files) {
+  const rel = '/' + path.relative(DOCS, file).split(path.sep).join('/');
+  const html = fs.readFileSync(file, 'utf8');
+  if (/http-equiv="refresh"/i.test(html)) continue;
+  if (rel === '/404.html') continue;
+  pages.push({
+    rel,
+    html,
+    listing: LISTING.has(rel),
+    title: (html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || '',
+    desc: (html.match(/<meta name="description" content="([^"]*)"/i) || [])[1] || '',
+    canonical: (html.match(/<link rel="canonical" href="([^"]+)"/i) || [])[1] || '',
+    h1: stripTags((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || ''),
+  });
+}
+
+let errors = 0;
+const fail = (msg) => {
+  console.log(`  x ${msg}`);
+  errors++;
+};
+
+console.log(`\nDuplicate audit: ${pages.length} indexable pages\n`);
+
+/* 1. Metadata ----------------------------------------------------------------- */
+
+for (const field of ['title', 'desc', 'canonical', 'h1']) {
+  const seen = new Map();
+  for (const p of pages) {
+    if (!p[field]) {
+      fail(`${p.rel}: missing ${field}`);
+      continue;
+    }
+    const key = p[field].trim().toLowerCase();
+    if (seen.has(key)) fail(`duplicate ${field}: ${seen.get(key)} and ${p.rel}`);
+    else seen.set(key, p.rel);
+  }
+}
+
+/* 2. Repeated paragraphs ------------------------------------------------------ */
+
+const bodyPages = pages.filter((p) => !p.listing);
+const paraMap = new Map();
+for (const p of bodyPages) {
+  const ps = paragraphs(mainContent(p.html));
+  p.paras = ps;
+  p.shingles = shingles(stripTags(mainContent(p.html)));
+  for (const t of new Set(ps)) {
+    if (!paraMap.has(t)) paraMap.set(t, []);
+    paraMap.get(t).push(p.rel);
+  }
+}
+
+const repeated = [...paraMap.entries()].filter(([, list]) => list.length > 1);
+repeated.sort((a, b) => b[1].length - a[1].length);
+if (repeated.length) {
+  fail(`${repeated.length} paragraph(s) repeated across pages`);
+  for (const [text, list] of repeated.slice(0, 25)) {
+    console.log(`      ${list.length}x  ${list.slice(0, 4).join(' | ')}${list.length > 4 ? ' | ...' : ''}`);
+    console.log(`          "${text.slice(0, 120)}${text.length > 120 ? '...' : ''}"`);
+  }
+  if (repeated.length > 25) console.log(`      ... ${repeated.length - 25} more`);
+}
+
+/* 3. Near-duplicate pages ----------------------------------------------------- */
+
+const pairs = [];
+for (let i = 0; i < bodyPages.length; i++) {
+  for (let j = i + 1; j < bodyPages.length; j++) {
+    const sim = jaccard(bodyPages[i].shingles, bodyPages[j].shingles);
+    if (sim > MAX_SIMILARITY) pairs.push([sim, bodyPages[i].rel, bodyPages[j].rel]);
+  }
+}
+pairs.sort((a, b) => b[0] - a[0]);
+if (pairs.length) {
+  fail(`${pairs.length} page pair(s) above ${MAX_SIMILARITY} similarity`);
+  for (const [sim, a, b] of pairs.slice(0, 20)) {
+    console.log(`      ${(sim * 100).toFixed(1)}%  ${a}  ~  ${b}`);
+  }
+  if (pairs.length > 20) console.log(`      ... ${pairs.length - 20} more`);
+}
+
+/* 4. Sitemap ------------------------------------------------------------------ */
+
+const sitemapFile = path.join(DOCS, 'sitemap.xml');
+if (!fs.existsSync(sitemapFile)) {
+  fail('missing sitemap.xml');
+} else {
+  const locs = [...fs.readFileSync(sitemapFile, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const seen = new Set();
+  for (const loc of locs) {
+    if (seen.has(loc)) fail(`duplicate sitemap URL: ${loc}`);
+    seen.add(loc);
+    const rel = loc.replace('https://elitepropx.com', '') || '/';
+    const fileRel = rel.endsWith('/') ? rel + 'index.html' : rel;
+    const target = path.join(DOCS, fileRel.replace(/^\//, '') || 'index.html');
+    if (!fs.existsSync(target)) fail(`sitemap URL not built: ${loc}`);
+    else if (/http-equiv="refresh"/i.test(fs.readFileSync(target, 'utf8'))) {
+      fail(`sitemap points at a redirect stub: ${loc}`);
+    }
+  }
+  const indexable = pages.filter((p) => !/name="robots" content="noindex/.test(p.html));
+  if (locs.length !== indexable.length) {
+    fail(`sitemap has ${locs.length} URLs but ${indexable.length} indexable pages are built`);
+  }
+}
+
+console.log(`\n${errors} duplicate issue(s)\n`);
+process.exit(errors ? 1 : 0);
