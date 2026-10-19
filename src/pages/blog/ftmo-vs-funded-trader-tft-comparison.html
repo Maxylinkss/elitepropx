@@ -110,6 +110,7 @@ generator: content-system
 <p>TFT applies a daily stop without a stated basis in the summary. The question to settle is whether it is equity or realised, and at what time it resets. An equity basis counts open risk; a realised basis permits a larger floating loss and a different behaviour at the close.</p>
 <p>A personal cap does the real work on both. With a $500 unit and a three-loss cap, the worst session is $1,500, which is 1.5% of the account and well inside any published limit. Three losses end the session, and a second session is allowed only if the weekly budget still has room.</p>
 <p>The reset time matters for a swing method. A position carried across the roll can be attributed to either day, and the attribution decides whether a loss is a warning or a breach. If the rule is unclear, flatten before the roll rather than argue afterwards.</p>
+<p>There is a simple way to test whether a personal cap is set correctly: count the sessions in the last month that would have hit it. If none did, the cap is decoration. If a third did, it is too tight and the unit is probably too large. A cap that binds on one session in ten is doing real work without distorting the method.</p>
 
 <h2 id="consistency">The consistency test</h2>
 <p>A consistency test exists to distinguish a process from a single position. It limits how much of the profit one day, or a few days, may contribute, and it changes the shape of a correct attempt: the target has to be reached through a series of ordinary sessions.</p>
@@ -156,6 +157,7 @@ generator: content-system
 <p>The tie-breaker is the shape of the profit. A steady method can use either and should choose on payout timing. A lumpy method should choose FTMO, because a distribution rule it cannot satisfy is a rule that ends the attempt regardless of skill.</p>
 <p>If both fit, simulate each on the same hundred trades: apply the three-stage path with no distribution rule to one, and the two-stage path with a cap to the other. The one that survives with the smaller drawdown is the structure the method already suits.</p>
 <p>One behavioural question settles it faster than any simulation. When you have a good day, do you stop or press? A trader who stops fits TFT's distribution rule and will find the verification stage easy. A trader who presses fits neither without a written cap, and the cap is cheaper to adopt than a retry.</p>
+<p>The second question is about the calendar. A trader who can trade every weekday for three months can use the longer path and benefit from the extra evidence. A trader who trades two days a week should price the elapsed time before choosing, because a three-stage path at that cadence can run into six months.</p>
 
 <h2 id="flags">What to confirm before paying</h2>
 <p>The first question is whether the consistency rule applies during the evaluation, during funding, or only at payout. The second is the daily stop's basis and reset time. The third is whether the floor resets after a payout.</p>
