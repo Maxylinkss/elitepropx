@@ -1,6 +1,6 @@
 ---
 title: How to Keep Funded Account | 2026
-desc: How to Keep Funded Account: Keeping a funded account is a compliance exercise as much as a trading one. Worked numbers, the common mistakes and a checklist.
+desc: Why funded accounts are lost after the pass: what changes between evaluation and funded rules, buffer sizing, conduct rules and the monthly review routine.
 path: /blog/how-to-keep-funded-account.html
 type: article
 h1: How to Keep Funded Account
@@ -12,13 +12,12 @@ date: 2026-10-19
 updated: 2026-10-19
 priority: 0.7
 schemaService: true
-generator: content-system
 ---
 <section class="page-head">
   <div class="wrap narrow">
     <p class="kicker">How to Keep Funded Account · reviewed October 2026</p>
     <h1>How to Keep Funded Account</h1>
-    <p class="lede">Keeping a funded account is a compliance exercise as much as a trading one. The loss floor remains, the conduct rules are usually stricter, and the first payout is the point at which the process is proven. This guide turns the rule into something you can apply to the plan you are actually trading.</p>
+    <p class="lede">Most traders who lose a funded account do not lose it to a bad market. They lose it to a rule that changed after the pass, a position size that grew with the balance, a consistency condition that only applied at payout, or a withdrawal decision made in the first week. Keeping a funded account is a compliance exercise as much as a trading one — and unlike the evaluation, nobody is grading you weekly. This guide sets out what actually changes after the pass, how to size the buffer, the conduct rules that end accounts, and the review routine that catches a problem before the floor does.</p>
   </div>
 </section>
 
@@ -27,42 +26,272 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>Trade the funded account at the size that survived the evaluation.</li>
-  <li>Take the first payout as soon as it is eligible.</li>
-  <li>Keep every statement and contract for the next account or a dispute.</li>
-  
+  <li>Trade the funded account at the size that survived the evaluation. Raising size after the pass is the most common self-inflicted failure.</li>
+  <li>Re-read the funded agreement on the day the account is issued. The floor, the daily reset, the news policy and the payout conditions can all differ from the evaluation's.</li>
+  <li>Take the first payout as soon as it is eligible. Unwithdrawn profit is exposed to the floor.</li>
+  <li>Build a buffer of two to three times your normal monthly drawdown, well above the firm's minimum balance.</li>
+  <li>Consistency conditions usually apply at payout, not during trading — so a concentrated profit distribution can block a withdrawal even when nothing was breached.</li>
+  <li>Conduct rules are enforced more strictly after the pass: account sharing, copy trading, prohibited automation and news-window violations can end a profitable account.</li>
+  <li>Review the account monthly against the rulebook, not just against your P&L.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
   <li><a href="#frame">What this guide is really solving</a></li>
+  <li><a href="#what-changes">What changes between evaluation and funded</a></li>
+  <li><a href="#rules">The rules that still apply after the pass</a></li>
+  <li><a href="#first-month">The first month: a retention plan</a></li>
+  <li><a href="#size">The size reset problem</a></li>
+  <li><a href="#withdrawal">Withdrawal policy as a risk control</a></li>
+  <li><a href="#buffer">Sizing the buffer</a></li>
+  <li><a href="#conduct">The conduct rules that end accounts</a></li>
+  <li><a href="#lost">The five ways funded accounts are lost</a></li>
+  <li><a href="#review">The monthly review routine</a></li>
+  <li><a href="#calendar">The payout calendar, and planning around it</a></li>
+  <li><a href="#stop">When to stop trading the account</a></li>
+  <li><a href="#breach">If the account breaches anyway</a></li>
+  <li><a href="#lifetime">What a funded account is worth, over its lifetime</a></li>
+  <li><a href="#questions">Common questions</a></li>
 </ol>
 </div>
+
 <h2 id="frame">What this guide is really solving</h2>
-<p>Keeping a funded account is a compliance exercise as much as a trading one. The loss floor remains, the conduct rules are usually stricter, and the first payout is the point at which the process is proven. On an evaluation, the consequence is specific: the same decision either keeps the loss floor at a distance or brings the end of the account closer. The sections below turn that into a plan rather than a principle.</p>
+<p>On an evaluation, the objective is unambiguous: reach the target without touching the floor, inside a fixed window. On a funded account, the objective changes completely. There is no target to reach, no deadline to beat, and no reward for finishing early. The only objective is to keep trading a rule-bound account and to withdraw from it repeatedly.</p>
+<p>That change of objective is why so many traders pass and then lose the account within weeks. The skills overlap, but the incentives are inverted. During the evaluation, patience is a means to a target; after the pass, patience <em>is</em> the strategy, because the account's value is measured in payouts collected, not in peak equity reached.</p>
+<p>Two numbers define a funded account's real value: the number of payout cycles it survives, and the average net payout per cycle. A $50,000 account that pays $700 a month for nine months is worth more than a $200,000 account that breaches in its second month after one large payout. Everything in this guide is aimed at the first number.</p>
 
-<h2 id="the-rules-that-still-apply-after-the-pass">The rules that still apply after the pass</h2>
-<p>A funded account is not an unregulated personal account. The loss floor, the daily stop, the consistency condition and the conduct rules still apply, and some of them change after the pass. The most common way to lose a funded account is to trade it as if the evaluation were over. The evaluation was the application; the funded account is the job.</p>
-<p>Re-read the funded agreement on the day the account is issued. Confirm the floor definition, the daily reset time, the news policy and the payout conditions. Save a copy with the date. A rule change during the funded period is easier to handle when the original terms are documented.</p>
+<h2 id="what-changes">What changes between evaluation and funded</h2>
+<p>The funded agreement is a different document from the evaluation rulebook. In most firms it repeats most of the rules and changes a few of them, which is precisely why it gets misread: the familiar parts read as confirmation and the changes get skimmed.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Element</th><th>Typical funded treatment</th><th>What to confirm</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Profit target</td><td>Removed — there is nothing to complete</td><td>Nothing; the absence of a target is the main change</td></tr>
+      <tr><td>Loss floor</td><td>Usually still applies, sometimes reset to the funded balance</td><td>Whether the floor is static or trails, and from which balance it is measured</td></tr>
+      <tr><td>Daily loss limit</td><td>Usually retained</td><td>The reset time and whether it is calculated on balance or equity</td></tr>
+      <tr><td>Consistency condition</td><td>Frequently introduced or tightened at payout</td><td>The threshold, and whether it is measured at the payout request or continuously</td></tr>
+      <tr><td>Minimum trading days</td><td>Often replaced by a minimum payout cycle</td><td>The length of the cycle and the days required within it</td></tr>
+      <tr><td>News and holding rules</td><td>Often stricter than the evaluation's</td><td>Which events, and whether weekend holding is permitted on your account type</td></tr>
+      <tr><td>Data or platform fee</td><td>May resume or continue</td><td>Whether it is deducted from the payout or billed separately</td></tr>
+      <tr><td>Profit split</td><td>Applies to every payout</td><td>The percentage on your account and whether it can increase with performance</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Two rows in that table cause the majority of post-pass failures. The consistency condition is one, because it is evaluated against the <em>shape</em> of your profit and can block a withdrawal from an otherwise compliant month. The news and holding rules are the other, because a trader who traded freely through events on the evaluation may find that the funded account does not permit it.</p>
+<div class="callout">
+  <p><strong>Read the funded agreement on issue day, not on payout day.</strong> The differences are small in number and large in consequence, and they are only actionable before the trades that breach them.</p>
+</div>
 
-<h2 id="withdrawal-policy-as-a-risk-control">Withdrawal policy as a risk control</h2>
-<p>Decide a withdrawal rhythm before the first funded trade. A trader who withdraws every payout and leaves a fixed buffer is less likely to give back a large gain than one who lets the balance grow and increases size with it. The buffer should be large enough to absorb a normal losing streak without approaching the floor.</p>
-<p>Do not withdraw to the minimum allowed balance just because the plan permits it. The minimum is the firm's limit, not the trader's risk limit. A buffer of two to three times the normal monthly drawdown is a more sensible target. The account should be able to survive a bad month without a reset.</p>
+<h2 id="rules">The rules that still apply after the pass</h2>
+<p>A funded account is not an unregulated personal account. Most firms retain the loss floor and the daily stop, and add payout conditions that did not exist during the evaluation. The mental error that ends accounts is treating the pass as the end of the compliance period; in practice the pass is where compliance starts being enforced against real money.</p>
+<p>Re-read the funded agreement on the day the account is issued and confirm five things: the floor definition, the daily reset time, the news policy, the payout conditions, and the conduct rules. Save a dated copy. If a rule is reinterpreted or changed while the account is running, the dated copy is what lets you have that conversation with evidence rather than memory.</p>
+<p>There is also a practical category of rule that is easy to break by accident: the ones about how the account is accessed rather than how it is traded. Copy trading, shared logins, third-party automation and remote access arrangements are all conduct questions, and firms generally treat them more strictly on funded accounts than on evaluations.</p>
 
-<h2 id="the-conduct-rules-that-end-accounts">The conduct rules that end accounts</h2>
-<p>Account sharing, copy trading, prohibited automation and news-window violations can end a funded account even when the trading is profitable. The funded terms often apply these rules more strictly than the evaluation. If a strategy depends on a grey area, get a written answer before the first funded trade. A profitable account that cannot be withdrawn is not a funded account.</p>
-<p>Keep the login private, keep the records clean and keep the terms saved. The operational discipline is as important as the trading edge after the pass.</p>
+<h2 id="first-month">The first month: a retention plan</h2>
+<p>The first funded month is where the account is most often lost, because it is the month in which expectations are least calibrated. A week-by-week plan removes most of the improvisation.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Period</th><th>Objective</th><th>What not to do</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Day 1</td><td>Re-read the funded agreement; set the risk unit; confirm payout eligibility rules</td><td>Do not place a trade on the first day to "test" the account</td></tr>
+      <tr><td>Week 1</td><td>Trade at the evaluation's size and pace; bank ordinary results</td><td>Do not increase size because the account is now "real"</td></tr>
+      <tr><td>Week 2</td><td>Continue; begin tracking the best-day share of profit for the consistency check</td><td>Do not chase a repeat of the best evaluation session</td></tr>
+      <tr><td>Week 3</td><td>Confirm you are on course for the first payout cycle, including minimum days</td><td>Do not add positions to accelerate the cycle</td></tr>
+      <tr><td>Week 4</td><td>Request the first payout as soon as eligible; assess the buffer</td><td>Do not hold the payout back to compound the balance</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The instruction that does most of the work in that table is the one about ordinary results. A funded account is valuable because it keeps paying, and the discipline that keeps it alive is unremarkable by design. Traders who treat the funded account as an opportunity to trade more aggressively than they did on the evaluation are converting a long-dated income stream into a short-dated gamble.</p>
+
+<h2 id="size">The size reset problem</h2>
+<p>The most common self-inflicted failure on a funded account is a size increase. It happens for an understandable reason: during the evaluation the trader was managing the floor, and once funded they feel they have proved something. The floor, however, did not become more forgiving.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Risk per trade</th><th>Losses to reach a 5% floor</th><th>Effect on payout frequency</th><th>Retention outlook</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0.5% (evaluation size)</td><td>10</td><td>Steady, smaller payouts</td><td>Highest — one losing run is absorbable</td></tr>
+      <tr><td>1.0% (a common step up)</td><td>5</td><td>Slightly larger payouts</td><td>Moderate — a normal bad week approaches the floor</td></tr>
+      <tr><td>2.0% (aggressive step up)</td><td>2–3</td><td>Higher average, far more variance</td><td>Low — two ordinary losses change the account's trajectory</td></tr>
+      <tr><td>5.0% (revenge sizing)</td><td>1</td><td>Not meaningful</td><td>Near zero</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Read the table as a description of how many ordinary losses the account can absorb before the outcome is determined. At 0.5% per trade, a losing sequence is survivable and the account continues paying. At 2%, two losses consume most of the buffer and the third decides the outcome. The payout per cycle is larger in the second case, which is exactly why the incentive is misread: the trader sees a bigger cheque in exchange for a materially shorter expected life, and the exchange rate is bad.</p>
+<p>The disciplined answer is to hold the evaluation's risk unit and let the buffer grow. A larger buffer permits a larger size later without approaching the floor, which is a size increase funded by accumulated profit rather than by optimism. That sequence — buffer first, size second — is the difference between an account that pays for a year and one that pays twice.</p>
+
+<h2 id="withdrawal">Withdrawal policy as a risk control</h2>
+<p>The withdrawal rhythm is a risk decision, not a cash-flow decision, and it is best made before the first funded trade rather than at the first payout request.</p>
+<p>A trader who withdraws on every eligible cycle and leaves a fixed buffer has converted their funded account into an income stream with a defined float. A trader who withdraws nothing and lets the balance compound has an account with a higher nominal value and the same loss floor, which means a fixed percentage floor represents a larger cash loss but the same percentage buffer — the point being that compounding does not make the account safer, it only makes it bigger.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Withdrawal policy</th><th>Effect on the buffer</th><th>Effect on retention</th><th>Suited to</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Withdraw every cycle, keep a fixed buffer</td><td>Stable, predictable</td><td>Best — the account's risk profile never drifts</td><td>Traders whose objective is income</td></tr>
+      <tr><td>Withdraw every second cycle</td><td>Grows modestly, then resets</td><td>Good</td><td>Traders who want slightly larger payments</td></tr>
+      <tr><td>Withdraw the minimum, compound the rest</td><td>Grows slowly</td><td>Moderate — the risk profile drifts upward with the balance</td><td>Traders targeting a larger account later</td></tr>
+      <tr><td>Withdraw nothing until a target balance</td><td>Largest exposure at any time</td><td>Worst — months of profit sit inside the floor's reach</td><td>Rarely justified</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>There is a specific failure mode in the last row worth naming. A trader who earns $6,000 on a funded account and withdraws none of it has $6,000 of realised profit inside an account that can still be closed by the floor. If the account then breaches, the entire amount is lost along with the account. Taking payouts early is not a sign of impatience; it is moving profit out of the reach of a rule that can still end everything.</p>
+<div class="callout">
+  <p><strong>Do not withdraw to the minimum.</strong> The firm's minimum balance is a limit it sets for itself, not a risk limit you should adopt. A buffer of two to three times your normal monthly drawdown is a more sensible target, because it lets the account absorb a bad month without a reset.</p>
+</div>
+
+<h2 id="buffer">Sizing the buffer</h2>
+<p>The buffer is the amount of retained equity between your working balance and the firm's floor. Sizing it is a calculation, not a preference.</p>
+<ol>
+  <li><strong>Measure your normal monthly drawdown.</strong> Take the last three months of results and find the worst month. That figure, not your average, is the one that has to be survivable.</li>
+  <li><strong>Multiply by two, then by three.</strong> Two times the worst month is the minimum buffer; three times is comfortable. Below two, an ordinary bad month approaches the floor.</li>
+  <li><strong>Add the payout cycle length.</strong> If you can only withdraw every 21 days, the buffer has to cover 21 days of variance rather than 30.</li>
+  <li><strong>Check it against the floor in cash terms.</strong> Express the buffer as a percentage of the account and confirm it is smaller than the floor distance; otherwise the buffer is not a buffer, it is the account.</li>
+</ol>
+<p>A worked example. A funded $50,000 account with a 5% floor has $2,500 of space. The trader's worst recent month was −$600. Two times that is $1,200, which is 48% of the available space — acceptable but not generous. Three times is $1,800, or 72% of the space, which leaves only $700 for the tail. That arithmetic suggests either a smaller risk unit or a withdrawal policy that leaves more retained equity, and it is the kind of conclusion that only appears when the numbers are written down.</p>
+
+<h2 id="conduct">The conduct rules that end accounts</h2>
+<p>Conduct rules are enforced against the account's operation rather than its performance, and they are the rules most often broken by profitable traders who assume good results buy tolerance.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Conduct rule</th><th>How it is broken in practice</th><th>Consequence</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Account sharing</td><td>Letting another party trade, or sharing credentials for any reason</td><td>Closure and possible refusal of outstanding payouts</td></tr>
+      <tr><td>Third-party trading</td><td>An assisted or outsourced arrangement the terms do not permit</td><td>Closure at the payout review rather than at the time of trading</td></tr>
+      <tr><td>Copy trading and mirroring</td><td>Duplicating an external signal stream or another trader's positions</td><td>Closure, and rejection of the profit it produced</td></tr>
+      <tr><td>Prohibited automation</td><td>Running an EA or bot that the terms exclude, or that exploits latency or pricing</td><td>Closure and forfeiture, even when the account is profitable</td></tr>
+      <tr><td>News-window violations</td><td>Trading or holding positions through a restricted event</td><td>Trade voided, or account closed depending on the firm's policy</td></tr>
+      <tr><td>Identity and payout mismatch</td><td>Withdrawing to an account not in the holder's name</td><td>Payout held, then refused</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The pattern across those rows is that each is discoverable, and each is checked at the point where it matters. Automation is visible in execution logs. Copy trading leaves matching timestamps. Identity mismatches surface at withdrawal. The practical defence is to ask for a written answer before doing anything in a grey area, because a profitable account that cannot be withdrawn is not a funded account — it is a display.</p>
+<p>Keep the login private, keep the records clean, and keep the terms saved with their date. The operational discipline is as important as the trading edge after the pass, and it is the part almost nobody practises during the evaluation.</p>
+
+<h2 id="lost">The five ways funded accounts are lost</h2>
+<p>Most failures cluster into five causes. Naming them makes them detectable in advance.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Cause</th><th>Early warning sign</th><th>Prevention</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Size increase after the pass</td><td>A trade risk larger than anything taken on the evaluation</td><td>Hold the evaluation risk unit until the buffer supports more</td></tr>
+      <tr><td>Concentrated profit distribution</td><td>One day representing more than a quarter of the total</td><td>Track best-day share weekly and stretch results across more days</td></tr>
+      <tr><td>Unread funded rules</td><td>You cannot restate the payout condition without looking it up</td><td>Read the funded agreement on issue day and keep the dated copy</td></tr>
+      <tr><td>Conduct violation</td><td>Any arrangement you would not describe to the firm in writing</td><td>Get a written answer before acting in a grey area</td></tr>
+      <tr><td>Profit left inside the floor's reach</td><td>Several months of profit retained with no withdrawals</td><td>Withdraw on every eligible cycle and keep a fixed buffer</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="review">The monthly review routine</h2>
+<p>An evaluation gives you a weekly scoreboard. A funded account gives you nothing, so the scoreboard has to be built. Fifteen minutes a month is enough if the checklist is consistent.</p>
+<ul>
+  <li><strong>Distance to the floor, in cash and as a percentage.</strong> If either number has fallen for two consecutive months, reduce size.</li>
+  <li><strong>Best day as a share of net profit.</strong> Compare it against the payout condition. If it is close to the limit, trade more ordinary days rather than more size.</li>
+  <li><strong>Buffer against the worst recent month.</strong> If the buffer is below twice your worst month, stop increasing risk until it recovers.</li>
+  <li><strong>Payout eligibility and cycle position.</strong> Confirm the request will be made in the first eligible window.</li>
+  <li><strong>Rule re-read.</strong> Skim the funded agreement for changes and check the firm's announcements. Rules are revised between plan generations.</li>
+  <li><strong>Conduct audit.</strong> Confirm nothing about how the account is accessed has drifted: no shared credentials, no automation outside the terms, no matching external positions.</li>
+</ul>
+<p>The purpose of the routine is not administration. It is to make the account's risk visible while it is still correctable. Every failure listed earlier in this article has an early warning sign, and every sign appears at least a week before the account ends. The monthly review is simply the mechanism that ensures somebody is looking.</p>
+</section>
 
 <section class="section tight">
   <div class="wrap narrow">
-    <h2 id="questions">Common questions</h2>
+    <h2 id="calendar">The payout calendar, and planning around it</h2>
+<p>Payout cycles are fixed by the firm and usually cannot be accelerated. That makes the calendar a planning constraint rather than an administrative detail, because the number of cycles an account can complete is a function of how long it survives.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Cycle length</th><th>Maximum payouts in six months</th><th>Effect on the withdrawal strategy</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>14 days</td><td>About 13</td><td>Frequent, smaller withdrawals; buffer stays stable</td></tr>
+      <tr><td>21 days</td><td>About 8–9</td><td>The common middle case; each cycle is large enough to matter</td></tr>
+      <tr><td>30 days</td><td>About 6</td><td>Fewer, larger withdrawals; more profit sits inside the floor between cycles</td></tr>
+      <tr><td>On request, subject to conditions</td><td>Depends on the conditions</td><td>Confirm what the conditions are before relying on it</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The cycle length interacts with the buffer requirement in a way worth stating plainly: the longer the cycle, the longer a losing run can accumulate before the next withdrawal, and therefore the larger the buffer has to be. A trader on a 30-day cycle needs to survive a month of variance; a trader on a 14-day cycle only has to survive two weeks at a time. Where a firm offers a choice, the shorter cycle is usually the lower-risk operating choice even though the individual payments are smaller.</p>
+<p>There is also a sequencing question in the first cycle. Minimum trading days, minimum cycle length and any qualifying-day requirement all have to be satisfied before the first request, and the requirements are cumulative rather than alternative. Reading them together on issue day, rather than discovering the interaction at the first request, is what turns the first payout from a hoped-for event into a planned one.</p>
 
-<details class="faq"><summary>Can I lose a funded account after passing?</summary><div class="faq-a"><p>Yes. The loss floor, daily stop, consistency and conduct rules still apply, and some are stricter after the pass. Trading the funded account like a personal account is the most common way to lose it.</p></div></details>
+<h2 id="stop">When to stop trading the account</h2>
+<p>Every funded account ends, and the only decision within the trader's control is whether that ending is a breach or a deliberate stop. A deliberate stop preserves the option to come back with a clean account and a documented record.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Condition</th><th>Signal</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Floor within one risk unit</td><td>Distance to the floor is less than twice the standard loss</td><td>Stop trading and reset deliberately if the firm permits</td></tr>
+      <tr><td>Buffer below twice the worst month</td><td>Two consecutive monthly reviews show a falling buffer</td><td>Cut size by half rather than stopping outright</td></tr>
+      <tr><td>Best-day share near the payout limit</td><td>One day above a quarter of net profit</td><td>Keep trading, but only ordinary size for the rest of the cycle</td></tr>
+      <tr><td>Three losses in a row outside the plan</td><td>Trades taken for reasons not in the method</td><td>Stop for the week regardless of the floor</td></tr>
+      <tr><td>Rule ambiguity discovered mid-cycle</td><td>You cannot tell whether a position is compliant</td><td>Flatten and get an answer before continuing</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The last two rows are the ones traders ignore, and they are the ones that convert a survivable account into a breach. Three losses outside the plan are not a variance event; they are evidence that the method has been abandoned for the session. And a rule ambiguity mid-cycle is the worst possible time to guess, because the position that is in doubt is the one that will be reviewed.</p>
+<p>The deliberate stop deserves a word of its own. A trader who stops an account at a buffer level they chose has lost an account and kept their process. A trader who trades until the floor arrives has lost the account and learned nothing that the next attempt will not repeat. Since the funded account's value is the payouts it produced rather than its existence, stopping early after several good cycles is a rational decision rather than a surrender.</p>
 
-<details class="faq"><summary>How much should I leave in the account?</summary><div class="faq-a"><p>A buffer large enough to absorb a normal losing streak, usually two to three times the expected monthly drawdown, above the plan’s minimum balance.</p></div></details>
+<h2 id="breach">If the account breaches anyway</h2>
+<p>Breaches happen to disciplined traders. The recovery decision matters more than the breach, and it is usually made badly because it is made in the first hour.</p>
+<ol>
+  <li><strong>Identify the rule that ended it.</strong> Read the firm's message or your own records and name the exact condition. "I got unlucky" is not a diagnosis; "the trailing floor caught a winner I held too long" is.</li>
+  <li><strong>Separate variance from structure.</strong> A single losing sequence that breached a correctly sized plan is variance. The same breach twice is structure, and the fix belongs in the plan rather than in the next account.</li>
+  <li><strong>Check whether any profit is still payable.</strong> Profit from a completed cycle that was already eligible may still be due. Do not assume the whole balance is lost.</li>
+  <li><strong>Do not buy the next account the same day.</strong> The fee is the cheap part of a repeat failure; the pattern is the expensive part.</li>
+  <li><strong>Write the one change you will make.</strong> A single specific change — a take-profit rule, a smaller risk unit, a hard session stop — is actionable. A general resolution to be more careful is not.</li>
+</ol>
+<p>Two of those steps do the real work. Naming the rule that ended the account converts an emotional event into a mechanical one, and writing the single change converts it into something the next attempt can actually test. A trader who breaches twice with the same named cause has not had bad luck twice; they have had the same problem twice, which is a much cheaper thing to fix than it feels like at the time.</p>
 
-<details class="faq"><summary>Do evaluation rules apply to the funded account?</summary><div class="faq-a"><p>Not always. The funded agreement can change the floor, the daily stop, the news policy and the payout conditions. Read it on the day the account is issued.</p></div></details>
+<h2 id="lifetime">What a funded account is worth, over its lifetime</h2>
+<p>The value of a funded account is the sum of the payouts it produces, so retention and payout policy are the same decision viewed from two angles. A worked twelve-month comparison makes the point concrete.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Trading style</th><th>Average net payout</th><th>Cycles completed</th><th>Total collected</th><th>What happened</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Conservative, 0.5% risk per trade</td><td>$550</td><td>9</td><td>$4,950</td><td>Account still running at month twelve with a healthy buffer</td></tr>
+      <tr><td>Moderate, stepped up to 1% after month two</td><td>$900</td><td>4</td><td>$3,600</td><td>Breached the floor in month seven during a normal losing run</td></tr>
+      <tr><td>Aggressive, 2% risk per trade</td><td>$1,700</td><td>2</td><td>$3,400</td><td>Breached in month three; the largest single payout, and the shortest life</td></tr>
+      <tr><td>Conservative with no withdrawals</td><td>$0</td><td>0</td><td>$0</td><td>Compounded to a larger balance, then breached; all profit lost with the account</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The pattern in that table is the single most useful thing on this page. The aggressive style produced the largest individual payout and the smallest total, because retention multiplies with time while position size multiplies only with variance. The conservative style collected the most over a year without ever taking a position it could not explain.</p>
+<p>The fourth row is the most painful and the most avoidable. An account with a large retained balance and no withdrawals has all of that profit inside the reach of a rule that can still close everything. Withdrawing on every eligible cycle is not a lack of ambition; it is how the value of the account is actually captured.</p>
+
+<h2 id="questions">Common questions</h2>
+
+<details class="faq"><summary>Can I lose a funded account after passing?</summary><div class="faq-a"><p>Yes, and most traders do. The loss floor, the daily stop, the payout conditions and the conduct rules still apply, and several of them are stricter than they were during the evaluation. Trading the funded account as though the compliance period ended at the pass is the most common cause.</p></div></details>
+
+<details class="faq"><summary>Do evaluation rules apply to the funded account?</summary><div class="faq-a"><p>Not always. The funded agreement can change the floor definition, the daily reset, the news and holding policy, the minimum days and the payout conditions. Read it on the day the account is issued rather than on the day you request a withdrawal.</p></div></details>
+
+<details class="faq"><summary>How much should I leave in the account?</summary><div class="faq-a"><p>A buffer of two to three times your worst recent month, and comfortably above the firm's minimum balance. The firm's minimum is its limit, not yours. Express the buffer as a share of the distance to the floor to confirm it is actually a buffer.</p></div></details>
+
+<details class="faq"><summary>Should I increase position size once funded?</summary><div class="faq-a"><p>Not immediately. The evaluation's risk unit is the size that survived a rulebook, and the funded account is governed by the same limits. Increase size only when the buffer supports it — that is, when accumulated profit can absorb the larger loss, rather than optimism.</p></div></details>
+
+<details class="faq"><summary>When should I take the first payout?</summary><div class="faq-a"><p>In the first eligible window. Unwithdrawn profit remains inside the reach of the loss floor, so a large retained balance is exposed to a rule that can still close the account. Taking payouts early is a risk control rather than impatience.</p></div></details>
+
+<details class="faq"><summary>Why was my payout blocked when I did not breach a rule?</summary><div class="faq-a"><p>Most likely the consistency condition. It evaluates the shape of your profit rather than its size, so a day representing too large a share of the total can block a withdrawal from an otherwise compliant month. The remedy is more ordinary days, not more profit.</p></div></details>
+
+<details class="faq"><summary>Does copy trading or an EA end a funded account?</summary><div class="faq-a"><p>It depends on the firm's funded terms, which are often stricter than the evaluation's. Copying an external signal stream, sharing access or running prohibited automation can close the account and forfeit the profit it produced. Get a written answer before relying on any of them.</p></div></details>
+
+<details class="faq"><summary>How long can a funded account realistically last?</summary><div class="faq-a"><p>Expected value is typically measured in months rather than years, which is why the payout cadence matters so much. An account that pays four times before it stops is worth more than one that runs longer with no withdrawals in it. Plan for a defined number of payouts rather than an indefinite account.</p></div></details>
   </div>
 </section>
 
@@ -80,16 +309,16 @@ generator: content-system
   <div class="wrap narrow">
     <h2>Related reading</h2>
     <ul class="link-list">
-      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
-      <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
-      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/funded-account-payout-process.html">The funded account payout process</a></li>
+      <li><a href="/what-to-do-after-passing-prop-firm-challenge.html">What to do after passing a prop firm challenge</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
-      <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-explained.html">Consistency rules explained</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
       <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
+      <li><a href="/blog/prop-firm-scams-to-avoid.html">Prop firm scams to avoid</a></li>
+      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
+      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
     </ul>
-    <p class="disclaimer">prop firm is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss. Nothing here is financial advice.</p>
   </div>
 </section>
