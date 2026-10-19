@@ -1,6 +1,6 @@
 ---
 title: Lucid Trading Challenge Passing: The 2026 Rulebook
-desc: How to pass a Lucid Trading evaluation: the trailing loss floor, the daily stop, position sizing, a 20-session plan and the payout rules that decide what a…
+desc: How to pass a Lucid Trading evaluation: trailing threshold arithmetic, contract sizing, the daily stop, a session plan, TradingView workflow and payout conditions.
 path: /blog/lucid-trading-challenge-passing.html
 type: article
 h1: How to pass a Lucid Trading challenge: the rulebook, the math and the plan
@@ -18,22 +18,51 @@ generator: content-system
   <div class="wrap narrow">
     <p class="kicker">Lucid Trading · evaluation guide · reviewed October 2026</p>
     <h1>How to pass a Lucid Trading challenge: the rulebook, the math and the plan</h1>
-    <p class="lede">Lucid Trading runs a evaluation with a trailing threshold with a trailing loss floor, a daily stop and monthly subscription billing. This guide works through the rulebook in the order that decides an attempt: the loss floor first, then sizing, then the calendar, then the payout conditions that decide what a pass is actually worth. The numbers are illustrative and the mechanics are the firm's; confirm the current schedule on the plan page before you buy.</p>
+    <p class="lede">Lucid Trading sells futures evaluations with a trailing threshold, a daily stop, a consistency test and monthly billing. The product is aimed at traders who already work on TradingView or NinjaTrader and want a rulebook built for index futures. This guide takes the constraints in the order they bite: the trail first, because it sets the size; the daily stop second, because it sets the worst session; the consistency test third, because it decides whether a completed target becomes a withdrawal. All figures are illustrative models, not quotes — check the plan page for the live schedule.</p>
   </div>
 </section>
 
 <section class="section tight">
   <div class="wrap narrow">
-
+<div class="keypoints">
+  <h2>Key takeaways</h2>
+<ul>
+  <li>The threshold trails the high-water mark, so every new equity high narrows the buffer beneath the account.</li>
+  <li>Sizing has to be recalculated per session from the buffer, not fixed at purchase and left alone.</li>
+  <li>A daily stop applies, which converts one long losing run into several short ones across sessions.</li>
+  <li>Consistency applies as well, so a single outsized index day can satisfy the target and still block the payout.</li>
+  <li>Monthly billing rewards a disciplined six-week attempt over a five-month grind at the same total fee.</li>
+  <li>No minimum trading day count means the pace is yours to set — which is an obligation, not a freedom.</li>
+</ul>
+</div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#rulebook">How the Lucid Trading rulebook is built</a></li>
+  <li><a href="#rulebook">What the Lucid rulebook measures</a></li>
+  <li><a href="#floor">Trailing arithmetic on a six-figure account</a></li>
+  <li><a href="#buffer">The buffer rule</a></li>
+  <li><a href="#sizing">Contract sizing by tick value</a></li>
+  <li><a href="#daily">Where the daily stop actually binds</a></li>
+  <li><a href="#consistency">Consistency, and the missing minimum-day rule</a></li>
+  <li><a href="#platforms">TradingView, NinjaTrader and Tradovate</a></li>
+  <li><a href="#session">Session selection for index futures</a></li>
+  <li><a href="#calendar">A six-week attempt, week by week</a></li>
+  <li><a href="#target">Turning the target into a trade count</a></li>
+  <li><a href="#ruin">Risk of ruin with a trailing floor</a></li>
+  <li><a href="#slippage">Slippage, commissions and the real unit</a></li>
+  <li><a href="#news">Macro releases and the overnight session</a></li>
+  <li><a href="#payout">From pass to paid</a></li>
+  <li><a href="#costs">Subscription maths over a year</a></li>
+  <li><a href="#mistakes">Failure patterns worth recognising early</a></li>
+  <li><a href="#fit">Matching the product to a method</a></li>
 </ol>
 </div>
-<h2 id="rulebook">How the Lucid Trading rulebook is built</h2>
-<p>The <strong>Lucid Trading</strong> evaluation is best understood as a set of constraints that interact, not as a headline profit target with some footnotes. The target decides how much you have to make. The loss floor decides how much room you have to make it. The daily stop, if there is one, decides how quickly a bad session ends. The minimum-day rule decides how long the attempt takes even when the target is reached early. Change any one of those and the same trading strategy produces a different outcome.</p>
-<p>For Lucid Trading, the published structure is a evaluation with a trailing threshold. The loss floor is trailing, the daily stop is yes, and the consistency condition is yes. Billing is monthly subscription, payouts follow payouts after qualification, and the supported platforms are Tradovate, TradingView, NinjaTrader. Those are the rows that matter. Marketing pages tend to foreground the profit target and the profit split because both are easy to compare; neither tells you whether a given trade is survivable.</p>
+
+<h2 id="rulebook">What the Lucid rulebook measures</h2>
+<p>Five measurements decide a Lucid attempt, and only one of them is about making money. The profit target measures progress. The trailing threshold measures remaining survival. The daily stop measures behaviour inside a single session. The consistency condition measures the shape of the profit. The payout qualification measures whether the progress can be converted. A trader who optimises for the first and ignores the other four is optimising a fifth of the problem.</p>
+<p>The published shape is straightforward to state: futures, evaluation with a trailing threshold, trailing loss floor, daily stop present, consistency present, minimum trading days undefined, billed monthly, payout after qualification, platforms Tradovate, TradingView and NinjaTrader, US futures session hours. What those rows mean in practice takes longer to explain than to list, which is the usual sign that a comparison table is being read as a specification.</p>
+<p>The single most consequential row is the loss floor. A static floor is a fixed dollar distance from the starting balance; it does not move when the account earns. A trailing floor follows the high-water mark, so the distance to failure from the peak stays constant while the distance from the original balance shrinks. The two mechanics produce different stop placement, different position sizing and different answers to the only question that matters at the open: how much can this trade lose?</p>
+<p>Read the terms for the definition, not just the label. Whether the peak is measured on closed balance or on equity including floating profit changes what happens during an open winner. Whether the trail updates continuously or at settlement changes what happens on a fast retracement. Neither definition appears on a headline page, and both appear in the clause that decides the account.</p>
 <div class="table-scroll">
   <table>
     <thead>
@@ -53,28 +82,119 @@ generator: content-system
     </tbody>
   </table>
 </div>
+<p>Before paying, confirm each row against the specific plan name in the dashboard. Brands carry several products, and the plan name is the unit that carries the rulebook. A screenshot of the terms, dated the day of purchase, is the cheapest insurance in this entire process.</p>
 
-<h2 id="the-trailing-floor-is-the-plan">The trailing floor is the plan</h2>
-<p>Lucid Trading evaluates futures on a trailing threshold. The rule that ends most attempts is not the profit target but the high-water mark: a winning trade lifts the failure point, and a normal retracement can then close the account before the target is reached. Before buying, write down the starting threshold, the current equity high and the dollar distance between them. That distance, not the account size, is the risk budget for the session.</p>
-<p>The correct size is a fraction of the remaining room. If the cushion is $2,000 and the plan is to risk $250 per trade, the account can absorb eight losses. If the cushion is $800, the same size allows three, which is too few for a normal distribution. Cut the size when the cushion shrinks and accept that the last third of the target is traded smaller than the first third.</p>
+<h2 id="floor">Trailing arithmetic on a six-figure account</h2>
+<p>Model a $100,000 futures account with a $3,000 trailing threshold and a $6,000 target. On the first morning the failure point is $97,000. After the account reaches $103,000 the failure point is $100,000, so the room from the peak is still $3,000 while the room from the original balance is now zero — the account can fall back to its starting balance and breach. That is the defining property of a trailing floor, and it is why a profitable evaluation can feel tighter in week three than it did in week one.</p>
+<p>Now add a normal losing sequence: three trades at $500 each. At the start of the attempt that sequence consumes $1,500 of a $3,000 buffer, leaving half. After the account has run to $103,000, the same three trades consume half of the buffer again — but the buffer now sits above the original balance, so the account that was up $3,000 is suddenly at break-even and four hundred dollars from failure. No rule was broken and no method changed. The trail simply did the work.</p>
+<p>The arithmetic that keeps an account alive is the division. Remaining room, divided by the number of consecutive losses you are prepared to absorb, equals the risk unit. With $3,000 of room and eight losses, the unit is $375. With $1,200 of room and the same eight-loss tolerance, the unit is $150. A trader who keeps the original $375 through that compression is not trading the same plan; they are trading a plan with three losses of tolerance and calling it eight.</p>
+<p>Write the buffer on a card and update it before the session, not after a loss. The update takes twenty seconds and is the difference between a risk plan and a risk intention. On a trailing product, the number that matters is not what the account started with; it is what is left between the current balance and the moving floor.</p>
 
-<h2 id="a-five-week-schedule-for-a-lucid-attempt">A five-week schedule for a Lucid attempt</h2>
-<p>Week one is for measurement, not for a pass: take the same setups you would take on a demo, but record the remaining room before every entry. Week two is for calibration: compare intended risk with realised risk and cut any setup whose stop distance forces a size the plan cannot support. Week three is for the first push toward the target, with size fixed at the calibrated unit. Week four is for protecting the cushion after a gain, even if that means smaller positions. Week five is for the final push, with a hard rule that no new high is given back by more than half.</p>
-<p>The schedule assumes the plan has no minimum-day requirement that forces activity. If it does, fill the required sessions with the smallest permitted size and treat them as administration, not as opportunities. A required session is not a reason to take a trade that the setup does not justify.</p>
+<h2 id="buffer">The buffer rule</h2>
+<p>A single rule handles most of the trailing problem: never let the risk unit exceed one eighth of the remaining room. Eight losses then consume the buffer exactly, and with a typical hit rate that is a losing streak the method is likely to survive rather than an extreme event. One tenth is more conservative and one sixth is more aggressive; one eighth is a usable middle for a twenty-session attempt.</p>
+<p>The rule has a second effect that is easy to miss. Because the unit is recalculated from the buffer, it shrinks automatically as the account improves and the floor rises. That is the opposite of what instinct says — most traders increase size after a good run — and it is what keeps the relative risk constant. A constant unit on a trailing floor means increasing relative risk, which is a slow-motion breach rather than a sudden one.</p>
+<p>The rule also sets a stopping condition. If the unit computed from the buffer falls below the minimum size the instrument allows, the attempt is over for practical purposes even if the account is still open. Recognising that moment is better than trading a size that cannot express the method: a stop that is too wide for the unit produces either no trades or trades that the method would never have taken.</p>
+<p>Finally, the buffer rule should be written before the first trade and stored with the terms. A rule invented after a loss is a justification; a rule written before one is a constraint. The difference shows up in the journal, and the journal is what a payout review reads.</p>
 
-<h2 id="what-to-verify-before-paying">What to verify before paying</h2>
-<p>Confirm the exact trailing definition: does the threshold follow closed balance or peak equity including open profit? Confirm whether a daily stop applies, because a session stop changes the worst-case day. Confirm the payout qualification, including the number of qualifying days and whether a consistency test applies. Finally, confirm the platform and data-feed costs, because a monthly subscription plus a data fee is the real monthly cost of a slow attempt.</p>
-<p>If any of those answers is unclear, ask support in writing before buying. A reply you can save is worth more than a comparison table written by someone who is not carrying the risk.</p>
+<h2 id="sizing">Contract sizing by tick value</h2>
+<p>Three index contracts cover most of the retail futures flow. The Micro E-mini S&amp;P (MES) pays $1.25 per tick, the Micro E-mini Nasdaq (MNQ) pays $2 per tick, and the Micro E-mini Dow (MYM) pays $0.50 per tick. A 12-tick stop on MES risks $15 per contract; on MNQ the same stop risks $24; on MYM $6. The dollar risk per contract varies by an order of magnitude across products that all look like "one micro".</p>
+<p>With a $375 unit, a 12-tick MES stop supports 25 contracts — which is usually above the plan's position cap and far above what a beginner should trade. That is not a reason to take 25; it is a reason to check the cap first and to understand that micro contracts make large risk budgets look safe. A 25-contract micro position is the same dollar exposure as 2.5 E-mini contracts, and the commission bill is ten times larger per unit of exposure.</p>
+<p>Gold and crude add another variable: tick value and contract size differ again, and the overnight session is more important for both. A method that works on the index open does not transfer to crude without re-measuring the stop distribution. The general formula is the same — unit divided by (ticks × tick value) — but the inputs have to come from the instrument you actually trade, not from a table for a different one.</p>
+<p>Then check the cap, the margin and the commission. The smallest of those three decides the real position. A size that fits the risk budget and breaches the cap is not a size you can take, and a size that fits both but consumes the day's commission budget is a size that cannot be repeated often enough to reach the target.</p>
+
+<h2 id="daily">Where the daily stop actually binds</h2>
+<p>The daily stop is easier to understand than the trail and easier to breach. With an illustrative $2,000 daily limit and a $375 unit, the session allows five losses before it closes. That is the real trade budget for the day, and it is independent of how much room the account has. A trader with $10,000 of buffer still has a five-loss day.</p>
+<p>The basis changes the number. On an equity basis, floating losses count immediately, so a position $1,200 underwater has consumed 60% of the allowance even if it later recovers. On a realised basis, only closed trades count, which permits a larger floating loss and a larger overnight exposure. The first basis produces better behaviour and the second produces better-looking statements, and the rulebook decides which one you get.</p>
+<p>The reset time is the third detail. Futures sessions roll at a defined hour, and the daily limit resets with the session. A position opened before the roll and closed after it can be counted in either session, and the difference decides whether a loss is a warning or a breach. Add the roll time and the reset time to the calendar beside the session hours; they are not the same thing and neither is optional.</p>
+<p>The last consideration is the interaction with the trail. A day that hits the daily stop still consumes buffer. Five sessions at the daily limit can exhaust a generous-looking floor, which is why the plan needs both a per-session loss cap and a weekly cap. The weekly cap is self-imposed and is the only rule in the system that nobody else enforces.</p>
+
+<h2 id="consistency">Consistency, and the missing minimum-day rule</h2>
+<p>Consistency conditions ask a simple question: is the profit the product of a process, or of one trade? The usual formulation caps the share of total profit that a single day, or the best few days, may contribute. A pass that earns the target in two sessions and then sits flat can satisfy the dollar requirement and fail the distribution check, converting a completed evaluation into a refused payout.</p>
+<p>Run the test before buying. Take sixty days of your own results, total the profit, and compute the share from the best day, the best three and the best five. A method with a high share needs a distribution plan: fixed targets per session, a hard rule against adding to a winner beyond the planned size, and enough sessions to dilute the best day. A method with a low share needs no change, and the consistency row stops being a factor in the decision.</p>
+<p>The absent minimum-day count is the other side of the coin. With no floor on elapsed time, the attempt can be finished as fast as the target allows, which suits monthly billing. It also removes the structural reason to build a sample, so the trader has to supply one. A self-imposed ten-session minimum before requesting a payout produces a record that survives scrutiny and a distribution that usually passes the consistency check without extra effort.</p>
+<p>Confirm whether the test applies during the evaluation, during the funded phase, or only at the payout request. Three different answers imply three different plans, and the answer is rarely on the pricing page. Ask support, keep the reply, and quote it if the review raises the question later.</p>
+
+<h2 id="platforms">TradingView, NinjaTrader and Tradovate</h2>
+<p>TradingView is the differentiator on this platform list. It is a charting and analysis environment first, with an execution layer that has matured quickly, and it lets a trader keep the workspace they already use for research. For a discretionary trader who lives in TradingView layouts and alerts, that continuity is worth more than a marginally better DOM, because the cost of switching platforms mid-attempt is measured in mistakes rather than fees.</p>
+<p>NinjaTrader is the choice for automation and for order-flow work. Its strategy framework is mature, the DOM is configurable, and the ecosystem of add-ons is large. The cost is complexity: a badly configured strategy can generate more trades than the rulebook's activity clauses anticipate, and the consistency condition will notice. Tradovate sits between the two, lighter than NinjaTrader and more execution-focused than TradingView, with a short learning curve.</p>
+<p>Data is the hidden variable. Futures data is typically billed separately, and the feed that supports depth-of-market is more expensive than the one that supports charts. A trader who needs the DOM is buying a different monthly cost from a trader who needs candles, and both are buying on top of the evaluation subscription. Confirm which feed the plan includes and which one your method actually requires.</p>
+<p>Automation raises a rulebook question that is separate from the platform choice. Some plans restrict high-frequency activity or certain order types, and an automated method that is compliant in principle can be non-compliant in practice. Read the activity clauses before deploying a strategy, and prefer a platform that logs orders precisely enough to prove what happened.</p>
+
+<h2 id="session">Session selection for index futures</h2>
+<p>Index futures have three tradeable blocks: the opening drive, the midday range and the closing hour. The opening block carries the widest range and the widest spread; the midday block carries the cleanest trends and the thinnest participation; the closing block carries rebalancing flow and settlement effects. A method fitted to one block loses money in another, and the evaluation does not distinguish between a method traded outside its block and a method that does not work.</p>
+<p>The overnight session is a separate market. Liquidity is thinner, spreads are wider, and a stop that fills cleanly at 10:30 may fill several ticks away at 02:00. Some plans restrict overnight holding and some do not; both require the trader to know which session the position belongs to, because the daily loss limit resets between them. A position carried across the roll is a position whose loss may land in a different day.</p>
+<p>Local time is part of the plan. A trader in Europe watching the US open is working in the evening; a trader in Asia is working overnight. The session hours in the rulebook are stated in the firm's time zone, and the trader's calendar has to translate them. Getting this wrong once produces a position held into a reset, which is a rule breach that looks like bad luck.</p>
+<p>The practical test is a four-week availability map: mark the hours you can genuinely watch, then check whether the liquid block of your instrument falls inside them. If it does not, the evaluation is being traded on hope, and no amount of strategy work fixes an unavailable market.</p>
+
+<h2 id="calendar">A six-week attempt, week by week</h2>
+<p>Week one is measurement. Trade half the unit, record the buffer before every entry, and observe how the trail moves after the first new high. The output is not profit; it is a table of how the account behaves, including the slippage on your usual setups and the number of valid trades the session actually offers. That table sets the pace for everything that follows.</p>
+<p>Week two is calibration. Compare the planned risk with the realised risk on every trade, including commissions and slip. Cut any setup whose stop distance forces a size the buffer cannot support, even if the setup has been profitable. By the end of the week the unit should be fixed and the maximum number of trades per session should be known.</p>
+<p>Weeks three and four are the working block. Normal unit, a fixed setup list, and a hard stop after two losing trades or the daily limit, whichever comes first. Recompute the buffer each morning and halve the unit when it falls below one twelfth of the starting room. This is the block where most of the target is earned and where the trail starts to compress the room.</p>
+<p>Weeks five and six are the close. Reduce the unit by a third, protect the buffer, and build the distribution the consistency test wants. Prepare identity and payment verification in week five rather than after the target, because those steps take days and are on the critical path to the payout. If the target is already met, the remaining sessions are administration with a small trading component.</p>
+
+<h2 id="target">Turning the target into a trade count</h2>
+<p>With a $6,000 target, a $375 unit and a 2:1 payoff, the target is eight net winners of $750. Spread across twenty sessions that is less than half a winning trade per session, which is a comfortable requirement for a method with a real edge and an impossible one for a method without. The reframing matters because a dollar target invites pressing and a trade count invites repetition.</p>
+<p>The count changes with the payoff. At 1.5:1 the same target needs about eleven net winners; at 3:1 it needs five. A method with a low hit rate and a high payoff reaches the number in fewer trades but with longer dry spells, and a trailing floor punishes dry spells. That is the argument for preferring a higher hit rate on this product even at a lower payoff, which is the opposite of the usual generic advice.</p>
+<p>The floor makes the last third of the target more expensive than the first. As the account earns, the trail lifts the failure point, so each remaining dollar of target is bought with less room. The correct response is a tapered unit: full size until forty percent of the target, two thirds of size until seventy percent, one third afterwards. A trader who tapers arrives at the target with a live account rather than a breached one.</p>
+<p>The plan should state the taper in advance, in numbers, and should state the condition for stopping for the week. Without a written taper, the decision is made after a good day, when the correct answer feels unnecessarily cautious. Write it while it feels unnecessary; that is when it is accurate.</p>
+
+<h2 id="ruin">Risk of ruin with a trailing floor</h2>
+<p>Assume a 42% hit rate, a 2:1 payoff and a unit sized at one eighth of the buffer. The expectancy per trade is positive: 0.42 × 2R − 0.58 × 1R equals 0.26R. A positive expectancy does not protect an account from a run of losses, and the trailing floor makes the run more dangerous because the buffer shrinks after every new high rather than growing with profit.</p>
+<p>The probability of seven consecutive losses at a 58% loss rate is roughly 2.2%. Over sixty trades that is close to a 70% chance of seeing at least one such run somewhere in the sample. A unit sized so that seven losses consume the buffer is therefore sized for the median attempt, not the unlucky one. Sizing for ten losses costs profit per trade and buys survival across the sample.</p>
+<p>That trade-off is the entire discipline of a trailing product. Traders who size for the best case pass quickly or fail quickly; traders who size for the unlucky case pass slowly and keep the account. Since the payout is a stream rather than a single prize, the second group collects more over a year even though the first group posts better screenshots.</p>
+<p>A useful simulation before buying: replay the last hundred trades against the trail, applying the daily stop and the buffer rule mechanically. Record the maximum drawdown and the number of sessions the account would have survived. If the simulated attempt breaches, the real one will too, and the strategy is not the variable that needs changing.</p>
+
+<h2 id="slippage">Slippage, commissions and the real unit</h2>
+<p>Index futures are liquid enough that slippage is usually small, and small is not zero. On a stop order, the fill is whatever the book offers after the trigger, which at the open can be several ticks away. On a 12-tick stop, a 2-tick slip is a 17% overrun; on a 6-tick stop it is 33%. Tightening a stop to fit a larger size therefore increases the share of the risk unit that execution consumes.</p>
+<p>Commissions are charged per contract per side and are predictable, which makes them easy to ignore and easy to model. A 20-contract micro round turn can cost more than a single E-mini round turn while carrying a fifth of the exposure, so micro contracts are not automatically cheaper. Compute cost per unit of risk rather than per trade, and the comparison becomes clear.</p>
+<p>The real unit is the planned stop plus expected slip plus commission, expressed in dollars. A $375 planned unit with four dollars of slip and three dollars of commission is a $382 unit, and three of those per session is the true daily burn. Budgeting from the planned figure understates the drawdown by a few percent, which over sixty trades is a visible fraction of the buffer.</p>
+<p>Execution discipline is the last piece. Some plans restrict order types or activity around releases, and an automated method can violate those restrictions without any intent. Keep the order log, read the activity clauses, and prefer a platform that records timestamps precisely. If a review asks what happened at 09:31, a complete log answers in seconds.</p>
+
+<h2 id="news">Macro releases and the overnight session</h2>
+<p>Index futures are driven by the macro calendar more than any other retail product. Central bank decisions, inflation prints and employment reports produce the largest single-session ranges of the quarter, and they also produce the widest spreads and the least reliable stop fills. A position held through a release is a position whose risk is no longer the planned stop distance.</p>
+<p>Restrictions vary by plan. Some prohibit opening positions in a window around a release, some prohibit holding through it, and some say nothing at all. The distinction between "trading the news" and "happening to have a position" is usually defined in the clause, not in the marketing summary, and it is enforced at review rather than in real time.</p>
+<p>The conservative plan is to be flat into the release and to re-enter after the first thirty to sixty minutes, once the spread normalises. That costs some of the largest moves and removes a category of dispute. A trader who insists on holding should at least halve the position, because a gap through the stop on a full position can consume a day's limit in one fill.</p>
+<p>The overnight session is the other scheduled risk. It is thinner, it reacts to non-US news, and it can produce a gap at the open that no intraday stop can control. If the plan does not permit overnight holding, closing before the roll is a rule rather than a preference. If it does, the risk unit for an overnight position should be smaller than the unit for a session trade, and the difference should be written down.</p>
+
+<h2 id="payout">From pass to paid</h2>
+<p>Qualification is a second process with its own gates: a number of profitable days, a minimum balance, identity verification and a payment method that matches the fee. Each gate is administrative, each is on the critical path, and each is easier to clear before the target is reached than after. A trader who finishes the trading in week four and starts the paperwork in week five has added a week to the timeline for no reason.</p>
+<p>The review examines the record. Statements show what happened; a journal shows why. The distribution of profit, the size relative to the rules, the number of sessions and any pattern that resembles prohibited practice are all visible in the statements alone, which is why a pass built on one oversized day tends to surface here rather than during the evaluation.</p>
+<p>Withdrawal mechanics matter to the schedule. Funds usually return to the payment method used for the fee, so a card that has expired or a wallet that has changed triggers a manual review. Confirm the method before paying the evaluation fee, and keep the receipt. A mismatch is not a refusal, but it is a delay measured in weeks, and delays are the main difference between a payout and a promise.</p>
+<p>Finally, compare cycles rather than percentages. A 90% split on a thirty-day cycle and an 80% split on a seven-day cycle are different products, and the right choice depends on whether the profit is needed for living expenses or reinvested into more attempts. That is a personal calculation, and it belongs in the decision before the fee, not after the first payout.</p>
+
+<h2 id="costs">Subscription maths over a year</h2>
+<p>At an illustrative $160 per month plus a $45 data fee, a one-month pass costs $205, a two-month pass $410 and a four-month pass $820. The evaluation fee does not change with duration; the subscription does. That inverts the usual advice to trade slowly: on a monthly product, a slower attempt is a more expensive one, and the correct pace is the fastest pace that respects the buffer rule.</p>
+<p>Retries compound the arithmetic. Two attempts of three months each cost six months of subscription plus the fees, which can be three or four times the headline price of a single attempt. Model the expected cost as monthly cost × expected months × expected attempts, and compare it with the expected payout over the same period. The number is usually higher than the fee page suggests and lower than the trader fears.</p>
+<p>The one-off comparison is worth doing explicitly. A $500 one-off evaluation is cheaper than four months of subscription but more expensive than one month. Since most attempts finish inside two months when the size is right, the subscription is often the better product for a disciplined trader and the worse one for a trader who needs time to find a method.</p>
+<p>There are also the invisible costs: platform fees, the time spent, and the capital tied up in an account that pays nothing until qualification. They do not appear on any statement, and they decide whether the exercise is a business or a hobby. A simple annual budget with all four lines is the clearest way to see which one it is.</p>
+
+<h2 id="mistakes">Failure patterns worth recognising early</h2>
+<p>The first pattern is sizing from the account rather than from the buffer. On a $100,000 account, a one-percent unit looks conservative and is a third of a $3,000 trail. The second is holding the original unit after a new high, which quietly converts a planned eight-loss tolerance into five. The third is treating the daily stop as a target to be reached rather than a limit to be respected.</p>
+<p>The fourth is passing on an outsized day and discovering the consistency condition at payout. The fifth is changing strategy mid-attempt, which resets the sample and makes the journal useless for the review. The sixth is ignoring the roll time and having a position counted against the wrong session. Each of these is a process error, and each is cheaper to fix before the account is open.</p>
+<p>The seventh is the final-week press: reaching the target and increasing size to make the pass worthwhile. It is the most common way a completed evaluation becomes a breached one, and it is entirely self-inflicted. A trader who writes the taper plan in advance has already decided not to do it.</p>
+<p>All seven share a cause: the plan was a set of intentions rather than a set of written rules with numbers. The remedy is unglamorous and effective — one page, four numbers (buffer, unit, daily limit, taper points), reviewed before each session. That page is the difference between a plan that survives contact with a moving floor and one that does not.</p>
+
+<h2 id="fit">Matching the product to a method</h2>
+<p>This product suits a futures trader with a defined stop, a repeatable setup and the ability to trade the US session. The trailing floor rewards precision and punishes improvisation, and the daily stop rewards a method that produces a small number of high-quality trades rather than a continuous stream. The monthly billing rewards a trader who can finish inside two months at a sensible size.</p>
+<p>It suits less well a trader who needs a static floor, one whose method produces occasional large days, or one who cannot be at the screen during the liquid block. Those are mismatches rather than flaws: the same rulebook is a good fit for a different method, and choosing it against your own distribution is how a good product produces a bad result.</p>
+<p>The test is a two-week simulation of the exact rules, not a backtest of the strategy. Apply the trail, the daily stop and the buffer rule to your last hundred trades and see whether the simulation survives. If it does, the plan is a fit. If it does not, no amount of discipline will change the arithmetic, and a different plan is the correct answer.</p>
+<p>If it is a fit, the process is the whole edge: recalculate the buffer, halve the unit when the room compresses, build the profit in small blocks, and treat the final week as paperwork. None of that is exciting, and all of it is repeatable, which is what a trailing rulebook is designed to reward.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Does Lucid Trading use a trailing drawdown?</summary><div class="faq-a"><p>Yes. The evaluation uses a trailing threshold, so the failure point follows the equity high. The room available for a retracement shrinks after a profitable run.</p></div></details>
+<details class="faq"><summary>Does Lucid Trading use a trailing threshold?</summary><div class="faq-a"><p>Yes. The evaluation described here trails the threshold against the high-water mark, so a new equity high lifts the failure point. The distance from the peak stays constant while the distance from the starting balance shrinks.</p></div></details>
 
-<details class="faq"><summary>Does Lucid have a daily stop?</summary><div class="faq-a"><p>The plan includes a daily stop. Confirm the exact reset time and whether it is measured on balance or equity before relying on it.</p></div></details>
+<details class="faq"><summary>Is the daily stop separate from the trailing floor?</summary><div class="faq-a"><p>Yes, and both apply. The daily stop caps one session; the trailing floor caps the attempt. A trader can respect the daily limit every day and still exhaust the floor across a week of losing sessions.</p></div></details>
 
-<details class="faq"><summary>How long should a Lucid attempt take?</summary><div class="faq-a"><p>There is no single answer, but a five-week schedule that separates measurement, calibration and the final push is more realistic than trying to pass in a week. Minimum-day rules and the trailing floor both shape the calendar.</p></div></details>
+<details class="faq"><summary>How many contracts should I trade on a $100,000 account?</summary><div class="faq-a"><p>Compute from the buffer, not the account size. With an illustrative $3,000 trail and an eight-loss tolerance the unit is $375, which at a 12-tick stop on MNQ is roughly 15 micro contracts. Check the plan's position cap before taking that size.</p></div></details>
+
+<details class="faq"><summary>Can I trade the evaluation on TradingView?</summary><div class="faq-a"><p>TradingView is listed among the supported platforms. Confirm the exact plan, because platform lists can differ between products and some execution features require a specific data feed.</p></div></details>
+
+<details class="faq"><summary>What does the consistency test measure?</summary><div class="faq-a"><p>It limits how much of the total profit can come from a single day or a small number of days. A pass built on one oversized index session can satisfy the target and still fail the distribution check at payout.</p></div></details>
+
+<details class="faq"><summary>Does a monthly subscription make a slow attempt more expensive?</summary><div class="faq-a"><p>Yes. Each additional month is billed, so the total cost rises with duration while the evaluation fee stays the same. That rewards a correctly sized attempt finished in six to eight weeks over a cautious one spread across five months.</p></div></details>
   </div>
 </section>
 

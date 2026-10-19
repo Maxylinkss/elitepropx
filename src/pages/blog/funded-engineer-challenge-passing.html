@@ -1,6 +1,6 @@
 ---
 title: Funded Engineer Challenge Passing: The 2026 Rulebook
-desc: How to pass a Funded Engineer evaluation: the static loss floor, the daily stop, position sizing, a 20-session plan and the payout rules that decide what a…
+desc: How to pass a Funded Engineer evaluation: static floor maths, lot sizing across two phases, the daily stop, the consistency test and a fifteen-week plan.
 path: /blog/funded-engineer-challenge-passing.html
 type: article
 h1: How to pass a Funded Engineer challenge: the rulebook, the math and the plan
@@ -18,7 +18,7 @@ generator: content-system
   <div class="wrap narrow">
     <p class="kicker">Funded Engineer · evaluation guide · reviewed October 2026</p>
     <h1>How to pass a Funded Engineer challenge: the rulebook, the math and the plan</h1>
-    <p class="lede">Funded Engineer runs a two-phase evaluation with a static floor with a static loss floor, a daily stop and one-off per attempt billing. This guide works through the rulebook in the order that decides an attempt: the loss floor first, then sizing, then the calendar, then the payout conditions that decide what a pass is actually worth. The numbers are illustrative and the mechanics are the firm's; confirm the current schedule on the plan page before you buy.</p>
+    <p class="lede">Funded Engineer runs a two-phase forex evaluation with a static floor, a daily stop and a consistency test, billed once per attempt and traded on MT4 or MT5. The static floor is the forgiving part; the two-phase path and the consistency condition are what decide whether a profitable month becomes a funded account. This guide works through both phases with illustrative lot arithmetic, then sets out a calendar and the payout conditions. Figures are models rather than quotations; confirm the live schedule before buying.</p>
   </div>
 </section>
 
@@ -27,22 +27,40 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>The loss floor is static. That single sentence decides how every trade must be sized.</li>
-  
-  
-  
-  
+  <li>A static floor does not move with profit, so a fixed risk unit stays valid for the whole path.</li>
+  <li>Two phases mean two targets and two chances to fail; the second phase should be planned before the first begins.</li>
+  <li>Lot sizing is pips × pip value, which changes with the pair and the account currency.</li>
+  <li>The daily stop bounds a session but not the attempt: a static floor still needs a weekly loss cap.</li>
+  <li>The consistency test can fail a pass that reached the target, so the shape of the profit is a planning input.</li>
+  <li>One-off billing removes the calendar penalty, which rewards a measured pass over a fast one.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#rulebook">How the Funded Engineer rulebook is built</a></li>
+  <li><a href="#rulebook">How the two-phase rulebook is put together</a></li>
+  <li><a href="#static">Why the static floor changes the strategy</a></li>
+  <li><a href="#phase1">Phase one: the target and the sample</a></li>
+  <li><a href="#phase2">Phase two: repetition rather than repetition of luck</a></li>
+  <li><a href="#sizing">Lot sizing on a $100,000 account</a></li>
+  <li><a href="#daily">The daily stop in pips and lots</a></li>
+  <li><a href="#consistency">The consistency test in practice</a></li>
+  <li><a href="#platforms">MT4 and MT5, and what each is good for</a></li>
+  <li><a href="#session">Weekday forex hours and the London–New York overlap</a></li>
+  <li><a href="#calendar">A fifteen-week attempt</a></li>
+  <li><a href="#retry">Retry economics with a one-off fee</a></li>
+  <li><a href="#news">News trading and the restricted windows</a></li>
+  <li><a href="#leverage">Leverage, margin and the free-margin trap</a></li>
+  <li><a href="#payout">The split, the cycle and the review</a></li>
+  <li><a href="#mistakes">Failure patterns across both phases</a></li>
+  <li><a href="#fit">Who this path suits</a></li>
 </ol>
 </div>
-<h2 id="rulebook">How the Funded Engineer rulebook is built</h2>
-<p>The <strong>Funded Engineer</strong> evaluation is best understood as a set of constraints that interact, not as a headline profit target with some footnotes. The target decides how much you have to make. The loss floor decides how much room you have to make it. The daily stop, if there is one, decides how quickly a bad session ends. The minimum-day rule decides how long the attempt takes even when the target is reached early. Change any one of those and the same trading strategy produces a different outcome.</p>
-<p>For Funded Engineer, the published structure is a two-phase evaluation with a static floor. The loss floor is static, the daily stop is yes, and the consistency condition is yes. Billing is one-off per attempt, payouts follow profit split on a fixed schedule, and the supported platforms are MT4, MT5. Those are the rows that matter. Marketing pages tend to foreground the profit target and the profit split because both are easy to compare; neither tells you whether a given trade is survivable.</p>
+
+<h2 id="rulebook">How the two-phase rulebook is put together</h2>
+<p>A two-phase evaluation is two products sold as one. The first phase measures whether a method can produce a target inside a risk budget. The second measures whether it can do so again, on the same terms, after the first result is already in the account. Firms use the second phase because a single result is weak evidence, and traders underestimate it because it looks like a repeat of something they have already done.</p>
+<p>Funded Engineer's published shape is forex and CFD, two-phase with a static floor, daily stop present, consistency present, minimum trading days undefined, one-off per attempt, profit split on a fixed schedule, MT4 and MT5, weekday forex hours. The static floor is the notable feature: unlike a trailing threshold, it does not follow the equity high, so the dollar distance to failure is fixed from the first trade to the last.</p>
+<p>That single difference makes this a more forgiving product than a trailing evaluation of the same headline size, and it makes it a less forgiving product than it first appears, because the second phase arrives with the first phase's profit already banked. The floor stays put, the target resets, and the trader has to produce a second sample without spending the cushion the first one built.</p>
 <div class="table-scroll">
   <table>
     <thead>
@@ -62,29 +80,113 @@ generator: content-system
     </tbody>
   </table>
 </div>
+<p>Read the two loss rules together before the target. A static floor of ten percent on a $100,000 account is $10,000 of room for the entire path, and a daily stop of five percent is $5,000 for a single day. The second is half the first, which means two consecutive days at the daily limit end the attempt. That ratio is the first thing to check on any two-phase product: a daily stop that is a large fraction of the total floor turns a weekly plan into a fragile one.</p>
 
-<h2 id="a-static-forex-floor-with-a-consistency-condition">A static forex floor with a consistency condition</h2>
-<p>Funded Engineer runs a two-phase forex evaluation with a static floor and a consistency test. The static floor is the easier part: the dollar distance to failure does not move when the account earns, so a fixed risk unit stays valid for the whole attempt. The consistency test is the part that catches traders at the payout stage, because a pass built on one or two oversized days can satisfy the target and still fail the distribution check.</p>
-<p>The practical response is to plan the profit distribution before the first trade. If the plan requires that no single day contributes more than a set share of the total, the target has to be reached through a series of normal days rather than one exceptional one. That changes the trade selection: a setup with a large expected payoff but a low hit rate is less useful than a smaller, repeatable edge.</p>
+<h2 id="static">Why the static floor changes the strategy</h2>
+<p>On a static floor the failure point is fixed in dollars. A $100,000 account with a $10,000 maximum loss fails at $90,000 on day one and still fails at $90,000 after the account has reached $115,000. Profit adds room above the floor rather than moving the floor, so the risk budget grows as the account earns. That is the opposite of a trailing product, and it changes the correct behaviour after a good run.</p>
+<p>The practical consequence is that the risk unit can be fixed for the whole attempt, which is a genuine simplification. A $500 unit on $10,000 of room tolerates twenty losses, and twenty losses is beyond any normal distribution for a method with a real edge. The binding constraint therefore stops being survival and becomes the target and the consistency rule, which are both about the shape of the profit rather than the size of the risk.</p>
+<p>There is a trap in that comfort. A floor that never moves makes it easy to keep a size that is too large for a bad week, because the account still has room. Twenty losses of tolerance is not the same as twenty losses of patience: a trader who is down $6,000 in a fortnight is making decisions under stress even though the account is technically alive. The floor protects the account; the trader has to protect the process.</p>
+<p>The second consequence is that profit can be given back without any rule being broken, which is why a static floor needs a self-imposed drawdown limit. Set a rule to stop for the week at a loss of one third of the floor, regardless of the remaining room. That converts a slow bleed into a pause, and a pause is much cheaper than a retry.</p>
 
-<h2 id="a-100-000-attempt-with-a-10-target">A $100,000 attempt with a 10% target</h2>
-<p>On a $100,000 account with a 10% target, the plan needs $10,000 of profit. If the consistency rule caps a single day at 25% of the total, no day can contribute more than $2,500 without risking the payout. At a $500 risk unit and a 2:1 plan, a normal winning day of two winners contributes $2,000, which fits. A single $4,000 day would breach the distribution even though it moves the balance closer to the target.</p>
-<p>The static floor gives the trader room to build that distribution: a 10% maximum loss means twenty losses at $500, so the plan can absorb a normal losing streak without the failure point moving. The binding constraint is the calendar and the consistency rule, not the floor.</p>
-<p>Billing is one-off per attempt, so a slower, more evenly distributed pass does not add fees. That is an advantage for a trader who needs time to build a consistent record.</p>
+<h2 id="phase1">Phase one: the target and the sample</h2>
+<p>Assume an illustrative 8% target on a $100,000 account, which is $8,000. With a $500 unit and a 2:1 payoff, a winning trade returns $1,000, so the target is eight net winners. Across four weeks and roughly forty trades, that is a modest requirement: eight net winners out of forty trades is a 20% net edge, which a method with a real edge produces and a method without one does not.</p>
+<p>The temptation in phase one is to compress the sample. A trader who reaches $8,000 in six trades with three oversized positions has produced a result that cannot be repeated, and phase two will expose it. A trader who reaches the target in twenty-five sessions with a constant unit has produced a process, and the process is what phase two is designed to test.</p>
+<p>The risk budget for phase one should be the whole static floor, but the plan should not use it. A trader who arrives at phase two with $4,000 of the floor already consumed has half the room for the same target, which turns a repeat into a stretch. The correct phase-one plan targets a maximum drawdown of a third of the floor and treats anything beyond that as a signal to stop and review.</p>
+<p>The end of phase one is also the point to prepare the second phase's numbers: the target, the unit, the daily budget and the weekly stop, recalculated against the new balance. A trader who starts phase two by copying phase one's plan is starting from the wrong baseline, because the target is measured from the new balance and the floor is still measured from the original one.</p>
 
-<h2 id="what-to-verify-before-buying">What to verify before buying</h2>
-<p>Confirm the consistency formula: is it a share of total profit, a share of the target, or a maximum day relative to the average? Confirm whether it applies to the evaluation, the funded account or only the payout. Confirm the daily stop and its reset time. Confirm the platform list and whether MT4 and MT5 are both available on the plan. Finally, confirm the payout cycle and the minimum withdrawal, because a pass that cannot be withdrawn is not a pass.</p>
-<p>Ask for the clause in writing. A support reply that quotes the terms is the only version of the rule you can rely on later.</p>
+<h2 id="phase2">Phase two: repetition rather than repetition of luck</h2>
+<p>Phase two repeats the measurements with a new target and the same floor. The distance to the floor is now larger in dollar terms, because the first phase's profit sits above it, and the target is measured from the higher balance. That combination is why phase two is easier for a process trader and harder for a lucky one.</p>
+<p>The planning error in phase two is to increase size. A trader who is $8,000 up sees a bigger cushion and concludes that the unit can grow, which is arithmetically defensible and behaviourally wrong: the second phase is the test of consistency, and a larger unit produces fewer, larger trades whose distribution is more likely to fail the consistency check. Keep the unit and keep the shape.</p>
+<p>The second error is to treat the first phase's profit as spendable. It is not available until the payout, and drawing it mentally changes the risk appetite. A trader who thinks of the account as "up $8,000" will take a trade that a trader thinking "eight thousand to go" would skip. The second framing is the accurate one for the rulebook.</p>
+<p>The third error is to stop journaling, on the assumption that the method is proven. Phase two is precisely where the review will look, because it is the most recent evidence of process. A complete record of both phases is the difference between a payout that clears in a week and one that takes a month of questions.</p>
+
+<h2 id="sizing">Lot sizing on a $100,000 account</h2>
+<p>Forex sizing is pips × pip value × lots. On a standard lot of a major pair quoted in USD, one pip is worth about $10; on a mini lot, about $1; on a micro lot, about $0.10. A 25-pip stop on one standard lot therefore risks about $250, and a $500 unit buys two lots. A 50-pip stop on the same pair buys one lot. The same dollar risk produces different position counts as the stop widens, which is the whole point of sizing from risk rather than from confidence.</p>
+<p>The pip value is not constant across pairs. On a pair where USD is the quote currency the calculation is direct; on a pair where USD is the base currency it runs through the exchange rate; on a cross it runs through two. A trader who uses $10 per pip on every pair will mis-size the crosses by a meaningful margin, and the error is largest exactly when volatility is highest.</p>
+<p>Account currency adds a second conversion. A euro-denominated account trading a dollar-quoted pair has a pip value in dollars and a risk budget in euros, and the conversion moves with the exchange rate. The practical fix is to size in the account currency and let the platform convert, then verify the margin requirement before the trade rather than after.</p>
+<p>Finally, the leverage cap. A $100,000 account with 1:100 leverage can open positions far larger than a $500 unit implies, and a platform will happily accept them. Leverage is a ceiling on position size, not a sizing method. The unit decides the size; leverage only decides whether the platform permits it.</p>
+
+<h2 id="daily">The daily stop in pips and lots</h2>
+<p>A daily stop expressed as a percentage becomes a dollar figure, and a dollar figure becomes a number of losses. On a $100,000 account with a 5% daily stop, the limit is $5,000. With a $500 unit that is ten losses, which is more than any normal session produces and therefore a limit that rarely binds. That sounds generous and is a warning: a daily stop that never binds is not doing any work.</p>
+<p>The reason it rarely binds is that the limit is large relative to the unit. A trader who wants the daily stop to shape behaviour should set a personal limit well inside the firm's: three losses, or $1,500, whichever comes first. The firm's limit is the account's protection; the personal limit is the trader's. Both can exist, and the smaller one governs.</p>
+<p>The basis still matters. A daily stop measured on equity counts floating losses, so a position that is $2,000 underwater has consumed 40% of a $5,000 allowance before it is closed. A stop measured on closed results counts only realised losses, which permits a larger floating loss and a different behaviour at the end of the session. Confirm which applies, because the difference is thousands of dollars on a single trade.</p>
+<p>The reset time completes the definition. Forex sessions roll at a fixed hour, usually tied to New York, and the daily limit resets with the roll. A position held across the roll can be counted in either session, which matters for a swing method that holds overnight. If the rule is unclear, flatten before the roll rather than discovering the attribution later.</p>
+
+<h2 id="consistency">The consistency test in practice</h2>
+<p>A consistency test limits the share of profit that one day, or a small number of days, may contribute. Its purpose is to distinguish a pass built on a process from a pass built on a single position, and it is the rule most likely to be discovered at the payout stage rather than during the evaluation. A trader can hit the target, pass both phases and still fail the check.</p>
+<p>The test to run on your own record is the share of profit from the best day. Take sixty trading days, total the profit, and compute that share. If the best day contributes more than a quarter of the total, a consistency rule will bind and the plan needs to be designed for distribution: fixed daily targets, a rule against holding for a larger move, and a trade count large enough to dilute the best session.</p>
+<p>The design response is a daily profit cap as well as a daily loss cap. A trader who stops at a defined profit leaves room for the next day to contribute, which flattens the distribution without reducing the total. That is counter-intuitive: stopping a winning day feels like leaving money on the table, and it is the cheapest way to pass a consistency test.</p>
+<p>The test also interacts with the two-phase structure. If the consistency condition applies to the combined result, a lumpy first phase can be diluted by a smooth second one. If it applies to each phase separately, the first phase has to be smooth on its own. The difference changes the plan for week one, which is why the question belongs before the first trade rather than at the payout request.</p>
+
+<h2 id="platforms">MT4 and MT5, and what each is good for</h2>
+<p>MT4 remains the most widely used retail forex platform and the one with the largest library of expert advisors. It handles hedging, it runs on modest hardware, and its order model is familiar to a generation of traders. Its limitations are structural: it is single-threaded, its backtester is dated, and it does not natively handle exchange-traded instruments.</p>
+<p>MT5 is the newer platform with a multi-threaded backtester, more timeframes, an economic calendar and native handling of more instrument classes. Its order model is netting by default, which changes how positions are managed: several entries on the same symbol combine into one position with an average price rather than separate tickets. A trader moving from MT4 to MT5 without understanding that difference will manage stops incorrectly.</p>
+<p>The choice should be made before the evaluation, not during it. A trader with a tested expert advisor on MT4 faces a real migration cost to MT5, and that cost is usually larger than any difference in spreads. A discretionary trader with no automation can choose on interface preference alone.</p>
+<p>Automation raises a rulebook question of its own. Some plans restrict high-frequency activity, latency arbitrage or certain order types, and an expert advisor can breach those clauses without intent. Read the activity clauses, test the advisor on a demo under the same rules, and keep the logs. A compliant strategy run without logs is a strategy that cannot prove its compliance.</p>
+
+<h2 id="session">Weekday forex hours and the London–New York overlap</h2>
+<p>Forex trades from Sunday evening to Friday evening, and liquidity is not evenly distributed. The London session carries the deepest book and the largest share of the daily range; the New York session adds the second peak; the overlap between them is the most liquid window of the day. The Asian session is quieter, with narrower ranges and wider spreads on some pairs.</p>
+<p>A method should be built for one window rather than for the whole day. A London breakout method and a New York reversal method have different stop distributions, different trade frequencies and different daily loss profiles. Trading both with one unit and one set of rules produces a distribution that neither method was designed for, and the consistency test will see the mixture.</p>
+<p>Holding overnight adds rollover, gap risk and, on some plans, a restriction. The relevant question is not whether holding is permitted but what it costs: a weekend gap can jump a stop by several times its distance, so an overnight position should carry a smaller unit than a session trade. A trader who holds through the weekend at full size is taking a risk the stop does not measure.</p>
+<p>The availability test is the same as on any evaluation. Mark the hours you can watch for four weeks, choose the window that fits, and accept that a narrower window means fewer trades and a longer calendar. On a one-off fee, a longer calendar costs no money, which makes patience affordable in a way it is not on a subscription.</p>
+
+<h2 id="calendar">A fifteen-week attempt</h2>
+<p>Weeks one and two are measurement: half the unit, a record of every setup, and a note of the realised slip and spread on each entry. The output is a table of how the method behaves under the account's conditions, including the pairs that are expensive to trade and the hours when spreads widen. No target work happens in this block.</p>
+<p>Weeks three to six are phase one's working block: full unit, a fixed setup list, a daily loss cap of three units and a daily profit cap of three units. The profit cap is there for the consistency test, not for risk. By the end of week six the phase-one target should be within reach, and if it is not, the correct response is to reduce the unit rather than to increase activity.</p>
+<p>Weeks seven to nine are phase one's close and phase two's calibration: protect the target, prepare the second phase's numbers, and run two weeks at half the unit to confirm the method still behaves. A trader who jumps straight into phase two at full size is skipping the only calibration the second phase gets.</p>
+<p>Weeks ten to fourteen are phase two's working block, run with the same unit and the same caps. Week fifteen is administration: reduce to a third of the unit, protect the result, and prepare identity and payment verification. The whole path is fifteen weeks of ordinary sessions, which is the least glamorous and most reliable way to finish a two-phase product.</p>
+
+<h2 id="retry">Retry economics with a one-off fee</h2>
+<p>A one-off fee removes the calendar penalty. At an illustrative $450 per attempt, the cost of a pass is $450 regardless of whether it takes six weeks or sixteen, which makes patience affordable and speed unnecessary. That is the main structural advantage of a one-off product over a subscription, and it changes the optimal pace in the cautious direction.</p>
+<p>It does not make retries free. A trader who needs three attempts pays $1,350 before the first payout, and the expected cost per funded account is the fee divided by the probability of passing both phases. If each phase has a 40% pass probability, the path probability is 16%, and the expected cost is roughly $2,800 per funded account. That number is the one to compare with a realistic monthly profit, not the account size.</p>
+<p>The lever that improves the arithmetic is not a better strategy; it is a smaller unit. Reducing the unit by a third typically raises the pass probability on a static floor because it converts a normal losing streak from a breach into a drawdown. The fee stays the same, so the expected cost falls by more than the profit per trade. Most traders find that counter-intuitive and it is arithmetic.</p>
+<p>The second lever is the choice of phase-one length. A trader who targets the phase-one number over six weeks instead of two has a much higher chance of arriving at phase two with room intact, because the sample is larger and the drawdown is smaller. On a one-off fee, that trade is free, which is why the product rewards a measured attempt.</p>
+
+<h2 id="news">News trading and the restricted windows</h2>
+<p>Forex news risk is concentrated in central bank decisions, inflation prints and employment data, and the reaction can be large enough to jump a stop by tens of pips. Spreads widen before the release and liquidity thins, so the stop that was 25 pips away at 13:55 is not the stop that fills at 14:30. A position held through a release has an unknown risk distance.</p>
+<p>Restrictions vary by plan. Some prohibit opening positions in a window around a release, some prohibit holding through it, and some prohibit profiting from a price spike caused by it. The last is the most difficult to define and the most likely to be applied at review, because "profiting from" can be judged on the individual trade or on the account.</p>
+<p>The conservative plan is to flatten before the release and re-enter after the first hour, when the spread has normalised. That costs some of the largest moves and removes an entire category of dispute. A trader who holds should at least halve the position and widen the stop to a level the floor can survive if it gaps.</p>
+<p>Unscheduled news cannot be planned for. A headline can move a pair without warning, and no rule prevents it. The only protection is size: a unit small enough that a gap through the stop is a bad day rather than a lost attempt. That is the same argument as the streak calculation, applied to a single event with no notice.</p>
+
+<h2 id="leverage">Leverage, margin and the free-margin trap</h2>
+<p>Leverage on a forex evaluation is usually high enough to be irrelevant to a correctly sized trade. A $100,000 account with 1:100 leverage can control $10 million of currency, which is a hundred standard lots. A trader sizing from a $500 unit trades two lots. The gap between what is permitted and what is correct is the space in which accounts are lost.</p>
+<p>Margin matters at the portfolio level. Several open positions in correlated pairs consume margin and behave like one larger position, which means a risk unit applied to each trade can produce a portfolio risk several times the intended amount. A trader running long EUR/USD, long GBP/USD and short USD/CHF has one trade with three names, and the daily stop will see the combined loss.</p>
+<p>The free-margin trap is the behavioural version. Seeing thousands of dollars of unused margin creates a feeling of capacity that has nothing to do with the risk plan. The unit, not the free margin, decides size, and a trader who checks the margin line before the unit line is sizing from the wrong number.</p>
+<p>A practical cap is to limit total open risk to three units across all positions and to treat correlated pairs as one exposure. That rule prevents the most common portfolio failure on a forex evaluation: three small trades that are individually compliant and collectively a breach.</p>
+
+<h2 id="payout">The split, the cycle and the review</h2>
+<p>The profit split is the share the trader keeps; the cycle is how often it can be withdrawn. Both matter, and the cycle usually matters more for a trader who needs the cash. A 90% split on a thirty-day cycle and an 80% split on a fourteen-day cycle are different products, and the right choice depends on what the profit is for rather than on the headline percentage.</p>
+<p>The review examines the trading record, the size relative to the rules, the distribution of profit and any pattern resembling prohibited practice. A complete journal answers the questions in an afternoon; a statement without a journal invites interpretation. Keep the journal from the first day of phase one, not from the payout request.</p>
+<p>Identity and payment verification sit on the critical path. Withdrawals usually return to the method used for the fee, so a card that has expired or an account that has changed triggers a manual review and a delay measured in weeks. Complete the verification before the target is reached, and keep the receipt for the fee.</p>
+<p>Finally, confirm what the split is measured on: gross profit, net profit after commissions, or profit after any platform fees. The difference is a few percent of the payout and a larger share of the surprise. Ask in writing, and keep the reply with the terms.</p>
+
+<h2 id="mistakes">Failure patterns across both phases</h2>
+<p>The first pattern is treating the two phases as one. A trader who spends the first phase's profit budget on the first phase has nothing left for the second, and the target resets while the floor does not. The second is skipping the calibration between phases, which is the only opportunity to confirm the method still behaves under the new baseline.</p>
+<p>The third is a lumpy distribution that passes the target and fails the consistency test. The fourth is a fixed unit that is too large for the account's worst week, which a static floor permits far longer than a trailing one. The fifth is correlation risk across several pairs, which turns three compliant trades into one oversized position.</p>
+<p>The sixth is holding through a release on a plan that restricts it, which is a delayed failure with a complete audit trail. The seventh is starting the payout paperwork after the target rather than before it, which adds a cycle to the timeline for no reason. Each of these is a process error and each is visible in a journal before it becomes expensive.</p>
+<p>The remedy is a written plan with five numbers: unit, daily loss cap, daily profit cap, weekly stop, and the phase targets. Add a rule that the unit cannot change between phases, and a rule that the journal is updated before the next trade rather than at the end of the week. That is the whole control system this product requires.</p>
+
+<h2 id="fit">Who this path suits</h2>
+<p>This product suits a forex trader with a defined stop, a tested setup and the patience for a fifteen-week path. The static floor rewards a constant unit and a measured pace, and the one-off fee makes a longer attempt affordable. A trader who already works on MT4 or MT5 and has no need for automation can move from evaluation to funded account without changing tools.</p>
+<p>It suits less well a trader who needs a fast result, one whose method produces occasional large days, or one who trades several correlated pairs without a portfolio rule. It also suits poorly a trader who relies on a trailing floor's forced discipline, because a static floor will not impose one. Those are mismatches rather than flaws.</p>
+<p>The test is a simulation on your own record: apply the static floor, the daily stop and the consistency rule to the last hundred trades, and record the maximum drawdown and the best-day share. If both fit, the path is a fit. If either fails, no amount of discipline changes the arithmetic.</p>
+<p>If it fits, the process is ordinary: size from the floor, cap the day in both directions, build the profit in small blocks, and treat the phase boundary as a checkpoint rather than a celebration. That is what a two-phase static product is built to reward.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Does Funded Engineer use a static or trailing floor?</summary><div class="faq-a"><p>The evaluation described here uses a static floor. Profit does not move the failure point, which makes a fixed risk unit easier to maintain for the whole attempt.</p></div></details>
+<details class="faq"><summary>Does Funded Engineer use a static or trailing floor?</summary><div class="faq-a"><p>The evaluation described here uses a static floor measured from the initial balance. Profit does not move the failure point, which makes a constant risk unit valid for the whole two-phase path.</p></div></details>
 
-<details class="faq"><summary>What is the consistency test?</summary><div class="faq-a"><p>It limits how much of the profit can come from a single day or a small number of days. A pass built on one oversized winner can fail the test even when the target is met.</p></div></details>
+<details class="faq"><summary>How many lots can I trade on a $100,000 account?</summary><div class="faq-a"><p>Size from the risk unit, not the leverage. With a $500 unit and a 25-pip stop on a major pair, roughly two standard lots fit. The pip value changes with the pair and the account currency, so recalculate rather than assume.</p></div></details>
 
-<details class="faq"><summary>Which platforms are available?</summary><div class="faq-a"><p>MT4 and MT5 are listed for the product compared here. Confirm the platform list for the exact plan before buying.</p></div></details>
+<details class="faq"><summary>What happens if I fail phase two?</summary><div class="faq-a"><p>The attempt ends and a retry requires a new fee, because billing is per attempt. That is why the phase boundary deserves a calibration block rather than an immediate jump to full size.</p></div></details>
+
+<details class="faq"><summary>Does the consistency test apply to each phase separately?</summary><div class="faq-a"><p>Confirm this in writing before buying. If the test applies to each phase, phase one has to be smooth on its own; if it applies to the combined result, a lumpy phase one can be diluted by a smooth phase two.</p></div></details>
+
+<details class="faq"><summary>Can I run an MT4 expert advisor?</summary><div class="faq-a"><p>MT4 and MT5 are both listed for the product compared here, and automation is possible on both. Check the activity clauses first, because some plans restrict high-frequency trading or certain order types regardless of platform.</p></div></details>
+
+<details class="faq"><summary>How long should the full path take?</summary><div class="faq-a"><p>A fifteen-week plan with two measurement weeks, a phase-one block, a calibration block and a phase-two block is realistic. Because billing is one-off, a longer calendar costs no additional fee.</p></div></details>
   </div>
 </section>
 

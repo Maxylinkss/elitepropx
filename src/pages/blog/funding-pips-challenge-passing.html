@@ -1,6 +1,6 @@
 ---
 title: Funding Pips Challenge Passing: The 2026 Rulebook
-desc: How to pass a Funding Pips evaluation: the static loss floor, the daily stop, position sizing, a 20-session plan and the payout rules that decide what a…
+desc: How to pass a Funding Pips evaluation: static floor maths, lot sizing, the percentage daily stop, cTrader workflow and a twelve-week, two-phase plan.
 path: /blog/funding-pips-challenge-passing.html
 type: article
 h1: How to pass a Funding Pips challenge: the rulebook, the math and the plan
@@ -18,7 +18,7 @@ generator: content-system
   <div class="wrap narrow">
     <p class="kicker">Funding Pips · evaluation guide · reviewed October 2026</p>
     <h1>How to pass a Funding Pips challenge: the rulebook, the math and the plan</h1>
-    <p class="lede">Funding Pips runs a two-phase evaluation with a static loss floor with a static loss floor, a daily stop (percentage based) and one-off per attempt billing. This guide works through the rulebook in the order that decides an attempt: the loss floor first, then sizing, then the calendar, then the payout conditions that decide what a pass is actually worth. The numbers are illustrative and the mechanics are the firm's; confirm the current schedule on the plan page before you buy.</p>
+    <p class="lede">Funding Pips sells a two-phase forex evaluation with a static loss floor measured from the initial balance, a percentage daily stop and one-off billing on MT4, MT5 or cTrader. There is usually no consistency condition on the evaluation itself, which shifts the difficulty onto the floor and the calendar rather than onto the shape of the profit. This guide works through the constraints with illustrative numbers on a $100,000 account. Figures are models, not quotations — confirm the live plan schedule before you buy.</p>
   </div>
 </section>
 
@@ -27,22 +27,40 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>The loss floor is static, measured from the initial balance. That single sentence decides how every trade must be sized.</li>
-  
-  
-  
-  
+  <li>The floor is static, so a fixed risk unit stays valid for the whole two-phase path.</li>
+  <li>The daily stop is percentage based and much smaller than the total floor, which makes the week the real unit of planning.</li>
+  <li>No consistency test on most evaluations means the shape of profit is free — until the funded phase, where it may not be.</li>
+  <li>cTrader is the third platform option and the one that suits a level-based, order-book-driven method.</li>
+  <li>One-off billing removes the cost of patience, so a twelve-week attempt is no more expensive than a four-week one.</li>
+  <li>Phase two repeats the first phase's measurements against a higher balance and the same floor.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#rulebook">How the Funding Pips rulebook is built</a></li>
+  <li><a href="#rulebook">The Funding Pips rulebook, row by row</a></li>
+  <li><a href="#ratio">Why the daily-to-total ratio decides the plan</a></li>
+  <li><a href="#phase1">Phase one: proving a sample</a></li>
+  <li><a href="#phase2">Phase two: the repeat</a></li>
+  <li><a href="#sizing">Lot arithmetic on a static floor</a></li>
+  <li><a href="#daily">The percentage daily stop in dollars</a></li>
+  <li><a href="#noconsistency">What the missing consistency rule really means</a></li>
+  <li><a href="#platforms">MT4, MT5 and cTrader</a></li>
+  <li><a href="#session">Forex sessions and the pair you actually trade</a></li>
+  <li><a href="#calendar">A twelve-week attempt</a></li>
+  <li><a href="#target">Target maths per phase</a></li>
+  <li><a href="#drawdown">Drawdown behaviour with a static floor</a></li>
+  <li><a href="#news">News windows and slippage on majors</a></li>
+  <li><a href="#payout">Split, cycle and the funded review</a></li>
+  <li><a href="#mistakes">What typically ends an attempt</a></li>
+  <li><a href="#fit">Which trader this fits</a></li>
 </ol>
 </div>
-<h2 id="rulebook">How the Funding Pips rulebook is built</h2>
-<p>The <strong>Funding Pips</strong> evaluation is best understood as a set of constraints that interact, not as a headline profit target with some footnotes. The target decides how much you have to make. The loss floor decides how much room you have to make it. The daily stop, if there is one, decides how quickly a bad session ends. The minimum-day rule decides how long the attempt takes even when the target is reached early. Change any one of those and the same trading strategy produces a different outcome.</p>
-<p>For Funding Pips, the published structure is a two-phase evaluation with a static loss floor. The loss floor is static, measured from the initial balance, the daily stop is yes, percentage based, and the consistency condition is usually none on the evaluation. Billing is one-off per attempt, payouts follow profit split on a fixed cycle, and the supported platforms are MT4, MT5, cTrader. Those are the rows that matter. Marketing pages tend to foreground the profit target and the profit split because both are easy to compare; neither tells you whether a given trade is survivable.</p>
+
+<h2 id="rulebook">The Funding Pips rulebook, row by row</h2>
+<p>The published shape is a two-phase forex and CFD evaluation with a static loss floor measured from the initial balance, a percentage daily stop, no consistency condition on most evaluations, an undefined minimum-day count, one-off per attempt billing, a profit split on a fixed cycle, and MT4, MT5 and cTrader on weekday forex hours. Each row is a constraint, and the first three decide almost everything.</p>
+<p>A static floor means the failure point does not move. A percentage daily stop means the worst session is bounded by a fraction of the account rather than by a dollar figure that drifts with the balance. No consistency test means the distribution of profit is unconstrained during the evaluation. Read together, those three rows describe a product that rewards a constant unit and a disciplined session, and does not punish a lumpy month — at least until the funded phase.</p>
+<p>The absence of a minimum-day rule is easy to overlook. It removes the structural reason to build a sample, which means the calendar is a choice. On a one-off fee that choice is free, and a trader who uses it to build a longer record arrives at phase two with a better distribution and a smaller drawdown than one who sprints to the target.</p>
 <div class="table-scroll">
   <table>
     <thead>
@@ -62,28 +80,113 @@ generator: content-system
     </tbody>
   </table>
 </div>
+<p>The row that needs the most caution is the consistency one, because "usually none" is not "none". Plans are revised, promotional products sometimes carry different terms, and the funded account may apply a condition that the evaluation did not. Confirm the answer for the exact plan name in the dashboard, and confirm whether the funded phase inherits the evaluation's rules or replaces them.</p>
 
-<h2 id="the-static-floor-is-only-half-the-plan">The static floor is only half the plan</h2>
-<p>Funding Pips runs a two-phase forex evaluation with a static floor measured from the initial balance and a percentage daily stop. The static floor means the failure point does not move when the account earns, so a fixed risk unit remains valid across both phases. The daily stop is the rule that ends a bad session, and it is the number most traders under-plan for.</p>
-<p>On a $100,000 account with a 10% floor and a 5% daily stop, the failure point is $90,000 and the session limit is $5,000. At a $500 risk unit, the account can absorb twenty losses in total but only ten in one day. A trader who takes ten losses in a day has used the entire daily allowance and cannot recover within the session; stopping earlier is the only sensible plan.</p>
+<h2 id="ratio">Why the daily-to-total ratio decides the plan</h2>
+<p>On an illustrative $100,000 account, a 10% total floor is $10,000 and a 5% daily stop is $5,000. The daily limit is half the total floor, which means two bad sessions end the attempt and a third is never reached. That ratio is the single most useful number to extract from any rulebook, because it tells you how much of the attempt a bad week can consume.</p>
+<p>A ratio of one half is restrictive in a way that a ratio of one fifth is not. With a 2% daily stop against a 10% floor, five consecutive limit days are needed to fail, and five consecutive days at the limit is rare for a method with an edge. With a 5% daily stop, two consecutive limit days is not rare at all. The same headline floor describes two very different products.</p>
+<p>The planning response is to set the personal daily cap below the firm's. If the firm allows $5,000 and the unit is $400, the firm's limit is twelve losses and will never bind. A personal limit of three losses, $1,200, is what actually shapes behaviour, and it keeps two bad days at $2,400 rather than at the full floor. The firm's rule protects the account; the personal rule protects the attempt.</p>
+<p>The second response is a weekly cap. Four sessions at the personal limit is $4,800, which is nearly half the floor. A weekly cap of one third of the floor stops the accumulation before it becomes structural, and it is the only rule in the system that no external party enforces.</p>
 
-<h2 id="a-two-phase-calendar-that-respects-the-daily-stop">A two-phase calendar that respects the daily stop</h2>
-<p>Phase one should be treated as a measurement phase. Take the setups your journal already supports, size at the calibrated unit, and stop at three losses or the daily stop, whichever comes first. The goal is to reach the target without ever touching the daily limit, not to reach it quickly. Phase two repeats the same process with the same size; a static floor does not require a size reduction after a gain, so the plan can stay stable.</p>
-<p>If the plan has a minimum-day requirement, use the required sessions to observe and record rather than to force trades. A session with no valid setup is a successful session if it preserves the floor. The consistency condition, if one applies at payout, is easier to satisfy when the profit is built from a series of normal days.</p>
+<h2 id="phase1">Phase one: proving a sample</h2>
+<p>Assume an illustrative 8% phase-one target on a $100,000 account, or $8,000, with a $400 unit and a 2:1 payoff. A winner returns $800, so the target needs ten net winners. Spread across six weeks and fifty trades, that is a 20% net edge, which is a demanding but realistic requirement for a method with a genuine advantage.</p>
+<p>The purpose of phase one is not the target; it is the sample. A trader who reaches $8,000 in twenty-five sessions with a constant unit has demonstrated a process. A trader who reaches it in five sessions with three oversized positions has demonstrated a week. Firms use two phases precisely because they cannot tell the difference from a single result, and the trader should use the same logic on themselves.</p>
+<p>The drawdown budget for phase one should be a third of the total floor, not the whole floor. Arriving at phase two with two thirds of the room intact makes the repeat comfortable; arriving with a quarter makes it a stretch. A trader who treats the entire floor as available has planned for the best case and will meet the worst one.</p>
+<p>The end of phase one is a checkpoint, not a celebration. Recalculate the phase-two target from the new balance, confirm the floor is still measured from the original one, and decide whether the unit stays the same. It should. The most common phase-two error is a larger unit justified by a larger cushion.</p>
 
-<h2 id="what-to-verify-about-the-firm-and-the-service">What to verify about the firm and the service</h2>
-<p>Before paying for an evaluation, confirm the daily stop reset time and whether it is measured on balance or equity. Confirm the maximum loss definition and whether it includes open profit. Confirm the payout cycle, minimum withdrawal and any consistency rule. If a passing service is involved, confirm that the firm permits third-party trading and that permission covers the funded account as well as the evaluation. A service that cannot produce that clause in writing is not a safe route.</p>
-<p>Finally, confirm the platform: MT4, MT5 and cTrader are listed, but the account type should match the strategy's execution needs. A plan that fits on paper can still fail on a platform that cannot place the orders the method requires.</p>
+<h2 id="phase2">Phase two: the repeat</h2>
+<p>Phase two repeats the measurements with a new target and the same static floor. Because the floor does not move, the profit from phase one now sits above it, and the distance to failure is larger in dollars. That is a real advantage, and it is also why phase two is where a lucky trader is exposed: the cushion makes it tempting to increase size, and the increased size produces a distribution that the first phase never had.</p>
+<p>Keep the unit. The second phase is testing whether the method can produce the target again, not whether the account can survive a bigger bet. A constant unit makes the two phases comparable, which is useful evidence for the trader and for any review of the record. A larger unit makes the comparison meaningless.</p>
+<p>The other phase-two error is treating the phase-one profit as available. It is not withdrawable until the payout, and drawing it mentally changes the risk appetite. A trader who thinks "I am up eight thousand" takes trades that a trader thinking "eight thousand to go" would skip, and the second framing is the one the rulebook uses.</p>
+<p>Phase two should also be faster in calendar terms than phase one, because the method is calibrated and the platform is familiar. If it is slower, that is information: either the method's edge has deteriorated or the size is too small for the target. Diagnose which before extending the attempt, because extending a broken process only makes it more expensive.</p>
+
+<h2 id="sizing">Lot arithmetic on a static floor</h2>
+<p>Forex sizing is pips × pip value × lots. On a standard lot of a USD-quoted major, one pip is about $10, so a 20-pip stop risks $200 per lot and a $400 unit buys two lots. A 40-pip stop buys one lot. The same dollar risk produces different position counts as the stop widens, which is why the stop distance has to be measured before the size is chosen rather than the other way around.</p>
+<p>Pip value varies by pair. On USD/JPY the value depends on the exchange rate; on EUR/GBP it runs through two conversions; on gold and indices a "pip" is not the natural unit at all. A trader who uses $10 per pip across the board mis-sizes every non-USD-quoted instrument, and the error grows exactly when volatility is highest.</p>
+<p>The account currency adds a second conversion, and the margin requirement adds a third check. A two-lot position on a $100,000 account with 1:100 leverage consumes a small fraction of the margin, so leverage never binds for a correctly sized trade — which is the point. Leverage is a ceiling, not a method.</p>
+<p>Finally, the buffer. Spreads widen and stops slip, particularly around the London open and major releases. Adding ten to twenty percent to the planned risk changes the lot count by a fraction and keeps the realised risk inside the intended unit. A trader who ignores the buffer is risking more than planned and calling it discipline.</p>
+
+<h2 id="daily">The percentage daily stop in dollars</h2>
+<p>A percentage daily stop becomes a dollar figure that changes with the balance. On a $100,000 account at 5%, the limit is $5,000; on a $104,000 account it is $5,200. The movement is small and the interpretation matters: the limit is a fraction of the current balance, not a fixed number, so a good week slightly increases the daily allowance and a bad week slightly reduces it.</p>
+<p>The basis is the more important question. A limit measured on equity counts floating losses as they occur, so an open position that is $3,000 underwater has consumed 60% of a $5,000 allowance before it is closed. A limit measured on closed results counts only realised losses and permits a larger floating loss. The first basis produces better behaviour; the second produces better-looking statements. The rulebook decides which you get.</p>
+<p>The reset time completes the definition. Forex sessions roll at a fixed hour tied to New York, and the limit resets with the roll. A position carried across the roll can be attributed to either day, which matters for a swing method. If the rule is unclear, flatten before the roll rather than discovering the attribution during a review.</p>
+<p>The practical rule is to convert the percentage into losses before the session: limit divided by unit, rounded down. A $5,000 limit and a $400 unit allow twelve losses, which is more than any session should use. Cap it at three by choice and the percentage becomes a backstop rather than a plan.</p>
+
+<h2 id="noconsistency">What the missing consistency rule really means</h2>
+<p>No consistency test on the evaluation means the profit can arrive in any shape: one large day, twenty small ones, or anything between. That is a genuine freedom and a trap. A trader who passes on two oversized positions has passed the evaluation and learned nothing about whether the result is repeatable, and the funded phase may apply a condition the evaluation did not.</p>
+<p>The funded phase is where the question matters. Many programmes apply a consistency or minimum-day condition to the first payout, and the evaluation's silence says nothing about the funded account's terms. Confirm the funded rules at the same time as the evaluation rules, because a pass that cannot be withdrawn from is not a pass.</p>
+<p>Even without a rule, distribution is worth managing for a practical reason: a lumpy result is harder to repeat in phase two. A method that produces most of its profit in a handful of sessions has a long dry spell between them, and the phase-two target has to be reached inside a similar calendar. A smoother distribution shortens the expected time to target even when it does not change the total.</p>
+<p>The self-imposed version of the rule is a daily profit cap of three units. It costs nothing in expectation, flattens the distribution, and makes the funded phase easier to navigate if a condition applies there. A trader who adopts it on the evaluation is buying insurance against a clause they have not yet read.</p>
+
+<h2 id="platforms">MT4, MT5 and cTrader</h2>
+<p>MT4 is the familiar option: hedging, a huge library of indicators and expert advisors, and modest hardware requirements. Its order model is ticket-based, which means each entry is a separate position with its own stop. That suits a method that manages trades individually and a trader who has years of templates and scripts invested in the platform.</p>
+<p>MT5 modernises the backtester and adds more timeframes and instrument classes, but its default netting model changes position management: several entries on the same symbol combine into one position with an average price. A trader moving from MT4 without understanding that difference will place stops that do not correspond to the tickets they think they have.</p>
+<p>cTrader is the third option and the one that suits a level-based method. Its order book, depth of market and level-based stops are cleaner than MT4's, and its interface is built around precise entry and exit rather than around tickets. For a trader who manages positions at levels rather than at prices, that is a genuine advantage and not a preference.</p>
+<p>The platform choice should be settled before the evaluation, not during it. Migration costs are measured in mistakes, not in fees, and the first weeks of an attempt are the worst possible time to learn a new order model. If automation is part of the plan, confirm the activity clauses as well as the platform support, because a compliant strategy run on a restricted order type is still a breach.</p>
+
+<h2 id="session">Forex sessions and the pair you actually trade</h2>
+<p>Forex trades from Sunday evening to Friday evening, and the range is not evenly distributed. The London session carries the deepest liquidity and the largest share of the daily move; New York adds a second peak; the overlap is the most liquid window. The Asian session is quieter, with narrower ranges and wider spreads on European crosses.</p>
+<p>The pair matters as much as the hour. EUR/USD and GBP/USD are liquid in London; USD/JPY is active in Tokyo and New York; AUD and NZD pairs move in the Asian session. A method built on EUR/USD's London behaviour does not transfer to AUD/USD's Asian behaviour without re-measuring the stop distribution and the spread.</p>
+<p>The daily stop interacts with the session because the worst sessions are the volatile ones. A trader whose method trades the London open will hit the daily limit faster than one who trades the quiet afternoon, even with the same unit. That is not a reason to avoid volatility; it is a reason to size the session against the limit rather than against the unit alone.</p>
+<p>Holding overnight adds rollover and gap risk, and the weekend adds a second gap. A position held through the weekend at full size carries a risk the stop does not measure. Either reduce the unit for positions held across a session boundary, or flatten before it, and write the choice down so it is not re-decided under pressure.</p>
+
+<h2 id="calendar">A twelve-week attempt</h2>
+<p>Weeks one and two are measurement: half the unit, a record of every setup, and a note of the spread and slip on each entry. The output is a table of how the method behaves under the account's conditions, including which sessions and pairs are expensive. No target work happens here, and a trader who cannot resist it has learned something useful about themselves.</p>
+<p>Weeks three to six are phase one: full unit, a fixed setup list, a personal daily cap of three losses, and a weekly cap of one third of the floor. The target should be within reach by the end of week six. If it is not, reduce the unit rather than increase the activity, because activity does not change the edge.</p>
+<p>Weeks seven and eight are the phase boundary: protect the phase-one result, confirm the phase-two target from the new balance, and run two weeks at half the unit to re-confirm the method. That calibration block is the only chance to notice that something changed before the second target is attempted at full size.</p>
+<p>Weeks nine to twelve are phase two, at the same unit and with the same caps. The final week is administration: a third of the unit, the target protected, and the payout documentation prepared. Twelve weeks is a realistic calendar for a two-phase path on a one-off fee, and it costs no more than a four-week sprint.</p>
+
+<h2 id="target">Target maths per phase</h2>
+<p>With an 8% target and a $400 unit at 2:1, each phase needs ten net winners. If the method wins 45% of the time, ten net winners requires roughly forty trades, which at two trades per session is twenty sessions — four weeks. That is the arithmetic behind the calendar above, and it is worth running with your own numbers before choosing a plan.</p>
+<p>The second phase usually has a different target percentage, sometimes lower. Recalculate rather than assume: a 5% phase-two target on a higher balance can require fewer net winners than an 8% phase-one target on the original one. The dollar figure is what the plan needs, and the percentage is only a way of stating it.</p>
+<p>The payoff ratio changes the count. At 1.5:1 the same target needs about fourteen net winners; at 3:1 about seven. A high-payoff method reaches the number in fewer trades with longer dry spells, and a static floor tolerates dry spells well — which is a rare case where the static structure genuinely favours a trend-following approach over a mean-reversion one.</p>
+<p>The taper matters less here than on a trailing product, because the floor does not move. It still matters for the consistency question in the funded phase and for the trader's own psychology. Reducing the unit in the final week is cheap insurance against a late drawdown and costs a fraction of the target in expected profit.</p>
+
+<h2 id="drawdown">Drawdown behaviour with a static floor</h2>
+<p>A static floor allows profit to be given back without moving the failure point. That is a comfort and a hazard: the account can go from $112,000 to $95,000 and still be alive, which means the rules will not stop a slow bleed. Only the trader's own limits will.</p>
+<p>A self-imposed drawdown limit converts the comfort into a control. Set it at one third of the floor from the equity high: if the account reaches $110,000, the stop is $106,700. The limit moves up with profit, which is the opposite of the firm's rule and the same as the trader's interest. It preserves gains that the rulebook permits giving back.</p>
+<p>The second control is a time stop. If the target has not been reached in the planned calendar, stop and review rather than extend indefinitely. On a one-off fee there is no billing pressure to force the decision, which makes a time stop more necessary, not less. A method that has not produced the target in twelve weeks is information.</p>
+<p>The third control is a trade-count review. If the number of trades is far above the plan, the unit is probably too small and the trader is compensating with activity. If it is far below, the setup list is too narrow or the session is wrong. Both are diagnosable from the journal and neither is fixed by changing the target.</p>
+
+<h2 id="news">News windows and slippage on majors</h2>
+<p>Forex news risk is concentrated in central bank decisions, inflation prints and employment data. The reaction can be tens of pips in seconds, spreads widen before the release, and the stop that looked safe at 13:55 is not the stop that fills at 14:30. A position held through a release has an unknown risk distance.</p>
+<p>Restrictions vary by plan. Some prohibit opening positions around a release, some prohibit holding through it, and some prohibit profiting from the resulting spike. The last is the most ambiguous and the most likely to be applied at review, because it can be judged on the individual trade or on the account as a whole.</p>
+<p>The conservative plan is to flatten before the release and re-enter after the first hour. That costs some of the largest moves and removes a category of dispute. A trader who holds should halve the position and widen the stop to a level the floor can survive if it gaps, and should accept that the daily limit may be consumed by one fill.</p>
+<p>Slippage on majors is usually small and never zero. A two-pip slip on a 20-pip stop is a 10% overrun; on a 10-pip stop it is 20%. Tight stops increase the share of the risk unit that execution consumes, which is an argument for sizing from the realised fill rather than from the intended level.</p>
+
+<h2 id="payout">Split, cycle and the funded review</h2>
+<p>The split is the share of profit the trader keeps; the cycle is how often it can be withdrawn. A 90% split on a monthly cycle and an 80% split on a fortnightly cycle are different products, and the right choice depends on whether the profit is income or reinvestment. Compare the total time from first payment to cleared funds rather than the headline percentage.</p>
+<p>The funded review examines the record: the size relative to the rules, the distribution of profit, the number of sessions and any pattern resembling prohibited practice. A complete journal answers the questions quickly. A statement without a journal invites interpretation, and interpretation by a third party rarely favours the trader.</p>
+<p>Verification sits on the critical path. Withdrawals usually return to the method used for the fee, so an expired card or a changed wallet triggers a manual review. Complete identity and payment verification before the target is reached, and keep the receipt for the evaluation fee.</p>
+<p>Confirm what the split is measured on — gross profit, net of commissions, or net of platform fees — and confirm whether the funded account inherits the evaluation's rulebook or replaces it. Those two questions decide the real value of a pass, and neither is usually on the pricing page.</p>
+
+<h2 id="mistakes">What typically ends an attempt</h2>
+<p>The first is a daily stop that is too close to the floor. With a limit at half the floor, two bad sessions end the attempt, and two bad sessions happen. The second is a unit that fits the floor but not the daily limit, which converts a normal losing streak into a limit breach. The third is a phase-two size increase justified by the phase-one profit.</p>
+<p>The fourth is assuming the evaluation's missing consistency rule applies to the funded account. The fifth is holding through a release on a plan that restricts it. The sixth is a correlated portfolio: three long-dollar positions that are individually compliant and collectively double the intended risk. The seventh is starting the payout paperwork after the target.</p>
+<p>All seven are process errors, and all seven are visible in a journal before they become expensive. A weekly review that compares the planned unit with the realised unit, the planned session count with the actual, and the drawdown from the equity high with the self-imposed limit catches each of them while the account is still open.</p>
+<p>The remedy is a written plan with five numbers — unit, personal daily cap, weekly cap, drawdown stop, phase targets — and one rule: the unit does not change between phases. That page is the difference between an evaluation that is managed and one that is merely attempted.</p>
+
+<h2 id="fit">Which trader this fits</h2>
+<p>This product suits a forex trader with a defined stop, a tested setup and the patience for a twelve-week path. The static floor rewards a constant unit, the percentage daily stop rewards a disciplined session, and the one-off fee makes a longer calendar affordable. A trader who works on MT4, MT5 or cTrader can move from evaluation to funded account without changing tools.</p>
+<p>It suits less well a trader who needs a trailing floor's forced discipline, one whose method depends on a handful of large days and who intends to withdraw immediately, or one who trades several correlated pairs without a portfolio rule. Those are mismatches rather than flaws, and they are cheaper to recognise before the fee than after.</p>
+<p>The test is a simulation on your own record: apply the static floor, the daily stop and the self-imposed caps to the last hundred trades, and record the maximum drawdown and the longest losing run. If both fit inside the plan, the path is a fit. If either fails, no amount of discipline changes the arithmetic.</p>
+<p>If it fits, the process is ordinary: size from the floor, cap the session and the week, build each phase in small blocks, and treat the phase boundary as a checkpoint. That is what a static, one-off product is built to reward.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Does Funding Pips use a static drawdown?</summary><div class="faq-a"><p>The two-phase evaluation uses a static floor measured from the initial balance. Profit does not move the failure point, which makes a fixed risk unit easier to maintain.</p></div></details>
+<details class="faq"><summary>Does Funding Pips use a static loss floor?</summary><div class="faq-a"><p>The evaluation described here measures the floor from the initial balance, so profit does not move the failure point. A constant risk unit remains valid for the whole two-phase path.</p></div></details>
 
-<details class="faq"><summary>Is there a daily loss limit?</summary><div class="faq-a"><p>Yes, the plan uses a percentage-based daily stop. Confirm the reset time and whether it is measured on balance or equity before relying on it.</p></div></details>
+<details class="faq"><summary>Is there a consistency rule on the evaluation?</summary><div class="faq-a"><p>Usually not on the evaluation itself, but the funded account may apply one. Confirm the terms for both stages and for the exact plan name, because a pass that cannot be withdrawn from is not a pass.</p></div></details>
 
-<details class="faq"><summary>Can a passing service trade a Funding Pips account?</summary><div class="faq-a"><p>Only if the firm terms permit third-party trading and that permission covers the work being done. Ask for the clause in writing before paying a service.</p></div></details>
+<details class="faq"><summary>How large is the daily stop compared with the total floor?</summary><div class="faq-a"><p>On the plans described here the daily stop is a percentage of the balance and materially smaller than the total floor. Check the ratio: if the daily limit is half the floor, two bad sessions end the attempt.</p></div></details>
+
+<details class="faq"><summary>Which platform is best for this evaluation?</summary><div class="faq-a"><p>cTrader suits a level-based, order-book-driven method; MT4 suits a ticket-based method with existing scripts; MT5 adds a modern backtester but defaults to netting. Choose before the attempt starts, not during it.</p></div></details>
+
+<details class="faq"><summary>How many lots fit on a $100,000 account?</summary><div class="faq-a"><p>Size from the unit, not the leverage. With a $400 unit and a 20-pip stop on a USD-quoted major, roughly two standard lots fit. The pip value changes with the pair and the account currency.</p></div></details>
+
+<details class="faq"><summary>Can I hold positions overnight?</summary><div class="faq-a"><p>Usually yes, subject to the plan's clauses. Holding adds rollover and gap risk, and the position may be attributed to a different session at the daily reset, so confirm both points before carrying a trade across the roll.</p></div></details>
   </div>
 </section>
 
@@ -91,7 +194,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Funding Pips evaluation, traded for you</h2>
-      <p>One flat <strong>$220</strong> for any account size. Retries covered, no profit split, funded login in your name. If Funding Pips's terms forbid third-party trading we tell you before you pay.</p>
+      <p>One flat <strong>$220</strong> for any account size. Retries covered, no profit split, funded login in your name. If Funding Pips' terms forbid third-party trading we tell you before you pay.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -101,7 +204,6 @@ generator: content-system
   <div class="wrap narrow">
     <h2>Related reading</h2>
     <ul class="link-list">
-      <li><a href="/blog/fundednext-vs-funding-pips-comparison.html">FundedNext vs Funding Pips</a></li>
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
       <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
@@ -110,6 +212,7 @@ generator: content-system
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
       <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
       <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
+      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
     </ul>
     <p class="disclaimer">Funding Pips is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>
