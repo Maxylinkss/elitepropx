@@ -346,9 +346,9 @@ ${breadcrumbs(page)}
 ${withTelegramBand(body)}
 </main>
 ${footer()}
-<a class="telegram-float" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Pass your evaluation on Telegram">
+<a class="telegram-float" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Pass your challenge today on Telegram">
   <span class="telegram-float-icon">${TELEGRAM_ICON}</span>
-  <span class="telegram-float-text"><strong>Pass your evaluation</strong><small>${site.telegramHandle}</small></span>
+  <span class="telegram-float-text"><strong>Pass your challenge today</strong><small>${site.telegramHandle}</small></span>
 </a>
 </body>
 </html>
