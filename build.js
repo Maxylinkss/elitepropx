@@ -19,6 +19,7 @@ const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src', 'pages');
 const OUT = path.join(ROOT, 'docs');
 const TODAY = new Date().toISOString().slice(0, 10);
+const INDEXNOW_KEY = '7e7dd70f9dda720b20fe3c45281d2f2f';
 
 /* ---------------------------------- utils --------------------------------- */
 
@@ -173,6 +174,10 @@ Sitemap: ${site.url}/sitemap.xml
   );
 
   fs.writeFileSync(path.join(OUT, 'CNAME'), 'elitepropx.com\n', 'utf8');
+
+  // IndexNow key file: proves ownership to Bing, Yandex, Seznam and Naver.
+  // The filename and its contents must match exactly, or submissions are rejected.
+  fs.writeFileSync(path.join(OUT, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY, 'utf8');
 
   fs.writeFileSync(
     path.join(OUT, 'site.webmanifest'),

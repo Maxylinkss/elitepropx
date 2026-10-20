@@ -10,6 +10,7 @@
     "seo": "node tools/seo-audit.js",
     "duplicates": "node tools/duplicates.js",
     "serve": "node tools/serve.js",
+    "indexnow": "node tools/indexnow.js",
     "deploy:build": "npm run images && npm run build && npm run check && npm run seo && npm run duplicates"
   },
   "engines": {
