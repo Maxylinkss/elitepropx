@@ -1,6 +1,6 @@
 ---
 title: Apex Trader Funding Challenge Passing: 2026 Guide
-desc: How to pass an Apex Trader Funding evaluation: the intraday trailing threshold, dollar targets, the 30% consistency rule and how to pace a trailing account.
+desc: How to pass an Apex evaluation: the EOD and intraday drawdown models, dollar targets, the 50% payout consistency rule and how to pace each account.
 path: /blog/apex-trader-funding-challenge-passing.html
 type: article
 h1: Apex Trader Funding challenge passing
@@ -9,7 +9,7 @@ crumb: Apex challenge passing
 section: Firm guides
 sectionUrl: /blog/
 date: 2026-09-26
-updated: 2026-10-18
+updated: 2026-10-21
 priority: 0.8
 ---
 
@@ -17,7 +17,7 @@ priority: 0.8
   <div class="wrap narrow">
     <p class="kicker">Firm guide · reviewed October 2026</p>
     <h1>Apex Trader Funding challenge passing</h1>
-    <p class="lede">Apex is the best-known futures prop firm, and its difficulty comes from one mechanic: an intraday trailing threshold that follows unrealised profit upward. This guide covers what that means for sizing, why the 30% consistency rule blocks so many payouts, and how to pace an evaluation that punishes success.</p>
+    <p class="lede">Apex is the best-known futures prop firm, and it now runs two evaluation models rather than one: an end-of-day (EOD) drawdown account and an intraday trailing account. Which model you buy changes the arithmetic completely. This guide covers both, why the 50% payout consistency rule blocks so many withdrawals (30% still applies to legacy accounts), and how to pace an evaluation whose floor moves.</p>
   </div>
 </section>
 
@@ -28,7 +28,8 @@ priority: 0.8
       <ul>
         <li>The trailing threshold follows your peak unrealised equity, so a strong session reduces your remaining cushion rather than increasing it.</li>
         <li>Risk must fall as the target approaches — the opposite of the instinct to press a winning account.</li>
-        <li>A 30% best-day consistency rule applies at payout: a $6,000 day requires $20,000 of total profit.</li>
+        <li>The payout consistency rule is 50% on current accounts: a $6,000 best day requires $12,000 of total profit. Legacy accounts still use 30%.</li>
+        <li>EOD evaluations have no intraday trailing, a fixed daily loss limit and a 30-day access period; intraday evaluations trail the peak in real time.</li>
         <li>Account sizes extend to $300,000, which is larger than almost any competitor, and the same discipline scales.</li>
       </ul>
     </div>
@@ -49,20 +50,20 @@ priority: 0.8
     <div class="table-scroll">
       <table>
         <thead>
-          <tr><th>Account size</th><th>Profit target</th><th>Trailing threshold</th><th>Consistency rule</th></tr>
+          <tr><th>Account size</th><th>Profit target</th><th>Drawdown model</th><th>Consistency rule</th></tr>
         </thead>
         <tbody>
-          <tr><td>$50,000</td><td>$3,000</td><td>Trails the peak by a fixed dollar amount</td><td>30% best day at payout</td></tr>
-          <tr><td>$100,000</td><td>$6,000</td><td>Trails the peak by a fixed dollar amount</td><td>30% best day at payout</td></tr>
-          <tr><td>$150,000</td><td>$9,000</td><td>Trails the peak by a fixed dollar amount</td><td>30% best day at payout</td></tr>
-          <tr><td>Up to $300,000</td><td>Scales with size</td><td>Trails the peak by a fixed dollar amount</td><td>30% best day at payout</td></tr>
+          <tr><td>$50,000</td><td>$3,000</td><td>EOD ($2,000) or intraday trailing</td><td>50% best day at payout (30% legacy)</td></tr>
+          <tr><td>$100,000</td><td>$6,000</td><td>EOD ($3,000) or intraday trailing</td><td>50% best day at payout (30% legacy)</td></tr>
+          <tr><td>$150,000</td><td>$9,000</td><td>EOD ($4,000) or intraday trailing</td><td>50% best day at payout (30% legacy)</td></tr>
+          <tr><td>Up to $300,000</td><td>Scales with size</td><td>EOD or intraday trailing, plan-dependent</td><td>50% best day at payout (30% legacy)</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Two features define the assignment. The first is the trailing threshold: Apex's failure level is not fixed at a distance below the starting balance — it follows your equity upward as you make money, which means the cushion between equity and failure shrinks as the evaluation progresses. The second is the payout-stage consistency rule, which is covered in detail <a href="#consistency">below</a> and in the <a href="/blog/prop-firm-consistency-rule-guide.html">consistency rule guide</a>.</p>
+    <p>Two features define the assignment. The first is the drawdown model. On the <strong>EOD</strong> evaluation the threshold is calculated once per day from the closing balance, is fixed for the next session, and does not follow unrealised profit; the account also carries a separate daily loss limit ($500 on a 25K, $1,000 on a 50K, $1,500 on a 100K and $2,000 on a 150K) and a 30-day access period. On the <strong>intraday trailing</strong> evaluation the threshold follows peak equity in real time, including open profit. The second feature is the payout-stage consistency rule — 50% on current accounts, 30% on legacy accounts — which is covered in detail <a href="#consistency">below</a> and in the <a href="/blog/prop-firm-consistency-rule-guide.html">consistency rule guide</a>.</p>
     <p>Strategic context worth having before choosing an account size: Apex's evaluation pricing is among the most aggressive in futures, and promotional discounts are frequent. Cheap entries are good for testing a plan and bad for encouraging discipline — a trader who has spent $40 on an evaluation is more inclined to gamble than one who spent $400, and the rules do not care which it was.</p>
     <h2 id="trailing">The intraday trailing threshold, explained</h2>
-    <p>Most traders understand a maximum loss as a fixed line below the starting balance. A trailing threshold is different, and the difference is the single most common reason an Apex evaluation ends unexpectedly.</p>
+    <p>Most traders understand a maximum loss as a fixed line below the starting balance. A trailing threshold is different, and the difference is the single most common reason an intraday Apex evaluation ends unexpectedly. If you buy the EOD model, none of this section applies intraday: the threshold is recalculated once per day and held fixed through the session.</p>
     <p>On a trailing structure, the failure level rises with your peak equity. Suppose a $100,000 account starts with a threshold at $96,000 — a $4,000 cushion. If the account reaches $103,000 in unrealised open profit, the threshold rises to roughly $99,000 and the cushion is still $4,000 in absolute terms, but the account now has to fall $4,000 from a higher peak to fail. That sounds neutral until you note what happens next: the cushion is measured from the peak, and a $3,000 retracement from $103,000 puts equity at $100,000 with the threshold at $99,000 — one bad trade from failure, despite being up on the day.</p>
     <p>Now add the most important detail. On an intraday trailing structure, the threshold follows <em>unrealised</em> profit. A position that is $5,000 in open profit and then gives back $4,000 has already lifted the floor, and the retracement leaves the account with $1,000 of realised profit and a threshold that has permanently moved. The trader did nothing wrong, took no loss, and is nonetheless far closer to failure than they were that morning.</p>
     <figure>
@@ -103,13 +104,13 @@ priority: 0.8
     <div class="callout">
       <p><strong>The one-line version:</strong> on a trailing account, an untouched pass is worth more than extra progress. A trader at 95% of target with the floor far below is in a better position than one at 130% of target with the floor directly beneath current equity.</p>
     </div>
-    <h2 id="consistency">The 30% consistency rule at payout</h2>
-    <p>Apex applies a consistency rule when a payout is requested: no single day should account for more than 30% of total profit. The arithmetic is set out fully in the <a href="/blog/prop-firm-consistency-rule-guide.html">consistency rule guide</a>, but the shape of it is simple. A $6,000 best day requires at least $20,000 of total profit; a $3,000 best day requires $10,000.</p>
+    <h2 id="consistency">The consistency rule at payout: 50% now, 30% on legacy</h2>
+    <p>Apex applies a consistency rule when a payout is requested. On current accounts no single day may account for 50% or more of total profit since the last payout; the calculation resets after each approved payout. On legacy Performance Accounts the older 30% rule still applies. The arithmetic is set out fully in the <a href="/blog/prop-firm-consistency-rule-guide.html">consistency rule guide</a>, but the shape is simple: under the 50% rule a $6,000 best day requires at least $12,000 of total profit, and a $3,000 best day requires $6,000. Under the legacy 30% rule the same $6,000 day requires $20,000.</p>
     <figure>
-      <img src="/assets/img/consistency-rule.svg" alt="Bar chart showing a single dominant trading day exceeding thirty percent of total profit under an Apex-style payout rule" width="940" height="540" loading="lazy">
+      <img src="/assets/img/consistency-rule.svg" alt="Bar chart showing a single dominant trading day exceeding the allowed share of total profit under an Apex-style payout rule" width="940" height="540" loading="lazy">
       <figcaption>A dominant day can block a payout even on an account with a passed evaluation.</figcaption>
     </figure>
-    <p>The interaction with the trailing threshold is what makes the combination difficult. A trader on a trailing account is tempted to bank one large day and finish, but a large day is exactly what the consistency rule penalises at payout. The two rules pull in opposite directions: the threshold punishes holding runners, and the consistency rule punishes taking them. The resolution is to cap daily profit at roughly a third of the eventual total — which on a $6,000 target means about $2,000 per session, spread across several sessions rather than concentrated in one.</p>
+    <p>The interaction with a trailing threshold is what makes the combination difficult. A trader on a trailing account is tempted to bank one large day and finish, but a large day is exactly what the consistency rule penalises at payout. The two rules pull in opposite directions: the threshold punishes holding runners, and the consistency rule punishes taking them. The resolution is to cap daily profit at roughly a third of the eventual total — which on a $6,000 target means about $2,000 per session, spread across several sessions rather than concentrated in one. A third is comfortably inside both the 50% and the legacy 30% rule.</p>
     <p>A second interaction is less obvious. Because the threshold trails unrealised profit, a large winning day also raises the floor substantially, so a trader with a $5,000 day on a $100,000 account finishes the session with less room than they started despite being significantly up. Combining a large day with a raised floor is the worst of both: the consistency problem and the trailing problem in the same session.</p>
     <h2 id="pacing">Pacing an Apex evaluation</h2>
     <p>A realistic pace for a $100,000 account with a $6,000 target is eight to fourteen trading days, structured as follows.</p>
@@ -121,7 +122,7 @@ priority: 0.8
     <ul>
       <li><strong>Holding a runner through a retracement.</strong> The floor has already moved; the retracement is measured from the peak, not from the entry. This is the defining Apex failure.</li>
       <li><strong>Increasing size as the target approaches.</strong> The instinct that ruins trailing evaluations, because progress simultaneously reduces the room available.</li>
-      <li><strong>One dominant day.</strong> Efficient for reaching the target and immediately expensive at payout under the 30% rule.</li>
+      <li><strong>One dominant day.</strong> Efficient for reaching the target and immediately expensive at payout under the 50% rule (30% on legacy accounts).</li>
       <li><strong>Trading beyond the target.</strong> Continuing after completion on a trailing account adds risk with no objective.</li>
       <li><strong>Assuming the floor has not moved.</strong> Traders who calculated their room once at the start of the evaluation and never recalculated it are consistently surprised.</li>
       <li><strong>Treating a discounted evaluation as low-stakes.</strong> Cheap entries encourage over-trading, and the failure mode is identical at any purchase price.</li>
@@ -134,7 +135,7 @@ priority: 0.8
           <tr><th>Firm</th><th>Drawdown behaviour</th><th>Daily limit</th><th>Consistency at payout</th><th>Account range</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Apex</strong></td><td>Intraday trailing</td><td>Via trailing floor</td><td>30% best day</td><td>Up to $300k</td></tr>
+          <tr><td><strong>Apex</strong></td><td>EOD or intraday trailing</td><td>Yes on EOD; via trailing floor on intraday</td><td>50% best day (30% legacy)</td><td>Up to $300k</td></tr>
           <tr><td>Topstep</td><td>Trailing</td><td>Yes, explicit</td><td>Best-day expectation</td><td>$50k–$150k</td></tr>
           <tr><td>MyFundedFutures</td><td>End-of-day trailing option</td><td>Plan dependent</td><td>At payout</td><td>$50k–$150k</td></tr>
           <tr><td>Take Profit Trader</td><td>Trailing</td><td>Yes</td><td>At payout</td><td>$25k–$150k</td></tr>
@@ -151,13 +152,13 @@ priority: 0.8
     <p><strong>The funded phase is where size pays.</strong> A funded $150,000 account with a 90% split and a satisfied consistency rule produces real income; a failed $300,000 evaluation produces nothing. The efficient path is to prove the plan on a mid-size account, then scale on the firm's own terms once payouts are established.</p>
     <p>Traders who run several accounts in parallel face an additional constraint that Apex is explicit about: correlated positions across accounts are treated as a single exposure. Holding four long index positions across four accounts is one position from the firm's perspective, and it can breach a threshold on the aggregate rather than on any single account.</p>
     <h2>A worked Apex evaluation, session by session</h2>
-    <p>A $100,000 Apex-style evaluation with a $6,000 target, an intraday trailing threshold and a 30% payout-stage consistency rule, traded at a plan that reduces size as progress increases.</p>
+    <p>A $100,000 Apex-style intraday evaluation with a $6,000 target, a trailing threshold and the current 50% payout-stage consistency rule, traded at a plan that reduces size as progress increases.</p>
     <p><strong>Session 1 — +$480.</strong> Half the planned size while the plan is being tested against real conditions. The floor moves up modestly with the peak. Nothing remarkable, which is the intention.</p>
     <p><strong>Session 2 — +$1,240.</strong> Full planned size. The session caps itself at $1,240 rather than pushing for more, because the daily cap is $2,000 and a session that overshoots it raises the consistency burden later.</p>
     <p><strong>Session 3 — −$320.</strong> One loss at planned size, then closed. On a trailing account a losing day does not move the floor — the floor only ever rises — so this session costs money and no cushion. That asymmetry is why losing days are cheap on trailing structures and giving back a peak is expensive.</p>
     <p><strong>Sessions 4–6 — +$2,730 combined.</strong> Target completion reaches 74%, so risk per trade drops to half size from here. The daily cap of $2,000 means no single session is capable of breaching the consistency rule even if the target is reached on its own.</p>
     <p><strong>Session 7 — +$360.</strong> A small session at reduced size, deliberately short. The floor is now close enough beneath current equity that the value of another dollar of profit is lower than the cost of a retracement.</p>
-    <p><strong>Sessions 8–10 — +$1,420 combined.</strong> The remaining 16% is collected in three small sessions at half size. The target is reached on session 10 with a best day of $1,240 — about 15% of total profit, comfortably inside the 30% rule.</p>
+    <p><strong>Sessions 8–10 — +$1,420 combined.</strong> The remaining 16% is collected in three small sessions at half size. The target is reached on session 10 with a best day of $1,240 — about 15% of total profit, comfortably inside both the 50% and the legacy 30% rule.</p>
     <p><strong>After completion.</strong> Trading stops. On a trailing account, continuing after the target is reached offers no benefit and a genuine risk: any retracement from the current peak moves the account closer to failure while the evaluation has already been won.</p>
     <div class="callout">
       <p><strong>What the sequence shows:</strong> the largest day was 15% of total profit, the floor was never the binding constraint because size fell as progress rose, and the consistency rule was satisfied before the payout was ever requested. None of that required a single exceptional trade.</p>
@@ -174,13 +175,13 @@ priority: 0.8
     <p>Expressed that way, the rule is mechanical and can be checked in seconds before each trade. Traders who adopt it stop ending sessions with a raised floor and a thin cushion — which is the precise combination that turns a profitable evaluation into a failed one.</p>
     <h2>Frequently asked about Apex</h2>
     <details class="faq"><summary>How does Apex's trailing threshold work?</summary><div class="faq-a"><p>It follows your peak equity upward, including unrealised profit, and does not move back down. The absolute distance from peak to threshold stays roughly constant, which means any retracement from the peak moves you closer to failure even if the account is well up on the day.</p></div></details>
-    <details class="faq"><summary>What is Apex's consistency rule?</summary><div class="faq-a"><p>A 30% best-day rule applies when a payout is requested: no single day may exceed 30% of total profit. A $6,000 best day requires at least $20,000 of total profit before the withdrawal is allowed.</p></div></details>
+    <details class="faq"><summary>What is Apex's consistency rule?</summary><div class="faq-a"><p>On current accounts a 50% best-day rule applies when a payout is requested: no single day may account for 50% or more of total profit since the previous payout. A $6,000 best day therefore requires at least $12,000 of total profit. Legacy Performance Accounts still use the older 30% rule, where the same day would require $20,000.</p></div></details>
     <details class="faq"><summary>How long does an Apex evaluation take to pass?</summary><div class="faq-a"><p>Typically eight to fourteen trading days with proper pacing on a $100,000 account. Faster passes are possible on a favourable rulebook but usually create a consistency problem at payout instead.</p></div></details>
     <details class="faq"><summary>Should I reduce size as I approach the target?</summary><div class="faq-a"><p>Yes, and this is the defining rule on a trailing account — full size to 40% of target, three quarters from 40–70%, half size beyond. Progress makes a trailing account more fragile, not safer.</p></div></details>
     <details class="faq"><summary>What happens if I give back profit after a strong day?</summary><div class="faq-a"><p>The failure threshold has already risen with the peak, so the retracement is measured from that peak. A $5,000 peak followed by a $3,000 retracement leaves $2,000 of realised profit and a much thinner buffer — which is why closing profit deliberately matters so much.</p></div></details>
     <details class="faq"><summary>Is Apex harder than forex evaluations?</summary><div class="faq-a"><p>Structurally yes, for the same headline difficulty. An intraday trailing floor is stricter than the static drawdowns used by most forex firms, and it is the reason traders who pass static-drawdown accounts comfortably can struggle here.</p></div></details>
     <details class="faq"><summary>Can ElitePropX pass an Apex evaluation?</summary><div class="faq-a"><p>Yes, for a flat $220 with retries covered and no profit split. The plan mirrors the sizing reductions described above, and the payout-stage consistency rule is planned for during the evaluation rather than repaired afterwards.</p></div></details>
-    <details class="faq"><summary>Does the trailing threshold ever stop moving?</summary><div class="faq-a"><p>On some firms a trailing floor stops following once it reaches the starting balance, which materially reduces the risk in the later part of an evaluation. On firms where the floor keeps following regardless, plan for risk reduction as progress increases. Confirm which applies on the plan you are buying rather than assuming either behaviour.</p></div></details>
+    <details class="faq"><summary>Does the trailing threshold ever stop moving?</summary><div class="faq-a"><p>It depends on the Apex product and platform. On intraday Performance Accounts the threshold stops once it reaches the starting balance plus $100. On Rithmic and WealthCharts intraday evaluations it stops once it reaches the target profit balance; on Tradovate evaluations it trails the peak indefinitely. The EOD evaluation does not trail intraday at all. Confirm which applies on the account you are buying rather than assuming either behaviour.</p></div></details>
     <details class="faq"><summary>Should I trade multiple contracts or a single contract?</summary><div class="faq-a"><p>Contract count is a sizing decision and should be derived from the trailing distance rather than from conviction. Work out the dollar risk per contract on the instrument being traded, divide the practical daily budget into thirds, and let that number set the contract count. Most Apex failures involve too many contracts held for too long rather than too few opportunities.</p></div></details>
     <details class="faq"><summary>What time of day is best for a trailing evaluation?</summary><div class="faq-a"><p>Sessions are chosen around the permitted hours and the instrument's liquidity rather than around a fixed clock. What matters on a trailing structure is session length: shorter planned sessions produce fewer ticks of floor movement, and the earliest part of the session tends to carry the widest spreads and the most news risk. Deliberate, bounded sessions are easier to manage than open-ended screen time.</p></div></details>
     <details class="faq"><summary>What happens after the evaluation passes?</summary><div class="faq-a"><p>A funded account is issued with its own conditions: minimum trading days before the first payout, a profit threshold, the consistency check and KYC. The <a href="/blog/funded-account-payout-process.html">payout process guide</a> covers the sequence.</p></div></details>
@@ -218,7 +219,7 @@ priority: 0.8
     </figure>
     <h3>Planning the threshold and the day count together</h3>
     <p>The two constraints usually have different deadlines, and the efficient plan lands them on the same date. If the profit threshold is reached on day five but the minimum day count is twenty, the remaining fifteen sessions exist to add ordinary profit without adding a dominant day. That is not a waiting period to be endured; it is the window in which the consistency ratio gets repaired.</p>
-    <p>The arithmetic is worth doing on paper before the payout request rather than after. Required total profit equals best day divided by the consistency percentage. With a $2,400 best day and a 30% rule, the account needs $8,000 of total profit before the request; if it is showing $5,000, another $3,000 spread across small sessions is the fix, and a second large day is the opposite of a fix.</p>
+    <p>The arithmetic is worth doing on paper before the payout request rather than after. Required total profit equals best day divided by the consistency percentage. With a $2,400 best day and the current 50% rule, the account needs $4,800 of total profit before the request; under the legacy 30% rule it would need $8,000. If the account is short, ordinary profit spread across small sessions is the fix, and a second large day is the opposite of a fix.</p>
     <h3>What to do while waiting</h3>
     <p>Trade smaller, not bigger. A payout request that is waiting on a day count is a period in which the only objective is not to lose what has already been earned, and the failure mode is a trader who uses the waiting period to "make the payout worth having". The payout is already worth having; the marginal profit from pressing is small compared with the risk of resetting the account to zero.</p>
     <p>A useful discipline is to set a hard cap for the waiting period at half the normal daily budget. It feels like wasted time and it is the cheapest insurance available, because the account has already done the thing it was bought for.</p>

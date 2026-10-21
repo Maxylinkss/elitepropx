@@ -1,6 +1,6 @@
 ---
 title: Apex Trader Funding vs E8 Markets: 2026 Rulebook Comparison
-desc: Apex vs E8 Markets compared: an intraday futures trail against a static forex floor, daily-stop differences, contract and lot sizing, and payout gating.
+desc: Apex vs E8 Markets: a one-time 30-day futures evaluation against E8's flat-fee One and Pro, compared on drawdown, daily rules and payout gates.
 path: /blog/apex-vs-e8-markets-comparison.html
 type: article
 h1: Apex Trader Funding vs E8 Markets: which rulebook fits your trading
@@ -9,7 +9,7 @@ crumb: Apex Trader Funding vs E8 Markets
 section: Firm comparisons
 sectionUrl: /blog/
 date: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-21
 priority: 0.7
 schemaService: true
 generator: content-system
@@ -18,7 +18,7 @@ generator: content-system
   <div class="wrap narrow">
     <p class="kicker">Firm comparison · reviewed October 2026</p>
     <h1>Apex Trader Funding vs E8 Markets: which rulebook fits your trading</h1>
-    <p class="lede">Apex Trader Funding and E8 Markets are not two versions of the same product. Apex evaluates futures on a trail measured against peak equity including open profit, bills monthly per account and gives no separate daily stop on the standard evaluation. E8 Markets evaluates forex and CFD on a mostly static floor, with a percentage daily stop and a one-off fee. The market decides the session and the sizing unit; the floor decides how many attempts a method gets. Figures below describe each rulebook's shape — confirm the live plan schedule before buying.</p>
+    <p class="lede">Apex sells a 30-day futures evaluation for a one-time fee and offers a choice between an end-of-day drawdown and a live intraday trail. E8 sells a flat-fee product with no time limit, but it sells several of them — One, Pro, Signature and Zero — and the rules differ enough that comparing "E8" as a single brand is meaningless. Both firms charge once rather than monthly, so the decision is about the drawdown model, the daily stop and the payout gate, not the billing rhythm.</p>
   </div>
 </section>
 
@@ -27,163 +27,141 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>Apex trails the floor against peak equity including floating profit, so an open winner lifts the failure point before the trade closes.</li>
-  <li>E8 Markets is static on most plans, which keeps a constant risk unit valid across the whole path.</li>
-  <li>Apex has no separate daily stop on the standard evaluation; E8 has a percentage daily stop on every plan described here.</li>
-  <li>Sizing is contracts against tick value on Apex and lots against pip value on E8 — the numbers do not transfer.</li>
-  <li>Apex bills monthly per account, so duration costs money; E8 bills once per attempt, so patience is free.</li>
-  <li>Both gate payouts on qualifying activity, and both review the record before releasing profit.</li>
+  <li>Neither firm charges a monthly evaluation subscription in 2026. Apex is a one-time 30-day purchase; E8's products are flat-fee.</li>
+  <li>Apex gives a choice of EOD or intraday drawdown; E8's One products use a dynamic (trailing) drawdown and Pro uses an 8% static floor.</li>
+  <li>The daily limit is fixed in dollars at Apex and percentage-based at E8. Pro also caps daily profit at 2%, which changes how a fast start is treated.</li>
+  <li>Consistency is a payout rule at both firms, but the thresholds and the stage differ: 50% at Apex, 40% on E8 One, none on E8 Pro.</li>
+  <li>Neither firm requires minimum trading days. Apex's clock is 30 days of access; E8's is an activity rule rather than a deadline.</li>
+  <li>The markets are different: US futures against forex, indices, metals and crypto CFDs. That decides the session and the sizing unit before any rule does.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#measure">What each rulebook actually measures</a></li>
-  <li><a href="#table">The two rulebooks side by side</a></li>
-  <li><a href="#floor">An intraday trail against a static floor</a></li>
-  <li><a href="#floating">Why floating profit matters on Apex</a></li>
-  <li><a href="#daily">The daily stop question</a></li>
-  <li><a href="#path">One evaluation against one-step or two-phase</a></li>
-  <li><a href="#sizing">A $50,000 account on each</a></li>
-  <li><a href="#market">Futures hours against forex hours</a></li>
-  <li><a href="#platforms">Rithmic and Tradovate against MT5 and cTrader</a></li>
-  <li><a href="#billing">Subscription against one-off, in dollars</a></li>
-  <li><a href="#payout">Payout qualification on each side</a></li>
-  <li><a href="#retries">Retry economics over a year</a></li>
-  <li><a href="#news">News, gaps and the overnight session</a></li>
+  <li><a href="#measure">What the two rulebooks measure</a></li>
+  <li><a href="#table">The rulebooks side by side</a></li>
+  <li><a href="#trail">Static, dynamic and end-of-day</a></li>
+  <li><a href="#worked">A $50,000 attempt on either</a></li>
+  <li><a href="#daily">Daily stops and daily caps</a></li>
+  <li><a href="#billing">Two one-time fee models</a></li>
+  <li><a href="#sizing">Contracts against lots</a></li>
+  <li><a href="#days">Deadlines and activity rules</a></li>
+  <li><a href="#platforms">The platform stacks</a></li>
+  <li><a href="#payout">Payout conditions</a></li>
+  <li><a href="#retries">Retry maths over twelve months</a></li>
+  <li><a href="#news">Releases and the overnight session</a></li>
   <li><a href="#fit">Which trader belongs on which</a></li>
-  <li><a href="#flags">Red flags in either rulebook</a></li>
+  <li><a href="#flags">What to check before paying</a></li>
   <li><a href="#month">A thirty-day plan for either</a></li>
 </ol>
 </div>
 
-<h2 id="measure">What each rulebook actually measures</h2>
-<p>Every evaluation measures five things at once: profit progress, total survival, behaviour inside a session, pace through the calendar, and whether the result can be converted into money. Comparisons usually foreground the first and ignore the other four, which is how traders end up choosing a product that their method cannot finish.</p>
-<p>Apex measures survival with a threshold that follows peak equity, including open profit. That is a live measurement: a position that is $1,200 in profit has already raised the failure point by $1,200, and a retracement from that high can end the account while the trade is still open. E8 Markets measures survival with a static floor on most plans, which means the failure point is fixed from the first trade and does not move when the account earns.</p>
-<p>The second measurement is pace. Apex applies a minimum number of trading days, which forces the attempt across a calendar. E8 usually imposes no consistency condition on the evaluation, which removes that constraint and shifts the difficulty onto the floor and the target. A trader who is fast will feel the Apex rule; a trader who is lumpy will not feel the E8 one until the funded phase.</p>
-<p>The third is cost. Apex bills monthly per account, so the calendar is a cost centre and a slow attempt is an expensive one. E8 bills once per attempt, so a longer calendar costs nothing and patience becomes affordable. Two products with similar headline targets therefore reward opposite pacing strategies.</p>
+<h2 id="measure">What the two rulebooks measure</h2>
+<p>Two evaluations with different asset classes are separated by three questions. Does the floor move, and if so against what — closed profit, peak equity including open profit, or the day's close? Is there a session limit on top of the floor? And what has to be true before the first withdrawal?</p>
+<p>Apex answers the first question twice. Its EOD evaluation recalculates the threshold at the close from the ending balance and holds it fixed through the next session. Its intraday evaluation moves the threshold in real time with peak balance, including unrealised profit, and never moves it down — with the caveat that on Rithmic and WealthCharts the threshold stops rising once it reaches the profit-target balance, while on Tradovate it trails for the life of the evaluation.</p>
+<p>E8 answers it per product. E8 One uses a 4% dynamic drawdown that rises with the highest closed balance and locks permanently at the initial balance. E8 Pro uses an 8% static drawdown that never trails. Signature uses its own structure and a 35% best-day payout rule; Zero is a different model again. A trader who reads one E8 page and assumes the rest follow has the same problem as a trader who assumes Apex has one evaluation.</p>
+<p>The third question is where the products diverge most. Apex applies a 50% best-day rule at payout on current accounts, 30% on legacy accounts. E8 One applies a 40% best-day rule on the performance account and none during the challenge; E8 Pro states that it has no consistency rule at all. Those are not small differences in the arithmetic of a withdrawal request.</p>
 
-<h2 id="table">The two rulebooks side by side</h2>
-<p>The table below is the shortest accurate summary of the difference. Read the loss floor and the billing rows first: they decide how a bad week is absorbed and what a failed attempt costs. The market row matters more than it looks, because it determines the session, the sizing unit and the gap risk before any target is relevant.</p>
+<h2 id="table">The rulebooks side by side</h2>
+<p>The table compares Apex's two models with E8's two most commonly quoted products. The plan name is the rulebook on both sides.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Parameter</th><th>Apex Trader Funding</th><th>E8 Markets</th></tr>
+      <tr><th>Parameter</th><th>Apex — EOD</th><th>Apex — Intraday</th><th>E8 One</th><th>E8 Pro</th></tr>
     </thead>
     <tbody>
-      <tr><td>Market</td><td>futures</td><td>forex and CFD</td></tr>
-      <tr><td>Evaluation model</td><td>single evaluation with a trailing threshold</td><td>one-step and two-phase evaluations</td></tr>
-      <tr><td>Loss floor</td><td>trailing, measured from peak equity including open profit</td><td>static on most plans</td></tr>
-      <tr><td>Daily stop</td><td>no separate daily stop on the standard evaluation</td><td>yes, percentage based</td></tr>
-      <tr><td>Consistency</td><td>yes, a minimum number of trading days applies</td><td>often none on the evaluation</td></tr>
-      <tr><td>Minimum days</td><td>undefined</td><td>undefined</td></tr>
-      <tr><td>Billing</td><td>monthly subscription per account</td><td>one-off per attempt</td></tr>
-      <tr><td>Payout</td><td>payouts requested from the funded account after qualifying days</td><td>profit split on a fixed schedule</td></tr>
-      <tr><td>Platforms</td><td>Rithmic, Tradovate, NinjaTrader</td><td>MT4, MT5, cTrader, Match-Trader</td></tr>
-      <tr><td>Session</td><td>US futures session hours</td><td>weekday forex hours</td></tr>
+      <tr><td>Market</td><td>US futures</td><td>US futures</td><td>FX, indices, metals, crypto CFDs</td><td>FX, indices, metals, crypto CFDs</td></tr>
+      <tr><td>Phases</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+      <tr><td>Profit target</td><td>$1,500 / $3,000 / $6,000 / $9,000</td><td>$1,500 / $3,000 / $6,000 / $9,000</td><td>6%</td><td>8%</td></tr>
+      <tr><td>Daily loss</td><td>$500 / $1,000 / $1,500 / $2,000</td><td>None</td><td>3%</td><td>2.5%</td></tr>
+      <tr><td>Maximum loss</td><td>$1,000 / $2,000 / $3,000 / $4,000, EOD</td><td>$1,000 / $2,000 / $3,000 / $4,000, trailing</td><td>4% dynamic</td><td>8% static</td></tr>
+      <tr><td>Daily profit cap</td><td>None</td><td>None</td><td>None stated</td><td>2%</td></tr>
+      <tr><td>Minimum days</td><td>None</td><td>None</td><td>None; one trade per 60 days</td><td>None stated</td></tr>
+      <tr><td>Consistency</td><td>50% at payout (30% legacy)</td><td>50% at payout (30% legacy)</td><td>40% best day at payout</td><td>None</td></tr>
+      <tr><td>Access</td><td>30 days</td><td>30 days</td><td>No time limit</td><td>No time limit</td></tr>
+      <tr><td>Billing</td><td>One-time fee; PA activation fee on funding</td><td>One-time fee; PA activation fee on funding</td><td>Flat fee</td><td>Flat fee</td></tr>
     </tbody>
   </table>
 </div>
-<p>Two rows deserve a caveat. "No separate daily stop" does not mean no limit on a bad day: the trailing floor still applies continuously, so a large intraday loss can breach the account without any daily rule being involved. And "often none" on E8 consistency is not "none": plan variants and funded phases can add a condition. Both caveats resolve the same way — read the exact plan document, not the summary.</p>
+<p>Read the daily column carefully. Apex's limits are fixed dollar amounts that do not change with account size proportionality — $500 on a $25k account is 2%, while $2,000 on a $150k account is 1.33%. E8's are percentages of the starting balance. Comparing "1%" to "$500" without converting is the most common arithmetic error in cross-market comparisons.</p>
 
-<h2 id="floor">An intraday trail against a static floor</h2>
-<p>Model a $50,000 account with a $2,500 threshold on each side. On Apex the failure point starts at $47,500 and moves up with every new equity high, including highs created by open positions. On E8 the failure point stays at $45,000 if the floor is 10%, and it does not move when the account reaches $52,000.</p>
-<p>The behavioural difference is largest after a good trade. On Apex, a $1,500 winner lifts the failure point to $49,000; the trader now has $2,500 of room from the high but only $1,000 from the starting balance. On E8, the same winner leaves $7,000 of room from the original start. Same result, very different next decision: the Apex trader must cut size, and the E8 trader may keep it.</p>
-<p>The second difference is intra-trade risk. An E8 trader can hold a winner through a retracement without any rule being triggered, because the floor does not follow the unrealised high. An Apex trader cannot: the moment the position prints a new high, the floor is there, and a give-back can end the attempt before the trade is closed. That is a genuine constraint on holding for a larger move.</p>
-<p>The third difference is what happens after a loss. On a static floor, a $1,000 loss reduces the room from $10,000 to $9,000 and the unit can stay the same. On a trail, a $1,000 loss from a $2,500 buffer leaves $1,500, and the unit must fall by a third to keep the same loss tolerance. The trail converts a loss into a sizing decision, which is useful discipline and an additional task every morning.</p>
-<p>The practical rule for each is different. On E8, set a self-imposed drawdown stop from the equity high, because the rulebook will not supply one. On Apex, recalculate the unit from the buffer at the start of every session and treat a new equity high as a reason to reduce size rather than increase it.</p>
+<h2 id="trail">Static, dynamic and end-of-day</h2>
+<p>A static floor never moves, so the distance between the balance and the failure point grows with every profitable trade. A dynamic or trailing floor moves with the high-water mark, so a give-back consumes room that a static floor would have left intact. An end-of-day trail is the middle case: it moves, but only once a day, against realised profit.</p>
+<p>For a trader who holds through intraday noise, the ranking is static, then EOD, then live trailing. For a trader who takes profit at levels and closes within the session, the gap narrows: a live trail costs less if positions are not carried through retracements. That is why the same rule can be workable for one method and fatal for another without any difference in skill.</p>
+<p>Apex's intraday model is the strictest of the group because it follows unrealised profit. A position that runs $900 into profit lifts the failure point before the trade closes, and a return to entry leaves the buffer $900 smaller with no realised loss. The platform exception matters: on Rithmic and WealthCharts the threshold stops at the target balance, so a trader on a 50k account is not chased by the trail beyond $53,000. On Tradovate the trail continues, which makes the final approach to target more fragile.</p>
+<p>E8's dynamic drawdown is gentler than a live equity trail because it moves on <em>closed</em> balance and locks at the initial balance. A trade that runs into profit and comes back does not move the floor. That is a meaningful advantage for a swing-style method, and it is not visible in a table that simply says "trailing".</p>
 
-<h2 id="floating">Why floating profit matters on Apex</h2>
-<p>The phrase "including open profit" is the most consequential in the Apex row. It means the trail updates while a position is running, so an unrealised gain is treated as if it had been banked. A trader who is $800 up on an open trade and then watches it reverse through entry has not merely given back profit; they have consumed $800 of a floor that has already moved.</p>
-<p>The planning consequence is that stops and targets should be set so the account never depends on an open winner. A position that is allowed to run for a large target is a position that will raise the floor substantially before it resolves, and the retracement risk grows with the unrealised gain. The safe pattern is to take partial profit at a defined level and move the stop, which locks the high and reduces the chance that a give-back becomes a breach.</p>
-<p>There is a second-order effect on the final third of an attempt. As the account approaches the target, each new high lifts the floor and shrinks the distance from the balance to failure. A trader who has earned $4,000 of a $6,000 target and is sitting at $54,000 with a $2,500 trail has a failure point at $51,500 — $1,500 below the balance. One bad session at full size can end an attempt that is two thirds complete.</p>
-<p>The remedy is a taper that is steeper than usual: full size until half the target, half size until three quarters, and a third afterwards. On a trail that includes floating profit, the taper is not conservatism; it is the arithmetic of a floor that moves with the position rather than with the balance.</p>
+<h2 id="worked">A $50,000 attempt on either</h2>
+<p>Take Apex's EOD model on $50,000: a $3,000 target, a $2,000 drawdown and a $1,000 daily loss limit. The threshold starts at $48,000 and recalculates at each close. A day that closes at $51,000 moves it to $49,000; a day that closes at $49,500 leaves it at $49,500. The daily limit is separate: losing $1,000 pauses trading for the session without closing the account.</p>
+<p>Now take E8 One on a $50,000 account: a 6% target ($3,000), a 3% daily drawdown ($1,500) and a 4% dynamic drawdown ($2,000) that rises with the highest closed balance and locks at $50,000. A day that closes at $51,000 raises the floor to $49,000. A trade that runs to $51,500 and closes at $50,400 leaves the floor where it was, because the high-water mark is measured on closed profit.</p>
+<p>The arithmetic looks similar and behaves differently. Apex's intraday variant would have moved the floor to $49,500 on the unrealised high; E8 One would not have moved it at all. A trader whose edge depends on holding through retracements is choosing between two different products even when the headline drawdown percentages match.</p>
 
-<h2 id="daily">The daily stop question</h2>
-<p>Apex's standard evaluation has no separate daily stop, which means a single session has no published limit beyond the trailing floor. E8 applies a percentage daily stop, which bounds the session independently of the total allowance. The difference changes how a bad day is absorbed: on E8 the day ends at a known figure, and on Apex the day ends when the trader decides or when the floor is reached.</p>
-<p>No daily stop is not a licence. The trailing floor still applies continuously, so a session that loses 4% of a 5% trail has effectively ended the attempt without any rule being named. A trader on Apex has to supply the daily limit personally, and the natural choice is a figure that keeps a worst day at a third of the buffer. With a $2,500 buffer that is roughly $800, which at a $250 unit is three losses.</p>
-<p>On E8 the published limit is usually generous relative to a sensible unit. A 5% daily stop on $50,000 is $2,500, which at a $250 unit is ten losses — more than any session should use. The personal cap of three losses still does the work, and the published limit functions as a backstop rather than a plan.</p>
-<p>The asymmetry matters for a trader who moves between the two products. On E8, forgetting the personal cap is survivable because the firm's rule will stop the bleeding. On Apex, forgetting it means the trail is the only limit, and the trail does not care whether the loss arrived in one session or five.</p>
+<h2 id="daily">Daily stops and daily caps</h2>
+<p>Apex's EOD evaluation has a fixed daily loss limit; the intraday evaluation has none, and risk control is enforced entirely through the trailing threshold. That is an unusual combination: the model with the more forgiving floor has no session stop, while the model with the stricter floor has one.</p>
+<p>E8 One applies a 3% daily drawdown as a hard breach, calculated from the day's starting balance. E8 Pro applies 2.5% and adds a 2% daily profit cap, which is a different instrument entirely: it limits how much can be made in a day, not how much can be lost. A trader who expects to make the target in two large sessions will find the cap binding, and a trader who trades small and often will barely notice it.</p>
+<p>Whether a limit is measured on equity or on closed results changes its real size. A $600 floating loss has already spent the allowance under an equity measure but not under a balance measure, which is the difference between stopping out and being stopped out by the firm. Get the basis in writing for the exact account.</p>
 
-<h2 id="path">One evaluation against one-step or two-phase</h2>
-<p>Apex runs a single evaluation with a trailing threshold. One target, one floor, one decision, with a minimum-day condition forcing a calendar. E8 offers both one-step and two-phase structures, so the trader chooses whether the firm tests a single sample or a repeat.</p>
-<p>The single-stage structure is faster and less forgiving of a bad month. A trader whose method needs a trend to appear has one window to find one, and a trailing floor that moves against them in the meantime. The two-phase structure is slower and gives two windows, each with its own target, against the same floor — which is a meaningful advantage for a method with long dry spells.</p>
-<p>The diagnostic value differs too. A single pass tells the firm and the trader that the method produced a result once. A two-phase pass tells them it produced a result twice, which is much better evidence for a funded account that is intended to run for years. For a trader who intends to withdraw once and stop, the extra phase is pure cost.</p>
-<p>Because the fee structures also differ — Apex monthly, E8 one-off — the path choice interacts with the billing choice. A two-phase E8 path costs the same whatever the calendar, while a single-stage Apex attempt costs more every month it runs. That combination pushes toward patience on E8 and pace on Apex, which is the opposite of what the structures themselves suggest.</p>
+<h2 id="billing">Two one-time fee models</h2>
+<p>Apex's help centre is explicit: an evaluation is a one-time payment for 30 days of access, there are no monthly charges, and nothing renews automatically. The Performance Account activation fee is also one-time. A trader who budgets a monthly subscription is budgeting the legacy product, not the current one.</p>
+<p>E8 sells its products for a flat fee per attempt. The Pro page describes itself as a flat fee with daily payouts and no consistency rule; the One product is priced per attempt with optional customisation at checkout. Neither is a monthly subscription, so the old "Apex monthly against E8 one-off" framing is wrong at both ends.</p>
+<p>Both firms have costs beyond the evaluation. Apex charges a one-time activation fee when a passed evaluation becomes a Performance Account, and market data is billed by the platform or data provider. E8 includes market data in the account for its Classic Markets product, but leverage and instrument access depend on the market selected at checkout. The budget line that matters is the all-in cost of an attempt, not the headline fee.</p>
 
-<h2 id="sizing">A $50,000 account on each</h2>
-<p>On Apex, size in contracts. One Micro E-mini Nasdaq contract pays $2 per tick, so a 15-tick stop risks $30 per contract. With a $250 unit that is eight contracts, before the position cap. One E-mini S&amp;P contract pays $12.50 per tick, so an 8-tick stop risks $100 and the same unit buys two contracts. The contract count differs by a factor of four for the same dollar risk.</p>
-<p>On E8, size in lots. One standard lot of a USD-quoted major is about $10 per pip, so a 20-pip stop risks $200 and a $250 unit buys one lot. A 40-pip stop buys a half lot. The pip value changes with the pair and the account currency, which is why the calculation has to be run per instrument rather than remembered.</p>
-<p>The two tables look similar in dollars and behave differently in practice. A futures position of eight micro contracts can be entered and exited in seconds with a click, and the commission is per contract per side, so the cost scales with the count. A one-lot forex position carries a spread cost that widens around releases and a swap cost if held overnight.</p>
-<p>Both calculations need a buffer. Stops slip at the open and around releases, and the slipped fill is what the floor sees. Adding ten to twenty percent to the planned risk changes the size by a fraction and keeps the realised loss inside the unit — which matters more on Apex, where the trail has no daily stop to absorb an overrun.</p>
+<h2 id="sizing">Contracts against lots</h2>
+<p>Apex sizes in contracts. One Micro E-mini Nasdaq contract pays $2 per tick, so a 15-tick stop risks $30. One E-mini S&amp;P contract pays $12.50 per tick, so an 8-tick stop risks $100. Apex's evaluation caps are fixed: 4 contracts on $25k, 6 on $50k, 8 on $100k and 12 on $150k, and they do not scale during the evaluation.</p>
+<p>E8 sizes in lots, with leverage set by instrument class: 1:30 on forex, 1:15 on indices and metals, 1:1 on crypto for the Classic Markets product. The lot calculation depends on the pair and the account currency, so the risk per trade has to be computed in the platform rather than assumed from a standard contract value.</p>
+<p>The practical consequence is that an Apex trader thinks in ticks and contracts, while an E8 trader thinks in lots and pip value. Both arrive at a dollar risk per trade, but the arithmetic is not transferable. A trader moving between the two should rebuild the sizing table rather than convert it.</p>
 
-<h2 id="market">Futures hours against forex hours</h2>
-<p>Apex trades US futures hours. Liquidity concentrates in the regular session, the overnight session is thinner, and the daily settlement marks the account to market. A trader who cannot be present during the regular session is trading a different market with wider spreads and less reliable stop fills.</p>
-<p>E8 trades weekday forex hours, from Sunday evening to Friday evening, with the deepest liquidity in the London and New York overlap. A trader who can only watch the Asian session is trading narrower ranges and wider spreads on European crosses, and the method should be built for that window rather than for the whole day.</p>
-<p>The calendar arithmetic is different too. Futures have defined sessions, holidays and a daily settlement that can change margin requirements without a trade. Forex has a continuous week, a Sunday open that can gap through a weekend stop, and rollover costs for positions held overnight. Neither calendar is easier; they fail in different places.</p>
-<p>The practical test is availability. Mark the hours you can genuinely watch for four weeks and check whether the liquid block of the instrument falls inside them. If it does not, the evaluation is being traded on hope, and no rulebook comparison fixes an unavailable market.</p>
+<h2 id="days">Deadlines and activity rules</h2>
+<p>Neither firm requires a minimum number of trading days. Apex states it on both evaluation pages and allows a pass in a single session. E8 One imposes no time limit but requires at least one trade, opened and closed, every 60 days. E8 Pro publishes no minimum-day rule.</p>
+<p>The clocks are therefore different in kind. Apex's 30 days is a hard deadline: an unfinished evaluation expires and a new purchase is needed. E8's 60-day rule is an activity condition: a trader can take five months if they keep the account alive, but an abandoned account is closed.</p>
+<p>That changes the pacing decision. On Apex, a plan that spreads the target over eight weeks leaves two weeks of buffer for a losing streak. On E8, the plan can be stretched, but the stretch has to include at least one trade every 60 days and the discipline not to overtrade a quiet account.</p>
 
-<h2 id="platforms">Rithmic and Tradovate against MT5 and cTrader</h2>
-<p>Apex lists Rithmic, Tradovate and NinjaTrader — three futures platforms with no overlap with E8's stack. Rithmic is a data and routing layer valued for depth of market and speed; Tradovate is the lightest front end; NinjaTrader is the programmable one. E8 lists MT4, MT5, cTrader and Match-Trader, which is a forex and CFD stack with a browser-first option at the end.</p>
-<p>The overlap is zero, so the choice is partly a choice of workflow. A trader with years of MT5 templates and a tested expert advisor faces a real cost in moving to a futures front end, and that cost usually exceeds any difference in evaluation fee. The reverse is also true: a trader who has built a NinjaTrader strategy does not want to rebuild it on cTrader for a slightly cheaper evaluation.</p>
-<p>Order handling differs in ways that matter in fast markets. Futures orders rest at the exchange and are matched by the engine, which produces cleaner fills during volatility. Forex orders are held by the broker's server, and behaviour in a gap depends on the execution model. If the method depends on precise stop fills around releases, the futures side is structurally cleaner — and the trail on Apex makes that precision more valuable.</p>
-<p>Data costs complete the picture. Futures data is usually billed separately from the evaluation and the depth-of-market feed is the expensive one. Forex data is usually included with the platform. A monthly Apex subscription plus a data fee is the real monthly cost of an attempt, and it can exceed the evaluation fee itself.</p>
+<h2 id="platforms">The platform stacks</h2>
+<p>Apex supports Tradovate, Rithmic and NinjaTrader among others. E8 runs on MetaTrader 5 for its Classic Markets product, with a separate environment for perpetual futures. The two stacks have almost nothing in common: different order types, different automation, different data.</p>
+<p>That makes the platform question decisive rather than incidental. A trader with an MT5 expert advisor cannot run it at Apex. A trader with a NinjaTrader workflow cannot move to E8 without rebuilding it. The rulebook comparison only matters after that constraint is settled.</p>
+<p>Data fees follow the platform. Futures data is usually billed separately and depth-of-market is the expensive tier. E8 includes data with the account, but the leverage schedule differs by market, so the effective risk of a position can change with the product selected at checkout.</p>
 
-<h2 id="billing">Subscription against one-off, in dollars</h2>
-<p>At an illustrative $150 per month plus a $50 data fee, an Apex attempt costs $200 for one month, $600 for three and $1,200 for six. At an illustrative $450 one-off, an E8 attempt costs $450 whether it takes one month or five. The break-even is around two and a half months, which is close to the typical duration of a properly sized attempt.</p>
-<p>That makes the comparison closer than the headline suggests. A trader who passes in six weeks is better off with the subscription; a trader who takes four months is better off with the one-off. Since a correctly sized attempt usually finishes in six to ten weeks, the two are roughly equivalent in expected cost, and the decision should be made on the rulebook rather than on the price.</p>
-<p>Retries change the arithmetic. Three attempts on Apex at three months each is nine months of subscription plus fees, which can be four or five times the headline price. Three E8 attempts cost three fees with no calendar charge. A trader who expects to need retries is better served by the one-off structure, and a trader who expects to pass first time is indifferent.</p>
-<p>The hidden line is the cost of time itself. A monthly product creates pressure to finish, which is useful for a disciplined trader and dangerous for one who presses. A one-off product removes the pressure, which is comfortable and can produce a five-month attempt that should have been six weeks. Neither is wrong; both require the trader to supply the pace the billing does not.</p>
+<h2 id="payout">Payout conditions</h2>
+<p>Apex applies a 50% best-day consistency rule at payout on current accounts, with 30% retained on legacy Performance Accounts. A payout request that fails the rule is refused rather than breaching the account, so the fix is more ordinary winning days before requesting again. The 50% figure is the one to plan for, not the 30% quoted in older reviews.</p>
+<p>E8's payout rules differ by product. One requires that no single day exceeds 40% of total profit and that the requested payout is greater than 50% of the daily drawdown — on a $100,000 account with a 4% daily drawdown, that means a minimum request above $2,000. Pro states that it has no consistency rule and processes payouts daily with a 1% minimum profit. A trader comparing the two E8 products is comparing two different withdrawal experiences.</p>
+<p>Apex and E8 both inspect the trading record before releasing money, and the questions they ask are easier to answer with a journal than with a statement alone. Record the buffer at the open and close of each session, and confirm whether the split is applied to gross or net profit.</p>
 
-<h2 id="payout">Payout qualification on each side</h2>
-<p>Apex pays from the funded account after qualifying days, with the request made from the dashboard. E8 releases a profit split on a fixed schedule after qualification. The difference that matters is the time from a profitable month to cleared funds, and the conditions that can interrupt it.</p>
-<p>Both review conduct before releasing profit: the statements, the size relative to the rules, the distribution of profit and any pattern resembling prohibited practice. A trader with a complete journal answers the review in an afternoon; a trader without one is relying on a third party's interpretation of a statement, which is a weaker position than it sounds.</p>
-<p>Identity and payment verification sit on the critical path on both. Withdrawals usually return to the method used for the fee, so an expired card or a changed wallet triggers a manual review and a delay measured in weeks. Complete verification before the target is reached, and keep the receipt for the fee.</p>
-<p>The comparison that matters is total time from first payment to cleared funds. On Apex that includes the subscription months plus the qualifying days plus the review. On E8 it includes the attempt plus the fixed cycle plus the review. The totals are usually closer than the marketing pages suggest, and the variance is driven by the trader's pace rather than by the firm.</p>
+<h2 id="retries">Retry maths over twelve months</h2>
+<p>With one-time fees, the annual cost is fee times attempts. At a 30% pass probability, three attempts per funded account is a reasonable planning assumption. The lever that improves the number is a smaller unit, not a cheaper fee: cutting the unit by a third usually turns a normal losing run from a breach into a drawdown.</p>
+<p>The second lever is the model. A trader who gives back intraday profit should prefer the EOD or dynamic floor to the live trail. A trader who takes profit at levels can use the live trail without paying for the give-back. Choosing the model that matches the failure mode is worth more than a discount on the fee.</p>
+<p>The third lever is the payout rule. A 50% best-day rule at Apex and a 40% rule at E8 One both constrain how concentrated the profit can be. A method that produces one large day a month will pass the evaluation and then wait at the payout stage, which is the most expensive outcome because the fee has already been paid.</p>
 
-<h2 id="retries">Retry economics over a year</h2>
-<p>Estimate the probability of passing each product from your own record, then divide the cost by that number. If an Apex attempt costs $600 and has a 30% pass probability, the expected cost per funded account is $2,000. If an E8 attempt costs $450 and has a 35% probability, the expected cost is $1,286. The difference is larger than any fee difference and it is driven by the structure, not the price.</p>
-<p>The lever that improves both numbers is a smaller unit. Reducing the unit by a third typically raises the pass probability by converting a normal losing streak from a breach into a drawdown. The fee stays the same, so the expected cost falls by more than the profit per trade. That is the most reliable improvement available to a trader who has already chosen a product.</p>
-<p>The second lever is the calendar. On E8, a longer attempt costs nothing and raises the chance of encountering a normal distribution of results. On Apex, a longer attempt costs money every month, so the same patience has a price and the optimal duration is shorter. The structures genuinely reward different behaviour.</p>
-<p>The third lever is the market. A trader who is skilled in futures will underperform on a forex rulebook regardless of the arithmetic, because the sizing and session assumptions do not transfer. Choosing the market you already trade is worth more than a percentage point of expected cost.</p>
-
-<h2 id="news">News, gaps and the overnight session</h2>
-<p>Both products carry event risk and neither eliminates it. Futures react to central bank decisions, inflation prints and employment data, with the largest single-session ranges of the quarter. Forex reacts to the same calendar with wider spreads and a Sunday open that can gap through a weekend stop.</p>
-<p>Restrictions vary by plan and by definition. Some rulebooks prohibit opening positions in a window around a release, some prohibit holding through it, and some prohibit profiting from the resulting spike. The clause is usually short, rarely on the marketing page and enforced at review, which makes it a delayed failure with a complete audit trail.</p>
-<p>The conservative plan is the same on both: flatten before the scheduled release and re-enter after the first thirty to sixty minutes, once the spread has normalised. That costs some of the largest moves and removes a category of dispute. A trader who holds should halve the position and widen the stop to a level the floor can survive if it gaps.</p>
-<p>The overnight session is the second scheduled risk. On Apex it is thinner and the daily settlement can change margin without a trade. On E8 it is a continuous market with rollover costs. Either way, a position held across a session boundary should carry a smaller unit than a session trade, or be flattened.</p>
+<h2 id="news">Releases and the overnight session</h2>
+<p>The two products do not share an event calendar. Apex trades US futures, so the relevant releases are US data, central bank decisions and inventory reports. E8 trades forex and CFDs, where the calendar is global and the weekend gap is a larger risk.</p>
+<p>E8 One allows news trading during the challenge but prohibits it in the performance account around high-impact releases, beginning five minutes before and ending five minutes after. Apex publishes conduct rules rather than a blanket news ban; the details sit in the help centre and are enforced at review.</p>
+<p>The conservative plan is the same on both: be flat into the release and re-enter after the first reaction. On a live trail the gap can lift the floor and consume the buffer in the same move, which makes the pre-release decision a risk decision rather than a stylistic one.</p>
 
 <h2 id="fit">Which trader belongs on which</h2>
-<p>Apex fits a futures trader who already works a Rithmic, Tradovate or NinjaTrader workflow, who can watch the US regular session, and whose method produces a tight, defined stop. The intraday trail suits a trader who takes profit at levels and does not hold for a large move, because the floor punishes give-backs during an open trade.</p>
-<p>E8 fits a forex or CFD trader who wants a static floor, a choice between one-step and two-phase structures, and a one-off fee that makes a longer attempt affordable. It suits a trader with an MT4, MT5 or cTrader workflow and a method with a defined stop and a modest target per trade.</p>
-<p>The tie-breaker, if both markets are accessible, is the trailing question. A trader who gives back gains will struggle on Apex and be comfortable on E8. A trader who locks profit at the close is the reverse. That single behavioural trait predicts the fit better than any comparison of targets.</p>
-<p>If the answer is still unclear, simulate both rulebooks on the same hundred trades: apply the trail to one and the static floor to the other, with the same dollar risk. Whichever survives with the smaller drawdown is the structure the method already fits.</p>
+<p>Apex fits a trader who wants a one-time 30-day futures attempt, a choice between a fixed daily limit and a pure trail, and account sizes up to $300,000. The EOD model suits a trader who holds through intraday retracements; the intraday model suits a trader who takes profit at levels and closes within the session.</p>
+<p>E8 fits a forex or CFD trader who wants a flat fee, no time limit, and a product family with genuinely different rules. One suits a trader who wants a 6% target with a dynamic floor; Pro suits a trader who wants an 8% static floor, a 2.5% daily stop and no consistency rule at payout.</p>
+<p>The tie-breaker is the market and the platform, not the fee. A NinjaTrader futures trader stays at Apex. An MT5 forex trader starts with E8. Neither firm's evaluation is improved by choosing the one with the marginally lower price.</p>
 
-<h2 id="flags">Red flags in either rulebook</h2>
-<p>The first is a floor type that is not stated plainly. If the difference between static and trailing is buried, assume the stricter reading, and on Apex confirm whether the trail includes open profit — the phrase changes the entire holding strategy. The second is a daily stop without a stated basis; equity and balance produce different outcomes and ambiguity usually resolves against the trader.</p>
-<p>The third is a payout condition that depends on a discretionary review with no published criteria. Every firm reserves the right to refuse profit from prohibited activity, which is reasonable. A rulebook that leaves the definition of prohibited activity open should be priced as a risk.</p>
-<p>The fourth is a plan that changes mid-attempt. Firms update terms, and the version in force at purchase may not be the one in force at payout. Save a dated copy at checkout and check which version governs. That file is the difference between a dispute you can win and one you cannot.</p>
-<p>The fifth is a billing rhythm that does not match the calendar the rules require. A monthly subscription on a rulebook with a long minimum-day condition is a product that charges for the time it forces, and that combination deserves a second look before purchase.</p>
+<h2 id="flags">What to check before paying</h2>
+<p>The first is the exact product, not the brand: Apex EOD or intraday, E8 One, Pro, Signature or Zero. The second is the drawdown definition and whether it trails on closed or unrealised profit. The third is the daily rule, including whether it is a loss limit or a profit cap.</p>
+<p>The fourth is the payout consistency threshold and the minimum request. The fifth is the platform support for the automation or order types the method needs. The sixth is the conduct clauses: news windows, order types, third-party trading. Save a dated copy of every answer; it is the only document that settles a dispute six weeks later.</p>
 
 <h2 id="month">A thirty-day plan for either</h2>
-<p>Week one is calibration: trade half the normal unit, record the buffer before every entry, and confirm how the floor behaves after a winner. On Apex the goal is to see the trail move during an open position; on E8 it is to confirm the static floor and the daily stop behave as documented.</p>
-<p>Weeks two and three are execution: normal unit, a fixed setup list, and a hard stop after two losing trades. Recalculate the risk unit each morning on Apex and monthly on E8. On the trailing side this is where the floor starts to bite; on the static side it is where the target usually appears.</p>
-<p>Week four is consolidation: reduce size, protect the result, and prepare the payout documentation. A trader who reaches the target early and then doubles size to make the pass worthwhile is the trader who loses the account in the final week, and the pattern is identical on both products.</p>
-<p>Across all four weeks the same three numbers belong on a card: buffer, unit and daily cap. The rulebooks differ in how they move the first one; neither can do anything about a trader who does not look.</p>
+<p>Spend the opening week measuring rather than earning. Trade half the intended unit, record the buffer before every entry, and note whether the floor responds to an open winner or only to a closed one. By the end of the week the account's behaviour should be a short table: average spread, slip on stops, and the exact moment the threshold moved.</p>
+<p>Weeks two and three are execution: normal unit, a fixed setup list, and a hard stop after two losing trades. Recalculate the risk unit each morning. On the live trail this is where compression is felt; on the static or dynamic floor it is where the target usually appears.</p>
+<p>Treat the final week as administration with a small trading component: a third of the unit, documentation completed, and no attempt to improve a result that is already sufficient. On a 30-day product there is no reason to trade out the clock.</p>
+<p>Keep three figures visible for the whole campaign: the distance to the floor, the unit that distance supports, and the session cap. E8 and Apex move those figures through different mechanisms, but both punish a trader who stops recalculating them after a good week.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Does Apex measure its floor on equity or balance?</summary><div class="faq-a"><p>The standard evaluation trails against peak equity including open profit, so an unrealised gain raises the failure point before the trade closes. Confirm the current definition for the exact plan before relying on it.</p></div></details>
+<details class="faq"><summary>Does Apex charge monthly?</summary><div class="faq-a"><p>A current Apex evaluation is bought once and runs for 30 days; nothing renews automatically, and the activation fee on funding is also one-time. Only the legacy subscription accounts carry a recurring charge.</p></div></details>
 
-<details class="faq"><summary>Is E8 Markets' floor static?</summary><div class="faq-a"><p>Static on most plans, measured from the initial balance. That keeps a constant risk unit valid, but it also removes the discipline a trail imposes, so a self-imposed drawdown stop is worth adding.</p></div></details>
+<details class="faq"><summary>Does E8 have a static drawdown?</summary><div class="faq-a"><p>E8 Pro uses an 8% static drawdown. E8 One uses a 4% dynamic drawdown that rises with the highest closed balance and locks at the initial balance. The products do not share a floor.</p></div></details>
 
-<details class="faq"><summary>Which one has a daily stop?</summary><div class="faq-a"><p>E8 applies a percentage daily stop. Apex's standard evaluation has no separate daily stop, so the trailing floor is the only published limit on a bad session and a personal cap is essential.</p></div></details>
+<details class="faq"><summary>Can an MT5 expert advisor run on Apex?</summary><div class="faq-a"><p>No. Apex's stack is Tradovate, Rithmic and NinjaTrader among others. Automation is possible through those platforms, but an MT5 expert advisor does not run on them.</p></div></details>
 
-<details class="faq"><summary>Can an MT5 expert advisor run on Apex?</summary><div class="faq-a"><p>No. Apex's stack is Rithmic, Tradovate and NinjaTrader. Automation is possible through those platforms, but an MT5 expert advisor does not run on them.</p></div></details>
-
-<details class="faq"><summary>Which billing model is cheaper?</summary><div class="faq-a"><p>It depends on duration. A one-month subscription is cheaper than a one-off fee; a six-month attempt is not. Since a correctly sized attempt usually finishes inside three months, the two are often close in expected cost.</p></div></details>
+<details class="faq"><summary>Which payout rule is stricter?</summary><div class="faq-a"><p>Apex's 50% best-day rule is stricter than E8 One's 40% and applies to every current payout. E8 Pro states that it has no consistency rule, which makes it the most permissive of the four on this row.</p></div></details>
 
 <details class="faq"><summary>Do both firms permit third-party trading?</summary><div class="faq-a"><p>That has to be confirmed in the terms for the exact plan, not assumed from the brand. Some rulebooks prohibit it, and a pass obtained against those terms can be reversed at payout.</p></div></details>
   </div>
@@ -193,7 +171,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Apex or E8 — traded for you</h2>
-      <p>One flat <strong>$220</strong> for either evaluation, any account size. Retries covered, no profit split, funded login in your name. If the firm's terms forbid third-party trading, we decline before payment.</p>
+      <p>One flat <strong>$220</strong> for either evaluation, any account size. Retries covered, no profit split, funded login in your name. We work with any firm, and we tell you in writing what its third-party trading clause says before payment.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>

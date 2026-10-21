@@ -43,7 +43,6 @@ generator: content-system
   <li><a href="#tiers">Cheapest by account tier</a></li>
   <li><a href="#phases">What a second phase really costs</a></li>
   <li><a href="#addons">Add-ons that change the total</a></li>
-  <li><a href="#firm-fundedengineer">Funded Engineer</a></li>
   <li><a href="#firm-smartprop">Smart Prop Trader</a></li>
   <li><a href="#firm-cryptofund">Crypto Fund Trader</a></li>
   <li><a href="#firm-nextstep">Next Step Funded</a></li>
@@ -70,21 +69,20 @@ generator: content-system
       <tr><th>#</th><th>Firm</th><th>Market</th><th>Loss floor</th><th>Billing</th><th>Cheapest entry (illustrative)</th><th>Best for</th></tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td>Funded Engineer</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $100</td><td>a familiar static two-phase evaluation</td></tr>
-      <tr><td>2</td><td>Smart Prop Trader</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $150</td><td>a static evaluation with explicit consistency rules</td></tr>
-      <tr><td>3</td><td>Crypto Fund Trader</td><td>crypto</td><td>plan-specific</td><td>one-off</td><td>under $200</td><td>an evaluation on digital assets</td></tr>
-      <tr><td>4</td><td>Next Step Funded</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $120</td><td>traders who expect more than one attempt</td></tr>
-      <tr><td>5</td><td>MyFundedFX</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $200</td><td>FTMO-style rules with broad platform access</td></tr>
-      <tr><td>6</td><td>E8 Markets</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $180</td><td>a static floor and a choice of evaluation length</td></tr>
-      <tr><td>7</td><td>City Traders Imperium</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $250</td><td>an established static-floor evaluation</td></tr>
-      <tr><td>8</td><td>ThinkCapital</td><td>multi-asset</td><td>plan-specific</td><td>one-off</td><td>under $250</td><td>comparing forex and futures at one firm</td></tr>
-      <tr><td>9</td><td>Fintokei</td><td>multi-asset</td><td>plan-specific</td><td>one-off</td><td>under $250</td><td>regional support and local-language service</td></tr>
-      <tr><td>10</td><td>Nova Funding</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $150</td><td>traders who track promotional pricing</td></tr>
+      <tr><td>1</td><td>Smart Prop Trader</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $150</td><td>a static evaluation with explicit consistency rules</td></tr>
+      <tr><td>2</td><td>Crypto Fund Trader</td><td>crypto</td><td>plan-specific</td><td>one-off</td><td>under $200</td><td>an evaluation on digital assets</td></tr>
+      <tr><td>3</td><td>Next Step Funded</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $120</td><td>traders who expect more than one attempt</td></tr>
+      <tr><td>4</td><td>MyFundedFX</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $200</td><td>FTMO-style rules with broad platform access</td></tr>
+      <tr><td>5</td><td>E8 Markets</td><td>forex and CFD</td><td>static on Pro; EOD dynamic on Signature</td><td>one-off</td><td>under $180</td><td>a static floor with no payout consistency rule (Pro)</td></tr>
+      <tr><td>6</td><td>City Traders Imperium</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $250</td><td>an established static-floor evaluation</td></tr>
+      <tr><td>7</td><td>ThinkCapital</td><td>multi-asset</td><td>plan-specific</td><td>one-off</td><td>under $250</td><td>comparing forex and futures at one firm</td></tr>
+      <tr><td>8</td><td>Fintokei</td><td>multi-asset</td><td>plan-specific</td><td>one-off</td><td>under $250</td><td>regional support and local-language service</td></tr>
+      <tr><td>9</td><td>Nova Funding</td><td>forex and CFD</td><td>static</td><td>one-off</td><td>under $150</td><td>traders who track promotional pricing</td></tr>
     </tbody>
   </table>
 </div>
 <p>Every plan in this table bills once per attempt rather than monthly, which is the first filter in any cost comparison. A monthly plan can be cheaper than a one-off if the attempt is fast and more expensive if it is slow, so the two billing models are not comparable without an assumption about duration. Every plan below assumes an attempt of six to ten weeks.</p>
-<p>The loss-floor column is the second filter. Six of the ten carry a static floor on at least their main plan, which means the failure point does not move as equity rises. The four marked plan-specific or trailing require the buyer to check the individual plan rather than the brand, because the same firm can sell both shapes at different prices.</p>
+<p>The loss-floor column is the second filter. Five of the nine carry a static floor on at least their main plan, which means the failure point does not move as equity rises. The four marked plan-specific, or sold under both shapes, require the buyer to check the individual plan rather than the brand.</p>
 
 <h2 id="perdrawdown">Fee per dollar of drawdown</h2>
 <p>The ratio is simple to compute and surprisingly decisive. A $100,000 account with a 10% floor carries $10,000 of allowance. At a $540 fee, the buyer pays 5.4 cents per dollar of drawdown. A $25,000 account with an 8% floor carries $2,000 of allowance; at a $120 fee, the buyer pays 6 cents per dollar. The small account is more expensive per unit of room, even though its fee is a quarter of the large one.</p>
@@ -110,12 +108,6 @@ generator: content-system
 <p>Platform upgrades are the third. Some plans include the main platforms and charge for a data feed, a mobile app or an additional terminal. If the method depends on a platform that is not included, the upgrade is part of the price and should be added before comparison.</p>
 <p>Payout fees are the fourth and least visible. A withdrawal fee, a minimum payout threshold or a processing charge reduces the value of the funded account without changing the challenge price. A plan with a $50 withdrawal fee and a $200 minimum payout is a different product from one with free withdrawals, and the difference compounds over a year of trading.</p>
 <p>The general rule is to build the total cost of a successful path, not the cost of the purchase: challenge fee, plus expected resets, plus activation, plus running costs until the first payout. That number is what the buyer is actually choosing between, and it is rarely the number in the advertisement.</p>
-
-<h2 id="firm-fundedengineer">Funded Engineer</h2>
-<p>Funded Engineer is the conventional option on this list: a two-phase evaluation with a static floor, one-off billing and a fee band that starts below $100 at the smallest account size. There is no exotic mechanic to price, which is precisely its appeal for a trader who wants a rulebook they can explain in a sentence.</p>
-<p>The cost profile is favourable at the entry tier and reasonable at $100,000. Because the floor is static, profit becomes additional room, so a trader who is ahead in phase one carries a buffer into phase two. That buffer is worth real money in expectation, even though it does not appear on the invoice.</p>
-<p>The weakness is differentiation. Several firms sell almost the same structure at almost the same price, so the decision turns on platform access, payout reliability and the quality of the terms page. Those are the parts a buyer should verify directly rather than infer from a comparison table.</p>
-<p>For a first evaluation, the combination of a low entry fee and a simple rulebook is a sensible place to start. For a trader who needs a specific platform or a fast payout, the same plan may be the wrong shape and the fee advantage will not compensate.</p>
 
 <h2 id="firm-smartprop">Smart Prop Trader</h2>
 <p>Smart Prop Trader pairs a static floor with an explicit consistency condition, which changes the cost in a way the fee does not show. A consistency rule limits how much of the total profit can come from a single day or a single trade, so a method that depends on occasional large winners has to be modified or the payout is reduced.</p>
@@ -187,7 +179,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>One price instead of ten fee schedules</h2>
-      <p>One flat <strong>$220</strong> per evaluation, any account size, retries covered, no profit split. We decline firms whose terms forbid third-party trading.</p>
+      <p>One flat <strong>$220</strong> per evaluation, any account size, retries covered, no profit split. We work with any firm and tell you in writing what its third-party trading clause says before you pay.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -206,6 +198,6 @@ generator: content-system
       <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
       <li><a href="/blog/lot-size-for-100k-prop-firm-account.html">Lot size for a $100,000 account</a></li>
     </ul>
-    <p class="disclaimer">Funded Engineer and Smart Prop Trader and Crypto Fund Trader are named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Fees, rules and payout terms change; fee bands here are illustrative and every figure should be verified against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">Smart Prop Trader and Crypto Fund Trader are named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Fees, rules and payout terms change; fee bands here are illustrative and every figure should be verified against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>
 </section>

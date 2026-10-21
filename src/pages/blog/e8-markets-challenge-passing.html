@@ -1,15 +1,15 @@
 ---
 title: E8 Markets Challenge Passing: The 2026 Rulebook
-desc: How to pass an E8 Markets evaluation: one-step vs two-phase plans, static floor maths, lot sizing and the daily stop that decides each attempt.
+desc: How to pass an E8 Markets evaluation in 2026: the One, Pro and Signature one-step products, their drawdowns, daily rules and payout gates, and the maths for each.
 path: /blog/e8-markets-challenge-passing.html
 type: article
 h1: How to pass an E8 Markets challenge: the rulebook, the math and the plan
 kicker: E8 Markets challenge
 crumb: E8 Markets challenge passing
-section: Firm guides
+section: Challenge guides
 sectionUrl: /blog/
 date: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-21
 priority: 0.7
 schemaService: true
 generator: content-system
@@ -18,7 +18,7 @@ generator: content-system
   <div class="wrap narrow">
     <p class="kicker">E8 Markets · evaluation guide · reviewed October 2026</p>
     <h1>How to pass an E8 Markets challenge: the rulebook, the math and the plan</h1>
-    <p class="lede">E8 Markets sells both one-step and two-phase forex evaluations, most of them on a static floor, with a percentage daily stop, a one-off fee and a choice of MT4, MT5, cTrader or Match-Trader. The first decision is not the target or the fee — it is which structure fits the method, because a one-step plan and a two-phase plan fail in different ways. This guide works through both with illustrative numbers. Figures are models rather than quotations; confirm the live plan schedule before buying.</p>
+    <p class="lede">E8 Markets no longer sells a two-phase evaluation. Its 2026 line-up — One, Pro, Signature and Zero — is built on single-phase products with different targets, drawdown mechanisms and payout rules. That makes "which E8 product" the first decision, not "which phase", because a 6% target on a dynamic floor and an 8% target on a static floor with a daily profit cap are different challenges. This guide uses the figures published in E8's help centre and product pages on 21 October 2026.</p>
   </div>
 </section>
 
@@ -27,32 +27,32 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>One-step and two-phase plans are different products: one tests a single sample, the other tests repetition.</li>
-  <li>Most plans use a static floor, which keeps a constant risk unit valid for the whole path.</li>
-  <li>The daily stop is percentage based and usually the rule that ends a bad week first.</li>
-  <li>Match-Trader sits alongside MT4, MT5 and cTrader and changes the workflow more than the fee does.</li>
-  <li>One-off billing removes the calendar penalty, so a measured attempt costs no more than a fast one.</li>
-  <li>Consistency is usually absent from the evaluation and may appear on the funded account — check both.</li>
+  <li>All current E8 products are single-phase. There is no two-phase E8 evaluation to choose in 2026.</li>
+  <li>E8 One: 6% target, 3% daily drawdown, 4% dynamic drawdown, 40% best-day rule at payout.</li>
+  <li>E8 Pro: 8% target, 2.5% daily drawdown, 8% static drawdown, 2% daily profit cap, no consistency rule.</li>
+  <li>E8 Signature: 6% target, EOD dynamic drawdown, 35% best-day rule, 80% split and a payout buffer.</li>
+  <li>There is no minimum trading-day count on One or Signature, but at least one trade every 60 days is required.</li>
+  <li>The daily rule differs by product: a hard drawdown on One and Pro, a soft pause on Signature's performance account.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#rulebook">The E8 Markets rulebook in one page</a></li>
-  <li><a href="#choice">One-step against two-phase: what actually differs</a></li>
-  <li><a href="#floor">Static floor arithmetic</a></li>
-  <li><a href="#onestep">Planning a one-step attempt</a></li>
-  <li><a href="#twophase">Planning a two-phase attempt</a></li>
+  <li><a href="#rulebook">The E8 rulebook in one page</a></li>
+  <li><a href="#choice">One, Pro or Signature</a></li>
+  <li><a href="#floor">Dynamic against static arithmetic</a></li>
+  <li><a href="#onestep">Planning a One attempt</a></li>
+  <li><a href="#pro">Planning a Pro attempt</a></li>
+  <li><a href="#signature">Planning a Signature attempt</a></li>
   <li><a href="#sizing">Lot sizing and pip value</a></li>
-  <li><a href="#daily">The daily stop as a session budget</a></li>
-  <li><a href="#consistency">Consistency, present and absent</a></li>
-  <li><a href="#platforms">MT4, MT5, cTrader and Match-Trader</a></li>
+  <li><a href="#daily">The daily rule as a session budget</a></li>
+  <li><a href="#consistency">Consistency, by product</a></li>
+  <li><a href="#platforms">Platforms and market choice</a></li>
   <li><a href="#session">Session and pair selection</a></li>
-  <li><a href="#calendar">A ten-week one-step calendar</a></li>
+  <li><a href="#calendar">A ten-week calendar</a></li>
   <li><a href="#risk">Risk of ruin and the longest losing run</a></li>
   <li><a href="#news">Releases, spreads and restricted windows</a></li>
   <li><a href="#payout">From pass to payout</a></li>
-  <li><a href="#costs">The cost of choosing the wrong structure</a></li>
   <li><a href="#fit">Which plan fits which trader</a></li>
 </ol>
 </div>
@@ -61,136 +61,127 @@ generator: content-system
   <p><strong>Before paying anyone to pass this rulebook.</strong> The <a href="/blog/prop-firm-passing-service-cost.html">dated price comparison</a> sets the flat fee against four rival services, <a href="/passed-challenges.html">client certificates</a> show what a verified pass looks like, and the <a href="/reviews/prop-firm-passing-service-reviews.html">reviews page</a> includes the resets.</p>
 </div>
 
-<h2 id="rulebook">The E8 Markets rulebook in one page</h2>
-<p>The published shape is forex and CFD, one-step and two-phase evaluations, a static floor on most plans, a percentage daily stop, no consistency condition on most evaluations, an undefined minimum-day count, one-off per attempt billing, a profit split on a fixed schedule, and MT4, MT5, cTrader or Match-Trader on weekday forex hours. The word that does the most work in that list is "most": the plan name, not the brand, carries the rulebook.</p>
-<p>That matters because the same firm can offer a one-step plan with a larger target and a two-phase plan with two smaller ones, and the two are not interchangeable. A one-step plan asks whether a method can produce a result once; a two-phase plan asks whether it can do so twice. A trader with a volatile method may pass the first and fail the second, and a trader with a slow, steady method may pass both at the same size.</p>
-<p>The static floor is the second important row. It means the failure point is fixed in dollars from the first trade to the last, so the risk unit does not need to be recalculated as the account earns. That simplifies the plan and it removes the discipline a trailing floor imposes, which is why a self-imposed drawdown limit matters more here than it would elsewhere.</p>
+<h2 id="rulebook">The E8 rulebook in one page</h2>
+<p>E8 sells forex and CFD products on Classic Markets and separate futures products, with the market selected at checkout. The market choice changes leverage and the instrument list, not the drawdown or payout mechanics. Every product is single-phase, and the differences between them are the target, the drawdown mechanism, the daily rule and the payout gate.</p>
+<p>The word that does most of the work in any E8 description is the product name. One, Pro and Signature share a 6–8% target band but differ on almost everything else: One has a 4% dynamic drawdown, Pro an 8% static drawdown, Signature an EOD dynamic drawdown with a payout buffer. A trader who compares "E8" to another brand without naming the product is comparing a logo to a rulebook.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Parameter</th><th>E8 Markets — published shape</th></tr>
+      <tr><th>Parameter</th><th>E8 One</th><th>E8 Pro</th><th>E8 Signature</th></tr>
     </thead>
     <tbody>
-      <tr><td>Market</td><td>forex and CFD</td></tr>
-      <tr><td>Evaluation model</td><td>one-step and two-phase evaluations</td></tr>
-      <tr><td>Loss floor</td><td>static on most plans</td></tr>
-      <tr><td>Daily stop</td><td>yes, percentage based</td></tr>
-      <tr><td>Consistency test</td><td>often none on the evaluation</td></tr>
-      <tr><td>Minimum trading days</td><td>undefined</td></tr>
-      <tr><td>Billing rhythm</td><td>one-off per attempt</td></tr>
-      <tr><td>Payout rhythm</td><td>profit split on a fixed schedule</td></tr>
-      <tr><td>Platforms</td><td>MT4, MT5, cTrader, Match-Trader</td></tr>
-      <tr><td>Session</td><td>weekday forex hours</td></tr>
+      <tr><td>Market</td><td>FX, indices, metals, crypto CFDs</td><td>FX, indices, metals, crypto CFDs</td><td>Classic Markets or futures</td></tr>
+      <tr><td>Phases</td><td>1</td><td>1</td><td>1</td></tr>
+      <tr><td>Profit target</td><td>6%</td><td>8%</td><td>6%</td></tr>
+      <tr><td>Daily drawdown</td><td>3%, hard breach</td><td>2.5%, hard breach</td><td>None in the challenge; 2% soft pause in performance</td></tr>
+      <tr><td>Maximum drawdown</td><td>4% dynamic, locks at initial balance</td><td>8% static</td><td>EOD dynamic, locks at initial balance</td></tr>
+      <tr><td>Daily profit cap</td><td>None stated</td><td>2%</td><td>None stated</td></tr>
+      <tr><td>Minimum days</td><td>None; one trade per 60 days</td><td>None stated</td><td>None; one trade per 60 days</td></tr>
+      <tr><td>Consistency at payout</td><td>40% best day</td><td>None</td><td>35% best day</td></tr>
+      <tr><td>Split</td><td>Up to 100%</td><td>80% or 100% chosen at purchase</td><td>80%</td></tr>
+      <tr><td>Billing</td><td>Flat fee</td><td>Flat fee</td><td>Flat fee</td></tr>
     </tbody>
   </table>
 </div>
-<p>Before paying, confirm four things in writing: the floor type for the exact plan, the daily stop and its basis, whether the target is measured from the initial or the current balance, and whether the funded account applies a consistency condition the evaluation does not. Those four answers decide more than the fee, and none of them is reliably visible on a comparison page.</p>
+<p>Before paying, confirm four things in writing: the drawdown type for the exact product, the daily rule and whether it breaches or pauses, the payout consistency threshold, and whether a payout buffer must remain in the account. Those four answers decide more than the fee, and none of them is reliably visible on a comparison page.</p>
 
-<h2 id="choice">One-step against two-phase: what actually differs</h2>
-<p>A one-step evaluation is one target against one floor inside one calendar. A two-phase evaluation is two targets against the same floor, usually with the second target measured from the profit the first one produced. The fee is one-off in both cases, so the difference is not cost; it is the number of samples the firm requires.</p>
-<p>The practical difference is where a method fails. A one-step plan punishes a method that cannot produce a result in a single window; a two-phase plan punishes a method that cannot repeat it. A trend-following method with long dry spells often struggles with the first, because the window may not contain a trend. A mean-reversion method with occasional large losses often struggles with the second, because the good phase-one result is followed by a phase-two drawdown.</p>
-<p>The second difference is the size of the target relative to the floor. A one-step target is usually larger than either individual two-phase target, because there is only one window to reach it. That larger target against the same floor means a higher risk per unit of target, which is the real cost of the shorter path. The shorter path is cheaper in calendar and more expensive in risk.</p>
-<p>The third difference is the diagnostic value. A two-phase result tells the trader something a one-step result cannot: whether the method repeats. For a trader who intends to run a funded account for years, that information is worth the extra time. For a trader who intends to withdraw once, the extra phase is pure cost.</p>
+<h2 id="choice">One, Pro or Signature</h2>
+<p>One is the product for a trader who wants the lowest target and accepts a tighter floor. A 6% target against a 4% dynamic drawdown leaves a target-to-floor ratio of 1.5:1, which is demanding: the account has to earn half again its risk budget before it passes. The 3% daily drawdown adds a session constraint that binds before the floor on a bad day.</p>
+<p>Pro is the opposite trade. An 8% target against an 8% static floor is a 1:1 ratio, and the floor never moves. The cost is a 2.5% daily drawdown and a 2% daily profit cap, which limits how fast the target can be reached. A trader who makes 2% in a morning has finished for the day whether they want to or not.</p>
+<p>Signature sits between them. The target is 6%, the drawdown is EOD dynamic rather than intraday, and the payout gate is a 35% best-day rule with a buffer equal to the drawdown and a minimum of five profitable days between payouts after the first. It is the cheapest of the three, and the payout conditions are the most detailed.</p>
+<p>The practical choice is driven by failure mode. A trader who gives back intraday profit should avoid One's dynamic drawdown. A trader who makes one large day a month should avoid Signature's 35% rule. A trader who trades small and often can use any of the three and should choose on fee.</p>
 
-<h2 id="floor">Static floor arithmetic</h2>
-<p>Assume a $100,000 account with a 10% static floor and an 8% one-step target. The failure point is $90,000 for the entire attempt, and the target is $108,000. Room is $10,000; target is $8,000. The ratio of target to floor is 0.8, which is a demanding structure: the account has to earn most of its own risk budget before it passes.</p>
-<p>Compare that with a two-phase plan at 6% and 6% on the same floor. Each phase asks for $6,000 against $10,000 of room, and the second phase starts from a higher balance with the same floor. The ratio per phase is 0.6, which is easier on both counts. The two-phase plan takes longer and is more forgiving per step, and that difference is the whole argument for choosing it.</p>
-<p>The static floor also means the room grows in relative terms as the account earns. After phase one at $106,000, the same $10,000 floor measured from $100,000 leaves $16,000 of room from the current balance. A trader who keeps the original unit is taking less relative risk, which is a rare case where doing nothing is the correct adjustment.</p>
-<p>The counter-argument is behavioural. A floor that never moves allows a trader to keep a size that is too large for a bad week, because the account still has room. Set a self-imposed stop at one third of the floor from the equity high, and the static structure gets the discipline it does not provide on its own.</p>
+<h2 id="floor">Dynamic against static arithmetic</h2>
+<p>Assume a $100,000 account on Pro: an 8% static floor at $92,000 and an 8% target at $108,000. Room is $8,000; target is $8,000. The ratio is 1:1, and the room does not change as the account earns, so the risk unit can stay constant for the whole attempt.</p>
+<p>Now assume One on the same size: a 4% dynamic floor at $96,000, a 6% target at $106,000. Room is $4,000; target is $6,000. The ratio is 1.5:1, and the floor rises with the highest <em>closed</em> balance until it locks at $100,000. A trader who closes $2,000 of profit lifts the floor to $98,000, leaving the same $4,000 of room from a $102,000 balance. Profit does not create safety until the floor locks.</p>
+<p>Signature's EOD dynamic drawdown behaves the same way but is calculated once a day on the end-of-day balance, so intraday equity swings do not move it. That is more forgiving than One for a trader who holds through retracements, and less forgiving than Pro for a trader who wants a fixed unit.</p>
+<p>The static floor also means the room grows in relative terms as the account earns. On Pro, after $4,000 of profit the balance is $104,000 and the floor is still $92,000, so the buffer is $12,000 rather than $8,000. A trader who keeps the original unit is taking less relative risk, which is a rare case where doing nothing is the correct adjustment.</p>
 
-<h2 id="onestep">Planning a one-step attempt</h2>
-<p>An 8% target on $100,000 is $8,000. With a $400 unit and a 2:1 payoff, a winner returns $800, so the target is ten net winners. At two trades per session and a 45% hit rate, ten net winners takes roughly forty trades, or twenty sessions — four weeks. That is a reasonable window for a method with a real edge, and a tight one for a method that needs a trend to appear.</p>
-<p>The drawdown budget for a one-step attempt should be half the floor, not all of it. A trader who uses $8,000 of a $10,000 floor to reach an $8,000 target has taken on twice the risk the target implies, and the expected number of attempts rises accordingly. Half the floor keeps the risk per dollar of target at roughly the same level as a two-phase plan.</p>
-<p>The unit should be held constant. A one-step plan rewards a steady sample, and changing size mid-attempt destroys the only evidence the result provides. If the method cannot reach the target at a constant $400 unit in twenty sessions, the answer is a longer window or a smaller target, not a larger unit.</p>
-<p>The close of a one-step attempt is compressed because there is no phase boundary. Reduce to two thirds of the unit at seventy percent of the target, and to a third at ninety percent. The final sessions are for protecting the result and preparing documentation, not for pressing toward a number that is already within reach.</p>
+<h2 id="onestep">Planning a One attempt</h2>
+<p>A 6% target on $100,000 is $6,000. With a $250 unit and a 2:1 payoff, a winner returns $500, so the target is twelve net winners. At two trades per session and a 45% hit rate, twelve net winners takes roughly forty-five trades, or twenty-three sessions — about five weeks.</p>
+<p>The drawdown budget should be half the 4% floor, not all of it. A trader who uses $4,000 of room to reach a $6,000 target has taken on more risk than the target implies, and the expected number of attempts rises accordingly. Half the floor keeps the risk per dollar of target at a workable level.</p>
+<p>The unit should be held constant until the floor locks. A dynamic drawdown rewards a steady sample and punishes a size increase after a good week, because the floor has already risen. If the method cannot reach the target at a constant unit in five weeks, the answer is a longer calendar, not a larger unit.</p>
+<p>The close is compressed because there is only one phase. Reduce to two thirds of the unit at 70% of the target and a third at 90%. The final sessions are for protecting the result and preparing documentation, not for pressing toward a number already within reach.</p>
 
-<h2 id="twophase">Planning a two-phase attempt</h2>
-<p>Two phases at 6% each on $100,000 are $6,000 per phase. With the same $400 unit, each phase is about eight net winners, or fifteen sessions at two trades a session. The full path is therefore eight to ten weeks, which is longer than the one-step calendar and easier on the risk per phase.</p>
-<p>The phase boundary is the critical point. A trader who finishes phase one at $106,000 and immediately begins phase two at full size has skipped the only calibration the second phase gets. Two weeks at half the unit confirms that the method still behaves, and it produces a comparison between the phases that is useful for the review.</p>
-<p>The phase-two target is usually measured from the new balance, so $6,000 means $6,000 from $106,000, not $6,000 from $100,000. That is a smaller percentage and the same dollar figure, which is a small structural advantage. Do not spend it by increasing the unit; spend it by finishing the phase with more room intact.</p>
-<p>The second phase is also where the funded account's rules start to matter. If the funded phase applies a consistency or minimum-day condition, phase two is the best place to rehearse it: a daily profit cap and a fixed number of sessions per week produce a distribution that already looks like the funded record.</p>
+<h2 id="pro">Planning a Pro attempt</h2>
+<p>An 8% target on $100,000 is $8,000, against an $8,000 static floor. With a $300 unit and a 2:1 payoff, a winner returns $600, so the target is fourteen net winners. The 2% daily profit cap is $2,000, which limits a day to about three net winners; a trader cannot compress the target into two sessions.</p>
+<p>That cap is the defining constraint. It converts the attempt into a minimum of four profitable days even if the method produces one ideal setup, and it makes the everyday distribution look like the funded record. A trader who dislikes caps should choose One or Signature instead.</p>
+<p>The 2.5% daily drawdown is $2,500, which at a $300 unit is eight losses. A personal cap of three losses ($900) keeps the session well inside both the daily rule and the static floor, and leaves the floor intact for a bad week.</p>
+<p>Because the floor does not move, the plan can be paced rather than compressed. A trader who finishes in four weeks and one who finishes in ten pay the same fee, and the slower attempt has more room to absorb a losing streak. On a static product, patience is free.</p>
+
+<h2 id="signature">Planning a Signature attempt</h2>
+<p>Signature's 6% target is $6,000 on $100,000, with an EOD dynamic drawdown of 3% ($3,000) that locks at the initial balance. The challenge has no daily breach rule; the 2% daily pause applies to the performance account, where it stops trading for the day without closing the account.</p>
+<p>That makes the challenge more forgiving than One on the daily side but tighter on the floor: $3,000 of room against a $6,000 target is a 2:1 ratio, the most demanding of the three. A trader needs a small unit and a longer calendar, or a higher hit rate.</p>
+<p>The payout conditions are where Signature differs most. A 35% best-day rule applies to total profit, the minimum payout is $100, and after the first payout at least five profitable days (each 0.3% or more) are required between requests. A buffer equal to the EOD drawdown must remain in the account and cannot be requested. On futures accounts the maximum is four payouts per account.</p>
+<p>Those conditions reward a trader who produces a steady distribution and penalise one who relies on a single large session. If the method is lumpy, Signature is the wrong product regardless of its lower fee.</p>
 
 <h2 id="sizing">Lot sizing and pip value</h2>
-<p>Forex sizing is pips × pip value × lots. On a standard lot of a USD-quoted major, one pip is about $10, so a 20-pip stop risks $200 per lot and a $400 unit buys two lots. A 40-pip stop buys one. The position count is a consequence of the stop distance, not a decision in itself, which is why the stop should be placed by the method rather than adjusted to fit a desired size.</p>
+<p>Forex sizing is pips × pip value × lots. On a standard lot of a USD-quoted major, one pip is about $10, so a 20-pip stop risks $200 per lot and a $250 unit buys one lot with a little room. A 40-pip stop buys half a lot. The position count is a consequence of the stop distance, not a decision in itself.</p>
 <p>Pip value varies by pair and by account currency. USD/JPY depends on the exchange rate, crosses run through two conversions, and metals and indices do not use pips in the same way at all. A trader who applies $10 per pip universally will mis-size the non-USD-quoted instruments, and the error is largest when volatility is highest.</p>
-<p>The buffer is the difference between a planned unit and a realised one. Spreads widen around the London open and around releases, and stops slip. Adding ten to twenty percent to the planned risk changes the lot count by a fraction and keeps the realised loss inside the intended unit. Without the buffer, a slipped stop consumes one and a half units and the daily cap is reached sooner than planned.</p>
-<p>Leverage is the last check and rarely the binding one. A correctly sized two-lot position on a $100,000 account uses a small fraction of available margin, so leverage never constrains it. The only way leverage binds is when the size was wrong to begin with, which is an argument for sizing from risk rather than from margin.</p>
+<p>The buffer is the difference between a planned unit and a realised one. Spreads widen around the London open and around releases, and stops slip. Adding ten to twenty percent to the planned risk changes the lot count by a fraction and keeps the realised loss inside the intended unit.</p>
+<p>Leverage is the last check and rarely the binding one on Classic Markets: forex is 1:30, indices and metals 1:15, crypto 1:1. A correctly sized position on a $100,000 account uses a small fraction of available margin. The only way leverage binds is when the size was wrong to begin with.</p>
 
-<h2 id="daily">The daily stop as a session budget</h2>
-<p>A percentage daily stop becomes a dollar figure and then a number of losses. On $100,000 at 5%, the limit is $5,000; with a $400 unit that is twelve losses, which no session should use. Set a personal cap at three losses, $1,200, and the firm's rule becomes a backstop rather than a plan.</p>
-<p>The basis decides how the limit behaves. Measured on equity, floating losses count immediately, so an open position $3,000 underwater has used 60% of the allowance before it is closed. Measured on realised results, only closed trades count, which permits a larger floating loss and a different behaviour at the end of the session. Confirm which applies; the difference is thousands of dollars on one trade.</p>
-<p>When the clock resets is the last part of the definition, and it is not the same as the session hours. A trade opened late in one session and closed after the roll may land in either day's tally, which matters for a method that holds positions past the New York close. If the document does not say, flatten before the roll rather than arguing about attribution afterwards.</p>
-<p>The daily stop should also be paired with a weekly cap. Four sessions at the personal limit is $4,800, nearly half a 10% floor. A weekly cap of one third of the floor stops the accumulation before it becomes structural, and it is the only rule in the system that nobody else enforces.</p>
+<h2 id="daily">The daily rule as a session budget</h2>
+<p>E8's daily rules are not uniform. One applies a 3% hard daily drawdown, Pro 2.5%, and Signature applies no daily breach in the challenge but a 2% soft pause in performance. A trader comparing products on the target alone will miss the rule that ends most bad weeks.</p>
+<p>The basis decides how the limit behaves. Measured on equity, floating losses count immediately, so an open position $1,500 underwater on a $100,000 One account has used half the 3% allowance before it is closed. Confirm the basis; the difference is thousands of dollars on one trade.</p>
+<p>When the clock resets is the last part of the definition, and it is not the same as the session hours. A trade opened late in one session and closed after the roll may land in either day's tally, which matters for a method that holds past the New York close. If the document does not say, flatten before the roll.</p>
+<p>The daily rule should also be paired with a weekly cap. Four sessions at a personal limit of three losses is twelve losses, which can consume half a 4% floor. A weekly cap of one third of the floor stops the accumulation before it becomes structural.</p>
 
-<h2 id="consistency">Consistency, present and absent</h2>
-<p>The evaluation usually has no consistency condition, which means the profit can arrive in any shape. That is a freedom with a delayed cost: the funded account may apply a condition the evaluation did not, and a pass built on two oversized days can convert into a payout that does not clear.</p>
-<p>The test to run before choosing a plan is the share of profit from the best day. Take sixty trading days, total the profit, and compute that share. If it is above a quarter, the distribution is lumpy and a funded-phase condition will bind. If it is below, the shape is already suitable and the consistency question can be set aside.</p>
-<p>The design response for a lumpy method is a daily profit cap of three units and a trade count large enough to dilute the best session. That flattens the distribution without reducing the total, and it costs nothing in expectation. The second response is to choose the two-phase plan rather than the one-step one, because two smaller windows are easier to distribute than one large one.</p>
-<p>Confirm whether the condition applies to the evaluation, the funded phase, or only the payout request, and whether it is measured on gross or net profit. Ask in writing, keep the reply, and put it in the same document as the terms screenshot. That document is the only version of the rules you can rely on six weeks later.</p>
+<h2 id="consistency">Consistency, by product</h2>
+<p>This is the row most often generalised wrongly. E8 One applies a 40% best-day rule at payout, Signature 35%, and Pro states that it has none. A trader who reads one product page and assumes the rest will either over-constrain a Pro attempt or under-constrain a Signature one.</p>
+<p>The test to run before choosing a plan is the share of profit from the best day. Take sixty trading days, total the profit, and compute that share. If it is above a third, the distribution is lumpy and a Signature payout will bind. If it is above 40%, One will bind too. Pro is the product for a method that cannot dilute its best day.</p>
+<p>The design response for a lumpy method is a daily profit cap and a trade count large enough to dilute the best session. That flattens the distribution without reducing the total. The second response is to choose the product whose payout rule matches the method's natural shape.</p>
 
-<h2 id="platforms">MT4, MT5, cTrader and Match-Trader</h2>
-<p>Four platforms is a wider choice than most firms offer, and the choice matters more than the fee. MT4 is the familiar hedging platform with the largest library of expert advisors. MT5 adds a modern backtester and more instruments but defaults to netting, which changes how multiple entries on one symbol are managed.</p>
-<p>cTrader is the level-based option, with a depth-of-market view and order handling built around precise entries and exits. It suits a trader who manages positions at levels rather than at tickets, and its interface is cleaner than MT4's for that style. Match-Trader is the newest of the four and the one most firms use for a modern web and mobile experience; it is fully featured, browser-first, and a reasonable default for a trader without a legacy workflow.</p>
-<p>The migration cost is measured in mistakes rather than fees. A trader with years of MT4 templates and a tested expert advisor faces a real cost in moving, and that cost usually exceeds any difference in spreads. A discretionary trader with no automation can choose on interface preference, which is a legitimate criterion.</p>
-<p>Automation raises a rulebook question separate from the platform. Some plans restrict high-frequency activity, latency strategies or certain order types, and an expert advisor can breach those clauses without intent. Read the activity clauses, test on a demo under the same rules, and keep the logs. A compliant strategy without logs cannot prove its compliance.</p>
+<h2 id="platforms">Platforms and market choice</h2>
+<p>E8 separates Classic Markets from futures at checkout, and the choice changes leverage, instruments and, on some products, the payout mechanics. Classic Markets runs forex at 1:30, indices and metals at 1:15 and crypto at 1:1. Futures accounts have their own contract limits — for example 2 contracts on a $25,000 Signature account and 12 on a $150,000 one.</p>
+<p>The platform follows the market. Classic Markets is a MetaTrader 5 environment; futures accounts run on a separate stack with their own contract specifications. A trader with an MT5 expert advisor cannot assume it runs on the futures product, and a futures trader cannot assume the same order types carry across.</p>
+<p>Automation raises a rulebook question separate from the platform. E8 permits copy trading across accounts that belong to the trader, but commercial or shared automation is a different matter. Read the activity clauses, test on a demo under the same rules, and keep the logs.</p>
 
 <h2 id="session">Session and pair selection</h2>
 <p>Forex liquidity is concentrated in London and New York, and the overlap between them is the deepest window of the day. A method should be built for one window rather than for the whole day, because a London breakout and a New York reversal have different stop distributions, trade frequencies and daily loss profiles.</p>
 <p>The pair carries as much information as the hour. EUR/USD and GBP/USD are liquid in London; USD/JPY is active in Tokyo and New York; AUD and NZD pairs move in the Asian session. A method that works on EUR/USD at 09:00 does not transfer to AUD/USD at 02:00 without re-measuring the spread and the stop distribution.</p>
-<p>The daily stop interacts with the session because volatile sessions consume it faster. A trader whose method trades the London open will reach the personal cap sooner than one who trades the quiet afternoon, with the same unit. That is a reason to size the session against the cap, not a reason to avoid volatility.</p>
-<p>Holding overnight adds rollover and gap risk, and the weekend adds a second gap. A position held across a session boundary should carry a smaller unit than a session trade, or be flattened. Write the choice down before the week starts, because it will otherwise be re-decided at 21:55 on a Friday.</p>
+<p>The daily rule interacts with the session because volatile sessions consume it faster. A trader whose method trades the London open will reach the personal cap sooner than one who trades the quiet afternoon, with the same unit. That is a reason to size the session against the cap, not a reason to avoid volatility.</p>
 
-<h2 id="calendar">A ten-week one-step calendar</h2>
+<h2 id="calendar">A ten-week calendar</h2>
 <p>Weeks one and two are measurement: half the unit, a full record of setups, and a note of spread and slip on every entry. The output is a table of how the method behaves under the account's conditions, including which sessions and pairs are expensive. No target work happens here.</p>
-<p>Weeks three to seven are the working block: full unit, a fixed setup list, a personal daily cap of three losses, and a weekly cap of one third of the floor. The target should be within reach by week seven. If it is not, reduce the unit or extend the calendar rather than increasing activity, because activity does not create an edge.</p>
-<p>Weeks eight and nine are the distribution block: two thirds of the unit, a daily profit cap, and a deliberate effort to spread the remaining target across sessions. If the funded phase applies a consistency condition, this is where the record starts to look like the funded record.</p>
-<p>Week ten is the close: a third of the unit, the target protected, and the payout documentation prepared. Ten weeks is a realistic one-step calendar on a one-off fee, and it costs no more than a four-week sprint that fails.</p>
+<p>Weeks three to seven are the working block: full unit, a fixed setup list, a personal daily cap of three losses, and a weekly cap of one third of the floor. The target should be within reach by week seven. If it is not, reduce the unit or extend the calendar rather than increasing activity.</p>
+<p>Weeks eight and nine are the distribution block: two thirds of the unit, and a deliberate effort to spread the remaining target across sessions. On Signature this is where the five profitable days between payouts start to accumulate; on One it is where the 40% best-day share falls.</p>
+<p>Week ten is the close: a third of the unit, the target protected, and the payout documentation prepared. Ten weeks is a realistic calendar on a product with no time limit, and it costs no more than a four-week sprint that fails.</p>
 
 <h2 id="risk">Risk of ruin and the longest losing run</h2>
 <p>Assume a 45% hit rate and a 2:1 payoff. Expectancy is 0.45 × 2R − 0.55 × 1R, or 0.35R per trade, which is healthy. The probability of six consecutive losses is 0.55 to the sixth, about 2.8%. Across fifty trades the chance of seeing at least one such run is high, so a plan that cannot survive six losses fails in most attempts rather than in unlucky ones.</p>
-<p>Size so that the longest run from your own record, plus two, consumes less than half the floor. On a $10,000 floor that is an $800 unit for a six-loss tolerance, or $670 for a seven-loss tolerance. A $400 unit is more conservative and produces a longer calendar, which is a fair trade on a one-off fee.</p>
-<p>The daily stop changes the shape of the calculation by interrupting runs. A cap at three losses converts a long streak into a sequence of short ones across sessions, and the account continues with the floor intact. That is a genuine benefit of a daily rule on a static product, and it is the reason the personal cap matters more than the firm's generous limit.</p>
-<p>The counter-argument is that interrupting a streak also interrupts recovery. A trader stopped for the day cannot make the loss back in the same session, which is exactly the behaviour the rule exists to prevent. The correct response to a stopped session is a review, not a second session on another pair.</p>
+<p>Size so that the longest run from your own record, plus two, consumes less than half the floor. On a $3,000 Signature floor that is a $250 unit for a six-loss tolerance. On One's $4,000 floor it is about $330. A smaller unit produces a longer calendar, which is a fair trade on a product with no time limit.</p>
+<p>The daily rule changes the shape of the calculation by interrupting runs. A cap at three losses converts a long streak into a sequence of short ones across sessions, and the account continues with the floor intact. That is a genuine benefit of a daily rule, and it is why the personal cap matters more than the firm's generous limit.</p>
 
 <h2 id="news">Releases, spreads and restricted windows</h2>
-<p>Forex news risk is concentrated in central bank decisions, inflation prints and employment data, and the reaction can be tens of pips in seconds. Spreads widen before the release, liquidity thins, and the stop that was 20 pips away at 13:55 is not the stop that fills at 14:30. A position held through a release has an unknown risk distance.</p>
-<p>Restrictions vary by plan. Some prohibit opening positions around a release, some prohibit holding through it, and some prohibit profiting from the resulting spike. The last is the most ambiguous and the most likely to be applied at review, because it can be judged on the trade or on the account.</p>
-<p>The conservative plan is to flatten before the release and re-enter after the first hour. That costs some of the largest moves and removes a category of dispute. A trader who holds should halve the position and widen the stop to a level the floor can survive if it gaps, and should accept that the daily cap may be consumed by a single fill.</p>
-<p>Headlines arrive without a calendar entry and no rule prevents them. What prevents damage is the position: a unit small enough that an unfilled stop is a bad day rather than a dead account. That is the streak argument again, applied to a single event that gave no notice.</p>
+<p>Forex news risk is concentrated in central bank decisions, inflation prints and employment data, and the reaction can be tens of pips in seconds. Spreads widen before the release, liquidity thins, and the stop that was 20 pips away at 13:55 is not the stop that fills at 14:30.</p>
+<p>E8's products differ on news. One allows news trading in the challenge but prohibits it in the performance account around high-impact releases, beginning five minutes before and ending five minutes after. Signature states that news trading is allowed without restrictions on both stages. Pro publishes no news restriction on its product page. Those are three different rulebooks under one brand.</p>
+<p>The cautious approach is to close before the release and wait for the first hour to pass before re-entering. It gives up some of the largest moves and removes a category of dispute. Anyone who holds should cut the position and size the stop for a gap rather than for normal volatility.</p>
 
 <h2 id="payout">From pass to payout</h2>
-<p>The split and the cycle are the two numbers that decide what a pass is worth. A 90% split on a monthly cycle and an 80% split on a fortnightly cycle are different products, and the right choice depends on whether the profit is income or reinvestment. Compare the total time from first payment to cleared funds rather than the headline percentage.</p>
-<p>The funded review examines the record: size relative to the rules, distribution of profit, number of sessions and any pattern resembling prohibited practice. A complete journal answers the questions in an afternoon; a statement without one invites interpretation, and interpretation by a third party rarely favours the trader.</p>
-<p>Identity and payment checks are the last gate and the most avoidable delay. Funds typically go back to the method used for the fee, so a replaced card or a closed wallet forces a manual review. Finish the documents while the target is still being worked, not after it is met, and store the fee receipt next to them.</p>
-<p>Confirm whether the funded account inherits the evaluation's rulebook or replaces it, and what the split is measured on. Those two answers decide the real value of a pass, and neither is usually on the pricing page.</p>
-
-<h2 id="costs">The cost of choosing the wrong structure</h2>
-<p>The fee is the same for both structures on most plans, so the cost of choosing wrongly is not the fee. It is the expected number of attempts. A trader whose method cannot repeat will fail a two-phase plan repeatedly and pass a one-step plan sometimes; a trader whose method needs a long window will fail a one-step plan and pass a two-phase one. The wrong structure multiplies the fee by the gap in pass probability.</p>
-<p>Model it directly. If a one-step pass probability is 30% and a two-phase path probability is 20%, the expected cost is the fee divided by the probability: $450 divided by 0.30 is $1,500, and $450 divided by 0.20 is $2,250. That difference is larger than any fee discount and it is decided by the method, not by the price.</p>
-<p>The lever that improves both numbers is a smaller unit. Reducing the unit by a third typically raises the pass probability because it converts a normal losing streak from a breach into a drawdown. The fee stays the same, so the expected cost falls by more than the profit per trade. That is the most reliable improvement available to a trader who has already chosen the structure.</p>
-<p>The second lever is the calendar. On a one-off fee, a longer attempt costs nothing and raises the probability of encountering a normal distribution of results, which is what both structures are testing. Patience is cheap here in a way it is not on a subscription, and it is the most underused lever in the product.</p>
+<p>The split and the gate are the two numbers that decide what a pass is worth. One and Pro allow up to 100% depending on the product and the option chosen at purchase; Signature pays 80%. Pro processes payouts daily with a 1% minimum profit, One requires the payout to exceed 50% of the daily drawdown, and Signature requires a buffer equal to the EOD drawdown plus five profitable days between payouts.</p>
+<p>Those mechanics matter more than the headline split. A 100% split with a buffer requirement and a five-day count is not the same product as an 80% split with none. The comparison should be the net amount available on the first request, not the percentage advertised.</p>
+<p>The funded review examines the record: size relative to the rules, distribution of profit, number of sessions and any pattern resembling prohibited practice. A complete journal answers the questions in an afternoon; a statement without one invites interpretation.</p>
 
 <h2 id="fit">Which plan fits which trader</h2>
-<p>The one-step plan fits a trader whose method produces results in short windows and who wants the shortest path from fee to funded account. It suits a high-frequency discretionary method with a steady hit rate, and it suits a trader who has already passed a similar evaluation and knows the size works.</p>
-<p>The two-phase plan fits a trader whose method is slower, whose drawdowns are deeper, or who wants the diagnostic value of a repeat. It also fits a trader whose first funded payout will depend on a consistency condition, because two windows are easier to distribute than one. The longer calendar is the price and a one-off fee makes it affordable.</p>
-<p>Whichever is chosen, the same process applies: size from the floor, cap the day and the week, build the target in small blocks, and treat the phase boundary or the final week as a checkpoint rather than a celebration. The structure decides how many times that process is tested, not whether it works.</p>
-<p>If the choice is genuinely unclear, run the simulation twice: once on your last fifty trades against the one-step target, and once against the two-phase targets. Whichever survives with the smaller drawdown is the structure your method already fits, which is a better answer than any comparison table.</p>
+<p>One suits a trader who wants the lowest target and can trade a tight unit on a dynamic floor. It is the fastest of the three in calendar terms and the least forgiving on a give-back.</p>
+<p>Pro suits a trader who wants a static floor, a fixed unit and no consistency rule, and who can live with a 2% daily profit cap. It is the most predictable product of the three and the easiest to plan around.</p>
+<p>Signature suits a trader who wants an EOD drawdown, a lower fee and can produce a steady distribution that satisfies a 35% best-day rule and five profitable days between payouts. A trader whose profit arrives in one large day a month should not buy it.</p>
+<p>Across all three, the same discipline applies: a fixed setup list, a personal daily cap, a weekly cap at one third of the floor, and a unit that survives the longest losing run from the trader's own record.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>Does E8 Markets offer one-step and two-phase evaluations?</summary><div class="faq-a"><p>Yes. Both structures are described on the product page, and they fail in different ways. A one-step plan tests a single sample; a two-phase plan tests whether the result repeats.</p></div></details>
+<details class="faq"><summary>Does E8 Markets offer two-phase evaluations?</summary><div class="faq-a"><p>Not in its current line-up. One, Pro, Signature and Zero are single-phase products. Older reviews describing an E8 two-phase 8%/5% evaluation are describing a discontinued product.</p></div></details>
 
-<details class="faq"><summary>Is the loss floor static or trailing?</summary><div class="faq-a"><p>Static on most plans, measured from the initial balance. Confirm the floor type for the exact plan name, because the brand carries several products and the plan carries the rulebook.</p></div></details>
+<details class="faq"><summary>Which E8 product has a static drawdown?</summary><div class="faq-a"><p>E8 Pro, with an 8% static floor and no consistency rule. One uses a 4% dynamic drawdown and Signature an EOD dynamic drawdown, both of which lock at the initial balance.</p></div></details>
 
-<details class="faq"><summary>Which platform should I choose?</summary><div class="faq-a"><p>Keep the platform you already trade well. MT4 suits a ticket-based workflow with existing scripts, MT5 adds a modern backtester but defaults to netting, cTrader suits level-based execution, and Match-Trader is a solid browser-first default.</p></div></details>
+<details class="faq"><summary>What is the 2% daily profit cap?</summary><div class="faq-a"><p>On E8 Pro the account can make at most 2% in a day. It limits how quickly the 8% target can be reached and makes a multi-day distribution unavoidable, which is why Pro can advertise no consistency rule.</p></div></details>
 
-<details class="faq"><summary>How much can I risk per trade on $100,000?</summary><div class="faq-a"><p>Size so that your longest losing run plus two consumes less than half the floor. On an illustrative $10,000 floor that is roughly $670 to $800 per trade, which is well above the minimum position size on most pairs.</p></div></details>
+<details class="faq"><summary>How many payouts can a Signature account pay?</summary><div class="faq-a"><p>Four on futures accounts purchased after 1 October 2026, with a buffer equal to the EOD drawdown left in the account and at least five profitable days between payouts after the first. Confirm the cap for the Classic Markets account separately, because the payout mechanics differ by market.</p></div></details>
 
-<details class="faq"><summary>Does the evaluation have a consistency rule?</summary><div class="faq-a"><p>Usually not, but the funded account may apply one. Confirm both stages in writing, and check whether the condition is measured on gross or net profit and whether it applies at payout only.</p></div></details>
-
-<details class="faq"><summary>How long does a one-step attempt take?</summary><div class="faq-a"><p>A ten-week calendar with two measurement weeks, a five-week working block, two distribution weeks and a close is realistic at a constant unit. A shorter calendar is possible at a larger unit and a higher risk of a retry.</p></div></details>
+<details class="faq"><summary>Can I trade news on E8?</summary><div class="faq-a"><p>It depends on the product. One prohibits news trading in the performance account within five minutes either side of a high-impact release. Signature allows it without restriction. Check the product page for the account being bought.</p></div></details>
   </div>
 </section>
 
@@ -210,13 +201,10 @@ generator: content-system
     <ul class="link-list">
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
       <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews of the service</a></li>
-      <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">The complete guide to passing a prop firm challenge</a></li>
-      <li><a href="/blog/prop-firm-passing-complete-guide-2026.html">Prop firm passing in 2026: the full playbook</a></li>
       <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule guide</a></li>
       <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin on an evaluation</a></li>
       <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding rules</a></li>
-      <li><a href="/blog/prop-firm-profit-target-strategies.html">Profit target strategies that survive the rules</a></li>
     </ul>
     <p class="disclaimer">E8 Markets is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Rules, fees and payout terms change; verify every figure against the firm's own terms before purchasing an evaluation. Trading involves substantial risk of loss.</p>
   </div>

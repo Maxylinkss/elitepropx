@@ -30,8 +30,8 @@ generator: content-system
   <li>Apex evaluates futures; Trade The Pool evaluates equity day trading. The sessions and sizing units do not transfer.</li>
   <li>Apex trails against peak equity including open profit; Trade The Pool applies a firm-specific hard loss limit.</li>
   <li>Contract sizing is tick value × ticks; share sizing is price difference × shares, with a much larger position count.</li>
-  <li>Both have a daily stop, but only Apex lacks one on its standard futures evaluation.</li>
-  <li>Both bill monthly, so the calendar is a cost on either side.</li>
+  <li>The daily stop depends on the product: Trade The Pool publishes one, Apex's EOD model has a fixed dollar limit, and Apex's intraday model has none.</li>
+  <li>Both charge a one-time evaluation fee, so time does not increase the price on either side.</li>
   <li>Equity day trading adds borrow, locate and pattern-day-trader considerations that futures do not have.</li>
 </ul>
 </div>
@@ -47,7 +47,7 @@ generator: content-system
   <li><a href="#daily">Daily stops and session structure</a></li>
   <li><a href="#session">A fixed close against a continuous session</a></li>
   <li><a href="#platforms">NinjaTrader against Sterling and DAS</a></li>
-  <li><a href="#costs">Monthly billing on both sides</a></li>
+  <li><a href="#costs">One-time fees on both sides</a></li>
   <li><a href="#payout">Payout conditions</a></li>
   <li><a href="#retries">Retry economics</a></li>
   <li><a href="#news">Events, halts and gaps</a></li>
@@ -72,19 +72,19 @@ generator: content-system
     </thead>
     <tbody>
       <tr><td>Market</td><td>futures</td><td>equities</td></tr>
-      <tr><td>Evaluation model</td><td>single evaluation with a trailing threshold</td><td>evaluation for equity day trading with a profit target and loss limit</td></tr>
-      <tr><td>Loss floor</td><td>trailing, measured from peak equity including open profit</td><td>firm-specific, typically a hard loss limit</td></tr>
-      <tr><td>Daily stop</td><td>no separate daily stop on the standard evaluation</td><td>yes</td></tr>
-      <tr><td>Consistency</td><td>yes, a minimum number of trading days applies</td><td>yes</td></tr>
-      <tr><td>Minimum days</td><td>undefined</td><td>undefined</td></tr>
-      <tr><td>Billing</td><td>monthly subscription per account</td><td>monthly subscription</td></tr>
+      <tr><td>Evaluation model</td><td>EOD or intraday drawdown; one phase</td><td>equity day-trading evaluation with a profit target and loss limit</td></tr>
+      <tr><td>Loss floor</td><td>EOD, fixed through the next session; or intraday trailing peak balance</td><td>hard loss limit, plan-specific</td></tr>
+      <tr><td>Daily stop</td><td>fixed dollar limit on EOD; none on intraday</td><td>yes</td></tr>
+      <tr><td>Consistency</td><td>50% best day at payout (30% legacy)</td><td>plan-specific</td></tr>
+      <tr><td>Minimum days</td><td>none</td><td>plan-specific</td></tr>
+      <tr><td>Billing</td><td>one-time fee for 30 days; PA activation fee on funding</td><td>one-time evaluation fee</td></tr>
       <tr><td>Payout</td><td>payouts requested from the funded account after qualifying days</td><td>profit split on a fixed cycle</td></tr>
       <tr><td>Platforms</td><td>Rithmic, Tradovate, NinjaTrader</td><td>Sterling, DAS Trader, TradingView</td></tr>
       <tr><td>Session</td><td>US futures session hours</td><td>US equity market hours</td></tr>
     </tbody>
   </table>
 </div>
-<p>Two rows carry more weight than their length suggests. The daily stop row is asymmetric: Apex's standard evaluation has none, so the trail is the only published limit on a session, while Trade The Pool applies one. The platform row has no overlap at all, which means a trader cannot carry a workflow between the two products without rebuilding it.</p>
+<p>Two rows carry more weight than their length suggests. The daily stop row is asymmetric: Apex's EOD model publishes a fixed dollar limit, its intraday model publishes none, and Trade The Pool applies one to its equity evaluations. The platform row has no overlap at all, which means a trader cannot carry a workflow between the two products without rebuilding it.</p>
 
 <h2 id="job">Two different day jobs</h2>
 <p>An index futures trader watches one or two instruments, sizes in contracts and manages a position that can be held for minutes or hours across a nearly continuous session. An equity day trader scans a universe, sizes in shares and has to be flat before the close, which compresses every decision into six and a half hours.</p>
@@ -128,11 +128,11 @@ generator: content-system
 <p>TradingView appears on the equity list and is the bridge for a chart-first trader, but its execution layer is newer than the dedicated platforms and its order handling differs. A method that depends on precise stop management should be tested on the platform before it is relied on.</p>
 <p>Data costs differ too. Futures data is usually billed separately and depth-of-market is the expensive tier. Equity data is often bundled with the platform, but Level 2 and short-locate data can carry their own fees. Both belong in the monthly budget, not in the surprise column.</p>
 
-<h2 id="costs">Monthly billing on both sides</h2>
-<p>Both products bill monthly, which makes the calendar a cost centre on either side. At an illustrative $150 per month plus a $50 data fee, a three-month attempt costs $600 and a six-month attempt costs $1,200. The evaluation fee is the same in each case; the difference is entirely the time.</p>
-<p>That is the opposite of a one-off product, where patience is free. On a monthly product the optimal pace is the fastest one that respects the risk rules, and a cautious attempt that drifts is expensive. The correct behaviour is to set a calendar in advance and treat an extension as a signal to review rather than a neutral choice.</p>
-<p>Retries multiply the arithmetic. Three attempts of three months each is nine months of subscription plus fees, which can be four times the headline price. A trader who expects to need retries should model the annual cost before choosing a monthly product, and should compare it with a one-off alternative rather than with the headline fee.</p>
-<p>The hidden lines are data, platform and time. They do not appear on the firm's page and they decide whether the exercise is a business or a hobby. An annual budget with four lines takes ten minutes and answers the question.</p>
+<h2 id="costs">One-time fees on both sides</h2>
+<p>Both products charge once per attempt. Apex's evaluation is a one-time payment for 30 days of access, and its Performance Account activation fee is also one-time. Trade The Pool lists a one-time evaluation fee that ranges from the smallest to the largest account, with no monthly subscription on a funded account. Patience does not increase the price at either firm; what it risks is the access window.</p>
+<p>The add-on costs differ. Apex requires a futures data feed, usually billed monthly by the platform or provider, and it continues regardless of whether the account is trading. Trade The Pool bundles platform access with the evaluation, but equity data, Level 2 and short-locate fees can carry their own charges. Both belong in the budget rather than in the surprise column.</p>
+<p>Retries reset the arithmetic. Three Apex attempts cost three evaluation fees plus three data periods; three Trade The Pool attempts cost three evaluation fees. A trader who expects to need retries should price the total, not the headline fee, and should check whether either firm discounts a reset.</p>
+<p>The behavioural difference a subscription used to create has gone. With a one-time fee, the calendar no longer bills by the month, so the discipline has to come from a 30-day access deadline on the Apex side and a 60-day limit on Trade The Pool's MAX evaluation.</p>
 
 <h2 id="payout">Payout conditions</h2>
 <p>Apex pays from the funded account after qualifying days, with the request made from the dashboard. Trade The Pool releases a profit split on a fixed cycle. The difference that matters is the time from a profitable month to cleared funds and the conditions that can interrupt it.</p>
@@ -141,10 +141,10 @@ generator: content-system
 <p>Ask whether the split is calculated on gross or net profit, and whether the funded stage keeps the evaluation's rulebook or swaps in a new one. Those two replies are worth more than the advertised percentage, and neither tends to appear on the pricing page.</p>
 
 <h2 id="retries">Retry economics</h2>
-<p>Estimate the pass probability from your own record and divide the cost by it. If a three-month Apex attempt costs $600 and has a 30% pass probability, the expected cost per funded account is $2,000. If a three-month Trade The Pool attempt costs the same and has a 25% probability, the expected cost is $2,400. The difference is driven by the pass rate, not by the price.</p>
+<p>Estimate the pass probability from your own record and divide the cost by it. If an Apex attempt costs $250 and has a 30% pass probability, the expected cost per funded account is about $833 before data. If a Trade The Pool attempt costs $400 and has a 25% probability, the expected cost is $1,600. The difference is driven by both the price and the pass rate, which is why a cheap attempt with a poor fit is not cheap.</p>
 <p>The cheapest way to shift both figures is to cut the unit by a third. That usually turns a normal run of losses from a breach into a tolerable drawdown, and it leaves the fee untouched, so the expected cost falls by more than profit per trade does.</p>
 <p>The second lever is the market. A trader who is competent in futures will underperform on an equity evaluation regardless of the arithmetic, because the scanning, sizing and session assumptions do not transfer. Choosing the market you already trade is worth more than any rulebook advantage.</p>
-<p>The third lever is the calendar. On a monthly product a shorter attempt is cheaper, so the plan should target a realistic duration rather than an aspirational one. A five-week plan that fails in week three costs less than a twelve-week plan that fails in week eleven, and both teach the same lesson.</p>
+<p>The third lever is the deadline. Apex gives 30 days and no extension; Trade The Pool's MAX evaluation gives 60 days and its FLEX evaluation has no time limit. A plan that needs the full window is a plan with no margin for a losing week, so the target should be scheduled to finish inside two thirds of the available time.</p>
 
 <h2 id="news">Events, halts and gaps</h2>
 <p>Futures react to the macro calendar: central bank decisions, inflation prints and employment data, with the largest single-session ranges of the quarter. Equities react to the same calendar plus earnings, guidance and company-specific news, and individual names can be halted mid-position.</p>
@@ -153,7 +153,7 @@ generator: content-system
 <p>The conservative plan is the same on both: flatten before the scheduled event and re-enter after the first half hour. On equities, flatten before the close as well, since the day-trading rule requires it and the overnight gap is not part of the product.</p>
 
 <h2 id="fit">Who belongs on which</h2>
-<p>Apex fits a futures trader who closes within a session, takes profit at levels and can watch the US regular session. The live trail rewards precision and punishes give-backs, and the monthly fee rewards finishing inside two months.</p>
+<p>Apex fits a futures trader who closes within a session, takes profit at levels and can watch the US regular session. The intraday model rewards precision and punishes give-backs; the EOD model suits a trader who holds through retracements. The 30-day access period rewards a plan that finishes inside a month.</p>
 <p>Trade The Pool fits an equity day trader who works a watchlist, uses Level 2 and hotkeys, and values a fixed close. The hard loss limit and the daily stop suit a method with a defined stop and a modest per-trade target, and the equity session provides a natural end to every day.</p>
 <p>The tie-breaker is the workflow. A trader who already scans equities and manages many symbols will find the futures DOM restrictive; a trader who trades one index contract will find a watchlist distracting. The rulebooks are different, but the workflow difference is larger.</p>
 <p>If both are accessible, simulate both on the same hundred trades with the same dollar risk. Whichever survives with the smaller drawdown is the structure the method already fits, and that is a better answer than any fee comparison.</p>
@@ -161,7 +161,7 @@ generator: content-system
 <h2 id="flags">What to confirm before paying</h2>
 <p>The first is the floor definition. On Apex confirm whether the trail includes open profit; on the equity side confirm whether the loss limit is hard, static or trailing, because the three behave differently. The second is the daily stop and its basis, including the reset time.</p>
 <p>The third is the session rule. Confirm whether positions must be flat at the close, whether overnight holding is permitted and whether the settlement changes anything. The fourth is the position cap, in contracts or shares, which can bind before the risk budget does.</p>
-<p>The fifth is billing and retries: whether the fee is monthly, whether a retry is charged again, and whether a promotion changes the terms. The sixth is the conduct clauses: news windows, order types, automation and third-party trading.</p>
+<p>The fifth is billing and retries: the fee per attempt, whether a retry is charged again, and whether a promotion changes the terms. The sixth is the conduct clauses: news windows, order types, automation and third-party trading.</p>
 <p>Save a dated copy of every answer. It takes ten minutes and it is the only document that settles a dispute six weeks later.</p>
 
 <h2 id="month">A thirty-day plan for either</h2>
@@ -176,7 +176,7 @@ generator: content-system
 
 <details class="faq"><summary>Are these two products comparable?</summary><div class="faq-a"><p>Only at the level of rule shape. Apex evaluates futures and Trade The Pool evaluates equity day trading, so the sessions, sizing units and platform stacks differ before any rule is compared.</p></div></details>
 
-<details class="faq"><summary>Which one has a daily stop?</summary><div class="faq-a"><p>Trade The Pool applies a daily stop. Apex's standard futures evaluation does not list one, so the trailing floor is the only published limit on a session and a personal cap is essential.</p></div></details>
+<details class="faq"><summary>Which one has a daily stop?</summary><div class="faq-a"><p>Trade The Pool applies a daily stop. Apex's EOD evaluation has a fixed dollar limit, but its intraday evaluation has none, so the trailing floor is the only published limit on a session there and a personal cap is essential.</p></div></details>
 
 <details class="faq"><summary>How do I size a share position?</summary><div class="faq-a"><p>Risk divided by the distance between entry and stop. With a $300 unit and a $0.60 stop, 500 shares fit. The share count is much larger than a contract count for the same dollar risk, and commissions are charged per share.</p></div></details>
 
@@ -184,7 +184,7 @@ generator: content-system
 
 <details class="faq"><summary>Which platform should I choose?</summary><div class="faq-a"><p>Keep the stack you already trade well. NinjaTrader or Tradovate suit a futures DOM workflow; Sterling or DAS Trader suit equity day trading with hotkeys and Level 2. TradingView is available but its execution layer is newer.</p></div></details>
 
-<details class="faq"><summary>Is either cheaper?</summary><div class="faq-a"><p>Both bill monthly, so the comparison depends on duration and on data fees. Model three months of subscription plus data on each side, then compare that with the expected number of attempts.</p></div></details>
+<details class="faq"><summary>Is either cheaper?</summary><div class="faq-a"><p>Both charge a one-time evaluation fee, so the comparison depends on the fee per attempt, the account size and the data costs. Price three attempts on each side and divide by your realistic pass rate; that is the number that matters.</p></div></details>
   </div>
 </section>
 
@@ -192,7 +192,7 @@ generator: content-system
   <div class="wrap cta-band-inner">
     <div>
       <h2>Apex or Trade The Pool — traded for you</h2>
-      <p>One flat <strong>$220</strong> for either evaluation, any account size. Retries covered, no profit split, funded login in your name. If the firm's terms forbid third-party trading, we decline before payment.</p>
+      <p>One flat <strong>$220</strong> for either evaluation, any account size. Retries covered, no profit split, funded login in your name. We work with any firm, and we tell you in writing what its third-party trading clause says before payment.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>

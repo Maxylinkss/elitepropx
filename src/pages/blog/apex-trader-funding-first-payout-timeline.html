@@ -1,6 +1,6 @@
 ---
 title: Apex Trader Funding First Payout: The Full Timeline
-desc: Apex first payout timeline from evaluation to cash: the trailing threshold, the funded-account gates, the minimum trading days and the review window.
+desc: Apex first payout timeline: the 7-day activation window, the 5 qualifying trading days, the 50% consistency rule, the safety net and the review.
 path: /blog/apex-trader-funding-first-payout-timeline.html
 type: article
 h1: Apex Trader Funding First Payout Timeline
@@ -9,7 +9,7 @@ crumb: Apex First Payout Timeline
 section: Rules
 sectionUrl: /blog/
 date: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-21
 priority: 0.7
 schemaService: true
 generator: content-system
@@ -19,7 +19,7 @@ generator: content-system
   <div class="wrap narrow">
     <p class="kicker">Firm rules · reviewed October 2026</p>
     <h1>Apex Trader Funding First Payout Timeline</h1>
-    <p class="lede">The first payout on a futures evaluation is gated by more than a profit target. There is the trailing threshold, the funded-account confirmation, a minimum number of trading days, a payout threshold and a review window, and each one adds days to the timeline. This guide maps the sequence in order, shows where the time actually goes, and marks the figures that must be confirmed against the current plan because futures firms revise their schedules frequently.</p>
+    <p class="lede">Apex is unusual among futures firms in two ways that shape the first payout: an evaluation can be passed in a single session because there is no minimum-day rule, and the funded account then requires five qualifying days, a safety net, a $500 minimum request and a 50% consistency test. This guide maps those gates in order, with the figures published in Apex's help centre on 21 October 2026.</p>
   </div>
 </section>
 
@@ -28,125 +28,114 @@ generator: content-system
 <div class="keypoints">
   <h2>Key takeaways</h2>
 <ul>
-  <li>Four gates sit between passing and the first payment: funded confirmation, minimum trading days, payout threshold and review.</li>
-  <li>The trailing threshold is the rule that decides whether a funded account survives long enough to pay at all.</li>
-  <li>Futures payouts are usually requested against a threshold, not on demand for any amount.</li>
-  <li>The first payout is the slowest because account details, tax information and payout method are verified once.</li>
-  <li>Every figure here describes the published structure at the time of writing; confirm it on the plan page before relying on a date.</li>
+  <li>The evaluation has no minimum trading days. A pass is possible in one session, and the account expires after 30 days of access.</li>
+  <li>After passing, there are 7 calendar days to activate the Performance Account and pay the one-time activation fee.</li>
+  <li>The first payout needs 5 qualifying trading days, each meeting a minimum daily profit set by account size.</li>
+  <li>50% consistency applies: no single day may account for 50% or more of profit since the last approved payout.</li>
+  <li>The safety net is the drawdown limit plus $100, and only profit above it can be requested. The minimum request is $500.</li>
+  <li>Each Performance Account is limited to six approved payouts, with a per-request maximum that rises by payout number.</li>
 </ul>
 </div>
 <div class="toc">
   <p>Contents</p>
 <ol>
-  <li><a href="#gates">The four gates in order</a></li>
-  <li><a href="#trailing">The trailing threshold, in dollars</a></li>
-  <li><a href="#funded">From pass to funded confirmation</a></li>
-  <li><a href="#days">The minimum trading day count</a></li>
-  <li><a href="#threshold">The payout threshold</a></li>
-  <li><a href="#review">The review window</a></li>
-  <li><a href="#model">A modelled 30-day timeline</a></li>
+  <li><a href="#gates">The gates in order</a></li>
+  <li><a href="#trailing">The drawdown, in dollars</a></li>
+  <li><a href="#funded">From pass to Performance Account</a></li>
+  <li><a href="#days">The five qualifying days</a></li>
+  <li><a href="#threshold">The safety net and the $500 minimum</a></li>
+  <li><a href="#review">The review and payment window</a></li>
+  <li><a href="#model">A modelled timeline</a></li>
   <li><a href="#delay">What actually delays a first payout</a></li>
   <li><a href="#plan">Building the date backwards</a></li>
   <li><a href="#sizing">Sizing the funded account</a></li>
-  <li><a href="#lock">What the threshold lock changes</a></li>
+  <li><a href="#lock">What the trailing stop changes</a></li>
   <li><a href="#versus">Compared with a forex payout</a></li>
   <li><a href="#records">The payout review's evidence</a></li>
   <li><a href="#questions">Common questions</a></li>
 </ol>
 </div>
 
-<p>Most first-payout questions are really one question: when does the money arrive. The answer is a chain of conditions rather than a single date, and each condition has its own clock. Some are measured in trading days, some in calendar days, and one is measured in profit after the account is funded.</p>
-<p>Futures adds a variable that forex evaluations do not have: the trailing threshold. On a futures account the drawdown floor typically follows peak equity up to a limit, which means that a funded account can be profitable and still fail to reach a payout because the buffer between equity and the floor has narrowed. Understanding that mechanism is the difference between a date that holds and a date that slips.</p>
+<p>Most first-payout questions are really one question: when does the money arrive. At Apex the answer is a chain of conditions rather than a single date, and each condition has its own clock. Some are measured in qualifying trading days, one in calendar days from the pass, and one in profit above a safety net.</p>
+<p>Futures adds a variable that forex evaluations do not have: the drawdown threshold. On Apex it can be end-of-day or intraday depending on the evaluation bought, and the intraday version behaves differently on different platforms. Understanding that mechanism is the difference between a date that holds and a date that slips.</p>
 
-<h2 id="gates">The four gates in order</h2>
+<h2 id="gates">The gates in order</h2>
 <div class="table-scroll">
   <table>
     <thead>
       <tr><th>Gate</th><th>Measured in</th><th>What it requires</th><th>Typical cost in time</th></tr>
     </thead>
     <tbody>
-      <tr><td>Funded confirmation</td><td>Business days</td><td>Evaluation verified and the funded account issued</td><td>1–3 days</td></tr>
-      <tr><td>Minimum trading days</td><td>Trading days</td><td>A stated number of days with qualifying activity</td><td>5–10 days from funding</td></tr>
-      <tr><td>Payout threshold</td><td>Dollars</td><td>Profit above a stated level, above the trailing floor</td><td>Depends on size and pace</td></tr>
-      <tr><td>Review and payment</td><td>Business days</td><td>Details verified, request approved, transfer settled</td><td>2–7 days</td></tr>
+      <tr><td>Evaluation pass</td><td>Trading</td><td>Profit target reached with the drawdown intact</td><td>As fast as one session</td></tr>
+      <tr><td>PA activation</td><td>Calendar days</td><td>Activation fee paid within 7 days of the pass</td><td>1–3 days</td></tr>
+      <tr><td>Qualifying days</td><td>Trading days</td><td>Five days each meeting a minimum daily profit</td><td>5 days minimum</td></tr>
+      <tr><td>Safety net and minimum</td><td>Dollars</td><td>Balance above drawdown + $100, and at least $500 available</td><td>Depends on pace</td></tr>
+      <tr><td>Consistency</td><td>Percentage</td><td>No day at 50% or more of profit since the last payout</td><td>Usually satisfied by the five days</td></tr>
+      <tr><td>Review and payment</td><td>Business days</td><td>Request approved and transfer settled</td><td>1–5 days</td></tr>
     </tbody>
   </table>
 </div>
-<p>The order matters because the gates are not parallel. The trading-day count usually starts at funding, not at purchase, so a fast pass does not shorten it. The payout threshold is measured on the funded account, not on the evaluation, so the profit made during the evaluation does not count toward it. A trader who plans the timeline from the evaluation start will be wrong by the length of the funded-account phase.</p>
-<p>That is the single most common planning error on futures evaluations. The evaluation is the qualifying test; the payout threshold is a separate test on a separate account with a floor that moves. Treating them as one continuous run produces an expected date that is weeks early.</p>
+<p>The order matters because the gates are not parallel. The qualifying-day count starts on the funded account, not at the evaluation, so a fast pass does not shorten it. The safety net is measured on the funded account, so profit made during the evaluation does not count toward the request. A trader who plans from the evaluation start will be wrong by the length of the funded phase.</p>
 
-<h2 id="trailing">The trailing threshold, in dollars</h2>
-<p>A trailing threshold follows peak equity upward and stops at a ceiling. The mechanism has three numbers: the starting threshold, the amount it trails, and the level at which it stops trailing.</p>
+<h2 id="trailing">The drawdown, in dollars</h2>
+<p>Apex sells two evaluation models, and the threshold behaves differently in each. The EOD model calculates the threshold once a day at the close from the ending balance and holds it fixed through the next session. The intraday model follows peak balance in real time, including unrealised profit, and never moves down.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Point</th><th>Peak equity</th><th>Threshold</th><th>Buffer to the floor</th></tr>
+      <tr><th>Account</th><th>Target</th><th>Drawdown</th><th>Daily loss limit (EOD only)</th></tr>
     </thead>
     <tbody>
-      <tr><td>Start</td><td>$50,000</td><td>$47,500</td><td>$2,500</td></tr>
-      <tr><td>After +$2,000</td><td>$52,000</td><td>$49,500</td><td>$2,500</td></tr>
-      <tr><td>After +$4,000</td><td>$54,000</td><td>$51,500</td><td>$2,500</td></tr>
-      <tr><td>At the stop level</td><td>$55,000</td><td>$52,500 (locked)</td><td>$2,500, then widening</td></tr>
-      <tr><td>After +$8,000</td><td>$58,000</td><td>$52,500 (locked)</td><td>$5,500</td></tr>
+      <tr><td>$25,000</td><td>$1,500</td><td>$1,000</td><td>$500</td></tr>
+      <tr><td>$50,000</td><td>$3,000</td><td>$2,000</td><td>$1,000</td></tr>
+      <tr><td>$100,000</td><td>$6,000</td><td>$3,000</td><td>$1,500</td></tr>
+      <tr><td>$150,000</td><td>$9,000</td><td>$4,000</td><td>$2,000</td></tr>
     </tbody>
   </table>
 </div>
-<p>The fourth row is the important one. Until the threshold stops trailing, the buffer between equity and the floor stays constant at the trailing amount, which means profit does not create room. A trader who is $4,000 up on a $50,000 account still has exactly the same distance to failure as at the start — the floor has followed them up.</p>
-<p>After the threshold locks, profit finally becomes room. That is the point at which the account becomes structurally safer, and it is usually the point at which a payout becomes realistic, because the payout threshold sits above the locked floor. A trader who withdraws before the lock gives up the buffer they just built.</p>
+<p>On a $50,000 intraday account the threshold starts at $48,000. If unrealised profit takes the balance to $50,900, the threshold moves to $48,900 immediately. On Rithmic and WealthCharts it stops rising once it reaches the $53,000 target balance, which happens when peak balance reaches $55,000. On Tradovate it keeps trailing the peak for the life of the evaluation.</p>
+<p>In the Performance Account the intraday threshold stops at starting balance + $100 — $50,100 on a $50k account — once peak balance reaches starting balance + drawdown + $100, which is $52,100. That stop is the "safety net" in the payout rules, and it is why profit above it is what can be withdrawn.</p>
+
+<h2 id="funded">From pass to Performance Account</h2>
+<p>When the target is reached and the rules have been respected, the evaluation is marked as passed and the trader has 7 calendar days to activate the Performance Account. The activation fee is one-time, not a subscription. Missing the 7-day window forfeits the pass.</p>
+<p>The funded account is not a continuation of the evaluation. It is a new account with its own drawdown model, its own daily rules and its own payout conditions. A trader who passed on the EOD model receives an EOD Performance Account; one who passed on the intraday model receives an intraday Performance Account. The two have different payout tables, so the first decision after activation is to read the one that applies.</p>
+<p>Two things can slow activation. The first is an account detail mismatch — a name, address or payment method that does not match the verification record. The second is leaving the activation until day six and discovering a payment problem. Both are avoidable by completing the details before the target is reached.</p>
+
+<h2 id="days">The five qualifying days</h2>
+<p>Apex requires at least five trading days before a payout, and a qualifying day is not simply a day with a trade. Each day must meet a minimum net profit for the account size: $100 on $25k, $200 on $50k, $250 on $100k and $300 on $150k on the intraday Performance Account. The days do not have to be consecutive.</p>
+<p>That definition changes the plan. A trader who makes $1,500 in one session has one qualifying day, not five, and cannot request a payout until four more days each clear the minimum. A trader who makes $200 a day for five days has satisfied the count and is closer to a request than the first trader despite making less money.</p>
+<p>The consistency rule usually resolves at the same time. No single profitable day may account for 50% or more of profit since the last approved payout. Five roughly equal days pass easily; one large day and four small ones do not, and the request option stays unavailable until ordinary days dilute the big one.</p>
+
+<h2 id="threshold">The safety net and the $500 minimum</h2>
+<p>The safety net is the drawdown limit plus $100, and it must be maintained for the life of the Performance Account. On a $50,000 intraday account that is $52,100. Only profit above the safety net can be requested, and the minimum request is $500 regardless of account size.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Withdrawal timing</th><th>Effect on the buffer</th><th>Effect on the next payout</th></tr>
+      <tr><th>Account</th><th>Qualifying days</th><th>Minimum daily profit</th><th>Safety net</th><th>Minimum balance to request</th></tr>
     </thead>
     <tbody>
-      <tr><td>Before the threshold locks</td><td>Buffer returns to the trailing amount</td><td>Next payout starts from a smaller cushion</td></tr>
-      <tr><td>At the threshold lock</td><td>Buffer is preserved</td><td>Later payouts are easier to reach</td></tr>
-      <tr><td>Well above the lock</td><td>Buffer grows with retained profit</td><td>Compounding effect on later cycles</td></tr>
+      <tr><td>$25,000</td><td>5</td><td>$100</td><td>$26,100</td><td>$26,600</td></tr>
+      <tr><td>$50,000</td><td>5</td><td>$200</td><td>$52,100</td><td>$52,600</td></tr>
+      <tr><td>$100,000</td><td>5</td><td>$250</td><td>$103,100</td><td>$103,600</td></tr>
+      <tr><td>$150,000</td><td>5</td><td>$300</td><td>$154,100</td><td>$154,600</td></tr>
     </tbody>
   </table>
 </div>
-<p>The first row explains a pattern traders report on futures accounts: the first payout is received, and the account then breaches within a month. The withdrawal reset the cushion without resetting the floor, so the next drawdown had less room than the one before it.</p>
+<p>The "minimum balance to request" already combines the starting balance, the safety net and the $500 minimum. If the balance is below that figure, the payout option does not appear. A trader who withdraws down to the safety net on the first request will need to rebuild above it before the second.</p>
+<p>Apex also caps each request and the number of payouts per account. On the intraday Performance Account the maximum is six approved payouts, and the per-request maximum rises with each payout — $1,500 on the first and $3,000 on the sixth for a $50k account. After the sixth, the account completes its cycle and a new evaluation is required.</p>
 
-<h2 id="funded">From pass to funded confirmation</h2>
-<p>The evaluation ends when the profit target is reached and the account is verified. On futures plans the verification is usually fast because the evaluation is simulated and the record is already in the firm's system.</p>
-<p>Two things can slow it. The first is an open position at the moment of verification: some plans require the account to be flat, and a position held overnight can delay confirmation to the next session. The second is an account detail mismatch — a name, address or payment method that does not match the verification record. Both are avoidable by being flat and complete before the target is reached.</p>
-<p>The funded account that arrives is not a continuation of the evaluation. It is a new account with a new floor, a new trailing mechanism and its own rules. The trader's first decision on it is the size, and the correct size is smaller than the size used to pass, because the payout threshold has to be reached without touching a floor that follows equity.</p>
-
-<h2 id="days">The minimum trading day count</h2>
-<p>The count applies to the funded account on most futures plans, and its definition is usually a day on which at least one trade is executed and closed. Because futures sessions are short and structured, a "day" is unambiguous — but the count still has to be planned.</p>
-<p>For a trader taking two or three trades a session, the count is satisfied incidentally. For a trader who trades one setup a week, it is the binding constraint and the first payout date is set by the calendar rather than by the profit. That is worth knowing before choosing a plan: a method that produces two setups a month will take months to satisfy a ten-day count however profitable it is.</p>
-<p>Filler days are cheaper on futures than on forex because micro contracts exist. A single micro contract held briefly satisfies the definition at a cost of a few dollars, which makes the count a rounding error rather than a risk. The caution is the same as elsewhere: the filler must be a real trade with a server-side stop, not a token entry designed to game the definition.</p>
-
-<h2 id="threshold">The payout threshold</h2>
-<p>The payout threshold is the profit level at which a withdrawal can be requested. It is measured on the funded account and usually expressed as a dollar amount or a percentage of the account size.</p>
-<div class="table-scroll">
-  <table>
-    <thead>
-      <tr><th>Account size</th><th>Threshold at 6%</th><th>Buffer at the lock</th><th>Net first payout after fees</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>$25,000</td><td>$1,500</td><td>$1,250</td><td>~$1,400</td></tr>
-      <tr><td>$50,000</td><td>$3,000</td><td>$2,500</td><td>~$2,850</td></tr>
-      <tr><td>$100,000</td><td>$6,000</td><td>$5,000</td><td>~$5,750</td></tr>
-      <tr><td>$150,000</td><td>$9,000</td><td>$7,500</td><td>~$8,650</td></tr>
-    </tbody>
-  </table>
-</div>
-<p>The fee column is not small in relative terms. Futures payouts often carry a per-request fee, and on a $25,000 account a fixed fee consumes a larger share of a $1,500 threshold than of a $9,000 one. That is part of why small futures accounts are less efficient: the threshold scales with size, the fee does not.</p>
-<p>The threshold also interacts with the split. A payout at the threshold is a gross figure; the trader receives their share of it, and any fee is deducted. Planning the date from the gross threshold and the cash flow from the net figure produces two different numbers, and the second is the one that matters.</p>
-
-<h2 id="review">The review window</h2>
-<p>A payout request triggers a review of the account: the trading record, the rule compliance, the identity and the payment method. On a first request this is the longest administrative step because nothing is on file yet.</p>
+<h2 id="review">The review and payment window</h2>
+<p>A payout request triggers a review of the trading record, rule compliance, identity, tax details and the payment method. Apex allows trading to continue while a request is under review, but the trader should treat the requested amount as already withdrawn: if the balance falls below the minimum threshold after submitting, the request is denied automatically.</p>
 <ul>
   <li><strong>Trading record.</strong> Whether trades were within session hours, within the position cap and consistent with the stated style.</li>
-  <li><strong>Rule compliance.</strong> Whether the trailing threshold was ever breached, and whether any prohibited practice appears in the record.</li>
-  <li><strong>Identity and tax details.</strong> The forms required before a first payment, which differ by jurisdiction.</li>
+  <li><strong>Rule compliance.</strong> Whether the drawdown was ever breached, and whether any prohibited practice appears in the record.</li>
+  <li><strong>Consistency.</strong> The 50% calculation over profit since the last approved payout.</li>
+  <li><strong>Identity and tax details.</strong> Completed before the first request, not during it.</li>
   <li><strong>Payment method.</strong> The destination account must match the verified name.</li>
 </ul>
-<p>A complete submission clears in days. An incomplete one is held, and the hold does not announce itself — the request simply does not progress. The practical step is to complete identity and payment details at funding rather than at the request, which removes the most common reason for a first-payout delay.</p>
+<p>A complete submission clears quickly. An incomplete one is held, and the hold does not announce itself — the request simply does not progress. Completing identity and payment details at activation removes the most common reason for a first-payout delay.</p>
 
-<h2 id="model">A modelled 30-day timeline</h2>
-<p>An illustrative sequence for a $50,000 account, with a fast evaluation and a moderate funded pace. The durations are a model, not a published schedule.</p>
+<h2 id="model">A modelled timeline</h2>
+<p>An illustrative sequence for a $50,000 intraday Performance Account, with a fast evaluation and a moderate funded pace. The durations are a model, not a published schedule.</p>
 <div class="table-scroll">
   <table>
     <thead>
@@ -154,18 +143,18 @@ generator: content-system
     </thead>
     <tbody>
       <tr><td>0</td><td>Evaluation purchased</td><td>—</td></tr>
-      <tr><td>7</td><td>Target reached; account flat</td><td>Evaluation</td></tr>
-      <tr><td>9</td><td>Funded account issued</td><td>Confirmation</td></tr>
-      <tr><td>16</td><td>Seventh funded trading day completed</td><td>Minimum days</td></tr>
-      <tr><td>22</td><td>Payout threshold reached</td><td>Profit threshold</td></tr>
-      <tr><td>23</td><td>Request submitted with details complete</td><td>—</td></tr>
-      <tr><td>26</td><td>Review approved</td><td>Review</td></tr>
-      <tr><td>30</td><td>Funds received</td><td>Settlement</td></tr>
+      <tr><td>5</td><td>Target reached in one session</td><td>Evaluation</td></tr>
+      <tr><td>7</td><td>Performance Account activated</td><td>Activation</td></tr>
+      <tr><td>12</td><td>Fifth qualifying day completed</td><td>Day count</td></tr>
+      <tr><td>13</td><td>Balance above $52,600 and 50% consistency met</td><td>Safety net and consistency</td></tr>
+      <tr><td>14</td><td>Request submitted with details complete</td><td>—</td></tr>
+      <tr><td>17</td><td>Review approved</td><td>Review</td></tr>
+      <tr><td>19</td><td>Funds received</td><td>Settlement</td></tr>
     </tbody>
   </table>
 </div>
-<p>The evaluation took a week and the payout took three more. The gap is entirely funded-account time: seven trading days of count, six days of profit to the threshold, and four days of administration. A trader who planned from the evaluation start would have expected cash around day 12 and would have been wrong by eighteen days.</p>
-<p>The model assumes the threshold is reached without touching the trailing floor. If the account has a drawdown after the count is satisfied, the clock resets on the profit requirement while the count stays satisfied — which is the most common shape of a slipped first payout.</p>
+<p>The evaluation took five days and the payout took another twelve. The gap is almost entirely funded-account time: two days to activate, five qualifying days, and a few days of administration. A trader who planned from the evaluation start would have expected cash around day eight and would have been wrong by eleven days.</p>
+<p>The model assumes the threshold is reached without touching the drawdown and that the five days are roughly balanced. If one day dominates, the consistency test pushes the request back until ordinary days dilute it, which is the most common shape of a slipped first payout.</p>
 
 <h2 id="delay">What actually delays a first payout</h2>
 <div class="table-scroll">
@@ -174,118 +163,110 @@ generator: content-system
       <tr><th>Cause</th><th>Effect</th><th>Prevention</th></tr>
     </thead>
     <tbody>
-      <tr><td>Incomplete identity or tax details</td><td>Request held indefinitely</td><td>Complete at funding, not at request</td></tr>
-      <tr><td>Open position at the request</td><td>Request rejected or delayed to the next session</td><td>Be flat before requesting</td></tr>
-      <tr><td>Drawdown after the count</td><td>Threshold resets; no additional count</td><td>Reduce size as the threshold approaches</td></tr>
-      <tr><td>Payment method mismatch</td><td>Request rejected at settlement</td><td>Use the verified method and name</td></tr>
-      <tr><td>Rule query on the record</td><td>Manual review extends the window</td><td>Stay inside session hours and position caps</td></tr>
+      <tr><td>Incomplete identity or tax details</td><td>Request held</td><td>Complete at activation, not at request</td></tr>
+      <tr><td>Fewer than five qualifying days</td><td>Request option unavailable</td><td>Count days, not trades</td></tr>
+      <tr><td>One day at 50% or more of profit</td><td>Request option unavailable until diluted</td><td>Add ordinary winning days before requesting</td></tr>
+      <tr><td>Balance below the safety net plus $500</td><td>Request denied</td><td>Leave room above $52,600 on a $50k account</td></tr>
+      <tr><td>Drawdown after activation</td><td>Balance falls back toward the safety net</td><td>Reduce size as the balance approaches it</td></tr>
     </tbody>
   </table>
 </div>
-<p>The third row is the one that surprises traders who passed comfortably. Because the trailing floor follows peak equity until it locks, a drawdown after a good run can leave the account profitable but below the payout threshold relative to the floor. The count is unaffected, so the trader waits only for the profit to recover — but the wait is real and it is not visible in the evaluation plan.</p>
+<p>The third row is the one that surprises traders who passed comfortably. Because the 50% test is measured over profit since the last payout, a single large session can block the request even when the balance is well above the minimum. The fix is not a new account; it is more ordinary days.</p>
 
 <h2 id="plan">Building the date backwards</h2>
 <ol>
-  <li>Start from the date you need the cash, and subtract the settlement window in business days.</li>
+  <li>Start from the date you need the cash and subtract the settlement window in business days.</li>
   <li>Subtract the review window; add two days for a first request.</li>
-  <li>Subtract the time needed to reach the payout threshold at your funded-account pace.</li>
-  <li>Subtract the minimum trading day count, measured from funding.</li>
-  <li>Subtract the funded confirmation window, then work back to the evaluation finish date.</li>
+  <li>Subtract the time needed to reach the minimum balance at your funded-account pace.</li>
+  <li>Subtract five qualifying days, measured from activation.</li>
+  <li>Subtract the activation window, then work back to the evaluation finish date.</li>
 </ol>
-<p>Written as a chain, the date is usually further away than expected, and every step is a published condition rather than a delay. That is the useful output: a date the trader can plan around, and a clear view of which gate is the binding one. For most futures traders it is the threshold, not the count — and the threshold is the one variable that size and pace can actually influence.</p>
-<p>Confirm every figure on the current plan page before relying on a date. Futures firms revise thresholds, counts and fees more often than forex firms revise their core numbers, and a timeline built on last quarter's terms is a forecast of the wrong product.</p>
-<p>It is also worth re-running the chain whenever a plan changes. A moved threshold or a new minimum-day requirement shifts the whole schedule, and because the gates are sequential, a three-day change at the front can move the payout date by more than three days at the back. The chain is cheap to rebuild and expensive to get wrong, and a saved copy of the old chain makes the difference visible when a firm announces a revision, which is the moment a trader most needs to know whether the date moved, and by how much it moved.</p>
-<p>The one number the trader controls is the pace to the threshold, and it is controlled through size rather than through speed. A smaller risk on the funded account lengthens the approach to the threshold but keeps the account alive to make it. Given that the threshold is the binding gate on most futures accounts, that trade is usually worth making.</p>
+<p>Written as a chain, the date is usually further away than expected, and every step is a published condition rather than a delay. That is the useful output: a date the trader can plan around, and a clear view of which gate is binding. For most traders it is the qualifying-day count or the consistency rule, not the target.</p>
+<p>Confirm every figure on the current help-centre page before relying on a date. Apex revised its consistency rule from 30% to 50% on current accounts, and older reviews still quote the legacy figure. A timeline built on last year's terms is a forecast of the wrong product.</p>
 
 <h2 id="sizing">Sizing the funded account</h2>
-<p>The size used to pass an evaluation is not the size to use on the funded account, and the reason is structural rather than psychological. The evaluation floor is fixed at the start; the funded floor follows peak equity.</p>
+<p>The size used to pass an evaluation is not always the size to use on the funded account. On Apex's intraday model the funded threshold stops at starting balance + $100, so once the safety net is reached the buffer grows with retained profit. Before that point, profit does not create room.</p>
 <div class="table-scroll">
   <table>
     <thead>
       <tr><th>Account stage</th><th>Floor behaviour</th><th>Appropriate risk</th></tr>
     </thead>
     <tbody>
-      <tr><td>Evaluation</td><td>Fixed distance from the start</td><td>Largest risk that survives a normal streak</td></tr>
-      <tr><td>Funded, before the lock</td><td>Follows peak equity</td><td>Smaller, because profit does not create room</td></tr>
-      <tr><td>Funded, after the lock</td><td>Fixed after the ceiling</td><td>Can rise as buffer accumulates</td></tr>
+      <tr><td>Evaluation, EOD</td><td>Recalculated at the close, fixed during the session</td><td>Largest risk that survives a normal streak</td></tr>
+      <tr><td>Evaluation, intraday</td><td>Follows peak balance including unrealised profit</td><td>Reduce as the target approaches</td></tr>
+      <tr><td>Performance Account, before the stop</td><td>Follows peak; buffer constant</td><td>Smaller, because profit does not create room</td></tr>
+      <tr><td>Performance Account, after the stop</td><td>Fixed at starting balance + $100</td><td>Can rise as buffer accumulates</td></tr>
     </tbody>
   </table>
 </div>
-<p>The middle row is the one that catches traders. Before the threshold locks, a winning streak does not improve the buffer; the floor rises with equity, so the distance to failure stays at the trailing amount. Risking the same percentage as in the evaluation means the funded account has the same room despite the extra profit, and a normal retracement can end it.</p>
-<p>A practical rule is to halve the risk at funding and restore it only after the threshold locks. That halves the pace toward the payout threshold, which lengthens the first cycle, but it converts the account from a fragile one that needs a perfect sequence into one that can absorb a bad week.</p>
-<p>The alternative — keep the evaluation size and push for the threshold — produces the pattern most often reported on futures accounts: a fast first payout followed by a breach within weeks. The withdrawal reduced the buffer and the size never adjusted.</p>
+<p>A practical rule is to halve the risk at activation and restore it only after the threshold stops. That lengthens the approach to the payout minimum, but it converts the account from one that needs a perfect sequence into one that can absorb a bad week.</p>
+<p>The alternative — keep the evaluation size and push for the minimum balance — produces the pattern most often reported on futures accounts: a fast first payout followed by a breach within weeks. The withdrawal reduced the buffer and the size never adjusted.</p>
 
-<h2 id="lock">What the threshold lock changes</h2>
-<p>The lock is the point at which the trailing floor stops following equity. Before it, profit is a claim that can be taken back; after it, profit becomes room.</p>
+<h2 id="lock">What the trailing stop changes</h2>
+<p>The stop is the point at which the intraday floor no longer follows equity. Before it, profit is a claim that can be taken back; after it, profit becomes room. On a $50k Performance Account the stop is $50,100 once peak balance reaches $52,100.</p>
 <div class="table-scroll">
   <table>
     <thead>
       <tr><th>State</th><th>Effect of +$1,000 profit</th><th>Effect of a $1,000 drawdown</th></tr>
     </thead>
     <tbody>
-      <tr><td>Before the lock</td><td>Floor rises; buffer unchanged</td><td>Buffer unchanged until the floor stops</td></tr>
-      <tr><td>At the lock</td><td>Floor fixed; buffer grows</td><td>Buffer shrinks by the loss</td></tr>
-      <tr><td>Well above the lock</td><td>Buffer grows one-for-one</td><td>Buffer shrinks, with room to spare</td></tr>
+      <tr><td>Before the stop</td><td>Floor rises; buffer unchanged</td><td>Buffer unchanged until the floor stops</td></tr>
+      <tr><td>At the stop</td><td>Floor fixed; buffer grows</td><td>Buffer shrinks by the loss</td></tr>
+      <tr><td>Well above the stop</td><td>Buffer grows one-for-one</td><td>Buffer shrinks, with room to spare</td></tr>
     </tbody>
   </table>
 </div>
-<p>The first row explains why an account can be profitable and still fragile. A trader who is $3,000 up before the lock has not gained $3,000 of safety; they have gained $3,000 of paper profit and the same buffer as at the start.</p>
-<p>The second row is why the lock is the real milestone of a funded account, more than the payout threshold. Once the floor is fixed, every further dollar of retained profit improves the risk profile, and the account becomes progressively harder to lose. Before the lock, every dollar of profit is reversible.</p>
-<p>That suggests a sequencing decision: where the lock sits above the payout threshold, leaving profit in the account until the lock is reached makes later cycles easier. Where the lock sits below the threshold, the first withdrawal is safe and the second is the one to plan for.</p>
+<p>The first row explains why an account can be profitable and still fragile. A trader who is $2,000 up before the stop has not gained $2,000 of safety; they have gained paper profit and the same buffer as at the start. The safety net is what converts that profit into withdrawable room.</p>
 
 <h2 id="versus">Compared with a forex payout</h2>
 <p>The timeline shape differs from a forex evaluation in three places, and each shortens or lengthens the wait.</p>
 <div class="table-scroll">
   <table>
     <thead>
-      <tr><th>Stage</th><th>Futures timeline</th><th>Forex timeline</th></tr>
+      <tr><th>Stage</th><th>Apex futures timeline</th><th>Forex timeline</th></tr>
     </thead>
     <tbody>
       <tr><td>Target</td><td>Dollar amount per account size</td><td>Percentage of the account</td></tr>
-      <tr><td>Floor after funding</td><td>Trailing until the lock</td><td>Static from the start</td></tr>
-      <tr><td>Payout gate</td><td>Threshold plus a day count</td><td>Cycle date plus profit share</td></tr>
-      <tr><td>First payout wait</td><td>Count, threshold, review</td><td>Seasoning, cycle, review</td></tr>
+      <tr><td>Floor after funding</td><td>Trailing until the stop, then fixed</td><td>Usually static from the start</td></tr>
+      <tr><td>Payout gate</td><td>Five qualifying days, safety net and consistency</td><td>Cycle date plus profit share</td></tr>
+      <tr><td>First payout wait</td><td>Activation, qualifying days, review</td><td>Seasoning, cycle, review</td></tr>
     </tbody>
   </table>
 </div>
-<p>The second row is the substantive difference. A forex funded account with a static floor can be traded at a constant risk because the distance to failure never changes. A futures account cannot, because the floor moves until it locks. That makes the futures risk plan a two-stage plan and the forex plan a single-stage one.</p>
-<p>The fourth row is closer than it looks. Both waits contain a fixed eligibility period and an administrative tail, and in both cases the eligible period dominates. The practical difference is that a futures threshold depends on the account's own performance after funding, while a forex cycle depends on the calendar. One is earned, the other is waited for.</p>
+<p>The second row is the substantive difference. A forex funded account with a static floor can be traded at a constant risk because the distance to failure never changes. A futures account cannot, because the floor moves until it stops. That makes the futures risk plan a two-stage plan and the forex plan a single-stage one.</p>
 
 <h2 id="records">The payout review's evidence</h2>
-<p>Futures payouts are reviewed against a trade record, and the record is generated by the platform. A first request goes more smoothly when the trader can produce the same data the firm is looking at.</p>
+<p>Apex payouts are reviewed against a trade record, and the record is generated by the platform. A first request goes more smoothly when the trader can produce the same data the firm is looking at.</p>
 <ul>
   <li><strong>The full trade history export.</strong> Entry, exit, size, contract and session, from the first funded trade.</li>
   <li><strong>The daily equity curve.</strong> Shows the floor was never breached and where peak equity sat.</li>
-  <li><strong>The count evidence.</strong> Which sessions qualified as trading days and why.</li>
-  <li><strong>Identity and tax details.</strong> Completed at funding rather than at the request.</li>
+  <li><strong>The qualifying-day list.</strong> Which sessions cleared the minimum daily profit, and by how much.</li>
+  <li><strong>Identity and tax details.</strong> Completed at activation rather than at the request.</li>
   <li><strong>The payout method record.</strong> Matching the verified name and account.</li>
 </ul>
-<p>The second item is the one specific to trailing-floor accounts. Because the floor follows peak equity, the relevant question is not the closing balance but the path: whether equity ever fell below the trailed level on a day when it was not obvious. A trader who exports the equity curve has the answer; one who exports only closed trades does not.</p>
-<p>The third item is a common source of avoidable delay. A count that looks satisfied on a dashboard may not be, because the dashboard can count platform activity while the plan requires an executed and closed trade. Producing the session list and the count side by side resolves the question before it becomes a hold.</p>
+<p>The second item is specific to trailing-floor accounts. Because the floor follows peak balance on the intraday model, the relevant question is not the closing balance but the path: whether equity ever fell below the trailed level during a session. A trader who exports the equity curve has the answer; one who exports only closed trades does not.</p>
+<p>The third item is a common source of avoidable delay. A count that looks satisfied on a dashboard may not be, because the plan requires a minimum net profit on each day, not merely a trade. Producing the session list and the profit per day side by side resolves the question before it becomes a hold.</p>
 <p>Export the history monthly rather than at the request. Platform migrations and retention limits occasionally make older records harder to retrieve, and a local export is the only copy the trader controls.</p>
-<p>There is a second reason to keep the equity curve. On a trailing threshold, the difference between a good month and a breach can be a single session that recovered by the close. A curve shows the intraday low and the recovery; a closed-trade statement shows neither. If a review asks whether the floor was touched, the curve is the document that answers it.</p>
-<p>The count evidence deserves the same treatment. A one-line ledger per session — date, trades taken, whether the session qualified — takes seconds to maintain and removes the ambiguity entirely. Traders who maintain it rarely have count disputes, because the record and the platform agree by construction.</p>
-<p>A last point on evidence: the review is usually about consistency between three documents — the platform record, the firm's account data and the trader's account of what happened. A trader who can reconcile the three in a page of notes makes the review short. A trader who cannot forces the reviewer to reconstruct the sequence, which takes time and almost never resolves in the trader's favour when a rule is ambiguous.</p>
 
 <section class="section tight">
   <div class="wrap narrow">
     <h2 id="questions">Common questions</h2>
 
-<details class="faq"><summary>How long after passing does the first Apex payout arrive?</summary><div class="faq-a"><p>It depends on the funded-account gates: confirmation, a minimum number of trading days, the payout threshold and the review. A realistic model is three to five weeks from the pass, with the funded-account phase rather than administration accounting for most of the time.</p></div></details>
+<details class="faq"><summary>How long after passing does the first Apex payout arrive?</summary><div class="faq-a"><p>Allow two to three weeks. The pass must be activated within 7 calendar days, then five qualifying trading days are needed, then the balance must clear the safety net plus the $500 minimum, and the request goes through review. A fast, balanced funded account can finish sooner; a concentrated one waits on the 50% rule.</p></div></details>
 
-<details class="faq"><summary>Does evaluation profit count toward the payout threshold?</summary><div class="faq-a"><p>No. The threshold is measured on the funded account, which is a separate account with its own floor. Profit made during the evaluation qualifies you for funding; it does not count toward the first withdrawal.</p></div></details>
+<details class="faq"><summary>Does evaluation profit count toward the payout threshold?</summary><div class="faq-a"><p>No. The threshold is measured on the Performance Account, which is a separate account with its own drawdown and safety net. Profit made during the evaluation qualifies you for funding; it does not count toward the first withdrawal.</p></div></details>
 
-<details class="faq"><summary>What is the trailing threshold?</summary><div class="faq-a"><p>A loss floor that follows peak equity upward until it reaches a set level, after which it stops moving. Until it locks, profit does not create room to the floor; the buffer stays at the trailing amount. After the lock, additional profit becomes genuine room.</p></div></details>
+<details class="faq"><summary>What is the safety net?</summary><div class="faq-a"><p>The drawdown limit plus $100. On a $50,000 intraday Performance Account it is $52,100. Only profit above it can be requested, and it must be maintained for the life of the account.</p></div></details>
 
-<details class="faq"><summary>Why did my account breach after a payout?</summary><div class="faq-a"><p>Because a withdrawal can reduce the buffer between equity and the floor without moving the floor. If the threshold had not yet locked, the next drawdown had less room than the previous one. Withdrawing at or after the lock preserves the cushion.</p></div></details>
+<details class="faq"><summary>Why is my payout option unavailable after a good day?</summary><div class="faq-a"><p>Most likely the 50% consistency rule. If one profitable day accounts for 50% or more of profit since the last approved payout, the request option does not appear until ordinary days dilute it. The account remains active and trading can continue.</p></div></details>
 
-<details class="faq"><summary>Can I request a payout before the minimum trading days?</summary><div class="faq-a"><p>No. The count is a condition of eligibility, and a request submitted early is rejected rather than queued. Check the count on the dashboard before submitting.</p></div></details>
+<details class="faq"><summary>Can I request a payout before five qualifying days?</summary><div class="faq-a"><p>No. The count is a condition of eligibility, and each of the five days must meet the minimum daily profit for the account size — $200 on a $50k account, for example. The days do not have to be consecutive.</p></div></details>
 
-<details class="faq"><summary>Does an open position block a payout request?</summary><div class="faq-a"><p>It can. Many plans require a flat account at the request, and some require no trades on the request day. Close the position and let the record settle before submitting.</p></div></details>
+<details class="faq"><summary>How many payouts can one Performance Account pay?</summary><div class="faq-a"><p>Six approved payouts, with a per-request maximum that rises by payout number. After the sixth, the account completes its cycle and a new evaluation is required.</p></div></details>
 
-<details class="faq"><summary>Why is the first payout slower than later ones?</summary><div class="faq-a"><p>Identity, tax details and the payment method are verified once and reused. Later requests skip most of that, so the review window shrinks. Completing the details at funding removes most of the first-request delay.</p></div></details>
+<details class="faq"><summary>Is Apex a monthly subscription?</summary><div class="faq-a"><p>No. A current evaluation is a one-time payment for 30 days of access, and the Performance Account activation fee is one-time. Legacy subscription accounts exist but are a different product.</p></div></details>
 
-<details class="faq"><summary>Is the payout threshold a percentage or a fixed amount?</summary><div class="faq-a"><p>Either, depending on the plan. A percentage scales with account size; a fixed amount makes small accounts proportionally more expensive because the fee does not scale with it. Check which applies before choosing an account size.</p></div></details>
+<details class="faq"><summary>Does an open position block a payout request?</summary><div class="faq-a"><p>Apex allows trading to continue after a request, but the requested amount is treated as already withdrawn. If the balance then falls below the minimum, the request is denied automatically. Size the account as though the cash had already left.</p></div></details>
   </div>
 </section>
 
@@ -311,6 +292,6 @@ generator: content-system
       <li><a href="/blog/best-futures-prop-firms-2026.html">Best futures prop firms</a></li>
       <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
     </ul>
-    <p class="disclaimer">Apex Trader Funding is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Thresholds, counts and fees change; every figure here is a model or a description of the published structure and must be verified against the firm's current terms. Trading involves substantial risk of loss.</p>
+    <p class="disclaimer">Apex Trader Funding is named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Thresholds, counts and fees change; every figure here is a description of the published structure and must be verified against the firm's current terms. Trading involves substantial risk of loss.</p>
   </div>
 </section>

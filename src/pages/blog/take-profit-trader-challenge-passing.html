@@ -26,9 +26,9 @@ priority: 0.8
     <div class="keypoints">
       <h2>Key takeaways</h2>
       <ul>
-        <li>The failure threshold trails peak equity, so the account gets more fragile as the target gets closer.</li>
+        <li>The evaluation uses an end-of-day trailing drawdown, so unrealised profit does not move the floor during the session.</li>
         <li>Smaller entry tiers make this a reasonable first futures evaluation, but the fixed cost per contract is a larger drag on a small target.</li>
-        <li>Payout conditions are the part worth reading twice: minimum days, profit threshold and processing windows all apply.</li>
+        <li>Payout conditions are the part worth reading twice: three minimum evaluation days, a 50% best-day rule and a daily payout window all apply.</li>
         <li>Typical pass time with proper pacing is eleven to sixteen trading days.</li>
       </ul>
     </div>
@@ -54,8 +54,8 @@ priority: 0.8
         <tbody>
           <tr><td>Profit target</td><td>Fixed dollar amount, scaling with account size</td><td>Divide by account size to compare with percentage-based firms</td></tr>
           <tr><td>Trailing threshold</td><td>Follows peak equity upward</td><td>Risk per trade must fall as completion rises</td></tr>
-          <tr><td>Daily loss limit</td><td>Either explicit or implied by the trailing distance</td><td>The tighter of the two governs each session</td></tr>
-          <tr><td>Minimum trading days</td><td>Applies before verification</td><td>Pace the target to arrive on or after the count</td></tr>
+          <tr><td>Daily loss limit</td><td>None; the EOD trailing drawdown is the only loss limit</td><td>A personal session cap has to be supplied by the trader</td></tr>
+          <tr><td>Minimum trading days</td><td>Three since August 2026</td><td>Pace the target to arrive on or after the count</td></tr>
           <tr><td>Payout conditions</td><td>Minimum days, profit threshold, processing window</td><td>Plan the funded phase before the account is funded</td></tr>
         </tbody>
       </table>
@@ -64,7 +64,7 @@ priority: 0.8
     <p><strong>Small targets amplify fixed costs.</strong> Commission and slippage are dollars per contract regardless of account size. On a smaller tier the target is smaller but the cost per round turn is identical, so the effective edge required is slightly higher. This does not make small accounts a bad choice — it makes the expectation of an identical pass rate unrealistic.</p>
     <p><strong>Small targets also reduce the damage of a mistake.</strong> A single oversized position on a large tier costs proportionally the same and absolutely much more. For a trader new to trailing thresholds, learning the mechanic on a smaller account is the cheaper education.</p>
     <h2 id="trailing">The trailing threshold in practice</h2>
-    <p>A trailing threshold is a failure level that rises with your peak equity and never comes back down. On an intraday trailing structure it responds to unrealised profit, which is the detail that produces failures traders cannot explain by looking at their own P&amp;L.</p>
+    <p>A trailing threshold is a failure level that rises with your end-of-day balance and never comes back down. Take Profit Trader's evaluation uses the end-of-day version, so an open position that runs into profit and retraces does not move the floor. The funded PRO account is different: it uses an intraday trailing drawdown that responds to unrealised profit, which is the detail that produces failures traders cannot explain by looking at their own P&amp;L.</p>
     <p>Work through a concrete sequence. An account opens with the failure level $4,000 below the starting balance. In the second session, an open position reaches $3,200 of unrealised profit; the threshold has now risen by $3,200. The position is then closed at $900 after a retracement. The trader has banked $900 and the floor has risen by $3,200, so the cushion has fallen by $2,300 — on a session that finished green.</p>
     <p>Nothing in that sequence was a mistake by any reasonable trading standard. The plan was followed, a profit was taken, and the account is worse positioned than it was at the start of the day. The only defence is structural: reduce risk as progress accumulates, and bank profit deliberately rather than holding for a larger number.</p>
     <figure>
@@ -99,7 +99,7 @@ priority: 0.8
     <p>A pacing detail that catches traders out: the daily cap and the daily stop are not symmetrical in their consequences. Breaching the cap costs a consistency ratio problem later; breaching the stop ends the account immediately. When a session is going well and the cap is near, the correct action is to close and stop — not to add one more position because the day is already green.</p>
     <h2>A worked evaluation, session by session</h2>
     <p><strong>Session 1 — +$420.</strong> Half size. The threshold rises modestly with the peak. Nothing notable; the routine is established.</p>
-    <p><strong>Session 2 — +$1,230.</strong> Full size. A position reaches $1,850 unrealised before being closed at $1,230. On an intraday trailing structure the floor has moved by $1,850 and the buffer is $620 thinner than the banked profit implies — a concrete example of why closing early is the correct instinct on this structure.</p>
+    <p><strong>Session 2 — +$1,230.</strong> Full size. A position reaches $1,850 unrealised before being closed at $1,230. On the evaluation's EOD structure the floor moves by the $1,230 that was banked at the close, not by the $1,850 peak. On the funded PRO account the intraday trail would have moved by $1,850, leaving the buffer $620 thinner than the banked profit implies — a concrete example of why the funded rule is the stricter one.</p>
     <p><strong>Session 3 — −$460.</strong> One loss at planned size, then closed. A losing session does not move the threshold, so the cost is confined to the daily budget.</p>
     <p><strong>Sessions 4–7 — +$2,610 combined.</strong> Completion reaches 71%, so size drops to three quarters and then half. No session exceeds the daily cap of roughly $2,000. The best day remains session 2 at $1,230 — about 18% of the eventual total, comfortably inside a 30% payout rule.</p>
     <p><strong>Sessions 8–11 — +$1,480 combined.</strong> The final increment at half size, in four short sessions. The floor is recalculated each morning; on one morning the remaining buffer was below the planned per-trade risk, so the session was skipped entirely rather than traded at reduced size. That decision cost a day and preserved the evaluation.</p>
@@ -119,7 +119,7 @@ priority: 0.8
     <h2 id="mistakes">Where attempts fail</h2>
     <p>Six failure modes account for almost every reset on this type of structure.</p>
     <h3>1. Holding a runner into a retracement</h3>
-    <p>The floor has already moved with the peak, so the retracement is measured from the peak rather than from the entry. This is the defining failure on any intraday trailing account, and it produces the specific experience of a green day that leaves the account more fragile than it started.</p>
+    <p>On the funded account the floor has already moved with the peak, so the retracement is measured from the peak rather than from the entry. This is the defining failure on an intraday trailing account, and it produces the specific experience of a green day that leaves the account more fragile than it started. It is not the evaluation's failure mode, which is why a trader can pass comfortably and then hand the account back in the first funded week.</p>
     <h3>2. Increasing size as completion approaches</h3>
     <p>The instinct that fails trailing evaluations. Progress shrinks the buffer, so the correct response is the opposite: reduce size as the target gets closer. A plan that holds constant size until the final session is taking its largest effective risk at the point of least room.</p>
     <h3>3. One dominant session</h3>
@@ -150,7 +150,7 @@ priority: 0.8
         </tbody>
       </table>
     </div>
-    <p>The reassuring part is that trailing behaviour usually disappears at funding, replaced by a static level. The demanding part is that the payout conditions apply in sequence and independently: minimum days, profit threshold, consistency ratio, KYC, then processing. Meeting four of the five produces nothing, which is why the funded-phase plan should list all five with a target date for each.</p>
+    <p>The trailing behaviour does not disappear at funding here: it gets stricter. The evaluation trails at the end of the day, while the funded PRO account trails intraday, so the give-back window that was free during the pass becomes expensive afterwards. The demanding part is that the payout conditions apply in sequence and independently: minimum profitable days, profit above the drawdown floor, the 50% best-day ratio, KYC, then processing. Meeting four of the five produces nothing, which is why the funded-phase plan should list all five with a target date for each.</p>
     <p>Two habits make the difference in practice. Complete KYC in the first week of the funded phase rather than when the threshold is reached, and plan the threshold and the minimum day count to complete on the same day so there is no idle period at target. Traders who ignore both find the first withdrawal taking three to six weeks; traders who plan both find it taking days. The <a href="/blog/funded-account-payout-process.html">payout process guide</a> covers the sequence, the three withdrawal methods and the delays that block first payouts.</p>
     <h2>How this firm compares with other futures evaluations</h2>
     <p>Futures firms differ far less on targets and splits than on how their failure thresholds behave, which is the axis that should drive the choice.</p>
@@ -161,8 +161,8 @@ priority: 0.8
         </thead>
         <tbody>
           <tr><td><strong>Take Profit Trader</strong></td><td>Trailing</td><td>Explicit</td><td>At payout</td><td>Smaller entry tiers for a first futures evaluation</td></tr>
-          <tr><td>Apex Trader Funding</td><td>Intraday trailing</td><td>Via trailing floor</td><td>30% best day at payout</td><td>Account sizes up to $300,000</td></tr>
-          <tr><td>Topstep</td><td>Intraday trailing</td><td>Explicit</td><td>Best-day expectation</td><td>Two loss rules stated separately</td></tr>
+          <tr><td>Apex Trader Funding</td><td>EOD or intraday trailing</td><td>Yes on EOD; via trailing floor on intraday</td><td>50% best day at payout (30% legacy)</td><td>Account sizes up to $300,000</td></tr>
+          <tr><td>Topstep</td><td>End-of-day trailing, locks at starting balance</td><td>Optional at checkout</td><td>55% best day in the Combine</td><td>Two loss rules, one optional</td></tr>
           <tr><td>MyFundedFutures</td><td>End-of-day trailing on some plans</td><td>Plan dependent</td><td>At payout</td><td>Choice between trailing models</td></tr>
           <tr><td>TradeDay</td><td>End-of-day trailing</td><td>Explicit</td><td>Yes</td><td>Simplest structure to plan around</td></tr>
         </tbody>

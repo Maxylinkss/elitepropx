@@ -28,8 +28,8 @@ schemaService: true
         <li>Pace matters more than aggression: a plan that consumes under a fifth of the daily loss limit per session survives ordinary variance across both phases.</li>
         <li>The terms check comes before payment and covers third-party trading on the evaluation and on the funded account separately.</li>
         <li>A realistic pass runs three to five weeks, driven by the day counts and by phase handovers.</li>
-        <li>The service covers the evaluation. The funded account keeps its own profit split, payout cycle and consistency conditions, and belongs to the client.</li>
-        <li>Flat <strong>$220</strong> at any size, retries covered, no profit share, and we decline firms whose terms forbid the arrangement.</li>
+        <li>The service covers the evaluation. The funded account keeps its own profit split, minimum trading days and payout cycle, and belongs to the client. On the 2-Step there is no consistency rule; the 1-Step has a 50% rule.</li>
+        <li>Flat <strong>$220</strong> at any size, retries covered, no profit share, and the firm's third-party clause is put in writing before you pay.</li>
       </ul>
     </div>
     <div class="toc">
@@ -62,7 +62,7 @@ schemaService: true
           <tr><td>Daily loss limit</td><td>The session</td><td>Risk per trade at a third of it; stop at 80% spent</td></tr>
           <tr><td>Maximum loss limit</td><td>The account</td><td>Divides total room by risk to give the survivable loss count</td></tr>
           <tr><td>Minimum day count</td><td>Each phase</td><td>Pace backwards from the count, not forwards from today</td></tr>
-          <tr><td>Consistency expectation</td><td>The funded stage</td><td>Cap daily profit so the ratio is satisfied in advance</td></tr>
+          <tr><td>Consistency</td><td>None on the 2-Step; 50% on the 1-Step</td><td>Confirm the product before planning a daily cap</td></tr>
         </tbody>
       </table>
     </div>
@@ -91,7 +91,7 @@ schemaService: true
     <ol>
       <li><strong>Risk per trade:</strong> a third of the daily loss limit at most, so three consecutive losses leave the session survivable.</li>
       <li><strong>Daily stop:</strong> stop opening positions once 80% of the daily budget is realised. The remaining fifth absorbs slippage on the closing trade.</li>
-      <li><strong>Daily profit cap:</strong> set at a fraction of the phase target that keeps the largest day small relative to total profit, which satisfies a consistency condition at the funded stage by construction.</li>
+      <li><strong>Daily profit cap:</strong> set at a fraction of the phase target to keep the equity curve readable and the calendar inside the minimum-day window. On the 2-Step this is risk management, not a compliance rule.</li>
       <li><strong>Phase pace:</strong> the phase target as a percentage of the account, divided by the sessions available in that phase, checked against the daily limit. If the required pace consumes more than a fifth of the daily budget, the phase is running too fast and the plan slows down.</li>
       <li><strong>Day-count plan:</strong> the sessions needed to satisfy the minimum days, spread deliberately so that a small closed trade completes a qualifying day without adding meaningful risk.</li>
       <li><strong>Weekly loss pause:</strong> a hard stop at two losing sessions in a week. On a staged evaluation the pause costs a few days of calendar and prevents the sequence that closes most accounts — three losses, a size increase, and a fourth.</li>
@@ -136,8 +136,8 @@ schemaService: true
     <p>What the fee does buy is a removal of the reset multiplication and of the attention cost. A trader running two failed attempts has spent four to eight weeks that could have produced a funded account, and that calendar is usually worth more than the fee difference. For the arithmetic on the payout side, the <a href="/tools/prop-firm-profit-calculator.html">profit calculator</a> models what a funded account produces once its conditions are met.</p>
     <h2 id="funded">At the funded stage</h2>
     <p>The pass produces a funded account, and responsibility transfers with it. The service covers the evaluation; the funded account is governed by the firm's payout conditions, which are usually stricter than the evaluation was.</p>
-    <p>Three conditions carry over and three are new. Carried over: the daily and maximum loss limits in some form, the conduct rules, and the requirement to trade within permitted hours. New: a profit threshold before any withdrawal, a minimum number of qualifying days per payout cycle, and a consistency condition on how much of the total profit any single day may represent.</p>
-    <p>The consistency condition is the one that catches clients who assume the work is done. Required total profit equals the largest day divided by the permitted share, so one large session can multiply the requirement. The remedy is identical to the evaluation plan: cap daily profit at a fraction of the threshold and the ratio is satisfied before it is tested.</p>
+    <p>Three conditions carry over and three are new. Carried over in some form: the maximum loss limit, the conduct rules, and the requirement to trade within permitted hours. New: a profit threshold before any withdrawal, a minimum number of trading days per payout cycle, and the 14-day seasoning period before the first reward. On the 2-Step there is no consistency rule; the 50% consistency rule belongs to the 1-Step and Instant products.</p>
+    <p>The seasoning window is the condition that catches clients who assume the work is done. The first reward becomes available 14 days after the first trade on the FTMO Account and on demand after that, so a funded account that starts fast still waits. Plan the first request around the window rather than around the profit alone.</p>
     <figure>
       <img src="/assets/img/payout-timeline.svg" alt="Timeline from pass through funded account, minimum days, consistency check and first withdrawal" width="1000" height="420" loading="lazy">
       <figcaption>The funded stage is a calendar with two mathematical gates. The service stops at handover; the plan continues.</figcaption>
@@ -159,13 +159,13 @@ schemaService: true
     <p>One sequencing note to finish. Whichever size is chosen, the first payout is not the place to maximise. A modest first withdrawal is less likely to meet a consistency query, leaves a healthier balance behind it, and makes the second cycle easier to plan than the first. The <a href="/prop-firm-comparison-2026.html">firm comparison</a> sets FTMO's structures against the rest of the field, and the <a href="/blog/ftmo-challenge-passing.html">FTMO challenge guide</a> works through the rule mechanics behind the evaluation.</p>
     <h2 id="faq">Frequently asked about the FTMO service</h2>
     <details class="faq"><summary>Does the $220 fee depend on the account size?</summary><div class="faq-a"><p>No. The fee is flat for any FTMO challenge and any account size, because the work is the same process applied to different numbers. Size affects the payout ceiling and the firm's own fee, not ours.</p></div></details>
-    <details class="faq"><summary>Will you check the terms before I pay?</summary><div class="faq-a"><p>Yes, and the check is free. Send the challenge type and account size, and we confirm in writing whether third-party trading is permitted on the evaluation and on the funded account. If it is prohibited, we decline and you have paid nothing.</p></div></details>
+    <details class="faq"><summary>Will you check the terms before I pay?</summary><div class="faq-a"><p>Yes, and the check is free. Send the challenge type and account size, and we confirm in writing whether third-party trading is permitted on the evaluation and on the funded account. If it is prohibited, we say in writing what that means for the funded account before you have paid anything.</p></div></details>
     <details class="faq"><summary>How long does an FTMO pass take?</summary><div class="faq-a"><p>Usually three to five weeks across both phases. The binding constraint is the minimum day count on each phase rather than the profit target, and restricted news windows remove sessions from the usable calendar.</p></div></details>
     <details class="faq"><summary>Do you trade both phases?</summary><div class="faq-a"><p>Yes. The fee covers phase one and phase two, and the retries that happen while the evaluation is running. The plan is re-based at the handover — the limits are recomputed against the new balance and the risk per trade stays where it was.</p></div></details>
     <details class="faq"><summary>Who owns the funded account?</summary><div class="faq-a"><p>The client. The evaluation is bought in your name with your payment method, identity verification is completed personally, and access is returned or removed at handover. Change the password afterwards regardless of how access was provided.</p></div></details>
     <details class="faq"><summary>What happens if an attempt fails?</summary><div class="faq-a"><p>You are told the day it happens, the failure is classified as a drawdown or a conduct breach, and the attempt is retried at no additional service fee while the evaluation is running. The firm's own reset charge, where one applies, remains your cost.</p></div></details>
     <details class="faq"><summary>Do you take a cut of the payout split?</summary><div class="faq-a"><p>No. The funded account and its payouts belong to the client, and no share is taken. The firm's own profit split applies as normal and is entirely yours.</p></div></details>
-    <details class="faq"><summary>Does the service cover the funded stage?</summary><div class="faq-a"><p>No, and it should not. The funded account has its own profit threshold, minimum day count and consistency condition, and it has to be traded by its owner under the firm's terms. We hand over and the plan continues with you.</p></div></details>
+    <details class="faq"><summary>Does the service cover the funded stage?</summary><div class="faq-a"><p>No, and it should not. The funded account has its own profit threshold, minimum trading days and payout cycle, and it has to be traded by its owner under the firm's terms. On the 2-Step there is no consistency rule; the 1-Step has a 50% rule. We hand over and the plan continues with you.</p></div></details>
     <details class="faq"><summary>Is it cheaper than doing it myself?</summary><div class="faq-a"><p>If you pass first time, no: your own attempt costs the firm's fee only, and the service adds $220. From the second attempt onward it reverses, because retries are covered rather than billed each time. Break-even is a single failure.</p></div></details>
     <details class="faq"><summary>Which challenge type should I buy?</summary><div class="faq-a"><p>Choose account size by payout ceiling rather than by pass probability, and choose the holding policy by matching it to your strategy — a swing approach on a restricted account breaches without warning. Where two variants exist, compare the ratio of target to daily limit rather than the headline target.</p></div></details>
     <details class="faq"><summary>What do you need from me to start?</summary><div class="faq-a"><p>The challenge type and account size for the terms check. If it clears, you buy the evaluation in your own name, then we agree the scope of access in writing and begin. Identity verification stays with you throughout.</p></div></details>
@@ -180,7 +180,7 @@ schemaService: true
     <p><strong>Phase one, week one.</strong> Four sessions. Two ordinary gains, one flat session, one small loss. Progress around a third of the way to the phase target with no session anywhere near the daily limit. Two qualifying days.</p>
     <p><strong>Phase one, week two.</strong> Three sessions complete the target, and the remaining sessions of the week satisfy the balance of the phase's minimum day count with single small closed trades. The phase is confirmed by the firm, and the second phase starts against a reset balance.</p>
     <p><strong>Phase two, week three.</strong> The same plan, applied at the same risk per trade. Four sessions, one of them a loss of half the planned risk because the setup invalidated early. Progress roughly half the second target, with the day count tracking alongside the profit rather than behind it.</p>
-    <p><strong>Phase two, week four.</strong> Three sessions complete the target, and the day count lands on the same date because the pace was planned backwards from the requirement. Across the whole evaluation the largest day is a modest fraction of the total, so a payout consistency condition would clear comfortably if it were applied.</p>
+    <p><strong>Phase two, week four.</strong> Three sessions complete the target, and the day count lands on the same date because the pace was planned backwards from the requirement. Across the whole evaluation the largest day is a modest fraction of the total — a distribution that would clear a consistency rule if one applied, though the 2-Step does not impose one.</p>
     <div class="table-scroll">
       <table>
         <thead>
@@ -194,8 +194,8 @@ schemaService: true
         </tbody>
       </table>
     </div>
-    <p>The features worth noticing are the absence of a dramatic week, the deliberate use of small closed trades to satisfy day counts, and the refusal to increase size at the phase handover. A pass built this way is slower than one built on a single large session, and it is considerably more likely to convert into a payout, because the consistency ratio is satisfied before it is ever tested.</p>
-    <p>The contrast is instructive. A trader who clears both phases quickly on the back of one dominant session has completed the evaluation and created a payout problem simultaneously. The <a href="/blog/prop-firm-consistency-rule-guide.html">consistency guide</a> works that arithmetic through, and the <a href="/blog/prop-firm-daily-drawdown-explained.html">daily drawdown guide</a> covers the limit that decides risk per trade in the first place.</p>
+    <p>The features worth noticing are the absence of a dramatic week, the deliberate use of small closed trades to satisfy day counts, and the refusal to increase size at the phase handover. A pass built this way is slower than one built on a single large session, and it converts into a payout more reliably because the record is readable and the only remaining gate is the 14-day seasoning window.</p>
+    <p>The contrast is instructive. A trader who clears both phases quickly on the back of one dominant session has completed the 2-Step, where concentration is not penalised, but the same record would fail the 1-Step product's 50% rule. The <a href="/blog/prop-firm-consistency-rule-guide.html">consistency guide</a> works that arithmetic through, and the <a href="/blog/prop-firm-daily-drawdown-explained.html">daily drawdown guide</a> covers the limit that decides risk per trade in the first place.</p>
     <h2 id="prepare">Before you buy the challenge</h2>
     <p>Five steps, in order, and each one takes minutes. They are the difference between an evaluation that can be passed and one that cannot be, regardless of who trades it.</p>
     <ol>
@@ -213,7 +213,7 @@ schemaService: true
   <div class="wrap cta-band-inner">
     <div>
       <h2>Check your FTMO terms first</h2>
-      <p>Send the challenge type and account size and we confirm in writing whether third-party trading is permitted — before you pay anything. If it is not, we decline the job at no cost.</p>
+      <p>Send the challenge type and account size and we confirm in writing whether third-party trading is permitted — before you pay anything. If it is not, we say so in writing before you pay.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Check my firm</a>
   </div>

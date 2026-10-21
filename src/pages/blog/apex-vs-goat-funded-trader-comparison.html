@@ -53,9 +53,9 @@ generator: content-system
 </div>
 
 <h2 id="similar">Where the two firms are similar</h2>
-<p>Both Apex and GOAT operate futures evaluations with a single-phase structure, a trailing loss threshold and a monthly subscription model. Both offer a menu of account sizes, both use the major futures platforms, and both pay a share of the funded profit. The similarities are why the comparison is useful: the products are close enough that the differences in the rules decide the outcome.</p>
-<p>The single-phase structure means there is one target and one threshold. There is no second phase to reset the floor, and no verification stage in the same sense as a forex two-phase evaluation. The trader either reaches the target inside the threshold or breaches it. The simplicity is attractive, but it also means the threshold is the only loss constraint at the account level, which makes its calculation method critical.</p>
-<p>The monthly subscription model means the cost continues while the account is open. A trader who takes several months to pass pays more than one who passes quickly, even at the same fee rate. The subscription also continues between attempts if the account is not cancelled, which is a cost that is easy to overlook when comparing a one-off fee with a monthly charge.</p>
+<p>Both Apex and GOAT operate futures evaluations with single-phase options, a trailing or end-of-day loss threshold, and a one-time fee rather than a monthly subscription. Both offer a menu of account sizes, both use the major futures platforms, and both pay a share of the funded profit. The similarities are why the comparison is useful: the products are close enough that the differences in the rules decide the outcome.</p>
+<p>There is one structural difference to settle first. Apex sells one evaluation with two drawdown models: an EOD threshold recalculated at the close, or an intraday trail that follows peak balance including unrealised profit. GOAT sells several futures products, including GOAT Daily, which uses an end-of-day trailing drawdown, a daily limit and no activation fee, alongside one-step and two-step models with their own targets. The brand does not have a single rulebook, so the plan name has to be part of the comparison.</p>
+<p>The one-time fee changes the cost arithmetic. Neither firm charges a monthly evaluation subscription, so a slow attempt does not increase the fee; what it does increase is the chance of hitting the access deadline or the consistency rule. On a one-time product, the constraint on pace is the calendar and the rulebook, not the invoice.</p>
 
 <h2 id="threshold">The trailing threshold</h2>
 <p>The trailing threshold is the rule that ends most futures attempts. It is a maximum loss that follows the account's peak, and the calculation method determines how quickly the floor rises.</p>
@@ -90,16 +90,16 @@ generator: content-system
 </div>
 
 <h2 id="calendar">Calendar and minimum days</h2>
-<p>Futures evaluations often require a minimum number of trading days, sometimes with no time limit. The minimum is usually between five and ten days, and it can be per account rather than per phase, because there is only one phase.</p>
-<h3>Why the minimum exists</h3>
-<p>The minimum prevents a trader from passing with a single large trade and then withdrawing without demonstrating a process. It also gives the firm more data on the account's behaviour before funding. The rule is reasonable, but it changes the optimal pace: a trader who reaches the target in three days must keep trading until the minimum is satisfied, which adds exposure after the goal is met.</p>
+<p>This is another row where the brand-level assumption fails. Apex requires no minimum number of trading days and allows a pass in a single session; its calendar constraint is the 30-day access period. GOAT's futures products also publish no minimum-day condition on their daily model, but the one-step and two-step variants have their own rules. The minimum-day question has to be answered per plan, not per brand.</p>
+<h3>Why a minimum can exist</h3>
+<p>Where a firm imposes one, the minimum prevents a trader from passing with a single large trade and then withdrawing without demonstrating a process. It also gives the firm more data on the account's behaviour before funding. The rule is reasonable, but it changes the optimal pace: a trader who reaches the target in three days must keep trading until the minimum is satisfied, which adds exposure after the goal is met.</p>
 <h3>How to plan around it</h3>
-<p>The correct approach is to spread the target across at least the minimum number of days, with a buffer for a flat day. A target that requires one exceptional trade to finish is fragile on a minimum-day plan, because the trader may reach the target early and then have to trade flat for several days. A target spread across the minimum is more robust and less likely to produce an ineligible finish.</p>
+<p>Where a minimum applies, spread the target across at least that many days, with a buffer for a flat day. A target that requires one exceptional trade to finish is fragile on a minimum-day plan, because the trader may reach the target early and then have to trade flat for several days. Where no minimum applies, as at Apex, the better plan is to stop at the target rather than trade out the calendar.</p>
 <h3>Time limits</h3>
-<p>Some futures plans have a time limit, usually generous, such as thirty or sixty days. A time limit on a trailing account is a risk because the trader may feel pressure to finish before the floor rises too far. The calendar should be checked on the plan document, not assumed from the brand.</p>
+<p>Apex gives 30 days of access and no extension. GOAT's products vary, with some marketed as having no time limit. A time limit on a trailing account is a risk because the trader may feel pressure to finish before the floor rises too far. The calendar should be checked on the plan document, not assumed from the brand.</p>
 
 <h2 id="consistency">Consistency and payouts</h2>
-<p>Futures firms often apply a consistency rule at payout, particularly on the first withdrawal. The rule limits how much of the profit can come from a single day or a single trade, and it can delay a payout even after a clean pass.</p>
+<p>Futures firms often apply a consistency rule at payout, particularly on the first withdrawal. The rule limits how much of the profit can come from a single day or a single trade, and it can delay a payout even after a clean pass. The two firms apply it at different stages: Apex uses a 50% best-day rule at payout on current accounts (30% on legacy accounts), while GOAT's futures products publish a 50% consistency rule during the challenge and 30% once funded.</p>
 <h3>When the rule applies</h3>
 <p>A consistency rule can apply during the evaluation or only at payout. During the evaluation, it forces the trader to dilute a large day by continuing to trade, which increases exposure. At payout, it can be managed by adding winning days before the withdrawal request. The better arrangement for most traders is a payout-only rule, because it leaves the evaluation itself uncomplicated.</p>
 <h3>The payout cycle</h3>
@@ -117,20 +117,20 @@ generator: content-system
 <p>The mobile app matters for a futures trader who is not always at the desk. The app should allow viewing positions, modifying stops and closing trades. The execution should be tested on a demo during a volatile period, because a platform that requotes or rejects orders in fast markets can turn a planned stop into a worse fill.</p>
 
 <h2 id="cost">Cost structure</h2>
-<p>Both firms use a monthly subscription model for the evaluation, and both charge separately for data and platform if applicable. The cost comparison should use the expected number of months, not the monthly rate alone.</p>
-<h3>The subscription</h3>
-<p>A monthly subscription means the total cost depends on how long the evaluation takes. A trader who passes in one month pays one month; one who takes four months pays four. The expected cost is the monthly rate times the expected number of months, which is the fee divided by the pass probability in months. A lower monthly rate with a longer expected duration can be more expensive than a higher rate with a shorter duration.</p>
+<p>Both firms charge a one-time evaluation fee, and both charge separately for data and platform if applicable. The cost comparison should use the fee per attempt and the expected number of attempts, not a monthly rate.</p>
+<h3>The evaluation fee</h3>
+<p>A one-time fee means the total cost depends on how many attempts are needed, not how long each one takes. A trader who passes first time pays once; one who needs three attempts pays three times. The expected cost is the fee divided by the pass probability, which is why a cheaper fee with a much lower pass probability can be the more expensive route.</p>
 <h3>Resets</h3>
 <p>Both firms offer reset or retry options, sometimes at a discount. The reset policy changes the expected cost more than the monthly rate. A firm with a discounted reset has a lower expected cost than one that charges full price, even if the monthly rate is higher. Check the reset conditions: same plan, same size, time limit and eligibility.</p>
 <h3>The cost per dollar of room</h3>
-<p>The cost per dollar of threshold room is a useful comparison. A $150 monthly subscription on a $50,000 account with a $2,500 threshold is $0.06 per dollar of room per month; a $250 subscription on a $100,000 account with a $6,000 threshold is about $0.04. The larger account is cheaper per dollar of room, which is a common pattern in futures evaluations.</p>
+<p>The cost per dollar of threshold room is a useful comparison. A $200 fee on a $50,000 account with a $2,000 threshold is $0.10 per dollar of room per attempt; a $350 fee on a $100,000 account with a $3,000 threshold is about $0.12. The larger account is not automatically cheaper per dollar of room once the fee is included, which is a common assumption in futures evaluations.</p>
 <div class="table-scroll">
   <table>
     <thead>
       <tr><th>Cost</th><th>Paid to</th><th>When</th><th>Can it repeat?</th></tr>
     </thead>
     <tbody>
-      <tr><td>Subscription</td><td>Firm</td><td>Monthly</td><td>Yes, by duration</td></tr>
+      <tr><td>Evaluation fee</td><td>Firm</td><td>One-time per attempt</td><td>Yes, on a new attempt</td></tr>
       <tr><td>Reset</td><td>Firm</td><td>After a breach</td><td>Yes</td></tr>
       <tr><td>Data fee</td><td>Platform or exchange</td><td>Monthly</td><td>Yes</td></tr>
       <tr><td>Commission</td><td>Broker</td><td>Per trade</td><td>Yes</td></tr>
@@ -194,13 +194,13 @@ generator: content-system
 <h2 id="fit">Which trader fits which</h2>
 <p>The right choice depends on the trader's strategy and temperament, not on a universal ranking.</p>
 <h3>The intraday trader</h3>
-<p>An intraday trader who closes positions before the session ends may prefer an intraday trailing account, because the floor moves only with realised profit at the end of the day. A trader who holds through the session may prefer an end-of-day threshold, because the intraday peak does not tighten the floor. The distinction is about when the trader realises profit, not about the firm's brand.</p>
+<p>An intraday trader who closes positions before the session ends can use either model, but the choice is usually made on the daily rule: a fixed daily stop suits a trader who takes several small losses, while a pure trail suits one who takes two or three planned trades. On Apex, the EOD model supplies the daily stop; the intraday model does not. The distinction is about how the session ends, not about the firm's brand.</p>
 <h3>The swing trader</h3>
 <p>A swing trader who holds positions overnight needs a firm that permits it and a threshold that does not rise with unrealised gains. An end-of-day trailing threshold is usually the better fit, because the overnight gap is the main risk and the intraday fluctuations are less relevant.</p>
 <h3>The scalper</h3>
 <p>A scalper needs tight execution and a daily stop that absorbs many small losses. A firm with no daily stop and an intraday threshold is a poor fit, because a series of small losses can raise the floor without a break. The platform and the commission also matter more for a scalper than for a swing trader.</p>
 <h3>The trader using a service</h3>
-<p>A service should be able to explain the threshold method and the sizing for the specific plan, not just the fee. ElitePropX charges a flat <strong>$220</strong> for any firm and account size, includes retries on rule breaches, takes no profit share, and hands the funded account over in your name. It declines firms whose conduct clauses prohibit third-party trading.</p>
+<p>A service should be able to explain the threshold method and the sizing for the specific plan, not just the fee. ElitePropX charges a flat <strong>$220</strong> for any firm and account size, includes retries on rule breaches, takes no profit share, and hands the funded account over in your name. It works with any firm, telling you in writing what its third-party trading clause says before payment.</p>
 
 <h2 id="verify">How to verify the current terms</h2>
 <ol>
@@ -222,9 +222,9 @@ generator: content-system
 <details class="faq"><summary>Do both firms have a daily stop?</summary><div class="faq-a"><p>Not necessarily. Some futures plans have a separate daily stop and some rely on the trailing threshold alone. The presence of a daily stop changes the sizing more than the target does.</p></div></details>
 <details class="faq"><summary>Which firm has the better payout cycle?</summary><div class="faq-a"><p>The payout cycle and consistency rule differ by plan and can change. Compare the first-payout conditions, the cycle length and the net split, not just the headline percentage.</p></div></details>
 <details class="faq"><summary>Do both firms support Tradovate and NinjaTrader?</summary><div class="faq-a"><p>Both support the major futures platforms, but the exact list can vary by plan. Confirm the platform you use before buying, especially if you rely on automation or a specific mobile app.</p></div></details>
-<details class="faq"><summary>How much does a futures evaluation cost at either firm?</summary><div class="faq-a"><p>Both use a monthly subscription model, with data and platform fees separate. The total depends on how many months the evaluation takes, so compare the expected cost per dollar of threshold room.</p></div></details>
+<details class="faq"><summary>How much does a futures evaluation cost at either firm?</summary><div class="faq-a"><p>Both charge a one-time evaluation fee, with data and platform costs separate. There is no monthly evaluation subscription at either firm, so the expected cost is the fee per attempt multiplied by the number of attempts.</p></div></details>
 <details class="faq"><summary>Can I use a passing service for a futures evaluation?</summary><div class="faq-a"><p>Only if the firm's conduct clause permits third-party trading. Ask the provider how it maps the threshold and the sizing, and whether it checks the firm's policy before accepting the job.</p></div></details>
-<details class="faq"><summary>How much does ElitePropX charge for a futures evaluation?</summary><div class="faq-a"><p>The fee is a flat $220 for any firm and account size. Retries after a rule breach are included, there is no profit share, and the firm's subscription, data and commission costs are separate.</p></div></details>
+<details class="faq"><summary>How much does ElitePropX charge for a futures evaluation?</summary><div class="faq-a"><p>The fee is a flat $220 for any firm and account size. Retries after a rule breach are included, there is no profit share, and the firm's evaluation fee, data and commission costs are separate.</p></div></details>
 
 <h2 id="summary">The comparison in five sentences</h2>
 <p>Apex and GOAT are close enough on structure that the threshold method and the daily stop decide the outcome. An intraday trailing threshold is harder than an end-of-day one, even at the same percentage. The target-to-threshold ratio and the minimum days determine the pace and the sizing. The consistency rule and the payout cycle decide whether a clean pass becomes money. And the platform, data and commission costs are part of the total, not a separate budget.</p>
