@@ -285,7 +285,9 @@ html { scroll-padding-top: 84px; }
 .btn-outline-light:hover { background: rgba(255, 255, 255, 0.08); color: #fff; border-color: rgba(255, 255, 255, 0.46); }
 .btn-block { width: 100%; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1.85rem; }
-.hero-actions small { display: block; width: 100%; color: #8fa3bd; font-size: 0.8rem; line-height: 1.55; margin-top: 0.15rem; }
+.hero-actions small { display: block; width: 100%; color: #a7b8cd; font-size: 0.8rem; line-height: 1.55; margin-top: 0.15rem; }
+.hero-actions small a { color: #7fe3c2; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.hero-actions small a:hover { color: #a5f0d8; }
 
 /* --------------------------------- cards --------------------------------- */
 
