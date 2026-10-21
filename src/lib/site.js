@@ -24,10 +24,16 @@ const site = {
     firmsSupported: '20+',
     avgPassDays: '14',
   },
-  social: {
-    youtube: 'https://www.youtube.com/hashtag/propfirmpassing',
-    telegram: 'https://t.me/voraspas',
-  },
+  // Brand citation registry — every off-site profile we own, in one place.
+  // This array is published as Organization.sameAs, which is how Google and AI
+  // answer engines tie scattered brand mentions to a single entity. Add a URL
+  // only once the profile is live; a profile that 404s is a weaker signal than
+  // no entry at all. Setup order and copy live in marketing/brand-citations.md.
+  profiles: [
+    'https://t.me/voraspas',
+    'https://www.quora.com/profile/Jennifer-Kamsi-2',
+    'https://www.youtube.com/channel/UC_AfsbjVJD1Al9gH_9R9WSg',
+  ],
   themeColor: '#0b1220',
   ogImage: '/assets/img/og/default.svg',
   locale: 'en_US',

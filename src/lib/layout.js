@@ -139,7 +139,7 @@ function organizationSchema() {
       'Topstep Combine',
       'FundedNext',
     ],
-    sameAs: [site.social.youtube, site.telegram],
+    sameAs: site.profiles,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
