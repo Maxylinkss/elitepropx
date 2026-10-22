@@ -51,12 +51,12 @@ const fb = (seg) => GENERIC(/micro|futures|e-mini|nq|topstep|apex/.test(seg) ? '
 
 const REDIRECTS = {
   '/best-prop-firms-comparison-2026.html': '/prop-firm-comparison-2026.html',
-  '/blog/best-prop-firm-for-beginners-2026.html': '/blog/best-prop-firms-beginners-2026.html',
-  '/blog/best-prop-firm-passing-service-2026.html': '/reviews/best-prop-firm-passing-service-2026.html',
-  '/blog/best-prop-firms-for-beginners.html': '/blog/best-prop-firms-beginners-2026.html',
-  '/blog/prop-firm-passing-service-reviews.html': '/blog/prop-firm-passing-service-reviews-2026.html',
-  '/blog/prop-firm-challenge-passing-service-reviews-2026.html': '/blog/prop-firm-passing-service-reviews-2026.html',
-  '/blog/best-prop-firm-beginners-2026.html': '/blog/best-prop-firms-beginners-2026.html',
+  '/blog/best-prop-firm-for-beginners-2026.html': '/blog/best-prop-firm-beginners-2026.html',
+  '/blog/best-prop-firm-passing-service-2026.html': '/blog/best-prop-firm-passing-services.html',
+  '/blog/best-prop-firms-for-beginners.html': '/blog/best-prop-firm-beginners-2026.html',
+  '/blog/prop-firm-passing-service-reviews.html': '/blog/best-prop-firm-passing-services.html',
+  '/blog/prop-firm-challenge-passing-service-reviews-2026.html': '/blog/best-prop-firm-passing-services.html',
+  '/blog/best-prop-firms-beginners-2026.html': '/blog/best-prop-firm-beginners-2026.html',
   '/blog/how-much-prop-firm-traders-make.html': '/blog/how-much-do-prop-firm-traders-make.html',
   '/blog/prop-firm-taxes-explained.html': '/blog/prop-firm-taxes-2026.html',
   '/blog/prop-firm-consistency-rule-explained.html': '/blog/prop-firm-consistency-rule-guide.html',
@@ -67,6 +67,21 @@ const REDIRECTS = {
   '/how-long-to-pass-prop-firm-challenge.html': '/blog/how-long-to-pass-prop-firm-challenge.html',
   '/blog/medium-article-1.html': '/blog/',
   '/order.html': '/contact.html',
+  // Passing-service cluster consolidated to two targets, 22 Oct 2026.
+  '/services/prop-firm-challenge-passing-service.html': '/services/passing-prop-firm-services.html',
+  '/blog/prop-firm-passing-service.html': '/services/passing-prop-firm-services.html',
+  '/blog/prop-firm-passing-service-cost.html': '/services/passing-prop-firm-services.html',
+  '/blog/cheapest-prop-firm-passing-service.html': '/services/passing-prop-firm-services.html',
+  '/blog/cheap-passing-service.html': '/services/passing-prop-firm-services.html',
+  '/blog/legit-prop-firm-passing-service.html': '/services/passing-prop-firm-services.html',
+  '/blog/no-profit-split-passing-service.html': '/services/passing-prop-firm-services.html',
+  '/blog/prop-firm-passing-service-cost-2026.html': '/services/passing-prop-firm-services.html',
+  '/blog/how-challenge-passing-services-work.html': '/services/passing-prop-firm-services.html',
+  '/blog/apex-challenge-passing-service-cost.html': '/services/passing-prop-firm-services.html',
+  '/blog/prop-firm-passing-service-reviews-2026.html': '/blog/best-prop-firm-passing-services.html',
+  '/blog/challenge-passing-service-review.html': '/blog/best-prop-firm-passing-services.html',
+  '/reviews/best-prop-firm-passing-service-2026.html': '/blog/best-prop-firm-passing-services.html',
+  '/reviews/prop-firm-passing-service-reviews.html': '/blog/best-prop-firm-passing-services.html',
 };
 
 const NO_2026 = /(\|\s*2026 Guide)$/;

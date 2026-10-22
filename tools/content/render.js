@@ -25,9 +25,9 @@ const RELATED = [
   ['/blog/prop-firm-instant-funding.html', 'Instant funding explained'],
   ['/blog/how-much-money-to-trade-micro-futures.html', 'How much money you need for micro futures'],
   ['/blog/apex-trailing-drawdown-math.html', 'Apex trailing drawdown math'],
-  ['/blog/prop-firm-passing-service-reviews-2026.html', 'Passing service reviews 2026'],
+  ['/blog/best-prop-firm-passing-services.html', 'Passing service reviews and comparisons'],
   ['/blog/best-prop-firms-2026.html', 'Best prop firms in 2026'],
-  ['/blog/best-prop-firms-beginners-2026.html', 'Best prop firms for beginners'],
+  ['/blog/best-prop-firm-beginners-2026.html', 'Best prop firms for beginners'],
   ['/blog/best-futures-prop-firms-2026.html', 'Best futures prop firms'],
   ['/blog/best-prop-firm-passing-services.html', 'Best prop firm passing services'],
   ['/blog/do-prop-firms-refund-challenge-fee.html', 'Do prop firms refund challenge fees?'],
@@ -36,8 +36,8 @@ const RELATED = [
   ['/tools/prop-firm-profit-calculator.html', 'Prop firm profit calculator'],
   ['/tools/prop-firm-calculator-embed.html', 'Risk and target calculator'],
   ['/passed-challenges.html', 'Passed challenges'],
-  ['/reviews/prop-firm-passing-service-reviews.html', 'Client reviews'],
-  ['/reviews/best-prop-firm-passing-service-2026.html', 'Best passing service 2026'],
+  ['/blog/best-prop-firm-passing-services.html', 'Client reviews'],
+  ['/blog/best-prop-firm-passing-services.html', 'Best passing service 2026'],
   ['/services/passing-prop-firm-services.html', 'Prop firm passing services'],
   ['/blog/prop-firm-challenge-failure-recovery.html', 'Challenge failure recovery'],
 ];
@@ -119,7 +119,7 @@ function relatedBlock(ctx, disclaimers) {
   // Route readers to the commercial pages from inside the content, not only
   // from the navigation that every page shares.
   add('/passed-challenges.html', 'Passed challenges and certificates');
-  add('/reviews/prop-firm-passing-service-reviews.html', 'Client reviews of the service');
+  add('/blog/best-prop-firm-passing-services.html', 'Client reviews of the service');
   if (ctx.related) for (const r of ctx.related) add(r[0], r[1]);
   for (const r of RELATED) {
     if (links.length >= 9) break;

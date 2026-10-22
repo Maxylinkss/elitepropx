@@ -27,7 +27,7 @@ const NAV = [
   { label: 'Compare Firms', href: '/prop-firm-comparison-2026.html' },
   { label: 'Rules Matrix', href: '/prop-firm-rules-matrix.html' },
   { label: 'Services', href: '/services/passing-prop-firm-services.html' },
-  { label: 'Reviews', href: '/reviews/prop-firm-passing-service-reviews.html' },
+  { label: 'Reviews', href: '/blog/best-prop-firm-passing-services.html' },
   { label: 'Blog', href: '/blog/' },
   { label: 'FAQ', href: '/faq.html' },
   { label: 'About', href: '/about.html' },
@@ -313,7 +313,7 @@ function footer() {
         <li><a href="/prop-firm-rules-matrix.html">Rules matrix</a></li>
         <li><a href="/services/passing-prop-firm-services.html">Passing services</a></li>
         <li><a href="/demo.html">Free demo trial</a></li>
-        <li><a href="/reviews/prop-firm-passing-service-reviews.html">Client reviews</a></li>
+        <li><a href="/blog/best-prop-firm-passing-services.html">Client reviews</a></li>
       </ul>
     </div>
     <div>
