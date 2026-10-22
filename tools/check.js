@@ -168,9 +168,8 @@ for (const file of files) {
   const MONEY = [
     '/contact.html',
     '/passed-challenges.html',
+    '/services/passing-prop-firm-services.html',
     '/blog/best-prop-firm-passing-services.html',
-    '/reviews/best-prop-firm-passing-service-2026.html',
-    '/reviews/prop-firm-passing-service-reviews.html',
     '/index.html',
   ];
   const mainHtml = html.match(/<main[\s\S]*?<\/main>/i);
