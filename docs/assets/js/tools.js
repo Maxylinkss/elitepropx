@@ -175,7 +175,7 @@
       target1: 10, target2: 5, daily: 5, max: 10, minDays: 4,
       drawdown: 'Static, from the starting balance',
       consistency: 'None at evaluation',
-      confirm: 'Daily limit is measured on equity at 00:00 CE(S)T.',
+      confirm: 'Confirm the daily measurement basis (equity or closed balance) and the reset time in the loss section of the terms.',
     },
     'fundednext-stellar': {
       name: 'FundedNext — Stellar 2-Step (CFDs)',
