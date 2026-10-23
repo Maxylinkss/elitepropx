@@ -293,9 +293,13 @@ function faqSchema(page) {
 
 function header(activePath) {
   const links = NAV.map((n) => {
+    // Section match: "/blog/" covers every article, but a top-level page such as
+    // "/reviews.html" resolves to "/" and would otherwise mark itself active
+    // on the whole site.
+    const section = n.href.replace(/\/[^/]*\.html$/, '/');
     const active =
       activePath === n.href ||
-      (n.href !== '/' && activePath.startsWith(n.href.replace(/\/[^/]*\.html$/, '/')));
+      (n.href !== '/' && section !== '/' && activePath.startsWith(section));
     return `<li><a href="${n.href}"${active ? ' aria-current="page" class="is-active"' : ''}>${n.label}</a></li>`;
   }).join('\n          ');
 
