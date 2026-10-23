@@ -135,7 +135,7 @@
     <p>With the stop cost known, the position size comes from the drawdown — the amount the account can lose before it is no longer viable, whether that is a firm's maximum loss or a self-imposed floor.</p>
     <p>Divide the drawdown by the number of consecutive losses the plan must survive. Eight to ten is a reasonable design case for a discretionary plan with a win rate in the forties, because runs of that length recur within a few hundred trades. The result is the maximum dollar loss per trade; the contract count is that figure divided by the cost of the stop, rounded down.</p>
     <p>On an evaluation account the drawdown is published, which makes the calculation mechanical. On a personal account it is a choice, and the honest choice is the amount the trader can lose without changing their life — not the amount the broker permits. A personal account funded to the margin minimum has a drawdown of nearly zero in practical terms, because the first normal losing sequence removes the ability to hold the position.</p>
-    <p>Keep a quarter of the drawdown in reserve, and recompute whenever the drawdown available changes — which on an evaluation with a trailing floor is every week. The <a href="/blog/apex-trailing-drawdown-math.html">trailing drawdown guide</a> covers the room formula, and the <a href="/tools/prop-firm-calculator-embed.html">risk calculator</a> sets out the same derivation in step form.</p>
+    <p>Keep a quarter of the drawdown in reserve, and recompute whenever the drawdown available changes — which on an evaluation with a trailing floor is every week. The <a href="/blog/apex-trailing-drawdown-math.html">trailing drawdown guide</a> covers the room formula, and the <a href="/prop-firm-calculator.html">risk calculator</a> sets out the same derivation in step form.</p>
     <p>One further constraint binds earlier than most traders expect: the daily loss limit. If the daily limit permits only two losses at the derived size, the session is decided by its first two trades and the plan will spend many sessions on the sideline. Four to six losses of capacity is a workable design target, and if the derived size cannot deliver that, the size is too large rather than too small.</p>
     <h2 id="minimum">The minimum viable account</h2>
     <p>The minimum viable account is the smallest size at which three conditions hold at once: the derived position size is at least one contract, the daily limit absorbs four losses, and the monthly fixed costs are a small fraction of the expected monthly profit.</p>
@@ -235,7 +235,7 @@
       <li><a href="/blog/ftmo-vs-apex-comparison.html">FTMO vs Apex: rulebook models compared</a></li>
       <li><a href="/blog/best-futures-prop-firms-2026.html">Best futures prop firms 2026</a></li>
       <li><a href="/blog/apex-trailing-drawdown-math.html">Trailing drawdown maths</a></li>
-      <li><a href="/tools/prop-firm-calculator-embed.html">Risk and target calculator</a></li>
+      <li><a href="/prop-firm-calculator.html">Risk and target calculator</a></li>
       <li><a href="/tools/prop-firm-profit-calculator.html">Profit, payout and break-even calculator</a></li>
       <li><a href="/faq.html">Frequently asked questions</a></li>
       <li><a href="/blog/best-micro-futures-for-small-accounts.html">Micro futures for small accounts</a></li>

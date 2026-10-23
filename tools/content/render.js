@@ -34,7 +34,7 @@ const RELATED = [
   ['/prop-firm-rules-matrix.html', 'Prop firm rules matrix'],
   ['/prop-firm-comparison-2026.html', 'Prop firm comparison 2026'],
   ['/tools/prop-firm-profit-calculator.html', 'Prop firm profit calculator'],
-  ['/tools/prop-firm-calculator-embed.html', 'Risk and target calculator'],
+  ['/prop-firm-calculator.html', 'Risk and target calculator'],
   ['/passed-challenges.html', 'Passed challenges'],
   ['/blog/best-prop-firm-passing-services.html', 'Client reviews'],
   ['/blog/best-prop-firm-passing-services.html', 'Best passing service 2026'],
