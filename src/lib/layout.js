@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const site = require('./site');
+const sources = require('./sources');
 
 /**
  * Cache-bust static assets with a content hash. GitHub Pages serves assets
@@ -164,6 +165,7 @@ function websiteSchema() {
 }
 
 function articleSchema(page) {
+  const cited = sources.resolve(page).flatMap((f) => f.items.map((i) => i.href));
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -179,7 +181,46 @@ function articleSchema(page) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': abs(page.path) },
     author: { '@id': site.url + '/#organization' },
     publisher: { '@id': site.url + '/#organization' },
+    ...(cited.length ? { citation: cited } : {}),
   };
+}
+
+/** '2026-10-23' → '23 October 2026' */
+function longDate(iso) {
+  const [y, m, d] = String(iso).split('-').map(Number);
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  if (!y || !m || !d) return String(iso);
+  return `${d} ${months[m - 1]} ${y}`;
+}
+
+/**
+ * Rule citations, rendered from the `sources:` front-matter key. Kept separate
+ * from page copy so every page makes the same promise about where its figures
+ * come from and how stale they might be.
+ */
+function sourcesBlock(page) {
+  const firms = sources.resolve(page);
+  if (!firms.length) return '';
+  const items = firms
+    .map((f) => {
+      const links = f.items
+        .map(
+          (i) =>
+            `<a href="${i.href}" rel="nofollow noopener" target="_blank">${esc(i.label)}</a>`
+        )
+        .join(', ');
+      return `<li><strong>${esc(f.name)}</strong> — ${links}</li>`;
+    })
+    .join('\n      ');
+  return `<section class="section tight sources" aria-labelledby="sources-h">
+  <div class="wrap narrow">
+    <h2 id="sources-h">Where these rules come from</h2>
+    <p>Firm figures on this page are read from the rulebooks below rather than from other comparison sites. Every link was opened and checked on <time datetime="${sources.CHECKED}">${longDate(sources.CHECKED)}</time>. Firms revise targets and drawdown rules without notice, so confirm the figures on the plan you are buying before paying. <a href="/methodology.html">How we check firm rules</a> sets out what a checked date means, what we publish when a figure cannot be confirmed, and how corrections are handled.</p>
+    <ul class="sources-list">
+      ${items}
+    </ul>
+  </div>
+</section>`;
 }
 
 function serviceSchema() {
@@ -330,6 +371,7 @@ function footer() {
       <h2 class="footer-h">Company</h2>
       <ul>
         <li><a href="/about.html">About</a></li>
+        <li><a href="/methodology.html">How we check rules</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy.html">Privacy policy</a></li>
         <li><a href="/terms.html">Terms of service</a></li>
@@ -358,13 +400,26 @@ function breadcrumbs(page) {
   return `<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${items.join('')}</ol></nav>`;
 }
 
+/**
+ * Citations sit with the content rather than after the closing call to action:
+ * a reader checking a figure should meet the source before the sales band.
+ */
+function withSources(page, content) {
+  const block = sourcesBlock(page);
+  if (!block) return content;
+  const at = content.lastIndexOf('<section class="cta-band">');
+  return at === -1
+    ? `${content}\n${block}`
+    : `${content.slice(0, at)}${block}\n${content.slice(at)}`;
+}
+
 function render(page, body) {
   return `${head(page)}
 <body class="page-${page.type}">
 ${header(page.path)}
 <main id="main">
 ${breadcrumbs(page)}
-${withTelegramBand(body)}
+${withSources(page, withTelegramBand(body))}
 </main>
 ${footer()}
 <a class="telegram-float" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Pass your challenge today on Telegram">

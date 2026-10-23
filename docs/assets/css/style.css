@@ -385,6 +385,14 @@ html { scroll-padding-top: 84px; }
 .callout.warn { border-color: #f6d7a7; background: #fff8ec; }
 .callout.warn strong { color: #9a6208; }
 
+/* rule citations — foot of every page that quotes firm figures */
+.sources { border-top: 1px solid var(--line); }
+.sources h2 { font-size: 1rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+.sources p { font-size: 0.94rem; color: var(--muted); }
+.sources-list { font-size: 0.94rem; color: var(--body); }
+.sources-list li { margin-bottom: 0.5rem; }
+.sources-list a { overflow-wrap: anywhere; }
+
 /* enquiry form */
 .enquiry-form {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.2rem;
