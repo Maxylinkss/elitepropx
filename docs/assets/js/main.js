@@ -42,6 +42,11 @@
     var status = form.querySelector('.form-status');
     var submit = form.querySelector('button[type="submit"]');
     var label = submit ? submit.textContent : '';
+    // Forms can word their own confirmation; the enquiry wording is the default.
+    var successText =
+      form.getAttribute('data-success') ||
+      'Thank you — your enquiry has been sent. You will get a reply at the address you gave, usually within one business day.';
+    var sentLabel = form.getAttribute('data-sent') || 'Enquiry sent';
 
     function say(text, kind) {
       if (!status) return;
@@ -75,10 +80,10 @@
         .then(function (r) {
           if (r.ok && r.body.success) {
             form.reset();
-            say('Thank you — your enquiry has been sent. You will get a reply at the address you gave, usually within one business day.', 'success');
+            say(successText, 'success');
             if (submit) {
               submit.disabled = true;
-              submit.textContent = 'Enquiry sent';
+              submit.textContent = sentLabel;
             }
             if (status) status.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
             return;

@@ -172,6 +172,7 @@ for (const file of files) {
     '/contact.html',
     '/passed-challenges.html',
     '/services/passing-prop-firm-services.html',
+    '/reviews.html',
     '/blog/best-prop-firm-passing-services.html',
     '/index.html',
   ];
