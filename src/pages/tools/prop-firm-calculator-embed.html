@@ -16,7 +16,68 @@ updated: 2026-10-18
   <div class="wrap narrow">
     <p class="kicker">Tool · reviewed October 2026</p>
     <h1>The prop firm calculator: every formula an evaluation needs</h1>
-    <p class="lede">Five calculations decide whether a prop firm evaluation is passable and how long it will take: position size from the drawdown, position size from the daily limit, required trade count from the target, remaining room on a trailing account, and the payout ratio from a consistency rule. This page sets out each formula, the inputs it needs, worked examples, and the order in which to apply them.</p>
+    <p class="lede">Five calculations decide whether a prop firm evaluation is passable and how long it will take: position size from the drawdown, position size from the daily limit, required trade count from the target, remaining room on a trailing account, and the payout ratio from a consistency rule. The calculator below runs all of them on your own numbers; the rest of the page sets out each formula, the inputs it needs, worked examples, and the order in which to apply them.</p>
+  </div>
+</section>
+
+<section class="section tight calc-section" id="calculator">
+  <div class="wrap narrow">
+    <h2>Run the numbers on your account</h2>
+    <p>The fields start at a $100,000 two-step evaluation. Change any input and every figure below updates as you type. Nothing is submitted and nothing leaves the page: the arithmetic runs in your browser.</p>
+    <noscript>
+      <p class="callout warn">The interactive calculator needs JavaScript enabled. Every formula it applies is written out in full further down this page, so the same arithmetic can be done by hand.</p>
+    </noscript>
+    <div class="calc-panel">
+      <div class="calc-inputs">
+        <label class="calc-field"><span>Account size (USD)</span><input type="number" id="c-acct" value="100000" min="0" step="1000" inputmode="decimal"></label>
+        <label class="calc-field"><span>Profit target (%)</span><input type="number" id="c-target" value="10" min="0" step="0.5" inputmode="decimal"></label>
+        <label class="calc-field"><span>Maximum loss (%)</span><input type="number" id="c-max" value="10" min="0" step="0.5" inputmode="decimal"></label>
+        <label class="calc-field"><span>Daily loss limit (%)</span><input type="number" id="c-daily" value="5" min="0" step="0.5" inputmode="decimal"></label>
+        <label class="calc-field"><span>Risk per trade (%)</span><input type="number" id="c-risk" value="0.5" min="0" step="0.05" inputmode="decimal"></label>
+        <label class="calc-field"><span>Reward-to-risk ratio</span><input type="number" id="c-rr" value="2" min="0" step="0.1" inputmode="decimal"></label>
+        <label class="calc-field"><span>Win rate (%)</span><input type="number" id="c-win" value="45" min="0" max="100" step="1" inputmode="decimal"></label>
+        <label class="calc-field"><span>Profit split (%)</span><input type="number" id="c-split" value="80" min="0" max="100" step="1" inputmode="decimal"></label>
+        <label class="calc-field"><span>Consistency cap (%)</span><input type="number" id="c-cons" value="40" min="0" max="100" step="5" inputmode="decimal"></label>
+      </div>
+    </div>
+    <div class="calc-results" aria-live="polite">
+      <h3>What the rulebook implies</h3>
+      <dl class="calc-out">
+        <div><dt>Profit target in cash</dt><dd id="r-target">—</dd></div>
+        <div><dt>Maximum loss in cash</dt><dd id="r-max">—</dd></div>
+        <div><dt>Daily loss budget</dt><dd id="r-daily">—</dd></div>
+        <div><dt>Risk per trade</dt><dd id="r-risk">—</dd></div>
+        <div><dt>Losing trades the day absorbs</dt><dd id="r-daylosses">—</dd></div>
+        <div><dt>Consecutive losses to the maximum</dt><dd id="r-runlosses">—</dd></div>
+        <div><dt>Average profit per trade</dt><dd id="r-ev">—</dd></div>
+        <div><dt>Trades needed to reach target</dt><dd id="r-trades">—</dd></div>
+        <div><dt>Breakeven win rate at this reward</dt><dd id="r-be">—</dd></div>
+        <div><dt>Payout on reaching the target</dt><dd id="r-payout">—</dd></div>
+        <div><dt>Largest single day allowed</dt><dd id="r-maxday">—</dd></div>
+        <div><dt>Minimum profitable days</dt><dd id="r-mindays">—</dd></div>
+      </dl>
+      <p class="calc-verdict" id="c-verdict">—</p>
+    </div>
+    <h3>Trailing drawdown room</h3>
+    <p>On a trailing account the loss threshold follows the peak, so the room left is smaller than the headline drawdown whenever the balance is not at a new high. This panel uses the same arithmetic as the worked example below.</p>
+    <div class="calc-panel">
+      <div class="calc-inputs calc-inputs-3">
+        <label class="calc-field"><span>Starting balance (USD)</span><input type="number" id="t-start" value="100000" min="0" step="1000" inputmode="decimal"></label>
+        <label class="calc-field"><span>Highest balance reached (USD)</span><input type="number" id="t-peak" value="103000" min="0" step="1000" inputmode="decimal"></label>
+        <label class="calc-field"><span>Current balance (USD)</span><input type="number" id="t-cur" value="101500" min="0" step="1000" inputmode="decimal"></label>
+        <label class="calc-field"><span>Trailing drawdown (%)</span><input type="number" id="t-trail" value="6" min="0" step="0.5" inputmode="decimal"></label>
+      </div>
+    </div>
+    <div class="calc-results" aria-live="polite">
+      <dl class="calc-out">
+        <div><dt>Loss threshold in cash</dt><dd id="t-amount">—</dd></div>
+        <div><dt>Threshold level</dt><dd id="t-floor">—</dd></div>
+        <div><dt>Room left from here</dt><dd id="t-room">—</dd></div>
+        <div><dt>Level the threshold stops at</dt><dd id="t-lock">—</dd></div>
+      </dl>
+      <p class="calc-verdict" id="t-verdict">—</p>
+    </div>
+    <p class="calc-note">The calculator models the arithmetic the rulebook describes; it cannot know whether your firm measures the daily limit on equity or on closed balance, whether the trailing threshold updates intraday or at the close, or whether a breach is defined at the level or beyond it. Each of those changes the answer slightly, and each is stated in the firm's own terms.</p>
   </div>
 </section>
 
@@ -185,8 +246,18 @@ updated: 2026-10-18
     <details class="faq"><summary>Why does rounding position size down matter so much?</summary><div class="faq-a"><p>Because rounding up raises risk above the derivation. One extra contract on a large index future can double the risk of a position, and 0.5 rather than 0.4 lots is 25% more risk than the plan specified. Always round down; if the result is zero, use a smaller contract size.</p></div></details>
     <details class="faq"><summary>What if the required calendar is longer than the firm's deadline?</summary><div class="faq-a"><p>Then the evaluation is not passable at a survivable size, and that is an arithmetic conclusion rather than a motivational one. Options: a smaller account with the same percentage rules, a different rulebook model, or a longer target — not more risk per trade.</p></div></details>
     <details class="faq"><summary>How often should I rerun these calculations?</summary><div class="faq-a"><p>Weekly, using four numbers: trades taken, expectation per trade, worst drawdown and distance to target. On a trailing account, rerun the room and size calculations after any strong session as well, because the floor may have moved.</p></div></details>
-    <details class="faq"><summary>Do I need a spreadsheet?</summary><div class="faq-a"><p>No. All five calculations are two or three divisions, and the output is four numbers that fit on a card: risk per trade, trade cap, daily profit cap and the calendar. The value is in doing them in the right order rather than in automating them.</p></div></details>
+    <details class="faq"><summary>Do I need a spreadsheet?</summary><div class="faq-a"><p>No. All five calculations are two or three divisions each, and the output is four numbers that fit on a card: risk per trade, trade cap, daily profit cap and the calendar. The <a href="#calculator">calculator above</a> does them in the right order, which is the part worth getting right; a spreadsheet adds nothing except the temptation to model scenarios instead of following one.</p></div></details>
     <details class="faq"><summary>Where do I find each input in my firm's terms?</summary><div class="faq-a"><p>Maximum loss, daily limit, target and minimum days come from the evaluation terms; the consistency rule and payout threshold usually live in the funded terms. Where a number is missing or ambiguous, ask support in writing and keep the reply — it is an input and a record.</p></div></details>
+  </div>
+</section>
+
+<section class="section tight" id="embed">
+  <div class="wrap narrow">
+    <h2>Embed this calculator on your site</h2>
+    <p>The page is self-contained: no framework, no tracking pixel, no request to a third party, so it behaves the same inside an iframe. Paste the snippet below where the tool should appear and adjust the height. Keeping the credit link is the one condition.</p>
+    <pre class="calc-embed"><code>&lt;iframe src="https://elitepropx.com/tools/prop-firm-calculator-embed.html" title="Prop firm calculator" width="100%" height="1500" loading="lazy" style="border:1px solid #e6eaf2;border-radius:12px"&gt;&lt;/iframe&gt;
+&lt;p&gt;Calculator by &lt;a href="https://elitepropx.com/tools/prop-firm-calculator-embed.html"&gt;ElitePropX&lt;/a&gt;&lt;/p&gt;</code></pre>
+    <p>A plain link works as well as an embed. Every figure the calculator produces comes from a formula printed further up this page, which makes them checkable rather than a black box — worth keeping in mind if you quote a number anywhere.</p>
   </div>
 </section>
 
@@ -209,6 +280,7 @@ updated: 2026-10-18
       <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule guide</a></li>
       <li><a href="/blog/prop-firm-leverage-explained.html">Leverage explained</a></li>
+      <li><a href="/tools/prop-firm-profit-calculator.html">Profit calculator: payout, fee and net result</a></li>
       <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
       <li><a href="/prop-firm-comparison-2026.html">Prop firm comparison 2026</a></li>
       <li><a href="/faq.html">Frequently asked questions</a></li>
@@ -216,3 +288,124 @@ updated: 2026-10-18
     <p class="disclaimer">ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. These formulas describe mechanics, not advice, and the inputs must be read from your firm's current terms. Trading involves substantial risk of loss.</p>
   </div>
 </section>
+
+<script>
+(function () {
+  var money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  var oneDec = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
+
+  function el(id) { return document.getElementById(id); }
+  function num(id) {
+    var node = el(id);
+    if (!node) return 0;
+    var v = parseFloat(node.value);
+    return isFinite(v) && v > 0 ? v : 0;
+  }
+  function put(id, text) {
+    var node = el(id);
+    if (node) node.textContent = text;
+  }
+  function dollars(v) {
+    return isFinite(v) ? money.format(Math.round(v)) : '—';
+  }
+  function verdict(id, text, warn) {
+    var node = el(id);
+    if (!node) return;
+    node.textContent = text;
+    node.classList.toggle('calc-warn', !!warn);
+  }
+
+  function evaluation() {
+    var acct = num('c-acct');
+    var targetPct = num('c-target');
+    var maxPct = num('c-max');
+    var dailyPct = num('c-daily');
+    var riskPct = num('c-risk');
+    var rr = num('c-rr');
+    var winPct = num('c-win');
+    var splitPct = num('c-split');
+    var consPct = num('c-cons');
+
+    var target = (acct * targetPct) / 100;
+    var max = (acct * maxPct) / 100;
+    var daily = (acct * dailyPct) / 100;
+    var risk = (acct * riskPct) / 100;
+    var p = Math.min(Math.max(winPct / 100, 0), 1);
+
+    var dayLosses = risk > 0 ? Math.floor(daily / risk) : null;
+    var runLosses = risk > 0 ? Math.floor(max / risk) : null;
+    var ev = risk * (p * rr - (1 - p));
+    var trades = ev > 0 ? Math.ceil(target / ev) : null;
+    var breakeven = rr > 0 ? 1 / (1 + rr) : 1;
+    var payout = (target * splitPct) / 100;
+    var maxDay = consPct > 0 ? (target * consPct) / 100 : null;
+    var minDays = consPct > 0 ? Math.ceil(100 / consPct) : null;
+
+    put('r-target', dollars(target));
+    put('r-max', dollars(max));
+    put('r-daily', dollars(daily));
+    put('r-risk', dollars(risk));
+    put('r-daylosses', dayLosses === null ? '—' : dayLosses + (dayLosses === 1 ? ' loss' : ' losses'));
+    put('r-runlosses', runLosses === null ? '—' : runLosses + (runLosses === 1 ? ' loss' : ' losses'));
+    put('r-ev', dollars(ev));
+    put('r-trades', trades === null ? 'Not reachable' : trades + (trades === 1 ? ' trade' : ' trades'));
+    put('r-be', oneDec.format(breakeven * 100) + '%' + (winPct > 0 ? ' (yours: ' + oneDec.format(winPct) + '%)' : ''));
+    put('r-payout', dollars(payout));
+    put('r-maxday', maxDay === null ? 'No cap set' : dollars(maxDay));
+    put('r-mindays', minDays === null ? 'No cap set' : minDays + (minDays === 1 ? ' day' : ' days'));
+
+    if (!acct) {
+      verdict('c-verdict', 'Enter an account size to start.', false);
+    } else if (risk > 0 && daily > 0 && risk >= daily) {
+      verdict('c-verdict', 'One losing trade consumes the entire daily budget, so the plan breaches the daily limit on its first stop-out. Halve the risk or widen the stop.', true);
+    } else if (ev <= 0) {
+      verdict('c-verdict', 'Expectancy per trade is negative at this win rate and reward-to-risk, so no number of trades reaches the target. Raise the reward, raise the win rate or lower the risk — extra trades make it worse, not better.', true);
+    } else if (trades !== null) {
+      verdict('c-verdict', 'At ' + dollars(risk) + ' risk per trade the target takes about ' + trades + ' trades, while the daily limit absorbs ' + dayLosses + ' losses before it is gone. Divide the trade count by your weekly rate for the calendar.', false);
+    }
+  }
+
+  function trailing() {
+    var start = num('t-start');
+    var peakInput = num('t-peak');
+    var cur = num('t-cur');
+    var trail = num('t-trail');
+
+    var amount = (start * trail) / 100;
+    var ceiling = start + amount;
+    var peak = Math.max(peakInput, start);
+    var floor = Math.min(peak - amount, ceiling);
+    var room = cur - floor;
+
+    put('t-amount', dollars(amount));
+    put('t-floor', dollars(floor));
+    put('t-room', room >= 0 ? dollars(room) : dollars(Math.abs(room)) + ' below the threshold');
+    put('t-lock', dollars(ceiling));
+
+    if (!start || !trail) {
+      verdict('t-verdict', 'Enter a starting balance and a drawdown percentage.', false);
+    } else if (room < 0) {
+      verdict('t-verdict', 'The current balance sits below the threshold, which is a breach on this arithmetic. Check the firm\u2019s wording on whether a breach is defined at the level or only beyond it.', true);
+    } else if (floor >= ceiling - 0.01) {
+      verdict('t-verdict', 'The threshold has reached its ceiling and no longer trails the peak, so from here the room only changes with the balance itself.', false);
+    } else {
+      verdict('t-verdict', 'The threshold trails the peak and rises with every new high until it reaches ' + dollars(ceiling) + '. Room is measured from the current balance, not from the starting one.', false);
+    }
+  }
+
+  function update() {
+    evaluation();
+    trailing();
+  }
+
+  var ids = ['c-acct', 'c-target', 'c-max', 'c-daily', 'c-risk', 'c-rr', 'c-win', 'c-split', 'c-cons', 't-start', 't-peak', 't-cur', 't-trail'];
+  for (var i = 0; i < ids.length; i++) {
+    var node = el(ids[i]);
+    if (node) {
+      node.addEventListener('input', update);
+      node.addEventListener('change', update);
+    }
+  }
+  update();
+})();
+</script>
