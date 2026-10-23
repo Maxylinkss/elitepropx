@@ -1,0 +1,101 @@
+---
+title: "Prop Firm Rule Checklist Generator: Limits in Cash"
+desc: Pick a firm and plan, set the account size, and get the targets, loss limits, drawdown model and minimum days as a checklist you can print before trading.
+path: /tools/rule-checklist-generator.html
+type: page
+h1: Rule checklist generator
+kicker: Free tool
+crumb: Rule checklist
+priority: 0.8
+updated: 2026-10-23
+toolsJs: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Free tool, no signup</p>
+    <h1>Rule checklist generator</h1>
+    <p class="lede">Percentages are easy to misread at the moment a trade is open. Choose the plan and the account size and this converts the rulebook into cash figures you can check at a glance — and flags the clauses that are not in the headline numbers.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="calc-card" data-calc="checklist">
+      <form class="calc-grid">
+        <div class="calc-field">
+          <label for="rc-plan">Firm and plan</label>
+          <select id="rc-plan" data-in="plan">
+            <option value="ftmo-2step">FTMO — 2-Step Challenge</option>
+            <option value="fundednext-stellar">FundedNext — Stellar 2-Step (CFDs)</option>
+            <option value="the5ers-highstakes">The5ers — High Stakes</option>
+            <option value="apex-eod">Apex — EOD evaluation</option>
+            <option value="topstep-combine">Topstep — Trading Combine</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="rc-size">Account size ($)</label>
+          <input id="rc-size" data-in="size" type="number" inputmode="decimal" value="100000" min="0" step="5000">
+        </div>
+      </form>
+      <div class="calc-out" data-out aria-live="polite"></div>
+      <p class="calc-note">Figures are shown only for plans we have read from the firm's own documentation on 23 October 2026. Plans that publish numbers per account size are marked unconfirmed rather than filled in from memory.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow prose">
+    <h2>Why the checklist exists</h2>
+    <p>Rule breaches rarely happen because a trader did not know the rule. They happen because the rule was known in percentages and the loss was happening in dollars. A 5% daily limit on a $100,000 account is $5,000, and a trader down $3,900 with an open position is not thinking about percentages — they are thinking about the number on the screen. Converting the rulebook into the same units as the screen is most of the fix.</p>
+    <p>The checklist also makes the clauses that are missing from the headline visible. Two plans can share a 10% target and a 10% maximum loss and behave nothing alike, because one trails the floor and the other does not. Those differences live in the plan document, and the generator surfaces them as open questions rather than as numbers.</p>
+
+    <h2>What each row means</h2>
+    <ul>
+      <li><strong>Phase targets</strong> — the profit required in each phase, in cash. Phase 2 targets are smaller than phase 1 on almost every two-step plan.</li>
+      <li><strong>Daily loss limit</strong> — the maximum permitted loss in a single server day, in cash. Measure it on the basis the firm uses, which is usually equity.</li>
+      <li><strong>Maximum loss</strong> — the total floor, in cash. On a trailing plan the floor rises with the peak, so the figure is the starting position, not a permanent level.</li>
+      <li><strong>Drawdown model</strong> — static, intraday trailing or end-of-day trailing. This single row changes the arithmetic of the whole evaluation.</li>
+      <li><strong>Minimum trading days</strong> — whether days or profitable days, and whether flat days count.</li>
+      <li><strong>Consistency</strong> — the stage at which it applies. A rule enforced only at payout is the one that catches traders who passed in a week.</li>
+    </ul>
+
+    <h2>How to use it before you pay</h2>
+    <p>Generate the checklist for the exact plan and size you are buying, then open the firm's plan document and confirm each row against it. If a row cannot be confirmed, treat it as unconfirmed rather than as the default value — that is precisely the situation where a comparison site's table becomes expensive. The <a href="/methodology.html">method page</a> explains what a checked date promises and what it does not.</p>
+    <p>Once the rows are confirmed, size the first trade against the daily limit rather than against the target: a position that risks a third of the daily budget survives three losses, which is the shape of an ordinary bad session. The <a href="/tools/daily-drawdown-calculator.html">daily drawdown calculator</a> does that arithmetic, and the <a href="/tools/position-size-calculator.html">position size calculator</a> converts it into lots.</p>
+
+    <h2>When the firm changes the plan</h2>
+    <p>Firms revise evaluation models regularly, and they usually announce it to new buyers rather than to traders already inside an evaluation. Two rules follow. Re-generate the checklist whenever the firm publishes a new plan document, and compare every row rather than only the one you remember changing — a new target often arrives beside a new drawdown model. Second, keep the version that applied when you paid: in a dispute, the document you were sold against is the one that counts.</p>
+    <p>That habit is also why the figures here are dated rather than presented as permanent. A checklist generated today describes today's rulebook, and a plan that has been open for six weeks is worth re-reading before the next payout request.</p>
+
+    <h2>Frequently asked</h2>
+    <details class="faq"><summary>Why do some plans show no figures?</summary><div class="faq-a"><p>Because their targets and limits are published per account size and were not independently confirmed in this review pass. Showing no number is more useful than showing a number that may belong to a different size or a legacy plan.</p></div></details>
+    <details class="faq"><summary>Can I print or save the checklist?</summary><div class="faq-a"><p>Yes — print the page and the generated rows print with it. Keep it next to the platform while the evaluation is open, and re-generate it if the firm changes the plan.</p></div></details>
+    <details class="faq"><summary>How often are the figures updated?</summary><div class="faq-a"><p>The date is on the page and in the note under the calculator. Firms change targets and drawdown models without notice, so any figure older than a few weeks is worth re-checking before you pay a fee against it.</p></div></details>
+    <details class="faq"><summary>Does the generator cover consistency rules?</summary><div class="faq-a"><p>It names the stage the rule applies at and the published percentage where one exists, but the arithmetic of a specific payout depends on the firm's current wording. The <a href="/blog/prop-firm-consistency-rule-guide.html">consistency guide</a> works through the calculation.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Any firm, any size, one flat $220</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>More free tools</h2>
+    <ul class="link-list">
+      <li><a href="/tools/position-size-calculator.html">Position size calculator</a></li>
+      <li><a href="/tools/daily-drawdown-calculator.html">Daily drawdown calculator</a></li>
+      <li><a href="/tools/maximum-loss-calculator.html">Maximum loss and floor calculator</a></li>
+      <li><a href="/tools/profit-target-calculator.html">Profit target planner</a></li>
+      <li><a href="/tools/prop-firm-profit-calculator.html">Profit, payout and fee calculator</a></li>
+      <li><a href="/tools/">All tools</a></li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prop Firm Position Size Calculator: Lots from Risk %</title>
+<meta name="description" content="Work out the lot size that risks a fixed percentage of a prop firm account at a given stop distance, with the cash at risk and the losses a daily limit allows.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://elitepropx.com/tools/position-size-calculator.html">
+<meta name="theme-color" content="#0b1220">
+<meta name="author" content="ElitePropX">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ElitePropX">
+<meta property="og:title" content="Prop Firm Position Size Calculator: Lots from Risk %">
+<meta property="og:description" content="Work out the lot size that risks a fixed percentage of a prop firm account at a given stop distance, with the cash at risk and the losses a daily limit allows.">
+<meta property="og:url" content="https://elitepropx.com/tools/position-size-calculator.html">
+<meta property="og:image" content="https://elitepropx.com/assets/img/og/tools-position-size-calculator.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prop Firm Position Size Calculator: Lots from Risk %">
+<meta name="twitter:description" content="Work out the lot size that risks a fixed percentage of a prop firm account at a given stop distance, with the cash at risk and the losses a daily limit allows.">
+<meta name="twitter:image" content="https://elitepropx.com/assets/img/og/tools-position-size-calculator.svg">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/logo-mark.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/css/style.css?v=e661d080" as="style">
+<link rel="stylesheet" href="/assets/css/style.css?v=e661d080">
+<script defer src="/assets/js/main.js?v=f20303a2"></script>
+<script defer src="/assets/js/tools.js?v=d35a151b"></script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://elitepropx.com/#organization","name":"ElitePropX","legalName":"ElitePropX","url":"https://elitepropx.com/","logo":{"@type":"ImageObject","url":"https://elitepropx.com/assets/img/logo.svg","width":512,"height":128},"description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","email":"support@elitepropx.com","foundingDate":"2024","areaServed":"Worldwide","knowsAbout":["prop firm challenge passing","FTMO challenge","futures prop firm evaluations","Apex Trader Funding","Topstep Combine","FundedNext"],"sameAs":["https://t.me/voraspas","https://www.quora.com/profile/Jennifer-Kamsi-2","https://www.youtube.com/channel/UC_AfsbjVJD1Al9gH_9R9WSg"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"support@elitepropx.com","url":"https://t.me/voraspas","availableLanguage":["English"]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://elitepropx.com/#website","url":"https://elitepropx.com/","name":"ElitePropX","description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","inLanguage":"en","publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elitepropx.com/"},{"@type":"ListItem","position":2,"name":"Position size","item":"https://elitepropx.com/tools/position-size-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://elitepropx.com/tools/position-size-calculator.html#webpage","url":"https://elitepropx.com/tools/position-size-calculator.html","name":"Position size calculator for prop firm accounts","headline":"Position size calculator for prop firm accounts","description":"Work out the lot size that risks a fixed percentage of a prop firm account at a given stop distance, with the cash at risk and the losses a daily limit allows.","isPartOf":{"@id":"https://elitepropx.com/#website"},"about":{"@id":"https://elitepropx.com/#organization"},"inLanguage":"en","datePublished":"2026-10-23T08:00:00+00:00","dateModified":"2026-10-23T08:00:00+00:00","wordCount":958,"mainEntityOfPage":{"@type":"WebPage","@id":"https://elitepropx.com/tools/position-size-calculator.html"},"author":{"@id":"https://elitepropx.com/#organization"},"publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I risk a fixed percentage or a fixed dollar amount?","acceptedAnswer":{"@type":"Answer","text":"A fixed percentage, because the limits are expressed as percentages of the account and the account size varies between plans. A fixed dollar risk becomes a larger percentage as the account grows, which is the wrong direction."}},{"@type":"Question","name":"Does this work for futures evaluations?","acceptedAnswer":{"@type":"Answer","text":"The formula is the same but the units are different: risk in dollars divided by the stop in ticks, divided by the tick value per contract, gives contracts rather than lots. Set the pip value field to the tick value and the stop field to ticks."}},{"@type":"Question","name":"What if the calculated size is below the broker minimum?","acceptedAnswer":{"@type":"Answer","text":"Then the trade does not fit the account at that risk. The options are to take a tighter stop that the setup genuinely supports, to trade a smaller-value instrument, or to skip the setup. Raising the risk to reach the minimum is how a 1% plan becomes a 2.5% plan without a decision being made."}},{"@type":"Question","name":"Does risk per trade change once the account is funded?","acceptedAnswer":{"@type":"Answer","text":"It should, because the funded account usually has the same loss limits but payouts are what you are protecting. Many traders halve the risk per trade in the funded phase and accept a slower curve in exchange for keeping the account alive."}}]}</script>
+</head>
+<body class="page-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="ElitePropX home">
+      <img src="/assets/img/logo.svg" alt="ElitePropX" width="150" height="38" loading="eager">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-bar"></span><span class="sr-only">Menu</span>
+    </button>
+    <nav id="primary-nav" class="site-nav" aria-label="Primary">
+      <ul>
+          <li><a href="/passed-challenges.html">Passed Challenges</a></li>
+          <li><a href="/prop-firm-comparison-2026.html">Compare Firms</a></li>
+          <li><a href="/prop-firm-rules/">Firm Rules</a></li>
+          <li><a href="/services/passing-prop-firm-services.html">Services</a></li>
+          <li><a href="/reviews.html">Reviews</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <span class="header-pitch">Prop firm challenge passing service</span>
+      <a class="header-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener" aria-label="Pass your evaluation on Telegram" title="Pass your evaluation on Telegram"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg></a>
+      <a class="btn btn-primary header-cta" href="/#get-started">Start for $220</a>
+    </div>
+  </div>
+  <a class="header-note" href="/#get-started">Prop firm challenge passing service <span>· $220 flat</span></a>
+</header>
+<main id="main">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Position size</li></ol></nav>
+<div class="reviewed-strip wrap narrow"><p>Reviewed <time datetime="2026-10-23">23 October 2026</time> · <a href="/methodology.html">how we check firm rules</a></p></div>
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Free tool, no signup</p>
+    <h1>Position size calculator for prop firm accounts</h1>
+    <p class="lede">Enter the account size, the percentage you are willing to lose on the trade, the stop distance and the pip value. The calculator returns the lot size that puts exactly that amount at risk — which is the only number that matters when a daily loss limit is watching.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="calc-card" data-calc="position">
+      <form class="calc-grid">
+        <div class="calc-field">
+          <label for="ps-account">Account size ($)</label>
+          <input id="ps-account" data-in="account" type="number" inputmode="decimal" value="100000" min="0" step="1000">
+        </div>
+        <div class="calc-field">
+          <label for="ps-risk">Risk per trade (%)</label>
+          <input id="ps-risk" data-in="riskPct" type="number" inputmode="decimal" value="1" min="0" step="0.1">
+        </div>
+        <div class="calc-field">
+          <label for="ps-stop">Stop distance (pips)</label>
+          <input id="ps-stop" data-in="stopPips" type="number" inputmode="decimal" value="20" min="0" step="1">
+        </div>
+        <div class="calc-field">
+          <label for="ps-pip">Pip value per lot ($)</label>
+          <input id="ps-pip" data-in="pipValue" type="number" inputmode="decimal" value="10" min="0" step="0.1">
+        </div>
+      </form>
+      <div class="calc-out" data-out aria-live="polite"></div>
+      <p class="calc-note">For a standard 100k lot on a USD-quoted pair, one pip is $10. Indices, gold and futures contracts use a different value per point — set it to the contract's own figure, which the broker's specification sheet lists.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow prose">
+    <h2>The formula, written out</h2>
+    <p>Cash at risk is the account size multiplied by the risk percentage. Position size is that cash divided by the stop distance in pips, divided again by the pip value per lot. Written in one line:</p>
+    <p><strong>Lots = (Account × Risk%) ÷ (Stop pips × Pip value)</strong></p>
+    <p>Every prop firm failure that looks like a discipline problem starts as an arithmetic problem. A trader decides to risk 1%, picks a stop from the chart, then rounds the lot size to something familiar — and the actual risk is 0.7% or 1.4% depending on which way the rounding went. On a $100,000 account with a 5% daily limit, that drift is the difference between surviving four bad trades and failing on the third.</p>
+
+    <h2>Why the stop distance is decided before the size</h2>
+    <p>The order matters. The stop comes from the market structure — the level that would prove the trade wrong — not from the lot size you would like to trade. Sizing backwards from a preferred lot size is how a 20-pip stop becomes a 60-pip stop, which changes the risk per trade without changing the lot size on the ticket.</p>
+    <p>Once the stop is fixed, the calculator answers a single question: how much size is compatible with it. If the answer is smaller than the broker's minimum lot, the trade is not available at this account size, and the correct response is to skip it rather than raise the risk.</p>
+
+    <h2>Worked example: $100,000, 1%, 20 pips</h2>
+    <p>One percent of $100,000 is $1,000. At 20 pips, that is $50 per pip. With a $10 pip value per standard lot, the position is 5.0 standard lots, or 50 mini lots, or 500 micro lots. Any of those three is the same risk — the choice between them is about granularity, and micro lots simply allow the size to be matched more closely to the calculation.</p>
+    <p>The same account risking 0.5% with a 40-pip stop produces the same number of dollars at risk per pip ($12.50) and therefore the same size. Risk, not stop distance, determines the position. The stop distance only determines how much size fits inside it.</p>
+
+    <h2>Where the pip value changes</h2>
+    <p>Four cases are worth setting explicitly rather than assuming $10:</p>
+    <ul>
+      <li><strong>Non-USD quote currency.</strong> The pip value converts through the current rate, so it moves with the market and should be read from the platform, not from memory.</li>
+      <li><strong>Gold and indices.</strong> A "pip" is usually a point, and the value per point per lot is contract-specific.</li>
+      <li><strong>Futures.</strong> The tick value and tick size define the risk, and the position is expressed in contracts rather than lots.</li>
+      <li><strong>Mini and micro accounts.</strong> The pip value per lot does not change; the size available does.</li>
+    </ul>
+
+    <h2>Sizing against the daily limit, not just the trade</h2>
+    <p>A 1% risk per trade sits comfortably inside a 5% daily limit only if the day contains fewer than five losses. That is rarely the plan on a bad session, which is why the usual guidance is to risk no more than a third of the daily budget per trade and to stop the session once most of the budget is spent. The <a href="/tools/daily-drawdown-calculator.html">daily drawdown calculator</a> answers how much room is left today; this page answers how much of it one trade should take.</p>
+    <p>If you want the mechanics of the limit itself — equity versus balance, reset times, whether floating losses count — the rule is taken apart in <a href="/blog/prop-firm-daily-drawdown-explained.html">daily drawdown explained</a>, and all eight failure rules are indexed at <a href="/prop-firm-rules/">prop firm rules</a>.</p>
+
+    <h2>Frequently asked</h2>
+    <details class="faq"><summary>Should I risk a fixed percentage or a fixed dollar amount?</summary><div class="faq-a"><p>A fixed percentage, because the limits are expressed as percentages of the account and the account size varies between plans. A fixed dollar risk becomes a larger percentage as the account grows, which is the wrong direction.</p></div></details>
+    <details class="faq"><summary>Does this work for futures evaluations?</summary><div class="faq-a"><p>The formula is the same but the units are different: risk in dollars divided by the stop in ticks, divided by the tick value per contract, gives contracts rather than lots. Set the pip value field to the tick value and the stop field to ticks.</p></div></details>
+    <details class="faq"><summary>What if the calculated size is below the broker minimum?</summary><div class="faq-a"><p>Then the trade does not fit the account at that risk. The options are to take a tighter stop that the setup genuinely supports, to trade a smaller-value instrument, or to skip the setup. Raising the risk to reach the minimum is how a 1% plan becomes a 2.5% plan without a decision being made.</p></div></details>
+    <details class="faq"><summary>Does risk per trade change once the account is funded?</summary><div class="faq-a"><p>It should, because the funded account usually has the same loss limits but payouts are what you are protecting. Many traders halve the risk per trade in the funded phase and accept a slower curve in exchange for keeping the account alive.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Any firm, any size, one flat $220</h2>
+      
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+      <a class="btn btn-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg><span>Pass your evaluation</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>More free tools</h2>
+    <ul class="link-list">
+      <li><a href="/tools/daily-drawdown-calculator.html">Daily drawdown calculator</a></li>
+      <li><a href="/tools/maximum-loss-calculator.html">Maximum loss and floor calculator</a></li>
+      <li><a href="/tools/profit-target-calculator.html">Profit target planner</a></li>
+      <li><a href="/tools/rule-checklist-generator.html">Rule checklist generator</a></li>
+      <li><a href="/tools/prop-firm-profit-calculator.html">Profit, payout and fee calculator</a></li>
+      <li><a href="/tools/">All tools</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-cta">
+    <div>
+      <p class="footer-cta-kicker">Talk to ElitePropX</p>
+      <h2>Not sure which firm or plan fits?</h2>
+      <p>Send the firm and account size. You will get the flat fee, a timeline and a straight answer on your firm's terms before you pay.</p>
+    </div>
+    <div class="footer-cta-actions">
+      <a class="btn btn-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg><span>Pass your evaluation</span></a>
+      <a class="btn btn-outline-light" href="mailto:support@elitepropx.com?subject=Prop%20firm%20challenge%20enquiry">Email support</a>
+    </div>
+  </div>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="/assets/img/logo-white.svg" alt="ElitePropX" width="150" height="38" loading="lazy">
+      <p>ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.</p>
+      <p class="footer-mail">
+        <a href="https://t.me/voraspas" target="_blank" rel="noopener">Telegram @voraspas</a><br>
+        <a href="mailto:support@elitepropx.com">support@elitepropx.com</a>
+      </p>
+    </div>
+    <div>
+      <h2 class="footer-h">Service</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/passed-challenges.html">Passed challenges</a></li>
+        <li><a href="/prop-firm-comparison-2026.html">Prop firm comparison</a></li>
+        <li><a href="/prop-firm-rules-matrix.html">Rules matrix</a></li>
+        <li><a href="/services/passing-prop-firm-services.html">Passing services</a></li>
+        <li><a href="/demo.html">Free demo trial</a></li>
+        <li><a href="/reviews.html">Client reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Resources</h2>
+      <ul>
+        <li><a href="/tools/">Free tools</a></li>
+        <li><a href="/tools/position-size-calculator.html">Position size calculator</a></li>
+        <li><a href="/tools/daily-drawdown-calculator.html">Daily drawdown calculator</a></li>
+        <li><a href="/tools/maximum-loss-calculator.html">Maximum loss calculator</a></li>
+        <li><a href="/tools/profit-target-calculator.html">Profit target planner</a></li>
+        <li><a href="/tools/rule-checklist-generator.html">Rule checklist generator</a></li>
+        <li><a href="/blog/">All articles</a></li>
+        <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">Challenge passing guide</a></li>
+        <li><a href="/blog/ftmo-challenge-passing.html">FTMO passing</a></li>
+        <li><a href="/blog/apex-trader-funding-challenge-passing.html">Apex passing</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Firm rules</h2>
+      <ul>
+        <li><a href="/prop-firm-rules/">All eight rules</a></li>
+        <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily loss limit</a></li>
+        <li><a href="/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html">Trailing drawdown</a></li>
+        <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule</a></li>
+        <li><a href="/blog/prop-firm-news-trading-rules.html">News trading</a></li>
+        <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding</a></li>
+        <li><a href="/blog/prop-firm-ea-automated-trading.html">Expert advisors</a></li>
+        <li><a href="/blog/prop-firm-minimum-trading-days.html">Minimum days</a></li>
+        <li><a href="/prop-firm-rules-matrix.html">Rules matrix</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Company</h2>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/methodology.html">How we check rules</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/privacy.html">Privacy policy</a></li>
+        <li><a href="/terms.html">Terms of service</a></li>
+        <li><a href="/risk-disclosure.html">Risk disclosure</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year">2026</span> ElitePropX. All rights reserved.</p>
+    <p class="disclaimer">
+      ElitePropX is an independent service and is not affiliated with, endorsed by, or sponsored by any proprietary trading firm named on this site. Trading involves substantial risk of loss. Past results do not guarantee future outcomes. Check your firm's terms before purchasing any service.
+    </p>
+  </div>
+</footer>
+<a class="telegram-float" href="https://t.me/voraspas" target="_blank" rel="noopener" aria-label="Pass your challenge today on Telegram">
+  <span class="telegram-float-icon"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg></span>
+  <span class="telegram-float-text"><strong>Pass your challenge today</strong><small>@voraspas</small></span>
+</a>
+</body>
+</html>

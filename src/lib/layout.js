@@ -22,11 +22,12 @@ function assetVersion(relPath) {
 
 const CSS_V = assetVersion('/assets/css/style.css');
 const JS_V = assetVersion('/assets/js/main.js');
+const TOOLS_V = assetVersion('/assets/js/tools.js');
 
 const NAV = [
   { label: 'Passed Challenges', href: '/passed-challenges.html' },
   { label: 'Compare Firms', href: '/prop-firm-comparison-2026.html' },
-  { label: 'Rules Matrix', href: '/prop-firm-rules-matrix.html' },
+  { label: 'Firm Rules', href: '/prop-firm-rules/' },
   { label: 'Services', href: '/services/passing-prop-firm-services.html' },
   { label: 'Reviews', href: '/reviews.html' },
   { label: 'Blog', href: '/blog/' },
@@ -109,9 +110,10 @@ ${page.type === 'article' ? `<meta property="article:published_time" content="${
 <link rel="preload" href="/assets/css/style.css${CSS_V}" as="style">
 <link rel="stylesheet" href="/assets/css/style.css${CSS_V}">
 <script defer src="/assets/js/main.js${JS_V}"></script>
+${page.toolsJs ? `<script defer src="/assets/js/tools.js${TOOLS_V}"></script>\n` : ''}
 <script type="application/ld+json">${JSON.stringify(organizationSchema())}</script>
 <script type="application/ld+json">${JSON.stringify(websiteSchema())}</script>
-${page.type === 'article' ? `<script type="application/ld+json">${JSON.stringify(articleSchema(page))}</script>\n` : ''}${page.schemaService ? `<script type="application/ld+json">${JSON.stringify(serviceSchema())}</script>\n` : ''}${breadcrumbSchema(page) ? `<script type="application/ld+json">${JSON.stringify(breadcrumbSchema(page))}</script>\n` : ''}${faqSchema(page) ? `<script type="application/ld+json">${JSON.stringify(faqSchema(page))}</script>\n` : ''}</head>`;
+${page.type === 'article' ? `<script type="application/ld+json">${JSON.stringify(articleSchema(page))}</script>\n` : ''}${page.schemaService ? `<script type="application/ld+json">${JSON.stringify(serviceSchema())}</script>\n` : ''}${breadcrumbSchema(page) ? `<script type="application/ld+json">${JSON.stringify(breadcrumbSchema(page))}</script>\n` : ''}${page.type !== 'article' && !page.noindex && !page.redirect && webPageSchema(page) ? `<script type="application/ld+json">${JSON.stringify(webPageSchema(page))}</script>\n` : ''}${faqSchema(page) ? `<script type="application/ld+json">${JSON.stringify(faqSchema(page))}</script>\n` : ''}</head>`;
 }
 
 function organizationSchema() {
@@ -221,6 +223,49 @@ function sourcesBlock(page) {
     </ul>
   </div>
 </section>`;
+}
+
+/**
+ * Non-article pages still make a freshness claim: the rules matrix, the
+ * comparison, the passing-service page all quote figures that go stale. A
+ * WebPage node with a dateModified backs the visible "reviewed" strip; without
+ * one the date is a sentence with nothing behind it.
+ */
+function webPageSchema(page) {
+  const iso = page.updated || page.date;
+  if (!iso) return null;
+  const cited = sources.resolve(page).flatMap((f) => f.items.map((i) => i.href));
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': abs(page.path) + '#webpage',
+    url: canonicalFor(page),
+    name: page.h1 || page.title,
+    headline: page.h1 || page.title,
+    description: page.desc,
+    isPartOf: { '@id': site.url + '/#website' },
+    about: { '@id': site.url + '/#organization' },
+    inLanguage: 'en',
+    datePublished: (page.date || iso) + 'T08:00:00+00:00',
+    dateModified: iso + 'T08:00:00+00:00',
+    ...(page.wordCount ? { wordCount: page.wordCount } : {}),
+    ...(page.section ? { articleSection: page.section } : {}),
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalFor(page) },
+    author: { '@id': site.url + '/#organization' },
+    publisher: { '@id': site.url + '/#organization' },
+    ...(cited.length ? { citation: cited } : {}),
+  };
+}
+
+/**
+ * The date a reader can actually see, sitting above the copy rather than in a
+ * footer nobody scrolls to. Rendered for any indexable page that declares an
+ * `updated` date, so the promise is made in the same place on every page.
+ */
+function reviewedStrip(page) {
+  const iso = page.updated || page.date;
+  if (!iso || page.type === 'article') return '';
+  return `<div class="reviewed-strip wrap narrow"><p>Reviewed <time datetime="${iso}">${longDate(iso)}</time> · <a href="/methodology.html">how we check firm rules</a></p></div>`;
 }
 
 function serviceSchema() {
@@ -364,11 +409,31 @@ function footer() {
     <div>
       <h2 class="footer-h">Resources</h2>
       <ul>
+        <li><a href="/tools/">Free tools</a></li>
+        <li><a href="/tools/position-size-calculator.html">Position size calculator</a></li>
+        <li><a href="/tools/daily-drawdown-calculator.html">Daily drawdown calculator</a></li>
+        <li><a href="/tools/maximum-loss-calculator.html">Maximum loss calculator</a></li>
+        <li><a href="/tools/profit-target-calculator.html">Profit target planner</a></li>
+        <li><a href="/tools/rule-checklist-generator.html">Rule checklist generator</a></li>
         <li><a href="/blog/">All articles</a></li>
         <li><a href="/blog/ultimate-guide-passing-prop-firm-challenge.html">Challenge passing guide</a></li>
         <li><a href="/blog/ftmo-challenge-passing.html">FTMO passing</a></li>
         <li><a href="/blog/apex-trader-funding-challenge-passing.html">Apex passing</a></li>
         <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Firm rules</h2>
+      <ul>
+        <li><a href="/prop-firm-rules/">All eight rules</a></li>
+        <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily loss limit</a></li>
+        <li><a href="/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html">Trailing drawdown</a></li>
+        <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rule</a></li>
+        <li><a href="/blog/prop-firm-news-trading-rules.html">News trading</a></li>
+        <li><a href="/blog/prop-firm-weekend-holding-rules.html">Weekend holding</a></li>
+        <li><a href="/blog/prop-firm-ea-automated-trading.html">Expert advisors</a></li>
+        <li><a href="/blog/prop-firm-minimum-trading-days.html">Minimum days</a></li>
+        <li><a href="/prop-firm-rules-matrix.html">Rules matrix</a></li>
       </ul>
     </div>
     <div>
@@ -379,6 +444,7 @@ function footer() {
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy.html">Privacy policy</a></li>
         <li><a href="/terms.html">Terms of service</a></li>
+        <li><a href="/risk-disclosure.html">Risk disclosure</a></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
       </ul>
     </div>
@@ -423,6 +489,7 @@ function render(page, body) {
 ${header(page.path)}
 <main id="main">
 ${breadcrumbs(page)}
+${reviewedStrip(page)}
 ${withSources(page, withTelegramBand(body))}
 </main>
 ${footer()}

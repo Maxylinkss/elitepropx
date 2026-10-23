@@ -1,0 +1,100 @@
+---
+title: "Prop Firm Profit Target Calculator: Days and Daily Pace"
+desc: Turn a prop firm profit target into a daily number, see how many trading days it takes at your pace, and whether the minimum trading days bind first.
+path: /tools/profit-target-calculator.html
+type: page
+h1: Profit target planner
+kicker: Free tool
+crumb: Profit target
+priority: 0.8
+updated: 2026-10-23
+toolsJs: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Free tool, no signup</p>
+    <h1>Profit target planner</h1>
+    <p class="lede">A target is a percentage until it becomes a daily number. Enter the account, the target and the pace you actually achieve, and the calculator returns the cash target, the days it takes, and whether the firm's minimum trading days are the real constraint.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="calc-card" data-calc="target">
+      <form class="calc-grid">
+        <div class="calc-field">
+          <label for="pt-start">Account size ($)</label>
+          <input id="pt-start" data-in="start" type="number" inputmode="decimal" value="100000" min="0" step="1000">
+        </div>
+        <div class="calc-field">
+          <label for="pt-target">Profit target (%)</label>
+          <input id="pt-target" data-in="targetPct" type="number" inputmode="decimal" value="10" min="0" step="0.5">
+        </div>
+        <div class="calc-field">
+          <label for="pt-daily">Your daily pace (%)</label>
+          <input id="pt-daily" data-in="dailyPct" type="number" inputmode="decimal" value="0.5" min="0" step="0.1">
+        </div>
+        <div class="calc-field">
+          <label for="pt-min">Minimum trading days</label>
+          <input id="pt-min" data-in="minDays" type="number" inputmode="numeric" value="4" min="0" step="1">
+        </div>
+      </form>
+      <div class="calc-out" data-out aria-live="polite"></div>
+      <p class="calc-note">Use a pace you have measured over at least a month of recorded trades, after spread and commission. A backtest pace produces a plan that fails on contact.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow prose">
+    <h2>The two constraints, and which one binds</h2>
+    <p>Every evaluation has a profit target and most have a minimum number of trading days. Those are different constraints and they fail in opposite directions. A trader who reaches 10% in two days has hit the target but not the calendar, so the attempt continues — and the only way to fail from that position is to give the profit back while waiting. A trader who trades slowly hits the calendar first and needs a daily pace that is achievable rather than heroic.</p>
+    <p>The calculator names which constraint binds. If the projected days exceed the minimum, the pace is the binding constraint and the calendar is irrelevant. If the minimum is larger than the projected days, the finishing pace is diluted across those days — a 10% target with a 4-day minimum needs 2.5% a day, not 10% in one session.</p>
+
+    <h2>Worked example: 10% target on $100,000</h2>
+    <p>The target is $10,000. At 0.5% of the account a day — $500 — the projection is 20 trading days, which comfortably exceeds a 4-day minimum, so the pace binds and the earliest finish is day 20. Change the pace to 2% a day and the projection is 5 days; now the minimum of 4 is passed but nearly irrelevant, and the required pace is $2,500 a day for two days to reach $10,000 inside the calendar that is left.</p>
+    <p>The same arithmetic is where most unrealistic plans break. A 0.5% daily pace sounds modest until it is applied to a 5% daily loss limit: it means ten consecutive good days with no bad one, and a single 2% losing day costs four days of progress. The pace has to be judged against the loss budget, not against the target.</p>
+
+    <h2>The minimum-days trap</h2>
+    <p>Reaching the target early changes the job. The remaining days are spent not making money but not losing it, and on a trailing drawdown account the floor has already risen with the peak — so the waiting period is the most dangerous part of the evaluation, not the easiest. The correct behaviour after hitting target is to reduce size sharply or stop trading entirely until the minimum days are recorded, and to confirm with the firm whether flat days count toward the minimum.</p>
+
+    <h2>What this ignores</h2>
+    <p>It ignores variance. A 0.5% average daily return is not 0.5% every day; it is a distribution that includes losing days, and the daily limit is what decides whether the distribution survives. It also ignores fees and the consistency rule, both of which change the payout arithmetic rather than the target arithmetic — those are handled in the <a href="/tools/prop-firm-profit-calculator.html">profit, payout and fee calculator</a>.</p>
+    <p>For the rule mechanics behind the plan, the <a href="/prop-firm-rules/">eight rules hub</a> indexes the ones that end challenges, and the <a href="/prop-firm-calculator.html">risk and target calculator</a> works through position sizing against the same numbers.</p>
+
+    <h2>Finding a pace you can defend</h2>
+    <p>The honest input for this calculator is not the return you hope for. It is the average across your own recorded trades, including the losing ones, after spread and commission — and if that record does not exist, the first task is not this calculator but a month of logging. A pace without a record behind it is a guess with a decimal point.</p>
+    <p>Then compare the pace against the limit rather than against the target. If a plan needs 1% a day and the daily limit is 5%, the plan can survive four full-risk losses in a session; if it needs 3% a day, one bad trade is a third of the budget and two are most of it. Plans that require a fast pace usually fail on the loss limit long before they fail on the target, because the size that produces the pace is the size that spends the budget.</p>
+
+    <h2>Frequently asked</h2>
+    <details class="faq"><summary>Do flat days count toward minimum trading days?</summary><div class="faq-a"><p>It varies. Some firms count any day with an open position, others require a closed trade, and a few require the day to be profitable — The5ers, for example, states profitable days. The difference can add a week to a plan that assumed flat days counted.</p></div></details>
+    <details class="faq"><summary>Is a faster pace better?</summary><div class="faq-a"><p>Only if it survives the daily limit. A pace that requires risking more than a third of the daily budget per trade turns a small losing streak into a failed evaluation, and the target is not worth reaching that way.</p></div></details>
+    <details class="faq"><summary>What happens if I hit the target before the minimum days?</summary><div class="faq-a"><p>The evaluation continues until the minimum is met. Reduce size or stop; the account is at its most exposed immediately after the target is reached, because the drawdown floor has usually risen with the peak.</p></div></details>
+    <details class="faq"><summary>Does the target include the evaluation fee?</summary><div class="faq-a"><p>No. The target is profit on the account. Recovering the fee and subscriptions is a separate break-even calculation, covered in the profit and payout calculator.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Any firm, any size, one flat $220</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>More free tools</h2>
+    <ul class="link-list">
+      <li><a href="/tools/position-size-calculator.html">Position size calculator</a></li>
+      <li><a href="/tools/daily-drawdown-calculator.html">Daily drawdown calculator</a></li>
+      <li><a href="/tools/maximum-loss-calculator.html">Maximum loss and floor calculator</a></li>
+      <li><a href="/tools/rule-checklist-generator.html">Rule checklist generator</a></li>
+      <li><a href="/tools/prop-firm-profit-calculator.html">Profit, payout and fee calculator</a></li>
+      <li><a href="/tools/">All tools</a></li>
+    </ul>
+  </div>
+</section>

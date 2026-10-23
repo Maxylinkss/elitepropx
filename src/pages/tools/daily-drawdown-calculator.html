@@ -1,0 +1,99 @@
+---
+title: "Daily Drawdown Calculator: How Much Room Is Left Today"
+desc: Work out the cash value of a prop firm daily loss limit, how much of today's budget is left after closed and floating losses, and what each trade may risk.
+path: /tools/daily-drawdown-calculator.html
+type: page
+h1: Daily drawdown calculator
+kicker: Free tool
+crumb: Daily drawdown
+priority: 0.8
+updated: 2026-10-23
+toolsJs: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Free tool, no signup</p>
+    <h1>Daily drawdown calculator</h1>
+    <p class="lede">The daily loss limit is the rule most challenges die on, and the number that matters is not the percentage on the plan page — it is the dollars left in today's budget after everything already lost. Enter the account, the limit and the day's result to see what remains.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="calc-card" data-calc="daily">
+      <form class="calc-grid">
+        <div class="calc-field">
+          <label for="dd-account">Account size ($)</label>
+          <input id="dd-account" data-in="account" type="number" inputmode="decimal" value="100000" min="0" step="1000">
+        </div>
+        <div class="calc-field">
+          <label for="dd-limit">Daily limit (%)</label>
+          <input id="dd-limit" data-in="limitPct" type="number" inputmode="decimal" value="5" min="0" step="0.1">
+        </div>
+        <div class="calc-field">
+          <label for="dd-closed">Closed P&amp;L today ($)</label>
+          <input id="dd-closed" data-in="closedPL" type="number" inputmode="decimal" value="0" step="50">
+        </div>
+        <div class="calc-field">
+          <label for="dd-floating">Open floating P&amp;L ($)</label>
+          <input id="dd-floating" data-in="floatingPL" type="number" inputmode="decimal" value="0" step="10">
+        </div>
+      </form>
+      <div class="calc-out" data-out aria-live="polite"></div>
+      <p class="calc-note">Enter losses as negative numbers. On an equity-measured day the floating figure counts while the position is open, whether or not it later recovers.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow prose">
+    <h2>What the limit actually measures</h2>
+    <p>Three conventions decide the answer, and firms differ on all three. The measurement basis is either <strong>equity</strong> — open positions included — or <strong>closed balance</strong>, in which case an open losing trade does not count until it is realised. The <strong>reference point</strong> is either the balance at the start of the day or the day's starting equity. The <strong>reset</strong> happens at server midnight, at the broker's daily close, or on a rolling twenty-four-hour window.</p>
+    <p>Two firms can advertise an identical 5% limit and have materially different room. An equity-measured limit of 5% on a $100,000 account means $5,000 of combined realised and unrealised loss ends the day. The same headline number measured on closed balance means an open position can sit at −$9,000 without breaching, as long as it is not closed there. The percentage is the least interesting part of the rule.</p>
+
+    <h2>The three-loss rule</h2>
+    <p>The useful way to use this calculator is not to watch the room shrink but to size the day in advance. Divide today's room by three and that is the maximum risk per trade if the session is to survive three consecutive losses — the normal shape of a bad day. With $5,000 of room, that is roughly $1,660 a trade, which on a 20-pip stop is a smaller position than most traders would size by feel.</p>
+    <p>The second number worth writing on the screen is the stop-out point: once eighty percent of the budget is spent, stop. A trader who keeps going with a fifth of the budget left is not trading a plan, they are trading the hope that the next trade is the good one. That single decision accounts for a large share of the failed evaluations we see reset.</p>
+
+    <h2>Worked example: down $1,500 with 5% to lose</h2>
+    <p>A $100,000 account with a 5% daily limit has $5,000 of room at the start of the day. After $1,200 of realised losses and a position sitting $300 underwater, $3,500 remains. At a third per trade the next position may risk about $1,167, and the session should end with $700 left. If the position instead goes to −$3,600, the day is over — and on a firm that treats a daily breach as a failure rather than a day-end, so is the evaluation.</p>
+
+    <h2>What this calculator will not tell you</h2>
+    <p>It cannot tell you which convention your firm uses; that is in the loss section of the plan document, and it is the sentence worth reading twice. Reset times and weekend handling also vary, and a limit that resets at a different hour than you assume can end an otherwise well-sized day. The <a href="/blog/prop-firm-daily-drawdown-explained.html">full guide to the daily limit</a> covers those variants, and the <a href="/prop-firm-rules-matrix.html">rules matrix</a> records the daily figure per firm with the date it was read.</p>
+
+    <h2>What a well-run day looks like</h2>
+    <p>It starts with the numbers already written down rather than discovered under pressure: the limit in cash, the stop-out point at eighty percent spent, and the maximum size of a single trade. That is three figures, and having them in front of you is the whole difference between a plan and an intention.</p>
+    <p>By mid-session the day has either made progress or spent part of the budget, and both outcomes are normal. The failure mode is neither: it is the session that spends fifty percent of the budget in the first hour, then doubles size to recover. The budget is not a target to be used; it is a limit that should usually end the day untouched. A trader who finishes most days using a fifth of it is not being timid, they are keeping an account that a single bad morning cannot take away.</p>
+
+    <h2>Frequently asked</h2>
+    <details class="faq"><summary>Does an open position count against the daily limit?</summary><div class="faq-a"><p>On an equity-measured account, yes — the drawdown is charged while the loss exists. If the trade recovers and closes flat the budget returns, but a breach at the low point stands: the account cannot un-breach.</p></div></details>
+    <details class="faq"><summary>Is the limit measured from the balance or from the day's high?</summary><div class="faq-a"><p>Usually from the balance or equity at the start of the day, not from the day's high. That means profit made earlier in the session does not create extra room unless the firm explicitly measures from the daily peak, which is rare.</p></div></details>
+    <details class="faq"><summary>What happens if I breach the daily limit?</summary><div class="faq-a"><p>It depends on the firm. Some end the day and resume with a fresh budget; many futures and forex firms treat it as a failure of the evaluation. The difference decides whether one bad afternoon costs a day or the fee.</p></div></details>
+    <details class="faq"><summary>Can I recover a nearly-spent budget with a bigger trade?</summary><div class="faq-a"><p>That is the trade that turns a small loss into a failed account. The only recovery is the next reset. Size the day so the last fifth of the budget is never needed.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Any firm, any size, one flat $220</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>More free tools</h2>
+    <ul class="link-list">
+      <li><a href="/tools/position-size-calculator.html">Position size calculator</a></li>
+      <li><a href="/tools/maximum-loss-calculator.html">Maximum loss and floor calculator</a></li>
+      <li><a href="/tools/profit-target-calculator.html">Profit target planner</a></li>
+      <li><a href="/tools/rule-checklist-generator.html">Rule checklist generator</a></li>
+      <li><a href="/tools/prop-firm-profit-calculator.html">Profit, payout and fee calculator</a></li>
+      <li><a href="/tools/">All tools</a></li>
+    </ul>
+  </div>
+</section>

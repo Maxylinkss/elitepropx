@@ -1,0 +1,99 @@
+---
+title: "Maximum Loss Calculator: Trailing vs Static Drawdown Floor"
+desc: See where a prop firm maximum loss floor sits, how far a trailing floor has risen with the peak, and how much room is left before the account closes.
+path: /tools/maximum-loss-calculator.html
+type: page
+h1: Maximum loss and drawdown floor calculator
+kicker: Free tool
+crumb: Maximum loss
+priority: 0.8
+updated: 2026-10-23
+toolsJs: true
+---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Free tool, no signup</p>
+    <h1>Maximum loss and drawdown floor calculator</h1>
+    <p class="lede">A static floor sits still for the whole evaluation. A trailing floor follows the peak upward, so profit makes the account tighter, not safer. Enter the start balance, the running peak and the maximum loss to see exactly where the closure line is.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="calc-card" data-calc="maxloss">
+      <form class="calc-grid">
+        <div class="calc-field">
+          <label for="ml-start">Starting balance ($)</label>
+          <input id="ml-start" data-in="start" type="number" inputmode="decimal" value="100000" min="0" step="1000">
+        </div>
+        <div class="calc-field">
+          <label for="ml-peak">Running peak equity ($)</label>
+          <input id="ml-peak" data-in="peak" type="number" inputmode="decimal" value="106000" min="0" step="500">
+        </div>
+        <div class="calc-field">
+          <label for="ml-max">Maximum loss (%)</label>
+          <input id="ml-max" data-in="maxPct" type="number" inputmode="decimal" value="10" min="0" step="0.5">
+        </div>
+        <div class="calc-field">
+          <label for="ml-basis">Trailing measured from</label>
+          <select id="ml-basis" data-in="basis">
+            <option value="initial">Initial balance (fixed $ distance)</option>
+            <option value="peak">Running peak (% of peak)</option>
+          </select>
+        </div>
+      </form>
+      <div class="calc-out" data-out aria-live="polite"></div>
+      <p class="calc-note">Set the peak equal to the starting balance for a fresh account. Both trailing conventions are shown because firms use both, and the plan document is the only place the answer is definitive.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow prose">
+    <h2>Why the peak, not the balance, decides the floor</h2>
+    <p>On a static account, the floor is fixed: 10% below the starting balance, and nothing you do moves it. On a trailing account the floor is a fixed distance below the highest equity the account has reached, so every new high drags it up. The consequence is counter-intuitive and it is why this is the most misread rule in the market: an account up 6% can be closer to failure than it was at the start, because the floor rose by the same 6% and the room above it never grew.</p>
+    <p>The two trailing conventions produce different numbers and both are in use. Some firms trail the floor by the <strong>original dollar allowance</strong> — 10% of the starting balance — which means the floor stops rising once the account has gained that amount. Others trail by a <strong>percentage of the running peak</strong>, so the floor keeps climbing as long as the account makes new highs, and never stops. The select box above switches between them; the difference on a $106,000 peak is $600, which on a bad afternoon is the whole decision.</p>
+
+    <h2>Worked example: 10% on a $100,000 account at a $106,000 peak</h2>
+    <p>The allowance is $10,000. Under the fixed-dollar convention the floor sits at $96,000 — the peak minus $10,000 — leaving $10,000 of room above it, while $6,000 of the original allowance has been used. Under the percentage-of-peak convention the floor sits at $95,400, leaving $10,600 of room. The static floor, for comparison, is $90,000, and it has not moved at all in either case.</p>
+    <p>Now run the same account without a new high. At a peak of $95,000, the fixed-dollar floor is $85,000 under the raw formula, but it clamps at the static floor of $90,000 — trailing floors do not go below the account's own starting floor. That clamp is the reason a trailing account is never worse than a static one before it makes a profit, and it is worth checking in the plan document rather than assuming.</p>
+
+    <h2>What to do with the number</h2>
+    <p>Two decisions follow from the floor. The first is the distance in cash from the current equity to the floor, which sets the maximum total risk the account can take without closing. The second is the distance in percentage of the account, which sets whether the plan's per-trade risk is viable at this stage: if $10,000 of room is available and the plan risks $1,000 a trade, the account survives ten consecutive losses — a comfortable margin. If it risks $2,500, it survives four.</p>
+    <p>On a trailing account, another question matters more: how much of the gain is protected. A floor at $96,000 with a $106,000 peak means the account cannot fall below a $4,000 net loss — but it also means the six thousand earned is at risk in full, because the floor follows the peak. Some firms publish a threshold at which the floor locks — often at the starting balance once a defined profit is reached — and that clause changes the second half of the evaluation completely.</p>
+
+    <h2>Check the clause, not the percentage</h2>
+    <p>The advertised maximum loss is only the headline. The plan document decides what the floor follows, how often it recalculates, whether it uses equity or balance, and whether it ever locks. The <a href="/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html">trailing versus static guide</a> walks through each variant, and the <a href="/prop-firm-rules-matrix.html">rules matrix</a> shows which model each firm uses with the date it was read.</p>
+
+    <h2>Frequently asked</h2>
+    <details class="faq"><summary>Does the floor follow unrealised or realised profit?</summary><div class="faq-a"><p>On most trailing accounts it follows equity, which means an open winning position lifts the floor before it is closed. If the trade then reverses, the floor stays where it rose to and the account can breach from a position that was never actually banked.</p></div></details>
+    <details class="faq"><summary>Is a trailing drawdown worse than a static one?</summary><div class="faq-a"><p>It is stricter once the account is in profit, and identical before. The practical difference is that a trailing account must reach the target without ever giving back the allowance from its best point, which changes pacing: profits are taken earlier and partial closes matter more.</p></div></details>
+    <details class="faq"><summary>Can the floor ever move down?</summary><div class="faq-a"><p>Not on a trailing account — that is the point. It can stop rising if the firm uses a fixed-dollar trail and the peak has passed the threshold, but it does not fall back when the account gives up profit.</p></div></details>
+    <details class="faq"><summary>What is an end-of-day trailing floor?</summary><div class="faq-a"><p>The floor recalculates once a day rather than on every tick, usually using the day's closing equity. Intraday spikes do not lift it, which makes it more forgiving than an intraday trail on volatile sessions and less forgiving on a slow grind upward.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Any firm, any size, one flat $220</h2>
+      
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>More free tools</h2>
+    <ul class="link-list">
+      <li><a href="/tools/position-size-calculator.html">Position size calculator</a></li>
+      <li><a href="/tools/daily-drawdown-calculator.html">Daily drawdown calculator</a></li>
+      <li><a href="/tools/profit-target-calculator.html">Profit target planner</a></li>
+      <li><a href="/tools/rule-checklist-generator.html">Rule checklist generator</a></li>
+      <li><a href="/tools/prop-firm-profit-calculator.html">Profit, payout and fee calculator</a></li>
+      <li><a href="/tools/">All tools</a></li>
+    </ul>
+  </div>
+</section>
