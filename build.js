@@ -127,14 +127,17 @@ function build() {
   }
 
   // Write pages
+  const unconfigured = [];
   for (const page of pages) {
     const outFile = path.join(OUT, page.path.replace(/^\//, ''));
     fs.mkdirSync(path.dirname(outFile), { recursive: true });
-    fs.writeFileSync(
-      outFile,
-      page.redirect ? redirectHtml(page) : layout.render(page, page.body),
-      'utf8'
-    );
+    const html = page.redirect ? redirectHtml(page) : layout.render(page, page.body);
+    if (html.includes('__WEB3FORMS_ACCESS_KEY__')) unconfigured.push(page.path);
+    fs.writeFileSync(outFile, html, 'utf8');
+  }
+  if (unconfigured.length) {
+    console.log(`\nForms awaiting an access key (${unconfigured.length}):`);
+    for (const p of unconfigured) console.log(`  ${p} — replace __WEB3FORMS_ACCESS_KEY__`);
   }
 
   // sitemap.xml

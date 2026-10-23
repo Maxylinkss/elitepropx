@@ -25,9 +25,9 @@
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/logo-mark.svg">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" href="/assets/css/style.css?v=e96f0608" as="style">
-<link rel="stylesheet" href="/assets/css/style.css?v=e96f0608">
-<script defer src="/assets/js/main.js?v=d6edc55e"></script>
+<link rel="preload" href="/assets/css/style.css?v=01a30fa2" as="style">
+<link rel="stylesheet" href="/assets/css/style.css?v=01a30fa2">
+<script defer src="/assets/js/main.js?v=7951f9cf"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://elitepropx.com/#organization","name":"ElitePropX","legalName":"ElitePropX","url":"https://elitepropx.com/","logo":{"@type":"ImageObject","url":"https://elitepropx.com/assets/img/logo.svg","width":512,"height":128},"description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","email":"support@elitepropx.com","foundingDate":"2024","areaServed":"Worldwide","knowsAbout":["prop firm challenge passing","FTMO challenge","futures prop firm evaluations","Apex Trader Funding","Topstep Combine","FundedNext"],"sameAs":["https://t.me/voraspas","https://www.quora.com/profile/Jennifer-Kamsi-2","https://www.youtube.com/channel/UC_AfsbjVJD1Al9gH_9R9WSg"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"support@elitepropx.com","url":"https://t.me/voraspas","availableLanguage":["English"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://elitepropx.com/#website","url":"https://elitepropx.com/","name":"ElitePropX","description":"ElitePropX is an independent prop firm challenge-passing service for Forex and Futures traders. Flat $220 per evaluation, retries covered, no profit split.","inLanguage":"en","publisher":{"@id":"https://elitepropx.com/#organization"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elitepropx.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://elitepropx.com/contact.html"}]}</script>
@@ -102,6 +102,70 @@
     <div class="callout">
       <p><strong>Never send us banking details or identity documents.</strong> Evaluation account credentials are the only thing the service needs. KYC belongs to the prop firm, and payouts are paid to you directly by the firm.</p>
     </div>
+
+    <h2 id="enquiry-form">Send an enquiry</h2>
+    <p>Six fields, about ninety seconds. The reply contains the fee, a timeline in trading days, and an honest note about whether your firm's terms make this a sensible idea.</p>
+
+    <form class="enquiry-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" data-enquiry>
+      <input type="hidden" name="access_key" value="7947f7ee-3598-497b-9cce-ff3c213cb91e">
+      <input type="hidden" name="subject" value="ElitePropX enquiry from the contact form">
+      <input type="hidden" name="from_name" value="elitepropx.com contact form">
+      <input type="hidden" name="redirect" value="https://elitepropx.com/thank-you.html">
+      <div class="hp-field" aria-hidden="true">
+        <label for="cf-botcheck">Leave this box unticked</label>
+        <input type="checkbox" id="cf-botcheck" name="botcheck" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="cf-name">Your name</label>
+        <input type="text" id="cf-name" name="Name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" name="email" autocomplete="email" required aria-describedby="cf-email-hint">
+        <p class="field-hint" id="cf-email-hint">Replies usually arrive within one business day.</p>
+      </div>
+      <div class="field field-full">
+        <label for="cf-firm">Prop firm</label>
+        <input type="text" id="cf-firm" name="Prop firm" required placeholder="FTMO" aria-describedby="cf-firm-hint">
+        <p class="field-hint" id="cf-firm-hint">The rulebook depends on the exact plan, not just the brand.</p>
+      </div>
+      <div class="field">
+        <label for="cf-size">Account size</label>
+        <select id="cf-size" name="Account size" required>
+          <option value="">Select an account size</option>
+          <option>$10,000</option>
+          <option>$25,000</option>
+          <option>$50,000</option>
+          <option>$100,000</option>
+          <option>$150,000</option>
+          <option>$200,000</option>
+          <option>Larger than $200,000</option>
+          <option>Not decided yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cf-phase">Phase structure</label>
+        <select id="cf-phase" name="Phase structure" required>
+          <option value="">Select the structure</option>
+          <option>Two-phase evaluation</option>
+          <option>One-phase evaluation</option>
+          <option>Instant funding</option>
+          <option>Futures evaluation</option>
+          <option>Not sure which</option>
+        </select>
+      </div>
+      <div class="field field-full">
+        <label for="cf-message">Anything else</label>
+        <textarea id="cf-message" name="Message" rows="5" aria-describedby="cf-message-hint"></textarea>
+        <p class="field-hint" id="cf-message-hint">Previous attempts and how they ended, any deadline, or whether you want the evaluation passed or to learn to pass it yourself.</p>
+      </div>
+
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <button class="btn btn-primary" type="submit">Send enquiry</button>
+      <p class="form-note">Never include identity documents, bank details or your broker password. This form is processed by a third-party form service and emailed to us — see the <a href="/privacy.html">privacy policy</a>. Prefer email? Write to <a href="mailto:support@elitepropx.com">support@elitepropx.com</a>.</p>
+    </form>
+
     <h2>Before you write: four questions worth answering yourself</h2>
     <p>The enquiries that go well are the ones where the trader has already thought about the shape of the engagement. Four questions do most of that work.</p>
     <h3>1. Do you want this evaluation passed, or do you want to learn to pass it yourself?</h3>
@@ -304,10 +368,10 @@
   <div class="wrap cta-band-inner">
     <div>
       <h2>Send the firm and the account size</h2>
-      
+      <p>Telegram for a quick question, the form for a quote in writing.</p>
     </div>
     <div class="cta-actions">
-      <a class="btn btn-primary" href="mailto:support@elitepropx.com?subject=Evaluation%20enquiry">Email ElitePropX</a>
+      <a class="btn btn-primary" href="#enquiry-form">Send an enquiry</a>
       <a class="btn btn-telegram" href="https://t.me/voraspas" target="_blank" rel="noopener"><svg class="tg-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.94 4.3 18.6 20.1c-.25 1.1-.9 1.38-1.82.86l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L6.02 13.2.99 11.63c-1.1-.34-1.12-1.1.23-1.63L20.1 2.77c.91-.34 1.71.2 1.4 1.53Z"/></svg><span>Pass your evaluation</span></a>
     </div>
   </div>

@@ -385,6 +385,46 @@ html { scroll-padding-top: 84px; }
 .callout.warn { border-color: #f6d7a7; background: #fff8ec; }
 .callout.warn strong { color: #9a6208; }
 
+/* enquiry form */
+.enquiry-form {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.2rem;
+  margin: 1.7rem 0 1.9rem; padding: 1.5rem;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.enquiry-form .field { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
+.enquiry-form .field-full,
+.enquiry-form .form-status,
+.enquiry-form .form-note,
+.enquiry-form .btn { grid-column: 1 / -1; }
+.enquiry-form label {
+  font-size: 0.76rem; font-weight: 700; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--muted);
+}
+.enquiry-form input[type="text"],
+.enquiry-form input[type="email"],
+.enquiry-form select,
+.enquiry-form textarea {
+  font: inherit; font-size: 1rem; color: var(--ink); width: 100%;
+  background: #fff; border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm); padding: 0.6rem 0.7rem;
+}
+.enquiry-form textarea { min-height: 7rem; resize: vertical; }
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus { border-color: var(--brand-strong); }
+.enquiry-form [aria-invalid="true"] { border-color: var(--danger); }
+.enquiry-form .btn { justify-self: start; }
+.field-hint { margin: 0; font-size: 0.84rem; line-height: 1.5; color: var(--muted); }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-status { margin: 0; font-size: 0.95rem; }
+.form-status.is-error { color: var(--danger); font-weight: 600; }
+.form-status.is-success { color: var(--brand-dark); font-weight: 600; }
+.form-note { margin: 0; font-size: 0.84rem; line-height: 1.55; color: var(--muted); }
+@media (max-width: 640px) {
+  .enquiry-form { grid-template-columns: 1fr; padding: 1.15rem; }
+}
+
 .keypoints { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem 1.5rem; margin: 1.9rem 0; }
 .keypoints h2, .keypoints h3 { margin-top: 0; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
 .keypoints ul { margin-bottom: 0; }

@@ -61,6 +61,9 @@ for (const file of files) {
   const html = fs.readFileSync(file, 'utf8');
   const is404 = rel === '/404.html';
   const isRedirect = /http-equiv="refresh"/i.test(html);
+  // Confirmation and utility pages are noindex by design, like the 404: the
+  // article-depth floor is about what can rank, so it does not apply to them.
+  const isNoindex = /name="robots" content="noindex/.test(html);
   const issues = [];
 
   // Redirect stubs are intentionally thin: they must point at a page that
@@ -85,7 +88,7 @@ for (const file of files) {
   const wc = words(html.match(/<main[\s\S]*?<\/main>/i) ? html.match(/<main[\s\S]*?<\/main>/i)[0] : html);
   if (LEGAL_PAGES.has(rel)) {
     if (wc < LEGAL_MIN_WORDS) issues.push(`word count ${wc} < ${LEGAL_MIN_WORDS} (legal minimum)`);
-  } else if (!is404 && wc < MIN_WORDS) {
+  } else if (!is404 && !isNoindex && wc < MIN_WORDS) {
     issues.push(`word count ${wc} < ${MIN_WORDS}`);
   }
 
