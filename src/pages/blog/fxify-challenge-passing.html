@@ -1,10 +1,364 @@
 ---
-title: FXIFY Challenge Passing: The 2026 Rulebook
-desc: How to pass a FXIFY evaluation: the trailing loss floor, the daily stop, position sizing, a 20-session plan and the payout rules that decide what a pass is…
+title: "FXIFY Challenge Passing 2026: Six Programs, One Arithmetic"
+desc: "How to pass a FXIFY challenge: the six programs compared, trailing versus static floors, the 0.5% day rule, the $4,000 cap and the sizing that survives."
 path: /blog/fxify-challenge-passing.html
-type: page
-h1: How to pass a FXIFY challenge: the rulebook, the math and the plan
-noindex: true
-redirect: /blog/prop-firm-passing-complete-guide-2026.html
-generator: content-system
+type: article
+h1: Passing a FXIFY challenge: six programs, one arithmetic
+kicker: Firm guide
+crumb: FXIFY challenge
+section: Firm guides
+sectionUrl: /blog/
+date: 2026-10-24
+updated: 2026-10-24
+priority: 0.8
+sources: fxify
+schemaService: true
 ---
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">FXIFY guide · October 2026</p>
+    <h1>Passing a FXIFY challenge: six programs, one arithmetic</h1>
+    <p class="lede">FXIFY does not sell one evaluation. It sells a family of them, and the differences are not cosmetic: a trailing floor on one program and a static floor on another change the position size that survives, the day count that qualifies and the point at which an attempt dies. This guide walks through each program's published shape, the arithmetic that decides whether a plan works inside it, and the four rules that end more FXIFY attempts than any market call. Every figure is a published plan parameter; confirm the current terms on the program page before you buy, because FXIFY customises accounts at checkout.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+<div class="keypoints">
+  <h2>Key takeaways</h2>
+<ul>
+  <li>The program name is the only meaningful unit of comparison — "FXIFY" describes six different rulebooks.</li>
+  <li>Two Phase Standard trails and locks at breakeven; Two Phase Classic and Two Phase Pro are static, which is a different risk problem entirely.</li>
+  <li>Two Phase Pro counts a day toward its three-day minimum only if the account closes at least 0.5% up.</li>
+  <li>Pro also caps daily profit at $4,000 and moves the account to read-only for the rest of the day if you exceed it.</li>
+  <li>Only the Classic funded stage carries a consistency condition (25%); the Pro evaluation is free of one.</li>
+  <li>No time limit on the One, Two and Three Phase evaluations — the calendar is yours, the arithmetic is not.</li>
+</ul>
+</div>
+<div class="toc">
+  <p>Contents</p>
+<ol>
+  <li><a href="#programs">Which program you are actually buying</a></li>
+  <li><a href="#floors">Trailing versus static: the two floors</a></li>
+  <li><a href="#ladder">The floor, worked as a ladder</a></li>
+  <li><a href="#pace">Target pace against daily budget</a></li>
+  <li><a href="#days">Minimum days and the 0.5% rule</a></li>
+  <li><a href="#cap">The $4,000 daily cap on Pro</a></li>
+  <li><a href="#sizing">Sizing a plan per program</a></li>
+  <li><a href="#consistency">The one consistency rule that exists</a></li>
+  <li><a href="#conduct">Conduct rules that void accounts</a></li>
+  <li><a href="#failures">How FXIFY attempts actually fail</a></li>
+  <li><a href="#payout">From pass to first withdrawal</a></li>
+  <li><a href="#compare">FXIFY against the field</a></li>
+  <li><a href="#plan">A twenty-session plan</a></li>
+  <li><a href="#service">The flat-fee route, disclosed</a></li>
+  <li><a href="#faq">Frequently asked about FXIFY</a></li>
+</ol>
+</div>
+
+<h2 id="programs">Which program you are actually buying</h2>
+<p>FXIFY's own comparison of its two-phase lineup makes the point better than any outside review: Classic, Standard and Pro sit under the same brand, and they disagree about the drawdown type, the targets, the minimum day count, the performance split and the payout rhythm. A trader who says "I'm doing a FXIFY challenge" has told you almost nothing. The plan at the checkout is the contract.</p>
+<div class="table-scroll">
+  <table>
+    <caption>FXIFY two-phase programs as published in October 2026</caption>
+    <thead>
+      <tr><th>Attribute</th><th>Two Phase Classic</th><th>Two Phase Standard</th><th>Two Phase Pro</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Drawdown type</td><td>Static</td><td>Trailing, locks at breakeven</td><td>Static</td></tr>
+      <tr><td>Phase 1 target</td><td>5%</td><td>10%</td><td>4%</td></tr>
+      <tr><td>Phase 2 target</td><td>10%</td><td>5%</td><td>8%</td></tr>
+      <tr><td>Daily loss limit</td><td>4%</td><td>4%</td><td>4%</td></tr>
+      <tr><td>Maximum loss limit</td><td>10%</td><td>10%</td><td>8%</td></tr>
+      <tr><td>Minimum days per phase</td><td>4</td><td>5</td><td>3, at +0.5% or better</td></tr>
+      <tr><td>Consistency rule</td><td>None in evaluation, 25% when funded</td><td>None</td><td>None</td></tr>
+      <tr><td>Maximum performance split</td><td>Up to 100%</td><td>Up to 90%</td><td>80%</td></tr>
+      <tr><td>Payout rhythm</td><td>14 or 30 days</td><td>14 or 30 days</td><td>Every 10 days</td></tr>
+      <tr><td>Account sizes</td><td>$5,000 – $100,000</td><td>$5,000 – $400,000</td><td>$10,000 – $250,000</td></tr>
+      <tr><td>Built for</td><td>Highest split, disciplined pace</td><td>Scale and wider room</td><td>Lower targets, fewer constraints</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Two entries in that table do most of the work. The first is the drawdown type, because a trailing floor changes how much room the account has at the moment the target is closest — the subject of the next two sections. The second is the qualifying-day rule on Pro, which is the only place in the lineup where a day can exist without counting. Everything else is a difference in degree rather than in kind.</p>
+<p>Outside the two-phase family there are further models: a One Phase, a Three Phase, Instant Funding and Lightning. They are structured differently enough that this guide does not try to fold them in. If your interest is a single-phase evaluation with one larger target, the arithmetic in <a href="/blog/fundednext-1step-vs-2step.html">the one-step versus two-step comparison</a> is the right starting point, and the <a href="/prop-firm-comparison-2026.html">rulebook comparison</a> will tell you how FXIFY's version lines up against FTMO's and FundingPips'.</p>
+<figure>
+  <img src="/assets/img/rulebook-models.svg" alt="Diagram of four evaluation models showing how target, daily limit and maximum limit interact differently in one-phase, two-phase, three-phase and trailing structures" width="1000" height="540" loading="lazy">
+  <figcaption>The model decides the shape of the risk problem. FXIFY publishes several, and each one moves the binding constraint to a different place in the calendar.</figcaption>
+</figure>
+
+<h2 id="floors">Trailing versus static: the two floors</h2>
+<p>A static maximum loss is a fixed line in dollars, set from the starting balance and never moved. Profit does not raise it and a drawdown does not lower it. A trailing maximum loss rises with the highest equity the account has reached, which means the cushion behind the position shrinks as the account makes money. FXIFY's Standard plan trails and, per the firm's own comparison, locks at breakeven once the account has climbed far enough; Classic and Pro are static from day one.</p>
+<p>Why this matters more than the headline percentage: on a static 8% floor, an account that is 6% up still has the original 8% of headroom beneath the starting balance, so a normal losing sequence cannot reach it. On a trailing 10% floor, an account that is 6% up has four points of space between current equity and the trailing line, because the line has climbed with the peak. The second account is closer to failure while it is winning, which is the counter-intuitive part that costs traders attempts.</p>
+<p>The lock at breakeven is the mitigation. Once the trailing line reaches the starting balance it stops there, so a profitable Standard account cannot be failed by giving back profit alone — it can only be failed by trading into the static risk that remains. That makes the dangerous window the middle of the run, after the account has moved up but before the lock engages, and that is precisely where most evaluation plans are most aggressive, because the target is in sight.</p>
+<div class="callout">
+  <p><strong>The practical consequence</strong> is a rule rather than a calculation: on a trailing plan, reduce risk as profit accumulates, not after it is spent. A plan that risks a constant fraction of the daily budget for twenty sessions will spend most of its exposure in exactly the phase where the trailing line is closest behind it.</p>
+</div>
+<figure>
+  <img src="/assets/img/drawdown-types.svg" alt="Three equity curves comparing a static failure floor with an intraday trailing floor and an end-of-day trailing floor on the same profit path" width="1000" height="560" loading="lazy">
+  <figcaption>The same profit path produces three different failure points depending on how the floor moves. On FXIFY, Standard trails, Classic and Pro do not.</figcaption>
+</figure>
+
+<h2 id="ladder">The floor, worked as a ladder</h2>
+<p>Numbers settle the argument faster than adjectives. Take a $100,000 Two Phase Standard account: 10% maximum trailing, 4% daily, and a first target of 10%. The table below shows the trailing line and the real headroom at the end of each week of a patient run, assuming the account adds 2% a week and never gives any of it back.</p>
+<div class="table-scroll">
+  <table>
+    <caption>$100,000 Two Phase Standard — trailing line versus real headroom</caption>
+    <thead>
+      <tr><th>End of week</th><th>Equity</th><th>Trailing line</th><th>Headroom to the line</th><th>Distance to the 10% target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Start</td><td>$100,000</td><td>$90,000</td><td>$10,000</td><td>$10,000</td></tr>
+      <tr><td>1</td><td>$102,000</td><td>$92,000</td><td>$10,000</td><td>$8,000</td></tr>
+      <tr><td>2</td><td>$104,000</td><td>$94,000</td><td>$10,000</td><td>$6,000</td></tr>
+      <tr><td>3</td><td>$106,000</td><td>$96,000</td><td>$10,000</td><td>$4,000</td></tr>
+      <tr><td>4</td><td>$108,000</td><td>$98,000</td><td>$10,000</td><td>$2,000</td></tr>
+      <tr><td>5</td><td>$110,000</td><td>$100,000 (locked)</td><td>$10,000</td><td>Target met</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The column that surprises people is the fourth. Headroom stays at $10,000 throughout, because the line rises exactly as fast as the equity does — the trailing floor preserves the same distance rather than eating it. What shrinks is the distance to the target. So the risk on a trailing plan is not that the cushion disappears; it is that the cushion is the same size while the remaining prize gets smaller, which changes the ratio of risk to reward on every late trade.</p>
+<p>Compare the same run on Two Phase Pro, where an 8% floor is static and the second-phase target is 8%. A $100,000 account that reaches $104,000 has a floor at $92,000 — twelve points of space — and four points left to earn. The trade that finishes the evaluation cannot realistically fail it, because the loss would have to exceed three times the remaining target.</p>
+<div class="callout warn">
+  <p><strong>Read the ladder, not the percentage.</strong> A 10% trailing limit and an 8% static limit are not ranked by size. At the start of an attempt the trailing plan looks more generous; at the end of a winning run the static plan is the safer of the two by a wide margin.</p>
+</div>
+
+<h2 id="pace">Target pace against daily budget</h2>
+<p>The single most useful number on any evaluation is the ratio between the pace required to hit the target and the daily loss budget you are allowed to spend reaching it. A low ratio means a plan can absorb ordinary variance; a high ratio means the plan is a sequence of forced bets.</p>
+<p>The arithmetic is short. Required average pace equals the target divided by the number of sessions you intend to use. On Two Phase Pro, phase one asks for 4%; over twenty sessions that is 0.2% a session. With a 4% daily limit, a session at required pace spends a twentieth of the daily budget. That is an enormous margin — the plan can be wrong nineteen times out of twenty at that size and still be intact.</p>
+<div class="table-scroll">
+  <table>
+    <caption>Required pace as a share of the daily budget, by program and session count</caption>
+    <thead>
+      <tr><th>Phase</th><th>Target</th><th>Daily limit</th><th>20 sessions</th><th>30 sessions</th><th>40 sessions</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Classic, phase 1</td><td>5%</td><td>4%</td><td>6.3% of budget</td><td>4.2%</td><td>3.1%</td></tr>
+      <tr><td>Classic, phase 2</td><td>10%</td><td>4%</td><td>12.5% of budget</td><td>8.3%</td><td>6.3%</td></tr>
+      <tr><td>Standard, phase 1</td><td>10%</td><td>4%</td><td>12.5% of budget</td><td>8.3%</td><td>6.3%</td></tr>
+      <tr><td>Standard, phase 2</td><td>5%</td><td>4%</td><td>6.3% of budget</td><td>4.2%</td><td>3.1%</td></tr>
+      <tr><td>Pro, phase 1</td><td>4%</td><td>4%</td><td>5.0% of budget</td><td>3.3%</td><td>2.5%</td></tr>
+      <tr><td>Pro, phase 2</td><td>8%</td><td>4%</td><td>10.0% of budget</td><td>6.7%</td><td>5.0%</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Every row in that table is comfortable, which is the honest finding. A patient trader on any FXIFY two-phase program is working at a fraction of the permitted daily risk; the reason attempts fail is almost never that the firm made the target impossible. It is that the trader compressed forty sessions into eight and converted a 5% budget share into a 60% one.</p>
+<p>The instructive contrast is the deep phase. Classic phase two asks for 10% after a 5% phase one, and Standard phase one asks for 10% cold. Those are the two hardest single steps in the lineup, and both are still only an eighth of the daily budget at a twenty-session pace. Nothing about them requires a big position size; everything about them tempts one.</p>
+<figure>
+  <img src="/assets/img/challenge-math.svg" alt="Chart showing how a profit target and a maximum loss define the risk budget on a hundred thousand dollar account" width="940" height="500" loading="lazy">
+  <figcaption>Target and limit together set the budget. The pace you choose decides how much of it each session is allowed to spend.</figcaption>
+</figure>
+
+<h2 id="days">Minimum days and the 0.5% rule</h2>
+<p>All three two-phase programs set a minimum number of trading days per phase: four on Classic, five on Standard, three on Pro. Days need not be consecutive, and the requirement is not a cap — you can trade every session of the month if you want to. Its function is to stop a pass being produced by one oversized day and to give the firm a record to review.</p>
+<p>Pro adds a condition that no other program in the lineup carries. Per FXIFY's published rule, a day counts on Pro only if the account closes that day at least 0.5% in profit, and the condition applies to both the evaluation and the funded stage. A day closed flat, or up 0.2%, is a trading day that did not count. This changes the shape of the last week of an attempt: a trader at 7.6% of an 8% target still needs qualifying days, and closing the remaining 0.4% on a quiet session does not add one.</p>
+<div class="table-scroll">
+  <table>
+    <caption>Day-count arithmetic on a $100,000 Two Phase Pro account, 0.5% per qualifying day</caption>
+    <thead>
+      <tr><th>Approach</th><th>Qualifying days needed</th><th>Profit those days must produce</th><th>Feasible?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Three days at exactly 0.5%</td><td>3</td><td>1.5% of the 4% phase-one target</td><td>Reaches the day minimum, not the target</td></tr>
+      <tr><td>Three days at 1.33%</td><td>3</td><td>4% — the whole phase-one target</td><td>Yes, but each day carries real risk</td></tr>
+      <tr><td>Six days at 0.67%</td><td>6</td><td>4% with two spare qualifying days</td><td>Comfortable, and the intended shape</td></tr>
+      <tr><td>Ten days at 0.4% plus one at 4%</td><td>1 plus one blowout</td><td>4% but only one day counts</td><td>Fails the day minimum despite the profit</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The last row is the trap. A trader can hit an 8% phase-two target and still not advance, because only one of those days cleared the qualifying threshold. The fix is not to trade bigger; it is to plan the calendar in advance and treat each qualifying day as a deliverable in its own right. Six days at two-thirds of a percent is a dull plan, and dull is the point.</p>
+<p>On Standard and Classic the day requirement is simpler — any trading day counts — but the count still interacts with the trailing floor. If the account is required to trade five separate days after the target is reached, those days carry exposure with no upside left to earn, and on a trailing plan the floor is at its closest. A trader who reaches the target on day nine of a five-day minimum should treat the remaining sessions as risk management rather than as trading.</p>
+
+<h2 id="cap">The $4,000 daily cap on Pro</h2>
+<p>Two Phase Pro carries a rule that is unusual enough to deserve its own section: a $4,000 daily profit cap. Exceed it and the account moves to read-only for the rest of that day. The purpose, as FXIFY describes it, is to prevent outsized single-day gains from concentrating performance — a risk control aimed at the same behaviour a consistency rule targets, implemented as a hard stop rather than a payout test.</p>
+<p>Read carefully, it is not a failure condition. Nothing is voided, no target is lost, and the account resumes the next day. But it changes what a position can earn, and that has three consequences worth planning for.</p>
+<p>First, the cap is a dollar figure across all account sizes, so its bite depends entirely on the balance. On a $10,000 account, $4,000 is 40% of the balance — the cap is unreachable without breaking the 8% maximum loss on the way, so it never binds. On a $250,000 account it is 1.6%, and a single good trade on a normal position can reach it. The rule is effectively a large-account constraint.</p>
+<p>Second, it interacts with stop placement. If a trade is sized so that its target is $5,000 on a large account, the last thousand cannot be realised that day. The trade is not stopped out — the account is frozen — so the remaining exposure sits unrealised until the next session opens. For a position held overnight that is a gap exposure nobody planned for.</p>
+<p>Third, it makes the Pro evaluation incompatible with a single-trade pass. A trader who intends to clear 8% with one large position will be read-only at $4,000 and finish the target in instalments, which means the day count and the cap push in the same direction: many medium days, no outliers.</p>
+<div class="callout">
+  <p><strong>Size to the cap on large accounts.</strong> If $4,000 is less than the value of your normal target on a $150,000 or $250,000 Pro account, either reduce the position so the target fits inside the cap or plan to hold the remainder overnight. Discovering the rule by watching the platform refuse an order is a worse way to learn it.</p>
+</div>
+
+<h2 id="sizing">Sizing a plan per program</h2>
+<p>Risk per trade should be derived from the binding limit, not chosen by habit. On every FXIFY two-phase program the daily stop is 4%, so the daily budget on a $100,000 account is $4,000. A plan that risks 1% a trade gets four attempts in a day; one that risks 2% gets two. The maximum limit then decides how many losing days the account can survive, and that number differs sharply by program.</p>
+<div class="table-scroll">
+  <table>
+    <caption>Sizing on a $100,000 account, three programs, one risk rule</caption>
+    <thead>
+      <tr><th>Parameter</th><th>Classic</th><th>Standard</th><th>Pro</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Daily budget at 4%</td><td>$4,000</td><td>$4,000</td><td>$4,000</td></tr>
+      <tr><td>Risk per trade at 1%</td><td>$1,000</td><td>$1,000</td><td>$1,000</td></tr>
+      <tr><td>Consecutive losses the day survives</td><td>3 plus a reduced fourth</td><td>3 plus a reduced fourth</td><td>3 plus a reduced fourth</td></tr>
+      <tr><td>Maximum limit</td><td>10% static — $10,000</td><td>10% trailing — $10,000 at start</td><td>8% static — $8,000</td></tr>
+      <tr><td>Full losing days tolerated at 1% risk, 3 trades</td><td>3</td><td>3, and fewer as profit accrues</td><td>2, with change</td></tr>
+      <tr><td>Sensible daily stop</td><td>$2,000</td><td>$2,000, cut to $1,500 after week two</td><td>$1,600</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The table's last row is the one that gets ignored. A daily stop set at half the permitted limit means the account can lose twelve full days of planned losses on Classic before it approaches the maximum — far more than any evaluation needs. A daily stop set at the limit means three bad days end the attempt even though the rules would have allowed twelve. The firm's number is a ceiling; your number should be a policy.</p>
+<p>Standard deserves its own line because the sensible daily stop shrinks over time. Early in an attempt the trailing line is $10,000 below the balance and a $2,000 day is harmless. After two profitable weeks the line is at breakeven or close to it, the account is 4% up, and the same $2,000 day gives back half the progress against a floor that will not move down. Reducing risk as the target approaches is not caution for its own sake; it is arithmetic.</p>
+<figure>
+  <img src="/assets/img/risk-budget.svg" alt="Diagram dividing a drawdown budget into per-trade risk, session risk and an untouched reserve for losing streaks" width="940" height="520" loading="lazy">
+  <figcaption>A budget with a reserve survives a streak. A budget allocated to the last dollar does not, and the difference is one number on a plan sheet.</figcaption>
+</figure>
+
+<h2 id="consistency">The one consistency rule that exists</h2>
+<p>FXIFY's two-phase lineup is largely free of consistency conditions, with one exception. Two Phase Classic imposes a 25% consistency requirement at the funded stage, not during the evaluation. Two Phase Standard and Two Phase Pro carry none in either stage; Pro instead uses the dollar cap described above as its concentration control.</p>
+<p>The arithmetic of a 25% rule is a single division. If the largest day may be no more than a quarter of total profit at the moment of the payout request, then total profit must be at least four times the best day. A trader whose best day is $3,000 needs $12,000 of profit in the cycle before the request clears that test. That is the whole rule, and it is the reason a fast pass followed by a fast payout attempt often produces a refused request rather than a payment.</p>
+<div class="table-scroll">
+  <table>
+    <caption>25% consistency on Classic: profit required for a given best day</caption>
+    <thead>
+      <tr><th>Best day</th><th>Total profit required</th><th>Equivalent balance growth on $100,000</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$500</td><td>$2,000</td><td>2%</td></tr>
+      <tr><td>$1,000</td><td>$4,000</td><td>4%</td></tr>
+      <tr><td>$2,000</td><td>$8,000</td><td>8%</td></tr>
+      <tr><td>$3,000</td><td>$12,000</td><td>12%</td></tr>
+      <tr><td>$5,000</td><td>$20,000</td><td>20%</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The design lesson is to cap the best day rather than chase the total. A plan that closes every session at a self-imposed ceiling — say $1,200 on a $100,000 account — keeps the required total at $4,800, which is a month of ordinary work. A plan that lets one session run to $5,000 needs a 20% cycle to satisfy the same rule, which is a different and much harder objective.</p>
+<p>If the consistency rule is the part of this arithmetic you want worked in more detail, the <a href="/blog/prop-firm-consistency-rule-guide.html">consistency rule guide</a> covers the three ways firms measure the share and the difference between a pass test and a payout test.</p>
+
+<h2 id="conduct">Conduct rules that void accounts</h2>
+<p>Evaluation failures are usually arithmetic. Conduct failures are categorical: the account is closed and no amount of profit changes it. FXIFY's rules sit in the same territory as the rest of the industry, and the ones that matter for a plan are these.</p>
+<p><strong>Account access.</strong> FXIFY's own FAQ tells traders to safeguard credentials and not to authorise anyone else to access the account. That sentence is the one to read twice before hiring anyone to trade an evaluation, and it is the reason a service should put the clause in writing rather than describe the arrangement as routine. Where a firm prohibits third-party trading, a pass produced in breach can be voided at the payout stage, when the money is largest.</p>
+<p><strong>Copying and correlation.</strong> Copying between your own evaluation accounts is normally permitted; copying between accounts owned by different people, or onto a funded account, normally is not. Correlated positions across accounts you own can be read as hedging even when the intent was diversification, so running two evaluations on the same instrument at the same time is a conduct risk disguised as efficiency.</p>
+<p><strong>Platform behaviour.</strong> Latency exploitation, price-feed manipulation, and anything that looks like an attempt to trade a stale quote are prohibited outright. On a 30:1 leverage account with a raw feed these are not hypothetical temptations during a news release.</p>
+<p><strong>News and holding.</strong> Restrictions vary by program and change. The safe assumption is that a scheduled release window is closed, and that a position held through it is a rules question rather than a market question. If holding over a weekend is permitted, size for the gap rather than the stop: a gap can open beyond a stop, and the loss is then the gap.</p>
+<p><strong>Verification.</strong> A pass is not a funded account until identity checks clear. Documents that expire, addresses that do not match, and screenshots in place of documents delay the first payout by weeks, and the delay is entirely self-inflicted.</p>
+
+<h2 id="failures">How FXIFY attempts actually fail</h2>
+<p>Four failure modes account for most dead FXIFY accounts, and only one of them is about the market.</p>
+<p><strong>Trading the daily limit instead of a daily stop.</strong> The 4% figure reads like permission. A trader who sets no personal stop and takes three losses at 1.3% has spent the day's budget by 10am and then either stops — losing the day — or continues and breaches. A $2,000 self-imposed stop makes the same three losses survivable and leaves the afternoon available tomorrow.</p>
+<p><strong>Ignoring the qualifying-day rule on Pro.</strong> The $4,000 cap and the 0.5% condition are both easy to learn after the fact. A trader who finishes phase one with 4.1% across two days of 2% each has the target and not the day count, and the extra days must then be traded with the account already at target and the trailing risk highest.</p>
+<p><strong>Treating the second phase as a continuation.</strong> Phase two on Standard asks for 5% after a 10% phase one, which feels like the easy half, and the instinct is to press. It is the easy half in target terms and the harder half in floor terms, because the trailing line has been climbing for a month. The correct response to a smaller target is a smaller position, not a larger one.</p>
+<p><strong>Revenge trading inside the same session.</strong> The most expensive single decision in an evaluation is reopening a position after the daily stop. It converts a recoverable day into a breach, and it is the one failure that no rule change by the firm can prevent.</p>
+<div class="callout warn">
+  <p><strong>One account at a time.</strong> Two simultaneous FXIFY evaluations on correlated instruments multiply the chance of two simultaneous breaches and produce a conduct risk on top. Sequential funding — pass one, trade it, then buy the next — is slower to start and faster to a first payout.</p>
+</div>
+
+<h2 id="payout">From pass to first withdrawal</h2>
+<p>The funded stage has its own conditions, and they differ by program. FXIFY's two-phase program page describes an on-demand first withdrawal once the first live trade closes, a $50 minimum and five minimum trading days; the Pro program sets a ten-day withdrawal rhythm with the first two withdrawals capped at 5% of the initial balance or $8,000, whichever is lower. The purchase fee is reimbursed with the first payout on the one, two and three-phase plans.</p>
+<p>Three practical notes follow from those terms. The first is that the fee refund is a first-payout event, so a trader who never requests a payout never sees it — the fee is not free, it is deferred. The second is that a cap on the first two withdrawals changes the strategy for a large account: on a $250,000 Pro account, 5% is $12,500 and the $8,000 ceiling binds, so early withdrawals are deliberately modest and the compounding case is stronger than the cash-out case. The third is that the ten-day rhythm on Pro is a genuine advantage for a trader who wants frequent small payments, and a genuine disadvantage for one who wants a single large one.</p>
+<div class="table-scroll">
+  <table>
+    <caption>Funded-stage terms by program</caption>
+    <thead>
+      <tr><th>Term</th><th>Classic</th><th>Standard</th><th>Pro</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Maximum split</td><td>Up to 100%</td><td>Up to 90%</td><td>80%</td></tr>
+      <tr><td>Rhythm</td><td>14 or 30 days</td><td>14 or 30 days</td><td>Every 10 days</td></tr>
+      <tr><td>First-withdrawal cap</td><td>Per payout cycle</td><td>On request after first trade</td><td>5% of balance or $8,000, first two</td></tr>
+      <tr><td>Consistency at payout</td><td>25%</td><td>None</td><td>None</td></tr>
+    </tbody>
+  </table>
+</div>
+<figure>
+  <img src="/assets/img/payout-timeline.svg" alt="Timeline from funded account issue through minimum trading days, profit threshold, consistency check and verification to the first withdrawal" width="1000" height="420" loading="lazy">
+  <figcaption>The payout is a process with gates, not an event. Each gate is a place where a clean pass can still produce a delayed payment.</figcaption>
+</figure>
+<p>What to do in the first funded month is unglamorous: complete verification before trading, satisfy the day count with deliberate small green days, request a modest first withdrawal to test the pipe, and only then think about size. The first payout's job is to prove the process works. Maximising it is optimising a number before testing the mechanism that delivers it.</p>
+
+<h2 id="compare">FXIFY against the field</h2>
+<p>FXIFY's structural advantage is choice. A trader with a burst-style edge can take Pro's 4%/8% static structure with no consistency rule; a trader who wants the largest split can take Classic and accept the 25% funded condition; a trader with capital appetite can take Standard to $400,000 and accept a trailing floor. Few firms publish three genuinely different two-phase rulebooks.</p>
+<p>Its structural disadvantage is the same thing seen from the other side: the lineup is easy to mis-buy. A trader who compares FXIFY to FTMO on headline targets will conclude FXIFY is easier, buy Standard, and discover that a 10% first target on a trailing floor is a harder attempt than FTMO's 10% on a static one. FTMO's advantage is that its rulebook is singular, documented in one place and static from the first trade; FundedNext's is a genuinely different split between a two-step model on a 10% maximum and a one-step model on a 6% maximum with a 3% daily stop.</p>
+<div class="table-scroll">
+  <table>
+    <caption>How the three most-compared firms differ in structure, not size</caption>
+    <thead>
+      <tr><th>Question</th><th>FXIFY</th><th>FTMO</th><th>FundedNext</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>How many evaluations</td><td>Six models</td><td>One two-step</td><td>One-step and two-step</td></tr>
+      <tr><td>Floor type</td><td>Trailing or static by plan</td><td>Static</td><td>Static</td></tr>
+      <tr><td>Daily limit</td><td>4% on the two-phase plans</td><td>5% of equity</td><td>5% two-step, 3% one-step</td></tr>
+      <tr><td>Minimum days</td><td>3 to 5 per phase by plan</td><td>Four per phase</td><td>Five two-step, two one-step</td></tr>
+      <tr><td>Where it bites</td><td>Choosing the wrong plan</td><td>Equity-based daily stop</td><td>The one-step arithmetic</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>A comparison that starts from the plan rather than the brand will usually find that the three are close on generosity and far apart on the shape of the constraint. That is the useful level at which to choose, and it is why the <a href="/prop-firm-rules-matrix.html">rules matrix</a> lists programs rather than firms.</p>
+
+<h2 id="plan">A twenty-session plan</h2>
+<p>What follows is a plan template rather than a promise. It assumes a $100,000 Two Phase Pro account, 4% phase-one target, 4% daily limit, three qualifying days at 0.5% or better, and a trader with one hour a day.</p>
+<div class="table-scroll">
+  <table>
+    <caption>Twenty-session template for phase one on Pro</caption>
+    <thead>
+      <tr><th>Sessions</th><th>Objective</th><th>Risk per trade</th><th>Daily stop</th><th>Cumulative target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1 – 2</td><td>Two qualifying days, no damage</td><td>0.4%</td><td>1.2%</td><td>1.0%</td></tr>
+      <tr><td>3 – 6</td><td>Compounding at planned size</td><td>0.5%</td><td>1.5%</td><td>2.0%</td></tr>
+      <tr><td>7 – 12</td><td>Reach the target on schedule</td><td>0.5%</td><td>1.5%</td><td>4.0%</td></tr>
+      <tr><td>13 – 16</td><td>Slow down, bank nothing new</td><td>0.25%</td><td>0.75%</td><td>Hold</td></tr>
+      <tr><td>17 – 20</td><td>Close qualifying days if short</td><td>0.2%</td><td>0.6%</td><td>Hold</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Two features of that schedule are deliberate. The target is reached by session twelve, leaving eight sessions for the day count and for recovery from an unlucky start. And risk halves after the target is met, because the remaining sessions exist to satisfy a rule rather than to earn. A plan with no low-risk tail spends its highest exposure on the part of the calendar where there is nothing left to win.</p>
+<p>The same schedule on Standard stretches to about thirty sessions, because phase one asks for 10% rather than 4%, and the trailing floor requires the risk reduction in the middle rather than at the end. On Classic, phase one is 5% and phase two asks for 10%, so the front-loaded rhythm is reversed: the second phase needs the patient pace and the first phase can be routine.</p>
+
+<h2 id="service">The flat-fee route, disclosed</h2>
+<p>Some traders want the evaluation traded for them. The arithmetic is worth stating plainly: a flat fee of <strong>$220</strong> covers the attempt and the retries, against a Pro attempt at $599 on a $100,000 account and a Standard attempt in the same range. Two failed attempts on a large account cost more than a flat pass, which is the entire commercial case, and it is a case about variance rather than about skill.</p>
+<p>The part that has to be said out loud is the rule. FXIFY's own material asks traders not to authorise anyone else to access the account. Where a firm prohibits third-party trading, a pass produced in breach can be voided when the payout is requested, and the risk of that sits with the account holder. A service that does not tell you this before payment is not being straight with you. The <a href="/services/passing-prop-firm-services.html">prop firm passing service</a> explains what is included and where the disclosure sits; the <a href="/services/prop-firm-challenge-passing-service.html">challenge passing service</a> sets out the per-firm position.</p>
+<p>There is also a version of this decision that has nothing to do with services. A trader whose plan already survives a 4% daily budget at a fifth of its capacity does not need the evaluation traded; they need to run the plan for twenty sessions and find out. The service exists for the case where the constraint is time or temperament, not knowledge. Anyone who tells you it fixes a sizing problem is selling the wrong product.</p>
+<div class="stat-band">
+  <div><strong>$220</strong><span>Flat fee, any FXIFY program</span></div>
+  <div><strong>3</strong><span>Programs covered in this guide</span></div>
+  <div><strong>4%</strong><span>Daily limit on every two-phase plan</span></div>
+  <div><strong>0.5%</strong><span>Qualifying-day floor on Pro</span></div>
+</div>
+</section>
+
+<section class="section soft">
+  <div class="wrap narrow">
+    <h2 id="faq">Frequently asked about FXIFY</h2>
+    <details class="faq"><summary>Which FXIFY program is easiest to pass?</summary><div class="faq-a"><p>Two Phase Pro, on structure. It combines the lowest first-phase target in the lineup at 4% with a static 8% floor and no consistency rule, so the required pace is a twentieth of the daily budget over twenty sessions. The complication is the day count: a day only qualifies at +0.5% or better, so the plan has to produce several small green days rather than one large one.</p></div></details>
+    <details class="faq"><summary>Is the Standard plan's drawdown trailing or static?</summary><div class="faq-a"><p>Trailing, and it locks at breakeven once the account has climbed far enough. That means a profitable Standard account cannot be failed by giving profit back alone; the remaining risk is the static distance that survives the lock. Classic and Pro are static from the first trade.</p></div></details>
+    <details class="faq"><summary>What does the $4,000 daily profit cap mean in practice?</summary><div class="faq-a"><p>If a Pro account earns more than $4,000 in a day, it becomes read-only until the next session. Nothing is voided and no target is lost, but the excess cannot be realised that day. On a $250,000 account the cap is 1.6% of the balance, so it binds on ordinary position sizes; on a $10,000 account it is unreachable without breaching the maximum loss first.</p></div></details>
+    <details class="faq"><summary>Do I have to trade on consecutive days?</summary><div class="faq-a"><p>No. Minimum days can be spread across the whole evaluation and there is no upper limit on how many sessions you use, because none of the one, two or three-phase evaluations carries a time limit. The requirement is a floor on activity, not a schedule.</p></div></details>
+    <details class="faq"><summary>How is the 0.5% qualifying day measured?</summary><div class="faq-a"><p>By the closing balance for that day against the previous close, per FXIFY's published Pro rules, and the condition applies to the funded stage as well as the evaluation. A day closed up 0.3% is a trading day that does not count toward the three, which is why the last week of an attempt should be planned before it starts.</p></div></details>
+    <details class="faq"><summary>Which FXIFY plan carries a consistency rule?</summary><div class="faq-a"><p>Two Phase Classic, at the funded stage only, with a 25% limit on the largest day's share of total profit. Standard and Pro carry none in either stage. Pro substitutes a hard daily profit cap as its concentration control, which constrains a single day directly rather than testing it at payout.</p></div></details>
+    <details class="faq"><summary>Can I hold positions over the weekend?</summary><div class="faq-a"><p>It depends on the program and the instrument, so treat the current program terms as the answer rather than last year's forum post. Where holding is allowed, size for the weekend gap rather than the stop: a gap can open past the stop, and the realised loss becomes the gap rather than the planned risk.</p></div></details>
+    <details class="faq"><summary>What happens if I breach the daily loss limit?</summary><div class="faq-a"><p>The attempt ends. There is no reset within the same account, which is why the self-imposed daily stop should sit at half the permitted figure. A trader who stops at 2% on a 4% limit gets a second chance tomorrow; a trader who trades to the limit gets one bad session per account.</p></div></details>
+    <details class="faq"><summary>Is the purchase fee refunded?</summary><div class="faq-a"><p>FXIFY states that the purchase fee is reimbursed with your first payout on the one, two and three-phase plans, and that there are no hidden fees beyond commissions, spreads and swaps. The refund is therefore a payout event: no withdrawal request, no refund.</p></div></details>
+    <details class="faq"><summary>How long does a FXIFY evaluation usually take?</summary><div class="faq-a"><p>With no time limit and a patient pace, a two-phase attempt typically runs twenty to thirty sessions for the pair of phases, dominated by the day requirements rather than by the targets. Faster is possible, but compressing the calendar raises the per-session share of the daily budget, which is the variable that decides survival.</p></div></details>
+    <details class="faq"><summary>Can a passing service trade a FXIFY evaluation?</summary><div class="faq-a"><p>We cover any firm, and we put the account-access clause in writing before payment rather than after. FXIFY asks traders not to authorise third parties to access an account, and where a firm prohibits it a pass obtained in breach can be voided at payout. The client carries that risk, and the <a href="/blog/best-prop-firm-passing-services.html">service comparison</a> explains how the disclosure is handled.</p></div></details>
+    <details class="faq"><summary>Which is better for a scalper, Classic or Pro?</summary><div class="faq-a"><p>Classic, if payouts matter more than targets: its funded stage allows up to a 100% split and its static floor does not punish a high-frequency style. Pro is the better evaluation for a burst trader because 4% is the lowest first target in the lineup, but the 80/20 split and the ten-day withdrawal rhythm are a real cost over a year of trading.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Want the challenge traded for you?</h2>
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/services/passing-prop-firm-services.html">What the prop firm passing service includes</a></li>
+      <li><a href="/services/prop-firm-challenge-passing-service.html">Having a FXIFY evaluation traded for a flat $220</a></li>
+      <li><a href="/blog/fundednext-review.html">FundedNext review: plans, costs and payout reality</a></li>
+      <li><a href="/blog/ftmo-review.html">FTMO review: the rulebook, the cost and the verdict</a></li>
+      <li><a href="/blog/prop-firm-daily-drawdown-explained.html">Daily drawdown explained</a></li>
+      <li><a href="/blog/prop-firm-consistency-rule-guide.html">The consistency rule, worked out</a></li>
+      <li><a href="/prop-firm-comparison-2026.html">Prop firm comparison 2026</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/prop-firm-calculator.html">Challenge calculator: target, risk and pace</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
+    </ul>
+    <p class="disclaimer">FXIFY and other firms are named for identification only. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Targets, drawdown rules, day requirements and payout terms change, and FXIFY allows accounts to be customised at checkout; verify every figure against your own purchase terms before trading. Trading involves substantial risk of loss.</p>
+  </div>
+</section>

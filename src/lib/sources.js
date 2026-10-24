@@ -24,6 +24,13 @@ const FIRMS = {
     name: 'FundedNext',
     items: [{ label: 'CFD trading objectives', href: 'https://fundednext.com/cfds' }],
   },
+  fxify: {
+    name: 'FXIFY',
+    items: [
+      { label: 'Two Phase program rules', href: 'https://fxify.com/programs/two-phase/' },
+      { label: '2-Phase Pro parameters', href: 'https://fxify.com/blog/introducing-fxify-2-phase-pro/' },
+    ],
+  },
   the5ers: {
     name: 'The5ers',
     items: [{ label: 'High Stakes plan rules', href: 'https://the5ers.com/high-stakes/' }],

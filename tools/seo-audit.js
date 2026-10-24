@@ -55,7 +55,7 @@ for (const file of files) {
     const canon = attr(html, /<link rel="canonical" href="([^"]+)"/i);
     if (!target) P('redirect without target');
     else if (!fs.existsSync(path.join(DOCS, target.replace(/^\//, '')))) P(`redirect target missing: ${target}`);
-    if (!/noindex/.test(html)) P('redirect is indexable');
+    if (/noindex/.test(html)) P('redirect is noindex, so it cannot consolidate into its target');
     if (!canon || !canon.endsWith(target)) P('redirect canonical mismatch');
     continue;
   }

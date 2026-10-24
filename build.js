@@ -60,6 +60,11 @@ function extractFaq(body) {
 
 /* --------------------------------- build ---------------------------------- */
 
+// GitHub Pages cannot send a 301, so a moved URL is published as a stub that
+// refreshes to its replacement. The stub deliberately carries no noindex: a
+// noindex cancels the canonical, so Google drops the old URL instead of merging
+// it into the target, and whatever links and history the old URL had are lost.
+// Refresh plus canonical is read as a redirect and consolidates the signals.
 function redirectHtml(page) {
   const target = page.redirect;
   const abs = site.url + target;
@@ -69,7 +74,6 @@ function redirectHtml(page) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${layout.esc(page.title)}</title>
-<meta name="robots" content="noindex,follow">
 <link rel="canonical" href="${abs}">
 <meta http-equiv="refresh" content="0; url=${target}">
 <script>location.replace(${JSON.stringify(target)} + location.hash);</script>

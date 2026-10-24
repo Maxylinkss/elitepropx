@@ -67,12 +67,16 @@ for (const file of files) {
   const issues = [];
 
   // Redirect stubs are intentionally thin: they must point at a page that
-  // exists, be noindex, and use a refresh plus a canonical to the target.
+  // exists and use a refresh plus a canonical to the target. They must not be
+  // noindex: a noindex cancels the canonical, so the old URL is dropped rather
+  // than merged and the links pointing at it are wasted.
   if (isRedirect) {
     const target = attr(html, /http-equiv="refresh" content="0; url=([^"]+)"/i);
     if (!target) issues.push('redirect without a refresh target');
     else if (!exists(target)) issues.push(`redirect target missing: ${target}`);
-    if (!/name="robots" content="noindex/.test(html)) issues.push('redirect is indexable');
+    if (/name="robots" content="noindex/.test(html)) {
+      issues.push('redirect is noindex, so it cannot pass signals to its target');
+    }
     const canon = attr(html, /<link rel="canonical" href="([^"]+)"/i);
     if (!canon || !canon.endsWith(target)) issues.push('redirect canonical does not match target');
     if (issues.length) {

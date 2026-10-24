@@ -303,6 +303,8 @@ function crumbsFor(page) {
     crumbs.push({ name: page.section, href: page.sectionUrl });
   } else if (page.path.startsWith('/blog/')) {
     crumbs.push({ name: 'Blog', href: '/blog/' });
+  } else if (page.path.startsWith('/services/') && page.path !== '/services/index.html') {
+    crumbs.push({ name: 'Services', href: '/services/' });
   }
   crumbs.push({ name: page.crumb || page.h1 || page.title, href: publicPath(page.path) });
   return crumbs;
