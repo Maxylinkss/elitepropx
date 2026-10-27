@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-label="Ledger comparing cash lost, retry cost and account exposure when an attempt fails under three payment models" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="960" height="470" fill="#f4f7fc"/>
+  <text x="48" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">THE LEDGER</text>
+  <text x="48" y="86" font-size="26" font-weight="800" fill="#0b1220">If the attempt fails, who pays</text>
+  <rect x="48" y="118" width="864" height="46" rx="8" fill="#e8eef7"/>
+  <text x="72" y="147" font-size="12.5" font-weight="800" fill="#6b7a92">MODEL</text>
+  <text x="402" y="147" font-size="12.5" font-weight="800" fill="#6b7a92">CASH LOST</text>
+  <text x="552" y="147" font-size="12.5" font-weight="800" fill="#6b7a92">RETRY</text>
+  <text x="722" y="147" font-size="12.5" font-weight="800" fill="#6b7a92">FEE AT RISK</text>
+  <g>
+    <rect x="48" y="178" width="864" height="54" rx="8" fill="#fff" stroke="#dbe3ef"/>
+    <circle cx="82" cy="205" r="5" fill="#0e9f6e"/>
+    <text x="100" y="210" font-size="14" font-weight="800" fill="#0b1220">Upfront service fee</text>
+    <text x="402" y="210" font-size="13.5" fill="#3d4a61">The service fee</text>
+    <text x="552" y="210" font-size="13.5" fill="#3d4a61">Covered</text>
+    <text x="722" y="210" font-size="13.5" fill="#3d4a61">Fixed</text>
+  </g>
+  <g>
+    <rect x="48" y="240" width="864" height="54" rx="8" fill="#fff" stroke="#dbe3ef"/>
+    <circle cx="82" cy="267" r="5" fill="#f2b705"/>
+    <text x="100" y="272" font-size="14" font-weight="800" fill="#0b1220">Deferred activation</text>
+    <text x="402" y="272" font-size="13.5" fill="#3d4a61">Firm fee only</text>
+    <text x="552" y="272" font-size="13.5" fill="#3d4a61">Charged again</text>
+    <text x="722" y="272" font-size="13.5" fill="#3d4a61">Grows</text>
+  </g>
+  <g>
+    <rect x="48" y="302" width="864" height="54" rx="8" fill="#fff" stroke="#dbe3ef"/>
+    <circle cx="82" cy="329" r="5" fill="#243b5c"/>
+    <text x="100" y="334" font-size="14" font-weight="800" fill="#0b1220">Profit share</text>
+    <text x="402" y="334" font-size="13.5" fill="#3d4a61">Nothing upfront</text>
+    <text x="552" y="334" font-size="13.5" fill="#3d4a61">Charged again</text>
+    <text x="722" y="334" font-size="13.5" fill="#3d4a61">Nothing</text>
+  </g>
+  <text x="48" y="406" font-size="13.5" fill="#3d4a61">The column that decides the real price is the second one. A failed attempt billed twice is a 100% increase per retry.</text>
+</svg>

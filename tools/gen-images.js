@@ -575,6 +575,154 @@ write(
 </svg>`
 );
 
+/* 12. Three ways money moves when someone pays to pass */
+write(
+  'pay-models.svg',
+  `${svgOpen(1000, 520, 'Three payment models for paying to pass a prop firm challenge: upfront service fee, deferred activation fee, and profit share on success')}
+  <rect width="1000" height="520" fill="#fff"/>
+  <text x="50" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="${C.green}">THREE WAYS MONEY MOVES</text>
+  <text x="50" y="88" font-size="27" font-weight="800" fill="${C.ink}">Paying to pass, and who carries the failure</text>
+  ${[
+    [
+      'Pay a service upfront',
+      C.greenSoft,
+      '#bfe9d7',
+      C.green,
+      ['Money moves before the attempt', 'Provider absorbs the retries', 'Published rates: $220–$588'],
+      'Failure cost: covered',
+    ],
+    [
+      'Pay the firm after you pass',
+      C.soft,
+      C.line,
+      C.ink3,
+      ['Low entry fee, activation later', 'You trade the evaluation', 'The fee is still owed on success'],
+      'Failure cost: your calendar',
+    ],
+    [
+      'Pay on success (split)',
+      C.soft,
+      C.line,
+      C.ink3,
+      ['No fee to start', 'A share of each payout', 'Typically 30–35% of profit'],
+      'Failure cost: share of winnings',
+    ],
+  ]
+    .map(
+      ([title, fill, stroke, accent, lines, foot], i) => `<g>
+    <rect x="${50 + i * 310}" y="130" width="290" height="300" rx="14" fill="${fill}" stroke="${stroke}"/>
+    <text x="${74 + i * 310}" y="174" font-size="16.5" font-weight="800" fill="${C.ink}">${esc(title)}</text>
+    ${lines
+      .map(
+        (l, j) =>
+          `<text x="${74 + i * 310}" y="${216 + j * 32}" font-size="13" fill="${C.body}">• ${esc(l)}</text>`
+      )
+      .join('\n    ')}
+    <line x1="${74 + i * 310}" y1="330" x2="${316 + i * 310}" y2="330" stroke="${stroke}" stroke-width="1.5"/>
+    <text x="${74 + i * 310}" y="368" font-size="13" font-weight="800" fill="${accent}">${esc(foot)}</text>
+  </g>`
+    )
+    .join('\n  ')}
+  <text x="50" y="472" font-size="13.5" fill="${C.body}">Only the first model prices the retry. The other two leave it with you, which is why the headline fee is not the cost.</text>
+</svg>`
+);
+
+/* 13. What a failed attempt costs under each model */
+write(
+  'pay-risk-ledger.svg',
+  `${svgOpen(960, 470, 'Ledger comparing cash lost, retry cost and account exposure when an attempt fails under three payment models')}
+  <rect width="960" height="470" fill="${C.soft}"/>
+  <text x="48" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="${C.green}">THE LEDGER</text>
+  <text x="48" y="86" font-size="26" font-weight="800" fill="${C.ink}">If the attempt fails, who pays</text>
+  <rect x="48" y="118" width="864" height="46" rx="8" fill="#e8eef7"/>
+  <text x="72" y="147" font-size="12.5" font-weight="800" fill="${C.muted}">MODEL</text>
+  <text x="402" y="147" font-size="12.5" font-weight="800" fill="${C.muted}">CASH LOST</text>
+  <text x="552" y="147" font-size="12.5" font-weight="800" fill="${C.muted}">RETRY</text>
+  <text x="722" y="147" font-size="12.5" font-weight="800" fill="${C.muted}">FEE AT RISK</text>
+  ${[
+    ['Upfront service fee', 'The service fee', 'Covered', 'Fixed', C.green],
+    ['Deferred activation', 'Firm fee only', 'Charged again', 'Grows', C.gold],
+    ['Profit share', 'Nothing upfront', 'Charged again', 'Nothing', C.ink3],
+  ]
+    .map(
+      ([model, cash, retry, fee, colour], i) => `<g>
+    <rect x="48" y="${178 + i * 62}" width="864" height="54" rx="8" fill="#fff" stroke="${C.line}"/>
+    <circle cx="82" cy="${205 + i * 62}" r="5" fill="${colour}"/>
+    <text x="100" y="${210 + i * 62}" font-size="14" font-weight="800" fill="${C.ink}">${esc(model)}</text>
+    <text x="402" y="${210 + i * 62}" font-size="13.5" fill="${C.body}">${esc(cash)}</text>
+    <text x="552" y="${210 + i * 62}" font-size="13.5" fill="${C.body}">${esc(retry)}</text>
+    <text x="722" y="${210 + i * 62}" font-size="13.5" fill="${C.body}">${esc(fee)}</text>
+  </g>`
+    ).join('\n  ')}
+  <text x="48" y="406" font-size="13.5" fill="${C.body}">The column that decides the real price is the second one. A failed attempt billed twice is a 100% increase per retry.</text>
+</svg>`
+);
+
+/* 14. Percentage forex rules vs dollar futures rules */
+write(
+  'futures-vs-forex-rules.svg',
+  `${svgOpen(1000, 560, 'Side by side comparison of percentage-based forex evaluation rules and dollar and contract based futures evaluation rules')}
+  <defs>${gridPattern('fvf')}</defs>
+  <rect width="1000" height="560" fill="#fff"/>
+  <rect width="1000" height="560" fill="url(#fvf)"/>
+  <text x="50" y="52" font-size="13" font-weight="800" letter-spacing="3" fill="${C.green}">TWO RULEBOOK MODELS</text>
+  <text x="50" y="90" font-size="27" font-weight="800" fill="${C.ink}">Percentage rules against contract rules</text>
+  <rect x="50" y="118" width="420" height="374" rx="14" fill="#fff" stroke="${C.line}"/>
+  <rect x="530" y="118" width="420" height="374" rx="14" fill="${C.greenSoft}" stroke="#bfe9d7"/>
+  <text x="74" y="158" font-size="17" font-weight="800" fill="${C.ink}">Forex / CFD</text>
+  <text x="554" y="158" font-size="17" font-weight="800" fill="${C.ink}">Futures</text>
+  ${[
+    ['Unit of size', 'Lots — divisible', 'Contracts — whole numbers'],
+    ['Target', 'Percentage of balance', 'Dollar figure per plan'],
+    ['Drawdown', 'Percentage, static or trailing', 'Dollar figure, often trailing'],
+    ['Daily limit', 'Percentage of balance', 'Dollar figure, resets per session'],
+    ['Extras', 'Spreads and swaps', 'Data and platform fees'],
+    ['Rounding', 'Size can be halved', 'Size cannot be halved'],
+  ]
+    .map(
+      ([label, a, b], i) => `<g>
+    <text x="74" y="${206 + i * 46}" font-size="12" font-weight="800" fill="${C.muted}">${esc(label.toUpperCase())}</text>
+    <text x="74" y="${228 + i * 46}" font-size="13.5" fill="${C.body}">${esc(a)}</text>
+    <text x="554" y="${206 + i * 46}" font-size="12" font-weight="800" fill="${C.muted}">${esc(label.toUpperCase())}</text>
+    <text x="554" y="${228 + i * 46}" font-size="13.5" fill="${C.body}">${esc(b)}</text>
+  </g>`
+    ).join('\n  ')}
+  <text x="50" y="528" font-size="13.5" fill="${C.body}">The last row is the one that changes the job: a futures plan cannot shave risk by fractions, only by whole contracts.</text>
+</svg>`
+);
+
+/* 15. Drawdown expressed in points, by instrument and contract count */
+write(
+  'futures-contract-size.svg',
+  `${svgOpen(940, 500, 'A two thousand dollar drawdown converted into points of room for micro and full size index futures at one, two and four contracts')}
+  <rect width="940" height="500" fill="#fff"/>
+  <text x="48" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="${C.green}">SIZE IN POINTS</text>
+  <text x="48" y="86" font-size="26" font-weight="800" fill="${C.ink}">The same $2,000, five different rooms</text>
+  ${[
+    ['MNQ × 1', '$2 / pt', 1000, C.greenSoft, C.green],
+    ['MNQ × 2', '$4 / pt', 500, C.greenSoft, C.green],
+    ['MNQ × 4', '$8 / pt', 250, C.greenSoft, C.green],
+    ['NQ × 1', '$20 / pt', 100, '#fdf3d8', C.gold],
+    ['ES × 1', '$50 / pt', 40, '#fbe9e8', C.red],
+  ]
+    .map(
+      ([label, per, pts, fill, colour], i) => {
+        const w = Math.max(28, (pts / 1000) * 560);
+        const y = 132 + i * 62;
+        return `<g>
+    <text x="48" y="${y + 22}" font-size="14" font-weight="800" fill="${C.ink}">${esc(label)}</text>
+    <text x="140" y="${y + 22}" font-size="12.5" fill="${C.muted}">${esc(per)}</text>
+    <rect x="232" y="${y}" width="560" height="30" rx="6" fill="#f4f7fc"/>
+    <rect x="232" y="${y}" width="${w.toFixed(1)}" height="30" rx="6" fill="${fill}" stroke="${colour}" stroke-width="1.5"/>
+    <text x="805" y="${y + 21}" font-size="14" font-weight="800" fill="${colour}">${pts} pts</text>
+  </g>`;
+      }
+    )
+    .join('\n  ')}
+  <text x="48" y="456" font-size="13.5" fill="${C.body}">Point values shown for the Nasdaq-100 micro and mini and the S&amp;P 500 mini. Check your firm's own instrument list before sizing.</text>
+</svg>`
+);
+
 write(
   'og/default.svg',
   ogCard({

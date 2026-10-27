@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="500" viewBox="0 0 940 500" role="img" aria-label="A two thousand dollar drawdown converted into points of room for micro and full size index futures at one, two and four contracts" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="940" height="500" fill="#fff"/>
+  <text x="48" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">SIZE IN POINTS</text>
+  <text x="48" y="86" font-size="26" font-weight="800" fill="#0b1220">The same $2,000, five different rooms</text>
+  <g>
+    <text x="48" y="154" font-size="14" font-weight="800" fill="#0b1220">MNQ × 1</text>
+    <text x="140" y="154" font-size="12.5" fill="#6b7a92">$2 / pt</text>
+    <rect x="232" y="132" width="560" height="30" rx="6" fill="#f4f7fc"/>
+    <rect x="232" y="132" width="560.0" height="30" rx="6" fill="#e7f7f0" stroke="#0e9f6e" stroke-width="1.5"/>
+    <text x="805" y="153" font-size="14" font-weight="800" fill="#0e9f6e">1000 pts</text>
+  </g>
+  <g>
+    <text x="48" y="216" font-size="14" font-weight="800" fill="#0b1220">MNQ × 2</text>
+    <text x="140" y="216" font-size="12.5" fill="#6b7a92">$4 / pt</text>
+    <rect x="232" y="194" width="560" height="30" rx="6" fill="#f4f7fc"/>
+    <rect x="232" y="194" width="280.0" height="30" rx="6" fill="#e7f7f0" stroke="#0e9f6e" stroke-width="1.5"/>
+    <text x="805" y="215" font-size="14" font-weight="800" fill="#0e9f6e">500 pts</text>
+  </g>
+  <g>
+    <text x="48" y="278" font-size="14" font-weight="800" fill="#0b1220">MNQ × 4</text>
+    <text x="140" y="278" font-size="12.5" fill="#6b7a92">$8 / pt</text>
+    <rect x="232" y="256" width="560" height="30" rx="6" fill="#f4f7fc"/>
+    <rect x="232" y="256" width="140.0" height="30" rx="6" fill="#e7f7f0" stroke="#0e9f6e" stroke-width="1.5"/>
+    <text x="805" y="277" font-size="14" font-weight="800" fill="#0e9f6e">250 pts</text>
+  </g>
+  <g>
+    <text x="48" y="340" font-size="14" font-weight="800" fill="#0b1220">NQ × 1</text>
+    <text x="140" y="340" font-size="12.5" fill="#6b7a92">$20 / pt</text>
+    <rect x="232" y="318" width="560" height="30" rx="6" fill="#f4f7fc"/>
+    <rect x="232" y="318" width="56.0" height="30" rx="6" fill="#fdf3d8" stroke="#f2b705" stroke-width="1.5"/>
+    <text x="805" y="339" font-size="14" font-weight="800" fill="#f2b705">100 pts</text>
+  </g>
+  <g>
+    <text x="48" y="402" font-size="14" font-weight="800" fill="#0b1220">ES × 1</text>
+    <text x="140" y="402" font-size="12.5" fill="#6b7a92">$50 / pt</text>
+    <rect x="232" y="380" width="560" height="30" rx="6" fill="#f4f7fc"/>
+    <rect x="232" y="380" width="28.0" height="30" rx="6" fill="#fbe9e8" stroke="#d9534f" stroke-width="1.5"/>
+    <text x="805" y="401" font-size="14" font-weight="800" fill="#d9534f">40 pts</text>
+  </g>
+  <text x="48" y="456" font-size="13.5" fill="#3d4a61">Point values shown for the Nasdaq-100 micro and mini and the S&amp;P 500 mini. Check your firm's own instrument list before sizing.</text>
+</svg>
