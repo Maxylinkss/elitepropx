@@ -44,7 +44,39 @@ For every page the builder emits: canonical URL, meta description, Open Graph an
 2. Use `<details class="faq"><summary>Question?</summary><div class="faq-a"><p>Answer.</p></div></details>` for FAQs — schema is generated from it.
 3. Run `npm run deploy:build`. The checker fails the build if the page is under 3,500 words, has a missing canonical, one too many H1s, or links to a page that does not exist.
 
-## Deploy to GitHub Pages
+## Deploy to Netlify
+
+**Live setup (already done)**
+
+| Item | Value |
+| --- | --- |
+| Project | `elitepropx` on the `maxylinkss` team, https://elitepropx.netlify.app |
+| Repo connection | Netlify GitHub App installed for `Maxylinkss/elitepropx` only |
+| Build | `netlify.toml` — `npm run build`, publish `docs` |
+| Domain | `elitepropx.com` primary, `www` redirects to it |
+
+Pushing to `main` deploys automatically. Nothing runs locally for a normal
+publish:
+
+```bash
+git add -A && git commit -m "Update site"
+git push origin main
+```
+
+**Why Netlify and not GitHub Pages.** GitHub Pages cannot return an HTTP status
+code for a moved URL, so the builder published each of the ~180 moved URLs as a
+stub that meta-refreshes to its replacement. Netlify reads `docs/_redirects` —
+also written by `build.js` from the same `redirect:` front matter — and answers
+with a real `301`. The rules end in `301!` because Netlify only applies a rule
+when no file matches the path: without the bang the stub file is served instead
+and the redirect is shadowed.
+
+The stub pages are kept deliberately. GitHub Pages still serves the domain
+until DNS moves, and it cannot read `_redirects`, so deleting them would 404
+those URLs there. Once the domain points only at Netlify, the stubs are dead
+weight and can go.
+
+## Deploy to GitHub Pages (legacy, still live until DNS moves)
 
 **Live setup (already done)**
 
