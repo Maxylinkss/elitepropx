@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "docs"
+
+# The build script has no dependencies, so there is nothing to install or cache
+# between deploys. Skip the install step rather than running an empty npm install.
+[build.environment]
+  NPM_FLAGS = "--no-audit --no-fund"
