@@ -33,6 +33,12 @@ const site = {
     'https://t.me/voraspas',
     'https://www.quora.com/profile/Jennifer-Kamsi-2',
     'https://www.youtube.com/channel/UC_AfsbjVJD1Al9gH_9R9WSg',
+    // Verified 200 OK on 30 Oct 2026. Tumblr was deliberately left out: the
+    // tracker still lists it as live, but tumblr.com/elitepropx returns 404.
+    'https://dev.to/elitepropx',
+    'https://elitepropx.substack.com/',
+    'https://elitepropx.blogspot.com/',
+    'https://elitepropx.hashnode.dev/',
   ],
   themeColor: '#0b1220',
   ogImage: '/assets/img/og/default.svg',
