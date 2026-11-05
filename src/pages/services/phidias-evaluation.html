@@ -46,6 +46,10 @@ schemaService: true
         <li><a href="#worked">A worked pass, week by week</a></li>
         <li><a href="#failed">What a failed attempt costs</a></li>
         <li><a href="#cash">From Cash account to Live</a></li>
+        <li><a href="#ratios">Target against buffer: the tier arithmetic</a></li>
+        <li><a href="#economics">Splits, cadence and what the pass actually costs</a></li>
+        <li><a href="#platforms">Platforms, data and the activation fee</a></li>
+        <li><a href="#mistakes">Four ways a Phidias attempt ends</a></li>
         <li><a href="#faq">Frequently asked questions</a></li>
       </ol>
     </div>
@@ -221,6 +225,43 @@ schemaService: true
       <figcaption>The Cash stage is the second gate: a target for Express to Live, a consistency rate for the trailing families.</figcaption>
     </figure>
     <p>Four things to do in the first week after handover. Change the password regardless of how access was provided. Confirm the account is in your name with your payment details and verification complete. Read the Cash-stage terms for the family rather than the evaluation terms. And write the funded plan — unit, daily stop, daily profit cap, payout target — before the first trade rather than after the first loss.</p>
+    <h2 id="ratios">Target against buffer: the tier arithmetic</h2>
+    <p>Two numbers decide how hard a Phidias evaluation is, and neither is the target on its own. The figure that predicts difficulty is the ratio between the profit required and the buffer available to earn it in, because a target twice the drawdown demands a pace that a target of one and a half times does not.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Family and tier</th><th>Target</th><th>Buffer</th><th>Target per dollar of buffer</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Express to Live $25,000</td><td>$1,500</td><td>$500</td><td>3.0</td></tr>
+          <tr><td>Express to Live $50,000</td><td>$2,500</td><td>$650</td><td>3.8</td></tr>
+          <tr><td>Express to Live $100,000</td><td>$3,500</td><td>$800</td><td>4.4</td></tr>
+          <tr><td>Express to Live $150,000</td><td>$4,500</td><td>$1,000</td><td>4.5</td></tr>
+          <tr><td>Fundamental or Premium $50,000</td><td>$4,000</td><td>$2,500</td><td>1.6</td></tr>
+          <tr><td>Fundamental or Premium $100,000</td><td>$6,000</td><td>$3,000</td><td>2.0</td></tr>
+          <tr><td>Fundamental or Premium $150,000</td><td>$9,000</td><td>$4,500</td><td>2.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The table produces a result that contradicts the usual instinct about account size. On Express to Live the ratio worsens as the account grows: 3.0 at $25,000, 4.5 at $150,000. A larger E2L account is not an easier one — it asks for 4.5 dollars of profit for every dollar of buffer, against 3 on the smallest tier, because the drawdown does not scale with the target.</p>
+    <p>The trailing families sit at half that burden. Fundamental and Premium ask for 1.6 to 2.0 dollars of target per dollar of buffer, which is why they can absorb a normal losing week that would end an E2L attempt. The compensation they take is the trailing floor: the buffer is larger, and it follows the balance.</p>
+    <p>For a service pass the ratio decides sizing rather than the target. On a 4.5 ratio the plan needs a high win rate at small risk per trade, so the unit is set from the buffer and the pace is allowed to run long. On a 1.6 ratio the unit can be larger and the calendar shorter, because the account can survive a week that goes wrong. The ratio, not the headline target, is what the schedule is built from.</p>
+    <h2 id="economics">Splits, cadence and what the pass actually costs</h2>
+    <p>The evaluation fee is not the whole cost of a Phidias account, and the difference sits in three places: the activation charge on passing, the payout cadence once funded, and the split that applies to whatever the account earns.</p>
+    <p><strong>Activation.</strong> Some routes charge on passing rather than at purchase, and the amount is published per family — the Premium $50,000 account lists $149. A client comparing a one-time purchase against a subscription route should compare the two totals including activation, because the cheaper first payment is often the more expensive complete purchase.</p>
+    <p><strong>Cadence.</strong> Premium processes payouts every five days, Fundamental runs on a longer cycle, and Express to Live pays after the switch to a live account rather than during the Cash stage. A payout cadence is worth as much as a split in practice: a 90% share paid every five days is a different product from an 80% share paid once a month, and the plan's funded-stage targets are set from whichever applies.</p>
+    <p><strong>Split.</strong> Fundamental and Express to Live pay 80/20. Premium escalates across the first five payouts — 75%, then 80%, 85%, 90% and 100% from the fifth — which means the family is worth least in its first cycle and most in its sixth. That shape rewards a client who keeps the account alive rather than maximising the first withdrawal, and it changes the advice at handover: take a modest first payout, keep the account, and let the escalation do its work.</p>
+    <p><strong>Resets.</strong> Phidias offers a reset on some families and not others, with a published Cash Account Reset on Premium accounts for example. Express to Live sits at the other end: no reset route in the same sense, so a failed E2L attempt is usually a new purchase. That asymmetry is the strongest argument for trading the static family small in its first week.</p>
+    <h2 id="platforms">Platforms, data and the activation fee</h2>
+    <p>Phidias runs on DeepCharts with dxFeed, on any platform compatible with Rithmic, and on NinjaTrader or Tradovate. That matters to a pass for a practical reason rather than a technical one: the platform decides how the flatten is executed, how stops are held and whether a position can be closed in the last minute of the session without an interface problem.</p>
+    <p>The plan uses the platform the client already trades, because switching platforms mid-attempt is measured in mistakes rather than in fees. Where there is no preference, the choice is made on two things: whether the DOM shows the working orders clearly enough to verify a flatten, and whether the data feed's tick behaviour matches the instrument's real liquidity. A thin feed can make a stop look safer than it is.</p>
+    <p>Two cost items are worth naming before a purchase. Phidias charges an activation fee on passing for some routes, published per family — the Premium $50,000 account carries $149, for example — and the fee is charged on top of the evaluation. The firm also states that its subscriptions are final, with no returns or exchanges.</p>
+    <p>What the terms do not restrict is news. News trading is authorised at every stage on every family, which removes the release-window constraint that shapes a pass at most futures firms. The plan still avoids opening a position into a scheduled release, not because the rules forbid it but because slippage on the stop is real, and on a $650 buffer a single wide fill is a meaningful share of the tolerance.</p>
+    <h2 id="mistakes">Four ways a Phidias attempt ends</h2>
+    <p><strong>Carrying the Express to Live unit past the halfway mark.</strong> On a static floor the buffer does not grow, yet the balance does, and a trader who reads a larger balance as more room will double a position that was sized for the original $650. The floor never moved; the risk doubled.</p>
+    <p><strong>Reading the absence of a daily limit as an absence of risk.</strong> None of the three families stops trading inside a session. A single position can therefore consume the whole buffer before anyone is told to stop, which is why the plan spends a fixed fraction of the buffer per session and closes at 80% of that fraction.</p>
+    <p><strong>Holding a Premium position through a gap.</strong> Overnight and weekend holding are permitted on Premium and prohibited on the other two, and permitted is not the same as safe. A gap through the trailing floor is a hard breach, so the plan only carries a position when the gap risk sits inside the session's own budget.</p>
+    <p><strong>Discovering the 30% rule at the payout request.</strong> No evaluation applies a consistency rate, so the first time it bites is the Cash stage on Fundamental and Premium. The plan caps daily profit from the first session of the evaluation, so the ratio is already satisfied when the funded stage begins.</p>
     <h2 id="faq">Frequently asked about the Phidias evaluation</h2>
     <details class="faq"><summary>Does the $220 fee depend on the family or the size?</summary><div class="faq-a"><p>No. The fee is flat for any Phidias family and any account size, because the work is the same process applied to different numbers. Size changes the payout ceiling and the firm's own fees, not ours.</p></div></details>
     <details class="faq"><summary>Which family is easiest to pass?</summary><div class="faq-a"><p>Express to Live has the simplest rulebook — a static floor, no daily limit, no minimum days and no consistency rate — but the smallest dollar buffer, so it rewards tight sizing rather than a bold attempt. Fundamental and Premium are more forgiving in dollars and harder to keep inside once the floor starts trailing.</p></div></details>

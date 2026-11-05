@@ -45,6 +45,13 @@ schemaService: true
         <li><a href="#price">What the flat fee covers</a></li>
         <li><a href="#worked">A worked pass, week by week</a></li>
         <li><a href="#failed">What a failed attempt costs</a></li>
+        <li><a href="#twostep">The two-step route, and when it wins</a></li>
+        <li><a href="#tier">Which tier to buy, and why the smallest is a trap</a></li>
+        <li><a href="#claims">Claims, splits and the 24-hour clock</a></li>
+        <li><a href="#badweek">A losing week, worked through</a></li>
+        <li><a href="#checks">Six checks before you buy</a></li>
+        <li><a href="#compare">How a Vest account differs from a futures firm</a></li>
+        <li><a href="#mistakes">Four ways a Vest attempt ends</a></li>
         <li><a href="#faq">Frequently asked questions</a></li>
       </ol>
     </div>
@@ -173,6 +180,95 @@ schemaService: true
         </tbody>
       </table>
     </div>
+    <h2 id="twostep">The two-step route, and when it wins</h2>
+    <p>Vest's two-step evaluation splits the work into a 10% first target and a 5% second, for 15% in total against the 10% or 20% available on the one-step route. On paper that looks like more work for the same account, and on a static floor the extra phase has one real advantage: a checkpoint.</p>
+    <p>The checkpoint matters because of what happens after a good first phase. On a one-step evaluation the target is a single number, and an account that is 8% of the way to a 10% target has 2% left with the same buffer it started with. On a two-step, finishing the first phase converts progress into a completed stage — the client sees the firm confirm it, and the second phase begins under its own parameters.</p>
+    <p>Before buying it, one question decides the arithmetic: whether the second phase's drawdown is measured from the new balance or from the original starting capital. If the floor resets with the balance, the second phase is a fresh 6% on a larger account and the total attempt is genuinely easier per dollar. If the floor stays at the original level, the second phase inherits the profit as cushion, and the 15% total is harder than a flat 15% would suggest.</p>
+    <p>The plan asks that question during the terms check and prices the two routes accordingly. Where the reset applies, the two-step is the better purchase for a client who wants a checkpoint; where it does not, the one-step at the lower target is the better buy, because it asks for less total profit against the same floor.</p>
+    <h2 id="tier">Which tier to buy, and why the smallest is a trap</h2>
+    <p>Vest's evaluation sizes run from a few hundred dollars up to a funded ceiling of $50,000, and the fee is flat at $220 whichever you pick. That combination produces a decision most traders get backwards.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Evaluation size</th><th>Static buffer at 6%</th><th>Fee as a share of the account</th><th>Our view</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>$500</td><td>$30</td><td>44%</td><td>Not offered — the buffer cannot hold a position</td></tr>
+          <tr><td>$5,000</td><td>$300</td><td>4.4%</td><td>Only with fractional sizing</td></tr>
+          <tr><td>$10,000</td><td>$600</td><td>2.2%</td><td>The floor we take work at</td></tr>
+          <tr><td>$25,000</td><td>$1,500</td><td>0.9%</td><td>Best balance of fee and buffer</td></tr>
+          <tr><td>$50,000</td><td>$3,000</td><td>0.4%</td><td>Best value, if the budget allows</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>On a $500 evaluation the static buffer is $30. No futures or CFD position of any consequence fits inside $30 of risk, so the account cannot be traded to a 10% target by anyone, and the $220 fee is almost the whole purchase. That is not a cheap way to test the service; it is a way to lose the fee and learn nothing.</p>
+    <p>The tier that makes sense is the largest one the budget can carry, because the fee is fixed and the payout ceiling scales with the balance. A $25,000 evaluation pays out several times what a $10,000 one does for the same $220, and its buffer of $1,500 supports a normal risk unit without fractional sizing. The smallest sensible purchase is $10,000, and the honest recommendation for most clients is $25,000.</p>
+    <h2 id="claims">Claims, splits and the 24-hour clock</h2>
+    <p>Vest is a crypto-native platform, and the payout mechanics follow from that rather than from the futures-firm template. Profit is claimed to the platform's primary account, claims are processed within roughly a day, and moving funds off the platform is a separate withdrawal to an external wallet.</p>
+    <p>The profit split is configurable within a range and set at purchase, so a higher share of future payouts costs more upfront. The base split is the right purchase for a first evaluation: the difference in share is small next to the chance of needing a second attempt, and the retry is covered by the flat service fee rather than by the split.</p>
+    <p>Collateral is held in USDC and every account runs on cross margin, which means the whole balance backs every open position. That is a meaningful difference from a futures account with per-product margin: a losing position on one instrument draws on the same collateral as a winning one elsewhere, so the plan does not treat the account as several independent books.</p>
+    <p>Two disclosures are worth repeating because they are easy to skim past. Vest's own terms describe all programme accounts, including instant funding, as simulated, with payouts as programme compensation rather than a distribution of live trading profits. And refunds are narrow — typically limited to cases where no trade was placed — so a failed attempt is normally a spent fee.</p>
+    <h2 id="badweek">A losing week, worked through</h2>
+    <p>Anyone can describe a pass. The test of a plan is what happens in the week that goes wrong, so here is one on a $10,000 one-step account with a 10% target, a $600 static buffer and a 3% daily limit of $300.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Risk taken</th><th>Result</th><th>Balance</th><th>Room to the $9,400 floor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>$100 across two trades</td><td>Both stopped</td><td>$9,800</td><td>$400</td></tr>
+          <tr><td>Tuesday</td><td>$80, size cut after the losses</td><td>One win, one scratch</td><td>$9,920</td><td>$520</td></tr>
+          <tr><td>Wednesday</td><td>$80</td><td>One loss only</td><td>$9,840</td><td>$440</td></tr>
+          <tr><td>Thursday</td><td>$60, second cut</td><td>No setup, no trade</td><td>$9,840</td><td>$440</td></tr>
+          <tr><td>Friday</td><td>$60</td><td>Two wins</td><td>$9,990</td><td>$590</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The week lost $10 and, more importantly, it kept the account. The plan cut the unit twice — from $100 to $80 after Monday, then to $60 after Wednesday — because the buffer had fallen to $440 and $400 respectively, and the risk rule is a tenth of the buffer rather than a tenth of the starting account.</p>
+    <p>That is the whole difference between a surviving week and a failed attempt. A trader who held $100 through all five sessions would have risked $500 across the week against a $600 buffer, and a single additional loss on Thursday would have taken the account to $9,440 — $40 from liquidation. The unit cut is not caution; it is the only mechanism that keeps the number of losses available constant as the buffer shrinks.</p>
+    <p>There is a second lesson in the table. Wednesday's loss was taken and the session closed, even though the daily limit of $300 had not been reached and there was room for another trade. On an account where the buffer is 6% and the daily limit is 3%, two full days of loss exhaust the evaluation, so a session that has already lost a third of its allowance is finished by policy rather than by the rulebook.</p>
+    <h2 id="checks">Six checks before you buy</h2>
+    <p>Because so much of a Vest account is configured at purchase, the checks happen earlier than at a fixed-tier firm. Six of them decide whether the purchase is worth making at all.</p>
+    <ol>
+      <li><strong>The third-party clause.</strong> Confirm in writing whether the evaluation and the funded stage each permit external trading. This is the check that decides whether a pass is worth anything.</li>
+      <li><strong>The target setting.</strong> The lower of the two offered targets, unless the higher one is the only configuration that fits the budget. A higher target is a lower price and a harder attempt.</li>
+      <li><strong>The daily limit setting.</strong> 3% rather than 4%, and never none, on accounts below $25,000. The limit is the only brake on a session.</li>
+      <li><strong>The split.</strong> The base split for a first evaluation. Paying more upfront for a higher share is a bet on the account surviving long enough to use it.</li>
+      <li><strong>The refund window.</strong> Vest's refunds are narrow and generally tied to placing no trade, so the purchase should be treated as final before the first order goes in.</li>
+      <li><strong>The simulation disclosure.</strong> The terms describe every programme account as simulated and payouts as programme compensation. That is normal for the industry and it belongs in the decision rather than in the small print.</li>
+    </ol>
+    <p>If the first check fails, the other five do not matter. If it passes, the remaining five are arithmetic, and the arithmetic points at the largest tier the budget can carry with the lower target and a 3% daily limit.</p>
+    <h2 id="compare">How a Vest account differs from a futures firm</h2>
+    <p>Most evaluation services are built around futures firms with fixed tiers, and a Vest account breaks four of the assumptions that model rests on. The differences are not marketing; each one changes how the attempt is planned.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Dimension</th><th>Typical futures firm</th><th>Vest Markets</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Target</td><td>Fixed per tier, published</td><td>Chosen at checkout, 10% or 20%</td></tr>
+          <tr><td>Daily limit</td><td>Fixed, or none at all</td><td>3%, 4% or none, chosen at checkout</td></tr>
+          <tr><td>Drawdown</td><td>Often trailing</td><td>Static 6% of starting capital</td></tr>
+          <tr><td>Split</td><td>Fixed, usually 80–90%</td><td>Configurable within a range</td></tr>
+          <tr><td>Settlement</td><td>Bank transfer or card rails</td><td>USDC on the platform, claims in about a day</td></tr>
+          <tr><td>Ceiling</td><td>Up to $150,000 or $400,000</td><td>$50,000</td></tr>
+          <tr><td>Conduct</td><td>News often restricted</td><td>News, scalping and overnight all permitted</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>The static floor is the biggest planning difference.</strong> A trailing floor forces the position unit down as profit accrues; a static floor lets the unit stay constant from the first session to the last. The plan on Vest therefore sets one risk unit and only cuts it when the buffer shrinks, never merely because the balance rose.</p>
+    <p><strong>The ceiling is the second.</strong> At $50,000 the account cannot produce the payout a $150,000 futures account produces on the same percentage, so the fee per dollar of ceiling is higher. That is not a defect in the product, but it does mean a client comparing a $220 Vest service pass against a $220 Tradeify pass is not comparing like with like: the futures account has three times the payout ceiling.</p>
+    <p><strong>The settlement rail is the third.</strong> Claims settle to the platform and withdrawals leave as USDC, which is fast and cheap if the client already holds crypto and a nuisance if they do not. The plan accounts for it at payout rather than at purchase: the client is told before the first claim what the withdrawal route involves.</p>
+    <p><strong>Conduct is the fourth, and it cuts both ways.</strong> News, scalping, overnight and weekend holding are all allowed, which removes the timetable constraints that shape a futures pass. It also removes the rules that stop many traders from overtrading, so the discipline has to come from the plan rather than from the rulebook.</p>
+    <figure>
+      <img src="/assets/img/model-fit-flow.svg" alt="Flow diagram matching a trader profile to a Vest Markets evaluation route, showing where the static floor suits a steady unit" width="980" height="470" loading="lazy">
+      <figcaption>A static floor suits a steady unit; a configurable target suits a buyer who knows which trade-off they are making.</figcaption>
+    </figure>
+    <h2 id="mistakes">Four ways a Vest attempt ends</h2>
+    <p><strong>Choosing no daily limit to save money.</strong> The daily loss setting is a purchase decision, and removing it saves a little on the quote while removing the only intraday brake. On a $600 buffer a single session with no limit can end the evaluation in the first hour.</p>
+    <p><strong>Sizing to the target rather than the buffer.</strong> A 10% target on $10,000 is $1,000 of profit, and a trader who sizes for that number is risking several times the $600 of room available. The target is what has to be earned; the buffer is what may be lost, and only the second one sizes a position.</p>
+    <p><strong>Buying the smallest tier to test the water.</strong> At $500 the buffer is $30 and the fee is nearly half the account. There is no version of that purchase where the service has room to demonstrate anything.</p>
+    <p><strong>Treating the 20:00 reset as a market close.</strong> The trading day turns over in the New York evening, not at a session bell. An overnight position carried past that point is measured against a fresh allowance, and a trader who assumes the old day is still running can misjudge how much room remains.</p>
     <h2 id="faq">Frequently asked about the Vest evaluation</h2>
     <details class="faq"><summary>Does the $220 fee change with account size?</summary><div class="faq-a"><p>No, the fee is flat — but we only take Vest jobs from $10,000 upward, because below that the fee is too large a share of the account to be worth paying. That floor is stated before quoting rather than after.</p></div></details>
     <details class="faq"><summary>Which target should I configure?</summary><div class="faq-a"><p>The lower of the two. A higher target lowers the purchase price and doubles the required pace, and on a static floor the difficulty lands in the first week when the buffer is narrowest. A failed attempt costs more than the discount saves.</p></div></details>

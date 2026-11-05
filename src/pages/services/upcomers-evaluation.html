@@ -45,6 +45,12 @@ schemaService: true
         <li><a href="#price">What the flat fee covers</a></li>
         <li><a href="#worked">A worked pass, week by week</a></li>
         <li><a href="#failed">What a failed attempt costs</a></li>
+        <li><a href="#oneDay">Why we refuse the one-day pass</a></li>
+        <li><a href="#payout">What a payout request actually requires</a></li>
+        <li><a href="#twoweeks">A two-week schedule, session by session</a></li>
+        <li><a href="#lines">Horizon, and the other Upcomers lines</a></li>
+        <li><a href="#audit">The five clauses we read before starting</a></li>
+        <li><a href="#mistakes">Four ways an Upcomers attempt ends</a></li>
         <li><a href="#faq">Frequently asked questions</a></li>
       </ol>
     </div>
@@ -195,6 +201,74 @@ schemaService: true
         </tbody>
       </table>
     </div>
+    <h2 id="oneDay">Why we refuse the one-day pass</h2>
+    <p>The programme's headline is that Thunderbolt Classic can be passed in a single trading day, and the arithmetic behind that claim is worth writing out, because it explains why a service pass never attempts it.</p>
+    <p>On a $50,000 account the target is $3,000 and the challenge's daily limit is $1,500. A single session that completes the evaluation therefore has to produce twice the daily allowance in profit without ever spending the allowance on the way. That is not a pacing decision; it is a position large enough that a normal adverse move consumes the day before the target is reached.</p>
+    <p>Put probability on it and the shape becomes clear. A session that can produce $3,000 must be sized so that a winning sequence pays roughly 2% of the account, which means a losing sequence of the same size also costs about 2%. The daily limit stops the account at 3% of loss, so the plan has room for roughly one and a half such sequences — which is a coin-flip with a fee attached, not a plan.</p>
+    <p>The alternative is the same evaluation taken in five to eight slices. The target is unchanged, the floor behaves the same way, and the only cost is calendar — which on Upcomers is close to free, because the account is bought once rather than billed monthly. The one-day route trades a real risk for a marketing claim; the sliced route trades a few days for a buffer that survives an ordinary bad morning.</p>
+    <h2 id="payout">What a payout request actually requires</h2>
+    <p>Passing the evaluation is the first gate. The payout stage has its own conditions, and on this programme several of them apply at once, so the plan aims to satisfy them together rather than discovering one at a time.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Condition</th><th>What it asks</th><th>What it does if missed</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Positions closed</td><td>All trades flat before the request</td><td>Request is not processed</td></tr>
+          <tr><td>Minimum profit since the last payout</td><td>A set percentage of new profit each cycle</td><td>The cycle has not qualified yet</td></tr>
+          <tr><td>Qualifying trading days</td><td>A number of days each producing at least half a percent</td><td>The clock extends, not the account</td></tr>
+          <tr><td>Best Day Rule</td><td>The largest day inside a published share of total profit</td><td>Soft: payout delayed until the ratio recovers</td></tr>
+          <tr><td>Minimum payout amount</td><td>A floor of around $100 per request</td><td>The balance carries to the next request</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Two of those conditions are the ones that surprise traders. The qualifying-day requirement means a large single day followed by a pause produces profit but not eligibility, so the plan trades a steady sequence rather than a burst. And the Best Day Rule is soft by design: exceeding it never closes the account, it only delays the withdrawal, which turns an aggressive week into a waiting period rather than a loss.</p>
+    <p>The directed sequence for each cycle is short. Close everything, check that new profit since the previous payout clears the minimum, check that the qualifying days are on the record, check the best day against the published share, then request. Any one of the five can be the binding constraint, and the plan's job during the funded stage is to make sure it is never the one the trader forgot.</p>
+    <h2 id="twoweeks">A two-week schedule, session by session</h2>
+    <p>The plan is easier to judge as a timetable than as a set of principles, so here is a fortnight on a $50,000 Thunderbolt Classic account, with a $3,000 target, a $1,500 daily limit and a $500 risk unit that falls as the floor climbs.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Risk unit</th><th>Session budget</th><th>Result</th><th>Balance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mon, week one</td><td>$500</td><td>$1,200</td><td>Two trades, one win, one scratch</td><td>$50,320</td></tr>
+          <tr><td>Tue, week one</td><td>$500</td><td>$1,200</td><td>One loss, session closed early</td><td>$49,860</td></tr>
+          <tr><td>Wed, week one</td><td>$500</td><td>$1,200</td><td>Three trades, two wins</td><td>$50,610</td></tr>
+          <tr><td>Thu, week one</td><td>$500</td><td>$1,200</td><td>No qualifying setup</td><td>$50,610</td></tr>
+          <tr><td>Fri, week one</td><td>$500</td><td>$1,200</td><td>One win, one loss</td><td>$50,790</td></tr>
+          <tr><td>Mon, week two</td><td>$450</td><td>$1,200</td><td>Two wins, unit cut after Friday's close</td><td>$51,240</td></tr>
+          <tr><td>Tue, week two</td><td>$450</td><td>$1,200</td><td>One loss, budget respected</td><td>$50,790</td></tr>
+          <tr><td>Wed, week two</td><td>$450</td><td>$1,200</td><td>Three wins</td><td>$51,690</td></tr>
+          <tr><td>Thu, week two</td><td>$450</td><td>$1,200</td><td>Session skipped, release window</td><td>$51,690</td></tr>
+          <tr><td>Fri, week two</td><td>$450</td><td>$1,200</td><td>Two wins, one loss</td><td>$52,100</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ten sessions produced $2,100 of the $6,000 target, which is a third of the evaluation in two weeks with no session coming close to the daily limit. The largest single day was $900, well inside any published Best Day share, and the worst was a $540 loss that closed the session at 45% of the budget rather than at the stop.</p>
+    <p>Two details in the table are the ones that decide the pass. The unit fell from $500 to $450 because Friday's close raised the trailing floor, which is the discipline most traders skip. And Thursday of week two was skipped entirely, because a scheduled release sat inside the session and the rules on that programme restrict certain conduct windows — a day with no trade costs nothing on a one-time-fee account, while a conduct breach costs the evaluation.</p>
+    <p>At that rate the evaluation completes in five to six weeks rather than the single day the programme permits. Nothing about the timetable is clever: it is the same four trades a day, sized from the floor, with the target sliced small enough that no session has to be exceptional.</p>
+    <h2 id="lines">Horizon, and the other Upcomers lines</h2>
+    <p>Upcomers runs more than one product family, and the rules are not interchangeable between them. A trader who reads the futures overview and then buys a CFD evaluation is reading the wrong rulebook.</p>
+    <p><strong>Horizon</strong> is a separate line with its own published parameters, including its own minimum profit and best-day conditions at payout. It should be read from its own rules page rather than inferred from Classic.</p>
+    <p><strong>The CFD programmes</strong> include one-step and two-step evaluations, with Phoenix as the two-phase route: 4% in the first phase, 4% in the second, a 6% static maximum loss across both, no time limit and no minimum trading days. The percentages are smaller than the futures target and the leverage is different, so a pass there is a different exercise, not a smaller one.</p>
+    <p><strong>Signals</strong> is a prediction-market product rather than a trading evaluation: a 9% target, a 3% trailing drawdown, no daily drawdown, a 14-day payout cycle and an 80% split. It is a separate ruleset again, and a passing service should not quote a futures plan against it.</p>
+    <p>The scope of this page is the futures evaluation and, where the terms permit, the CFD evaluation lines. Instant funding is not part of it, because there is nothing to pass — and a page that promised to pass one would be selling a managed account, which is not the product.</p>
+    <h2 id="audit">The five clauses we read before starting</h2>
+    <p>Upcomers publishes a short rules page, and five of its clauses decide whether a service pass is legitimate rather than merely possible. They are read in this order, and each one can end the conversation before a fee is quoted.</p>
+    <ol>
+      <li><strong>Third-party trading.</strong> The clause that decides whether the job exists. If the rules prohibit another party trading the evaluation, the answer is no, in writing, before payment.</li>
+      <li><strong>Hedging across accounts.</strong> The firm bans hedging inside an account and between accounts, including accounts held by different people. A service that runs several clients at once has to keep every position strictly independent, and the plan logs that it does.</li>
+      <li><strong>Prohibited methods.</strong> High-frequency, latency and quick-strike approaches are named as prohibited. The strategy has to be describable as ordinary discretionary or systematic trading without any of those characteristics.</li>
+      <li><strong>The Best Day Rule.</strong> Whether it is soft or hard, and which percentage applies to the account in question, decides how a funded week is shaped. Soft means a delayed payout; hard would mean a breach.</li>
+      <li><strong>Activation and reset terms.</strong> The one-time fee, the activation charge on funding and whether a reset exists at all decide the cost of a failed attempt — which is the number the plan is protecting.</li>
+    </ol>
+    <p>Two of those five are specific to this firm rather than generic. The cross-account hedging ban is unusual in how far it reaches, and the named prohibition on quick-strike trading covers a family of short-hold strategies that many traders run without thinking of them as a distinct method. Both are the kind of clause that a client discovers after the account is closed, which is why they are read first rather than last.</p>
+    <h2 id="mistakes">Four ways an Upcomers attempt ends</h2>
+    <p><strong>Taking the one-day route on a bad morning.</strong> The single-phase structure makes the fast pass tempting, and the fast pass is the one configuration where a normal adverse move consumes the daily budget before the target. The evaluation is not faster for being riskier; it is just shorter or dead.</p>
+    <p><strong>Keeping the challenge unit after funding.</strong> The daily limit falls from 3% to 2% at the moment the account becomes funded. A unit sized to the looser limit is a third too large for the tighter one, and the first losing session after handover is where that shows up.</p>
+    <p><strong>Spending the Best Day allowance early.</strong> A dominant winning day feels like progress on a one-phase evaluation. It is also the day that decides whether the first payout request is processed or deferred, and the deferral is measured in weeks of balanced trading.</p>
+    <p><strong>Running a prohibited method.</strong> The futures line bans high-frequency and latency approaches and the firm's named quick-strike method, and it bans hedging within an account and across accounts. These are account-ending findings rather than warnings, and they can be raised against a funded account after a pass.</p>
     <h2 id="faq">Frequently asked about the Upcomers evaluation</h2>
     <details class="faq"><summary>Can the $220 fee change with account size?</summary><div class="faq-a"><p>No. The fee is flat for any Upcomers futures evaluation at any size. Size changes the payout ceiling and the firm's account fee, not ours.</p></div></details>
     <details class="faq"><summary>Can you pass Thunderbolt Classic in one day?</summary><div class="faq-a"><p>The rules permit it and we do not attempt it. A one-day pass means producing twice the daily limit in profit without spending the limit once, which is a variance bet rather than a plan. The same evaluation is passed in two or three weeks at a fraction of the risk.</p></div></details>
