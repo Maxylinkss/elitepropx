@@ -374,7 +374,8 @@ function header(activePath) {
 </header>`;
 }
 
-function footer() {
+function footer(activePath = '') {
+  const isHome = publicPath(activePath) === '/';
   return `<footer class="site-footer">
   <div class="wrap footer-cta">
     <div>
@@ -404,7 +405,7 @@ function footer() {
         <li><a href="/prop-firm-comparison-2026.html">Prop firm comparison</a></li>
         <li><a href="/prop-firm-rules-matrix.html">Rules matrix</a></li>
         <li><a href="/services/">All evaluation plans</a></li>
-        <li><a href="/">Propfirm passing service</a></li>
+        <li><a href="/">${isHome ? 'Prop firm passing service' : 'Propfirm passing service'}</a></li>
         <li><a href="/services/passing-prop-firm-services.html">How the service works</a></li>
         <li><a href="/services/prop-firm-challenge-passing-service.html">What the flat fee covers</a></li>
         <li><a href="/demo.html">Free demo trial</a></li>
@@ -502,7 +503,7 @@ ${breadcrumbs(page)}
 ${reviewedStrip(page)}
 ${withSources(page, withTelegramBand(body))}
 </main>
-${footer()}
+${footer(page.path)}
 <a class="telegram-float" href="${site.telegram}" target="_blank" rel="noopener" aria-label="Pass your challenge today on Telegram">
   <span class="telegram-float-icon">${TELEGRAM_ICON}</span>
   <span class="telegram-float-text"><strong>Pass your challenge today</strong><small>${site.telegramHandle}</small></span>
