@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-label="Equity curve rising from a starting balance to a profit target, with a daily loss guard and a maximum loss floor marked as hard lines the curve never reaches" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="980" height="520" fill="#fff"/>
+  <text x="50" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">RULE GUARDRAILS</text>
+  <text x="50" y="88" font-size="27" font-weight="800" fill="#0b1220">The four lines that decide an attempt</text>
+  <rect x="240" y="128" width="690" height="312" rx="10" fill="#f4f7fc"/>
+  <g>
+    <line x1="240" y1="168" x2="930" y2="168" stroke="#0e9f6e" stroke-width="2" stroke-dasharray="5 5"/>
+    <text x="224" y="172" font-size="13" font-weight="800" fill="#3d4a61" text-anchor="end">Profit target</text>
+    <text x="224" y="188" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#6b7a92" text-anchor="end">TARGET</text>
+  </g>
+  <g>
+    <line x1="240" y1="300" x2="930" y2="300" stroke="#243b5c" stroke-width="2"/>
+    <text x="224" y="304" font-size="13" font-weight="800" fill="#3d4a61" text-anchor="end">Starting balance</text>
+    <text x="224" y="320" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#6b7a92" text-anchor="end">START</text>
+  </g>
+  <g>
+    <line x1="240" y1="372" x2="930" y2="372" stroke="#f2b705" stroke-width="2"/>
+    <text x="224" y="376" font-size="13" font-weight="800" fill="#3d4a61" text-anchor="end">Daily loss guard</text>
+    <text x="224" y="392" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#6b7a92" text-anchor="end">DAILY</text>
+  </g>
+  <g>
+    <line x1="240" y1="432" x2="930" y2="432" stroke="#d9534f" stroke-width="2" stroke-dasharray="5 5"/>
+    <text x="224" y="436" font-size="13" font-weight="800" fill="#3d4a61" text-anchor="end">Maximum loss floor</text>
+    <text x="224" y="452" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#6b7a92" text-anchor="end">FLOOR</text>
+  </g>
+  <path d="M240 300 L300 297 L360 292 L420 288 L480 276 L540 273 L600 262 L660 250 L720 240 L780 229 L840 218 L900 196 L930 172" fill="none" stroke="#0e9f6e" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M240 300 L300 297 L360 292 L420 288 L480 276 L540 273 L600 262 L660 250 L720 240 L780 229 L840 218 L900 196 L930 172 L930 300 Z" fill="#e7f7f0" opacity="0.75"/>
+  <circle cx="930" cy="172" r="5" fill="#f2b705" stroke="#fff" stroke-width="2"/>
+  <text x="924" y="150" font-size="12" font-weight="800" fill="#0e9f6e" text-anchor="end">TARGET REACHED - TRADING STOPS</text>
+  <text x="252" y="196" font-size="12" fill="#6b7a92">room to target</text>
+  <text x="252" y="336" font-size="12" fill="#6b7a92">room to fail</text>
+  <text x="50" y="478" font-size="13.5" fill="#3d4a61">The curve is meant to look dull. Size was cut every time the floor climbed, so the daily guard was never approached.</text>
+</svg>

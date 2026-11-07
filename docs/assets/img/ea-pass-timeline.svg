@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-label="Twelve-session pass timeline rising from the starting balance to the profit target, with cushion, pace, target zone and lock phases" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="60" y="46" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">A TWELVE-SESSION PASS</text>
+  <text x="60" y="82" font-size="27" font-weight="800" fill="#0b1220">No dramatic day, no lost attempt</text>
+  <line x1="60" y1="210" x2="940" y2="210" stroke="#0e9f6e" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="64" y="200" font-size="12" font-weight="800" fill="#0e9f6e">PROFIT TARGET REACHED - EA LOCKS AND STOPS</text>
+  <line x1="60" y1="300" x2="940" y2="300" stroke="#dbe3ef" stroke-width="2"/>
+  <text x="64" y="318" font-size="11" font-weight="700" fill="#6b7a92">STARTING BALANCE</text>
+  <path d="M60 300 L140 298 L220 294 L300 291 L380 285 L460 281 L540 273 L620 266 L700 256 L780 247 L860 232 L940 210" fill="none" stroke="#0e9f6e" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M60 300 L140 298 L220 294 L300 291 L380 285 L460 281 L540 273 L620 266 L700 256 L780 247 L860 232 L940 210 L940 300 L60 300 Z" fill="#e7f7f0" opacity="0.65"/>
+  <circle cx="940" cy="210" r="5" fill="#f2b705" stroke="#fff" stroke-width="2"/>
+  <g>
+    <line x1="60" y1="300" x2="60" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="60" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D1</text>
+  </g>
+  <g>
+    <line x1="140" y1="300" x2="140" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="140" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D2</text>
+  </g>
+  <g>
+    <line x1="220" y1="300" x2="220" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="220" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D3</text>
+  </g>
+  <g>
+    <line x1="300" y1="300" x2="300" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="300" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D4</text>
+  </g>
+  <g>
+    <line x1="380" y1="300" x2="380" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="380" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D5</text>
+  </g>
+  <g>
+    <line x1="460" y1="300" x2="460" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="460" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D6</text>
+  </g>
+  <g>
+    <line x1="540" y1="300" x2="540" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="540" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D7</text>
+  </g>
+  <g>
+    <line x1="620" y1="300" x2="620" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="620" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D8</text>
+  </g>
+  <g>
+    <line x1="700" y1="300" x2="700" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="700" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D9</text>
+  </g>
+  <g>
+    <line x1="780" y1="300" x2="780" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="780" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D10</text>
+  </g>
+  <g>
+    <line x1="860" y1="300" x2="860" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="860" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D11</text>
+  </g>
+  <g>
+    <line x1="940" y1="300" x2="940" y2="306" stroke="#dbe3ef" stroke-width="2"/>
+    <text x="940" y="324" font-size="10.5" fill="#6b7a92" text-anchor="middle">D12</text>
+  </g>
+  <g>
+    <line x1="60" y1="352" x2="300" y2="352" stroke="#243b5c" stroke-width="2"/>
+    <circle cx="60" cy="352" r="3" fill="#243b5c"/>
+    <text x="60" y="374" font-size="13" font-weight="800" fill="#0b1220">Cushion <tspan font-weight="700" fill="#6b7a92">D1-D4</tspan></text>
+    <text x="60" y="394" font-size="11.5" fill="#6b7a92">Small size, three losses survivable</text>
+  </g>
+  <g>
+    <line x1="300" y1="352" x2="620" y2="352" stroke="#243b5c" stroke-width="2"/>
+    <circle cx="300" cy="352" r="3" fill="#243b5c"/>
+    <text x="300" y="374" font-size="13" font-weight="800" fill="#0b1220">Pace <tspan font-weight="700" fill="#6b7a92">D5-D8</tspan></text>
+    <text x="300" y="394" font-size="11.5" fill="#6b7a92">Steady progress, one losing session</text>
+  </g>
+  <g>
+    <line x1="620" y1="352" x2="860" y2="352" stroke="#243b5c" stroke-width="2"/>
+    <circle cx="620" cy="352" r="3" fill="#243b5c"/>
+    <text x="620" y="374" font-size="13" font-weight="800" fill="#0b1220">Target zone <tspan font-weight="700" fill="#6b7a92">D9-D11</tspan></text>
+    <text x="620" y="394" font-size="11.5" fill="#6b7a92">Size reduced as the target nears</text>
+  </g>
+  <g>
+    <line x1="860" y1="352" x2="940" y2="352" stroke="#243b5c" stroke-width="2"/>
+    <circle cx="860" cy="352" r="3" fill="#243b5c"/>
+    <text x="860" y="374" font-size="13" font-weight="800" fill="#0b1220">Lock <tspan font-weight="700" fill="#6b7a92">D12</tspan></text>
+    <text x="860" y="394" font-size="11.5" fill="#6b7a92">Day count lands, trading stops</text>
+  </g>
+  <text x="60" y="424" font-size="12.5" fill="#3d4a61">Eight to fourteen days is the normal first-attempt window on a two-phase forex challenge, because day counts and news windows set the calendar.</text>
+</svg>

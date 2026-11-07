@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-label="Four steps of the free EA test: open a demo with your broker, send the login, the EA trades it to the challenge target, then you decide whether to buy" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <defs><pattern id="eaft" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eef7" stroke-width="1"/></pattern></defs>
+  <rect width="1000" height="430" fill="#f4f7fc"/>
+  <rect width="1000" height="430" fill="url(#eaft)"/>
+  <text x="60" y="54" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">FREE TEST BEFORE YOU BUY</text>
+  <text x="60" y="92" font-size="29" font-weight="800" fill="#0b1220">Four steps, and the decision stays yours</text>
+  <g>
+    <rect x="60" y="128" width="196" height="212" rx="16" fill="#fff" stroke="#dbe3ef"/>
+    <rect x="60" y="128" width="196" height="6" rx="3" fill="#0e9f6e"/>
+    <text x="84" y="184" font-size="34" font-weight="800" fill="#e7f7f0">01</text>
+    <text x="84" y="218" font-size="17" font-weight="800" fill="#0b1220">Open a demo</text>
+    <text x="84" y="248" font-size="13" fill="#6b7a92">MT4 or MT5, at the</text>
+    <text x="84" y="269" font-size="13" fill="#6b7a92">balance you want to pass</text>
+    <text x="84" y="312" font-size="12" font-weight="800" fill="#0e9f6e">NO CHARGE</text>
+  </g>
+  <g>
+    <rect x="292" y="128" width="196" height="212" rx="16" fill="#fff" stroke="#dbe3ef"/>
+    <rect x="292" y="128" width="196" height="6" rx="3" fill="#0e9f6e"/>
+    <text x="316" y="184" font-size="34" font-weight="800" fill="#e7f7f0">02</text>
+    <text x="316" y="218" font-size="17" font-weight="800" fill="#0b1220">Send the login</text>
+    <text x="316" y="248" font-size="13" fill="#6b7a92">Broker, server, account</text>
+    <text x="316" y="269" font-size="13" fill="#6b7a92">number, demo password</text>
+    <text x="316" y="312" font-size="12" font-weight="800" fill="#0e9f6e">NO CHARGE</text>
+  </g>
+  <g>
+    <rect x="524" y="128" width="196" height="212" rx="16" fill="#fff" stroke="#dbe3ef"/>
+    <rect x="524" y="128" width="196" height="6" rx="3" fill="#0e9f6e"/>
+    <text x="548" y="184" font-size="34" font-weight="800" fill="#e7f7f0">03</text>
+    <text x="548" y="218" font-size="17" font-weight="800" fill="#0b1220">The EA trades it</text>
+    <text x="548" y="248" font-size="13" fill="#6b7a92">To the challenge target,</text>
+    <text x="548" y="269" font-size="13" fill="#6b7a92">inside every loss rule</text>
+    <text x="548" y="312" font-size="12" font-weight="800" fill="#0e9f6e">NO CHARGE</text>
+  </g>
+  <g>
+    <rect x="756" y="128" width="196" height="212" rx="16" fill="#fff" stroke="#dbe3ef"/>
+    <rect x="756" y="128" width="196" height="6" rx="3" fill="#0e9f6e"/>
+    <text x="780" y="184" font-size="34" font-weight="800" fill="#e7f7f0">04</text>
+    <text x="780" y="218" font-size="17" font-weight="800" fill="#0b1220">You decide</text>
+    <text x="780" y="248" font-size="13" fill="#6b7a92">$570 once, or walk</text>
+    <text x="780" y="269" font-size="13" fill="#6b7a92">away and owe nothing</text>
+    <text x="780" y="312" font-size="12" font-weight="800" fill="#0e9f6e">PAYMENT HERE</text>
+  </g>
+  <path d="M256 234 h26 m-8 -6 l8 6 -8 6" stroke="#243b5c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M488 234 h26 m-8 -6 l8 6 -8 6" stroke="#243b5c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M720 234 h26 m-8 -6 l8 6 -8 6" stroke="#243b5c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="382" font-size="13.5" fill="#3d4a61">No card, no deposit and nothing charged until step four. A demo cannot hold money, so the test costs you nothing.</text>
+</svg>

@@ -408,6 +408,7 @@ function footer(activePath = '') {
         <li><a href="/">${isHome ? 'Prop firm passing service' : 'Propfirm passing service'}</a></li>
         <li><a href="/services/passing-prop-firm-services.html">How the service works</a></li>
         <li><a href="/services/prop-firm-challenge-passing-service.html">What the flat fee covers</a></li>
+        <li><a href="/services/prop-firm-passing-ea.html">Prop firm passing EA</a></li>
         <li><a href="/demo.html">Free demo trial</a></li>
         <li><a href="/reviews.html">Client reviews</a></li>
         <li><a href="/reviews/prop-firm-passing-service-reviews.html">Service reviews</a></li>

@@ -723,6 +723,156 @@ write(
 </svg>`
 );
 
+/* 16. Free demo test flow for the passing EA */
+write(
+  'ea-free-demo-test.svg',
+  `${svgOpen(1000, 430, 'Four steps of the free EA test: open a demo with your broker, send the login, the EA trades it to the challenge target, then you decide whether to buy')}
+  <defs>${gridPattern('eaft')}</defs>
+  <rect width="1000" height="430" fill="${C.soft}"/>
+  <rect width="1000" height="430" fill="url(#eaft)"/>
+  <text x="60" y="54" font-size="13" font-weight="800" letter-spacing="3" fill="${C.green}">FREE TEST BEFORE YOU BUY</text>
+  <text x="60" y="92" font-size="29" font-weight="800" fill="${C.ink}">Four steps, and the decision stays yours</text>
+  ${[
+    ['01', 'Open a demo', 'MT4 or MT5, at the\nbalance you want to pass', 60],
+    ['02', 'Send the login', 'Broker, server, account\nnumber, demo password', 292],
+    ['03', 'The EA trades it', 'To the challenge target,\ninside every loss rule', 524],
+    ['04', 'You decide', '$570 once, or walk\naway and owe nothing', 756],
+  ]
+    .map(([n, title, body, x]) => {
+      const lines = body.split('\n');
+      return `<g>
+    <rect x="${x}" y="128" width="196" height="212" rx="16" fill="#fff" stroke="${C.line}"/>
+    <rect x="${x}" y="128" width="196" height="6" rx="3" fill="${C.green}"/>
+    <text x="${x + 24}" y="184" font-size="34" font-weight="800" fill="${C.greenSoft}">${n}</text>
+    <text x="${x + 24}" y="218" font-size="17" font-weight="800" fill="${C.ink}">${esc(title)}</text>
+    ${lines
+      .map(
+        (l, i) =>
+          `<text x="${x + 24}" y="${248 + i * 21}" font-size="13" fill="${C.muted}">${esc(l)}</text>`
+      )
+      .join('\n    ')}
+    <text x="${x + 24}" y="312" font-size="12" font-weight="800" fill="${C.green}">${x === 756 ? 'PAYMENT HERE' : 'NO CHARGE'}</text>
+  </g>`;
+    })
+    .join('\n  ')}
+  ${[256, 488, 720]
+    .map(
+      (x) =>
+        `<path d="M${x} 234 h26 m-8 -6 l8 6 -8 6" stroke="${C.ink3}" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`
+    )
+    .join('\n  ')}
+  <text x="60" y="382" font-size="13.5" fill="${C.body}">No card, no deposit and nothing charged until step four. A demo cannot hold money, so the test costs you nothing.</text>
+</svg>`
+);
+
+/* 17. Rule guardrails around the equity curve */
+write(
+  'ea-rule-guardrails.svg',
+  `${svgOpen(980, 520, 'Equity curve rising from a starting balance to a profit target, with a daily loss guard and a maximum loss floor marked as hard lines the curve never reaches')}
+  <rect width="980" height="520" fill="#fff"/>
+  <text x="50" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="${C.green}">RULE GUARDRAILS</text>
+  <text x="50" y="88" font-size="27" font-weight="800" fill="${C.ink}">The four lines that decide an attempt</text>
+  <rect x="240" y="128" width="690" height="312" rx="10" fill="${C.soft}"/>
+  ${[
+    ['Profit target', 168, C.green, '5 5', 'Target'] ,
+    ['Starting balance', 300, C.ink3, '', 'Start'],
+    ['Daily loss guard', 372, C.gold, '', 'Daily'],
+    ['Maximum loss floor', 432, C.red, '5 5', 'Floor'],
+  ]
+    .map(
+      ([label, y, colour, dash, tag]) => `<g>
+    <line x1="240" y1="${y}" x2="930" y2="${y}" stroke="${colour}" stroke-width="2"${dash ? ` stroke-dasharray="${dash}"` : ''}/>
+    <text x="224" y="${y + 4}" font-size="13" font-weight="800" fill="${C.body}" text-anchor="end">${label}</text>
+    <text x="224" y="${y + 20}" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="${C.muted}" text-anchor="end">${esc(tag.toUpperCase())}</text>
+  </g>`
+    )
+    .join('\n  ')}
+  <path d="M240 300 L300 297 L360 292 L420 288 L480 276 L540 273 L600 262 L660 250 L720 240 L780 229 L840 218 L900 196 L930 172" fill="none" stroke="${C.green}" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M240 300 L300 297 L360 292 L420 288 L480 276 L540 273 L600 262 L660 250 L720 240 L780 229 L840 218 L900 196 L930 172 L930 300 Z" fill="${C.greenSoft}" opacity="0.75"/>
+  <circle cx="930" cy="172" r="5" fill="${C.gold}" stroke="#fff" stroke-width="2"/>
+  <text x="924" y="150" font-size="12" font-weight="800" fill="${C.green}" text-anchor="end">TARGET REACHED - TRADING STOPS</text>
+  <text x="252" y="196" font-size="12" fill="${C.muted}">room to target</text>
+  <text x="252" y="336" font-size="12" fill="${C.muted}">room to fail</text>
+  <text x="50" y="478" font-size="13.5" fill="${C.body}">The curve is meant to look dull. Size was cut every time the floor climbed, so the daily guard was never approached.</text>
+</svg>`
+);
+
+/* 18. EA control panel */
+write(
+  'ea-panel.svg',
+  `${svgOpen(940, 560, 'The prop firm passing EA control panel showing risk per trade, daily loss guard, maximum loss floor, profit target, consistency cap, minimum trading days, news filter and weekend flatten')}
+  <rect width="940" height="560" fill="${C.soft}"/>
+  <text x="60" y="40" font-size="13" font-weight="800" letter-spacing="3" fill="${C.green}">THE CONTROL PANEL</text>
+  <text x="60" y="78" font-size="27" font-weight="800" fill="${C.ink}">Every decision is a number you can read</text>
+  <rect x="60" y="100" width="820" height="404" rx="14" fill="${C.ink}"/>
+  <circle cx="90" cy="122" r="5" fill="#d9534f"/>
+  <circle cx="110" cy="122" r="5" fill="${C.gold}"/>
+  <circle cx="130" cy="122" r="5" fill="${C.green}"/>
+  <text x="154" y="127" font-size="12.5" font-weight="700" fill="#9fb0c9">PropFirmPassingEA v2.4 &#183; EURUSD, H1</text>
+  <line x1="60" y1="142" x2="880" y2="142" stroke="#243b5c"/>
+  ${[
+    ['Risk per trade', '0.4% of balance'],
+    ['Daily loss guard', '$4,000 of $5,000'],
+    ['Maximum loss floor', 'tracking, 6% buffer'],
+    ['Profit target', '10.00% - lock on hit'],
+    ['Consistency cap', '35% per day'],
+    ['Minimum trading days', 'paced, 10 days'],
+    ['News filter', 'on, 30 min each side'],
+    ['Weekend flatten', 'on, Friday 20:00'],
+  ]
+    .map(
+      ([label, value], i) => `<g>
+    <text x="92" y="${176 + i * 38}" font-size="13.5" fill="#cdd8e8">${esc(label)}</text>
+    <rect x="652" y="${160 + i * 38}" width="196" height="24" rx="12" fill="#0f2a24" stroke="#1d6b52"/>
+    <text x="750" y="${176 + i * 38}" font-size="12.5" font-weight="700" fill="${C.greenLt}" text-anchor="middle">${esc(value)}</text>
+  </g>`
+    )
+    .join('\n  ')}
+  <line x1="60" y1="462" x2="880" y2="462" stroke="#243b5c"/>
+  <circle cx="92" cy="482" r="4" fill="${C.greenLt}"/>
+  <text x="106" y="486" font-size="12.5" fill="#9fb0c9">Autotrading on &#183; London and New York sessions</text>
+  <text x="848" y="486" font-size="12.5" font-weight="700" fill="#9fb0c9" text-anchor="end">balance $100,000</text>
+  <text x="60" y="538" font-size="13" fill="${C.muted}">The risk profile is written from the firm's published limits, not from a template, and the guardrails are not optional.</text>
+</svg>`
+);
+
+/* 19. Passing EA timeline */
+write(
+  'ea-pass-timeline.svg',
+  `${svgOpen(1000, 440, 'Twelve-session pass timeline rising from the starting balance to the profit target, with cushion, pace, target zone and lock phases')}
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="60" y="46" font-size="13" font-weight="800" letter-spacing="3" fill="${C.green}">A TWELVE-SESSION PASS</text>
+  <text x="60" y="82" font-size="27" font-weight="800" fill="${C.ink}">No dramatic day, no lost attempt</text>
+  <line x1="60" y1="210" x2="940" y2="210" stroke="${C.green}" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="64" y="200" font-size="12" font-weight="800" fill="${C.green}">PROFIT TARGET REACHED - EA LOCKS AND STOPS</text>
+  <line x1="60" y1="300" x2="940" y2="300" stroke="${C.line}" stroke-width="2"/>
+  <text x="64" y="318" font-size="11" font-weight="700" fill="${C.muted}">STARTING BALANCE</text>
+  <path d="M60 300 L140 298 L220 294 L300 291 L380 285 L460 281 L540 273 L620 266 L700 256 L780 247 L860 232 L940 210" fill="none" stroke="${C.green}" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M60 300 L140 298 L220 294 L300 291 L380 285 L460 281 L540 273 L620 266 L700 256 L780 247 L860 232 L940 210 L940 300 L60 300 Z" fill="${C.greenSoft}" opacity="0.65"/>
+  <circle cx="940" cy="210" r="5" fill="${C.gold}" stroke="#fff" stroke-width="2"/>
+  ${Array.from({ length: 12 }, (_, i) => `<g>
+    <line x1="${60 + i * 80}" y1="300" x2="${60 + i * 80}" y2="306" stroke="${C.line}" stroke-width="2"/>
+    <text x="${60 + i * 80}" y="324" font-size="10.5" fill="${C.muted}" text-anchor="middle">D${i + 1}</text>
+  </g>`).join('\n  ')}
+  ${[
+    ['Cushion', 'D1-D4', 'Small size, three losses survivable', 60, 240],
+    ['Pace', 'D5-D8', 'Steady progress, one losing session', 300, 320],
+    ['Target zone', 'D9-D11', 'Size reduced as the target nears', 620, 240],
+    ['Lock', 'D12', 'Day count lands, trading stops', 860, 80],
+  ]
+    .map(
+      ([label, span, detail, x, w]) => `<g>
+    <line x1="${x}" y1="352" x2="${x + w}" y2="352" stroke="${C.ink3}" stroke-width="2"/>
+    <circle cx="${x}" cy="352" r="3" fill="${C.ink3}"/>
+    <text x="${x}" y="374" font-size="13" font-weight="800" fill="${C.ink}">${esc(label)} <tspan font-weight="700" fill="${C.muted}">${esc(span)}</tspan></text>
+    <text x="${x}" y="394" font-size="11.5" fill="${C.muted}">${esc(detail)}</text>
+  </g>`
+    )
+    .join('\n  ')}
+  <text x="60" y="424" font-size="12.5" fill="${C.body}">Eight to fourteen days is the normal first-attempt window on a two-phase forex challenge, because day counts and news windows set the calendar.</text>
+</svg>`
+);
+
 write(
   'og/default.svg',
   ogCard({
