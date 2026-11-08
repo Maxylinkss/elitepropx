@@ -28,7 +28,7 @@ const NAV = [
   { label: 'Passed Challenges', href: '/passed-challenges.html' },
   { label: 'Compare Firms', href: '/prop-firm-comparison-2026.html' },
   { label: 'Firm Rules', href: '/prop-firm-rules/' },
-  { label: 'Services', href: '/services/passing-prop-firm-services.html' },
+  { label: 'Services', href: '/' },
   { label: 'Reviews', href: '/reviews.html' },
   { label: 'Blog', href: '/blog/' },
   { label: 'FAQ', href: '/faq.html' },
@@ -406,7 +406,7 @@ function footer(activePath = '') {
         <li><a href="/prop-firm-rules-matrix.html">Rules matrix</a></li>
         <li><a href="/services/">All evaluation plans</a></li>
         <li><a href="/">${isHome ? 'Prop firm passing service' : 'Propfirm passing service'}</a></li>
-        <li><a href="/services/passing-prop-firm-services.html">How the service works</a></li>
+        <li><a href="/">How the service works</a></li>
         <li><a href="/services/prop-firm-challenge-passing-service.html">What the flat fee covers</a></li>
         <li><a href="/services/prop-firm-passing-ea.html">Prop firm passing EA</a></li>
         <li><a href="/demo.html">Free demo trial</a></li>
