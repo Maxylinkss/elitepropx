@@ -84,6 +84,10 @@ schemaService: true
 <p>One consequence is easy to miss. A one-tick move is a real move on MNQ, so a position held through a wide spread pays half a dollar per contract in friction before the market has done anything. The tighter the target, the larger the share of the profit that single tick represents — which is why scalping micros requires counting ticks rather than points, and why the <a href="/blog/best-micro-futures-for-small-accounts.html">comparison of micro contracts</a> ranks instruments by tick value before anything else.</p>
 
 <h2 id="compare">MNQ against NQ and MES</h2>
+<figure>
+  <img src="/assets/img/mnq-point-value.svg" alt="One MNQ point worth two dollars, one tick worth fifty cents, a quarter-point tick size and four ticks per point, beside a bar comparison showing MES at five dollars, NQ at twenty dollars and ES at fifty dollars per point" width="940" height="520" loading="lazy">
+  <figcaption>The multiplier is the whole difference between these contracts. Ten MNQ contracts pay the same per point as one NQ.</figcaption>
+</figure>
 <p>The micro contracts differ only in multiplier. Comparing them side by side is the fastest way to see why MNQ is the tenth-size version of NQ and not a different instrument.</p>
 <div class="table-scroll">
   <table>
@@ -136,6 +140,10 @@ schemaService: true
 <p>The <a href="/blog/apex-trailing-drawdown-math.html">trailing drawdown arithmetic</a> covers the version of this calculation where the floor moves, and the <a href="/prop-firm-calculator.html">risk calculator</a> does the division for a chosen account size.</p>
 
 <h2 id="daily">The daily limit in points</h2>
+<figure>
+  <img src="/assets/img/futures-contract-size.svg" alt="A two thousand dollar drawdown converted into points of room on micro and full size index futures at one, two and four contracts, showing one thousand points for a single MNQ against one hundred for a single NQ" width="940" height="500" loading="lazy">
+  <figcaption>The same drawdown is a different number of points at every size. The dollar limit is fixed; the point room is not.</figcaption>
+</figure>
 <p>The daily loss limit binds before the maximum loss in practice, because it is smaller and it resets. Converting it to points is what stops a bad morning from ending an evaluation in the afternoon.</p>
 <p>Take a $50,000 account with a 5% daily limit: $2,500, or 1,250 points on one contract. That sounds generous until the size is applied. At three contracts the room is 416 points; at five it is 250. A 250-point adverse excursion on the Nasdaq is an ordinary opening hour, not a crisis, which means five contracts on a $50,000 evaluation is a size that can be stopped out by a normal session rather than by a mistake.</p>
 <p>The number to design against is the losing-trade capacity: how many normal stops the daily limit absorbs before the day is over. A 40-point stop at three contracts costs $240, so a $2,500 daily limit absorbs about ten of them. At ten contracts the same stop costs $800, and the third loss ends the session. Both sizes might survive the maximum loss; only one leaves room to be wrong twice and still trade.</p>
@@ -147,6 +155,10 @@ schemaService: true
 <p>A consequence worth internalising: a target that looks reachable in points becomes unreachable in time once the daily limit is applied. If the plan nets 60 points a day at a size the daily limit allows, a 5,000-point target takes over eighty sessions, and many evaluations expire before that. The honest response is to check the calendar against the arithmetic before paying the fee, not to raise the size after the first slow week.</p>
 
 <h2 id="stop">Sizing from the stop</h2>
+<figure>
+  <img src="/assets/img/risk-budget.svg" alt="A drawdown budget divided into per-trade risk, session risk and an untouched reserve for losing streaks" width="940" height="520" loading="lazy">
+  <figcaption>Size comes from the stop, and the stop decides how much of the budget one trade may spend.</figcaption>
+</figure>
 <p>A workable plan sizes from the stop instead of from the target. Write the dollar risk per trade as a percentage of the account, convert it to points at the chosen contract count, and check that the result survives both the daily loss and the maximum loss with room to spare.</p>
 <p>On a $50,000 account risking 0.5% per trade, the budget is $250. At $2 a point that is 125 points on one contract, 62 points on two, 41 points on three, or 25 points on five. The stop distance the strategy actually needs decides which of those is usable. A method that needs 45 points can run three contracts; a method that needs 120 points can run one.</p>
 <div class="table-scroll">
@@ -236,6 +248,8 @@ schemaService: true
       <li><a href="/blog/prop-firm-leverage-explained.html">Leverage and margin, explained</a></li>
       <li><a href="/blog/apex-trailing-drawdown-math.html">Trailing drawdown, worked out</a></li>
       <li><a href="/prop-firm-calculator.html">Risk and target calculator</a></li>
+      <li><a href="/tools/position-size-calculator.html">Position size calculator</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
       <li><a href="/blog/futures-prop-firm-passing-service.html">Futures evaluations: contracts and thresholds</a></li>
       <li><a href="/blog/prop-firm-challenge-passing-service.html">What the challenge passing service covers</a></li>
       <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
