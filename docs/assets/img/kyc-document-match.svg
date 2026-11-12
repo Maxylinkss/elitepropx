@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-label="Four linked boxes showing that the account name, photo ID, proof of address and payment method must all resolve to the same person, with common mismatch examples underneath" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <rect width="1000" height="420" fill="#f4f7fc"/>
+  <text x="50" y="50" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">ONE IDENTITY, FOUR LINKS</text>
+  <text x="50" y="88" font-size="26" font-weight="800" fill="#0b1220">Every document has to resolve to the same person</text>
+
+  <g>
+    <rect x="50" y="118" width="196" height="94" rx="10" fill="#ffffff" stroke="#dbe4f0"/>
+    <text x="68" y="146" font-size="11" font-weight="800" letter-spacing="1.6" fill="#6b7a92">LINK 1</text>
+    <text x="68" y="172" font-size="16" font-weight="800" fill="#0b1220">Account name</text>
+    <text x="68" y="194" font-size="11.5" fill="#3f4c63">As typed at signup</text>
+
+    <rect x="290" y="118" width="196" height="94" rx="10" fill="#ffffff" stroke="#dbe4f0"/>
+    <text x="308" y="146" font-size="11" font-weight="800" letter-spacing="1.6" fill="#6b7a92">LINK 2</text>
+    <text x="308" y="172" font-size="16" font-weight="800" fill="#0b1220">Photo ID</text>
+    <text x="308" y="194" font-size="11.5" fill="#3f4c63">Passport or licence</text>
+
+    <rect x="530" y="118" width="196" height="94" rx="10" fill="#ffffff" stroke="#dbe4f0"/>
+    <text x="548" y="146" font-size="11" font-weight="800" letter-spacing="1.6" fill="#6b7a92">LINK 3</text>
+    <text x="548" y="172" font-size="16" font-weight="800" fill="#0b1220">Address document</text>
+    <text x="548" y="194" font-size="11.5" fill="#3f4c63">Under three months</text>
+
+    <rect x="770" y="118" width="180" height="94" rx="10" fill="#ffffff" stroke="#dbe4f0"/>
+    <text x="788" y="146" font-size="11" font-weight="800" letter-spacing="1.6" fill="#6b7a92">LINK 4</text>
+    <text x="788" y="172" font-size="16" font-weight="800" fill="#0b1220">Payment method</text>
+    <text x="788" y="194" font-size="11.5" fill="#3f4c63">Same holder</text>
+  </g>
+
+  <g stroke="#0e9f6e" stroke-width="2.5" fill="none">
+    <path d="M246 165 L282 165"/><path d="M278 160 L286 165 L278 170"/>
+    <path d="M486 165 L522 165"/><path d="M518 160 L526 165 L518 170"/>
+    <path d="M726 165 L762 165"/><path d="M758 160 L766 165 L758 170"/>
+  </g>
+
+  <rect x="50" y="240" width="900" height="44" rx="8" fill="#0b1220"/>
+  <text x="72" y="268" font-size="13" font-weight="800" fill="#ffffff">Matching is exact: given names, surnames, order and spelling — not the name you trade under.</text>
+
+  <text x="50" y="316" font-size="11.5" font-weight="800" letter-spacing="1.6" fill="#6b7a92">WHERE THE CHAIN BREAKS, MOST OFTEN</text>
+
+  <g>
+    <rect x="50" y="330" width="284" height="62" rx="8" fill="#ffffff" stroke="#dbe4f0"/>
+    <text x="68" y="355" font-size="13" font-weight="800" fill="#0b1220">Sam Lee  vs  Samuel Lee</text>
+    <text x="68" y="376" font-size="11.5" fill="#3f4c63">Diminutive instead of legal name</text>
+
+    <rect x="358" y="330" width="284" height="62" rx="8" fill="#ffffff" stroke="#dbe4f0"/>
+    <text x="376" y="355" font-size="13" font-weight="800" fill="#0b1220">Bill dated eight months ago</text>
+    <text x="376" y="376" font-size="11.5" fill="#3f4c63">Outside the stated window</text>
+
+    <rect x="666" y="330" width="284" height="62" rx="8" fill="#ffffff" stroke="#dbe4f0"/>
+    <text x="684" y="355" font-size="13" font-weight="800" fill="#0b1220">Card in a partner's name</text>
+    <text x="684" y="376" font-size="11.5" fill="#3f4c63">Payer is not the account holder</text>
+  </g>
+</svg>

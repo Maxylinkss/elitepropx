@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-label="Three cards comparing a failed identity check at signup, on passing and at the first payout, showing what has already been spent and what the failure costs at each stage" font-family="Arial, Helvetica, 'Segoe UI', sans-serif">
+  <defs>
+    <pattern id="kycg" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eef7" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="460" fill="#f4f7fc"/>
+  <rect width="1000" height="460" fill="url(#kycg)"/>
+  <text x="50" y="52" font-size="13" font-weight="800" letter-spacing="3" fill="#0e9f6e">THREE PLACEMENTS, THREE PRICE TAGS</text>
+  <text x="50" y="90" font-size="26" font-weight="800" fill="#0b1220">The same rejected document, at three different moments</text>
+
+  <g>
+    <rect x="50" y="126" width="286" height="272" rx="12" fill="#ffffff" stroke="#dbe4f0"/>
+    <rect x="50" y="126" width="286" height="6" rx="3" fill="#0e9f6e"/>
+    <text x="74" y="166" font-size="11.5" font-weight="800" letter-spacing="2" fill="#6b7a92">AT SIGNUP</text>
+    <text x="74" y="196" font-size="19" font-weight="800" fill="#0b1220">Before any trade</text>
+    <text x="74" y="232" font-size="13" fill="#3f4c63">Spent so far: the fee only.</text>
+    <text x="74" y="258" font-size="13" fill="#3f4c63">No trading time, no pass,</text>
+    <text x="74" y="278" font-size="13" fill="#3f4c63">no funded account.</text>
+    <text x="74" y="318" font-size="11.5" font-weight="800" letter-spacing="1.4" fill="#6b7a92">A FAILURE COSTS</text>
+    <text x="74" y="344" font-size="15" font-weight="800" fill="#0b1220">A delay, nothing more</text>
+    <rect x="74" y="360" width="132" height="26" rx="13" fill="#e6f7ef"/>
+    <text x="90" y="377" font-size="11.5" font-weight="800" fill="#0b7a55">Recoverable</text>
+  </g>
+
+  <g>
+    <rect x="357" y="126" width="286" height="272" rx="12" fill="#ffffff" stroke="#dbe4f0"/>
+    <rect x="357" y="126" width="286" height="6" rx="3" fill="#d99a1e"/>
+    <text x="381" y="166" font-size="11.5" font-weight="800" letter-spacing="2" fill="#6b7a92">ON PASSING</text>
+    <text x="381" y="196" font-size="19" font-weight="800" fill="#0b1220">Before funding</text>
+    <text x="381" y="232" font-size="13" fill="#3f4c63">Spent so far: the fee and</text>
+    <text x="381" y="252" font-size="13" fill="#3f4c63">weeks of trading. The pass</text>
+    <text x="381" y="272" font-size="13" fill="#3f4c63">is already complete.</text>
+    <text x="381" y="318" font-size="11.5" font-weight="800" letter-spacing="1.4" fill="#6b7a92">A FAILURE COSTS</text>
+    <text x="381" y="344" font-size="15" font-weight="800" fill="#0b1220">The account is withheld</text>
+    <rect x="381" y="360" width="112" height="26" rx="13" fill="#fdf3e0"/>
+    <text x="397" y="377" font-size="11.5" font-weight="800" fill="#8a5b00">Fee at risk</text>
+  </g>
+
+  <g>
+    <rect x="664" y="126" width="286" height="272" rx="12" fill="#ffffff" stroke="#dbe4f0"/>
+    <rect x="664" y="126" width="286" height="6" rx="3" fill="#c2410c"/>
+    <text x="688" y="166" font-size="11.5" font-weight="800" letter-spacing="2" fill="#6b7a92">AT FIRST PAYOUT</text>
+    <text x="688" y="196" font-size="19" font-weight="800" fill="#0b1220">At the withdrawal</text>
+    <text x="688" y="232" font-size="13" fill="#3f4c63">Spent so far: the fee, the</text>
+    <text x="688" y="252" font-size="13" fill="#3f4c63">pass, funded trading and a</text>
+    <text x="688" y="272" font-size="13" fill="#3f4c63">qualified payout.</text>
+    <text x="688" y="318" font-size="11.5" font-weight="800" letter-spacing="1.4" fill="#6b7a92">A FAILURE COSTS</text>
+    <text x="688" y="344" font-size="15" font-weight="800" fill="#0b1220">The payment stops</text>
+    <rect x="688" y="360" width="120" height="26" rx="13" fill="#fdece7"/>
+    <text x="704" y="377" font-size="11.5" font-weight="800" fill="#9a2c0a">Worst position</text>
+  </g>
+
+  <text x="50" y="436" font-size="12" fill="#6b7a92">Preparation is the only variable a trader controls: submit early, and the same problem becomes a delay instead of a loss.</text>
+</svg>
