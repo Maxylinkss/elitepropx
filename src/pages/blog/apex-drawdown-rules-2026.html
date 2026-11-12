@@ -1,10 +1,231 @@
 ---
-title: Apex Drawdown Rules 2026 — Prop Firm Guide
-desc: Apex Drawdown Rules 2026: Apex Drawdown Rules 2026 matters at Apex Trader Funding because the firm's rulebook is built on a trailing loss floor with no…
+title: "Apex Drawdown Rules 2026: Floor, Daily Loss, Lock-In"
+desc: "Apex drawdown rules for 2026: how the trailing floor follows the high-water mark, the $100 lock-in, daily loss on a PA account, and room at each size."
 path: /blog/apex-drawdown-rules-2026.html
-type: page
-h1: Apex Drawdown Rules 2026 — Prop Firm Guide
-noindex: true
-redirect: /blog/apex-trailing-drawdown-math.html
-generator: content-system
+type: article
+h1: Apex drawdown rules, as a reference
+kicker: Firm rules
+crumb: Apex drawdown rules 2026
+section: Rules
+sectionUrl: /blog/
+date: 2026-11-12
+updated: 2026-11-12
+priority: 0.7
 ---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Firm rules · reviewed November 2026</p>
+    <h1>Apex drawdown rules, as a reference</h1>
+    <p class="lede">Apex Trader Funding runs a trailing threshold, not a static one, and the difference decides position size on every futures evaluation. This page treats the drawdown as a rulebook rather than a lesson: which number moves, what it moves with, where the floor stops moving, how the daily loss works on a funded account, and how much room each account size actually leaves once contracts are applied.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>The threshold trails the high-water mark and stops trailing once the account is $100 in profit.</li>
+        <li>Unrealised gains do not lift the floor; the balance has to close at the higher level.</li>
+        <li>A $50,000 evaluation offers $2,500 of room, which is 1,250 points on one MNQ or 250 on five.</li>
+        <li>The daily loss limit applies to funded accounts and is measured on the day's starting balance.</li>
+        <li>Contract limits bind before the drawdown does — the size cap usually ends an account first.</li>
+        <li>Room per contract is the number to size from, and it shrinks in exact proportion to size.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#three">Three numbers, one account</a></li>
+        <li><a href="#trail">How the trailing floor moves</a></li>
+        <li><a href="#lock">The $100 lock-in</a></li>
+        <li><a href="#unrealised">Unrealised profit does not count</a></li>
+        <li><a href="#daily">Daily loss on a funded account</a></li>
+        <li><a href="#room">Room at each account size</a></li>
+        <li><a href="#contracts">What size does to the room</a></li>
+        <li><a href="#breach">What actually ends an account</a></li>
+        <li><a href="#stages">Evaluation against PA</a></li>
+        <li><a href="#overnight">Holding overnight</a></li>
+        <li><a href="#addsize">Adding to a winner</a></li>
+        <li><a href="#recovery">Climbing back from a drawdown</a></li>
+        <li><a href="#sessions">Session boundaries and the daily reset</a></li>
+        <li><a href="#checklist">A pre-session checklist</a></li>
+        <li><a href="#questions">Common questions</a></li>
+      </ol>
+    </div>
+
+<h2 id="three">Three numbers, one account</h2>
+<p>Apex publishes a maximum loss threshold, a daily loss limit and a contract limit, and only the first of them trails. The other two are fixed quantities that reset or cap, and confusing which is which produces most of the sizing mistakes traders make in the first week.</p>
+<p>The maximum loss threshold is the account's floor: a dollar level below which the evaluation or funded account is closed. It is expressed as a dollar figure derived from account size, and it moves upward as the account makes money. The daily loss limit is a separate, smaller figure that applies on funded accounts and resets each session. The contract limit is a count, and it is the number that most often decides how the account ends.</p>
+<p>Because the floor moves, "10% drawdown" is not a description of the rule. The starting room may be 10% of the account, but the room left after a good week is the distance between the trailing floor and the current balance, and that distance can be a fraction of the original figure.</p>
+
+<h2 id="trail">How the trailing floor moves</h2>
+<figure>
+  <img src="/assets/img/drawdown-types.svg" alt="A static loss floor compared with a trailing floor that rises with the account high-water mark and a daily loss line measured from the session's opening balance" width="1000" height="560" loading="lazy">
+  <figcaption>Only the trailing floor moves with profit. The daily line resets, and the contract cap never moves at all.</figcaption>
+</figure>
+<p>The mechanism is a high-water mark. Each time the account closes at a new peak balance, the floor is recalculated at that peak minus the drawdown allowance, and it never moves back down. A losing day does not lower it. A withdrawal does not lower it. Only the next peak raises it.</p>
+<p>Take a $50,000 evaluation with $2,500 of allowance. The floor starts at $47,500 against a $50,000 start. Close at $52,000 and the floor moves to $49,500 — the account now has $2,500 of room again, but measured from $52,000 rather than from the start. Close at $50,400 and it moves to $47,900. The floor has followed the peak down to a balance barely above the starting figure, and the room from there is $2,500 again.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Peak balance reached</th><th>Floor at $2,500 allowance</th><th>Room from the peak</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$50,000 (start)</td><td>$47,500</td><td>$2,500</td></tr>
+      <tr><td>$51,000</td><td>$48,500</td><td>$2,500</td></tr>
+      <tr><td>$52,000</td><td>$49,500</td><td>$2,500</td></tr>
+      <tr><td>$53,000</td><td>$50,500</td><td>$2,500</td></tr>
+      <tr><td>$54,000</td><td>$51,500</td><td>$2,500</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The important consequence is that the room never grows, it only relocates. A trader who wins $3,000 has not bought $3,000 of extra cushion; they have moved the floor up by $3,000, leaving the same $2,500 below the new peak. On a trailing account, a winning streak does not make the account safer — it makes the same size riskier relative to the floor, because the floor now sits above the level where many of those trades were entered.</p>
+<p>This is the mechanism that catches good traders. A method that adds to winners works beautifully on a static floor and badly on a trailing one, because every partial close that lifts the peak also lifts the level that ends the account. The <a href="/blog/apex-trailing-drawdown-math.html">session-by-session arithmetic</a> works through what that does to a live position, and it is the reason exit rules matter more than entry rules on this rulebook.</p>
+
+<h2 id="lock">The $100 lock-in</h2>
+<p>The floor stops trailing once the account is $100 in profit. From that point it is fixed at the starting balance, whatever the peak does afterwards. The account has, in effect, converted from a trailing drawdown to a static one, and the room available is whatever sits between the balance and the starting figure.</p>
+<p>On a $50,000 account, hitting $50,100 locks the floor at $50,000. A trader who then reaches $55,000 has $5,000 of room, not $2,500. The rule is worth understanding for exactly that reason: it changes the risk profile of the account at a specific, identifiable moment, and a plan that sizes the same way before and after the lock is leaving room unused on one side and overusing it on the other.</p>
+<p>In practice most evaluations lock before they finish, because passing a target usually involves clearing $100 of profit well before the final figure. The lock is therefore a feature of the second half of an account's life rather than a distant milestone. Check the balance against the threshold rather than assuming the trailing rule still applies, especially when deciding whether to hold a position overnight into a gap.</p>
+
+<h2 id="unrealised">Unrealised profit does not count</h2>
+<p>The high-water mark is a balance figure, not an equity figure. An open position that is $4,000 in profit has not lifted the floor, and it has not locked it either. Only the closed balance moves the number.</p>
+<p>Two things follow. The first is that a trader cannot use an open winner as a cushion against a second position: the floor is still where it was, and the equity swing can take the account below it while the winning trade is still running. The second is that closing the winner is the act that raises the floor, which can happen at the worst possible moment — mid-session, with the rest of the book still open.</p>
+<p>Apex accounts are closed on equity for the threshold, which means the number that ends the account is the marked-to-market figure rather than the settled one. The combination is unforgiving: an unrealised loss can breach a floor the account has not yet raised, and a realised gain raises the floor while a remaining position is still exposed. Size to the equity figure, and treat every partial close as a floor event.</p>
+
+<h2 id="daily">Daily loss on a funded account</h2>
+<p>The daily loss limit is a funded-account rule and it is measured against the day's starting balance, not against the trailing floor. On a $50,000 PA account with a $1,100 daily figure, the session ends when equity reaches $1,100 below where the day opened, regardless of how much room sits above the floor.</p>
+<p>That measurement point is what makes the daily rule independent of the trailing one. A day that opens at $54,000 carries a daily line at $52,900 and a floor at $51,500. The daily line is the nearer of the two by $1,400, so it binds first even though the account is comfortably profitable. A trader watching only the floor will be surprised by a daily breach on an account that never approached the threshold.</p>
+<p>The reset is to the next session's opening balance, so the rule is a per-day budget rather than a cumulative one. Two losing days in a row draw on two separate budgets and neither carries into the next. What does carry is the floor: the second day starts from a lower balance with the same floor beneath it, so the two rules interact at the point where a losing streak has eaten the cushion.</p>
+<p>Futures sessions have a defined open, and the measurement usually keys to the firm's session boundary rather than to midnight in the trader's timezone. Confirm the boundary before trading an overnight product, because a position held across it is measured against a different starting balance than the trader expects. The <a href="/blog/apex-trader-funding-weekend-holding.html">weekend holding rules</a> cover the same boundary from the holding side.</p>
+
+<h2 id="room">Room at each account size</h2>
+<p>Converting the drawdown into dollars and then into points is the calculation that keeps an account open. The percentage is constant across sizes; the dollars and the points are not.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Account</th><th>Threshold</th><th>Points at 1 MNQ</th><th>Points at 3 MNQ</th><th>Points at 6 MNQ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$25,000</td><td>$1,250</td><td>625</td><td>208</td><td>104</td></tr>
+      <tr><td>$50,000</td><td>$2,500</td><td>1,250</td><td>416</td><td>208</td></tr>
+      <tr><td>$100,000</td><td>$5,000</td><td>2,500</td><td>833</td><td>416</td></tr>
+      <tr><td>$150,000</td><td>$7,500</td><td>3,750</td><td>1,250</td><td>625</td></tr>
+      <tr><td>$250,000</td><td>$12,500</td><td>6,250</td><td>2,083</td><td>1,041</td></tr>
+      <tr><td>$300,000</td><td>$15,000</td><td>7,500</td><td>2,500</td><td>1,250</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The point figures assume MNQ at $2 per point and a clean threshold with no lock applied. Once the $100 lock is in place the room is the distance from the starting balance to the current one, which on a $100,000 account that has reached $104,000 is $4,000 — more than the original $5,000 allowance would suggest at first glance, but less than the peak-to-floor figure during the trailing phase.</p>
+<p>Read the six-contract column against a normal session range. On a $25,000 account, six contracts leave 104 points of room, and a Nasdaq opening hour routinely travels more than that. The account is not being failed by a bad read; it is being failed by a size that leaves less room than the market's ordinary noise. The <a href="/blog/apex-account-sizes-explained.html">account size guide</a> covers which size fits which method.</p>
+
+<h2 id="contracts">What size does to the room</h2>
+<p>Room per contract is the threshold divided by the contract count, and it falls in exact proportion. Doubling size halves the room, which sounds obvious and is routinely ignored because the dollar threshold feels large.</p>
+<p>On a $150,000 account with a $7,500 threshold, one contract leaves 3,750 points and ten contracts leave 375. A 375-point adverse move on the Nasdaq is a normal afternoon, not a crisis. The same account at two contracts leaves 1,875 points, which is a bad week rather than a bad hour. Nothing about the market changed between those two accounts; only the count did.</p>
+<p>This is why the contract limit and the drawdown limit are not independent. A firm that allows twenty contracts on a $50,000 account is offering a size at which a 125-point move ends the account, which is roughly one average session range. The permission exists; the arithmetic says not to use it. Position size should come from the <a href="/tools/position-size-calculator.html">stop distance and the dollar budget</a>, not from the maximum the firm allows.</p>
+<p>The lock changes this calculation usefully. After the floor fixes at the starting balance, additional profit becomes genuine room rather than a relocation of the same cushion, so a trader who has locked and built a buffer can add size without the floor chasing them. That is the point in the account's life where scaling up is arithmetically supported rather than merely tempting.</p>
+
+<h2 id="breach">What actually ends an account</h2>
+<p>Three events close an Apex account: equity reaching the threshold, equity reaching the daily line on a funded account, and holding more contracts than the plan permits at any moment. The third is the one traders underestimate, because it is a count rather than a loss.</p>
+<p>The contract rule applies to open positions, including hedged ones. Two opposite positions on the same instrument can count as two contracts against the limit, and a bracket order that adds to a position after a partial fill can momentarily exceed it. The check is on the maximum simultaneously open, not on the number of trades.</p>
+<p>News and event rules sit outside the drawdown arithmetic but breach the account the same way. Firms that restrict trading around scheduled releases usually define a window in minutes either side of the release, and a position opened inside it is a violation regardless of whether it made money. The <a href="/blog/topstep-news-trading-rules.html">news rule comparison</a> sets out how the windows differ between firms, and the <a href="/prop-firm-rules-matrix.html">rules matrix</a> lists which firms apply one.</p>
+<p>Withdrawals and payouts do not lower the floor. A trader who takes profit out has a smaller balance and the same floor, so the room shrinks by the amount withdrawn. That is a deliberate design: the floor tracks the account's peak, not its current equity, and a payout is a decision to accept less room in exchange for cash.</p>
+
+<h2 id="stages">Evaluation against PA</h2>
+<p>The evaluation and the funded account share the threshold mechanism and differ on the daily rule and the payout conditions. Treating the two stages as identical is a common reason a trader who passed cleanly struggles in the first funded month.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Evaluation</th><th>PA / funded</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Maximum loss</td><td>Trailing threshold</td><td>Trailing threshold, locks at $100</td></tr>
+      <tr><td>Daily loss limit</td><td>Not applied</td><td>Applied, measured from the day's opening balance</td></tr>
+      <tr><td>Profit target</td><td>Required to pass</td><td>None; payout threshold instead</td></tr>
+      <tr><td>Contract limit</td><td>Plan-dependent, scales with size</td><td>Plan-dependent, often higher</td></tr>
+      <tr><td>Consistency check</td><td>Plan-dependent</td><td>Applied at payout</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The daily rule is the main addition. An evaluation can be traded with a single wide stop and no session budget, and that method fails on a funded account the first time a bad morning exceeds the daily figure. The transition should include a deliberate reduction in size for the first two weeks while the daily number is learned, because it is a smaller constraint than the threshold and it arrives without warning.</p>
+<p>The consistency clause is the other addition, and it is measured on profit rather than on loss. A funded account that makes its money in two large sessions can pass the threshold comfortably and still be blocked at the payout. The <a href="/blog/prop-firm-consistency-rule-explained.html">consistency ratio</a> covers the arithmetic, and the <a href="/blog/apex-trader-funding-first-payout-timeline.html">first payout timeline</a> sets out the sequence.</p>
+
+<h2 id="sessions">Session boundaries and the daily reset</h2>
+<p>The daily rule resets at a boundary that the firm defines, and the boundary is not always the trader's midnight. On futures accounts it usually follows the platform's trading day, which opens in the evening for the overnight session and closes the following afternoon. A position held across that open belongs to a different day than the trader assumed, and so does the loss it carries.</p>
+<p>The consequence is a measurement mismatch. A trader in Europe trading the New York afternoon may cross the boundary in the middle of their session, so a single evening of trading is split across two days for the purposes of the daily limit. The room available is the same in total, but the budget resets mid-session rather than between sessions, which changes where the risk is concentrated.</p>
+<p>The fix is to know the boundary in local time and to write it next to the trading plan. Once it is stated as a clock time, the two questions that matter become answerable: which day does this trade belong to, and how much of that day's budget is left. Without the boundary, both questions are guesses, and a daily breach on a profitable account is the usual result.</p>
+<p>The same boundary governs the high-water mark calculation. A balance that settles after the session close is the figure the floor is computed from, so a trader who closes a winner after the boundary moves the next day's floor rather than the current one. Neither rule is complicated; both are easy to misread, and both are written in the plan's terms rather than in the platform's interface.</p>
+
+<h2 id="checklist">A pre-session checklist</h2>
+<p>Four numbers, written down before the first trade, cover the whole rulebook. The first is the current floor, taken from the dashboard rather than remembered. The second is the distance from equity to that floor, in dollars. The third is the day's daily line, if the account is funded. The fourth is the contract count the plan permits.</p>
+<p>Convert the two dollar figures into points at the size being traded, and check the smaller against the stop distance. If the stop is wider than the room, the size is wrong regardless of what the setup looks like. If the setup requires more room than the account has, the trade is not available today, and the honest response is to wait for a tighter one rather than to widen the stop.</p>
+<p>Recompute after every closed winner, because that is the event that moves the floor. A trading plan that fixes size at the start of the day and never revisits it is a plan for a static drawdown, and Apex does not offer one. On a trailing account the size that was correct at 9:30 can be too large by 11:00 if the morning produced a new high-water mark.</p>
+
+<h2 id="overnight">Holding overnight</h2>
+<p>A trailing floor plus an overnight hold is a combination where the gap does the deciding. The position is marked to market at the reopen, and the marked-to-market figure can sit below the floor before any stop has a chance to work, which closes the account at the gap rather than at the stop.</p>
+<p>The size that makes this visible is the size relative to the remaining room. If the account has $2,500 of room and the position carries $80 per point on five MNQ contracts, a 31-point gap through the stop reaches the floor. Overnight gaps of that size on the Nasdaq are ordinary around earnings and macro releases, and they do not respect stops, because the first trade of the session can print far from the last trade of the previous one.</p>
+<p>The mitigation is not a wider stop. Widening the stop increases the loss at the gap rather than preventing it. The mitigations are smaller size into the close, closing the position, or accepting that the position is a bet on the gap rather than on the setup. On a futures evaluation the third option is usually the honest description, and it should be taken with the same deliberation as any other trade rather than by default.</p>
+<p>Weekend holds add a second layer, because the gap is longer and the news flow is not watched by the trader in real time. Firms differ on whether weekend positions are permitted at all on an evaluation, and some apply a reduced size limit into the weekend. Confirm the rule for the specific plan rather than assuming the intraday permission extends to Friday's close.</p>
+
+<h2 id="addsize">Adding to a winner</h2>
+<p>Scaling into a winning position is the technique a trailing floor punishes hardest, and the punishment is mechanical rather than psychological. Each partial close that locks profit raises the high-water mark, and the raised floor now sits beneath a position that was entered at a lower price. The trade has to keep working simply to defend the room it has just created.</p>
+<p>A concrete sequence: five MNQ contracts entered at 20,000 with a floor 400 points below the entry. The position runs 200 points and the trader closes two, banking $800. The floor rises by $800, which at the remaining three contracts is 133 points of room. The distance from the entry to the floor has fallen from 400 points to 267, while the position is now 200 points in profit — so the cushion is thinner than it was before the win was banked.</p>
+<p>That is not an argument against taking profit. It is an argument for taking it in larger steps and later, so the floor rises once rather than four times, and for recognizing that a trailing account's risk increases as profit is realized rather than as it is given back. A trader who banks every 50 points is repeatedly raising the floor under a position that has not yet resolved.</p>
+<p>The cleanest solution is to decide the exit before the entry in point terms and let the position run to it, rather than managing the floor trade by trade. The plan is then a single decision with a known room requirement, and the room can be checked against the floor before the first contract is bought.</p>
+
+<h2 id="recovery">Climbing back from a drawdown</h2>
+<p>After a losing session the arithmetic of recovery changes, because the room has shrunk while the floor has stayed put. A $50,000 account that drops to $48,600 has $1,100 of room, not $2,500, and the size that was safe at the start is now more than twice as large relative to what remains.</p>
+<p>The temptation is to restore the balance at the old size, which requires the account to make back the loss while carrying the same risk. The arithmetic says the opposite: at $1,100 of room, five MNQ contracts leave 110 points, which is less than a normal hour's range, while one contract leaves 550 points, which is a workable session. Recovery is a size decision before it is a trade decision.</p>
+<p>There is also a hard limit worth computing in advance. If the account can only absorb three more normal stops before the floor, the recovery plan must produce a win inside those three trades or accept that the account is finished. Writing that number down converts a vague sense of pressure into a deadline, and it usually produces a smaller size and a tighter selection rather than a larger one.</p>
+<p>The alternative to recovery is a reset, which is a purchase rather than a trade. On a trailing account the two should be compared honestly: the expected number of trades needed to recover from $1,100 of room is often higher than the cost of a fresh attempt, and the fresh attempt starts with full room and no damaged psychology. The <a href="/blog/apex-trader-funding-reset-policy.html">reset policy</a> sets out what that option costs.</p>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2 id="questions">Common questions</h2>
+
+<details class="faq"><summary>Is the Apex drawdown trailing or static?</summary><div class="faq-a"><p>Trailing, until the account is $100 in profit. At that point the floor fixes at the starting balance and the account behaves like a static-drawdown account from then on.</p></div></details>
+
+<details class="faq"><summary>Does unrealised profit move the floor?</summary><div class="faq-a"><p>No. The high-water mark is a closed balance, so the floor only moves when a position is closed and the balance settles at a new peak.</p></div></details>
+
+<details class="faq"><summary>Does a withdrawal lower the floor?</summary><div class="faq-a"><p>No. The floor never moves down. A withdrawal reduces the balance and leaves the floor where it is, which reduces the room by the amount withdrawn.</p></div></details>
+
+<details class="faq"><summary>How much room does a $50,000 account have?</summary><div class="faq-a"><p>$2,500 at the start, which is 1,250 points on one MNQ, 416 on three, or 250 on five. The dollar figure stays at $2,500 as the peak rises; the point room depends entirely on the contract count.</p></div></details>
+
+<details class="faq"><summary>Is the daily loss limit on the evaluation too?</summary><div class="faq-a"><p>The daily rule is a funded-account condition. The evaluation is governed by the trailing threshold and the contract limit. Confirm the current terms on the plan, because firms revise these.</p></div></details>
+
+<details class="faq"><summary>Can I breach by holding too many contracts?</summary><div class="faq-a"><p>Yes. The contract limit is a count of simultaneously open positions, including hedged ones, and exceeding it ends the account regardless of profit or loss at the time.</p></div></details>
+
+<details class="faq"><summary>Does the floor move on a losing day?</summary><div class="faq-a"><p>No. It only rises, and only to a new peak. A losing day lowers the balance and leaves the floor in place, which is why room disappears faster than the balance does.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Sizing for a trailing floor is a different job</h2>
+      <p>Flat <strong>$220</strong>, any firm, any account size — traded to the floor, not to the contract maximum.</p>
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/apex-trailing-drawdown-math.html">Trailing drawdown, session by session</a></li>
+      <li><a href="/blog/apex-evaluation-rules-2026.html">Apex evaluation rules 2026</a></li>
+      <li><a href="/blog/apex-account-sizes-explained.html">Apex account sizes</a></li>
+      <li><a href="/blog/apex-trader-funding-evaluation.html">The Apex evaluation, reviewed</a></li>
+      <li><a href="/blog/apex-payout-denied.html">Apex payout refusals</a></li>
+      <li><a href="/blog/prop-firm-trailing-drawdown-vs-static-drawdown-explained.html">Trailing against static drawdown</a></li>
+      <li><a href="/blog/how-much-is-one-micro-nq-point-worth.html">What an MNQ point is worth</a></li>
+      <li><a href="/tools/position-size-calculator.html">Position size calculator</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
+      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
+    </ul>
+    <p class="disclaimer">Drawdown thresholds, lock-in levels, daily limits and contract caps are set by each firm and revised without notice. The figures here describe a typical Apex structure and should be confirmed on the plan being purchased. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Trading futures involves substantial risk of loss; this page is general information, not financial advice.</p>
+  </div>
+</section>

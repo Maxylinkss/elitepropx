@@ -1,10 +1,188 @@
 ---
-title: Prop Firm Copy Trading Rules | 2026
-desc: Prop Firm Copy Trading Rules: Copy-trading rules govern whether a trader may mirror positions from another account or allow their account to be mirrored.…
+title: "Prop Firm Copy Trading Rules: What Is Allowed in 2026"
+desc: "Copy trading on a prop firm account: mirroring your own accounts, following a signal provider, how firms detect copied fills, and what reverses a pass."
 path: /blog/prop-firm-copy-trading-rules.html
-type: page
-h1: Prop Firm Copy Trading Rules
-noindex: true
-redirect: /blog/account-sharing-prop-firm-rules.html
-generator: content-system
+type: article
+h1: Copy trading on a prop firm account
+kicker: Firm rules
+crumb: Copy trading rules
+section: Rules
+sectionUrl: /blog/
+date: 2026-11-12
+updated: 2026-11-12
+priority: 0.7
 ---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Firm rules · reviewed November 2026</p>
+    <h1>Copy trading on a prop firm account</h1>
+    <p class="lede">"Copy trading" describes at least three different arrangements, and prop firms treat them very differently: mirroring your own accounts from one master trade, following someone else's signal feed, and letting others copy you. This page separates the three, explains how copied fills are detected in the first place, and sets out which arrangement usually survives review and which one reverses a passed evaluation.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Mirroring your own accounts is the arrangement most often permitted, usually with disclosure.</li>
+        <li>Copying a third party's signals is the arrangement most often treated as prohibited practice.</li>
+        <li>Selling or distributing your signals is a separate violation from receiving them.</li>
+        <li>Copied fills are detected by timestamp clustering and identical position sizes, not by software signatures.</li>
+        <li>A finding is made at review, which can be months after the trades and at the payout.</li>
+        <li>Written permission before the fact is worth more than any argument afterwards.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#three">Three arrangements, one phrase</a></li>
+        <li><a href="#own">Mirroring your own accounts</a></li>
+        <li><a href="#signals">Following someone else's signals</a></li>
+        <li><a href="#selling">Selling or sharing your own</a></li>
+        <li><a href="#detect">How copied fills are detected</a></li>
+        <li><a href="#ea">A copier is not an EA</a></li>
+        <li><a href="#outcome">What happens when it is found</a></li>
+        <li><a href="#permission">Getting permission in writing</a></li>
+        <li><a href="#crossfirm">Copying between two prop firms</a></li>
+        <li><a href="#family">Family, joint and company accounts</a></li>
+        <li><a href="#social">Social platforms and published strategies</a></li>
+        <li><a href="#disclosure">A disclosure that holds up</a></li>
+        <li><a href="#tools">The tooling that gets noticed</a></li>
+        <li><a href="#decide">A decision checklist</a></li>
+        <li><a href="#questions">Common questions</a></li>
+      </ol>
+    </div>
+
+<h2 id="three">Three arrangements, one phrase</h2>
+<figure>
+  <img src="/assets/img/rulebook-models.svg" alt="Three rulebook models compared, separating a trader mirroring their own accounts from a trader following a third-party signal feed and from a trader distributing signals to others" width="1000" height="540" loading="lazy">
+  <figcaption>The same software can run all three arrangements. The rules turn on who is on the other end of the copy, not on the tool.</figcaption>
+</figure>
+<p>The first arrangement is a trader running two or more accounts of their own from one master order. The second is a trader subscribing to a signal provider and having trades placed automatically or manually in a prop account. The third is a trader whose account is copied by others, whether for free or for a fee.</p>
+<p>Firms write their clauses around the second and third, because those introduce a third party into the profit calculation. The first is usually tolerated because the trader is still the author of every position, and the firm's exposure does not change. A trader who says "I use a copier" has said almost nothing until they say which of the three applies.</p>
+
+<h2 id="own">Mirroring your own accounts</h2>
+<p>Running one strategy across several of your own accounts is the most common version and the most commonly permitted one. It is also the version most often restricted, because the same position on five accounts takes five times the firm's capital exposure while looking like one decision, and some firms limit the aggregate size rather than the per-account size.</p>
+<p>The rules that usually apply are disclosure and proportionality. Disclosure means telling the firm, usually in the application or in a support ticket, that a copier will be used across your own accounts. Proportionality means the aggregate position stays within the limits the firm would apply if the accounts were merged — five accounts at the maximum contract count each can exceed the firm's total exposure tolerance even though no single account breaches.</p>
+<p>The practical risk is the payout review rather than the evaluation. A reviewer looking at several funded accounts with identical entry timestamps and identical sizes will ask who is behind them, and the answer needs to be a documented arrangement rather than an improvised explanation. Keep the permission in the support thread and reference it in the payout request.</p>
+<p>Personal accounts at a retail broker are a separate question from accounts at another prop firm. Mirroring across firms is treated differently again, because the two firms' rules both apply and neither may permit it. The <a href="/blog/multiple-accounts-one-prop-firm.html">multiple accounts guide</a> covers the count limits, and the <a href="/blog/account-sharing-prop-firm-rules.html">sharing rules</a> cover where access ends and copying begins.</p>
+
+<h2 id="signals">Following someone else's signals</h2>
+<p>Receiving trades from another person is the arrangement firms most consistently prohibit, and the prohibition is usually written as a clause rather than as a list. "The account must be traded by the account holder" covers a signal group, a Telegram channel, a mirror of a mentor's account, and a copied strategy in a social trading platform, even though the tools are entirely different.</p>
+<p>The reason is not that the firm dislikes the strategy. It is that the profit being paid out belongs to a skill the account holder has not demonstrated, and the firm cannot size its exposure to a decision process it cannot see. From the firm's point of view, an account following a third-party feed is one account in a cluster of unknown size, and the cluster risk is what the clause controls.</p>
+<p>Manual entry does not avoid the clause. A trader who receives a screenshot and places the trade by hand has still had the account traded by someone else in substance, and the detection does not depend on the software. The <a href="/blog/account-sharing-prop-firm-rules.html">access and execution distinction</a> is the relevant test, not the mechanism.</p>
+<p>The exception, where one exists, is written into the terms. A few firms permit copying from a verified personal account at a regulated broker, provided the trader is the beneficial owner. That is a narrow carve-out and it is worth reading twice, because the same firms prohibit copying from another prop account at a different firm.</p>
+
+<h2 id="selling">Selling or sharing your own</h2>
+<p>Distributing your trades to others is a separate violation with a different rationale. A trader who sells signals while trading a funded account is running a business whose revenue depends on the payouts the firm is not part of, and the terms usually prohibit using the account for anything other than the account holder's own trading.</p>
+<p>The clause can bite even when no money changes hands. A trader who shares entries in a group, a friend who mirrors the account informally, or a family member who follows the same plan all create the same cluster, and the finding at review does not distinguish between a paid signal service and an unpaid one. The firm's question is who decided the trade, not who paid for it.</p>
+<p>The usual consequence is cancellation of the payout and closure of the account, sometimes with the profit removed rather than only withheld. That is harsher than the consistency branch and it is not repairable by trading on. A trader who wants to distribute their trades should do it from a personal account and keep the prop account solely their own.</p>
+
+<h2 id="detect">How copied fills are detected</h2>
+<p>Firms do not need special software. They hold the full order record for every account, and copied trades leave a signature in that record: entries within a few seconds of each other, identical lot or contract sizes scaled by a fixed ratio, identical stop and target distances, and exits at the same prices.</p>
+<p>Three of those together are enough to raise a flag. The timing distribution is the strongest signal, because independent traders entering the same setup will scatter across minutes and seconds while a copier cluster will not. The proportionality is the second, since a copy that scales by a fixed multiplier produces position sizes in an exact ratio across accounts, visible in a single query.</p>
+<p>A third signal is instrument and time-of-day clustering, which is why copied accounts tend to be flagged as a group rather than individually. Firms also compare IP and device data where their terms allow it, though the order record alone is usually sufficient and is much easier to defend when a finding is challenged.</p>
+<p>Detection mostly happens at review rather than in real time, which is why an account can trade for months before a finding appears. The <a href="/blog/how-challenge-passing-services-work.html">explanation of how passing services operate</a> covers the distinction between a service that trades an account under an assigned arrangement and a copier that duplicates an external decision.</p>
+
+<h2 id="ea">A copier is not an EA</h2>
+<p>The two are governed by different clauses and traders routinely defend one using the other. An expert advisor executes a strategy written in code on the account itself; a copier transmits an already-decided trade from one place to another. A firm that permits EAs has not thereby permitted copy trading, and a firm that permits a copier across your own accounts has not permitted an EA under the same clause.</p>
+<p>The EA boundary is about whether the automation executes the trader's own logic. Most firms allow that and prohibit automation that reacts to latency, exploits pricing errors, or is shared between unrelated accounts. The copy-trading boundary is about whether the decision was made by the account holder. Both questions can be answered separately for the same piece of software.</p>
+<p>A trader using a tool that does both — a strategy that runs on a master and copies to a prop account — should disclose the whole arrangement rather than describing it as an EA. The disclosure is judged on substance, and a partial description at onboarding is worse than no description, because it reads as intent. The <a href="/blog/can-you-pass-ftmo-challenge-with-ea.html">EA rules</a> cover the automation side in detail.</p>
+
+<h2 id="outcome">What happens when it is found</h2>
+<p>The range of outcomes runs from a request to stop to a permanent ban, and the position on that range depends on which arrangement was found and whether it was disclosed. An undisclosed copier across your own accounts is usually treated as a breach of the disclosure clause and resolved by stopping. A third-party signal feed is usually treated as prohibited practice, with the payout cancelled and the account closed.</p>
+<p>Profit already paid can be clawed back in some terms, particularly where the finding covers the whole life of the account rather than a recent period. That is the outcome that hurts most, because it converts a closed account into a debt. Read the clawback clause before deciding that a copier is a small administrative detail.</p>
+<p>Passes are also reversed at the funded stage, not only at the evaluation. A trader who copied through the evaluation and traded the funded account independently is still exposed if the review covers the whole relationship, because the pass itself was obtained under the arrangement. The <a href="/blog/ftmo-payout-denied.html">refusal reasons</a> set out how a finding surfaces at the payout rather than earlier.</p>
+
+<h2 id="permission">Getting permission in writing</h2>
+<p>One support ticket is worth more than any appeal. State the arrangement precisely — master account, number of prop accounts, which tool, whether the copied accounts are all owned by the same person — and ask for confirmation that it is permitted. Keep the reply.</p>
+<p>A useful request names the accounts and the aggregate size, because the answer often depends on the count. Two accounts mirrored at normal size is a different question from eight accounts mirrored at the firm's maximum, and a general "is copy trading allowed" question will produce a general answer that helps nobody at review.</p>
+<p>If the reply is ambiguous, ask again with a yes/no framing. Support teams answer hundreds of these, and a specific question gets a specific answer. The permission is also worth re-confirming after a rule update, since firms revise the terms and an approval given under an older version may not survive the revision.</p>
+
+<h2 id="tools">The tooling that gets noticed</h2>
+<p>Some copier setups are more visible than others, and the visibility is a property of the plumbing rather than of the intent. Knowing which parts leave a trace is useful for two reasons: it explains how a finding was reached, and it discourages the belief that a quieter tool makes an undisclosed arrangement safe.</p>
+<p>The loudest signal is a shared virtual private server. When several accounts trade from the same IP address and the same device fingerprint, the accounts are linked before a single order is compared. Firms that log connection data see a cluster where the terms assume separate traders, and the cluster is visible on day one rather than at review.</p>
+<p>The second is latency symmetry. A copier executing in the same millisecond across accounts produces fills that are too alike to be independent, and firms with tick-level records can measure the interval directly. Deliberately adding a random delay makes the interval less uniform without changing the underlying link, which is why the practice is treated as concealment when it is discovered.</p>
+<p>The third is sizing arithmetic. A fixed multiplier across accounts produces position sizes in an exact ratio that persists across instruments and sessions, and a query for that pattern is trivial. Genuine independent trading produces sizes that vary with the trader's own risk budget, so the absence of variation is itself the evidence.</p>
+<p>None of this is an argument for better concealment. It is an argument for disclosure, because an arrangement that is permitted does not need to be hidden and an arrangement that has to be hidden is the one that will be found.</p>
+
+<h2 id="decide">A decision checklist</h2>
+<p>Before connecting any copier to a prop account, answer four questions. Whose decision is being copied? Are all the accounts involved owned by the same person? Is the arrangement disclosed in writing? Does the aggregate position stay inside the firm's total exposure limits?</p>
+<p>Three yeses and a clear ownership answer is a defensible arrangement. A no anywhere is a finding waiting for a review, and the review will arrive at the least convenient moment — the payout, when the profit is real and the account is most valuable.</p>
+<p>The cheap version of this decision is to trade the evaluation account as its own book and keep any copying on personal capital. That removes the clause entirely, costs nothing but a little duplication, and leaves the funded account clean for the payout request. The <a href="/prop-firm-rules-matrix.html">rules matrix</a> shows which firms write the clause tightly and which leave room for a disclosed arrangement.</p>
+
+<h2 id="crossfirm">Copying between two prop firms</h2>
+<p>Mirroring an account at firm A into an account at firm B is the arrangement with the worst risk-to-benefit ratio, because two rulebooks apply and neither firm can see the other's book. Each firm sees an account that is being traded by someone else, and the disclosure that satisfies one may not satisfy the other.</p>
+<p>The practical objections are aggregate exposure and informed consent. From firm A's side, the trader's decision is being duplicated into an account the firm has no relationship with, so its own exposure is larger than its account shows. From firm B's side, the profit is being generated by a decision process the firm has not evaluated, which is the same objection it has to a signal feed.</p>
+<p>Disclosure helps but does not guarantee permission. A trader who states that the same strategy runs at two firms has at least removed the intent question, and some firms accept that for accounts under a stated size. Others prohibit it outright as a form of duplication, on the reasoning that a single strategy drawing on two firms' capital is a portfolio the firms did not agree to fund.</p>
+<p>Read both sets of terms rather than one, and read the clause that covers accounts at other firms specifically. That clause is usually separate from the copy-trading clause and it is the one that decides whether the arrangement is permitted at all. The <a href="/prop-firm-rules-matrix.html">rules matrix</a> records which firms address it explicitly.</p>
+
+<h2 id="family">Family, joint and company accounts</h2>
+<p>Household arrangements sit in an awkward gap. A spouse who places a trade while the account holder is away, a partner who follows the same plan, and a joint account funded by two people are all treated differently, and none of them is copy trading in the technical sense.</p>
+<p>The account holder clause is the one that binds. Most terms require the account to be traded by the named holder, and access by another person is a breach regardless of the relationship or the absence of payment. That covers a spouse placing orders, a friend covering a session, and a mentor entering a trade during a call. The absence of money changing hands is not a defence.</p>
+<p>Accounts funded by someone else raise a separate question about beneficial ownership, and firms generally require the account holder to be the person whose money is at risk. A company account is possible at some firms and prohibited at most, because the payout has to go to a verified individual and the tax position of a corporate entity is outside the firm's model.</p>
+<p>Two household accounts following the same strategy is the case most often discovered accidentally, because the trades look copied even when each person is deciding independently. If that is genuinely the situation, disclose it and describe how the decisions are made separately. If it is not genuinely the situation, it is copy trading with a shared surname, and it will be reviewed as such.</p>
+
+<h2 id="social">Social platforms and published strategies</h2>
+<p>Social trading platforms make copying a single click, and the prop firm clause does not care that the click was easy. A strategy published on a platform and mirrored into a prop account is a third-party signal feed with a nicer interface, and the finding is the same one.</p>
+<p>The subtlety is that many platforms report the mirrored account as the trader's own, because the account is in the trader's name and the platform is merely the mechanism. That is true of the account and false of the decision, and it is the decision that the clause tests. Traders who read the platform's description of their own account and conclude that the arrangement is compliant have read the wrong document.</p>
+<p>Publishing your own strategy creates the mirror problem in reverse. A public track record is valuable evidence of skill, and some firms accept it as part of a service application, but a funded account whose trades are published in real time is being copied by an unknown number of people. That is distribution, whether or not the trader charges for it.</p>
+<p>The safe version is to publish historical results while trading the prop account privately, or to trade a personal account publicly and the funded account separately. The two activities are legitimate on their own and incompatible on the same account. The <a href="/blog/myfxbook-verified-passing.html">verified results</a> page is the model for publishing a track record without distributing live trades.</p>
+
+<h2 id="disclosure">A disclosure that holds up</h2>
+<p>A disclosure is useful when it lets a reviewer reconstruct the arrangement without asking a question. Four sentences cover it: which accounts are involved, who owns each one, which tool transmits the trades, and what the aggregate size is at the maximum.</p>
+<p>Send it before connecting the tool rather than after, and keep the reply in the same thread as the payout request. A reviewer who can see that permission was granted on a specific date does not need to weigh intent, and the review collapses to a factual check of whether the arrangement matches what was described.</p>
+<p>Update it when anything changes. Adding an account, switching tools, or increasing the aggregate size changes the arrangement, and a permission granted for two accounts does not cover five. The second disclosure is the one that matters at payout, because the change is the thing a reviewer will notice first.</p>
+<p>If the firm declines the arrangement, do not connect the tool and argue later. The refusal is the answer, and the alternatives are trading the accounts separately or moving to a firm whose terms permit it. The <a href="/blog/account-sharing-prop-firm-rules.html">sharing rules</a> cover the same disclosure logic for access rather than execution.</p>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2 id="questions">Common questions</h2>
+
+<details class="faq"><summary>Is copy trading allowed on prop firm accounts?</summary><div class="faq-a"><p>Mirroring your own accounts is often allowed with disclosure. Copying a third party's trades is usually prohibited, and distributing your own trades to others is a separate violation.</p></div></details>
+
+<details class="faq"><summary>Can I use a copier between two accounts at the same firm?</summary><div class="faq-a"><p>Usually yes if both accounts are yours and the arrangement is disclosed, subject to the firm's aggregate exposure limits. Confirm the count and the combined size in writing before connecting them.</p></div></details>
+
+<details class="faq"><summary>Is manual copying from a signal group different?</summary><div class="faq-a"><p>No. The clause is about who made the decision, so placing the trade by hand from someone else's signal is the same violation as automating it.</p></div></details>
+
+<details class="faq"><summary>How do firms detect copied trades?</summary><div class="faq-a"><p>From the order record: entries within seconds of each other, position sizes in a fixed ratio, identical stop and target distances, and the same exit prices. Three of those together are a flag.</p></div></details>
+
+<details class="faq"><summary>Does an EA licence cover a copier?</summary><div class="faq-a"><p>No. EA rules govern automation running on the account; copy-trading rules govern where the decision came from. They are separate clauses and approving one does not approve the other.</p></div></details>
+
+<details class="faq"><summary>Can a passed evaluation be reversed later?</summary><div class="faq-a"><p>Yes. A review can cover the whole relationship, so a pass obtained under a copying arrangement can be reversed at the funded stage even if the funded account was traded independently.</p></div></details>
+
+<details class="faq"><summary>What is the safest arrangement?</summary><div class="faq-a"><p>Trading the prop account as its own book and keeping any copying on personal capital. It removes the clause from the review entirely at the cost of some duplicated work.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>An evaluation traded as its own book</h2>
+      <p>Flat <strong>$220</strong>, any firm, any account size — no copiers, no shared decisions, no review to survive later.</p>
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2>Related reading</h2>
+    <ul class="link-list">
+      <li><a href="/blog/account-sharing-prop-firm-rules.html">Account sharing rules</a></li>
+      <li><a href="/blog/multiple-accounts-one-prop-firm.html">Multiple accounts at one firm</a></li>
+      <li><a href="/blog/can-you-pass-ftmo-challenge-with-ea.html">Passing with an EA</a></li>
+      <li><a href="/blog/how-challenge-passing-services-work.html">How passing services work</a></li>
+      <li><a href="/blog/do-prop-firms-allow-hedging.html">Hedging rules</a></li>
+      <li><a href="/blog/martingale-prop-firm-rules.html">Martingale rules</a></li>
+      <li><a href="/blog/myfxbook-verified-passing.html">Verified results</a></li>
+      <li><a href="/blog/ftmo-payout-denied.html">When a payout is refused</a></li>
+      <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/blog/best-prop-firm-passing-services.html">Passing services compared</a></li>
+      <li><a href="/passed-challenges.html">Passed challenges and certificates</a></li>
+    </ul>
+    <p class="disclaimer">Copy-trading, automation and account-ownership clauses are set by each firm and revised without notice. This page describes the common structure of those clauses and is not a statement of any firm's current policy. ElitePropX is an independent service and is not affiliated with, endorsed by or sponsored by any proprietary trading firm. Trading involves substantial risk of loss; this page is general information, not financial advice.</p>
+  </div>
+</section>
