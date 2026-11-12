@@ -1,10 +1,137 @@
 ---
-title: What One Micro NQ Point Is Worth | 2026
-desc: How Much Is One Micro NQ Point Worth: Micro futures are the smallest exchange-traded contracts on the index, energy and metals products, and their tick…
+title: "Micro NQ Point Value: $2 per Point, $0.50 per Tick"
+desc: One MNQ point is worth $2 and one tick is $0.50. The per-contract arithmetic on the Micro E-mini Nasdaq-100, and how many points a prop drawdown allows.
 path: /blog/how-much-is-one-micro-nq-point-worth.html
-type: page
-h1: What One Micro NQ Point Is Worth
-noindex: true
-redirect: /blog/best-micro-futures-for-small-accounts.html
-generator: content-system
+type: article
+h1: What one Micro NQ point is worth
+kicker: Micro futures
+crumb: Micro NQ point value
+section: Rules
+sectionUrl: /blog/
+date: 2026-11-12
+updated: 2026-11-12
+priority: 0.6
+schemaService: true
 ---
+
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="kicker">Micro futures · reviewed November 2026</p>
+    <h1>What one Micro NQ point is worth</h1>
+    <p class="lede">One point on the Micro E-mini Nasdaq-100 (MNQ) is worth <strong>$2</strong> per contract, and one tick is worth <strong>$0.50</strong>. The contract tracks the same Nasdaq-100 index as the full-size NQ at one tenth the size, which is why this single number decides whether a position fits an account. This page sets out the multiplier, the tick arithmetic, and how many points a funded account's drawdown actually allows.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <div class="keypoints">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>One MNQ point is $2 per contract; one tick, a quarter of a point, is $0.50.</li>
+        <li>Ten MNQ contracts move the same dollars as one full-size NQ contract.</li>
+        <li>A 20-point stop on one contract risks $40, so $250 of planned risk is 125 points.</li>
+        <li>On a $50,000 account with a $5,000 maximum loss, one MNQ can absorb 2,500 points before the floor is reached — far more than a normal session's range.</li>
+      </ul>
+    </div>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#point">One point is $2</a></li>
+        <li><a href="#tick">One tick is $0.50</a></li>
+        <li><a href="#compare">MNQ against NQ and MES</a></li>
+        <li><a href="#contracts">What ten contracts equal</a></li>
+        <li><a href="#prop">How many points a drawdown allows</a></li>
+        <li><a href="#target">Turning a target into points</a></li>
+        <li><a href="#mistakes">Where the arithmetic goes wrong</a></li>
+        <li><a href="#questions">Common questions</a></li>
+      </ol>
+    </div>
+
+<h2 id="point">One point is $2</h2>
+<p>The MNQ multiplier is $2 against the Nasdaq-100 index. A move from 20,000 to 20,001 is one index point, and it is worth $2 on a single contract. That is the whole calculation: points moved, multiplied by $2, multiplied by the number of contracts held.</p>
+<p>Three worked examples make the scale obvious. A 10-point move on one contract is $20. The same 10-point move on five contracts is $100. A 100-point move on one contract is $200, and on five contracts it is $1,000. Nothing about the market changed between those examples; only the contract count did.</p>
+<p>The notional value is a separate number and is much larger than the risk. At an index level of 20,000, one MNQ represents $40,000 of exposure ($2 × 20,000). The contract is leveraged, which is precisely why the point value matters more than the notional: the account is not exposed to $40,000 of loss, it is exposed to $2 for every point the index travels against it.</p>
+
+<h2 id="tick">One tick is $0.50</h2>
+<p>The minimum price increment on MNQ is 0.25 index points. Four ticks make one point. Since a point is $2, a tick is $0.50 — the smallest amount a single contract can gain or lose on a price change.</p>
+<p>Ticks are the unit most platforms display in the order ticket, so the conversion matters when a stop is set in ticks rather than points. A 20-tick stop is 5 points, which is $10 on one contract. An 80-tick stop is 20 points, which is $40. A trader who reads "80 ticks" and assumes it is a wide stop is really looking at a 20-point stop, and the dollar risk follows from the point figure rather than the tick count.</p>
+<p>Because the tick is $0.50, the granularity is fine enough to size precisely. A plan that risks $37 is expressible as 74 ticks on one contract, or as a 37-point stop. That precision is the practical reason micros are used for evaluation accounts: the position can be matched to the dollar risk instead of rounded up to a size the account cannot carry.</p>
+
+<h2 id="compare">MNQ against NQ and MES</h2>
+<p>The micro contracts differ only in multiplier. Comparing them side by side is the fastest way to see why MNQ is the tenth-size version of NQ and not a different instrument.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Contract</th><th>Market</th><th>Multiplier</th><th>Point value</th><th>Tick size</th><th>Tick value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>MNQ</td><td>Nasdaq-100</td><td>$2 × index</td><td>$2.00</td><td>0.25 points</td><td>$0.50</td></tr>
+      <tr><td>NQ</td><td>Nasdaq-100</td><td>$20 × index</td><td>$20.00</td><td>0.25 points</td><td>$5.00</td></tr>
+      <tr><td>MES</td><td>S&amp;P 500</td><td>$5 × index</td><td>$5.00</td><td>0.25 points</td><td>$1.25</td></tr>
+      <tr><td>MYM</td><td>Dow Jones</td><td>$0.50 × index</td><td>$0.50</td><td>1 point</td><td>$0.50</td></tr>
+      <tr><td>M2K</td><td>Russell 2000</td><td>$5 × index</td><td>$5.00</td><td>0.10 points</td><td>$0.50</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The ratio between MNQ and NQ is exactly ten. That means a trader who has sized a position in NQ can convert it by multiplying the contract count by ten, or by dividing the point count by ten, and the dollar risk is unchanged. The same conversion does not work across markets: MES is $5 a point, so an S&amp;P position and a Nasdaq position of the same contract count carry different dollar risk and different average ranges.</p>
+<p>Contract specifications are exchange standards and stable, but brokers set their own margin and fee schedules. Confirm the specifications with the broker before sizing anything, and confirm the margin separately, because the two are not the same figure and the margin changes with volatility.</p>
+
+<h2 id="contracts">What ten contracts equal</h2>
+<p>Ten MNQ contracts are one NQ contract in dollar terms: 10 × $2 is $20 a point, which is the NQ multiplier. The equivalence is exact for point value and approximate for everything else — liquidity, fills and margin are all handled per contract, so ten micros are ten positions rather than one.</p>
+<p>The practical use of the equivalence is a scaling decision. A trader who needs $20 a point to hit a target on a small account does not need an NQ contract; ten micros deliver the same exposure while allowing the size to be reduced one contract at a time. That granularity is the reason micros are the standard instrument for evaluation accounts: the position can be trimmed after a loss instead of halved.</p>
+<p>The trade-off is commission and spread, which are charged per contract. Ten micros usually cost more in total fees than one full-size contract, and the spread is often one tick on each contract rather than one tick total. For a short-hold intraday method the fee difference compounds; for a method that holds a few trades a day it is a rounding error against the flexibility.</p>
+
+<h2 id="prop">How many points a drawdown allows</h2>
+<p>On a prop firm evaluation the binding constraint is the firm's dollar drawdown, not the broker's margin. Converting that drawdown into points per contract is the calculation that keeps an account alive, and it is done once per account size.</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th>Account</th><th>10% maximum loss</th><th>Points at 1 MNQ</th><th>5% daily loss</th><th>Points per day at 1 MNQ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$25,000</td><td>$2,500</td><td>1,250</td><td>$1,250</td><td>625</td></tr>
+      <tr><td>$50,000</td><td>$5,000</td><td>2,500</td><td>$2,500</td><td>1,250</td></tr>
+      <tr><td>$100,000</td><td>$10,000</td><td>5,000</td><td>$5,000</td><td>2,500</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The figures assume a typical 10% static maximum loss and a 5% daily loss measured on equity. Both should be read from the plan being bought rather than from a general guide, because trailing floors and different percentages change the answer.</p>
+<p>Read the table as headroom, not as a target. One MNQ on a $100,000 account can absorb 2,500 points before the floor is reached, while a normal Nasdaq session covers a few hundred points. That is why micros are forgiving on large accounts and why a futures evaluation is usually failed by contract count rather than by a bad market read: four contracts turn the same 300-point adverse move from $600 into $2,400, which is a quarter of a $10,000 loss allowance in one session.</p>
+
+<h2 id="target">Turning a target into points</h2>
+<p>The profit target converts the same way. A 10% target on a $100,000 account is $10,000, which at $2 a point is 5,000 points on one contract, 500 points on ten contracts, or 250 points on twenty. Since the drawdown is fixed in dollars, adding contracts does not add headroom — it consumes it in the same proportion that it shortens the road to the target.</p>
+<p>That ratio is the number to write down. At one contract on a $100,000 account the target is 5,000 points against 5,000 of loss room, a 1:1 relationship. At ten contracts it is 500 points against 500 points of room. The evaluation is mathematically identical at either size; only the variance and the fee bill change. Traders who increase size to finish faster are not improving the odds, they are taking the same 1:1 bet with fewer decisions and more noise.</p>
+<p>A workable plan sizes from the stop instead. Write the dollar risk per trade as a percentage of the account, convert it to points at the chosen contract count, and check that the result survives both the daily loss and the maximum loss with room to spare. On a $50,000 account risking 0.5% per trade, that is $250, or 125 points on one MNQ — a stop the Nasdaq will often reach, which is why the contract count rather than the stop distance is usually the thing to reduce.</p>
+
+<h2 id="mistakes">Where the arithmetic goes wrong</h2>
+<p>Three errors account for most sizing mistakes on MNQ, and all three come from mixing up units rather than from bad trading.</p>
+<p>The first is treating ticks as points. A 100-tick stop sounds large and is 25 points, which is $50 on one contract. The second is using the full-size multiplier. A trader who sizes as though a point were $20 is ten times too large, so a stop that should risk $40 risks $400. The third is confusing notional with risk. One MNQ at 20,000 represents $40,000 of exposure and risks $2 a point; the $40,000 figure never appears as a possible loss unless the position is held to zero, which the drawdown prevents long before that.</p>
+<p>The check that catches all three is to write the stop in points next to the dollar risk before entering. If the two numbers cannot be reconciled in one line of arithmetic, the size is wrong. That is a five-second habit, and on an evaluation it is the difference between a plan that survives a normal losing day and one that breaches a daily limit on the first.</p>
+
+<section class="section tight">
+  <div class="wrap narrow">
+    <h2 id="questions">Common questions</h2>
+
+<details class="faq"><summary>How much is one point on Micro Nasdaq?</summary><div class="faq-a"><p>$2 per MNQ contract. The multiplier is $2 against the Nasdaq-100 index, so a 10-point move is $20 on one contract and $200 on ten.</p></div></details>
+
+<details class="faq"><summary>How much is one tick on MNQ?</summary><div class="faq-a"><p>$0.50. The tick size is 0.25 index points, and four ticks make one point worth $2.</p></div></details>
+
+<details class="faq"><summary>Is one MNQ the same as one NQ?</summary><div class="faq-a"><p>No. One NQ is worth $20 a point, exactly ten times one MNQ. Ten MNQ contracts produce the same dollar move as a single NQ, but they are ten separate positions with their own fills, margin and fees.</p></div></details>
+
+<details class="faq"><summary>How many MNQ contracts can I trade on a $50,000 account?</summary><div class="faq-a"><p>The limit is set by the firm's drawdown, not by margin. With $5,000 of maximum loss, one contract absorbs 2,500 points and ten contracts absorb 250 — so the practical answer depends on how wide the stop is, not on a fixed contract maximum.</p></div></details>
+
+<details class="faq"><summary>How many points do I need to pass a futures evaluation?</summary><div class="faq-a"><p>Divide the dollar target by $2 and by the contract count. A 6% target on a $50,000 account is $3,000, which is 1,500 points on one contract or 150 points on ten. The drawdown shrinks in the same proportion, so the ratio stays constant.</p></div></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Evaluation stalling on sizing, not on signals?</h2>
+      <p>Flat <strong>$220</strong>, any firm, any account size, retries covered while the evaluation runs.</p>
+    </div>
+    <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
+  </div>
+</section>
+
+<p>Contract specifications in this guide are exchange standards; the drawdown percentages describe a typical structure and should be confirmed on the plan being purchased. For the wider comparison of micro contracts and position sizing on small accounts, see <a href="/blog/best-micro-futures-for-small-accounts.html">best micro futures for small accounts</a>, and for how much capital a micro method actually needs see <a href="/blog/how-much-money-to-trade-micro-futures.html">how much money to trade micro futures</a>. If the evaluation itself is the problem rather than the arithmetic, the <a href="/blog/prop-firm-challenge-passing-service.html">challenge passing service</a> covers what is involved. Account results are published on <a href="/passed-challenges.html">passed challenges and certificates</a>.</p>
