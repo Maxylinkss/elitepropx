@@ -1,26 +1,31 @@
 ---
-title: "Topstep Combine Rules: Loss Limits and Consistency"
-desc: Topstep's Combine in dollars: $3k/$6k/$9k targets by size, a maximum loss that trails end-of-day and locks, an optional daily limit and a 55% consistency rule.
+title: "Topstep Prop Firm: Combine Rules, Targets and Payouts"
+desc: Topstep's Combine in dollars: targets by size, the trailing floor that locks, the optional daily loss limit, the 55% best-day rule and the payout gate.
 path: /prop-firms/topstep.html
 type: page
-h1: Topstep Combine rules in cash
+h1: Topstep Combine: rules, fees and payouts in cash
 kicker: Firm rulebook
 crumb: Topstep
 priority: 0.8
-updated: 2026-10-23
+updated: 2026-11-13
 sources: topstep
 ---
 
 <section class="page-head">
   <div class="wrap narrow">
     <p class="kicker">Verified against Topstep's help centre</p>
-    <h1>Topstep Combine rules in cash</h1>
-    <p class="lede">The Combine uses dollar targets, a maximum loss that trails end-of-day and then locks at the starting balance, and a consistency rule that caps your best day during the evaluation. The daily loss limit, notably, is optional — which changes what you are actually buying.</p>
+    <h1>Topstep Combine: rules, fees and payouts in cash</h1>
+    <p class="lede">Topstep is a futures prop firm, and its evaluation is called the Combine. It is unusual in two respects that decide how the account has to be traded: the daily loss limit is a checkout option rather than a fixed rule, and the best-day expectation applies during the evaluation itself, not only at the payout. This page converts the rulebook into dollars, then covers what the subscription actually costs, what a passed Combine turns into, and the clauses that void an account regardless of profit.</p>
   </div>
 </section>
 
 <section class="section">
-  <div class="wrap">
+  <div class="wrap narrow prose">
+    <h2>What Topstep is, and what a Combine is</h2>
+    <p>Topstep sells a futures evaluation rather than a live brokerage account. You buy a Combine at a chosen account size, trade it against a dollar profit target inside a dollar maximum loss, and if the target is reached without breaking a rule the account moves to the funded stage — Topstep's Express Funded Account — where a share of what you make is paid out.</p>
+    <p>Two things follow from that structure, and both are easy to miss when reading a marketing page. First, every figure is denominated in dollars rather than percentages, so position size has to be worked in contracts and ticks rather than in lot fractions. Second, the rules are scored, not negotiated: a Combine does not fail because the market moved, it fails because a specific dollar threshold was crossed or a specific clause was breached, and both are knowable before the first trade.</p>
+    <p>The Combine is also billed monthly while it is open rather than once at purchase. That single fact changes the arithmetic of taking your time, and it is covered in the fees section below rather than treated as a footnote.</p>
+
     <h2>The Combine figures by account size</h2>
     <div class="table-scroll">
       <table>
@@ -37,21 +42,79 @@ sources: topstep
       </table>
     </div>
     <p>Read from Topstep's maximum loss limit, daily loss limit and consistency articles on 23 October 2026. Confirm the figures for the size you are buying on the plan page, because the firm publishes additional products with their own parameters.</p>
-  </div>
-</section>
+    <p>Notice what the table does <em>not</em> show: a time limit. A dollar target with no deadline means the calendar is yours to set, which is why pacing is a planning decision here rather than a constraint imposed by the firm. It also means the monthly subscription becomes the real clock, and a Combine left open for three months has cost three months of billing to produce the same single pass.</p>
 
-<section class="section tight">
-  <div class="wrap narrow prose">
     <h2>The floor trails, then stops</h2>
     <p>The maximum loss follows your peak upward but locks once it reaches the starting balance. That single clause makes the structure substantially more forgiving than a pure trailing floor: after the account has banked the threshold amount, the failure level stops moving and the rest of the target can be traded without the ground rising underneath you.</p>
     <p>Before the lock, the same arithmetic applies as on any trailing account — profit reduces room. On a $100,000 Combine with a $3,000 threshold, a $2,000 gain leaves $1,000 of the original allowance, so a single full-size losing session can end the attempt even though the account is up. The lock is what eventually stops that effect, which is why the first part of the Combine carries the structural risk and the later part does not.</p>
+    <figure>
+      <img src="/assets/img/futures-contract-size.svg" alt="A Topstep dollar drawdown converted into points of room for micro and full size index futures at one, two and four contracts" width="940" height="500" loading="lazy">
+      <figcaption>The dollar floor is fixed; the room it buys in points depends entirely on contract count.</figcaption>
+    </figure>
+    <p>The sampling point matters as much as the model. The floor is set from the closing balance, so an open winner does not lift it and an open loser does not lose the account until the position is realised. Traders arriving from an intraday-trailing firm often carry the opposite reflex — cutting winners early to protect a floor that has not actually moved — and that habit costs progress rather than saving the account.</p>
 
     <h2>The daily limit is optional, and that matters</h2>
     <p>Topstep offers a daily loss limit at checkout rather than as a fixed rule. Buying without it means the Combine is governed only by the trailing maximum loss, so a bad session can consume the entire remaining threshold in one go. Buying with it caps the session at $2,000 on a $100,000 account and does not itself constitute a breach if it fires.</p>
     <p>The distinction is worth understanding before purchase rather than after: two traders on the same account size can be running materially different risk rules depending on a checkbox. If the plan is sized around a daily budget, the optional limit is what enforces it.</p>
+    <p>There is a second-order effect that catches people late in a pass. Early on, with the floor well below the balance, the daily figure is usually the tighter of the two constraints. After a run of profitable closes the floor has climbed towards the balance and becomes the binding constraint instead — at which point the daily limit offers less protection than it appears to, because the account can fail before the day's budget is spent. Any plan that computes only the daily number is over-trading the second half of the evaluation.</p>
 
     <h2>Consistency caps your best day</h2>
     <p>During the Combine, the best day must stay at or below 55% of the profit target — $3,300 on a $6,000 target. That prevents a pass built on one outsized session, and it means the target must be spread across at least two meaningful days. A 40% figure applies only on the optional consistency payout path, so read which path your account is on before assuming either number.</p>
+    <p>The mechanism is worth stating precisely because it is not a straightforward failure. Exceeding 55% of the target does not end the Combine: it raises the target to the best day divided by 0.55. A $2,000 session against a $3,000 target moves the finish line to $3,636, so the trader who had $1,000 left now has $1,636 to earn, under a floor that has already risen with the gain. The rule does not punish the day, it moves the target away from it.</p>
+    <p>Both the 55% and the 40% tests are satisfied the same way, and it is a pacing decision rather than a trading one. Cap each session at roughly a fifth of the target so no single day can approach the line, and the finish line never moves. A pass assembled from eight modest days clears both thresholds without arithmetic at the end; a pass assembled from three large ones usually clears the Combine and then stalls at the payout gate.</p>
+
+    <h2>What the Combine costs, and how billing works</h2>
+    <p>Topstep bills the Combine as a subscription, and the figure depends on the account size and any discount running at the time, so the checkout page is the only honest place to read it. What is structural, and therefore worth planning around, is that the billing continues for as long as the evaluation is open.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Cost</th><th>How it is charged</th><th>What it means for a pass</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Combine subscription</td><td>Monthly while the account is open</td><td>A slow attempt pays more than a quick one, all else equal</td></tr>
+          <tr><td>Reset after a failed attempt</td><td>Charged per reset</td><td>Failure costs the subscription plus the reset</td></tr>
+          <tr><td>Platform and data</td><td>Monthly, by provider</td><td>Runs whether or not a session is traded</td></tr>
+          <tr><td>Express Funded Account</td><td>Its own terms</td><td>Read them before the pass, not after</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The practical consequence is that patience is not free here. On a monthly product, waiting for perfect conditions is a purchase, and two extra months on a larger Combine can easily exceed the cost of having the evaluation traded for you. That is not an argument against care — it is an argument for a plan efficient enough to finish in a defined number of weeks, which is the opposite of grinding indefinitely.</p>
+    <p>Against that, a first-attempt pass at disciplined size is genuinely cheaper done yourself, and any honest provider should say so. The fee structure only wins when the alternative is a second subscription plus a reset plus another six weeks, which is the common case rather than the exceptional one.</p>
+
+    <h2>From a passed Combine to the funded stage</h2>
+    <p>A pass converts the account into Topstep's Express Funded Account, which is a separate product with its own conditions. Three of them decide when money actually leaves.</p>
+    <p><strong>The payout consistency test.</strong> At payout the expectation tightens to 40% of total profit rather than 55% of the target. An account passed in six sessions with one dominant day can satisfy the evaluation and still be constrained at withdrawal, which leaves it trading on a funded basis for longer than planned.</p>
+    <p><strong>The qualifying-day requirement.</strong> A funded cycle usually needs a set number of qualifying trading days before a request can be made. Those days are satisfied by activity, not by profit, and they are the condition most often discovered late — a trader who reaches the profit threshold in six sessions may still owe another nine of obligation.</p>
+    <p><strong>Verification.</strong> Identity and payment-method checks belong to the account holder and cannot be delegated. Completing them in the first week of funding rather than at the first request is free and removes the most common non-trading cause of a delay.</p>
+    <figure>
+      <img src="/assets/img/payout-timeline.svg" alt="Timeline from a passed Topstep Combine through the funded account, qualifying days, consistency check and verification to a first withdrawal" width="1000" height="420" loading="lazy">
+      <figcaption>A pass clears one gate. The funded stage adds three more, and only one of them is about trading.</figcaption>
+    </figure>
+    <p>The sensible funded plan keeps the session cap that produced the pass rather than raising it once real money is attached. A funded account with a live floor punishes exactly the behaviour that a freshly-passed trader is most tempted by: increasing size because the account is now "real".</p>
+
+    <h2>Who the Combine suits, and who it does not</h2>
+    <p>The structure rewards a specific kind of trader. It suits someone who thinks in dollars per contract, who can hold size down as the floor rises, and who is willing to spread a target across many modest sessions rather than take it in a few large ones.</p>
+    <p>It is a poor fit for a trader whose edge expresses itself in occasional large days. On a static floor with no consistency clause, a single dominant session is an asset; on this rulebook it either moves the target or blocks the payout, and a strategy that cannot be paced is being asked to change shape rather than to improve.</p>
+    <p>It is also a poor fit for anyone who treats the monthly subscription as permission to wait. The product has no deadline, which reads as freedom and behaves as a meter running.</p>
+
+    <h2>Planning against these numbers</h2>
+    <p>On a $100,000 Combine the target is $6,000 against a $3,000 maximum loss — a target worth two thresholds. The early plan should therefore risk well under $1,000 a trade, because a $1,000 loss consumes a third of the threshold before any progress exists. Once the floor has locked, the remaining room is fixed and size can be held steady rather than cut.</p>
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="A Topstep drawdown budget divided into per-trade risk, session risk and an untouched reserve for losing streaks" width="940" height="520" loading="lazy">
+      <figcaption>Three lines, one budget: per trade, per session, and a reserve the plan never spends.</figcaption>
+    </figure>
+    <p>Four numbers should be fixed before the first session: risk per trade, a session stop at the daily figure where one was bought, a per-session profit cap at about a fifth of the target, and a size taper across the final third. The taper is not caution for its own sake — every profitable close lifts the floor permanently, so the room left is always smaller than the balance implies.</p>
+    <p>The <a href="/tools/maximum-loss-calculator.html">maximum loss calculator</a> shows the floor under a fixed-dollar trail, and the <a href="/tools/profit-target-calculator.html">target planner</a> shows the daily pace the $6,000 requires. For the funded side, the <a href="/blog/topstep-challenge-passing.html">Topstep challenge guide</a> covers payouts and the transition to an Express Funded Account.</p>
+
+    <h2>Five ways a Combine ends</h2>
+    <p>None of these is a market call that turned out wrong. Each is a rule event that was knowable in advance.</p>
+    <ul>
+      <li><strong>A dominant day raises the target.</strong> Exceeding 55% of the profit target moves the finish line to best day divided by 0.55, under a floor that has already climbed.</li>
+      <li><strong>Buying without the daily stop.</strong> The trailing floor is then the only failure condition, so one bad session can end an account that was weeks into a pass.</li>
+      <li><strong>Holding size as the floor rises.</strong> Constant contract count from first session to last adds risk exactly as the cushion shrinks, and it fails at eighty per cent of target more often than at ten.</li>
+      <li><strong>Trading a restricted release.</strong> News windows and position caps are rules rather than preferences, and a breach voids the evaluation regardless of profit on the screen.</li>
+      <li><strong>Stalling into a second billing month.</strong> The subscription runs while the account waits, which turns patience into a cost and a slow attempt into the more expensive option.</li>
+    </ul>
 
     <h2>What to confirm before you pay</h2>
     <ul>
@@ -61,15 +124,17 @@ sources: topstep
       <li><strong>The third-party trading clause.</strong> These rules score an account; they do not authorise anyone else to trade it. Confirm separately — see the <a href="/risk-disclosure.html">risk disclosure</a>.</li>
     </ul>
 
-    <h2>Planning against these numbers</h2>
-    <p>On a $100,000 Combine the target is $6,000 against a $3,000 maximum loss — a target worth two thresholds. The early plan should therefore risk well under $1,000 a trade, because a $1,000 loss consumes a third of the threshold before any progress exists. Once the floor has locked, the remaining room is fixed and size can be held steady rather than cut.</p>
-    <p>The <a href="/tools/maximum-loss-calculator.html">maximum loss calculator</a> shows the floor under a fixed-dollar trail, and the <a href="/tools/profit-target-calculator.html">target planner</a> shows the daily pace the $6,000 requires. For the funded side, the <a href="/blog/topstep-challenge-passing.html">Topstep challenge guide</a> covers payouts and the transition to an Express Funded Account.</p>
-
     <h2>Frequently asked</h2>
     <details class="faq"><summary>Does the Topstep maximum loss trail the whole time?</summary><div class="faq-a"><p>It trails end-of-day until it reaches the starting balance, then it locks. That lock is the difference between this and a permanent trailing threshold, and it is the clause worth confirming on your plan page.</p></div></details>
     <details class="faq"><summary>Is the daily loss limit mandatory?</summary><div class="faq-a"><p>No — it is optional at checkout. Without it the account is governed only by the trailing maximum loss, so a single session can consume the remaining threshold. With it, the day is capped and a breach of the daily figure is not itself a failure.</p></div></details>
-    <details class="faq"><summary>What does the 55% consistency rule mean?</summary><div class="faq-a"><p>Your best day's profit must not exceed 55% of the profit target during the Combine. On a $6,000 target that is $3,300, so a pass needs at least two substantial days rather than one dominant session.</p></div></details>
+    <details class="faq"><summary>What does the 55% consistency rule mean?</summary><div class="faq-a"><p>Your best day's profit must not exceed 55% of the profit target during the Combine. On a $6,000 target that is $3,300, so a pass needs at least two substantial days rather than one dominant session. Exceeding it raises the target to best day divided by 0.55 rather than failing the account.</p></div></details>
     <details class="faq"><summary>How does the target compare with the loss limit?</summary><div class="faq-a"><p>On a $100,000 Combine the target is $6,000 and the maximum loss is $3,000, so the target is twice the threshold. That ratio, not the target alone, is what determines how demanding the evaluation is.</p></div></details>
+    <details class="faq"><summary>How much does a Topstep Combine cost?</summary><div class="faq-a"><p>Topstep bills the Combine monthly, and the figure depends on the account size and any discount running at the time, so the checkout is the only place to read it accurately. What is structural is the billing model: the subscription continues while the evaluation is open, so a slow attempt costs more than a quick one on the same size.</p></div></details>
+    <details class="faq"><summary>What is the Express Funded Account?</summary><div class="faq-a"><p>It is Topstep's funded stage — the account a Combine converts into after a pass. It carries its own terms, including a payout consistency test of 40% of total profit and a qualifying-day requirement, which is why the funded conditions should be read before the Combine is bought rather than after it is passed.</p></div></details>
+    <details class="faq"><summary>Does a passed Combine guarantee a payout?</summary><div class="faq-a"><p>No. A payout request still has to clear the funded consistency test, the qualifying-day count and verification. A pass produced by one dominant session can satisfy the evaluation and be constrained at withdrawal, which is why even pacing is part of the plan rather than advice.</p></div></details>
+    <details class="faq"><summary>Is the Topstep Combine the same as a Topstep evaluation?</summary><div class="faq-a"><p>Yes — Combine is Topstep's name for its evaluation account. Traders also search for the Topstep prop firm challenge and the Topstep evaluation, and all three describe the same purchase: a dollar-target account that has to be passed inside the trailing floor before funding exists.</p></div></details>
+    <details class="faq"><summary>Can someone else trade the Combine for me?</summary><div class="faq-a"><p>Only where Topstep's terms permit it, and that has to be established in writing before any fee is paid — including to us. The rules on this page explain how an account is scored, not who is allowed to trade it. Where the clause is silent, the safe reading is that outside trading is not permitted.</p></div></details>
+    <details class="faq"><summary>Which size should a pass be run on?</summary><div class="faq-a"><p>The smallest size at which the daily loss limit can be bought, rather than the largest size the budget can reach. The stop is what defines the worst session the plan must survive, and a smaller account with a stop is a better decision than a larger one without.</p></div></details>
   </div>
 </section>
 
@@ -77,7 +142,7 @@ sources: topstep
   <div class="wrap cta-band-inner">
     <div>
       <h2>Any firm, any size, one flat $220</h2>
-      
+      <p>Topstep included, at any Combine size. Terms are checked in writing before you pay anything.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -87,12 +152,14 @@ sources: topstep
   <div class="wrap narrow">
     <h2>Related reading</h2>
     <ul class="link-list">
+      <li><a href="/blog/topstep-challenge-passing.html">Topstep challenge passing: the full guide</a></li>
+      <li><a href="/blog/topstep-combine.html">Having the Combine traded for a flat $220</a></li>
       <li><a href="/prop-firms/">All five firm rulebooks</a></li>
       <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
-      <li><a href="/blog/topstep-challenge-passing.html">Topstep challenge passing</a></li>
       <li><a href="/blog/prop-firm-consistency-rule-guide.html">Consistency rules explained</a></li>
       <li><a href="/tools/maximum-loss-calculator.html">Maximum loss calculator</a></li>
       <li><a href="/prop-firm-rules/">The eight rules that end challenges</a></li>
     </ul>
+    <p class="disclaimer">Topstep is named for identification only. ElitePropX is an independent evaluation service and is not affiliated with, endorsed by or sponsored by Topstep or any other proprietary trading firm. The service is offered only where a firm's terms permit third-party trading. A funded account is not a guarantee of income, and trading involves substantial risk of loss. Verify current terms before purchasing an evaluation.</p>
   </div>
 </section>
