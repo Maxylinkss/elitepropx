@@ -1,73 +1,198 @@
 ---
-title: "Apex Trader Funding Rules: Trailing Drawdown in Cash"
-desc: Apex evaluation rules in dollars: dollar targets per size, a loss threshold that trails the peak, EOD or intraday plans, and a 50% best-day rule at payout.
+title: "Apex Trader Funding Rules 2026: Drawdown, Targets, Payouts"
+desc: Apex rules in cash for 2026: dollar targets by size, a $1,000-$4,000 trailing threshold, EOD or intraday plans, the $500-$2,000 daily limit and 50% at payout.
 path: /prop-firms/apex.html
 type: page
-h1: Apex Trader Funding rules in cash
+h1: Apex Trader Funding rules, targets and payouts
 kicker: Firm rulebook
 crumb: Apex
 priority: 0.8
-updated: 2026-10-23
+updated: 2026-11-13
 sources: apex
 ---
 
 <section class="page-head">
   <div class="wrap narrow">
     <p class="kicker">Verified against Apex's own help centre</p>
-    <h1>Apex Trader Funding rules in cash</h1>
-    <p class="lede">Apex is a futures evaluation measured in dollars rather than percentages, and the floor trails your peak. That combination — a moving threshold plus a fixed dollar target — is what makes the last third of a pass different from the first two.</p>
+    <h1>Apex Trader Funding rules, targets and payouts</h1>
+    <p class="lede">Apex is the futures evaluation most traders meet second, after Topstep, and it is the one where a good account most often dies for a reason that has nothing to do with trading skill: the loss threshold follows the peak, and it does so in two different ways depending on which product was bought. This page states the parameters in dollars, separates the end-of-day model from the intraday model, and works through what each one does to a plan in its final third.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow prose">
+    <h2>What Apex actually sells</h2>
+    <p>Apex Trader Funding is a futures evaluation firm. Its product is not a brokerage account and not a funded account in the ordinary sense: it is a one-phase test in which a trader must reach a fixed dollar profit target while keeping equity above a loss threshold that rises as the account makes new highs. Pass the test and a funded account follows, with its own payout conditions. Fail it, and the fee is spent — there is no refund for a rule breach, which is why the breaching mechanism deserves more attention than the target does.</p>
+    <p>The structural difference from a two-phase forex evaluation is worth stating plainly, because it changes the shape of the job. A two-phase plan asks for a percentage twice, with a static floor underneath both attempts. Apex asks for a dollar figure once, but the floor climbs. On a two-phase plan the risk to the account is roughly constant; on Apex the risk rises with every good day, so the evaluation gets tighter as it gets closer to the end. That inversion is the single most important fact on this page.</p>
+    <p>Everything else — the account sizes, the daily loss limit, the payout consistency rule — is a modifier on that basic geometry. Read the trailing behaviour first and the numbers second, because a trader who understands the trail can price any size, and a trader who has only memorised targets is guessing.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <h2>What Apex publishes, and what it publishes per size</h2>
+    <h2>The published parameters in one table</h2>
     <div class="table-scroll">
       <table>
         <thead>
-          <tr><th>Rule</th><th>How it is expressed</th><th>Notes</th></tr>
+          <tr><th>Rule</th><th>How Apex expresses it</th><th>What it decides for you</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Profit target</strong></td><td>Fixed dollar amount per account size</td><td>Not a percentage — read the parameters for the size you buy</td></tr>
-          <tr><td><strong>Maximum loss</strong></td><td>$1,000 / $2,000 / $3,000 / $4,000 by size</td><td>Trails the peak; the threshold is a dollar figure, not a percentage</td></tr>
-          <tr><td><strong>Drawdown model</strong></td><td>End-of-day trailing <em>or</em> intraday trailing</td><td>Plan-dependent, and the two behave very differently mid-session</td></tr>
-          <tr><td><strong>Daily loss limit</strong></td><td>Fixed $500–$2,000 by size on EOD plans</td><td>On intraday plans the trailing floor does the work instead</td></tr>
-          <tr><td><strong>Consistency</strong></td><td>50% best day at payout (30% on legacy accounts)</td><td>Enforced at the payout stage, not during the evaluation</td></tr>
-          <tr><td><strong>Account range</strong></td><td>Up to $300,000</td><td>Targets and thresholds scale with size</td></tr>
+          <tr><td><strong>Profit target</strong></td><td>A fixed dollar amount per account size</td><td>The number of sessions at your chosen pace, and therefore how long the floor has to be survived</td></tr>
+          <tr><td><strong>Maximum loss</strong></td><td>$1,000 / $2,000 / $3,000 / $4,000 by size</td><td>Total room from the starting balance before the trail has moved</td></tr>
+          <tr><td><strong>Drawdown model</strong></td><td>End-of-day trailing <em>or</em> intraday trailing, depending on the product</td><td>Whether unrealised profit lifts the floor mid-session</td></tr>
+          <tr><td><strong>Daily loss limit</strong></td><td>A fixed dollar figure by size on EOD plans, $500–$2,000</td><td>The session budget, and whether one bad morning can end the account</td></tr>
+          <tr><td><strong>Consistency</strong></td><td>50% best day at payout; 30% on legacy accounts</td><td>Whether a fast, lumpy pass can convert into a full withdrawal</td></tr>
+          <tr><td><strong>Account range</strong></td><td>Up to $300,000</td><td>How the dollar figures scale, and which size is defensible for your method</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Read from Apex's EOD evaluation parameters, intraday trailing drawdown explainer, 50% consistency requirement and legacy payout parameters on 23 October 2026. Apex publishes different parameters per account size, so the figures above are the structure rather than a quote for any single size — confirm the exact numbers for yours before paying.</p>
+    <p>Read from Apex's EOD evaluation parameters, its intraday trailing drawdown explainer, its 50% consistency requirement and its legacy payout parameters on 23 October 2026. Apex publishes different figures per account size, so the ranges above describe the structure rather than a quote for any single size. Confirm target, threshold and daily limit for the exact size in your cart before paying, and keep a screenshot of that page — the numbers are the contract.</p>
+    <p>Two habits make this table usable. First, convert every percentage you have seen on another firm into dollars at your size before comparing, because a 6% threshold on a $100,000 account and a $4,000 threshold are not the same statement and neither is obviously safer. Second, write the threshold down next to the target on the same piece of paper. Half the planning mistakes on Apex come from reading one of those two numbers without the other.</p>
   </div>
 </section>
 
 <section class="section tight">
   <div class="wrap narrow prose">
-    <h2>The floor follows your best equity, not your balance</h2>
-    <p>A trailing threshold moves up as the account reaches new highs, and Apex offers two versions of that behaviour. Intraday trailing responds to unrealised profit, so an open winner lifts the floor before it is closed; if the trade then reverses, the floor stays where it rose to. End-of-day trailing recalculates once a day, usually on the closing equity, so intraday spikes do not count.</p>
-    <p>The practical consequence is that profit makes the account tighter rather than safer. On a $150,000 intraday account, a strong morning can raise the threshold far enough that a normal afternoon retracement ends the evaluation — without a losing trade being closed. That is the single most common way a good Apex attempt dies, and it is a sizing problem rather than a trading problem.</p>
+    <h2>Two trails, one brand: the choice that decides the account</h2>
+    <p>Apex runs two drawdown conventions, and they behave so differently that they should be treated as separate firms. The end-of-day model recalculates the threshold once a day, at the close. The intraday model recalculates continuously, against equity that includes open positions.</p>
+    <p>The consequence of the intraday version is easy to state and easy to underestimate: an open winner raises the failure level before that winner is booked. A position that runs $1,800 in profit lifts the floor by up to $1,800; if the trade then reverses and closes at breakeven, the floor does not come back down. The trader has kept nothing and lost room. On the end-of-day version the same sequence is invisible, because the close is what counts.</p>
+
+    <figure>
+      <img src="/assets/img/drawdown-types.svg" alt="A static loss threshold compared with an intraday trailing threshold and an end-of-day trailing threshold across the same sequence of trades" width="1000" height="560" loading="lazy">
+      <figcaption>Same trades, three floors. Only the end-of-day line ignores what happened while the position was open.</figcaption>
+    </figure>
+
+    <p>This is not a small technicality to be checked at the end of the reading. It decides position size on every trade. On an intraday account the maximum adverse excursion of an open trade is what the floor measures, so a method that routinely gives back half of its open profit is paying for that habit twice: once in the give-back, and again in permanently reduced room.</p>
+    <p>If you already know which product you are buying, the rest of this page still applies; if you have not chosen, choose on this axis rather than on the price difference, which is usually small next to the cost of running the wrong model.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow prose">
+    <h2>The arithmetic of a floor that only goes up</h2>
+    <p>Suppose the threshold on the size you are buying is $3,000 and the target is $6,000 across a $50,000 account. Both figures are illustrative here — substitute your own from the plan page — but the arithmetic is what matters.</p>
+    <p>Day one, equity is $50,000 and the failure level is $47,000. Room is $3,000. If you risk $400 a trade, seven consecutive losers end the account, which is a comfortable buffer for a method with a normal losing streak. Now suppose the account reaches $53,000. On a trailing model the floor has moved to $50,000, and room is still $3,000 — but room measured from a much higher equity, and with $6,000 of target still $3,000 away, you have made half the target and kept the same absolute risk. That sounds neutral. It is not, because the number of trades required to cover the remaining distance is now smaller than the number required to cover the first half, and each of those trades still carries $400 of downside against a fixed $3,000 of room.</p>
+    <p>The ratio that governs everything is remaining room divided by remaining target. Early in the evaluation it is generous; at $58,000 with a $6,000 target, room from the peak is $3,000 and remaining target is $1,000, a ratio of three to one against you. That is the moment at which full size stops being defensible. The evaluation has not become harder because the market changed; it has become harder because the distance left is short and the room is the same $3,000 it always was, sitting under an equity that is now much closer to the failure level than it looks.</p>
+    <p>The practical answer is a size taper. Risk the full per-trade amount until roughly two thirds of target, then cut by a third, then by half in the final stretch. It feels like giving up speed exactly when the finish is visible, and it is the only version of the plan that survives a normal adverse sequence near the end.</p>
 
     <h2>Why the last third takes as long as the first half</h2>
-    <p>With a fixed dollar target and a moving floor, risk has to fall as profit accumulates. Early in an evaluation the floor is far below and full size is defensible; at 70% of target the remaining room is small relative to the progress still needed, and at 85% any full-size loss can end the account before the target. The result is a plan that deliberately slows down near the finish, which is why the elapsed time is not linear in the target.</p>
-    <p>The 50% consistency rule adds a second constraint at payout: no single best day may exceed half of the profit being withdrawn. A pass made in two large sessions can therefore produce an account that cannot withdraw cleanly, which turns the evaluation into a pacing exercise even though the rule is enforced later.</p>
+    <p>Because the target is fixed in dollars and the floor rises, the ratio of room to remaining target degrades monotonically. A trader who does not taper finishes the first two thirds in a week and then spends another week protecting a shrinking margin, occasionally losing it. A trader who does taper takes longer overall and arrives.</p>
+    <p>There is a second, less obvious reason: after a certain point, a good day is genuinely bad news. On an intraday account, a strong session can lift the floor to within a normal stop of the current price, and then the next ordinary loss ends the evaluation without any rule being broken and without any reckless trade being placed. That outcome is indistinguishable, in the account history, from a blow-up — and it is far more common.</p>
+  </div>
+</section>
 
-    <h2>What to confirm before you pay</h2>
+<section class="section tight">
+  <div class="wrap narrow prose">
+    <h2>The daily loss limit, and where it applies</h2>
+    <p>On Apex's end-of-day plans there is a fixed dollar daily loss limit published by size, in the $500–$2,000 range. On intraday plans the trailing floor does the work instead, which has a specific and rather harsh meaning: a large intraday loss can end the account before any daily figure would have been reached, because the floor is live and the loss is measured as it happens.</p>
+    <p>For the trader, the operational difference is that on an EOD plan the day has a hard stop that is knowable in advance, and a bad session costs a day; on an intraday plan a bad session can cost the account. That difference should be reflected in the per-trade risk, not only in the session stop. If a single trade can move equity by enough to breach a live floor, the trade is oversized regardless of what the percentage says.</p>
+
+    <figure>
+      <img src="/assets/img/risk-budget.svg" alt="A trading account's loss budget divided into per-trade risk, a session stop and an untouched reserve held back for a losing streak" width="940" height="520" loading="lazy">
+      <figcaption>Three lines, one budget. The reserve is the part of the plan that never gets traded.</figcaption>
+    </figure>
+
+    <p>A workable allocation on a $3,000 threshold: $250 per trade, a $750 session stop, and a $1,000 reserve that is treated as untouchable. That leaves room for four losing trades in a session without approaching the floor, and it means a three-day losing streak is survivable without a single change of method. Traders who skip the reserve are the ones who discover the limit exists on the day they meet it.</p>
+    <p>The <a href="/tools/daily-drawdown-calculator.html">daily drawdown calculator</a> will hold the session inside whichever limit applies to the product you bought, and the <a href="/tools/position-size-calculator.html">position size calculator</a> converts a dollar risk into contracts rather than leaving it as an intention.</p>
+
+    <h2>The 50% consistency rule at payout</h2>
+    <p>The consistency term is enforced at the payout stage rather than during the evaluation, which is why it does not appear in the list of reasons an attempt fails and still ruins attempts. The requirement is that no single best day may account for more than half of the profit being withdrawn. Legacy accounts carry a 30% version, which is materially stricter.</p>
+    <p>Read carefully: this is not a rule about how you trade, it is a rule about the shape of the profit you present. An account passed in two large sessions can satisfy the target and fail the payout test, leaving a funded account that cannot withdraw cleanly until more ordinary days are added to the total. The 50% and 30% versions therefore have a hidden cost: the 30% one requires at least four roughly comparable profitable days before the withdrawal becomes straightforward, and a trader who never checked which version they hold will find that out at the worst moment.</p>
+    <p>The response is to plan the pass as a curve rather than a spike — not because a spike is against the rules, but because a spike creates an account whose first withdrawal is blocked by arithmetic. If your method genuinely produces occasional large days, the honest options are to accept a slower first payout or to add ordinary days deliberately after the target is reached. Both are legitimate; discovering the constraint after the fact is not.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow prose">
+    <h2>Choosing an account size</h2>
+    <p>Apex publishes sizes up to $300,000, and the temptation is to buy the largest one that is affordable, because the dollar figures look like leverage on your skill. The correct way to choose is the opposite: pick the size whose threshold you can trade without changing the method you already use.</p>
+    <p>Work it in one direction only. Take your average risk per trade as a percentage of account equity — the number your own records produce, not the one you would like — and check how many consecutive losses the threshold absorbs. If the answer is fewer than six, the size is too large for the way you trade, and the evaluation is measuring luck rather than method. A $4,000 threshold on a large account and a $1,000 threshold on a small one can be equally demanding if the per-trade risk scales with the size, which it usually does.</p>
+    <p>The second check is the daily limit relative to the target. If the target requires more than about a third of the daily budget per session to finish in a reasonable number of days, the plan is asking for a pace that no bad session can tolerate. A smaller account with a target that can be reached at a fifth of the daily figure per day is a better instrument than a larger one that has to be rushed.</p>
+    <p>The third check is the fee, and it is the one traders skip. Every size carries a purchase price and, on some products, a recurring element; the only accurate figure is the one on the checkout page at the moment of buying, because Apex discounts frequently and the sticker price is not the price. Compare the fee against the target, not against other firms' fees, since the target is what you are actually buying the right to attempt.</p>
+
+    <h2>Fees, billing and what the invoice does not tell you</h2>
+    <p>There is no honest way to publish a single Apex price on a page like this, because the firm's promotional cadence means the number changes by the week and by the account size. What can be said without hedging is what to look for: whether the fee buys one attempt or a reset, whether a monthly or recurring charge attaches after the evaluation begins, and what happens to the fee if a rule is breached on day two rather than day twenty.</p>
+    <p>Those three questions decide the real cost of an attempt far more than the headline price does. A cheap evaluation with no reset is more expensive than a dearer one that includes a second attempt if your historical pass rate is under fifty percent, which for most traders it is. And a monthly charge that quietly accrues while an evaluation sits half-finished changes the arithmetic of pacing: it rewards finishing, which is exactly the pressure that makes people rush the final third and lose the account.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow prose">
+    <h2>The funded stage is a different job</h2>
+    <p>Passing is one gate; the funded account has its own threshold, its own payout schedule and its own consistency check. The most common mistake in the transition is to treat the funded account as a victory lap and increase size, on the theory that the money is now real and the evaluation is over. Structurally the opposite is true: the funded account usually keeps a live floor, so it is still an account that can be ended by a normal adverse sequence, and the payout conditions add a second set of gates that do not exist during the test.</p>
+    <p>Three things change in ways that matter. First, the objective shifts from reaching a target to producing a withdrawal, which is a different optimisation: a payout requires a qualifying profit that survives the consistency test, not merely a good equity curve. Second, the first payout typically requires days that qualify, so calendar time becomes part of the plan in a way it was not during the evaluation. Third, and most dangerous, the psychological permission to risk more arrives at exactly the moment the rules became no more forgiving.</p>
+
+    <figure>
+      <img src="/assets/img/consistency-rule.svg" alt="A payout total compared with a single best day, showing the point at which one dominant session exceeds the 50 percent consistency limit" width="940" height="540" loading="lazy">
+      <figcaption>A pass is the target. A payout is the target plus a shape, and the shape is what a dominant day breaks.</figcaption>
+    </figure>
+
+    <p>The funded plan that works is boring: keep the session cap that produced the pass, keep the per-trade risk, and treat the first payout as the objective rather than the balance. The <a href="/blog/apex-trader-funding-first-payout-timeline.html">first payout timeline</a> sets out how the qualifying days sequence in practice, and the <a href="/blog/apex-payout-denied.html">payout denial cases</a> are worth reading before rather than after, because the refusal reasons are almost always visible in the account history in advance.</p>
+
+    <h2>Who Apex suits — and who should buy a two-step instead</h2>
+    <p>Apex suits a trader who thinks in dollars per contract, who is comfortable cutting size as the account grows, and whose method produces a steady sequence of moderate sessions rather than occasional large ones. It particularly suits someone who has already failed a trailing evaluation elsewhere and has learned the taper, because that lesson transfers directly and is the main skill the product requires.</p>
+    <p>It is a poor fit for three styles. A method that depends on letting a winner run through a wide excursion will be punished on an intraday account, because the floor tracks the excursion. A method built on a small number of large sessions will struggle at the payout stage even after a clean pass. And a trader who cannot resist increasing size after a good week is buying an instrument designed to end that behaviour expensively — a static-floor two-step plan such as <a href="/prop-firms/ftmo.html">FTMO</a> is the more honest purchase, because it removes the mechanism rather than asking for discipline against it.</p>
+    <p>That last comparison is the one worth making explicitly, since both firms come up in the same search. Apex asks for one target and charges a rising floor; FTMO asks for two targets and keeps the floor still. If you have failed a trailing account twice, the second model is not a compromise, it is the correct product for the evidence you have.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow prose">
+    <h2>Seven ways an Apex attempt ends</h2>
+    <p>None of these is a market opinion that turned out wrong. Each is a rule event, visible in the account history before it happened, and six of the seven have nothing to do with the target.</p>
     <ul>
-      <li><strong>EOD or intraday.</strong> These are different products with the same brand. The intraday version removes room mid-session and demands smaller size throughout.</li>
-      <li><strong>The exact parameters for your size.</strong> Target, threshold and daily limit are published per size; a figure from a $50,000 plan does not describe a $150,000 one.</li>
-      <li><strong>How the floor recalculates.</strong> Whether it uses unrealised equity, and whether it ever stops rising, changes the finish line more than the target does.</li>
-      <li><strong>The third-party trading clause.</strong> Apex's rules describe how an account is scored, not who may trade it. Confirm that separately — see the <a href="/risk-disclosure.html">risk disclosure</a>.</li>
+      <li><strong>The floor catches an open winner.</strong> On an intraday account, a position that ran $1,500 and returned to breakeven lifted the threshold permanently. The loss was recorded as zero; the room was not.</li>
+      <li><strong>A normal retracement after a strong week.</strong> Three good days raised the floor close to the current equity. The fourth day's ordinary pullback ended the account.</li>
+      <li><strong>Size increased near the finish.</strong> With 85% of the target reached, the trader doubled up to finish quickly. One stop was enough, because remaining room was small by then.</li>
+      <li><strong>The daily limit was crossed on an EOD plan</strong> while trying to recover a two-loss morning, converting a recoverable day into a breach.</li>
+      <li><strong>Overnight exposure against a dollar figure.</strong> A gap moved equity through the threshold while no session was open, and no session stop can defend a level that is crossed while the market is closed.</li>
+      <li><strong>A payout blocked, not a pass failed.</strong> The account reached the target in two dominant days and the best-day test refused the withdrawal. The evaluation was never the obstacle.</li>
+      <li><strong>The wrong product was bought.</strong> The trader planned an end-of-day trail and received an intraday one, and the position sizing that worked on paper was too large for the floor that actually existed.</li>
     </ul>
+    <p>Five of those seven are planning failures, one is a product-selection failure, and one is a payout-rule failure. Not one is a failure to predict the market. That ratio is why this page spends its length on geometry instead of setups.</p>
 
-    <h2>Planning against these numbers</h2>
-    <p>Start from the threshold, not the target. If the maximum loss is $3,000 on the size you are buying, a single trade risking $500 survives six losses at full size, and the plan should treat $750–$1,000 as the ceiling per trade early on. As the floor rises, that ceiling falls; the useful habit is to recompute room from the peak after every winning day rather than once at the start.</p>
-    <p>The <a href="/tools/maximum-loss-calculator.html">maximum loss calculator</a> shows the floor under both trailing conventions, and the <a href="/blog/apex-trailing-drawdown-math.html">trailing drawdown maths</a> works through the arithmetic with a full example. For the funded side, the <a href="/blog/apex-trader-funding-complete-guide.html">Apex guide</a> covers payouts and scaling.</p>
+    <h2>A worked ten-session plan</h2>
+    <p>Take an account with a $3,000 threshold and a $6,000 target, purely as arithmetic. Divide the target by ten sessions: $600 a session. That is the pace, and the first thing to check is whether $600 a session can be produced at a per-trade risk that the threshold tolerates.</p>
+    <p>At $250 risk and a two-to-one reward expectation, three winning trades produce roughly $1,500 and one full losing day costs $750 against the session stop. Ten sessions at that rhythm finish the target with room to spare, and the account never approaches the floor early on. The taper starts at $4,000 of profit: risk drops to $175, then to $125 in the final $1,000. Total return falls, and the probability of arriving rises.</p>
+    <p>Now stress it. Suppose the first four sessions are all losing — $1,000 down, floor at $47,000, room $2,000 from a $49,000 equity. The plan still works, but the pace must be recalculated: $7,000 is needed from six sessions, which is not achievable at $250 risk without a much better hit rate. The correct response is not to double size; it is to extend the horizon, because the fee is already spent and calendar time is the cheapest resource available. Traders who cannot extend the horizon are the ones who buy the account twice.</p>
+    <p>The <a href="/tools/profit-target-calculator.html">profit target calculator</a> runs that arithmetic at your own numbers and shows whether the pace or the threshold binds first; the <a href="/tools/maximum-loss-calculator.html">maximum loss calculator</a> shows the floor after a given peak.</p>
+  </div>
+</section>
 
+<section class="section tight">
+  <div class="wrap narrow prose">
+    <h2>What to confirm before you pay</h2>
+    <p>Five questions, all answerable in writing before the fee leaves your account. Getting these wrong is the difference between a fair test and an unwinnable one.</p>
+    <ul>
+      <li><strong>Which drawdown model, exactly.</strong> EOD or intraday, named on the product you are buying. These are different products with the same brand, and a plan built for one is unsafe on the other.</li>
+      <li><strong>The parameters for your size.</strong> Target, threshold and daily limit are published per size. A figure from a $50,000 plan does not describe a $150,000 one, and the ranges on this page are not a substitute for the plan page.</li>
+      <li><strong>Whether the threshold ever stops rising.</strong> Some trailing models cap the trail at the starting balance, some do not. Where it stops determines whether the final stretch is merely tight or genuinely hostile.</li>
+      <li><strong>Which consistency version applies.</strong> 50% or the 30% legacy figure, and at which stage it is tested. The answer changes how many ordinary days a payout needs.</li>
+      <li><strong>The third-party trading clause.</strong> Apex's published rules describe how an account is scored, not who may place the trades. Whether another person may trade your evaluation is a separate permission, and it decides whether a passed account can ever pay out. See the <a href="/risk-disclosure.html">risk disclosure</a> for how we check that in writing.</li>
+    </ul>
+    <p>One more, which is not a rule but a record: keep the plan page and the checkout page as they stood on the day you bought. Firms revise parameters, and when a figure is disputed six weeks later the only version that matters is the one attached to your purchase.</p>
+
+    <h2>If you would rather have the evaluation traded for you</h2>
+    <p>Everything above is the plan a competent trader would follow on an Apex account. If the reason you are reading is that the plan is not the problem — that you can write it and still not hold it — then the choice is between trading a smaller size until the discipline is real, or handing the evaluation to someone who will follow the rules mechanically.</p>
+    <p>We trade Apex evaluations for a flat $220 at any size, with retries covered while the evaluation is running and no share of the payout. The work is the arithmetic on this page: threshold first, size second, target last, with the taper applied near the finish and the consistency shape checked before the target is declared complete. What we will not do is take an account where the firm's terms prohibit third-party trading, which is why the clause check comes before any fee. The <a href="/blog/apex-challenge-passing-service-cost.html">Apex service cost page</a> sets out what the $220 does and does not cover, and the <a href="/contact.html">contact page</a> is where an evaluation starts.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap narrow prose">
     <h2>Frequently asked</h2>
-    <details class="faq"><summary>Is the Apex drawdown trailing or static?</summary><div class="faq-a"><p>Trailing, in both of the firm's versions: end-of-day trailing on EOD plans and intraday trailing on the others. The threshold moves up with the peak and does not move back down.</p></div></details>
-    <details class="faq"><summary>Is there a daily loss limit?</summary><div class="faq-a"><p>On EOD plans there is a fixed dollar daily figure published by size. On intraday plans the trailing floor effectively limits the day, because a large intraday loss can breach the threshold before any daily rule is reached.</p></div></details>
-    <details class="faq"><summary>What is the 50% consistency rule?</summary><div class="faq-a"><p>At payout, no single best day may account for more than half of the profit being withdrawn. Legacy accounts carry a 30% figure. It does not stop you passing; it stops a fast, lumpy pass from converting into a full payout.</p></div></details>
-    <details class="faq"><summary>Does the target change with account size?</summary><div class="faq-a"><p>Yes — the target is a fixed dollar amount per size rather than a percentage. That is why an Apex plan cannot be compared to a percentage-based plan without converting both into dollars on the size you intend to trade.</p></div></details>
+    <details class="faq"><summary>Is the Apex drawdown trailing or static?</summary><div class="faq-a"><p>Trailing, in both of the firm's published versions: end-of-day trailing on EOD plans and intraday trailing on the others. The threshold rises with the peak and does not come back down. A static floor is a different product entirely and is the reason some traders pass at FTMO and fail here with an unchanged method.</p></div></details>
+    <details class="faq"><summary>How much is the Apex maximum loss?</summary><div class="faq-a"><p>Published as a dollar figure by account size — $1,000, $2,000, $3,000 or $4,000 across the range — rather than as a percentage. Confirm the figure for the size you are buying on the plan page, because a threshold quoted for one size does not describe another.</p></div></details>
+    <details class="faq"><summary>Does Apex have a daily loss limit?</summary><div class="faq-a"><p>On EOD plans there is a fixed dollar daily limit published by size, in the $500–$2,000 range. On intraday plans the trailing floor does the work instead, which means a large intraday loss can end the account before any daily figure is reached.</p></div></details>
+    <details class="faq"><summary>What is the Apex 50% consistency rule?</summary><div class="faq-a"><p>At payout, no single best day may account for more than half of the profit being withdrawn. Legacy accounts carry a 30% version, which is stricter and requires more comparable profitable days before a withdrawal is straightforward. The rule does not stop a pass; it stops a lumpy pass from becoming a payout.</p></div></details>
+    <details class="faq"><summary>Can I pass an Apex evaluation in a few days?</summary><div class="faq-a"><p>The target can be reached quickly at a large size, and that is usually how accounts are lost rather than passed. A fast pass also tends to produce a dominant day, which then collides with the consistency test at payout. A paced pass over one to three weeks is slower and considerably more likely to convert.</p></div></details>
+    <details class="faq"><summary>What happens if I breach the threshold on an open position?</summary><div class="faq-a"><p>On an intraday account the breach is live, so an open position can take the account out without the trade ever being closed. On an end-of-day account the measurement happens at the close. That difference should decide your maximum position size, not just your stop placement.</p></div></details>
+    <details class="faq"><summary>Which account size should I buy?</summary><div class="faq-a"><p>The largest one whose threshold absorbs at least six consecutive losses at your real per-trade risk. If the threshold survives fewer than that, the size is too big for the method and the evaluation is testing luck. Larger sizes are not easier; they are simply bigger, with proportionally identical geometry.</p></div></details>
+    <details class="faq"><summary>Is the Apex fee refundable if I fail?</summary><div class="faq-a"><p>A rule breach ends the attempt and the fee is spent. Whether a reset or second attempt is included depends on the product and any promotion running, which is why the checkout page — not this page and not a comparison site — is the only place to establish what you are buying.</p></div></details>
+    <details class="faq"><summary>Do I need a minimum number of trading days?</summary><div class="faq-a"><p>Apex's evaluation is built around a dollar target rather than a day count, so the calendar is not the binding constraint in the way it is on a plan with a four- or five-day minimum. The binding constraints here are the threshold and, at payout, the consistency shape.</p></div></details>
+    <details class="faq"><summary>Can Apex rules change while my evaluation is running?</summary><div class="faq-a"><p>Firms revise parameters, and the version attached to your purchase is the one that governs. Keep the plan page and checkout page as they stood on the day you bought, and treat any figure you read elsewhere as provisional until you have matched it to your own account documents.</p></div></details>
+    <details class="faq"><summary>Apex or Topstep for a first futures evaluation?</summary><div class="faq-a"><p>Topstep's Combine publishes an optional daily limit and a 55% best-day expectation during the test, while Apex applies its consistency test at payout instead. A trader who wants the constraint visible during the evaluation tends to prefer Topstep; a trader who wants one dollar target and is confident about pacing tends to prefer Apex. The <a href="/prop-firms/topstep.html">Topstep rulebook</a> covers the other side of that comparison in the same detail.</p></div></details>
+    <details class="faq"><summary>Can someone else trade my Apex evaluation?</summary><div class="faq-a"><p>That is a separate question from every rule on this page, and the answer is in the firm's terms rather than in its evaluation parameters. We check the clause in writing before accepting a job and decline where third-party trading is prohibited. Read the <a href="/risk-disclosure.html">risk disclosure</a> before assuming a service can operate on your account.</p></div></details>
   </div>
 </section>
 
@@ -75,7 +200,7 @@ sources: apex
   <div class="wrap cta-band-inner">
     <div>
       <h2>Any firm, any size, one flat $220</h2>
-      
+      <p>Apex included, with retries covered while the evaluation runs.</p>
     </div>
     <a class="btn btn-primary" href="/contact.html">Start an evaluation</a>
   </div>
@@ -87,10 +212,15 @@ sources: apex
     <ul class="link-list">
       <li><a href="/prop-firms/">All five firm rulebooks</a></li>
       <li><a href="/prop-firm-rules-matrix.html">Prop firm rules matrix</a></li>
+      <li><a href="/prop-firms/topstep.html">Topstep Combine rules</a></li>
       <li><a href="/blog/apex-trailing-drawdown-math.html">Trailing drawdown maths</a></li>
+      <li><a href="/blog/apex-drawdown-rules-2026.html">Apex drawdown rules 2026</a></li>
+      <li><a href="/blog/apex-account-sizes-explained.html">Apex account sizes explained</a></li>
       <li><a href="/blog/apex-trader-funding-complete-guide.html">Apex Trader Funding guide</a></li>
+      <li><a href="/blog/apex-challenge-passing-service-cost.html">What an Apex pass costs</a></li>
       <li><a href="/tools/maximum-loss-calculator.html">Maximum loss calculator</a></li>
       <li><a href="/prop-firm-rules/">The eight rules that end challenges</a></li>
     </ul>
+    <p class="disclaimer">Apex Trader Funding is named for identification only. This page describes published rule mechanics and is not a review, an endorsement or financial advice. Figures were checked on 23 October 2026 and firms revise parameters without notice; confirm every number on the plan you are buying.</p>
   </div>
 </section>
