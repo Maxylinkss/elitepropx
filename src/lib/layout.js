@@ -33,6 +33,7 @@ const NAV = [
   { label: 'Blog', href: '/blog/' },
   { label: 'FAQ', href: '/faq.html' },
   { label: 'About', href: '/about.html' },
+  { label: 'Contact', href: '/contact.html' },
 ];
 
 const esc = (s = '') =>
